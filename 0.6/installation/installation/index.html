@@ -774,10 +774,10 @@
 <h2 id="install-the-firmware">Install the firmware<a class="headerlink" href="#install-the-firmware" title="Permanent link">~</a></h2>
 <h3 id="flash-esp32">Flash ESP32<a class="headerlink" href="#flash-esp32" title="Permanent link">~</a></h3>
 <p>When flashing the ESP32 for the first time, you need to install a bootloader, partition scheme and application loader:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
-2
-3
-4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>esptool.py --port <span class="s2">&quot;COM1&quot;</span> erase_flash
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>esptool.py --port <span class="s2">&quot;COM1&quot;</span> erase_flash
 esptool.py --port <span class="s2">&quot;COM1&quot;</span> write_flash 0x1000 bootloader_dio_40m.bin --flash_mode dio --flash_freq 40m
 esptool.py --port <span class="s2">&quot;COM1&quot;</span> write_flash 0x8000 partitions.bin
 esptool.py --port <span class="s2">&quot;COM1&quot;</span> write_flash 0xe000 boot_app0.bin
@@ -785,18 +785,18 @@ esptool.py --port <span class="s2">&quot;COM1&quot;</span> write_flash 0xe000 bo
 </td></tr></table>
 <p>Change <code>COM1</code> to the correct port on your computer.</p>
 <p>then flash the actual firmware:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>esptool.py -p <span class="s2">&quot;COM1&quot;</span> --baud <span class="m">921600</span> write_flash 0x10000 d1-mini-esp32_ili9341_&lt;version&gt;.bin
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>esptool.py -p <span class="s2">&quot;COM1&quot;</span> --baud <span class="m">921600</span> write_flash 0x10000 d1-mini-esp32_ili9341_&lt;version&gt;.bin
 </code></pre></div>
 </td></tr></table>
 <p>or all previous steps in one long command line:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>esptool.py -p <span class="s2">&quot;COM1&quot;</span> --baud <span class="m">921600</span> --before default_reset --after hard_reset write_flash --flash_mode dio --flash_freq 40m --flash_size detect 0x1000 bootloader_dio_40m.bin 0x8000 partitions.bin 0xe000 boot_app0.bin 0x10000 d1-mini-esp32_ili9341_&lt;version&gt;.bin
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>esptool.py -p <span class="s2">&quot;COM1&quot;</span> --baud <span class="m">921600</span> --before default_reset --after hard_reset write_flash --flash_mode dio --flash_freq 40m --flash_size detect 0x1000 bootloader_dio_40m.bin 0x8000 partitions.bin 0xe000 boot_app0.bin 0x10000 d1-mini-esp32_ili9341_&lt;version&gt;.bin
 </code></pre></div>
 </td></tr></table>
 <h3 id="flash-esp8266">Flash ESP8266<a class="headerlink" href="#flash-esp8266" title="Permanent link">~</a></h3>
 <p>Unlike the ESP32, for ESP8266 you only need one single <code>.bin</code> file:</p>
-<h4>Using <a href="https://github.com/tasmota/tasmotizer">Tasmotizer</a> (Windows)</h4>
-<h4>Using esp-tool.py</h4>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>esptool.py -p <span class="s2">&quot;COM1&quot;</span> write_flash --flash_mode qio --flash_size 4m 0x0 d1-mini-esp8266_ili9341_&lt;version&gt;.bin
+<h4 id="using-tasmotizer-windows">Using <a href="https://github.com/tasmota/tasmotizer">Tasmotizer</a> (Windows)<a class="headerlink" href="#using-tasmotizer-windows" title="Permanent link">~</a></h4>
+<h4 id="using-esp-toolpy">Using esp-tool.py<a class="headerlink" href="#using-esp-toolpy" title="Permanent link">~</a></h4>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>esptool.py -p <span class="s2">&quot;COM1&quot;</span> write_flash --flash_mode qio --flash_size 4m 0x0 d1-mini-esp8266_ili9341_&lt;version&gt;.bin
 </code></pre></div>
 </td></tr></table>
 <p>Change <code>COM1</code> to the correct port on your computer and <code>4m</code> to the correct size of the internal flash chip.</p>
@@ -806,21 +806,21 @@ esptool.py --port <span class="s2">&quot;COM1&quot;</span> write_flash 0xe000 bo
 <p class="admonition-title">Note</p>
 <p>There is no precompiled firmware file available for STM32F4 boards. You will need to configure, compile and upload the firmware yourself using PlatformIO.</p>
 </div>
-<h4>Using Serial</h4>
+<h4 id="using-serial">Using Serial<a class="headerlink" href="#using-serial" title="Permanent link">~</a></h4>
 <ul>
 <li>Connect your serial TTL adapter RX and TX pins to PA9 and PA10 of the devEbox.</li>
 <li>Place the boot jumpers into programming mode</li>
 <li>Reset the board.</li>
 <li>Upload the firmware using:</li>
 </ul>
-<h4>Using DFU (USB)</h4>
+<h4 id="using-dfu-usb">Using DFU (USB)<a class="headerlink" href="#using-dfu-usb" title="Permanent link">~</a></h4>
 <ul>
 <li>Connect your serial TTL adapter RX and TX pins to PA9 and PA10 of the devEbox.</li>
 <li>Place the boot jumpers into programming mode</li>
 <li>Reset the board.</li>
 <li>Upload the firmware using:</li>
 </ul>
-<h4>Using ST Link (USB)</h4>
+<h4 id="using-st-link-usb">Using ST Link (USB)<a class="headerlink" href="#using-st-link-usb" title="Permanent link">~</a></h4>
 <ul>
 <li>Install ST Link software</li>
 <li>Connect the devEbox using the USB port</li>

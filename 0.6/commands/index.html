@@ -995,7 +995,7 @@
 <p>Each line in the <code>jsonl</code> payload defines one object and has to be in the json format. If the payload exceeds the MQTT buffer of 2 kB it will be cut off to fit,
 don't send too many lines in a single payload, you can always sends multiple jsonl commands.</p>
 <p>Example:  <br />
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="err">jso</span><span class="kc">nl</span> <span class="p">{</span><span class="nt">&quot;obj&quot;</span><span class="p">:</span><span class="s2">&quot;btn&quot;</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">14</span><span class="p">,</span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="mi">120</span><span class="p">,</span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="nt">&quot;w&quot;</span><span class="p">:</span><span class="mi">30</span><span class="p">,</span><span class="nt">&quot;h&quot;</span><span class="p">:</span><span class="mi">40</span><span class="p">,</span><span class="nt">&quot;text_font&quot;</span><span class="p">:</span><span class="s2">&quot;2&quot;</span><span class="p">,</span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="s2">&quot;Test&quot;</span><span class="p">,</span><span class="nt">&quot;text_color&quot;</span><span class="p">:</span><span class="s2">&quot;gray&quot;</span><span class="p">,</span><span class="nt">&quot;bg_opa&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="nt">&quot;border_width&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">}</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="err">jso</span><span class="kc">nl</span> <span class="p">{</span><span class="nt">&quot;obj&quot;</span><span class="p">:</span><span class="s2">&quot;btn&quot;</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">14</span><span class="p">,</span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="mi">120</span><span class="p">,</span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="nt">&quot;w&quot;</span><span class="p">:</span><span class="mi">30</span><span class="p">,</span><span class="nt">&quot;h&quot;</span><span class="p">:</span><span class="mi">40</span><span class="p">,</span><span class="nt">&quot;text_font&quot;</span><span class="p">:</span><span class="s2">&quot;2&quot;</span><span class="p">,</span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="s2">&quot;Test&quot;</span><span class="p">,</span><span class="nt">&quot;text_color&quot;</span><span class="p">:</span><span class="s2">&quot;gray&quot;</span><span class="p">,</span><span class="nt">&quot;bg_opa&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="nt">&quot;border_width&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">}</span>
 </code></pre></div>
 </td></tr></table></p>
 <p><em>For more details see <a href="../pages">Pages</a> and <a href="../objects">Objects</a></em></p>
@@ -1003,7 +1003,7 @@ don't send too many lines in a single payload, you can always sends multiple jso
 <p><em>accepted parameters:</em> json array of strings</p>
 <p>Use the <code>json</code> command to send multiple commands as an array of strings in one payload.</p>
 <p>Example:  <br />
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="err">jso</span><span class="kc">n</span> <span class="p">[</span><span class="err">&#39;page</span> <span class="mi">3</span><span class="err">&#39;</span><span class="p">,</span><span class="err">&#39;backligh</span><span class="kc">t</span> <span class="p">{</span><span class="nt">&quot;state&quot;</span><span class="p">:</span><span class="s2">&quot;OFF&quot;</span><span class="p">,</span><span class="nt">&quot;brightness&quot;</span><span class="p">:</span><span class="mi">100</span><span class="p">}</span><span class="err">&#39;</span><span class="p">,</span><span class="err">&#39;idle</span> <span class="err">o</span><span class="kc">ff</span><span class="err">&#39;</span><span class="p">]</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="err">jso</span><span class="kc">n</span> <span class="p">[</span><span class="err">&#39;page</span> <span class="mi">3</span><span class="err">&#39;</span><span class="p">,</span><span class="err">&#39;backligh</span><span class="kc">t</span> <span class="p">{</span><span class="nt">&quot;state&quot;</span><span class="p">:</span><span class="s2">&quot;OFF&quot;</span><span class="p">,</span><span class="nt">&quot;brightness&quot;</span><span class="p">:</span><span class="mi">100</span><span class="p">}</span><span class="err">&#39;</span><span class="p">,</span><span class="err">&#39;idle</span> <span class="err">o</span><span class="kc">ff</span><span class="err">&#39;</span><span class="p">]</span>
 </code></pre></div>
 </td></tr></table></p>
 <p>This command will change to page 3, turn the backlight on at ~40% brightness and reset the idle timer.</p>
@@ -1073,10 +1073,10 @@ A simple integer payload of <code>1..255</code> will adjust the brightness.</p>
 </ul>
 <p>An RGB moodlight can be controlled by configuring 3 <a href="../configuration/gpio/">GPIO pins</a> as type <code>Mood Red</code>, <code>Mood Green</code> and <code>Mood blue</code>.
 These leds can then be controlled together using the <code>moodlight</code> command.</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
-2
-3
-4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="err">moodligh</span><span class="kc">t</span> <span class="p">{</span><span class="nt">&quot;state&quot;</span><span class="p">:</span><span class="s2">&quot;off&quot;</span><span class="p">,</span><span class="nt">&quot;color&quot;</span><span class="p">:</span><span class="s2">&quot;green&quot;</span><span class="p">}</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="err">moodligh</span><span class="kc">t</span> <span class="p">{</span><span class="nt">&quot;state&quot;</span><span class="p">:</span><span class="s2">&quot;off&quot;</span><span class="p">,</span><span class="nt">&quot;color&quot;</span><span class="p">:</span><span class="s2">&quot;green&quot;</span><span class="p">}</span>
 <span class="err">moodligh</span><span class="kc">t</span> <span class="p">{</span><span class="nt">&quot;state&quot;</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span><span class="nt">&quot;color&quot;</span><span class="p">:</span><span class="s2">&quot;#ff00e7&quot;</span><span class="p">}</span>
 <span class="err">moodligh</span><span class="kc">t</span> <span class="p">{</span><span class="nt">&quot;color&quot;</span><span class="p">:</span><span class="mi">12345</span><span class="p">}</span>
 <span class="err">moodligh</span><span class="kc">t</span> <span class="p">{</span><span class="nt">&quot;state&quot;</span><span class="p">:</span><span class="s2">&quot;on&quot;</span><span class="p">,</span><span class="nt">&quot;r&quot;</span><span class="p">:</span><span class="mi">255</span><span class="p">,</span><span class="nt">&quot;g&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="nt">&quot;b&quot;</span><span class="p">:</span><span class="mi">255</span><span class="p">}</span>
@@ -1089,7 +1089,7 @@ These leds can then be controlled together using the <code>moodlight</code> comm
 <li>Individual <code>r</code>, <code>g</code> and <code>b</code> keys can also be used to set each channel seperately</li>
 </ul>
 <p>Calling the <code>moodlight</code> command without parameters (or sending an empty payload to the <code>hasp/&lt;nodename&gt;/command/moodlight</code> topic) returns the current state:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="s2">&quot;state/moodlight&quot;</span> <span class="p">{</span><span class="nt">&quot;state&quot;</span><span class="p">:</span><span class="s2">&quot;ON&quot;</span><span class="p">,</span><span class="nt">&quot;brightness&quot;</span><span class="p">:</span><span class="mi">255</span><span class="p">,</span><span class="nt">&quot;color&quot;</span><span class="p">:</span><span class="s2">&quot;#ff0000&quot;</span><span class="p">,</span><span class="nt">&quot;r&quot;</span><span class="p">:</span><span class="mi">255</span><span class="p">,</span><span class="nt">&quot;g&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="nt">&quot;b&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">}</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="s2">&quot;state/moodlight&quot;</span> <span class="p">{</span><span class="nt">&quot;state&quot;</span><span class="p">:</span><span class="s2">&quot;ON&quot;</span><span class="p">,</span><span class="nt">&quot;brightness&quot;</span><span class="p">:</span><span class="mi">255</span><span class="p">,</span><span class="nt">&quot;color&quot;</span><span class="p">:</span><span class="s2">&quot;#ff0000&quot;</span><span class="p">,</span><span class="nt">&quot;r&quot;</span><span class="p">:</span><span class="mi">255</span><span class="p">,</span><span class="nt">&quot;g&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="nt">&quot;b&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">}</span>
 </code></pre></div>
 </td></tr></table>
 <p>The color is returned as a hexadecimal value and as individual RGB channels.</p>
@@ -1121,24 +1121,24 @@ This can be handy for bug reporting or documentation.</p>
 <p class="admonition-title"><code>statusupdate</code></p>
 </div>
 <p>Reports the status of the MCU. The response will be posted to the state topic. For example:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17
-18</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>    <span class="s2">&quot;hasp/&lt;platename&gt;/state/statusupdate&quot;</span> <span class="err">=&gt;</span> <span class="p">{</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>    <span class="s2">&quot;hasp/&lt;platename&gt;/state/statusupdate&quot;</span> <span class="err">=&gt;</span> <span class="p">{</span>
         <span class="nt">&quot;node&quot;</span><span class="p">:</span><span class="s2">&quot;plate35&quot;</span><span class="p">,</span>
         <span class="nt">&quot;idle&quot;</span><span class="p">:</span><span class="s2">&quot;short&quot;</span><span class="p">,</span>
         <span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="s2">&quot;0.5.1&quot;</span><span class="p">,</span>
@@ -1208,14 +1208,14 @@ This can be handy for bug reporting or documentation.</p>
 <p>You can get or set the configuration of an openHASP submodule in json format.
 To get the configuration, use the command <code>config/&lt;submodule&gt;</code>. 
 The result will be published to <code>hasp/&lt;nodename&gt;/state/config</code>. Passwords will be omitted from the result.</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
-2
-3
-4
-5
-6
-7
-8</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>config/wifi
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>config/wifi
 config/mqtt
 config/http
 config/mdns

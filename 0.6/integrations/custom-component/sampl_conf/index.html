@@ -786,21 +786,21 @@
 <p><img alt="screenshot" src="../assets/images/screenshots/cc_sampl_clocktemp.png" /></p>
 <p>The easiest example is to display the state of a clock and a temperature sensor from Home Assistant, using <em>label</em> objects in openHASP.</p>
 <p>Create a label object to display the temperature value, a separate label object to display the unit and a third label object for the clock:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
-2
-3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>{&quot;page&quot;:0,&quot;id&quot;:4,&quot;obj&quot;:&quot;label&quot;,&quot;x&quot;:175,&quot;y&quot;:5,&quot;h&quot;:30,&quot;w&quot;:45,&quot;text&quot;:&quot;00.0&quot;,&quot;align&quot;:2,&quot;bg_color&quot;:&quot;#2C3E50&quot;,&quot;text_color&quot;:&quot;#FFFFFF&quot;}
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>{&quot;page&quot;:0,&quot;id&quot;:4,&quot;obj&quot;:&quot;label&quot;,&quot;x&quot;:175,&quot;y&quot;:5,&quot;h&quot;:30,&quot;w&quot;:45,&quot;text&quot;:&quot;00.0&quot;,&quot;align&quot;:2,&quot;bg_color&quot;:&quot;#2C3E50&quot;,&quot;text_color&quot;:&quot;#FFFFFF&quot;}
 {&quot;page&quot;:0,&quot;id&quot;:5,&quot;obj&quot;:&quot;label&quot;,&quot;x&quot;:220,&quot;y&quot;:5,&quot;h&quot;:30,&quot;w&quot;:45,&quot;text&quot;:&quot;°C&quot;,&quot;align&quot;:0,&quot;bg_color&quot;:&quot;#2C3E50&quot;,&quot;text_color&quot;:&quot;#FFFFFF&quot;}
 {&quot;page&quot;:0,&quot;id&quot;:6,&quot;obj&quot;:&quot;label&quot;,&quot;x&quot;:3,&quot;y&quot;:5,&quot;h&quot;:30,&quot;w&quot;:62,&quot;text&quot;:&quot;00:00&quot;,&quot;align&quot;:0,&quot;bg_color&quot;:&quot;#2C3E50&quot;,&quot;text_color&quot;:&quot;#FFFFFF&quot;}
 </code></pre></div>
 </td></tr></table>
 <p>In component configuration all you need for the objects is:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
-2
-3
-4
-5
-6
-7</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>    <span class="nt">objects</span><span class="p">:</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>    <span class="nt">objects</span><span class="p">:</span>
       <span class="p p-Indicator">-</span> <span class="nt">obj</span><span class="p">:</span> <span class="s">&quot;p0b4&quot;</span>
         <span class="nt">properties</span><span class="p">:</span>
           <span class="s">&quot;text&quot;</span><span class="p p-Indicator">:</span> <span class="s">&quot;{{</span><span class="nv"> </span><span class="s">states(&#39;sensor.my_room_temperature&#39;)</span><span class="nv"> </span><span class="s">}}&quot;</span>
@@ -809,18 +809,18 @@
           <span class="s">&quot;text&quot;</span><span class="p p-Indicator">:</span> <span class="s">&quot;{{</span><span class="nv"> </span><span class="s">states(&#39;sensor.time&#39;)</span><span class="nv"> </span><span class="s">}}&quot;</span>
 </code></pre></div>
 </td></tr></table>
-<h4>Note:</h4>
+<h4 id="note">Note:<a class="headerlink" href="#note" title="Permanent link">~</a></h4>
 <p>You can of course omit the second label object with the unit and use the same for both value and unit:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
-2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>{&quot;page&quot;:0,&quot;id&quot;:4,&quot;obj&quot;:&quot;label&quot;,&quot;x&quot;:175,&quot;y&quot;:5,&quot;h&quot;:30,&quot;w&quot;:62,&quot;text&quot;:&quot;00.0°C&quot;,&quot;align&quot;:2,&quot;bg_color&quot;:&quot;#2C3E50&quot;,&quot;text_color&quot;:&quot;#FFFFFF&quot;}
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>{&quot;page&quot;:0,&quot;id&quot;:4,&quot;obj&quot;:&quot;label&quot;,&quot;x&quot;:175,&quot;y&quot;:5,&quot;h&quot;:30,&quot;w&quot;:62,&quot;text&quot;:&quot;00.0°C&quot;,&quot;align&quot;:2,&quot;bg_color&quot;:&quot;#2C3E50&quot;,&quot;text_color&quot;:&quot;#FFFFFF&quot;}
 {&quot;page&quot;:0,&quot;id&quot;:6,&quot;obj&quot;:&quot;label&quot;,&quot;x&quot;:3,&quot;y&quot;:5,&quot;h&quot;:30,&quot;w&quot;:62,&quot;text&quot;:&quot;00:00&quot;,&quot;align&quot;:0,&quot;bg_color&quot;:&quot;#2C3E50&quot;,&quot;text_color&quot;:&quot;#FFFFFF&quot;}
 </code></pre></div>
 </td></tr></table>
 <p>In component configuration you will add the unit to the value using the template:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
-2
-3
-4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>    <span class="nt">objects</span><span class="p">:</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>    <span class="nt">objects</span><span class="p">:</span>
       <span class="p p-Indicator">-</span> <span class="nt">obj</span><span class="p">:</span> <span class="s">&quot;p0b4&quot;</span>
         <span class="nt">properties</span><span class="p">:</span>
           <span class="s">&quot;text&quot;</span><span class="p p-Indicator">:</span> <span class="s">&quot;{{</span><span class="nv"> </span><span class="s">states(&#39;sensor.my_room_temperature&#39;)</span><span class="nv"> </span><span class="s">}}°C&quot;</span>
@@ -830,19 +830,19 @@
 <hr />
 <h2 id="some-basic-controls">Some basic controls<a class="headerlink" href="#some-basic-controls" title="Permanent link">~</a></h2>
 <p>Jsonl and Home Assistant configuration:</p>
-<h4>Toggle a light (or any switchable entity with on/off states)</h4>
+<h4 id="toggle-a-light-or-any-switchable-entity-with-onoff-states">Toggle a light (or any switchable entity with on/off states)<a class="headerlink" href="#toggle-a-light-or-any-switchable-entity-with-onoff-states" title="Permanent link">~</a></h4>
 <p><img alt="screenshot" src="../assets/images/screenshots/cc_sampl_lightswitch.png" /></p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>{&quot;page&quot;:1,&quot;id&quot;:2,&quot;obj&quot;:&quot;btn&quot;,&quot;x&quot;:10,&quot;y&quot;:40,&quot;w&quot;:105,&quot;h&quot;:90,&quot;toggle&quot;:true,&quot;text&quot;:&quot;\uE335&quot;,&quot;text_font&quot;:28,&quot;align&quot;:1}
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>{&quot;page&quot;:1,&quot;id&quot;:2,&quot;obj&quot;:&quot;btn&quot;,&quot;x&quot;:10,&quot;y&quot;:40,&quot;w&quot;:105,&quot;h&quot;:90,&quot;toggle&quot;:true,&quot;text&quot;:&quot;\uE335&quot;,&quot;text_font&quot;:28,&quot;align&quot;:1}
 </code></pre></div>
 </td></tr></table>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
-2
-3
-4
-5
-6
-7
-8</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>      <span class="p p-Indicator">-</span> <span class="nt">obj</span><span class="p">:</span> <span class="s">&quot;p1b2&quot;</span> <span class="c1"># switch, checkbox or btn with toggle true</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>      <span class="p p-Indicator">-</span> <span class="nt">obj</span><span class="p">:</span> <span class="s">&quot;p1b2&quot;</span> <span class="c1"># switch, checkbox or btn with toggle true</span>
         <span class="nt">properties</span><span class="p">:</span>
           <span class="s">&quot;val&quot;</span><span class="p p-Indicator">:</span> <span class="s">&#39;{{</span><span class="nv"> </span><span class="s">1</span><span class="nv"> </span><span class="s">if</span><span class="nv"> </span><span class="s">is_state(&quot;light.my_lamp&quot;,</span><span class="nv"> </span><span class="s">&quot;on&quot;)</span><span class="nv"> </span><span class="s">else</span><span class="nv"> </span><span class="s">0</span><span class="nv"> </span><span class="s">}}&#39;</span>
           <span class="s">&quot;text&quot;</span><span class="p p-Indicator">:</span> <span class="s">&#39;{{</span><span class="nv"> </span><span class="s">&quot;\uE6E8&quot;</span><span class="nv"> </span><span class="s">if</span><span class="nv"> </span><span class="s">is_state(&quot;light.my_lamp&quot;,</span><span class="nv"> </span><span class="s">&quot;on&quot;)</span><span class="nv"> </span><span class="s">else</span><span class="nv"> </span><span class="s">&quot;\uE335&quot;</span><span class="nv"> </span><span class="s">|</span><span class="nv"> </span><span class="s">e</span><span class="nv"> </span><span class="s">}}&#39;</span>
@@ -852,24 +852,24 @@
               <span class="nt">entity_id</span><span class="p">:</span> <span class="s">&quot;light.my_lamp&quot;</span>
 </code></pre></div>
 </td></tr></table>
-<h4>Dropdown (self-populating from an input_select)</h4>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>{&quot;page&quot;:1,&quot;id&quot;:3,&quot;obj&quot;:&quot;dropdown&quot;,&quot;x&quot;:5,&quot;y&quot;:40,&quot;w&quot;:230,&quot;h&quot;:30,&quot;options&quot;:&quot;&quot;}
+<h4 id="dropdown-self-populating-from-an-input_select">Dropdown (self-populating from an input_select)<a class="headerlink" href="#dropdown-self-populating-from-an-input_select" title="Permanent link">~</a></h4>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>{&quot;page&quot;:1,&quot;id&quot;:3,&quot;obj&quot;:&quot;dropdown&quot;,&quot;x&quot;:5,&quot;y&quot;:40,&quot;w&quot;:230,&quot;h&quot;:30,&quot;options&quot;:&quot;&quot;}
 </code></pre></div>
 </td></tr></table>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>      <span class="p p-Indicator">-</span> <span class="nt">obj</span><span class="p">:</span> <span class="s">&quot;p1b3&quot;</span> <span class="c1"># dropdown</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>      <span class="p p-Indicator">-</span> <span class="nt">obj</span><span class="p">:</span> <span class="s">&quot;p1b3&quot;</span> <span class="c1"># dropdown</span>
         <span class="nt">properties</span><span class="p">:</span>
           <span class="s">&quot;options&quot;</span><span class="p p-Indicator">:</span> <span class="p p-Indicator">&gt;</span>
             <span class="no">{% if not (is_state(&#39;input_select.my_dropdown_selections&#39;,&#39;unavailable&#39;)) %}{%for item in state_attr(&#39;input_select.my_dropdown_selections&#39;,&#39;options&#39;)%}{{item+&quot;\n&quot;|e}}{%-if not loop.last%}{%-endif%}{%-endfor%}{% endif %}</span>
@@ -891,23 +891,23 @@
 <p><img alt="screenshot" src="../assets/images/screenshots/cc_sampl_rgb.png" /></p>
 <p>Have an RGB light in Home Assistant controlled by hasp-lvgl. In our example we use Lanbon L8's moodlight.</p>
 <p>relevant <strong>openHASP config:</strong></p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>{&quot;page&quot;:1,&quot;id&quot;:4,&quot;obj&quot;:&quot;cpicker&quot;,&quot;x&quot;:20,&quot;y&quot;:70,&quot;w&quot;:200,&quot;h&quot;:200}`
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>{&quot;page&quot;:1,&quot;id&quot;:4,&quot;obj&quot;:&quot;cpicker&quot;,&quot;x&quot;:20,&quot;y&quot;:70,&quot;w&quot;:200,&quot;h&quot;:200}`
 </code></pre></div>
 </td></tr></table>
 <p>relevant <strong>openHASP-custom-component config:</strong></p>
-<p><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>      <span class="p p-Indicator">-</span> <span class="nt">obj</span><span class="p">:</span> <span class="s">&quot;p1b4&quot;</span> <span class="c1"># color picker</span>
+<p><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>      <span class="p p-Indicator">-</span> <span class="nt">obj</span><span class="p">:</span> <span class="s">&quot;p1b4&quot;</span> <span class="c1"># color picker</span>
         <span class="nt">properties</span><span class="p">:</span>
           <span class="s">&quot;color&quot;</span><span class="p p-Indicator">:</span> <span class="p p-Indicator">&gt;</span>
             <span class="no">{% if is_state(&#39;light.openhasp_lanbon_test_moodlight&#39;,&#39;on&#39;) %}</span>
@@ -934,13 +934,13 @@ The <code>color</code> property gets updated from the <code>rgb_color</code> att
 - the plus and minus buttons increase and decrease the temperature by the temperature step defined by the climate</p>
 <p>The circle in the middle changes color if it's heating, but also serves as a touch-catcher to minimize false arc-touch detections while manipulating with plus and minus buttons. Controls get disabled when entity is unavailable in HA.</p>
 <p>relevant <strong>openHASP config:</strong> (screen size 240x320) 
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
-2
-3
-4
-5
-6
-7</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>{&quot;page&quot;:2,&quot;id&quot;:2,&quot;obj&quot;:&quot;arc&quot;,&quot;x&quot;:10,&quot;y&quot;:70,&quot;w&quot;:220,&quot;h&quot;:220,&quot;min&quot;:180,&quot;max&quot;:250,&quot;border_side&quot;:0,&quot;type&quot;:0,&quot;rotation&quot;:0,&quot;start_angle&quot;:135,&quot;end_angle&quot;:45,&quot;start_angle1&quot;:135,&quot;end_angle1&quot;:45,&quot;value_font&quot;:28,&quot;value_color&quot;:&quot;#2C3E50&quot;,&quot;adjustable&quot;:&quot;true&quot;}
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>{&quot;page&quot;:2,&quot;id&quot;:2,&quot;obj&quot;:&quot;arc&quot;,&quot;x&quot;:10,&quot;y&quot;:70,&quot;w&quot;:220,&quot;h&quot;:220,&quot;min&quot;:180,&quot;max&quot;:250,&quot;border_side&quot;:0,&quot;type&quot;:0,&quot;rotation&quot;:0,&quot;start_angle&quot;:135,&quot;end_angle&quot;:45,&quot;start_angle1&quot;:135,&quot;end_angle1&quot;:45,&quot;value_font&quot;:28,&quot;value_color&quot;:&quot;#2C3E50&quot;,&quot;adjustable&quot;:&quot;true&quot;}
 {&quot;page&quot;:2,&quot;id&quot;:3,&quot;obj&quot;:&quot;obj&quot;,&quot;x&quot;:40,&quot;y&quot;:100,&quot;w&quot;:160,&quot;h&quot;:160,&quot;radius&quot;:100,&quot;opacity&quot;:100,&quot;border_opa&quot;:160,&quot;border_width&quot;:4,&quot;comment&quot;:&quot;touch-catcher&quot;}
 {&quot;page&quot;:2,&quot;id&quot;:4,&quot;obj&quot;:&quot;label&quot;,&quot;x&quot;:10,&quot;y&quot;:40,&quot;w&quot;:220,&quot;h&quot;:30,&quot;text&quot;:&quot;Kívánt hőmérséklet:&quot;,&quot;align&quot;:1,&quot;padh&quot;:50}
 {&quot;page&quot;:2,&quot;id&quot;:5,&quot;obj&quot;:&quot;dropdown&quot;,&quot;x&quot;:75,&quot;y&quot;:235,&quot;w&quot;:90,&quot;h&quot;:30,&quot;options&quot;:&quot;&quot;}
@@ -950,74 +950,74 @@ The <code>color</code> property gets updated from the <code>rgb_color</code> att
 </code></pre></div>
 </td></tr></table>
 relevant <strong>openHASP-custom-component config:</strong>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32
-33
-34
-35
-36
-37
-38
-39
-40
-41
-42
-43
-44
-45
-46
-47
-48
-49
-50
-51
-52
-53
-54
-55
-56
-57
-58
-59
-60
-61
-62
-63
-64
-65
-66
-67
-68</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>      <span class="p p-Indicator">-</span> <span class="nt">obj</span><span class="p">:</span> <span class="s">&quot;p2b2&quot;</span>  <span class="c1"># arc</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span>
+<span class="normal">55</span>
+<span class="normal">56</span>
+<span class="normal">57</span>
+<span class="normal">58</span>
+<span class="normal">59</span>
+<span class="normal">60</span>
+<span class="normal">61</span>
+<span class="normal">62</span>
+<span class="normal">63</span>
+<span class="normal">64</span>
+<span class="normal">65</span>
+<span class="normal">66</span>
+<span class="normal">67</span>
+<span class="normal">68</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>      <span class="p p-Indicator">-</span> <span class="nt">obj</span><span class="p">:</span> <span class="s">&quot;p2b2&quot;</span>  <span class="c1"># arc</span>
         <span class="nt">properties</span><span class="p">:</span>
           <span class="s">&quot;val&quot;</span><span class="p p-Indicator">:</span> <span class="s">&quot;{{</span><span class="nv"> </span><span class="s">state_attr(&#39;climate.thermostat_1&#39;,&#39;temperature&#39;)</span><span class="nv"> </span><span class="s">*</span><span class="nv"> </span><span class="s">10</span><span class="nv"> </span><span class="s">|</span><span class="nv"> </span><span class="s">int</span><span class="nv"> </span><span class="s">if</span><span class="nv"> </span><span class="s">not</span><span class="nv"> </span><span class="s">(is_state(&#39;climate.thermostat_1&#39;,&#39;unavailable&#39;))</span><span class="nv"> </span><span class="s">}}&quot;</span>
           <span class="s">&quot;value_str&quot;</span><span class="p p-Indicator">:</span> <span class="s">&quot;{{</span><span class="nv"> </span><span class="s">state_attr(&#39;climate.thermostat_1&#39;,&#39;temperature&#39;)</span><span class="nv"> </span><span class="s">if</span><span class="nv"> </span><span class="s">not</span><span class="nv"> </span><span class="s">(is_state(&#39;climate.thermostat_1&#39;,&#39;unavailable&#39;))</span><span class="nv"> </span><span class="s">}}&quot;</span>
@@ -1092,49 +1092,49 @@ relevant <strong>openHASP-custom-component config:</strong>
 <p><img alt="screenshot" src="../assets/images/screenshots/cc_sampl_cover.png" />  </p>
 <p>The icon on the up and down buttons change color when covers move and set opacity when reached to limit. UI theme set to <code>Hasp Light</code> in plate's web interface. </p>
 <p>relevant <strong>openHASP config:</strong> (screen size 240x320) </p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
-2
-3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>{&quot;page&quot;:1,&quot;id&quot;:4,&quot;obj&quot;:&quot;btn&quot;,&quot;x&quot;:5,&quot;y&quot;:140,&quot;w&quot;:73,&quot;h&quot;:60,&quot;toggle&quot;:false,&quot;text&quot;:&quot;\uE05D&quot;,&quot;text_font&quot;:28}
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>{&quot;page&quot;:1,&quot;id&quot;:4,&quot;obj&quot;:&quot;btn&quot;,&quot;x&quot;:5,&quot;y&quot;:140,&quot;w&quot;:73,&quot;h&quot;:60,&quot;toggle&quot;:false,&quot;text&quot;:&quot;\uE05D&quot;,&quot;text_font&quot;:28}
 {&quot;page&quot;:1,&quot;id&quot;:5,&quot;obj&quot;:&quot;btn&quot;,&quot;x&quot;:83,&quot;y&quot;:140,&quot;w&quot;:73,&quot;h&quot;:60,&quot;toggle&quot;:false,&quot;text&quot;:&quot;\uE4DB&quot;,&quot;text_font&quot;:28}
 {&quot;page&quot;:1,&quot;id&quot;:6,&quot;obj&quot;:&quot;btn&quot;,&quot;x&quot;:161,&quot;y&quot;:140,&quot;w&quot;:73,&quot;h&quot;:60,&quot;toggle&quot;:false,&quot;text&quot;:&quot;\uE045&quot;,&quot;text_font&quot;:28}
 </code></pre></div>
 </td></tr></table>
 <p>relevant <strong>openHASP-custom-component config:</strong></p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32
-33
-34
-35</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>      <span class="p p-Indicator">-</span> <span class="nt">obj</span><span class="p">:</span> <span class="s">&quot;p1b4&quot;</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>      <span class="p p-Indicator">-</span> <span class="nt">obj</span><span class="p">:</span> <span class="s">&quot;p1b4&quot;</span>
         <span class="nt">properties</span><span class="p">:</span>
           <span class="s">&quot;text_color&quot;</span><span class="p p-Indicator">:</span> <span class="s">&quot;{{</span><span class="nv"> </span><span class="s">&#39;#FFFF00&#39;</span><span class="nv"> </span><span class="s">if</span><span class="nv"> </span><span class="s">is_state(&#39;cover.cover_1&#39;,</span><span class="nv"> </span><span class="s">&#39;opening&#39;)</span><span class="nv"> </span><span class="s">else</span><span class="nv"> </span><span class="s">&#39;#FFFFFF&#39;</span><span class="nv"> </span><span class="s">}}&quot;</span>
           <span class="s">&quot;text_opa&quot;</span><span class="p p-Indicator">:</span> <span class="s">&quot;{{</span><span class="nv"> </span><span class="s">&#39;80&#39;</span><span class="nv"> </span><span class="s">if</span><span class="nv"> </span><span class="s">is_state_attr(&#39;cover.cover_1&#39;,&#39;current_position&#39;,</span><span class="nv"> </span><span class="s">100)</span><span class="nv"> </span><span class="s">else</span><span class="nv"> </span><span class="s">&#39;255&#39;</span><span class="nv"> </span><span class="s">}}&quot;</span>
@@ -1175,32 +1175,32 @@ relevant <strong>openHASP-custom-component config:</strong>
 <h2 id="cover-with-button-matrix">Cover with button matrix<a class="headerlink" href="#cover-with-button-matrix" title="Permanent link">~</a></h2>
 <p>A simpler cover control with only basic feedback. UI theme set to <code>Hasp Light</code> in plate's web interface. </p>
 <p>relevant <strong>openHASP config:</strong> (screen size 240x320) </p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>{&quot;page&quot;:4,&quot;id&quot;:20,&quot;obj&quot;:&quot;btnmatrix&quot;,&quot;x&quot;:0,&quot;y&quot;:20,&quot;w&quot;:240,&quot;h&quot;:70,&quot;options&quot;:[&quot;\uE05D&quot;,&quot;\uE4DB&quot;,&quot;\uE045&quot;],&quot;text_font&quot;:28,&quot;bg_opa&quot;:0,&quot;border_opa&quot;:0}
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>{&quot;page&quot;:4,&quot;id&quot;:20,&quot;obj&quot;:&quot;btnmatrix&quot;,&quot;x&quot;:0,&quot;y&quot;:20,&quot;w&quot;:240,&quot;h&quot;:70,&quot;options&quot;:[&quot;\uE05D&quot;,&quot;\uE4DB&quot;,&quot;\uE045&quot;],&quot;text_font&quot;:28,&quot;bg_opa&quot;:0,&quot;border_opa&quot;:0}
 </code></pre></div>
 </td></tr></table>
 <p>relevant <strong>openHASP-custom-component config:</strong></p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>      <span class="p p-Indicator">-</span> <span class="nt">obj</span><span class="p">:</span> <span class="s">&quot;p4b20&quot;</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>      <span class="p p-Indicator">-</span> <span class="nt">obj</span><span class="p">:</span> <span class="s">&quot;p4b20&quot;</span>
         <span class="nt">properties</span><span class="p">:</span>
           <span class="s">&quot;options&quot;</span><span class="p p-Indicator">:</span> <span class="p p-Indicator">&gt;</span>
             <span class="no">{% if is_state(&#39;cover.cover_1&#39;, &#39;closing&#39;) %}</span>
@@ -1229,11 +1229,11 @@ relevant <strong>openHASP-custom-component config:</strong>
 <p><img alt="screenshot" src="../assets/images/screenshots/cc_sampl_cover_lovelacee.png" />  </p>
 <p>The icon behaves like in Lovelace. UI theme set to <code>Hasp Light</code> in plate's web interface.</p>
 <p>relevant <strong>openHASP config:</strong> (screen size 240x320, UI Theme: Hasp Light) 
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
-2
-3
-4
-5</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>{&quot;page&quot;:5,&quot;id&quot;:2,&quot;obj&quot;:&quot;label&quot;,&quot;x&quot;:8,&quot;y&quot;:33,&quot;w&quot;:35,&quot;h&quot;:35,&quot;text&quot;:&quot;\uF11D&quot;,&quot;align&quot;:1,&quot;text_font&quot;:28,&quot;text_color&quot;:&quot;#164f6e&quot;}
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>{&quot;page&quot;:5,&quot;id&quot;:2,&quot;obj&quot;:&quot;label&quot;,&quot;x&quot;:8,&quot;y&quot;:33,&quot;w&quot;:35,&quot;h&quot;:35,&quot;text&quot;:&quot;\uF11D&quot;,&quot;align&quot;:1,&quot;text_font&quot;:28,&quot;text_color&quot;:&quot;#164f6e&quot;}
 {&quot;page&quot;:5,&quot;id&quot;:3,&quot;obj&quot;:&quot;label&quot;,&quot;x&quot;:48,&quot;y&quot;:43,&quot;w&quot;:80,&quot;h&quot;:30,&quot;text&quot;:&quot;Cover 1&quot;,&quot;align&quot;:0,&quot;text_font&quot;:16,&quot;text_color&quot;:&quot;#164f6e&quot;}
 {&quot;page&quot;:5,&quot;id&quot;:4,&quot;obj&quot;:&quot;btn&quot;,&quot;x&quot;:125,&quot;y&quot;:37,&quot;w&quot;:30,&quot;h&quot;:30,&quot;toggle&quot;:false,&quot;text&quot;:&quot;\uE05D&quot;,&quot;text_font&quot;:28,&quot;bg_opa&quot;:0,&quot;border_opa&quot;:0,&quot;text_color&quot;:&quot;#164f6e&quot;}
 {&quot;page&quot;:5,&quot;id&quot;:5,&quot;obj&quot;:&quot;btn&quot;,&quot;x&quot;:165,&quot;y&quot;:37,&quot;w&quot;:30,&quot;h&quot;:30,&quot;toggle&quot;:false,&quot;text&quot;:&quot;\uE4DB&quot;,&quot;text_font&quot;:28,&quot;bg_opa&quot;:0,&quot;border_opa&quot;:0,&quot;text_color&quot;:&quot;#164f6e&quot;}
@@ -1241,36 +1241,36 @@ relevant <strong>openHASP-custom-component config:</strong>
 </code></pre></div>
 </td></tr></table></p>
 <p>relevant <strong>openHASP-custom-component config:</strong>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>      <span class="p p-Indicator">-</span> <span class="nt">obj</span><span class="p">:</span> <span class="s">&quot;p5b2&quot;</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>      <span class="p p-Indicator">-</span> <span class="nt">obj</span><span class="p">:</span> <span class="s">&quot;p5b2&quot;</span>
         <span class="nt">properties</span><span class="p">:</span>
           <span class="s">&quot;text&quot;</span><span class="p p-Indicator">:</span> <span class="p p-Indicator">&gt;</span>
             <span class="no">{% if is_state(&#39;cover.my_cover&#39;, &#39;closing&#39;) %}</span>
@@ -1314,20 +1314,20 @@ Your browser does not support the video tag.
 Player availability is shown by the opacity of the buttons. Player state (play/pause) is shown by the middle button. Power state shown by color, repeat, shuffle and muted state shown by appropriate icons on the buttons.
 UI theme set to <code>Hasp Light</code> in plate's web interface.</p>
 <p>relevant <strong>openHASP config:</strong> (screen size 240x320) 
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>{&quot;page&quot;:6,&quot;id&quot;:1,&quot;obj&quot;:&quot;obj&quot;,&quot;x&quot;:5,&quot;y&quot;:35,&quot;w&quot;:200,&quot;h&quot;:84,&quot;click&quot;:0}
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>{&quot;page&quot;:6,&quot;id&quot;:1,&quot;obj&quot;:&quot;obj&quot;,&quot;x&quot;:5,&quot;y&quot;:35,&quot;w&quot;:200,&quot;h&quot;:84,&quot;click&quot;:0}
 {&quot;page&quot;:6,&quot;id&quot;:2,&quot;obj&quot;:&quot;label&quot;,&quot;x&quot;:7,&quot;y&quot;:45,&quot;w&quot;:196,&quot;h&quot;:30,&quot;text&quot;:&quot;-&quot;,&quot;mode&quot;:&quot;scroll&quot;,&quot;align&quot;:1}
 {&quot;page&quot;:6,&quot;id&quot;:3,&quot;obj&quot;:&quot;label&quot;,&quot;x&quot;:7,&quot;y&quot;:80,&quot;w&quot;:196,&quot;h&quot;:30,&quot;text&quot;:&quot;-&quot;,&quot;mode&quot;:&quot;scroll&quot;,&quot;align&quot;:1}
 {&quot;page&quot;:6,&quot;id&quot;:4,&quot;obj&quot;:&quot;bar&quot;,&quot;x&quot;:5,&quot;y&quot;:108,&quot;w&quot;:200,&quot;h&quot;:11,&quot;min&quot;:0,&quot;max&quot;:100}
@@ -1344,176 +1344,176 @@ UI theme set to <code>Hasp Light</code> in plate's web interface.</p>
 </code></pre></div>
 </td></tr></table></p>
 <p>relevant <strong>openHASP-custom-component config:</strong>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>  1
-  2
-  3
-  4
-  5
-  6
-  7
-  8
-  9
- 10
- 11
- 12
- 13
- 14
- 15
- 16
- 17
- 18
- 19
- 20
- 21
- 22
- 23
- 24
- 25
- 26
- 27
- 28
- 29
- 30
- 31
- 32
- 33
- 34
- 35
- 36
- 37
- 38
- 39
- 40
- 41
- 42
- 43
- 44
- 45
- 46
- 47
- 48
- 49
- 50
- 51
- 52
- 53
- 54
- 55
- 56
- 57
- 58
- 59
- 60
- 61
- 62
- 63
- 64
- 65
- 66
- 67
- 68
- 69
- 70
- 71
- 72
- 73
- 74
- 75
- 76
- 77
- 78
- 79
- 80
- 81
- 82
- 83
- 84
- 85
- 86
- 87
- 88
- 89
- 90
- 91
- 92
- 93
- 94
- 95
- 96
- 97
- 98
- 99
-100
-101
-102
-103
-104
-105
-106
-107
-108
-109
-110
-111
-112
-113
-114
-115
-116
-117
-118
-119
-120
-121
-122
-123
-124
-125
-126
-127
-128
-129
-130
-131
-132
-133
-134
-135
-136
-137
-138
-139
-140
-141
-142
-143
-144
-145
-146
-147
-148
-149
-150
-151
-152
-153
-154
-155
-156
-157
-158
-159
-160
-161
-162
-163
-164
-165
-166
-167
-168
-169
-170</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>      <span class="p p-Indicator">-</span> <span class="nt">obj</span><span class="p">:</span> <span class="s">&quot;p6b2&quot;</span> <span class="c1"># artist</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">  1</span>
+<span class="normal">  2</span>
+<span class="normal">  3</span>
+<span class="normal">  4</span>
+<span class="normal">  5</span>
+<span class="normal">  6</span>
+<span class="normal">  7</span>
+<span class="normal">  8</span>
+<span class="normal">  9</span>
+<span class="normal"> 10</span>
+<span class="normal"> 11</span>
+<span class="normal"> 12</span>
+<span class="normal"> 13</span>
+<span class="normal"> 14</span>
+<span class="normal"> 15</span>
+<span class="normal"> 16</span>
+<span class="normal"> 17</span>
+<span class="normal"> 18</span>
+<span class="normal"> 19</span>
+<span class="normal"> 20</span>
+<span class="normal"> 21</span>
+<span class="normal"> 22</span>
+<span class="normal"> 23</span>
+<span class="normal"> 24</span>
+<span class="normal"> 25</span>
+<span class="normal"> 26</span>
+<span class="normal"> 27</span>
+<span class="normal"> 28</span>
+<span class="normal"> 29</span>
+<span class="normal"> 30</span>
+<span class="normal"> 31</span>
+<span class="normal"> 32</span>
+<span class="normal"> 33</span>
+<span class="normal"> 34</span>
+<span class="normal"> 35</span>
+<span class="normal"> 36</span>
+<span class="normal"> 37</span>
+<span class="normal"> 38</span>
+<span class="normal"> 39</span>
+<span class="normal"> 40</span>
+<span class="normal"> 41</span>
+<span class="normal"> 42</span>
+<span class="normal"> 43</span>
+<span class="normal"> 44</span>
+<span class="normal"> 45</span>
+<span class="normal"> 46</span>
+<span class="normal"> 47</span>
+<span class="normal"> 48</span>
+<span class="normal"> 49</span>
+<span class="normal"> 50</span>
+<span class="normal"> 51</span>
+<span class="normal"> 52</span>
+<span class="normal"> 53</span>
+<span class="normal"> 54</span>
+<span class="normal"> 55</span>
+<span class="normal"> 56</span>
+<span class="normal"> 57</span>
+<span class="normal"> 58</span>
+<span class="normal"> 59</span>
+<span class="normal"> 60</span>
+<span class="normal"> 61</span>
+<span class="normal"> 62</span>
+<span class="normal"> 63</span>
+<span class="normal"> 64</span>
+<span class="normal"> 65</span>
+<span class="normal"> 66</span>
+<span class="normal"> 67</span>
+<span class="normal"> 68</span>
+<span class="normal"> 69</span>
+<span class="normal"> 70</span>
+<span class="normal"> 71</span>
+<span class="normal"> 72</span>
+<span class="normal"> 73</span>
+<span class="normal"> 74</span>
+<span class="normal"> 75</span>
+<span class="normal"> 76</span>
+<span class="normal"> 77</span>
+<span class="normal"> 78</span>
+<span class="normal"> 79</span>
+<span class="normal"> 80</span>
+<span class="normal"> 81</span>
+<span class="normal"> 82</span>
+<span class="normal"> 83</span>
+<span class="normal"> 84</span>
+<span class="normal"> 85</span>
+<span class="normal"> 86</span>
+<span class="normal"> 87</span>
+<span class="normal"> 88</span>
+<span class="normal"> 89</span>
+<span class="normal"> 90</span>
+<span class="normal"> 91</span>
+<span class="normal"> 92</span>
+<span class="normal"> 93</span>
+<span class="normal"> 94</span>
+<span class="normal"> 95</span>
+<span class="normal"> 96</span>
+<span class="normal"> 97</span>
+<span class="normal"> 98</span>
+<span class="normal"> 99</span>
+<span class="normal">100</span>
+<span class="normal">101</span>
+<span class="normal">102</span>
+<span class="normal">103</span>
+<span class="normal">104</span>
+<span class="normal">105</span>
+<span class="normal">106</span>
+<span class="normal">107</span>
+<span class="normal">108</span>
+<span class="normal">109</span>
+<span class="normal">110</span>
+<span class="normal">111</span>
+<span class="normal">112</span>
+<span class="normal">113</span>
+<span class="normal">114</span>
+<span class="normal">115</span>
+<span class="normal">116</span>
+<span class="normal">117</span>
+<span class="normal">118</span>
+<span class="normal">119</span>
+<span class="normal">120</span>
+<span class="normal">121</span>
+<span class="normal">122</span>
+<span class="normal">123</span>
+<span class="normal">124</span>
+<span class="normal">125</span>
+<span class="normal">126</span>
+<span class="normal">127</span>
+<span class="normal">128</span>
+<span class="normal">129</span>
+<span class="normal">130</span>
+<span class="normal">131</span>
+<span class="normal">132</span>
+<span class="normal">133</span>
+<span class="normal">134</span>
+<span class="normal">135</span>
+<span class="normal">136</span>
+<span class="normal">137</span>
+<span class="normal">138</span>
+<span class="normal">139</span>
+<span class="normal">140</span>
+<span class="normal">141</span>
+<span class="normal">142</span>
+<span class="normal">143</span>
+<span class="normal">144</span>
+<span class="normal">145</span>
+<span class="normal">146</span>
+<span class="normal">147</span>
+<span class="normal">148</span>
+<span class="normal">149</span>
+<span class="normal">150</span>
+<span class="normal">151</span>
+<span class="normal">152</span>
+<span class="normal">153</span>
+<span class="normal">154</span>
+<span class="normal">155</span>
+<span class="normal">156</span>
+<span class="normal">157</span>
+<span class="normal">158</span>
+<span class="normal">159</span>
+<span class="normal">160</span>
+<span class="normal">161</span>
+<span class="normal">162</span>
+<span class="normal">163</span>
+<span class="normal">164</span>
+<span class="normal">165</span>
+<span class="normal">166</span>
+<span class="normal">167</span>
+<span class="normal">168</span>
+<span class="normal">169</span>
+<span class="normal">170</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>      <span class="p p-Indicator">-</span> <span class="nt">obj</span><span class="p">:</span> <span class="s">&quot;p6b2&quot;</span> <span class="c1"># artist</span>
         <span class="nt">properties</span><span class="p">:</span>
           <span class="s">&quot;text&quot;</span><span class="p p-Indicator">:</span> <span class="s">&quot;{{</span><span class="nv"> </span><span class="s">state_attr(&#39;media_player.sound_my_room&#39;,&#39;media_artist&#39;)</span><span class="nv"> </span><span class="s">if</span><span class="nv"> </span><span class="s">state_attr(&#39;media_player.sound_my_room&#39;,&#39;media_artist&#39;)</span><span class="nv"> </span><span class="s">else</span><span class="nv"> </span><span class="s">&#39;-&#39;</span><span class="nv"> </span><span class="s">}}&quot;</span>
 
@@ -1691,13 +1691,13 @@ Note that the <code>val</code> value of the slider is multiplied and divided by 
 <h4>Color code a WiFi icon according to RSSI reported by the plate</h4>
 
 <p><strong>openHASP config:</strong> (screen size 240x320) </p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>{&quot;obj&quot;:&quot;btn&quot;,&quot;id&quot;:1,&quot;x&quot;:120,&quot;y&quot;:1,&quot;w&quot;:30,&quot;h&quot;:40,&quot;text_font&quot;:&quot;2&quot;,&quot;text&quot;:&quot;\uF76B&quot;,&quot;text_color&quot;:&quot;gray&quot;,&quot;bg_opa&quot;:0,&quot;border_width&quot;:0}
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>{&quot;obj&quot;:&quot;btn&quot;,&quot;id&quot;:1,&quot;x&quot;:120,&quot;y&quot;:1,&quot;w&quot;:30,&quot;h&quot;:40,&quot;text_font&quot;:&quot;2&quot;,&quot;text&quot;:&quot;\uF76B&quot;,&quot;text_color&quot;:&quot;gray&quot;,&quot;bg_opa&quot;:0,&quot;border_width&quot;:0}
 </code></pre></div>
 </td></tr></table>
 <p>relevant <strong>openHASP-custom-component config:</strong></p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
-2
-3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>    <span class="p p-Indicator">-</span> <span class="nt">obj</span><span class="p">:</span> <span class="s">&quot;p0b1&quot;</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>    <span class="p p-Indicator">-</span> <span class="nt">obj</span><span class="p">:</span> <span class="s">&quot;p0b1&quot;</span>
       <span class="nt">properties</span><span class="p">:</span>
         <span class="s">&quot;text_color&quot;</span><span class="p p-Indicator">:</span> <span class="s">&quot;{%</span><span class="nv"> </span><span class="s">if</span><span class="nv"> </span><span class="s">-30</span><span class="nv"> </span><span class="s">&lt;=</span><span class="nv"> </span><span class="s">state_attr(&#39;openhasp.openhasp_plate&#39;,&#39;rssi&#39;)</span><span class="nv"> </span><span class="s">|int</span><span class="nv"> </span><span class="s">%}green{%</span><span class="nv"> </span><span class="s">elif</span><span class="nv"> </span><span class="s">-31</span><span class="nv"> </span><span class="s">&gt;</span><span class="nv"> </span><span class="s">state_attr(&#39;openhasp.openhasp_plate&#39;,&#39;rssi&#39;)</span><span class="nv"> </span><span class="s">|int</span><span class="nv"> </span><span class="s">&gt;=</span><span class="nv"> </span><span class="s">-50</span><span class="nv"> </span><span class="s">%}orange{%</span><span class="nv"> </span><span class="s">elif</span><span class="nv"> </span><span class="s">-51</span><span class="nv"> </span><span class="s">&gt;</span><span class="nv"> </span><span class="s">state_attr(&#39;openhasp.openhasp_plate&#39;,&#39;rssi&#39;)</span><span class="nv"> </span><span class="s">|int</span><span class="nv"> </span><span class="s">&gt;=</span><span class="nv"> </span><span class="s">-80</span><span class="nv"> </span><span class="s">%}tomato{%</span><span class="nv"> </span><span class="s">else</span><span class="nv"> </span><span class="s">%}red{%</span><span class="nv"> </span><span class="s">endif</span><span class="nv"> </span><span class="s">%}&quot;</span><span class="err">```</span>
 </code></pre></div>
@@ -1705,13 +1705,13 @@ Note that the <code>val</code> value of the slider is multiplied and divided by 
 <h4>Color code a temperature icon according to sensor values</h4>
 
 <p><strong>openHASP config:</strong> (screen size 240x320) </p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>{&quot;obj&quot;:&quot;btn&quot;,&quot;id&quot;:3,&quot;x&quot;:165,&quot;y&quot;:1,&quot;w&quot;:30,&quot;h&quot;:40,&quot;text_font&quot;:&quot;2&quot;,&quot;text&quot;:&quot;\uF1EB&quot;,&quot;text_color&quot;:&quot;gray&quot;,&quot;bg_opa&quot;:0,&quot;border_width&quot;:0}
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>{&quot;obj&quot;:&quot;btn&quot;,&quot;id&quot;:3,&quot;x&quot;:165,&quot;y&quot;:1,&quot;w&quot;:30,&quot;h&quot;:40,&quot;text_font&quot;:&quot;2&quot;,&quot;text&quot;:&quot;\uF1EB&quot;,&quot;text_color&quot;:&quot;gray&quot;,&quot;bg_opa&quot;:0,&quot;border_width&quot;:0}
 </code></pre></div>
 </td></tr></table>
 <p>relevant <strong>openHASP-custom-component config:</strong></p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
-2
-3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>    <span class="p p-Indicator">-</span> <span class="nt">obj</span><span class="p">:</span> <span class="s">&quot;p0b3&quot;</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>    <span class="p p-Indicator">-</span> <span class="nt">obj</span><span class="p">:</span> <span class="s">&quot;p0b3&quot;</span>
       <span class="nt">properties</span><span class="p">:</span>
         <span class="s">&quot;text_color&quot;</span><span class="p p-Indicator">:</span> <span class="s">&quot;{%</span><span class="nv"> </span><span class="s">if</span><span class="nv"> </span><span class="s">states(&#39;sensor.room_temperature&#39;)</span><span class="nv"> </span><span class="s">|int</span><span class="nv"> </span><span class="s">&lt;=</span><span class="nv"> </span><span class="s">21</span><span class="nv">  </span><span class="s">%}#4682B4{%</span><span class="nv"> </span><span class="s">elif</span><span class="nv"> </span><span class="s">21</span><span class="nv"> </span><span class="s">&lt;</span><span class="nv"> </span><span class="s">states(&#39;sensor.room_temperature&#39;)</span><span class="nv"> </span><span class="s">|int</span><span class="nv"> </span><span class="s">&lt;=</span><span class="nv"> </span><span class="s">26</span><span class="nv"> </span><span class="s">%}green{%</span><span class="nv"> </span><span class="s">else</span><span class="nv"> </span><span class="s">%}red{%</span><span class="nv"> </span><span class="s">endif</span><span class="nv"> </span><span class="s">%}&quot;</span>
 </code></pre></div>

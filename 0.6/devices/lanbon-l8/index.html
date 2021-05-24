@@ -872,19 +872,19 @@
 <li>L8-HT: Thermostat switch - not tested!</li>
 <li>L8-HB: Boiler switch - not tested!</li>
 </ul>
-<h4>Form factor</h4>
+<h4 id="form-factor">Form factor<a class="headerlink" href="#form-factor" title="Permanent link">~</a></h4>
 <ul>
 <li>EU model: 86mm x 86mm</li>
 <li>US model: 120mm x 74mm</li>
 </ul>
 <p>Both models have the same recessed housing sliding in the wall, sized 50x50mm, with rounded corners creating a diameter of about 59mm. This makes them suitable for both EU and US wall fixtures. The EU model fits in a properly deployed, standard 60mm round wall box and can be fixed with two side screws (use the screws which belong to the box instead of the ones shipped with the device), the US model fits in the standard rectangular box and can be fixed through the oval holes located 3 1/4" apart. The depth of the wall box has to be at least 35-40mm because some room is needed for the wires coming out straight of the device.</p>
 <p>Both models are rated at AC 100-250V ~50-60Hz, the form factor can be a design choice regardless of the continental area.</p>
-<h4>Bezel Color</h4>
+<h4 id="bezel-color">Bezel Color<a class="headerlink" href="#bezel-color" title="Permanent link">~</a></h4>
 <ul>
 <li>Black</li>
 <li>White</li>
 </ul>
-<h4>Features:</h4>
+<h4 id="features">Features:<a class="headerlink" href="#features" title="Permanent link">~</a></h4>
 <ul>
 <li>Input voltage 110-250V ~ 50-60Hz AC</li>
 <li>ESP32-WROVER-B</li>
@@ -988,7 +988,7 @@
 </tbody>
 </table>
 <p>To configure the GPIOs at once for L8-HS send to topic <code>hasp/&lt;nodename&gt;/config</code> a message with payload:<br />
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;gpio&quot;</span><span class="p">:{</span><span class="nt">&quot;config&quot;</span><span class="p">:[</span><span class="mi">2360346</span><span class="p">,</span><span class="mi">2491680</span><span class="p">,</span><span class="mi">2623009</span><span class="p">,</span><span class="mi">2097420</span><span class="p">,</span><span class="mi">2097678</span><span class="p">,</span><span class="mi">2097947</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]}}</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;gpio&quot;</span><span class="p">:{</span><span class="nt">&quot;config&quot;</span><span class="p">:[</span><span class="mi">2360346</span><span class="p">,</span><span class="mi">2491680</span><span class="p">,</span><span class="mi">2623009</span><span class="p">,</span><span class="mi">2097420</span><span class="p">,</span><span class="mi">2097678</span><span class="p">,</span><span class="mi">2097947</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]}}</span>
 </code></pre></div>
 </td></tr></table></p>
 <table>
@@ -1028,7 +1028,7 @@
 </tbody>
 </table>
 <p>To configure the GPIOs at once for L8-HD send to topic <code>hasp/&lt;nodename&gt;/config</code> a message with payload:<br />
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code> <span class="p">{</span><span class="nt">&quot;gpio&quot;</span><span class="p">:{</span><span class="nt">&quot;config&quot;</span><span class="p">:[</span><span class="mi">6360076</span><span class="p">,</span><span class="mi">2229274</span><span class="p">,</span><span class="mi">2491680</span><span class="p">,</span><span class="mi">2623009</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]}}</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code> <span class="p">{</span><span class="nt">&quot;gpio&quot;</span><span class="p">:{</span><span class="nt">&quot;config&quot;</span><span class="p">:[</span><span class="mi">6360076</span><span class="p">,</span><span class="mi">2229274</span><span class="p">,</span><span class="mi">2491680</span><span class="p">,</span><span class="mi">2623009</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]}}</span>
 </code></pre></div>
 </td></tr></table></p>
 <div class="admonition note">
@@ -1042,65 +1042,65 @@
 <p><img alt="YOUTUBE" src="Rce5yp4mhXI" /></p>
 <h2 id="lcd-configuration">LCD Configuration<a class="headerlink" href="#lcd-configuration" title="Permanent link">~</a></h2>
 <p>The <code>lcd_config.ini</code> file specifies the different properties of the display, except for the actual pin configuration:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="na">st7789v</span> <span class="o">=</span><span class="s"></span>
-<span class="s">    -D ST7789_DRIVER=1</span>
-<span class="s">    ;-D CGRAM_OFFSET=1         ; Library will add offsets required</span>
-<span class="s">    -D TFT_SDA_READ            ; Read from display, it only provides an SDA pin</span>
-<span class="s">    -D TFT_WIDTH=240</span>
-<span class="s">    -D TFT_HEIGHT=320</span>
-<span class="s">    -D TFT_ROTATION=2          ; see TFT_ROTATION values</span>
-<span class="s">    ; -D TFT_INVERSION_OFF     ; for normal colors</span>
-<span class="s">    ; -D TFT_RGB_ORDER=TFT_RGB   ; Colour order Red-Green-Blue</span>
-<span class="s">    -D TFT_RGB_ORDER=TFT_BGR ; Colour order Blue-Green-Red</span>
-<span class="s">    -D SPI_FREQUENCY=80000000</span>
-<span class="s">    -D SPI_READ_FREQUENCY=6000000 </span>
-<span class="s">    -D USER_SETUP_LOADED=1</span>
-<span class="s">    -D SUPPORT_TRANSACTIONS</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="na">st7789v</span> <span class="o">=</span>
+    <span class="na">-D ST7789_DRIVER</span><span class="o">=</span><span class="s">1</span>
+    <span class="c1">;-D CGRAM_OFFSET=1         ; Library will add offsets required</span>
+    <span class="na">-D TFT_SDA_READ            ; Read from display, it only provides an SDA pin</span>
+    <span class="na">-D TFT_WIDTH</span><span class="o">=</span><span class="s">240</span>
+    <span class="na">-D TFT_HEIGHT</span><span class="o">=</span><span class="s">320</span>
+    <span class="na">-D TFT_ROTATION</span><span class="o">=</span><span class="s">2          ; see TFT_ROTATION values</span>
+    <span class="c1">; -D TFT_INVERSION_OFF     ; for normal colors</span>
+    <span class="c1">; -D TFT_RGB_ORDER=TFT_RGB   ; Colour order Red-Green-Blue</span>
+    <span class="na">-D TFT_RGB_ORDER</span><span class="o">=</span><span class="s">TFT_BGR ; Colour order Blue-Green-Red</span>
+    <span class="na">-D SPI_FREQUENCY</span><span class="o">=</span><span class="s">80000000</span>
+    <span class="na">-D SPI_READ_FREQUENCY</span><span class="o">=</span><span class="s">6000000 </span>
+    <span class="na">-D USER_SETUP_LOADED</span><span class="o">=</span><span class="s">1</span>
+    <span class="na">-D SUPPORT_TRANSACTIONS</span>
 </code></pre></div>
 </td></tr></table>
 <h2 id="hasp-build_flags">HASP build_flags<a class="headerlink" href="#hasp-build_flags" title="Permanent link">~</a></h2>
 <p>Specify the LCD Configuration to use and define the GPIOs in the environment build flags:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>build_flags =
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>build_flags =
     ${env.build_flags}
     ${esp32.build_flags}
     ${esp32.ps_ram}
