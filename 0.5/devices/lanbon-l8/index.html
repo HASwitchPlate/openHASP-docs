@@ -1341,8 +1341,9 @@
 </tbody>
 </table>
 <p>To configure the GPIOs at once for L8-HS send to topic <code>hasp/&lt;nodename&gt;/config</code> a message with payload:  </p>
-<pre><code class="language-json">{&quot;gpio&quot;:{&quot;config&quot;:[2360346,2491680,2623009,2097420,2097678,2097947,0,0]}}
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;gpio&quot;</span><span class="p">:{</span><span class="nt">&quot;config&quot;</span><span class="p">:[</span><span class="mi">2360346</span><span class="p">,</span><span class="mi">2491680</span><span class="p">,</span><span class="mi">2623009</span><span class="p">,</span><span class="mi">2097420</span><span class="p">,</span><span class="mi">2097678</span><span class="p">,</span><span class="mi">2097947</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]}}</span>
+</code></pre></div>
+
 <table>
 <thead>
 <tr>
@@ -1380,8 +1381,9 @@
 </tbody>
 </table>
 <p>To configure the GPIOs at once for L8-HD send to topic <code>hasp/&lt;nodename&gt;/config</code> a message with payload:  </p>
-<pre><code class="language-json"> {&quot;gpio&quot;:{&quot;config&quot;:[6360076,2229274,2491680,2623009,0,0,0,0]}}
-</code></pre>
+<div class="codehilite"><pre><span></span><code> <span class="p">{</span><span class="nt">&quot;gpio&quot;</span><span class="p">:{</span><span class="nt">&quot;config&quot;</span><span class="p">:[</span><span class="mi">6360076</span><span class="p">,</span><span class="mi">2229274</span><span class="p">,</span><span class="mi">2491680</span><span class="p">,</span><span class="mi">2623009</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]}}</span>
+</code></pre></div>
+
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>You can <a href="../../compiling/#create-a-configuration">create you own firmware</a> build with GPIOs and many other parameters pre-configured in <code>user_config_override.h</code> as factory defaults for Lanbon L8.</p>
@@ -1393,30 +1395,31 @@
 <p><img alt="YOUTUBE" src="Rce5yp4mhXI" /></p>
 <h2 id="lcd-configuration">LCD Configuration<a class="headerlink" href="#lcd-configuration" title="Permanent link">~</a></h2>
 <p>The <code>lcd_config.ini</code> file specifies the different properties of the display, except for the actual pin configuration:</p>
-<pre><code class="language-ini">st7789v =
-    -D ST7789_DRIVER=1
-    ;-D CGRAM_OFFSET=1         ; Library will add offsets required
-    -D TFT_SDA_READ            ; Read from display, it only provides an SDA pin
-    -D TFT_WIDTH=240
-    -D TFT_HEIGHT=320
-    -D TFT_ROTATION=2          ; see TFT_ROTATION values
-    ; -D TFT_INVERSION_OFF     ; for normal colors
-    ; -D TFT_RGB_ORDER=TFT_RGB   ; Colour order Red-Green-Blue
-    -D TFT_RGB_ORDER=TFT_BGR ; Colour order Blue-Green-Red
-    -D SPI_FREQUENCY=80000000
-    -D SPI_READ_FREQUENCY=6000000 
-    -D USER_SETUP_LOADED=1
-    -D SUPPORT_TRANSACTIONS
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="na">st7789v</span> <span class="o">=</span><span class="s"></span>
+<span class="s">    -D ST7789_DRIVER=1</span>
+<span class="s">    ;-D CGRAM_OFFSET=1         ; Library will add offsets required</span>
+<span class="s">    -D TFT_SDA_READ            ; Read from display, it only provides an SDA pin</span>
+<span class="s">    -D TFT_WIDTH=240</span>
+<span class="s">    -D TFT_HEIGHT=320</span>
+<span class="s">    -D TFT_ROTATION=2          ; see TFT_ROTATION values</span>
+<span class="s">    ; -D TFT_INVERSION_OFF     ; for normal colors</span>
+<span class="s">    ; -D TFT_RGB_ORDER=TFT_RGB   ; Colour order Red-Green-Blue</span>
+<span class="s">    -D TFT_RGB_ORDER=TFT_BGR ; Colour order Blue-Green-Red</span>
+<span class="s">    -D SPI_FREQUENCY=80000000</span>
+<span class="s">    -D SPI_READ_FREQUENCY=6000000 </span>
+<span class="s">    -D USER_SETUP_LOADED=1</span>
+<span class="s">    -D SUPPORT_TRANSACTIONS</span>
+</code></pre></div>
+
 <h2 id="hasp-build_flags">HASP build_flags<a class="headerlink" href="#hasp-build_flags" title="Permanent link">~</a></h2>
 <p>Specify the LCD Configuration to use and define the GPIOs in the environment build flags:</p>
-<pre><code>build_flags =
-    ${env.build_flags}
-    ${esp32.build_flags}
-    ${esp32.ps_ram}
+<div class="codehilite"><pre><span></span><code>build_flags =
+    <span class="cp">${</span><span class="n">env</span><span class="o">.</span><span class="n">build_flags</span><span class="cp">}</span>
+    <span class="cp">${</span><span class="n">esp32</span><span class="o">.</span><span class="n">build_flags</span><span class="cp">}</span>
+    <span class="cp">${</span><span class="n">esp32</span><span class="o">.</span><span class="n">ps_ram</span><span class="cp">}</span>
 
 ;region -- TFT_eSPI build options ------------------------
-    ${lcd.st7789v}
+    <span class="cp">${</span><span class="n">lcd</span><span class="o">.</span><span class="n">st7789v</span><span class="cp">}</span>
     -D LANBONL8
     -D TFT_RST=18        ; FCP pin2 RESET
     -D TFT_SCLK=19       ; FCP pin3 SCL
@@ -1438,7 +1441,7 @@
     -D RELAY_2=24
     -D RELAY_3=37
 ;endregion
-</code></pre>
+</code></pre></div>
                 
               
               

@@ -1100,24 +1100,28 @@
 <h2 id="install-the-firmware">Install the firmware<a class="headerlink" href="#install-the-firmware" title="Permanent link">~</a></h2>
 <h3>Flash ESP32</h3>
 <p>When flashing the ESP32 for the first time, you need to install a bootloader, partition scheme and application loader:</p>
-<pre><code class="language-shell">esptool.py --port &quot;COM1&quot; erase_flash
-esptool.py --port &quot;COM1&quot; write_flash 0x1000 bootloader_dio_40m.bin --flash_mode dio --flash_freq 40m
-esptool.py --port &quot;COM1&quot; write_flash 0x8000 partitions.bin
-esptool.py --port &quot;COM1&quot; write_flash 0xe000 boot_app0.bin
-</code></pre>
+<div class="codehilite"><pre><span></span><code>esptool.py --port <span class="s2">&quot;COM1&quot;</span> erase_flash
+esptool.py --port <span class="s2">&quot;COM1&quot;</span> write_flash 0x1000 bootloader_dio_40m.bin --flash_mode dio --flash_freq 40m
+esptool.py --port <span class="s2">&quot;COM1&quot;</span> write_flash 0x8000 partitions.bin
+esptool.py --port <span class="s2">&quot;COM1&quot;</span> write_flash 0xe000 boot_app0.bin
+</code></pre></div>
+
 <p>Change <code>COM1</code> to the correct port on your computer.</p>
 <p>then flash the actual firmware:</p>
-<pre><code class="language-shell">esptool.py -p &quot;COM1&quot; --baud 921600 write_flash 0x10000 d1-mini-esp32_ili9341_&lt;version&gt;.bin
-</code></pre>
+<div class="codehilite"><pre><span></span><code>esptool.py -p <span class="s2">&quot;COM1&quot;</span> --baud <span class="m">921600</span> write_flash 0x10000 d1-mini-esp32_ili9341_&lt;version&gt;.bin
+</code></pre></div>
+
 <p>or all previous steps in one long command line:</p>
-<pre><code class="language-shell">esptool.py -p &quot;COM1&quot; --baud 921600 --before default_reset --after hard_reset write_flash --flash_mode dio --flash_freq 40m --flash_size detect 0x1000 bootloader_dio_40m.bin 0x8000 partitions.bin 0xe000 boot_app0.bin 0x10000 d1-mini-esp32_ili9341_&lt;version&gt;.bin
-</code></pre>
+<div class="codehilite"><pre><span></span><code>esptool.py -p <span class="s2">&quot;COM1&quot;</span> --baud <span class="m">921600</span> --before default_reset --after hard_reset write_flash --flash_mode dio --flash_freq 40m --flash_size detect 0x1000 bootloader_dio_40m.bin 0x8000 partitions.bin 0xe000 boot_app0.bin 0x10000 d1-mini-esp32_ili9341_&lt;version&gt;.bin
+</code></pre></div>
+
 <h3>Flash ESP8266</h3>
 <p>Unlike the ESP32, for ESP8266 you only need one single <code>.bin</code> file:</p>
 <h4>Using <a href="https://github.com/tasmota/tasmotizer">Tasmotizer</a> (Windows)</h4>
 <h4>Using esp-tool.py</h4>
-<pre><code class="language-shell">esptool.py -p &quot;COM1&quot; write_flash --flash_mode qio --flash_size 4m 0x0 d1-mini-esp8266_ili9341_&lt;version&gt;.bin
-</code></pre>
+<div class="codehilite"><pre><span></span><code>esptool.py -p <span class="s2">&quot;COM1&quot;</span> write_flash --flash_mode qio --flash_size 4m 0x0 d1-mini-esp8266_ili9341_&lt;version&gt;.bin
+</code></pre></div>
+
 <p>Change <code>COM1</code> to the correct port on your computer and <code>4m</code> to the correct size of the internal flash chip.</p>
 <hr />
 <h3>STM32F407 devEbox</h3>

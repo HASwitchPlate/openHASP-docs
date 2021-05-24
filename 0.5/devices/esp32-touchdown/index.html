@@ -1272,10 +1272,10 @@ and the hardware is also open source. Due to the extensive documentation it was 
 <p><img alt="PCB Dimensions" src="../../assets/images/devices/esp32-touchdown-dimensions.png" /></p>
 <h2 id="hasp-build_flags">HASP build_flags<a class="headerlink" href="#hasp-build_flags" title="Permanent link">~</a></h2>
 <p>Specify the LCD Configuration to use and define the GPIOs in the environment build flags:</p>
-<pre><code>build_flags =
-    ${env.build_flags}
-    ${esp32.build_flags}
-    ${esp32.vspi}        ; Use VSPI hardware SPI bus
+<div class="codehilite"><pre><span></span><code>build_flags =
+    <span class="cp">${</span><span class="n">env</span><span class="o">.</span><span class="n">build_flags</span><span class="cp">}</span>
+    <span class="cp">${</span><span class="n">esp32</span><span class="o">.</span><span class="n">build_flags</span><span class="cp">}</span>
+    <span class="cp">${</span><span class="n">esp32</span><span class="o">.</span><span class="n">vspi</span><span class="cp">}</span>        ; Use VSPI hardware SPI bus
 
 ;region -- TFT_eSPI build options ------------------------
     -D USER_SETUP_LOADED=1
@@ -1297,7 +1297,7 @@ and the hardware is also open source. Due to the extensive documentation it was 
     -D SPI_FREQUENCY=27000000
     -D SPI_READ_FREQUENCY=16000000
 ;endregion
-</code></pre>
+</code></pre></div>
                 
               
               

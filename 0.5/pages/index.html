@@ -1188,15 +1188,18 @@ The file extension is <code>.jsonl</code> and not <code>.json</code>.</p>
 <p>If any of the required <code>id</code> or <code>obj</code> properties are missing -<em>and the line is still valid json</em>- then it is interpreted as a comment.</p>
 <p>You can also use the <code>page</code> parameter in a comment to set the default page for new objects that don't have a <code>page</code> parameter.</p>
 <p>Example 1: Add a comment on a single line that is ignored.</p>
-<pre><code class="language-json">{&quot;comment&quot;:&quot; ----------- Page 1 layout ------------&quot;}
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;comment&quot;</span><span class="p">:</span><span class="s2">&quot; ----------- Page 1 layout ------------&quot;</span><span class="p">}</span>
+</code></pre></div>
+
 <p>Example 2: Set the default <code>page</code> for next object(s) to <code>3</code> besides adding a comment as well.</p>
-<pre><code class="language-json">{&quot;page&quot;:2,&quot;comment&quot;:&quot; ---- My Awesome Color Picker Layout ----&quot;}
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;page&quot;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="nt">&quot;comment&quot;</span><span class="p">:</span><span class="s2">&quot; ---- My Awesome Color Picker Layout ----&quot;</span><span class="p">}</span>
+</code></pre></div>
+
 <p>If you then omit the <code>page</code> parameter in the lines below this comment, those objects will appear by default on page <code>2</code>.</p>
 <p>Example 3: Insert a comment for an object.</p>
-<pre><code class="language-json">{&quot;page&quot;:2,&quot;id&quot;:3,&quot;obj&quot;:&quot;obj&quot;,&quot;x&quot;:40,&quot;y&quot;:100,&quot;w&quot;:160,&quot;h&quot;:160,&quot;radius&quot;:100,&quot;opacity&quot;:100,&quot;border_opa&quot;:160,&quot;border_width&quot;:4,&quot;comment&quot;:&quot;touch-catcher&quot;}
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;page&quot;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span><span class="nt">&quot;obj&quot;</span><span class="p">:</span><span class="s2">&quot;obj&quot;</span><span class="p">,</span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="mi">40</span><span class="p">,</span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="mi">100</span><span class="p">,</span><span class="nt">&quot;w&quot;</span><span class="p">:</span><span class="mi">160</span><span class="p">,</span><span class="nt">&quot;h&quot;</span><span class="p">:</span><span class="mi">160</span><span class="p">,</span><span class="nt">&quot;radius&quot;</span><span class="p">:</span><span class="mi">100</span><span class="p">,</span><span class="nt">&quot;opacity&quot;</span><span class="p">:</span><span class="mi">100</span><span class="p">,</span><span class="nt">&quot;border_opa&quot;</span><span class="p">:</span><span class="mi">160</span><span class="p">,</span><span class="nt">&quot;border_width&quot;</span><span class="p">:</span><span class="mi">4</span><span class="p">,</span><span class="nt">&quot;comment&quot;</span><span class="p">:</span><span class="s2">&quot;touch-catcher&quot;</span><span class="p">}</span>
+</code></pre></div>
+
 <div class="admonition danger">
 <p>If the line is not valid json, the parsing of the rest of the file is also stopped.</p>
 </div>
@@ -1206,14 +1209,16 @@ The file extension is <code>.jsonl</code> and not <code>.json</code>.</p>
 <p>Each line in <code>pages.jsonl</code> creates <strong>one object</strong> on a page and has to be in the json format.<br />
 The order of the objects also dictates the <em>layer</em> on the page from bottom to top. So the last drawn object will be the topmpost.</p>
 <p>Example Objects:</p>
-<pre><code class="language-json">{&quot;page&quot;:1,&quot;id&quot;:1,&quot;obj&quot;:&quot;label&quot;,&quot;x&quot;:5,&quot;y&quot;:5,&quot;h&quot;:50,&quot;w&quot;:50,&quot;text&quot;:&quot;Hello&quot;,&quot;enabled&quot;:true,&quot;hidden&quot;:false}
-{&quot;page&quot;:1,&quot;id&quot;:2,&quot;obj&quot;:&quot;btn&quot;,&quot;x&quot;:5,&quot;y&quot;:90,&quot;h&quot;:90,&quot;w&quot;:50,&quot;text&quot;:&quot;World&quot;,&quot;enabled&quot;:false,&quot;hidden&quot;:false}
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;page&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="nt">&quot;obj&quot;</span><span class="p">:</span><span class="s2">&quot;label&quot;</span><span class="p">,</span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span><span class="nt">&quot;h&quot;</span><span class="p">:</span><span class="mi">50</span><span class="p">,</span><span class="nt">&quot;w&quot;</span><span class="p">:</span><span class="mi">50</span><span class="p">,</span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="s2">&quot;Hello&quot;</span><span class="p">,</span><span class="nt">&quot;enabled&quot;</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span><span class="nt">&quot;hidden&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">}</span>
+<span class="p">{</span><span class="nt">&quot;page&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="nt">&quot;obj&quot;</span><span class="p">:</span><span class="s2">&quot;btn&quot;</span><span class="p">,</span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="mi">90</span><span class="p">,</span><span class="nt">&quot;h&quot;</span><span class="p">:</span><span class="mi">90</span><span class="p">,</span><span class="nt">&quot;w&quot;</span><span class="p">:</span><span class="mi">50</span><span class="p">,</span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="s2">&quot;World&quot;</span><span class="p">,</span><span class="nt">&quot;enabled&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span><span class="nt">&quot;hidden&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">}</span>
+</code></pre></div>
+
 <p>Once the object is created, you can reference it with <code>pXbY</code> where <code>X</code> is the page number and <code>Y</code> is the id of the object.</p>
 <p>For example:</p>
-<pre><code>p1b1.w=100
-p1b2.hidden=true
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="err">p1b1.w=100</span>
+<span class="err">p1b2.hidden=true</span>
+</code></pre></div>
+
 <p>Page number <code>0</code> refers to an object visible on all pages.<br />
 An id of <code>0</code> refers to the page itself instead of an object.</p>
 <p><em>Tip:</em> If you add the objects on the page 0 last, you ensure that they will be always be visible on top of all other pages.</p>
@@ -1228,12 +1233,14 @@ An id of <code>0</code> refers to the page itself instead of an object.</p>
 <p>By default all pages cycle in a round-robin fashion (after the last page jump back to first), but you can change this behaviour by adjusting the <code>prev</code>, <code>next</code> and <code>back</code> target pages.</p>
 <p><em>For example, to limit cycle through page 1-5 only:</em></p>
 <p>on page 5, <code>page next</code> action will jump back to page 1:</p>
-<pre><code>{&quot;page&quot;:5,&quot;id&quot;:0,&quot;next&quot;:1}
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="err">{&quot;page&quot;:5,&quot;id&quot;:0,&quot;next&quot;:1}</span>
+</code></pre></div>
+
 <p>The corresponding command is <code>p5b0.next=1</code>.</p>
 <p>on page 1, <code>page prev</code> action will go to page 5 (instead of default page 12 on an ESP32)</p>
-<pre><code>{&quot;page&quot;:1,&quot;id&quot;:0,&quot;prev&quot;:5}
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="err">{&quot;page&quot;:1,&quot;id&quot;:0,&quot;prev&quot;:5}</span>
+</code></pre></div>
+
 <p>The corresponding command is <code>p1b0.prev=5</code>.</p>
 <p><em>Note:</em> Page id <code>p0b0</code> (as all pages) is not valid to set this attribute as it has to be set on real pages individually. </p>
 <p><code>back</code> acts like a <em>level up</em> action, so you can jump back to the home or menu page where you came from using <code>page back</code>. You can create a hierarchy of pages and menus this way.</p>

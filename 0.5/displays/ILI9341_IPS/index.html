@@ -1231,53 +1231,53 @@
 <h2 id="custom-build">Custom build<a class="headerlink" href="#custom-build" title="Permanent link">~</a></h2>
 <p>Define a custom environment in <code>platformio_override.ini</code> and add a new <code>esp32_ili9341_spi</code> entry under <code>extra_default_envs =</code> </p>
 <p>If you've wired pins differently, change the values below.</p>
-<pre><code>;-- ILI9341 SPI version ------------------------
-[env:esp32_ili9341_spi]
-platform = espressif32
-platform_packages = framework-arduinoespressif32
-framework = arduino
-board = esp32dev
-monitor_port = COM4
-upload_port = ${env:esp32_ili9341_spi.monitor_port}
-monitor_filters = esp32_exception_decoder
-board_build.partitions = user_setups/esp32_partition_app1300k_spiffs1216k.csv
+<div class="codehilite"><pre><span></span><code><span class="p">;</span><span class="o">--</span> <span class="n">ILI9341</span> <span class="n">SPI</span> <span class="n">version</span> <span class="o">------------------------</span>
+<span class="p">[</span><span class="n">env</span><span class="p">:</span><span class="n">esp32_ili9341_spi</span><span class="p">]</span>
+<span class="n">platform</span> <span class="o">=</span> <span class="n">espressif32</span>
+<span class="n">platform_packages</span> <span class="o">=</span> <span class="n">framework</span><span class="o">-</span><span class="n">arduinoespressif32</span>
+<span class="n">framework</span> <span class="o">=</span> <span class="n">arduino</span>
+<span class="n">board</span> <span class="o">=</span> <span class="n">esp32dev</span>
+<span class="n">monitor_port</span> <span class="o">=</span> <span class="n">COM4</span>
+<span class="n">upload_port</span> <span class="o">=</span> <span class="o">$</span><span class="p">{</span><span class="n">env</span><span class="p">:</span><span class="n">esp32_ili9341_spi</span><span class="o">.</span><span class="n">monitor_port</span><span class="p">}</span>
+<span class="n">monitor_filters</span> <span class="o">=</span> <span class="n">esp32_exception_decoder</span>
+<span class="n">board_build</span><span class="o">.</span><span class="n">partitions</span> <span class="o">=</span> <span class="n">user_setups</span><span class="o">/</span><span class="n">esp32_partition_app1300k_spiffs1216k</span><span class="o">.</span><span class="n">csv</span>
 
-build_flags =
-    ${env.build_flags}
-    ${esp32.build_flags}
-    -D ILI9341_DRIVER=1
-    -D TFT_WIDTH=240
-    -D TFT_HEIGHT=320
-    -D TFT_ROTATION=0 ; see TFT_ROTATION values
-    -D INVERT_COLORS=1  ; to fix colors
-    -D SPI_FREQUENCY=60000000
-    -D SPI_TOUCH_FREQUENCY=2500000
-    -D SPI_READ_FREQUENCY=20000000
-    -D USER_SETUP_LOADED=1
-    -D TOUCH_DRIVER=2046     ; XPT2046 Resistive SPI touch panel driver
-    -D SUPPORT_TRANSACTIONS
-    ${esp32.vspi}        ; Use VSPI hardware SPI bus: 
-                         ; TFT_MISO=19 | TFT_MOSI=23 | TFT_SCLK=18
-                         ; MISO    = 8 | MOSI    = 4 | CLK     = 3
-; wiring recommendations, change pins according to your wiring
-    -D TFT_DC=5          ; DC,  lcd pin 3
-    -D TFT_RST=15        ; RES, lcd pin 5
-    -D TFT_BCKL=-1       ; BLK, lcd pin 7 (configurable via web UI (e.g. 21))
-    -D TFT_CS=26         ; CS1, lcd pin 9
-    -D TOUCH_CS=17       ; CS2, lcd pin 10  
+<span class="n">build_flags</span> <span class="o">=</span>
+    <span class="o">$</span><span class="p">{</span><span class="n">env</span><span class="o">.</span><span class="n">build_flags</span><span class="p">}</span>
+    <span class="o">$</span><span class="p">{</span><span class="n">esp32</span><span class="o">.</span><span class="n">build_flags</span><span class="p">}</span>
+    <span class="o">-</span><span class="n">D</span> <span class="n">ILI9341_DRIVER</span><span class="o">=</span><span class="mi">1</span>
+    <span class="o">-</span><span class="n">D</span> <span class="n">TFT_WIDTH</span><span class="o">=</span><span class="mi">240</span>
+    <span class="o">-</span><span class="n">D</span> <span class="n">TFT_HEIGHT</span><span class="o">=</span><span class="mi">320</span>
+    <span class="o">-</span><span class="n">D</span> <span class="n">TFT_ROTATION</span><span class="o">=</span><span class="mi">0</span> <span class="p">;</span> <span class="n">see</span> <span class="n">TFT_ROTATION</span> <span class="n">values</span>
+    <span class="o">-</span><span class="n">D</span> <span class="n">INVERT_COLORS</span><span class="o">=</span><span class="mi">1</span>  <span class="p">;</span> <span class="n">to</span> <span class="n">fix</span> <span class="n">colors</span>
+    <span class="o">-</span><span class="n">D</span> <span class="n">SPI_FREQUENCY</span><span class="o">=</span><span class="mi">60000000</span>
+    <span class="o">-</span><span class="n">D</span> <span class="n">SPI_TOUCH_FREQUENCY</span><span class="o">=</span><span class="mi">2500000</span>
+    <span class="o">-</span><span class="n">D</span> <span class="n">SPI_READ_FREQUENCY</span><span class="o">=</span><span class="mi">20000000</span>
+    <span class="o">-</span><span class="n">D</span> <span class="n">USER_SETUP_LOADED</span><span class="o">=</span><span class="mi">1</span>
+    <span class="o">-</span><span class="n">D</span> <span class="n">TOUCH_DRIVER</span><span class="o">=</span><span class="mi">2046</span>     <span class="p">;</span> <span class="n">XPT2046</span> <span class="n">Resistive</span> <span class="n">SPI</span> <span class="n">touch</span> <span class="n">panel</span> <span class="n">driver</span>
+    <span class="o">-</span><span class="n">D</span> <span class="n">SUPPORT_TRANSACTIONS</span>
+    <span class="o">$</span><span class="p">{</span><span class="n">esp32</span><span class="o">.</span><span class="n">vspi</span><span class="p">}</span>        <span class="p">;</span> <span class="n">Use</span> <span class="n">VSPI</span> <span class="n">hardware</span> <span class="n">SPI</span> <span class="n">bus</span><span class="p">:</span> 
+                         <span class="p">;</span> <span class="n">TFT_MISO</span><span class="o">=</span><span class="mi">19</span> <span class="o">|</span> <span class="n">TFT_MOSI</span><span class="o">=</span><span class="mi">23</span> <span class="o">|</span> <span class="n">TFT_SCLK</span><span class="o">=</span><span class="mi">18</span>
+                         <span class="p">;</span> <span class="n">MISO</span>    <span class="o">=</span> <span class="mi">8</span> <span class="o">|</span> <span class="n">MOSI</span>    <span class="o">=</span> <span class="mi">4</span> <span class="o">|</span> <span class="n">CLK</span>     <span class="o">=</span> <span class="mi">3</span>
+<span class="p">;</span> <span class="n">wiring</span> <span class="n">recommendations</span><span class="p">,</span> <span class="n">change</span> <span class="n">pins</span> <span class="n">according</span> <span class="n">to</span> <span class="n">your</span> <span class="n">wiring</span>
+    <span class="o">-</span><span class="n">D</span> <span class="n">TFT_DC</span><span class="o">=</span><span class="mi">5</span>          <span class="p">;</span> <span class="n">DC</span><span class="p">,</span>  <span class="n">lcd</span> <span class="n">pin</span> <span class="mi">3</span>
+    <span class="o">-</span><span class="n">D</span> <span class="n">TFT_RST</span><span class="o">=</span><span class="mi">15</span>        <span class="p">;</span> <span class="n">RES</span><span class="p">,</span> <span class="n">lcd</span> <span class="n">pin</span> <span class="mi">5</span>
+    <span class="o">-</span><span class="n">D</span> <span class="n">TFT_BCKL</span><span class="o">=-</span><span class="mi">1</span>       <span class="p">;</span> <span class="n">BLK</span><span class="p">,</span> <span class="n">lcd</span> <span class="n">pin</span> <span class="mi">7</span> <span class="p">(</span><span class="n">configurable</span> <span class="n">via</span> <span class="n">web</span> <span class="n">UI</span> <span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">g</span><span class="o">.</span> <span class="mi">21</span><span class="p">))</span>
+    <span class="o">-</span><span class="n">D</span> <span class="n">TFT_CS</span><span class="o">=</span><span class="mi">26</span>         <span class="p">;</span> <span class="n">CS1</span><span class="p">,</span> <span class="n">lcd</span> <span class="n">pin</span> <span class="mi">9</span>
+    <span class="o">-</span><span class="n">D</span> <span class="n">TOUCH_CS</span><span class="o">=</span><span class="mi">17</span>       <span class="p">;</span> <span class="n">CS2</span><span class="p">,</span> <span class="n">lcd</span> <span class="n">pin</span> <span class="mi">10</span>  
 
-lib_deps =
-    ${env.lib_deps}
-    ${esp32.lib_deps}
+<span class="n">lib_deps</span> <span class="o">=</span>
+    <span class="o">$</span><span class="p">{</span><span class="n">env</span><span class="o">.</span><span class="n">lib_deps</span><span class="p">}</span>
+    <span class="o">$</span><span class="p">{</span><span class="n">esp32</span><span class="o">.</span><span class="n">lib_deps</span><span class="p">}</span>
 
-lib_ignore =
-    ${env.lib_ignore}
-    ${esp32.lib_ignore}
+<span class="n">lib_ignore</span> <span class="o">=</span>
+    <span class="o">$</span><span class="p">{</span><span class="n">env</span><span class="o">.</span><span class="n">lib_ignore</span><span class="p">}</span>
+    <span class="o">$</span><span class="p">{</span><span class="n">esp32</span><span class="o">.</span><span class="n">lib_ignore</span><span class="p">}</span>
 
-extra_scripts =
-    ${env.extra_scripts}
-    ${esp32.extra_scripts}
-</code></pre>
+<span class="n">extra_scripts</span> <span class="o">=</span>
+    <span class="o">$</span><span class="p">{</span><span class="n">env</span><span class="o">.</span><span class="n">extra_scripts</span><span class="p">}</span>
+    <span class="o">$</span><span class="p">{</span><span class="n">esp32</span><span class="o">.</span><span class="n">extra_scripts</span><span class="p">}</span>
+</code></pre></div>
                 
               
               

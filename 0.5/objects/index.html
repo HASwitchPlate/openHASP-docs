@@ -1409,7 +1409,39 @@
                   </a>
                 
                 
-                <h1>Objects</h1>
+                <style type="text/css">
+
+.md-typeset__table {
+   min-width: 100%;
+}
+
+table th:first-child{
+  border-radius:5px 0 0 0;
+}
+
+table th:last-child{
+  border-radius:0 5px 0 0;
+}
+
+tbody tr:nth-child(even) {
+  background: #88888811;
+}
+
+.md-typeset table:not([class])
+{
+    display: table;
+}
+
+.md-typeset table:not([class]) td
+{
+ padding: 0.5em 1.25em;
+  line-height: 1.25;
+}
+
+
+</style>
+
+<h1>Objects</h1>
 
 <p>There are two ways to create an object on the screen:</p>
 <ul>
@@ -1751,9 +1783,10 @@ Possible events (depending on object type) are:</p>
 </tbody>
 </table>
 <p>Example commands:</p>
-<pre><code class="language-json">p1b5.delete
-p1b3.to_front
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="err">p</span><span class="mi">1</span><span class="err">b</span><span class="mf">5.</span><span class="err">dele</span><span class="kc">te</span>
+<span class="err">p</span><span class="mi">1</span><span class="err">b</span><span class="mf">3.</span><span class="kc">t</span><span class="err">o_</span><span class="kc">fr</span><span class="err">o</span><span class="kc">nt</span>
+</code></pre></div>
+
 <H2>Object Types</H2>
 
 <p>Each object type is an ID that indicates which object type that line represents.
@@ -1792,8 +1825,9 @@ Besides the common properties listed above, each object type can have specific p
 </tbody>
 </table>
 <p>Example <code>jsonl</code>:</p>
-<pre><code class="language-json">{&quot;page&quot;:1,&quot;id&quot;:1,&quot;obj&quot;:&quot;label&quot;,&quot;x&quot;:0,&quot;y&quot;:50,&quot;w&quot;:150,&quot;h&quot;:50,&quot;text&quot;:&quot;\uE64A Hello world!&quot;}
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;page&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="nt">&quot;obj&quot;</span><span class="p">:</span><span class="s2">&quot;label&quot;</span><span class="p">,</span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="mi">50</span><span class="p">,</span><span class="nt">&quot;w&quot;</span><span class="p">:</span><span class="mi">150</span><span class="p">,</span><span class="nt">&quot;h&quot;</span><span class="p">:</span><span class="mi">50</span><span class="p">,</span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="s2">&quot;\uE64A Hello world!&quot;</span><span class="p">}</span>
+</code></pre></div>
+
 <h2 id="button">Button<a class="headerlink" href="#button" title="Permanent link">~</a></h2>
 <p><strong>obj:<code>btn</code></strong></p>
 <p><img alt="lv_btn" src="../assets/images/objects/lv_ex_btn_1.png" /></p>
@@ -1840,30 +1874,35 @@ Besides the common properties listed above, each object type can have specific p
 </tbody>
 </table>
 <p>Example <code>jsonl</code>:</p>
-<pre><code class="language-json">{&quot;page&quot;:1,&quot;id&quot;:2,&quot;obj&quot;:&quot;btn&quot;,&quot;x&quot;:10,&quot;y&quot;:40,&quot;w&quot;:105,&quot;h&quot;:90,&quot;toggle&quot;:false,&quot;text&quot;:&quot;Normal Button&quot;,&quot;mode&quot;:&quot;break&quot;,&quot;align&quot;:1}
-{&quot;page&quot;:1,&quot;id&quot;:3,&quot;obj&quot;:&quot;btn&quot;,&quot;x&quot;:125,&quot;y&quot;:40,&quot;w&quot;:105,&quot;h&quot;:90,&quot;toggle&quot;:true,&quot;text&quot;:&quot;Toggle Button&quot;,&quot;mode&quot;:&quot;break&quot;,&quot;align&quot;:1}
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;page&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="nt">&quot;obj&quot;</span><span class="p">:</span><span class="s2">&quot;btn&quot;</span><span class="p">,</span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="mi">10</span><span class="p">,</span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="mi">40</span><span class="p">,</span><span class="nt">&quot;w&quot;</span><span class="p">:</span><span class="mi">105</span><span class="p">,</span><span class="nt">&quot;h&quot;</span><span class="p">:</span><span class="mi">90</span><span class="p">,</span><span class="nt">&quot;toggle&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="s2">&quot;Normal Button&quot;</span><span class="p">,</span><span class="nt">&quot;mode&quot;</span><span class="p">:</span><span class="s2">&quot;break&quot;</span><span class="p">,</span><span class="nt">&quot;align&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">}</span>
+<span class="p">{</span><span class="nt">&quot;page&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span><span class="nt">&quot;obj&quot;</span><span class="p">:</span><span class="s2">&quot;btn&quot;</span><span class="p">,</span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="mi">125</span><span class="p">,</span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="mi">40</span><span class="p">,</span><span class="nt">&quot;w&quot;</span><span class="p">:</span><span class="mi">105</span><span class="p">,</span><span class="nt">&quot;h&quot;</span><span class="p">:</span><span class="mi">90</span><span class="p">,</span><span class="nt">&quot;toggle&quot;</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="s2">&quot;Toggle Button&quot;</span><span class="p">,</span><span class="nt">&quot;mode&quot;</span><span class="p">:</span><span class="s2">&quot;break&quot;</span><span class="p">,</span><span class="nt">&quot;align&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">}</span>
+</code></pre></div>
+
 <p><strong>Normal</strong> buttons (<code>toggle=false</code>) send touch events while they occur: </p>
 <p>Short touch:</p>
-<pre><code class="language-json">{&quot;event&quot;:&quot;down&quot;}
-{&quot;event&quot;:&quot;up&quot;}
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;event&quot;</span><span class="p">:</span><span class="s2">&quot;down&quot;</span><span class="p">}</span>
+<span class="p">{</span><span class="nt">&quot;event&quot;</span><span class="p">:</span><span class="s2">&quot;up&quot;</span><span class="p">}</span>
+</code></pre></div>
+
 <p>Long press:</p>
-<pre><code class="language-json">{&quot;event&quot;:&quot;down&quot;}
-{&quot;event&quot;:&quot;long&quot;}
-{&quot;event&quot;:&quot;hold&quot;}
-{&quot;event&quot;:&quot;hold&quot;}
-{&quot;event&quot;:&quot;release&quot;}
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;event&quot;</span><span class="p">:</span><span class="s2">&quot;down&quot;</span><span class="p">}</span>
+<span class="p">{</span><span class="nt">&quot;event&quot;</span><span class="p">:</span><span class="s2">&quot;long&quot;</span><span class="p">}</span>
+<span class="p">{</span><span class="nt">&quot;event&quot;</span><span class="p">:</span><span class="s2">&quot;hold&quot;</span><span class="p">}</span>
+<span class="p">{</span><span class="nt">&quot;event&quot;</span><span class="p">:</span><span class="s2">&quot;hold&quot;</span><span class="p">}</span>
+<span class="p">{</span><span class="nt">&quot;event&quot;</span><span class="p">:</span><span class="s2">&quot;release&quot;</span><span class="p">}</span>
+</code></pre></div>
+
 <p><strong>Toggle</strong> buttons (<code>toggle=true</code>) send out the old value in the <code>down</code> event and the new value in the <code>up</code> event when released:</p>
 <p>Toggle ON:</p>
-<pre><code class="language-json">{&quot;event&quot;:&quot;down&quot;,&quot;val&quot;:0}
-{&quot;event&quot;:&quot;up&quot;,&quot;val&quot;:1}
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;event&quot;</span><span class="p">:</span><span class="s2">&quot;down&quot;</span><span class="p">,</span><span class="nt">&quot;val&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">}</span>
+<span class="p">{</span><span class="nt">&quot;event&quot;</span><span class="p">:</span><span class="s2">&quot;up&quot;</span><span class="p">,</span><span class="nt">&quot;val&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">}</span>
+</code></pre></div>
+
 <p>Toggle OFF:</p>
-<pre><code class="language-json">{&quot;event&quot;:&quot;down&quot;,&quot;val&quot;:1}
-{&quot;event&quot;:&quot;up&quot;,&quot;val&quot;:0}
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;event&quot;</span><span class="p">:</span><span class="s2">&quot;down&quot;</span><span class="p">,</span><span class="nt">&quot;val&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">}</span>
+<span class="p">{</span><span class="nt">&quot;event&quot;</span><span class="p">:</span><span class="s2">&quot;up&quot;</span><span class="p">,</span><span class="nt">&quot;val&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">}</span>
+</code></pre></div>
+
 <h2 id="switch">Switch<a class="headerlink" href="#switch" title="Permanent link">~</a></h2>
 <p><strong>obj:<code>switch</code></strong></p>
 <p><img align="center" alt="lv_switch" src="../assets/images/objects/lv_ex_switch_1.png" /></p>
@@ -1904,8 +1943,9 @@ Besides the common properties listed above, each object type can have specific p
 </tbody>
 </table>
 <p>Example <code>jsonl</code>:</p>
-<pre><code class="language-json">{&quot;page&quot;:1,&quot;id&quot;:4,&quot;obj&quot;:&quot;switch&quot;,&quot;x&quot;:125,&quot;y&quot;:145,&quot;w&quot;:105,&quot;h&quot;:55,&quot;radius&quot;:15}
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;page&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">4</span><span class="p">,</span><span class="nt">&quot;obj&quot;</span><span class="p">:</span><span class="s2">&quot;switch&quot;</span><span class="p">,</span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="mi">125</span><span class="p">,</span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="mi">145</span><span class="p">,</span><span class="nt">&quot;w&quot;</span><span class="p">:</span><span class="mi">105</span><span class="p">,</span><span class="nt">&quot;h&quot;</span><span class="p">:</span><span class="mi">55</span><span class="p">,</span><span class="nt">&quot;radius&quot;</span><span class="p">:</span><span class="mi">15</span><span class="p">}</span>
+</code></pre></div>
+
 <p>Events generated by switch are similar to the ones generate by the <em>toggle</em> buttons.</p>
 <h2 id="checkbox">Checkbox<a class="headerlink" href="#checkbox" title="Permanent link">~</a></h2>
 <p><strong>obj:<code>checkbox</code></strong></p>
@@ -1940,8 +1980,9 @@ Besides the common properties listed above, each object type can have specific p
 based on the font and text.</p>
 </div>
 <p>Example <code>jsonl</code>:</p>
-<pre><code class="language-json">{&quot;page&quot;:1,&quot;id&quot;:5,&quot;obj&quot;:&quot;checkbox&quot;,&quot;x&quot;:10,&quot;y&quot;:145,&quot;w&quot;:105,&quot;text&quot;:&quot; Checkbox&quot;}
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;page&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span><span class="nt">&quot;obj&quot;</span><span class="p">:</span><span class="s2">&quot;checkbox&quot;</span><span class="p">,</span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="mi">10</span><span class="p">,</span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="mi">145</span><span class="p">,</span><span class="nt">&quot;w&quot;</span><span class="p">:</span><span class="mi">105</span><span class="p">,</span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="s2">&quot; Checkbox&quot;</span><span class="p">}</span>
+</code></pre></div>
+
 <p>Events generated by checkbox are similar to the ones generate by the <em>toggle</em> buttons.</p>
 <h2 id="progress-bar">Progress Bar<a class="headerlink" href="#progress-bar" title="Permanent link">~</a></h2>
 <p><strong>obj:<code>bar</code></strong></p>
@@ -2024,17 +2065,19 @@ based on the font and text.</p>
 </table>
 <p>Vertical sliders can be created if the width of the object is smaller than its height.</p>
 <p>Example <code>jsonl</code>:</p>
-<pre><code class="language-json">{&quot;page&quot;:1,&quot;id&quot;:6,&quot;obj&quot;:&quot;slider&quot;,&quot;x&quot;:20,&quot;y&quot;:250,&quot;w&quot;:200,&quot;h&quot;:20,&quot;min&quot;:15,&quot;max&quot;:35}
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;page&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">6</span><span class="p">,</span><span class="nt">&quot;obj&quot;</span><span class="p">:</span><span class="s2">&quot;slider&quot;</span><span class="p">,</span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="mi">20</span><span class="p">,</span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="mi">250</span><span class="p">,</span><span class="nt">&quot;w&quot;</span><span class="p">:</span><span class="mi">200</span><span class="p">,</span><span class="nt">&quot;h&quot;</span><span class="p">:</span><span class="mi">20</span><span class="p">,</span><span class="nt">&quot;min&quot;</span><span class="p">:</span><span class="mi">15</span><span class="p">,</span><span class="nt">&quot;max&quot;</span><span class="p">:</span><span class="mi">35</span><span class="p">}</span>
+</code></pre></div>
+
 <p>While pressing and dragging the <code>slider</code> object the following events are sent: <code>down</code> (old value), <code>changed</code> (repeatedly until released) and <code>up</code> (value at the moment of releasing it):</p>
-<pre><code class="language-json">{&quot;event&quot;:&quot;down&quot;,&quot;val&quot;:21}
-{&quot;event&quot;:&quot;changed&quot;,&quot;val&quot;:22}
-{&quot;event&quot;:&quot;changed&quot;,&quot;val&quot;:23}
-{&quot;event&quot;:&quot;changed&quot;,&quot;val&quot;:25}
-{&quot;event&quot;:&quot;changed&quot;,&quot;val&quot;:27}
-{&quot;event&quot;:&quot;changed&quot;,&quot;val&quot;:29}
-{&quot;event&quot;:&quot;up&quot;,&quot;val&quot;:31}
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;event&quot;</span><span class="p">:</span><span class="s2">&quot;down&quot;</span><span class="p">,</span><span class="nt">&quot;val&quot;</span><span class="p">:</span><span class="mi">21</span><span class="p">}</span>
+<span class="p">{</span><span class="nt">&quot;event&quot;</span><span class="p">:</span><span class="s2">&quot;changed&quot;</span><span class="p">,</span><span class="nt">&quot;val&quot;</span><span class="p">:</span><span class="mi">22</span><span class="p">}</span>
+<span class="p">{</span><span class="nt">&quot;event&quot;</span><span class="p">:</span><span class="s2">&quot;changed&quot;</span><span class="p">,</span><span class="nt">&quot;val&quot;</span><span class="p">:</span><span class="mi">23</span><span class="p">}</span>
+<span class="p">{</span><span class="nt">&quot;event&quot;</span><span class="p">:</span><span class="s2">&quot;changed&quot;</span><span class="p">,</span><span class="nt">&quot;val&quot;</span><span class="p">:</span><span class="mi">25</span><span class="p">}</span>
+<span class="p">{</span><span class="nt">&quot;event&quot;</span><span class="p">:</span><span class="s2">&quot;changed&quot;</span><span class="p">,</span><span class="nt">&quot;val&quot;</span><span class="p">:</span><span class="mi">27</span><span class="p">}</span>
+<span class="p">{</span><span class="nt">&quot;event&quot;</span><span class="p">:</span><span class="s2">&quot;changed&quot;</span><span class="p">,</span><span class="nt">&quot;val&quot;</span><span class="p">:</span><span class="mi">29</span><span class="p">}</span>
+<span class="p">{</span><span class="nt">&quot;event&quot;</span><span class="p">:</span><span class="s2">&quot;up&quot;</span><span class="p">,</span><span class="nt">&quot;val&quot;</span><span class="p">:</span><span class="mi">31</span><span class="p">}</span>
+</code></pre></div>
+
 <!--
 ## Double Slider
 **objid:30**
@@ -2130,17 +2173,19 @@ based on the font and text.</p>
 <p>Check out <a href="../styling/#value">value styling</a> to display a textual value in the middle of the arc.</p>
 </div>
 <p>Example <code>jsonl</code>:</p>
-<pre><code class="language-json">{&quot;page&quot;:1,&quot;id&quot;:9,&quot;obj&quot;:&quot;arc&quot;,&quot;x&quot;:20,&quot;y&quot;:75,&quot;w&quot;:200,&quot;h&quot;:200,&quot;min&quot;:15,&quot;max&quot;:35,&quot;border_side&quot;:0,&quot;type&quot;:0,&quot;rotation&quot;:0,&quot;start_angle&quot;:135,&quot;end_angle&quot;:45,&quot;start_angle1&quot;:135,&quot;end_angle1&quot;:45,&quot;adjustable&quot;:true}
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;page&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">9</span><span class="p">,</span><span class="nt">&quot;obj&quot;</span><span class="p">:</span><span class="s2">&quot;arc&quot;</span><span class="p">,</span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="mi">20</span><span class="p">,</span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="mi">75</span><span class="p">,</span><span class="nt">&quot;w&quot;</span><span class="p">:</span><span class="mi">200</span><span class="p">,</span><span class="nt">&quot;h&quot;</span><span class="p">:</span><span class="mi">200</span><span class="p">,</span><span class="nt">&quot;min&quot;</span><span class="p">:</span><span class="mi">15</span><span class="p">,</span><span class="nt">&quot;max&quot;</span><span class="p">:</span><span class="mi">35</span><span class="p">,</span><span class="nt">&quot;border_side&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="nt">&quot;rotation&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="nt">&quot;start_angle&quot;</span><span class="p">:</span><span class="mi">135</span><span class="p">,</span><span class="nt">&quot;end_angle&quot;</span><span class="p">:</span><span class="mi">45</span><span class="p">,</span><span class="nt">&quot;start_angle1&quot;</span><span class="p">:</span><span class="mi">135</span><span class="p">,</span><span class="nt">&quot;end_angle1&quot;</span><span class="p">:</span><span class="mi">45</span><span class="p">,</span><span class="nt">&quot;adjustable&quot;</span><span class="p">:</span><span class="kc">true</span><span class="p">}</span>
+</code></pre></div>
+
 <p>While pressing and dragging the <code>arc</code> object the following events are sent: <code>down</code> (old value), <code>changed</code> (repeatedly until released) and <code>up</code> (value at the moment of releasing it):</p>
-<pre><code class="language-json">{&quot;event&quot;:&quot;down&quot;,&quot;val&quot;:21}
-{&quot;event&quot;:&quot;changed&quot;,&quot;val&quot;:22}
-{&quot;event&quot;:&quot;changed&quot;,&quot;val&quot;:23}
-{&quot;event&quot;:&quot;changed&quot;,&quot;val&quot;:25}
-{&quot;event&quot;:&quot;changed&quot;,&quot;val&quot;:27}
-{&quot;event&quot;:&quot;changed&quot;,&quot;val&quot;:29}
-{&quot;event&quot;:&quot;up&quot;,&quot;val&quot;:31}
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;event&quot;</span><span class="p">:</span><span class="s2">&quot;down&quot;</span><span class="p">,</span><span class="nt">&quot;val&quot;</span><span class="p">:</span><span class="mi">21</span><span class="p">}</span>
+<span class="p">{</span><span class="nt">&quot;event&quot;</span><span class="p">:</span><span class="s2">&quot;changed&quot;</span><span class="p">,</span><span class="nt">&quot;val&quot;</span><span class="p">:</span><span class="mi">22</span><span class="p">}</span>
+<span class="p">{</span><span class="nt">&quot;event&quot;</span><span class="p">:</span><span class="s2">&quot;changed&quot;</span><span class="p">,</span><span class="nt">&quot;val&quot;</span><span class="p">:</span><span class="mi">23</span><span class="p">}</span>
+<span class="p">{</span><span class="nt">&quot;event&quot;</span><span class="p">:</span><span class="s2">&quot;changed&quot;</span><span class="p">,</span><span class="nt">&quot;val&quot;</span><span class="p">:</span><span class="mi">25</span><span class="p">}</span>
+<span class="p">{</span><span class="nt">&quot;event&quot;</span><span class="p">:</span><span class="s2">&quot;changed&quot;</span><span class="p">,</span><span class="nt">&quot;val&quot;</span><span class="p">:</span><span class="mi">27</span><span class="p">}</span>
+<span class="p">{</span><span class="nt">&quot;event&quot;</span><span class="p">:</span><span class="s2">&quot;changed&quot;</span><span class="p">,</span><span class="nt">&quot;val&quot;</span><span class="p">:</span><span class="mi">29</span><span class="p">}</span>
+<span class="p">{</span><span class="nt">&quot;event&quot;</span><span class="p">:</span><span class="s2">&quot;up&quot;</span><span class="p">,</span><span class="nt">&quot;val&quot;</span><span class="p">:</span><span class="mi">31</span><span class="p">}</span>
+</code></pre></div>
+
 <h2 id="dropdown-list">Dropdown List<a class="headerlink" href="#dropdown-list" title="Permanent link">~</a></h2>
 <p><strong>obj:<code>dropdown</code></strong></p>
 <p><img align="center" alt="lv_dropdown" src="../assets/images/objects/lv_ex_dropdown_1.png" /></p>
@@ -2216,8 +2261,9 @@ based on the font and text.</p>
 <p>To change the currently selected item, use the <code>val</code> attribute.  <br />
 To change the items in the list, use the <code>options</code> attribute.</p>
 <p>Example <code>jsonl</code>:</p>
-<pre><code class="language-json">{&quot;page&quot;:1,&quot;id&quot;:10,&quot;obj&quot;:&quot;dropdown&quot;,&quot;x&quot;:10,&quot;y&quot;:205,&quot;w&quot;:105,&quot;h&quot;:30,&quot;options&quot;:&quot;Apple\nBanana\nOrange\nMelon&quot;}
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;page&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">10</span><span class="p">,</span><span class="nt">&quot;obj&quot;</span><span class="p">:</span><span class="s2">&quot;dropdown&quot;</span><span class="p">,</span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="mi">10</span><span class="p">,</span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="mi">205</span><span class="p">,</span><span class="nt">&quot;w&quot;</span><span class="p">:</span><span class="mi">105</span><span class="p">,</span><span class="nt">&quot;h&quot;</span><span class="p">:</span><span class="mi">30</span><span class="p">,</span><span class="nt">&quot;options&quot;</span><span class="p">:</span><span class="s2">&quot;Apple\nBanana\nOrange\nMelon&quot;</span><span class="p">}</span>
+</code></pre></div>
+
 <p>When the item is changed both <code>val</code> and <code>text</code> of the newly selected item are send out accompanied by the <code>change</code> event.</p>
 <h2 id="roller">Roller<a class="headerlink" href="#roller" title="Permanent link">~</a></h2>
 <p><strong>obj:<code>roller</code></strong></p>
@@ -2275,8 +2321,9 @@ To change the items in the list, use the <code>options</code> attribute.</p>
 <p>To change the currently selected item, use the <code>val</code> attribute.  <br />
 To change the items in the list, use the <code>options</code> attribute.</p>
 <p>Example <code>jsonl</code>:</p>
-<pre><code class="language-json">{&quot;page&quot;:1,&quot;id&quot;:11,&quot;obj&quot;:&quot;roller&quot;,&quot;x&quot;:125,&quot;y&quot;:205,&quot;w&quot;:105,&quot;h&quot;:30,&quot;options&quot;:&quot;Apple\nBanana\nOrange\nMelon&quot;,&quot;mode&quot;:1}
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;page&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">11</span><span class="p">,</span><span class="nt">&quot;obj&quot;</span><span class="p">:</span><span class="s2">&quot;roller&quot;</span><span class="p">,</span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="mi">125</span><span class="p">,</span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="mi">205</span><span class="p">,</span><span class="nt">&quot;w&quot;</span><span class="p">:</span><span class="mi">105</span><span class="p">,</span><span class="nt">&quot;h&quot;</span><span class="p">:</span><span class="mi">30</span><span class="p">,</span><span class="nt">&quot;options&quot;</span><span class="p">:</span><span class="s2">&quot;Apple\nBanana\nOrange\nMelon&quot;</span><span class="p">,</span><span class="nt">&quot;mode&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">}</span>
+</code></pre></div>
+
 <p>When the item is changed both <code>val</code> and <code>text</code> of the newly selected item are send out accompanied by the <code>change</code> event.</p>
 <h2 id="line-meter">Line Meter<a class="headerlink" href="#line-meter" title="Permanent link">~</a></h2>
 <p><strong>obj:<code>lmeter</code></strong></p>
@@ -2337,8 +2384,9 @@ To change the items in the list, use the <code>options</code> attribute.</p>
 </table>
 <p>Use <a href="../styling/#line">line</a> and <a href="../styling/#scale">scale</a> properties to customize.</p>
 <p>Example <code>jsonl</code>:</p>
-<pre><code class="language-json">{&quot;page&quot;:1,&quot;id&quot;:12,&quot;obj&quot;:&quot;lmeter&quot;,&quot;x&quot;:20,&quot;y&quot;:70,&quot;w&quot;:200,&quot;h&quot;:200,&quot;value_str&quot;:&quot;Temp&quot;,&quot;val&quot;:75,&quot;line_count&quot;:35,&quot;line_rounded&quot;:1}
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;page&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">12</span><span class="p">,</span><span class="nt">&quot;obj&quot;</span><span class="p">:</span><span class="s2">&quot;lmeter&quot;</span><span class="p">,</span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="mi">20</span><span class="p">,</span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="mi">70</span><span class="p">,</span><span class="nt">&quot;w&quot;</span><span class="p">:</span><span class="mi">200</span><span class="p">,</span><span class="nt">&quot;h&quot;</span><span class="p">:</span><span class="mi">200</span><span class="p">,</span><span class="nt">&quot;value_str&quot;</span><span class="p">:</span><span class="s2">&quot;Temp&quot;</span><span class="p">,</span><span class="nt">&quot;val&quot;</span><span class="p">:</span><span class="mi">75</span><span class="p">,</span><span class="nt">&quot;line_count&quot;</span><span class="p">:</span><span class="mi">35</span><span class="p">,</span><span class="nt">&quot;line_rounded&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">}</span>
+</code></pre></div>
+
 <h2 id="gauge">Gauge<a class="headerlink" href="#gauge" title="Permanent link">~</a></h2>
 <p><strong>obj:<code>gauge</code></strong></p>
 <p><img align="center" alt="lv_gauge" src="../assets/images/objects/lv_ex_gauge_1.png" /></p>
@@ -2418,8 +2466,9 @@ To change the items in the list, use the <code>options</code> attribute.</p>
 </ul>
 <p>Only these values are allowed, arbitrary numbers are not supported.</p>
 <p>Example <code>jsonl</code>:</p>
-<pre><code class="language-json">{&quot;page&quot;:1,&quot;id&quot;:13,&quot;obj&quot;:&quot;gauge&quot;,&quot;x&quot;:20,&quot;y&quot;:70,&quot;w&quot;:200,&quot;h&quot;:200}
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;page&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">13</span><span class="p">,</span><span class="nt">&quot;obj&quot;</span><span class="p">:</span><span class="s2">&quot;gauge&quot;</span><span class="p">,</span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="mi">20</span><span class="p">,</span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="mi">70</span><span class="p">,</span><span class="nt">&quot;w&quot;</span><span class="p">:</span><span class="mi">200</span><span class="p">,</span><span class="nt">&quot;h&quot;</span><span class="p">:</span><span class="mi">200</span><span class="p">}</span>
+</code></pre></div>
+
 <p>Use <a href="../styling/#scale">scale</a> properties to customize.</p>
 <h2 id="tabview">Tabview<a class="headerlink" href="#tabview" title="Permanent link">~</a></h2>
 <p><strong>obj:<code>tabview</code></strong></p>
@@ -2464,8 +2513,9 @@ You first create the <code>tabview</code> object and then add <code>tab</code> o
 </table>
 <p>To change the currently visible tab, use the <code>val</code> attribute after all tabs have been added.</p>
 <p>Example <code>jsonl</code>:</p>
-<pre><code class="language-json">{&quot;page&quot;:1,&quot;id&quot;:10,&quot;obj&quot;:&quot;tabview&quot;,&quot;btn_pos&quot;:1}
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;page&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">10</span><span class="p">,</span><span class="nt">&quot;obj&quot;</span><span class="p">:</span><span class="s2">&quot;tabview&quot;</span><span class="p">,</span><span class="nt">&quot;btn_pos&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">}</span>
+</code></pre></div>
+
 <h2 id="tab">Tab<a class="headerlink" href="#tab" title="Permanent link">~</a></h2>
 <p><strong>obj:<code>tab</code></strong></p>
 <table>
@@ -2494,10 +2544,11 @@ You first create the <code>tabview</code> object and then add <code>tab</code> o
 </table>
 <p>Set the parent object by referencing the <code>parentid</code> in the tab. It must be a <code>tabview</code> object.</p>
 <p>Example <code>jsonl</code>:</p>
-<pre><code class="language-json">{&quot;page&quot;:1,&quot;id&quot;:50,&quot;obj&quot;:&quot;tab&quot;,&quot;parentid&quot;:10,&quot;text&quot;:&quot;Tab 1&quot;}
-{&quot;page&quot;:1,&quot;id&quot;:51,&quot;obj&quot;:&quot;tab&quot;,&quot;parentid&quot;:10,&quot;text&quot;:&quot;Tab 2&quot;}
-{&quot;page&quot;:1,&quot;id&quot;:52,&quot;obj&quot;:&quot;tab&quot;,&quot;parentid&quot;:10,&quot;text&quot;:&quot;Tab 3&quot;}
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;page&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">50</span><span class="p">,</span><span class="nt">&quot;obj&quot;</span><span class="p">:</span><span class="s2">&quot;tab&quot;</span><span class="p">,</span><span class="nt">&quot;parentid&quot;</span><span class="p">:</span><span class="mi">10</span><span class="p">,</span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="s2">&quot;Tab 1&quot;</span><span class="p">}</span>
+<span class="p">{</span><span class="nt">&quot;page&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">51</span><span class="p">,</span><span class="nt">&quot;obj&quot;</span><span class="p">:</span><span class="s2">&quot;tab&quot;</span><span class="p">,</span><span class="nt">&quot;parentid&quot;</span><span class="p">:</span><span class="mi">10</span><span class="p">,</span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="s2">&quot;Tab 2&quot;</span><span class="p">}</span>
+<span class="p">{</span><span class="nt">&quot;page&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">52</span><span class="p">,</span><span class="nt">&quot;obj&quot;</span><span class="p">:</span><span class="s2">&quot;tab&quot;</span><span class="p">,</span><span class="nt">&quot;parentid&quot;</span><span class="p">:</span><span class="mi">10</span><span class="p">,</span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="s2">&quot;Tab 3&quot;</span><span class="p">}</span>
+</code></pre></div>
+
 <p>To add other objects to these tabs, also use the <code>parentid</code> when creating those objects.</p>
 <h2 id="color-picker">Color picker<a class="headerlink" href="#color-picker" title="Permanent link">~</a></h2>
 <p><strong>obj:<code>cpicker</code></strong></p>
@@ -2536,17 +2587,19 @@ You first create the <code>tabview</code> object and then add <code>tab</code> o
 <p>By long pressing the inner preview circle, the color picker will through the color modes: hue &gt; saturation &gt; value. Double-click on the inner preview circle to reset the current value.</p>
 <h4>Setting Color</h4>
 <p>Example MQTT commands:</p>
-<pre><code class="language-text">hasp/&lt;nodename&gt;/command/p0b2.color 13891
+<div class="codehilite"><pre><span></span><code>hasp/&lt;nodename&gt;/command/p0b2.color 13891
 hasp/&lt;nodename&gt;/command/p1b5.color silver
 hasp/&lt;nodename&gt;/command/p2b3.color #C0C0C0
-</code></pre>
+</code></pre></div>
+
 <h4>Events</h4>
 <p>While pressing and dragging the <code>cpicker</code> object the following events are sent: <code>down</code> (old color), <code>changed</code> (repeatedly until released) and <code>up</code> (value at the moment of releasing it):</p>
-<pre><code class="language-json">{&quot;event&quot;:&quot;down&quot;,&quot;color&quot;:&quot;#8300ff&quot;,&quot;r&quot;:131,&quot;g&quot;:0,&quot;b&quot;:255}
-{&quot;event&quot;:&quot;changed&quot;,&quot;color&quot;:&quot;#7300ff&quot;,&quot;r&quot;:115,&quot;g&quot;:0,&quot;b&quot;:255}
-{&quot;event&quot;:&quot;changed&quot;,&quot;color&quot;:&quot;#6200ff&quot;,&quot;r&quot;:98,&quot;g&quot;:0,&quot;b&quot;:255}
-{&quot;event&quot;:&quot;up&quot;,&quot;color&quot;:&quot;#6200ff&quot;,&quot;r&quot;:98,&quot;g&quot;:0,&quot;b&quot;:255}
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;event&quot;</span><span class="p">:</span><span class="s2">&quot;down&quot;</span><span class="p">,</span><span class="nt">&quot;color&quot;</span><span class="p">:</span><span class="s2">&quot;#8300ff&quot;</span><span class="p">,</span><span class="nt">&quot;r&quot;</span><span class="p">:</span><span class="mi">131</span><span class="p">,</span><span class="nt">&quot;g&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="nt">&quot;b&quot;</span><span class="p">:</span><span class="mi">255</span><span class="p">}</span>
+<span class="p">{</span><span class="nt">&quot;event&quot;</span><span class="p">:</span><span class="s2">&quot;changed&quot;</span><span class="p">,</span><span class="nt">&quot;color&quot;</span><span class="p">:</span><span class="s2">&quot;#7300ff&quot;</span><span class="p">,</span><span class="nt">&quot;r&quot;</span><span class="p">:</span><span class="mi">115</span><span class="p">,</span><span class="nt">&quot;g&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="nt">&quot;b&quot;</span><span class="p">:</span><span class="mi">255</span><span class="p">}</span>
+<span class="p">{</span><span class="nt">&quot;event&quot;</span><span class="p">:</span><span class="s2">&quot;changed&quot;</span><span class="p">,</span><span class="nt">&quot;color&quot;</span><span class="p">:</span><span class="s2">&quot;#6200ff&quot;</span><span class="p">,</span><span class="nt">&quot;r&quot;</span><span class="p">:</span><span class="mi">98</span><span class="p">,</span><span class="nt">&quot;g&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="nt">&quot;b&quot;</span><span class="p">:</span><span class="mi">255</span><span class="p">}</span>
+<span class="p">{</span><span class="nt">&quot;event&quot;</span><span class="p">:</span><span class="s2">&quot;up&quot;</span><span class="p">,</span><span class="nt">&quot;color&quot;</span><span class="p">:</span><span class="s2">&quot;#6200ff&quot;</span><span class="p">,</span><span class="nt">&quot;r&quot;</span><span class="p">:</span><span class="mi">98</span><span class="p">,</span><span class="nt">&quot;g&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="nt">&quot;b&quot;</span><span class="p">:</span><span class="mi">255</span><span class="p">}</span>
+</code></pre></div>
+
 <h2 id="spinner">Spinner<a class="headerlink" href="#spinner" title="Permanent link">~</a></h2>
 <p><strong>obj:<code>spinner</code></strong></p>
 <p><img align="center" alt="lv_spinner" src="../assets/images/objects/lv_ex_spinner_1.png" /></p>
@@ -2647,8 +2700,9 @@ hasp/&lt;nodename&gt;/command/p2b3.color #C0C0C0
 <p>The <a href="../styling/">styling properties</a> apply to <em>all</em> buttons in the matrix.
 To change the color of a single label you can prefix the text with a <code>#RRGGBB</code> hexadecimal color code and close with a single hash <code>#</code> tag.</p>
 <p>Example <code>jsonl</code>:</p>
-<pre><code class="language-json">{&quot;page&quot;:1,&quot;id&quot;:20,&quot;obj&quot;:&quot;btnmatrix&quot;,&quot;x&quot;:10,&quot;y&quot;:10,&quot;w&quot;:220,&quot;h&quot;:150,&quot;options&quot;:[&quot;#FF0000 Red Text#&quot;,&quot;#0000FF Cyan Text#&quot;,&quot;\n&quot;,&quot;#FFFF00 Yellow Text#&quot;],&quot;toggle&quot;:1,&quot;one_check&quot;:1}
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;page&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">20</span><span class="p">,</span><span class="nt">&quot;obj&quot;</span><span class="p">:</span><span class="s2">&quot;btnmatrix&quot;</span><span class="p">,</span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="mi">10</span><span class="p">,</span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="mi">10</span><span class="p">,</span><span class="nt">&quot;w&quot;</span><span class="p">:</span><span class="mi">220</span><span class="p">,</span><span class="nt">&quot;h&quot;</span><span class="p">:</span><span class="mi">150</span><span class="p">,</span><span class="nt">&quot;options&quot;</span><span class="p">:[</span><span class="s2">&quot;#FF0000 Red Text#&quot;</span><span class="p">,</span><span class="s2">&quot;#0000FF Cyan Text#&quot;</span><span class="p">,</span><span class="s2">&quot;\n&quot;</span><span class="p">,</span><span class="s2">&quot;#FFFF00 Yellow Text#&quot;</span><span class="p">],</span><span class="nt">&quot;toggle&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="nt">&quot;one_check&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">}</span>
+</code></pre></div>
+
 <h2 id="messagebox">Messagebox<a class="headerlink" href="#messagebox" title="Permanent link">~</a></h2>
 <p><strong>obj:<code>msgbox</code></strong></p>
 <p><img alt="lv_msgbox" src="../assets/images/objects/lv_ex_msgbox_1.png" /></p>
@@ -2695,8 +2749,9 @@ The pop-up is centered on the screen.</p>
 <p>The messagebox object is automatically deleted when it is closed. You will need to create it again using <code>jsonl</code> to pop-up a new message.</p>
 </div>
 <p>Example <code>jsonl</code>:</p>
-<pre><code class="language-json">{&quot;page&quot;:1,&quot;id&quot;:24,&quot;obj&quot;:&quot;msgbox&quot;,&quot;text&quot;:&quot;A message box with two buttons&quot;,&quot;options&quot;:[&quot;Apply&quot;,&quot;Close&quot;]}
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;page&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">24</span><span class="p">,</span><span class="nt">&quot;obj&quot;</span><span class="p">:</span><span class="s2">&quot;msgbox&quot;</span><span class="p">,</span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="s2">&quot;A message box with two buttons&quot;</span><span class="p">,</span><span class="nt">&quot;options&quot;</span><span class="p">:[</span><span class="s2">&quot;Apply&quot;</span><span class="p">,</span><span class="s2">&quot;Close&quot;</span><span class="p">]}</span>
+</code></pre></div>
+
 <h2 id="image">Image<a class="headerlink" href="#image" title="Permanent link">~</a></h2>
 <p><strong>obj:<code>img</code></strong></p>
 <p><img alt="lv_img" src="../assets/images/objects/lv_ex_img_1.png" /></p>
@@ -2738,8 +2793,9 @@ The pop-up is centered on the screen.</p>
 </table>
 <p>You can use image_recolor and image_recolor_opa from the <a href="../styling/#image">image styling</a> properties to apply a color overlay mask.</p>
 <p>Example <code>jsonl</code>:</p>
-<pre><code class="language-json">{&quot;page&quot;:1,&quot;id&quot;:34,&quot;obj&quot;:&quot;img&quot;,&quot;src&quot;:&quot;/littlefs/image.png&quot;,&quot;auto_size&quot;:0,&quot;w&quot;:50}
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span><span class="s2">&quot;page&quot;</span><span class="o">:</span><span class="mf">1</span><span class="p">,</span><span class="s2">&quot;id&quot;</span><span class="o">:</span><span class="mf">34</span><span class="p">,</span><span class="s2">&quot;obj&quot;</span><span class="o">:</span><span class="s2">&quot;img&quot;</span><span class="p">,</span><span class="s2">&quot;src&quot;</span><span class="o">:</span><span class="s2">&quot;/littlefs/image.png&quot;</span><span class="p">,</span><span class="s2">&quot;auto_size&quot;</span><span class="o">:</span><span class="mf">0</span><span class="p">,</span><span class="s2">&quot;w&quot;</span><span class="o">:</span><span class="mf">50</span><span class="p">}</span>
+</code></pre></div>
+
 <h2 id="base-object">Base Object<a class="headerlink" href="#base-object" title="Permanent link">~</a></h2>
 <p><strong>obj:<code>obj</code></strong></p>
 <p><img alt="lv_base_object" src="../assets/images/objects/lv_ex_base_object_1.png" /></p>

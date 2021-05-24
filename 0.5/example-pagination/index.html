@@ -1059,19 +1059,21 @@
 <p><img alt="pagination" src="https://user-images.githubusercontent.com/1550668/115120975-aa96c480-9fb0-11eb-9bda-95abcc16ec8e.png" /></p>
 <p>Pagination can be executed locally using the <code>action</code> attribute of the objects.<br />
 The <code>jsonl</code> lines below will setup 3 buttons to the bottom of a 240x320 screen which will navigate back and forth between the pages:</p>
-<pre><code class="language-text">{&quot;page&quot;:0,&quot;id&quot;:1,&quot;obj&quot;:&quot;btn&quot;,&quot;action&quot;:&quot;prev&quot;,&quot;x&quot;:0,&quot;y&quot;:290,&quot;w&quot;:79,&quot;h&quot;:32,&quot;bg_color&quot;:&quot;#2C3E50&quot;,&quot;text&quot;:&quot;\uE141&quot;,&quot;text_color&quot;:&quot;#FFFFFF&quot;,&quot;radius&quot;:0,&quot;border_side&quot;:0,&quot;text_font&quot;:28}
+<div class="codehilite"><pre><span></span><code>{&quot;page&quot;:0,&quot;id&quot;:1,&quot;obj&quot;:&quot;btn&quot;,&quot;action&quot;:&quot;prev&quot;,&quot;x&quot;:0,&quot;y&quot;:290,&quot;w&quot;:79,&quot;h&quot;:32,&quot;bg_color&quot;:&quot;#2C3E50&quot;,&quot;text&quot;:&quot;\uE141&quot;,&quot;text_color&quot;:&quot;#FFFFFF&quot;,&quot;radius&quot;:0,&quot;border_side&quot;:0,&quot;text_font&quot;:28}
 {&quot;page&quot;:0,&quot;id&quot;:2,&quot;obj&quot;:&quot;btn&quot;,&quot;action&quot;:&quot;back&quot;,&quot;x&quot;:80,&quot;y&quot;:290,&quot;w&quot;:80,&quot;h&quot;:32,&quot;bg_color&quot;:&quot;#2C3E50&quot;,&quot;text&quot;:&quot;\uE2DC&quot;,&quot;text_color&quot;:&quot;#FFFFFF&quot;,&quot;radius&quot;:0,&quot;border_side&quot;:0,&quot;text_font&quot;:22}
 {&quot;page&quot;:0,&quot;id&quot;:3,&quot;obj&quot;:&quot;btn&quot;,&quot;action&quot;:&quot;next&quot;,&quot;x&quot;:161,&quot;y&quot;:290,&quot;w&quot;:79,&quot;h&quot;:32,&quot;bg_color&quot;:&quot;#2C3E50&quot;,&quot;text&quot;:&quot;\uE142&quot;,&quot;text_color&quot;:&quot;#FFFFFF&quot;,&quot;radius&quot;:0,&quot;border_side&quot;:0,&quot;text_font&quot;:28}
-</code></pre>
+</code></pre></div>
+
 <p>Pagination can be also acomplished by enabling <a href="../objects/#swipe">swipe</a> gesture on certain objects. The <code>jsonl</code> line below will setup an invisible rectangle overlay at the top of the screen with enabled <code>swipe</code>:</p>
-<pre><code class="language-text">{&quot;page&quot;:0,&quot;id&quot;:6,&quot;obj&quot;:&quot;obj&quot;,&quot;swipe&quot;:1,&quot;x&quot;:0,&quot;y&quot;:0,&quot;h&quot;:30,&quot;w&quot;:240,&quot;opacity&quot;:0,&quot;comment&quot;:&quot;swipe-area-at-top&quot;}
-</code></pre>
+<div class="codehilite"><pre><span></span><code>{&quot;page&quot;:0,&quot;id&quot;:6,&quot;obj&quot;:&quot;obj&quot;,&quot;swipe&quot;:1,&quot;x&quot;:0,&quot;y&quot;:0,&quot;h&quot;:30,&quot;w&quot;:240,&quot;opacity&quot;:0,&quot;comment&quot;:&quot;swipe-area-at-top&quot;}
+</code></pre></div>
+
 <p>!!! note You should to make sure that in your <a href="../pages/#pagesjsonl"><code>pages.jsonl</code></a> these lines appear at the end of the file, so that these objects remain at the top, and no others will be drawn on top of them.</p>
 <hr />
 <p>To limit page navigation only to page numbers between 1 and 6:</p>
-<pre><code class="language-text">{&quot;page&quot;:1,&quot;id&quot;:0,&quot;prev&quot;:6}
+<div class="codehilite"><pre><span></span><code>{&quot;page&quot;:1,&quot;id&quot;:0,&quot;prev&quot;:6}
 {&quot;page&quot;:6,&quot;id&quot;:0,&quot;next&quot;:1}
-</code></pre>
+</code></pre></div>
                 
               
               

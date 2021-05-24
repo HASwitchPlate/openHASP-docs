@@ -1166,122 +1166,126 @@
 The night mode activates when sun goes down, and the day mode activates when the sun comes up. During the day mood light doesn't light, screen is on all the time but dimmed.</p>
 <p>Tested on Lanbon L8 and firmware 0.4.0.</p>
 <p>Put your <code>light.plate_my_room_moodlight</code> to a Lovelace card entity row and select a nice color for moodlight. Assuming your plate's configured MQTT node or group topic is <code>plate35</code>, add your automations:</p>
-<pre><code class="language-yaml">- id: openhasp-moodlight-on
-  alias: &quot;openHASP Moodlight ON when Backlight OFF&quot;
-  trigger:
-    - platform: state
-      entity_id: light.openhasp_plate_my_room_backlight
-      from: 'on'
-      to: 'off'
-  action:
-    - service: light.turn_on
-      target:
-        entity_id: light.openhasp_plate_my_room_moodlight
+<div class="codehilite"><pre><span></span><code><span class="p p-Indicator">-</span> <span class="nt">id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">openhasp-moodlight-on</span>
+  <span class="nt">alias</span><span class="p">:</span> <span class="s">&quot;openHASP</span><span class="nv"> </span><span class="s">Moodlight</span><span class="nv"> </span><span class="s">ON</span><span class="nv"> </span><span class="s">when</span><span class="nv"> </span><span class="s">Backlight</span><span class="nv"> </span><span class="s">OFF&quot;</span>
+  <span class="nt">trigger</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="nt">platform</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">state</span>
+      <span class="nt">entity_id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">light.openhasp_plate_my_room_backlight</span>
+      <span class="nt">from</span><span class="p">:</span> <span class="s">&#39;on&#39;</span>
+      <span class="nt">to</span><span class="p">:</span> <span class="s">&#39;off&#39;</span>
+  <span class="nt">action</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="nt">service</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">light.turn_on</span>
+      <span class="nt">target</span><span class="p">:</span>
+        <span class="nt">entity_id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">light.openhasp_plate_my_room_moodlight</span>
 
-- id: openhasp-moodlight-off
-  alias: &quot;openHASP Moodlight OFF when Backlight ON&quot;
-  trigger:
-    - platform: state
-      entity_id: light.openhasp_plate_my_room_backlight
-      from: 'off'
-      to: 'on'
-  action:
-    - service: light.turn_off
-      target:
-        entity_id: light.openhasp_plate_my_room_moodlight
+<span class="p p-Indicator">-</span> <span class="nt">id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">openhasp-moodlight-off</span>
+  <span class="nt">alias</span><span class="p">:</span> <span class="s">&quot;openHASP</span><span class="nv"> </span><span class="s">Moodlight</span><span class="nv"> </span><span class="s">OFF</span><span class="nv"> </span><span class="s">when</span><span class="nv"> </span><span class="s">Backlight</span><span class="nv"> </span><span class="s">ON&quot;</span>
+  <span class="nt">trigger</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="nt">platform</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">state</span>
+      <span class="nt">entity_id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">light.openhasp_plate_my_room_backlight</span>
+      <span class="nt">from</span><span class="p">:</span> <span class="s">&#39;off&#39;</span>
+      <span class="nt">to</span><span class="p">:</span> <span class="s">&#39;on&#39;</span>
+  <span class="nt">action</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="nt">service</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">light.turn_off</span>
+      <span class="nt">target</span><span class="p">:</span>
+        <span class="nt">entity_id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">light.openhasp_plate_my_room_moodlight</span>
 
-- id: openhasp-night
-  alias: &quot;openHASP Night mode&quot;
-  trigger:
-    - platform: numeric_state
-      entity_id: sun.sun
-      attribute: elevation
-      below: -1
-  condition:
-    - condition: template
-      value_template: &quot;{{ (as_timestamp(now()) - as_timestamp(states('sensor.ha_uptime_moment'))) / 60 &gt; 2 }}&quot;
-  action:
-    - service: mqtt.publish
-      data:
-        topic: hasp/plate35/config/gui
-        payload: '{&quot;idle2&quot;:120}'
+<span class="p p-Indicator">-</span> <span class="nt">id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">openhasp-night</span>
+  <span class="nt">alias</span><span class="p">:</span> <span class="s">&quot;openHASP</span><span class="nv"> </span><span class="s">Night</span><span class="nv"> </span><span class="s">mode&quot;</span>
+  <span class="nt">trigger</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="nt">platform</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">numeric_state</span>
+      <span class="nt">entity_id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">sun.sun</span>
+      <span class="nt">attribute</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">elevation</span>
+      <span class="nt">below</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">-1</span>
+  <span class="nt">condition</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="nt">condition</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">template</span>
+      <span class="nt">value_template</span><span class="p">:</span> <span class="s">&quot;{{</span><span class="nv"> </span><span class="s">(as_timestamp(now())</span><span class="nv"> </span><span class="s">-</span><span class="nv"> </span><span class="s">as_timestamp(states(&#39;sensor.ha_uptime_moment&#39;)))</span><span class="nv"> </span><span class="s">/</span><span class="nv"> </span><span class="s">60</span><span class="nv"> </span><span class="s">&gt;</span><span class="nv"> </span><span class="s">2</span><span class="nv"> </span><span class="s">}}&quot;</span>
+  <span class="nt">action</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="nt">service</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">mqtt.publish</span>
+      <span class="nt">data</span><span class="p">:</span>
+        <span class="nt">topic</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">hasp/plate35/config/gui</span>
+        <span class="nt">payload</span><span class="p">:</span> <span class="s">&#39;{&quot;idle2&quot;:120}&#39;</span>
 
-- id: openhasp-day
-  alias: &quot;openHASP Day mode&quot;
-  trigger:
-    - platform: numeric_state
-      entity_id: sun.sun
-      attribute: elevation
-      above: 1
-  condition:
-    - condition: template
-      value_template: &quot;{{ (as_timestamp(now()) - as_timestamp(states('sensor.ha_uptime_moment'))) / 60 &gt; 2 }}&quot;
-  action:
-    - service: mqtt.publish
-      data:
-        topic: hasp/plate35/config/gui
-        payload: '{&quot;idle2&quot;:0}'
-</code></pre>
+<span class="p p-Indicator">-</span> <span class="nt">id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">openhasp-day</span>
+  <span class="nt">alias</span><span class="p">:</span> <span class="s">&quot;openHASP</span><span class="nv"> </span><span class="s">Day</span><span class="nv"> </span><span class="s">mode&quot;</span>
+  <span class="nt">trigger</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="nt">platform</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">numeric_state</span>
+      <span class="nt">entity_id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">sun.sun</span>
+      <span class="nt">attribute</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">elevation</span>
+      <span class="nt">above</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1</span>
+  <span class="nt">condition</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="nt">condition</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">template</span>
+      <span class="nt">value_template</span><span class="p">:</span> <span class="s">&quot;{{</span><span class="nv"> </span><span class="s">(as_timestamp(now())</span><span class="nv"> </span><span class="s">-</span><span class="nv"> </span><span class="s">as_timestamp(states(&#39;sensor.ha_uptime_moment&#39;)))</span><span class="nv"> </span><span class="s">/</span><span class="nv"> </span><span class="s">60</span><span class="nv"> </span><span class="s">&gt;</span><span class="nv"> </span><span class="s">2</span><span class="nv"> </span><span class="s">}}&quot;</span>
+  <span class="nt">action</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="nt">service</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">mqtt.publish</span>
+      <span class="nt">data</span><span class="p">:</span>
+        <span class="nt">topic</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">hasp/plate35/config/gui</span>
+        <span class="nt">payload</span><span class="p">:</span> <span class="s">&#39;{&quot;idle2&quot;:0}&#39;</span>
+</code></pre></div>
+
 <p>Note the condition which assures to avoid triggering the automations falsely when Home Assistant (re)starts (allows running the automation only when Home Assistant has been up for at least 2 minutes).</p>
 <hr />
 <h2 id="return-to-home-page-after-some-idle-time">Return to home page after some idle time<a class="headerlink" href="#return-to-home-page-after-some-idle-time" title="Permanent link">~</a></h2>
 <p>Apart from the idle times controlling backlight levels, one may want to return to page 1 after a while. </p>
-<pre><code class="language-yaml">- id: openhasp-back-to-page-1
-  alias: &quot;openHASP back to page 1&quot;
-  trigger:
-    - platform: template
-      value_template: &quot;{{ state_attr('openhasp.plate_my_room','idle') != 'off' }}&quot;
-      for: &quot;00:05:00&quot;
-  condition:
-    - condition: template
-      value_template: &quot;{{ states('openhasp.plate_my_room') != '1' and states('openhasp.plate_my_room') != 'unavailable' }}&quot;
-  action:
-    - service: openhasp.change_page
-      target:
-        entity_id: openhasp.plate_my_room
-      data:
-        page: 1
+<div class="codehilite"><pre><span></span><code><span class="p p-Indicator">-</span> <span class="nt">id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">openhasp-back-to-page-1</span>
+  <span class="nt">alias</span><span class="p">:</span> <span class="s">&quot;openHASP</span><span class="nv"> </span><span class="s">back</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">page</span><span class="nv"> </span><span class="s">1&quot;</span>
+  <span class="nt">trigger</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="nt">platform</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">template</span>
+      <span class="nt">value_template</span><span class="p">:</span> <span class="s">&quot;{{</span><span class="nv"> </span><span class="s">state_attr(&#39;openhasp.plate_my_room&#39;,&#39;idle&#39;)</span><span class="nv"> </span><span class="s">!=</span><span class="nv"> </span><span class="s">&#39;off&#39;</span><span class="nv"> </span><span class="s">}}&quot;</span>
+      <span class="nt">for</span><span class="p">:</span> <span class="s">&quot;00:05:00&quot;</span>
+  <span class="nt">condition</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="nt">condition</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">template</span>
+      <span class="nt">value_template</span><span class="p">:</span> <span class="s">&quot;{{</span><span class="nv"> </span><span class="s">states(&#39;openhasp.plate_my_room&#39;)</span><span class="nv"> </span><span class="s">!=</span><span class="nv"> </span><span class="s">&#39;1&#39;</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">states(&#39;openhasp.plate_my_room&#39;)</span><span class="nv"> </span><span class="s">!=</span><span class="nv"> </span><span class="s">&#39;unavailable&#39;</span><span class="nv"> </span><span class="s">}}&quot;</span>
+  <span class="nt">action</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="nt">service</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">openhasp.change_page</span>
+      <span class="nt">target</span><span class="p">:</span>
+        <span class="nt">entity_id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">openhasp.plate_my_room</span>
+      <span class="nt">data</span><span class="p">:</span>
+        <span class="nt">page</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1</span>
+</code></pre></div>
 
-</code></pre>
 <hr />
 <h2 id="reload-design-pages-from-home-assistant-configuration-directory">Reload design pages from Home Assistant configuration directory<a class="headerlink" href="#reload-design-pages-from-home-assistant-configuration-directory" title="Permanent link">~</a></h2>
 <p>It's possible to store the <code>pages.jsonl</code> plate design configuration files in a central location, namely your Home Assistant server. Practically you can do this by creating a directory where your <code>configuration.yaml</code> resides, say <code>hasp-lvgl</code> and you can drop your <code>pages.jsonl</code> files there for all your plates.</p>
 <p>You need to allow Home Assistant components to access this directory, this can be done in <code>configuration.yaml</code> with this directive (in case of hassio looks like this) :</p>
-<pre><code class="language-yaml">homeassistant:
-  allowlist_external_dirs: 
-    - /config/openhasp/
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="nt">homeassistant</span><span class="p">:</span>
+  <span class="nt">allowlist_external_dirs</span><span class="p">:</span> 
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">/config/openhasp/</span>
+</code></pre></div>
+
 <p>With the <a href="#custom-component/services">services</a> <code>openhasp.clear_page</code> and <code>openhasp.load_pages</code> you can clear one or all the pages of your plate, and reload their configuration from the server, respectively.</p>
 <p>For the example automation below i've created an <a href="https://www.home-assistant.io/integrations/input_boolean/">input_boolean</a> named <code>load_pages_plate_my_room</code> in order to have a switch in Lovelace UI to trigger this manually.</p>
-<pre><code class="language-yaml">- id: openhasp-reload_pages
-  alias: &quot;openHASP reload pages&quot;
-  trigger:
-    - platform: state
-      entity_id: input_boolean.load_pages_plate_my_room
-      from: 'off'
-      to: 'on'
-  action:
-    - service: openhasp.clear_page
-      data:
-        page: 1
-      target:
-        entity_id: openhasp.plate_my_room
-    - service: hasp_lvgl.load_pages
-      data:
-        path: /config/openhasp/pages_my_room_v1.jsonl
-      target:
-        entity_id: openhasp.plate_my_room
-    - service: input_boolean.turn_off
-      data:
-        entity_id: input_boolean.load_pages_plate_my_room
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="p p-Indicator">-</span> <span class="nt">id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">openhasp-reload_pages</span>
+  <span class="nt">alias</span><span class="p">:</span> <span class="s">&quot;openHASP</span><span class="nv"> </span><span class="s">reload</span><span class="nv"> </span><span class="s">pages&quot;</span>
+  <span class="nt">trigger</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="nt">platform</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">state</span>
+      <span class="nt">entity_id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">input_boolean.load_pages_plate_my_room</span>
+      <span class="nt">from</span><span class="p">:</span> <span class="s">&#39;off&#39;</span>
+      <span class="nt">to</span><span class="p">:</span> <span class="s">&#39;on&#39;</span>
+  <span class="nt">action</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="nt">service</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">openhasp.clear_page</span>
+      <span class="nt">data</span><span class="p">:</span>
+        <span class="nt">page</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1</span>
+      <span class="nt">target</span><span class="p">:</span>
+        <span class="nt">entity_id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">openhasp.plate_my_room</span>
+    <span class="p p-Indicator">-</span> <span class="nt">service</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">hasp_lvgl.load_pages</span>
+      <span class="nt">data</span><span class="p">:</span>
+        <span class="nt">path</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">/config/openhasp/pages_my_room_v1.jsonl</span>
+      <span class="nt">target</span><span class="p">:</span>
+        <span class="nt">entity_id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">openhasp.plate_my_room</span>
+    <span class="p p-Indicator">-</span> <span class="nt">service</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">input_boolean.turn_off</span>
+      <span class="nt">data</span><span class="p">:</span>
+        <span class="nt">entity_id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">input_boolean.load_pages_plate_my_room</span>
+</code></pre></div>
+
 <p>If you omit the <code>openhasp.clear_page</code> service completely, the objects will be updated. It's important to know that they have to remain the same type (e.g. you can't update from a <code>label</code> type object to a <code>button</code> type object. If you need a change, you need to clear first.)</p>
 <p>If you omit lines <code>data:</code> and <code>page: 1</code>, all pages will be cleared.</p>
 <p>To trigger this automation when Home Assistant starts, you can use this in your automation:</p>
-<pre><code class="language-yaml">  trigger:
-    - platform: homeassistant
-      event: start
-</code></pre>
+<div class="codehilite"><pre><span></span><code>  <span class="nt">trigger</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="nt">platform</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">homeassistant</span>
+      <span class="nt">event</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">start</span>
+</code></pre></div>
+
 <p><em>Note:</em> You can also use the <code>path</code> directive in the component config to load the design configuration at Home Assistant start, but that won't clear the existing pages (it assumes the pages are empty). </p>
 <hr />
 <h2 id="prevent-burn-in-of-the-lcd-screen">Prevent burn-in of the LCD screen<a class="headerlink" href="#prevent-burn-in-of-the-lcd-screen" title="Permanent link">~</a></h2>
@@ -1292,117 +1296,122 @@ The night mode activates when sun goes down, and the day mode activates when the
 <p>One way to reduce this is to "train" the pixels periodically with completely different other content.
 Assuming your group name is configured as <code>plates</code> in your 240x320 screens running openHASP, here is a possible solution to extend their life (all at once).</p>
 <p>The first automation runs for 1 minute by cycling an overlay with a full-screen base object every second through white, red, green, blue and black. It starts and remains turned off at Home Assistant start, to run it you need to turn it on using the service <code>automation.turn_on</code>.</p>
-<pre><code class="language-yaml">- id: openhasp_antiburn
-  alias: &quot;openHASP anti burn-in screen protection&quot;
-  initial_state: false
-  trigger:
-    platform: state
-    entity_id: automation.openhasp_anti_burn_in_screen_protection
-    from: 'off'
-    to: 'on'
-  action:
-    - service: mqtt.publish
-      data:
-        topic: hasp/plates/command/jsonl
-        payload: '{&quot;page&quot;:0,&quot;id&quot;:99,&quot;obj&quot;:&quot;obj&quot;,&quot;x&quot;:0,&quot;y&quot;:0,&quot;w&quot;:240,&quot;h&quot;:320,&quot;radius&quot;:0,&quot;hidden&quot;:0,&quot;bg_grad_dir&quot;:0,&quot;bg_color&quot;:&quot;white&quot;}'
-    - repeat:
-        while:
-          - condition: template
-            value_template: '{{ repeat.index &lt;= 12 }}'
-        sequence:
-          - service: mqtt.publish
-            data:
-              topic: hasp/plates/command/p0b99.bg_color
-              payload: 'white'
-          - delay: '00:00:01'
-          - service: mqtt.publish
-            data:
-              topic: hasp/plates/command/p0b99.bg_color
-              payload: 'red'
-          - delay: '00:00:01'
-          - service: mqtt.publish
-            data:
-              topic: hasp/plates/command/p0b99.bg_color
-              payload: 'green'
-          - delay: '00:00:01'
-          - service: mqtt.publish
-            data:
-              topic: hasp/plates/command/p0b99.bg_color
-              payload: 'blue'
-          - delay: '00:00:01'
-          - service: mqtt.publish
-            data:
-              topic: hasp/plates/command/p0b99.bg_color
-              payload: 'black'
-          - delay: '00:00:01'
-    - service: mqtt.publish
-      data:
-        topic: hasp/plates/command/p0b99.delete
-        payload: ''
-    - service: automation.turn_off
-      target:
-        entity_id: automation.openhasp_anti_burn_in_screen_protection
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="p p-Indicator">-</span> <span class="nt">id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">openhasp_antiburn</span>
+  <span class="nt">alias</span><span class="p">:</span> <span class="s">&quot;openHASP</span><span class="nv"> </span><span class="s">anti</span><span class="nv"> </span><span class="s">burn-in</span><span class="nv"> </span><span class="s">screen</span><span class="nv"> </span><span class="s">protection&quot;</span>
+  <span class="nt">initial_state</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
+  <span class="nt">trigger</span><span class="p">:</span>
+    <span class="nt">platform</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">state</span>
+    <span class="nt">entity_id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">automation.openhasp_anti_burn_in_screen_protection</span>
+    <span class="nt">from</span><span class="p">:</span> <span class="s">&#39;off&#39;</span>
+    <span class="nt">to</span><span class="p">:</span> <span class="s">&#39;on&#39;</span>
+  <span class="nt">action</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="nt">service</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">mqtt.publish</span>
+      <span class="nt">data</span><span class="p">:</span>
+        <span class="nt">topic</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">hasp/plates/command/jsonl</span>
+        <span class="nt">payload</span><span class="p">:</span> <span class="s">&#39;{&quot;page&quot;:0,&quot;id&quot;:99,&quot;obj&quot;:&quot;obj&quot;,&quot;x&quot;:0,&quot;y&quot;:0,&quot;w&quot;:240,&quot;h&quot;:320,&quot;radius&quot;:0,&quot;hidden&quot;:0,&quot;bg_grad_dir&quot;:0,&quot;bg_color&quot;:&quot;white&quot;}&#39;</span>
+    <span class="p p-Indicator">-</span> <span class="nt">repeat</span><span class="p">:</span>
+        <span class="nt">while</span><span class="p">:</span>
+          <span class="p p-Indicator">-</span> <span class="nt">condition</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">template</span>
+            <span class="nt">value_template</span><span class="p">:</span> <span class="s">&#39;{{</span><span class="nv"> </span><span class="s">repeat.index</span><span class="nv"> </span><span class="s">&lt;=</span><span class="nv"> </span><span class="s">12</span><span class="nv"> </span><span class="s">}}&#39;</span>
+        <span class="nt">sequence</span><span class="p">:</span>
+          <span class="p p-Indicator">-</span> <span class="nt">service</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">mqtt.publish</span>
+            <span class="nt">data</span><span class="p">:</span>
+              <span class="nt">topic</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">hasp/plates/command/p0b99.bg_color</span>
+              <span class="nt">payload</span><span class="p">:</span> <span class="s">&#39;white&#39;</span>
+          <span class="p p-Indicator">-</span> <span class="nt">delay</span><span class="p">:</span> <span class="s">&#39;00:00:01&#39;</span>
+          <span class="p p-Indicator">-</span> <span class="nt">service</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">mqtt.publish</span>
+            <span class="nt">data</span><span class="p">:</span>
+              <span class="nt">topic</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">hasp/plates/command/p0b99.bg_color</span>
+              <span class="nt">payload</span><span class="p">:</span> <span class="s">&#39;red&#39;</span>
+          <span class="p p-Indicator">-</span> <span class="nt">delay</span><span class="p">:</span> <span class="s">&#39;00:00:01&#39;</span>
+          <span class="p p-Indicator">-</span> <span class="nt">service</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">mqtt.publish</span>
+            <span class="nt">data</span><span class="p">:</span>
+              <span class="nt">topic</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">hasp/plates/command/p0b99.bg_color</span>
+              <span class="nt">payload</span><span class="p">:</span> <span class="s">&#39;green&#39;</span>
+          <span class="p p-Indicator">-</span> <span class="nt">delay</span><span class="p">:</span> <span class="s">&#39;00:00:01&#39;</span>
+          <span class="p p-Indicator">-</span> <span class="nt">service</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">mqtt.publish</span>
+            <span class="nt">data</span><span class="p">:</span>
+              <span class="nt">topic</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">hasp/plates/command/p0b99.bg_color</span>
+              <span class="nt">payload</span><span class="p">:</span> <span class="s">&#39;blue&#39;</span>
+          <span class="p p-Indicator">-</span> <span class="nt">delay</span><span class="p">:</span> <span class="s">&#39;00:00:01&#39;</span>
+          <span class="p p-Indicator">-</span> <span class="nt">service</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">mqtt.publish</span>
+            <span class="nt">data</span><span class="p">:</span>
+              <span class="nt">topic</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">hasp/plates/command/p0b99.bg_color</span>
+              <span class="nt">payload</span><span class="p">:</span> <span class="s">&#39;black&#39;</span>
+          <span class="p p-Indicator">-</span> <span class="nt">delay</span><span class="p">:</span> <span class="s">&#39;00:00:01&#39;</span>
+    <span class="p p-Indicator">-</span> <span class="nt">service</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">mqtt.publish</span>
+      <span class="nt">data</span><span class="p">:</span>
+        <span class="nt">topic</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">hasp/plates/command/p0b99.delete</span>
+        <span class="nt">payload</span><span class="p">:</span> <span class="s">&#39;&#39;</span>
+    <span class="p p-Indicator">-</span> <span class="nt">service</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">automation.turn_off</span>
+      <span class="nt">target</span><span class="p">:</span>
+        <span class="nt">entity_id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">automation.openhasp_anti_burn_in_screen_protection</span>
+</code></pre></div>
+
 <p>The second automation takes care to stop the looping colors when you touch the screen:</p>
-<pre><code class="language-yaml">- id: openhasp_antiburn_touch_stop
-  alias: &quot;openHASP anti-burn-in stop when touched&quot;
-  initial_state: 'on'
-  mode: restart
-  trigger:
-    - platform: mqtt
-      topic: 'hasp/+/state/p0b99'
-      payload: '{&quot;event&quot;:&quot;down&quot;}'
-    - platform: mqtt
-      topic: 'hasp/+/LWT'
-      payload: &quot;online&quot;
-  action:
-    - service: automation.turn_off
-      target:
-        entity_id: automation.openhasp_anti_burn_in_screen_protection
-    - service: mqtt.publish
-      data:
-        topic: hasp/plates/command/p0b99.delete
-        payload: ''
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="p p-Indicator">-</span> <span class="nt">id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">openhasp_antiburn_touch_stop</span>
+  <span class="nt">alias</span><span class="p">:</span> <span class="s">&quot;openHASP</span><span class="nv"> </span><span class="s">anti-burn-in</span><span class="nv"> </span><span class="s">stop</span><span class="nv"> </span><span class="s">when</span><span class="nv"> </span><span class="s">touched&quot;</span>
+  <span class="nt">initial_state</span><span class="p">:</span> <span class="s">&#39;on&#39;</span>
+  <span class="nt">mode</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">restart</span>
+  <span class="nt">trigger</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="nt">platform</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">mqtt</span>
+      <span class="nt">topic</span><span class="p">:</span> <span class="s">&#39;hasp/+/state/p0b99&#39;</span>
+      <span class="nt">payload</span><span class="p">:</span> <span class="s">&#39;{&quot;event&quot;:&quot;down&quot;}&#39;</span>
+    <span class="p p-Indicator">-</span> <span class="nt">platform</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">mqtt</span>
+      <span class="nt">topic</span><span class="p">:</span> <span class="s">&#39;hasp/+/LWT&#39;</span>
+      <span class="nt">payload</span><span class="p">:</span> <span class="s">&quot;online&quot;</span>
+  <span class="nt">action</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="nt">service</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">automation.turn_off</span>
+      <span class="nt">target</span><span class="p">:</span>
+        <span class="nt">entity_id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">automation.openhasp_anti_burn_in_screen_protection</span>
+    <span class="p p-Indicator">-</span> <span class="nt">service</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">mqtt.publish</span>
+      <span class="nt">data</span><span class="p">:</span>
+        <span class="nt">topic</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">hasp/plates/command/p0b99.delete</span>
+        <span class="nt">payload</span><span class="p">:</span> <span class="s">&#39;&#39;</span>
+</code></pre></div>
+
 <p>The third automation simply runs the first automation at 3 different times every night:</p>
-<pre><code class="language-yaml">- id: openhasp_antiburn_start_at_night
-  alias: &quot;openHASP anti-burn-in start at night&quot;
-  initial_state: 'on'
-  trigger:
-    - platform: time
-      at: '00:20:00'
-    - platform: time
-      at: '02:20:00'
-    - platform: time
-      at: '04:20:00'
-  action:
-    - service: automation.turn_on
-      target:
-        entity_id: automation.openhasp_anti_burn_in_screen_protection
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="p p-Indicator">-</span> <span class="nt">id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">openhasp_antiburn_start_at_night</span>
+  <span class="nt">alias</span><span class="p">:</span> <span class="s">&quot;openHASP</span><span class="nv"> </span><span class="s">anti-burn-in</span><span class="nv"> </span><span class="s">start</span><span class="nv"> </span><span class="s">at</span><span class="nv"> </span><span class="s">night&quot;</span>
+  <span class="nt">initial_state</span><span class="p">:</span> <span class="s">&#39;on&#39;</span>
+  <span class="nt">trigger</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="nt">platform</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">time</span>
+      <span class="nt">at</span><span class="p">:</span> <span class="s">&#39;00:20:00&#39;</span>
+    <span class="p p-Indicator">-</span> <span class="nt">platform</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">time</span>
+      <span class="nt">at</span><span class="p">:</span> <span class="s">&#39;02:20:00&#39;</span>
+    <span class="p p-Indicator">-</span> <span class="nt">platform</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">time</span>
+      <span class="nt">at</span><span class="p">:</span> <span class="s">&#39;04:20:00&#39;</span>
+  <span class="nt">action</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="nt">service</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">automation.turn_on</span>
+      <span class="nt">target</span><span class="p">:</span>
+        <span class="nt">entity_id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">automation.openhasp_anti_burn_in_screen_protection</span>
+</code></pre></div>
+
 <h3>Clear pixels when backlight off</h3>
 
 <p>Another way to reduce the chance of burn-in is to clear the contents of the screen while the backlight is turned off, as nobody sees the pixels anyway.
 Just add these actions to the <a href="#turn-on-moodlight-when-backlight-off-and-vice-versa">first automation example</a> which draw an overlay with a black base object on page 0 when display is off, and deletes it when comes back on:</p>
 <p>for automation <code>openhasp-moodlight-on</code>, add to actions:</p>
-<pre><code class="language-yaml">    - service: mqtt.publish
-      data:
-        topic: hasp/plates/command/jsonl
-        payload: '{&quot;page&quot;:0,&quot;id&quot;:99,&quot;obj&quot;:&quot;obj&quot;,&quot;x&quot;:0,&quot;y&quot;:0,&quot;w&quot;:240,&quot;h&quot;:320,&quot;radius&quot;:0,&quot;hidden&quot;:0,&quot;bg_grad_dir&quot;:0,&quot;bg_color&quot;:&quot;black&quot;}'
-</code></pre>
+<div class="codehilite"><pre><span></span><code>    <span class="p p-Indicator">-</span> <span class="nt">service</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">mqtt.publish</span>
+      <span class="nt">data</span><span class="p">:</span>
+        <span class="nt">topic</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">hasp/plates/command/jsonl</span>
+        <span class="nt">payload</span><span class="p">:</span> <span class="s">&#39;{&quot;page&quot;:0,&quot;id&quot;:99,&quot;obj&quot;:&quot;obj&quot;,&quot;x&quot;:0,&quot;y&quot;:0,&quot;w&quot;:240,&quot;h&quot;:320,&quot;radius&quot;:0,&quot;hidden&quot;:0,&quot;bg_grad_dir&quot;:0,&quot;bg_color&quot;:&quot;black&quot;}&#39;</span>
+</code></pre></div>
+
 <p>for automation <code>openhasp-moodlight-off</code>, add to actions:</p>
-<pre><code class="language-yaml">    - service: automation.turn_off
-      target:
-        entity_id: automation.openhasp_anti_burn_in_screen_protection
-    - service: mqtt.publish
-      data:
-        topic: hasp/plates/command/p0b99.hidden
-        payload: '1'
-    - service: mqtt.publish
-      data:
-        topic: hasp/plates/command/p0b99.delete
-        payload: ''
-</code></pre>
+<div class="codehilite"><pre><span></span><code>    <span class="p p-Indicator">-</span> <span class="nt">service</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">automation.turn_off</span>
+      <span class="nt">target</span><span class="p">:</span>
+        <span class="nt">entity_id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">automation.openhasp_anti_burn_in_screen_protection</span>
+    <span class="p p-Indicator">-</span> <span class="nt">service</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">mqtt.publish</span>
+      <span class="nt">data</span><span class="p">:</span>
+        <span class="nt">topic</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">hasp/plates/command/p0b99.hidden</span>
+        <span class="nt">payload</span><span class="p">:</span> <span class="s">&#39;1&#39;</span>
+    <span class="p p-Indicator">-</span> <span class="nt">service</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">mqtt.publish</span>
+      <span class="nt">data</span><span class="p">:</span>
+        <span class="nt">topic</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">hasp/plates/command/p0b99.delete</span>
+        <span class="nt">payload</span><span class="p">:</span> <span class="s">&#39;&#39;</span>
+</code></pre></div>
+
 <p>Both methods can coexist.<br />
 Don't forget to adjust the size of the object to your screen if it's not 240x320.</p>
                 

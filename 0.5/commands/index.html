@@ -1308,15 +1308,17 @@
 <p>Each line in the <code>jsonl</code> payload defines one object and has to be in the json format. If the payload exceeds the MQTT buffer of 2 kB it will be cut off to fit,
 don't send too many lines in a single payload, you can always sends multiple jsonl commands.</p>
 <p>Example:    </p>
-<pre><code class="language-json">jsonl {&quot;obj&quot;:&quot;btn&quot;,&quot;id&quot;:14,&quot;x&quot;:120,&quot;y&quot;:1,&quot;w&quot;:30,&quot;h&quot;:40,&quot;text_font&quot;:&quot;2&quot;,&quot;text&quot;:&quot;Test&quot;,&quot;text_color&quot;:&quot;gray&quot;,&quot;bg_opa&quot;:0,&quot;border_width&quot;:0}
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="err">jso</span><span class="kc">nl</span> <span class="p">{</span><span class="nt">&quot;obj&quot;</span><span class="p">:</span><span class="s2">&quot;btn&quot;</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">14</span><span class="p">,</span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="mi">120</span><span class="p">,</span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="nt">&quot;w&quot;</span><span class="p">:</span><span class="mi">30</span><span class="p">,</span><span class="nt">&quot;h&quot;</span><span class="p">:</span><span class="mi">40</span><span class="p">,</span><span class="nt">&quot;text_font&quot;</span><span class="p">:</span><span class="s2">&quot;2&quot;</span><span class="p">,</span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="s2">&quot;Test&quot;</span><span class="p">,</span><span class="nt">&quot;text_color&quot;</span><span class="p">:</span><span class="s2">&quot;gray&quot;</span><span class="p">,</span><span class="nt">&quot;bg_opa&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="nt">&quot;border_width&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">}</span>
+</code></pre></div>
+
 <p><em>For more details see <a href="../pages/">Pages</a> and <a href="../objects/">Objects</a></em></p>
 <h2 id="json">json<a class="headerlink" href="#json" title="Permanent link">~</a></h2>
 <p><em>accepted parameters:</em> json array of strings</p>
 <p>Use the <code>json</code> command to send multiple commands as an array of strings in one payload.</p>
 <p>Example:    </p>
-<pre><code class="language-json">json ['page 3','backlight {&quot;state&quot;:&quot;OFF&quot;,&quot;brightness&quot;:100}','idle off']
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="err">jso</span><span class="kc">n</span> <span class="p">[</span><span class="err">&#39;page</span> <span class="mi">3</span><span class="err">&#39;</span><span class="p">,</span><span class="err">&#39;backligh</span><span class="kc">t</span> <span class="p">{</span><span class="nt">&quot;state&quot;</span><span class="p">:</span><span class="s2">&quot;OFF&quot;</span><span class="p">,</span><span class="nt">&quot;brightness&quot;</span><span class="p">:</span><span class="mi">100</span><span class="p">}</span><span class="err">&#39;</span><span class="p">,</span><span class="err">&#39;idle</span> <span class="err">o</span><span class="kc">ff</span><span class="err">&#39;</span><span class="p">]</span>
+</code></pre></div>
+
 <p>This command will change to page 3, turn the backlight on at ~40% brightness and reset the idle timer.</p>
 <h2 id="page">page<a class="headerlink" href="#page" title="Permanent link">~</a></h2>
 <p><em>accepted parameters:</em> <code>[1-12]</code>, <code>prev</code>, <code>next</code> or <code>back</code></p>
@@ -1384,11 +1386,12 @@ A simple integer payload of <code>1..255</code> will adjust the brightness.</p>
 </ul>
 <p>An RGB moodlight can be controlled by configuring 3 <a href="../configuration/gpio/">GPIO pins</a> as type <code>Mood Red</code>, <code>Mood Green</code> and <code>Mood blue</code>.
 These leds can then be controlled together using the <code>moodlight</code> command.</p>
-<pre><code class="language-json">moodlight {&quot;state&quot;:&quot;off&quot;,&quot;color&quot;:&quot;green&quot;}
-moodlight {&quot;state&quot;:true,&quot;color&quot;:&quot;#ff00e7&quot;}
-moodlight {&quot;color&quot;:12345}
-moodlight {&quot;state&quot;:&quot;on&quot;,&quot;r&quot;:255,&quot;g&quot;:0,&quot;b&quot;:255}
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="err">moodligh</span><span class="kc">t</span> <span class="p">{</span><span class="nt">&quot;state&quot;</span><span class="p">:</span><span class="s2">&quot;off&quot;</span><span class="p">,</span><span class="nt">&quot;color&quot;</span><span class="p">:</span><span class="s2">&quot;green&quot;</span><span class="p">}</span>
+<span class="err">moodligh</span><span class="kc">t</span> <span class="p">{</span><span class="nt">&quot;state&quot;</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span><span class="nt">&quot;color&quot;</span><span class="p">:</span><span class="s2">&quot;#ff00e7&quot;</span><span class="p">}</span>
+<span class="err">moodligh</span><span class="kc">t</span> <span class="p">{</span><span class="nt">&quot;color&quot;</span><span class="p">:</span><span class="mi">12345</span><span class="p">}</span>
+<span class="err">moodligh</span><span class="kc">t</span> <span class="p">{</span><span class="nt">&quot;state&quot;</span><span class="p">:</span><span class="s2">&quot;on&quot;</span><span class="p">,</span><span class="nt">&quot;r&quot;</span><span class="p">:</span><span class="mi">255</span><span class="p">,</span><span class="nt">&quot;g&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="nt">&quot;b&quot;</span><span class="p">:</span><span class="mi">255</span><span class="p">}</span>
+</code></pre></div>
+
 <ul>
 <li>The <code>state</code> key accepts <a href="../styling/#boolean">boolean values</a> to turn the moodlight on or off</li>
 <li>The <code>brightness</code> key can be set between <code>1</code> and <code>255</code> to dim the moodlight</li>
@@ -1396,8 +1399,9 @@ moodlight {&quot;state&quot;:&quot;on&quot;,&quot;r&quot;:255,&quot;g&quot;:0,&q
 <li>Individual <code>r</code>, <code>g</code> and <code>b</code> keys can also be used to set each channel seperately</li>
 </ul>
 <p>Calling the <code>moodlight</code> command without parameters (or sending an empty payload to the <code>hasp/&lt;nodename&gt;/command/moodlight</code> topic) returns the current state:</p>
-<pre><code class="language-json">&quot;state/moodlight&quot; {&quot;state&quot;:&quot;ON&quot;,&quot;brightness&quot;:255,&quot;color&quot;:&quot;#ff0000&quot;,&quot;r&quot;:255,&quot;g&quot;:0,&quot;b&quot;:0}
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="s2">&quot;state/moodlight&quot;</span> <span class="p">{</span><span class="nt">&quot;state&quot;</span><span class="p">:</span><span class="s2">&quot;ON&quot;</span><span class="p">,</span><span class="nt">&quot;brightness&quot;</span><span class="p">:</span><span class="mi">255</span><span class="p">,</span><span class="nt">&quot;color&quot;</span><span class="p">:</span><span class="s2">&quot;#ff0000&quot;</span><span class="p">,</span><span class="nt">&quot;r&quot;</span><span class="p">:</span><span class="mi">255</span><span class="p">,</span><span class="nt">&quot;g&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="nt">&quot;b&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">}</span>
+</code></pre></div>
+
 <p>The color is returned as a hexadecimal value and as individual RGB channels.</p>
 <h2 id="idle">idle<a class="headerlink" href="#idle" title="Permanent link">~</a></h2>
 <p><em>accepted parameters:</em> <code>off</code></p>
@@ -1427,25 +1431,26 @@ This can be handy for bug reporting or documentation.</p>
 <p class="admonition-title"><code>statusupdate</code></p>
 </div>
 <p>Reports the status of the MCU. The response will be posted to the state topic. For example:</p>
-<pre><code class="language-json">    &quot;hasp/&lt;platename&gt;/state/statusupdate&quot; =&gt; {
-        &quot;node&quot;:&quot;plate35&quot;,
-        &quot;idle&quot;:&quot;short&quot;,
-        &quot;version&quot;:&quot;0.5.1&quot;,
-        &quot;uptime&quot;:1813,
-        &quot;ssid&quot;:&quot;network&quot;,
-        &quot;rssi&quot;:-63,
-        &quot;ip&quot;:&quot;192.168.4.2&quot;,
-        &quot;heapFree&quot;:125820,
-        &quot;heapFrag&quot;:35,
-        &quot;core&quot;:&quot;v3.3.5-1-g85c43024c&quot;,
-        &quot;canUpdate&quot;:&quot;false&quot;,
-        &quot;page&quot;:1,
-        &quot;numPages&quot;:12,
-        &quot;tftDriver&quot;:&quot;ST7789&quot;,
-        &quot;tftWidth&quot;:240,
-        &quot;tftHeight&quot;:320
-    }
-</code></pre>
+<div class="codehilite"><pre><span></span><code>    <span class="s2">&quot;hasp/&lt;platename&gt;/state/statusupdate&quot;</span> <span class="err">=&gt;</span> <span class="p">{</span>
+        <span class="nt">&quot;node&quot;</span><span class="p">:</span><span class="s2">&quot;plate35&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;idle&quot;</span><span class="p">:</span><span class="s2">&quot;short&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="s2">&quot;0.5.1&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;uptime&quot;</span><span class="p">:</span><span class="mi">1813</span><span class="p">,</span>
+        <span class="nt">&quot;ssid&quot;</span><span class="p">:</span><span class="s2">&quot;network&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;rssi&quot;</span><span class="p">:</span><span class="mi">-63</span><span class="p">,</span>
+        <span class="nt">&quot;ip&quot;</span><span class="p">:</span><span class="s2">&quot;192.168.4.2&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;heapFree&quot;</span><span class="p">:</span><span class="mi">125820</span><span class="p">,</span>
+        <span class="nt">&quot;heapFrag&quot;</span><span class="p">:</span><span class="mi">35</span><span class="p">,</span>
+        <span class="nt">&quot;core&quot;</span><span class="p">:</span><span class="s2">&quot;v3.3.5-1-g85c43024c&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;canUpdate&quot;</span><span class="p">:</span><span class="s2">&quot;false&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;page&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+        <span class="nt">&quot;numPages&quot;</span><span class="p">:</span><span class="mi">12</span><span class="p">,</span>
+        <span class="nt">&quot;tftDriver&quot;</span><span class="p">:</span><span class="s2">&quot;ST7789&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;tftWidth&quot;</span><span class="p">:</span><span class="mi">240</span><span class="p">,</span>
+        <span class="nt">&quot;tftHeight&quot;</span><span class="p">:</span><span class="mi">320</span>
+    <span class="p">}</span>
+</code></pre></div>
+
 <div class="admonition danger">
 <p class="admonition-title"><code>reboot</code> or <code>restart</code></p>
 </div>
@@ -1496,15 +1501,16 @@ This can be handy for bug reporting or documentation.</p>
 <p>You can get or set the configuration of an openHASP submodule in json format.
 To get the configuration, use the command <code>config/&lt;submodule&gt;</code>. 
 The result will be published to <code>hasp/&lt;nodename&gt;/state/config</code>. Passwords will be omitted from the result.</p>
-<pre><code>config/wifi
-config/mqtt
-config/http
-config/mdns
-config/hasp {&quot;startdim&quot;:255}
-config/gui
-config/debug {&quot;tele&quot;:300}
-config/gpio
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="err">config/wifi</span>
+<span class="err">config/mqtt</span>
+<span class="err">config/http</span>
+<span class="err">config/mdns</span>
+<span class="err">config/hasp {&quot;startdim&quot;:255}</span>
+<span class="err">config/gui</span>
+<span class="err">config/debug {&quot;tele&quot;:300}</span>
+<span class="err">config/gpio</span>
+</code></pre></div>
+
 <p>To update the configuration simply issue the same command <code>config/&lt;submodule&gt;</code> with updated json payload.</p>
                 
               
