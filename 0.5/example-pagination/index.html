@@ -210,7 +210,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../section/index.md" class="md-tabs__link">
+      <a href="../reference/index.md" class="md-tabs__link">
         Section
       </a>
     </li>
@@ -290,7 +290,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../section/index.md" class="md-nav__link">
+      <a href="../reference/index.md" class="md-nav__link">
         None
       </a>
     </li>
@@ -302,8 +302,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../section/page-1.md" class="md-nav__link">
-        Page 1
+      <a href="../reference/pages/" class="md-nav__link">
+        Pages
       </a>
     </li>
   
@@ -314,8 +314,20 @@
   
   
     <li class="md-nav__item">
-      <a href="../section/page-n.md" class="md-nav__link">
-        Page n
+      <a href="../reference/objects/" class="md-nav__link">
+        Objects
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/styling/" class="md-nav__link">
+        Styling
       </a>
     </li>
   
@@ -353,10 +365,10 @@ The <code>jsonl</code> lines below will setup 3 buttons to the bottom of a 240x3
 {&quot;page&quot;:0,&quot;id&quot;:2,&quot;obj&quot;:&quot;btn&quot;,&quot;action&quot;:&quot;back&quot;,&quot;x&quot;:80,&quot;y&quot;:290,&quot;w&quot;:80,&quot;h&quot;:32,&quot;bg_color&quot;:&quot;#2C3E50&quot;,&quot;text&quot;:&quot;\uE2DC&quot;,&quot;text_color&quot;:&quot;#FFFFFF&quot;,&quot;radius&quot;:0,&quot;border_side&quot;:0,&quot;text_font&quot;:22}
 {&quot;page&quot;:0,&quot;id&quot;:3,&quot;obj&quot;:&quot;btn&quot;,&quot;action&quot;:&quot;next&quot;,&quot;x&quot;:161,&quot;y&quot;:290,&quot;w&quot;:79,&quot;h&quot;:32,&quot;bg_color&quot;:&quot;#2C3E50&quot;,&quot;text&quot;:&quot;\uE142&quot;,&quot;text_color&quot;:&quot;#FFFFFF&quot;,&quot;radius&quot;:0,&quot;border_side&quot;:0,&quot;text_font&quot;:28}
 </code></pre>
-<p>Pagination can be also acomplished by enabling <a href="../objects/#swipe">swipe</a> gesture on certain objects. The <code>jsonl</code> line below will setup an invisible rectangle overlay at the top of the screen with enabled <code>swipe</code>:</p>
+<p>Pagination can be also acomplished by enabling <a href="objects.md#swipe">swipe</a> gesture on certain objects. The <code>jsonl</code> line below will setup an invisible rectangle overlay at the top of the screen with enabled <code>swipe</code>:</p>
 <pre><code class="language-text">{&quot;page&quot;:0,&quot;id&quot;:6,&quot;obj&quot;:&quot;obj&quot;,&quot;swipe&quot;:1,&quot;x&quot;:0,&quot;y&quot;:0,&quot;h&quot;:30,&quot;w&quot;:240,&quot;opacity&quot;:0,&quot;comment&quot;:&quot;swipe-area-at-top&quot;}
 </code></pre>
-<p>!!! note You should to make sure that in your <a href="../pages/#pagesjsonl"><code>pages.jsonl</code></a> these lines appear at the end of the file, so that these objects remain at the top, and no others will be drawn on top of them.</p>
+<p>!!! note You should to make sure that in your <a href="pages.md#pagesjsonl"><code>pages.jsonl</code></a> these lines appear at the end of the file, so that these objects remain at the top, and no others will be drawn on top of them.</p>
 <hr />
 <p>To limit page navigation only to page numbers between 1 and 6:</p>
 <pre><code class="language-text">{&quot;page&quot;:1,&quot;id&quot;:0,&quot;prev&quot;:6}
