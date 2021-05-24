@@ -821,8 +821,8 @@ tbody tr:nth-child(even) {
 
 <p>There are two ways to create an object on the screen:</p>
 <ul>
-<li>Uploading a <a href="pages#pagesjsonl"><code>pages.jsonl</code></a> file onto the internal flash</li>
-<li>Use the <a href="commands#multiple-commands"><code>jsonl</code></a> command <em>(via MQTT, serial or telnet console)</em></li>
+<li>Uploading a <a href="../pages#pagesjsonl"><code>pages.jsonl</code></a> file onto the internal flash</li>
+<li>Use the <a href="../commands#multiple-commands"><code>jsonl</code></a> command <em>(via MQTT, serial or telnet console)</em></li>
 </ul>
 <h2 id="cheatsheet">Cheatsheet<a class="headerlink" href="#cheatsheet" title="Permanent link">~</a></h2>
 <table>
@@ -1067,7 +1067,7 @@ but only the <code>id</code> and <code>obj</code> properties are required to cre
 </table>
 <div class="admonition note">
 <p class="admonition-title"><i class='fa fa-info-circle'></i>&nbsp; Note</p>
-<p>Further customizable properties can be found in <a href="styling">styling</a>.</p>
+<p>Further customizable properties can be found in <a href="../styling">styling</a>.</p>
 </div>
 <h4>Pages</h4>
 <p>If the <code>page</code> parameter is not present, the object is placed on the same page as the <em>previous object</em>. If <code>page</code> is not specified for the first object either, the <em>current page</em> being displayed is used.</p>
@@ -1080,7 +1080,7 @@ You can still hide the object on select pages if needed. Objects on page 0 appea
 - <code>next</code> to switch to the next page
 - <code>back</code> to go back to the home page</p>
 <p>Check out the <a href="example-pagination">example</a> for how to implement actions.<br />
-You can change the target pages using <code>prev</code>, <code>back</code> and <code>next</code> <a href="pages#page-attributes">page attributes</a> operation on the page object<code>pXb0</code>.  </p>
+You can change the target pages using <code>prev</code>, <code>back</code> and <code>next</code> <a href="../pages#page-attributes">page attributes</a> operation on the page object<code>pXb0</code>.  </p>
 <h4>Swipe</h4>
 <p>Objects and page area (<code>p0bY</code>) support <code>swipe</code> property. Enabling this will process <code>left</code>, <code>right</code> and <code>down</code> swipes on the object as <code>next</code>, <code>prev</code> and <code>back</code> page changes, respectively. The start of the swipe needs to be on the element which has this property enabled for the feature to activate.<br />
 <em>Note:</em> Page id <code>p0b0</code> is not valid to set this property as it has to be set on real elements. </p>
@@ -2101,7 +2101,7 @@ hasp/&lt;nodename&gt;/command/p2b3.color #C0C0C0
 </tr>
 </tbody>
 </table>
-<p>The <a href="styling">styling properties</a> apply to <em>all</em> buttons in the matrix.
+<p>The <a href="../styling">styling properties</a> apply to <em>all</em> buttons in the matrix.
 To change the color of a single label you can prefix the text with a <code>#RRGGBB</code> hexadecimal color code and close with a single hash <code>#</code> tag.</p>
 <p>Example <code>jsonl</code>:
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;page&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">20</span><span class="p">,</span><span class="nt">&quot;obj&quot;</span><span class="p">:</span><span class="s2">&quot;btnmatrix&quot;</span><span class="p">,</span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="mi">10</span><span class="p">,</span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="mi">10</span><span class="p">,</span><span class="nt">&quot;w&quot;</span><span class="p">:</span><span class="mi">220</span><span class="p">,</span><span class="nt">&quot;h&quot;</span><span class="p">:</span><span class="mi">150</span><span class="p">,</span><span class="nt">&quot;options&quot;</span><span class="p">:[</span><span class="s2">&quot;#FF0000 Red Text#&quot;</span><span class="p">,</span><span class="s2">&quot;#0000FF Cyan Text#&quot;</span><span class="p">,</span><span class="s2">&quot;\n&quot;</span><span class="p">,</span><span class="s2">&quot;#FFFF00 Yellow Text#&quot;</span><span class="p">],</span><span class="nt">&quot;toggle&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="nt">&quot;one_check&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">}</span>
