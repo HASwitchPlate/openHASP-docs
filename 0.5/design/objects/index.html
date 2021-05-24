@@ -136,20 +136,20 @@
             <ul class="md-select__list">
               
                 <li class="md-select__item">
-                  <a href="./" hreflang="en" class="md-select__link">
+                  <a href="../../" hreflang="en" class="md-select__link">
                     Default (en)
                   </a>
                 </li>
                 
                 <li class="md-select__item">
-                  <a href="./" hreflang="en" class="md-select__link">
+                  <a href="../../en/" hreflang="en" class="md-select__link">
                     English
                   </a>
                 </li>
                 
                 <li class="md-select__item">
-                  <a href="../objects.nl/" hreflang="nl" class="md-select__link">
-                    nederlands
+                  <a href="../../nl/" hreflang="nl" class="md-select__link">
+                    Nederlands
                   </a>
                 </li>
                 
@@ -749,10 +749,7 @@
                   </a>
                 
                 
-                <ul>
-<li class="i18n-link i18n-link-found i18n-link-nl"><a href="../../design/objects.nl/">nederlands</a></li>
-</ul>
-<style type="text/css">
+                <style type="text/css">
 
 .md-typeset__table {
    min-width: 100%;
@@ -789,7 +786,7 @@ tbody tr:nth-child(even) {
 <p>There are two ways to create an object on the screen:</p>
 <ul>
 <li>Uploading a <a href="../pages/#pagesjsonl"><code>pages.jsonl</code></a> file onto the internal flash</li>
-<li>Use the <a href="commands.md#multiple-commands"><code>jsonl</code></a> command <em>(via MQTT, serial or telnet console)</em></li>
+<li>Use the <a href="../commands#multiple-commands"><code>jsonl</code></a> command <em>(via MQTT, serial or telnet console)</em></li>
 </ul>
 <h2 id="cheatsheet">Cheatsheet<a class="headerlink" href="#cheatsheet" title="Permanent link">~</a></h2>
 <table>
@@ -976,7 +973,7 @@ but only the <code>id</code> and <code>obj</code> properties are required to cre
 </tr>
 <tr>
 <td align="left">hidden</td>
-<td align="center"><a href="styling.md#boolean">bool</a></td>
+<td align="center"><a href="../styling#boolean">bool</a></td>
 <td align="center">no</td>
 <td align="center">false</td>
 <td align="left">object is hidden</td>
@@ -1004,17 +1001,17 @@ but only the <code>id</code> and <code>obj</code> properties are required to cre
 </tr>
 <tr>
 <td align="left">swipe</td>
-<td align="center"><a href="styling.md#boolean">bool</a></td>
+<td align="center"><a href="../styling#boolean">bool</a></td>
 <td align="center">no</td>
 <td align="center">false</td>
 <td align="left">page navigation using swipe gestures <em>(see below)</em></td>
 </tr>
 <tr>
 <td align="left">click</td>
-<td align="center"><a href="styling.md#boolean">bool</a></td>
+<td align="center"><a href="../styling#boolean">bool</a></td>
 <td align="center">no</td>
 <td align="center">true</td>
-<td align="left">object is touch/clickable <em>(also see <a href="styling.md#general">enabled</a>)</em></td>
+<td align="left">object is touch/clickable <em>(also see <a href="../styling#general">enabled</a>)</em></td>
 </tr>
 <tr>
 <td align="left">ext_click_h</td>
@@ -1034,7 +1031,7 @@ but only the <code>id</code> and <code>obj</code> properties are required to cre
 </table>
 <div class="admonition note">
 <p class="admonition-title"><i class='fa fa-info-circle'></i>&nbsp; Note</p>
-<p>Further customizable properties can be found in <a href="styling.md">styling</a>.</p>
+<p>Further customizable properties can be found in <a href="../styling">styling</a>.</p>
 </div>
 <h4>Pages</h4>
 <p>If the <code>page</code> parameter is not present, the object is placed on the same page as the <em>previous object</em>. If <code>page</code> is not specified for the first object either, the <em>current page</em> being displayed is used.</p>
@@ -1187,7 +1184,7 @@ Besides the common properties listed above, each object type can have specific p
 <tbody>
 <tr>
 <td>toggle</td>
-<td><a href="styling.md#boolean">bool</a></td>
+<td><a href="../styling#boolean">bool</a></td>
 <td>false</td>
 <td>When enabled, creates a toggle-on/toggle-off button. If false, creates a normal button</td>
 </tr>
@@ -1270,19 +1267,19 @@ Besides the common properties listed above, each object type can have specific p
 <tbody>
 <tr>
 <td>val</td>
-<td><a href="styling.md#boolean">bool</a></td>
+<td><a href="../styling#boolean">bool</a></td>
 <td>0</td>
 <td><code>1</code> = on, <code>0</code> = off</td>
 </tr>
 <tr>
 <td>bg_color1</td>
-<td><a href="styling.md#colors">color</a></td>
+<td><a href="../styling#colors">color</a></td>
 <td>0</td>
 <td>changes indicator color</td>
 </tr>
 <tr>
 <td>bg_color2</td>
-<td><a href="styling.md#colors">color</a></td>
+<td><a href="../styling#colors">color</a></td>
 <td>0</td>
 <td>changes knob color</td>
 </tr>
@@ -1492,7 +1489,7 @@ While pressing and dragging the <code>slider</code> object the following events 
 </tr>
 <tr>
 <td>adjustable</td>
-<td><a href="styling.md#boolean">bool</a></td>
+<td><a href="../styling#boolean">bool</a></td>
 <td>false</td>
 <td>Add knob that the user can operate to change the value</td>
 </tr>
@@ -1528,7 +1525,7 @@ While pressing and dragging the <code>slider</code> object the following events 
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Check out <a href="styling.md#value">value styling</a> to display a textual value in the middle of the arc.</p>
+<p>Check out <a href="../styling#value">value styling</a> to display a textual value in the middle of the arc.</p>
 </div>
 <p>Example <code>jsonl</code>:
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;page&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">9</span><span class="p">,</span><span class="nt">&quot;obj&quot;</span><span class="p">:</span><span class="s2">&quot;arc&quot;</span><span class="p">,</span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="mi">20</span><span class="p">,</span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="mi">75</span><span class="p">,</span><span class="nt">&quot;w&quot;</span><span class="p">:</span><span class="mi">200</span><span class="p">,</span><span class="nt">&quot;h&quot;</span><span class="p">:</span><span class="mi">200</span><span class="p">,</span><span class="nt">&quot;min&quot;</span><span class="p">:</span><span class="mi">15</span><span class="p">,</span><span class="nt">&quot;max&quot;</span><span class="p">:</span><span class="mi">35</span><span class="p">,</span><span class="nt">&quot;border_side&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="nt">&quot;rotation&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="nt">&quot;start_angle&quot;</span><span class="p">:</span><span class="mi">135</span><span class="p">,</span><span class="nt">&quot;end_angle&quot;</span><span class="p">:</span><span class="mi">45</span><span class="p">,</span><span class="nt">&quot;start_angle1&quot;</span><span class="p">:</span><span class="mi">135</span><span class="p">,</span><span class="nt">&quot;end_angle1&quot;</span><span class="p">:</span><span class="mi">45</span><span class="p">,</span><span class="nt">&quot;adjustable&quot;</span><span class="p">:</span><span class="kc">true</span><span class="p">}</span>
@@ -1589,7 +1586,7 @@ While pressing and dragging the <code>slider</code> object the following events 
 </tr>
 <tr>
 <td>show_selected</td>
-<td><a href="styling.md#boolean">bool</a></td>
+<td><a href="../styling#boolean">bool</a></td>
 <td>true</td>
 <td>Show the selected option or a static text</td>
 </tr>
@@ -1746,7 +1743,7 @@ To change the items in the list, use the <code>options</code> attribute.</p>
 </tr>
 </tbody>
 </table>
-<p>Use <a href="styling.md#line">line</a> and <a href="styling.md#scale">scale</a> properties to customize.</p>
+<p>Use <a href="../styling#line">line</a> and <a href="../styling#scale">scale</a> properties to customize.</p>
 <p>Example <code>jsonl</code>:
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;page&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">12</span><span class="p">,</span><span class="nt">&quot;obj&quot;</span><span class="p">:</span><span class="s2">&quot;lmeter&quot;</span><span class="p">,</span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="mi">20</span><span class="p">,</span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="mi">70</span><span class="p">,</span><span class="nt">&quot;w&quot;</span><span class="p">:</span><span class="mi">200</span><span class="p">,</span><span class="nt">&quot;h&quot;</span><span class="p">:</span><span class="mi">200</span><span class="p">,</span><span class="nt">&quot;value_str&quot;</span><span class="p">:</span><span class="s2">&quot;Temp&quot;</span><span class="p">,</span><span class="nt">&quot;val&quot;</span><span class="p">:</span><span class="mi">75</span><span class="p">,</span><span class="nt">&quot;line_count&quot;</span><span class="p">:</span><span class="mi">35</span><span class="p">,</span><span class="nt">&quot;line_rounded&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">}</span>
 </code></pre></div>
@@ -1833,7 +1830,7 @@ To change the items in the list, use the <code>options</code> attribute.</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;page&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">13</span><span class="p">,</span><span class="nt">&quot;obj&quot;</span><span class="p">:</span><span class="s2">&quot;gauge&quot;</span><span class="p">,</span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="mi">20</span><span class="p">,</span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="mi">70</span><span class="p">,</span><span class="nt">&quot;w&quot;</span><span class="p">:</span><span class="mi">200</span><span class="p">,</span><span class="nt">&quot;h&quot;</span><span class="p">:</span><span class="mi">200</span><span class="p">}</span>
 </code></pre></div>
 </td></tr></table>
-Use <a href="styling.md#scale">scale</a> properties to customize.</p>
+Use <a href="../styling#scale">scale</a> properties to customize.</p>
 <h2 id="tabview">Tabview<a class="headerlink" href="#tabview" title="Permanent link">~</a></h2>
 <p><strong>obj:<code>tabview</code></strong></p>
 <p><img alt="lv_tabview" src="../../assets/images/objects/lv_ex_tabview_1.png" /></p>
@@ -1931,7 +1928,7 @@ You first create the <code>tabview</code> object and then add <code>tab</code> o
 <tbody>
 <tr>
 <td>color</td>
-<td><a href="styling.md#colors">color</a></td>
+<td><a href="../styling#colors">color</a></td>
 <td>0</td>
 <td>The selected color in html format #rrggbb</td>
 </tr>
@@ -2056,19 +2053,19 @@ hasp/&lt;nodename&gt;/command/p2b3.color #C0C0C0
 </tr>
 <tr>
 <td>toggle</td>
-<td><a href="styling.md#boolean">bool</a></td>
+<td><a href="../styling#boolean">bool</a></td>
 <td>false</td>
 <td>All buttons behave as toggle buttons or normal buttons</td>
 </tr>
 <tr>
 <td>one_check</td>
-<td><a href="styling.md#boolean">bool</a></td>
+<td><a href="../styling#boolean">bool</a></td>
 <td>false</td>
 <td>Allow only one button to be checked (toggled) at once</td>
 </tr>
 </tbody>
 </table>
-<p>The <a href="styling.md">styling properties</a> apply to <em>all</em> buttons in the matrix.
+<p>The <a href="../styling">styling properties</a> apply to <em>all</em> buttons in the matrix.
 To change the color of a single label you can prefix the text with a <code>#RRGGBB</code> hexadecimal color code and close with a single hash <code>#</code> tag.</p>
 <p>Example <code>jsonl</code>:
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;page&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">20</span><span class="p">,</span><span class="nt">&quot;obj&quot;</span><span class="p">:</span><span class="s2">&quot;btnmatrix&quot;</span><span class="p">,</span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="mi">10</span><span class="p">,</span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="mi">10</span><span class="p">,</span><span class="nt">&quot;w&quot;</span><span class="p">:</span><span class="mi">220</span><span class="p">,</span><span class="nt">&quot;h&quot;</span><span class="p">:</span><span class="mi">150</span><span class="p">,</span><span class="nt">&quot;options&quot;</span><span class="p">:[</span><span class="s2">&quot;#FF0000 Red Text#&quot;</span><span class="p">,</span><span class="s2">&quot;#0000FF Cyan Text#&quot;</span><span class="p">,</span><span class="s2">&quot;\n&quot;</span><span class="p">,</span><span class="s2">&quot;#FFFF00 Yellow Text#&quot;</span><span class="p">],</span><span class="nt">&quot;toggle&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="nt">&quot;one_check&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">}</span>
@@ -2101,7 +2098,7 @@ To change the color of a single label you can prefix the text with a <code>#RRGG
 </tr>
 <tr>
 <td>~~modal~~</td>
-<td><a href="styling.md#boolean">bool</a></td>
+<td><a href="../styling#boolean">bool</a></td>
 <td>false</td>
 <td>Make the messagebox a modal dialog requiring user input</td>
 </tr>
@@ -2162,7 +2159,7 @@ The pop-up is centered on the screen.</p>
 </tr>
 </tbody>
 </table>
-<p>You can use image_recolor and image_recolor_opa from the <a href="styling.md#image">image styling</a> properties to apply a color overlay mask.</p>
+<p>You can use image_recolor and image_recolor_opa from the <a href="../styling#image">image styling</a> properties to apply a color overlay mask.</p>
 <p>Example <code>jsonl</code>:
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">{</span><span class="s2">&quot;page&quot;</span><span class="o">:</span><span class="mf">1</span><span class="p">,</span><span class="s2">&quot;id&quot;</span><span class="o">:</span><span class="mf">34</span><span class="p">,</span><span class="s2">&quot;obj&quot;</span><span class="o">:</span><span class="s2">&quot;img&quot;</span><span class="p">,</span><span class="s2">&quot;src&quot;</span><span class="o">:</span><span class="s2">&quot;/littlefs/image.png&quot;</span><span class="p">,</span><span class="s2">&quot;auto_size&quot;</span><span class="o">:</span><span class="mf">0</span><span class="p">,</span><span class="s2">&quot;w&quot;</span><span class="o">:</span><span class="mf">50</span><span class="p">}</span>
 </code></pre></div>
