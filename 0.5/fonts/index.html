@@ -1152,10 +1152,11 @@
 - 480x320: 16, 24, 32 and 48pt including</p>
 <p>Including selected glyphs of Latin-1 character set and MaterialDesign icons below.</p>
 <p>The built-in fonts can be set by using the pointsize as parameter. For example:</p>
-<div class="codehilite"><pre><span></span><code><span class="err">p4b1.text_font=24</span>
-<span class="err">p4b2.value_font=12</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>p4b1.text_font=24
+p4b2.value_font=12
 </code></pre></div>
-
+</td></tr></table>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>It is possible to create custom builds with built-in fonts of other sizes (choose any <em>four</em> of 12, 14, 16, 20, 22, 24, 26, 28, 32, 36, 38, 40, 44, 48) and supporting Latin-2 or Cyrillic character sets (even combined) by <a href="../compiling/#customization">customizing</a> <code>user_config_override.h</code>.</p>
@@ -1659,14 +1660,14 @@ Included are a range of arrows, navigation, climate, controls, devices, energy, 
 </table>
 <p>To use an icon in a text you need to prefix the UTF-8 character code with <code>\u</code>.
 <strong>To ensure proper decoding the payload should be used with a <code>json</code> or <code>jsonl</code> command.</strong></p>
-<p><code>jsonl</code> example:</p>
-<div class="codehilite"><pre><span></span><code><span class="err">{&quot;page&quot;:2,&quot;id&quot;:1,&quot;obj&quot;:&quot;label&quot;,&quot;x&quot;:10,&quot;y&quot;:50,&quot;w&quot;:150,&quot;h&quot;:50,&quot;text&quot;:&quot;\uE64A Hello world!&quot;,&quot;text_font&quot;:24}</span>
+<p><code>jsonl</code> example:
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>{&quot;page&quot;:2,&quot;id&quot;:1,&quot;obj&quot;:&quot;label&quot;,&quot;x&quot;:10,&quot;y&quot;:50,&quot;w&quot;:150,&quot;h&quot;:50,&quot;text&quot;:&quot;\uE64A Hello world!&quot;,&quot;text_font&quot;:24}
 </code></pre></div>
-
-<p><code>json</code> example:</p>
-<div class="codehilite"><pre><span></span><code><span class="err">[&quot;p2b1.text=\uE64A Hello world!&quot;]</span>
+</td></tr></table></p>
+<p><code>json</code> example:
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>[&quot;p2b1.text=\uE64A Hello world!&quot;]
 </code></pre></div>
-
+</td></tr></table></p>
 <h2 id="external-fonts">External Fonts<a class="headerlink" href="#external-fonts" title="Permanent link">~</a></h2>
 <p>You can also add a custom <code>.zi</code> font by uploading it to the internal flash.
 Apply it as the default font on the Configuration &gt; HASP Settings page.

@@ -1205,27 +1205,31 @@
 <li>on <a href="https://code.visualstudio.com/docs/setup/mac">MacOS</a></li>
 <li>on <a href="https://code.visualstudio.com/docs/setup/windows">Windows</a></li>
 </ul>
-<p>Additional packages on Linux:</p>
-<div class="codehilite"><pre><span></span><code><span class="err">sudo apt update</span>
-<span class="err">sudo apt install git python3-venv</span>
+<p>Additional packages on Linux:
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>sudo apt update
+sudo apt install git python3-venv
 </code></pre></div>
-
+</td></tr></table></p>
 <h2 id="clone-openhasp">Clone openHASP<a class="headerlink" href="#clone-openhasp" title="Permanent link">~</a></h2>
 <p>Make sure to add the <code>--recursive</code> parameter when cloning the project from GitHub. Otherwise git will not download the required submodules in the <code>/lib</code> subdirectory.</p>
-<div class="codehilite"><pre><span></span><code>git clone --recursive https://github.com/HASwitchPlate/openHASP
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>git clone --recursive https://github.com/HASwitchPlate/openHASP
 </code></pre></div>
-
+</td></tr></table>
 <p>If you already cloned openHASP without the submodules, you can fetch the submodules seperately using:</p>
-<div class="codehilite"><pre><span></span><code>git submodule update --init --recursive
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>git submodule update --init --recursive
 </code></pre></div>
-
+</td></tr></table>
 <p>To switch to a different branch use:</p>
-<div class="codehilite"><pre><span></span><code>git clone --recursive https://github.com/HASwitchPlate/openHASP
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>git clone --recursive https://github.com/HASwitchPlate/openHASP
 <span class="nb">cd</span> openHASP
 git checkout <span class="m">0</span>.4.0
 git submodule update --init --recursive
 </code></pre></div>
-
+</td></tr></table>
 <h2 id="open-in-platformio">Open in PlatformIO<a class="headerlink" href="#open-in-platformio" title="Permanent link">~</a></h2>
 <p><img alt="Install PIO" src="../assets/images/compiling/install_pio.png" /></p>
 <p>Open the project folder in <a href="https://code.visualstudio.com">Visual Studio Code</a>.
@@ -1235,14 +1239,19 @@ This will automatically install all PlatformIO dependencies and the MCU compiler
 <p>Restart Visual Studio Code when the PIO installation completes.</p>
 <h2 id="create-a-configuration">Create a configuration<a class="headerlink" href="#create-a-configuration" title="Permanent link">~</a></h2>
 <p>Copy <code>platformio_override-template.ini</code> to <code>platformio_override.ini</code> and uncomment the platforms for <code>esp32</code>and <code>esp8266</code>:</p>
-<div class="codehilite"><pre><span></span><code><span class="k">[platformio]</span>
-<span class="na">extra_configs</span> <span class="o">=</span><span class="s"></span>
-<span class="s">    ; Uncomment or edit the lines to show more User Setups in the PIO sidebar</span>
-<span class="s">    user_setups/esp32/*.ini</span>
-<span class="s">    user_setups/esp8266/*.ini</span>
-<span class="s">    ; user_setups/stm32f4xx/*.ini</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>[platformio]
+extra_configs =
+    ; Uncomment or edit the lines to show more User Setups in the PIO sidebar
+    user_setups/esp32/*.ini
+    user_setups/esp8266/*.ini
+    ; user_setups/stm32f4xx/*.ini
 </code></pre></div>
-
+</td></tr></table>
 <p>Then Click on the "Refresh Project tasks" icon in PlatformIO to list all the configured environments.</p>
 <h2 id="customization">Customization<a class="headerlink" href="#customization" title="Permanent link">~</a></h2>
 <p>The file <code>include\user_config_override-template.h</code> lists the options you have to customize your build. Settings applied here will act as factory defaults in the firmware. Some of the available possibilities are:</p>
@@ -1264,22 +1273,23 @@ Also uncomment <code>-DUSE_CONFIG_OVERRIDE</code> in <code>platformio_override.i
 <p><img alt="Build All" src="../assets/images/compiling/build_all.png" /></p>
 <p>You can now run "Build" or "Build All" in PlatformIO to compile (all) the firmware.</p>
 <h3>Native Linux build</h3>
-<p>For native linux_sdl builds, you also need:</p>
-<div class="codehilite"><pre><span></span><code><span class="err">sudo apt update</span>
-<span class="err">sudo apt install build-essential libsdl2-dev</span>
+<p>For native linux_sdl builds, you also need:
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>sudo apt update
+sudo apt install build-essential libsdl2-dev
 </code></pre></div>
-
+</td></tr></table></p>
 <h3>Native MacOS build</h3>
 <p>For native darwin_sdl builds, you also need <a href="https://brew.sh">Homebrew</a>:</p>
-<div class="codehilite"><pre><span></span><code>brew install gcc sdl2
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>brew install gcc sdl2
 </code></pre></div>
-
+</td></tr></table>
 <h3>Native Windows build</h3>
 <p>For native windows_sdl builds, you also need MingW:</p>
 <p>Use <a href="https://www.msys2.org/">MSYS2</a></p>
-<div class="codehilite"><pre><span></span><code>pacman -S mingw-w64-x86_64-gcc mingw-w64-x86_64-SDL2
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>pacman -S mingw-w64-x86_64-gcc mingw-w64-x86_64-SDL2
 </code></pre></div>
-
+</td></tr></table>
 <p>Add the path to your Mingw-w64 <code>bin</code> folder to the Windows PATH environment
 variable (usually <code>C:\msys64\mingw64\bin</code>). See <a href="https://code.visualstudio.com/docs/cpp/config-mingw#_prerequisites">instruction, 4</a>.</p>
 <!--
@@ -1290,9 +1300,11 @@ variable (usually <code>C:\msys64\mingw64\bin</code>). See <a href="https://code
 <p><img alt="Block Diagram" src="../assets/images/block-diagram.svg" /></p>
 <h2 id="mqtt-tests">MQTT Tests<a class="headerlink" href="#mqtt-tests" title="Permanent link">~</a></h2>
 <p>To run the tavern testing suite, install the tavern python package and configure <code>test\config.yaml</code> with your broker settings.</p>
-<div class="codehilite"><pre><span></span><code>pip install tavern
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>pip install tavern
 tavern-ci .<span class="se">\t</span>est<span class="se">\</span>
 </code></pre></div>
+</td></tr></table>
                 
               
               

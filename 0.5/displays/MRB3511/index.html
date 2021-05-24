@@ -1334,7 +1334,15 @@
 <p>There are no pins shared between the touch controller and the LCD controller.</p>
 <h2 id="lcd-configuration">LCD Configuration<a class="headerlink" href="#lcd-configuration" title="Permanent link">~</a></h2>
 <p>The <code>lcd_config.ini</code> file specifies the different properties of the display, except for the actual pin configuration:</p>
-<div class="codehilite"><pre><span></span><code><span class="na">mrb3511</span> <span class="o">=</span><span class="s"></span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="na">mrb3511</span> <span class="o">=</span><span class="s"></span>
 <span class="s">    -D ESP32_PARALLEL=1</span>
 <span class="s">    -D ILI9488_DRIVER=1</span>
 <span class="s">    -D TFT_WIDTH=320</span>
@@ -1344,13 +1352,34 @@
 <span class="s">    -D TOUCH_DRIVER=911 ; GT911 Capacitive touch panel driver</span>
 <span class="s">    -D SUPPORT_TRANSACTIONS</span>
 </code></pre></div>
-
+</td></tr></table>
 <h2 id="hasp-build_flags">HASP build_flags<a class="headerlink" href="#hasp-build_flags" title="Permanent link">~</a></h2>
 <p>Specify the LCD Configuration to use and define the 17 GPIOs in the environment build flags:</p>
-<div class="codehilite"><pre><span></span><code>build_flags =
-    <span class="cp">${</span><span class="n">flags</span><span class="o">.</span><span class="n">esp32_flags</span><span class="cp">}</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>build_flags =
+    ${flags.esp32_flags}
 ; -- TFT_eSPI build options ------------------------
-    <span class="cp">${</span><span class="n">lcd</span><span class="o">.</span><span class="n">mrb3511</span><span class="cp">}</span>
+    ${lcd.mrb3511}
     -D TFT_BCKL=5  ;None, configurable via web UI (e.g. 2 for D4)
     -D TFT_CS=33  ; Chip select control pin
     -D TFT_DC=15  ; =RS; Data Command control pin - must use a pin in the range 0-31
@@ -1370,6 +1399,7 @@
     -D TOUCH_IRQ=34   ; use 34-39 as these are input only pins
     -D TOUCH_RST=-1   ; not used, connected to 3.3V
 </code></pre></div>
+</td></tr></table>
                 
               
               

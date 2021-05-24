@@ -1237,9 +1237,32 @@ and the <a href="https://www.pcbway.com/project/shareproject/ESP32_TFT_Combiner_
 <p><img alt="PCB Combiner" src="../../assets/images/devices/freetouchdeck-pcb.png" /></p>
 <h2 id="hasp-build_flags">HASP build_flags<a class="headerlink" href="#hasp-build_flags" title="Permanent link">~</a></h2>
 <p>Specify the LCD Configuration to use and define the GPIOs in the environment build flags:</p>
-<div class="codehilite"><pre><span></span><code>build_flags =
-    <span class="cp">${</span><span class="n">env</span><span class="o">.</span><span class="n">build_flags</span><span class="cp">}</span>
-    <span class="cp">${</span><span class="n">esp32</span><span class="o">.</span><span class="n">build_flags</span><span class="cp">}</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>build_flags =
+    ${env.build_flags}
+    ${esp32.build_flags}
 
 ;region -- TFT_eSPI build options ------------------------
     -D USER_SETUP_LOADED=1
@@ -1262,6 +1285,7 @@ and the <a href="https://www.pcbway.com/project/shareproject/ESP32_TFT_Combiner_
     -D SPI_READ_FREQUENCY=20000000
 ;endregion
 </code></pre></div>
+</td></tr></table>
                 
               
               

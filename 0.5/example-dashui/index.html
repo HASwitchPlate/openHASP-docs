@@ -1059,7 +1059,26 @@
 <h2>Code</h2>
 
 <p>To add an openHASP plate to your installation with the Dash UI sample configuration, upload a <code>pages.jsonl</code> file with the folowing content to your plate:</p>
-<div class="codehilite"><pre><span></span><code>{&quot;page&quot;:1,&quot;comment&quot;:&quot;---------- Page 1 ----------&quot;}
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>{&quot;page&quot;:1,&quot;comment&quot;:&quot;---------- Page 1 ----------&quot;}
 {&quot;id&quot;:0,&quot;bg_color&quot;:&quot;#FFFFFF&quot;,&quot;text_color&quot;:&quot;#000000&quot;,&quot;radius&quot;:0,&quot;border_side&quot;:0}
 {&quot;obj&quot;:&quot;btn&quot;,&quot;id&quot;:1,&quot;x&quot;:0,&quot;y&quot;:0,&quot;w&quot;:240,&quot;h&quot;:30,&quot;text&quot;:&quot;LIVING ROOM&quot;,&quot;value_font&quot;:22,&quot;bg_color&quot;:&quot;#2C3E50&quot;,&quot;text_color&quot;:&quot;#FFFFFF&quot;,&quot;radius&quot;:0,&quot;border_side&quot;:0}
 {&quot;obj&quot;:&quot;arc&quot;,&quot;id&quot;:2,&quot;x&quot;:5,&quot;y&quot;:45,&quot;w&quot;:140,&quot;h&quot;:100,&quot;max&quot;:40,&quot;border_side&quot;:0,&quot;type&quot;:0,&quot;rotation&quot;:0,&quot;start_angle&quot;:180,&quot;end_angle&quot;:0,&quot;start_angle1&quot;:180,&quot;value_font&quot;:12,&quot;value_ofs_x&quot;:-19,&quot;value_ofs_y&quot;:-4,&quot;bg_opa&quot;:0}
@@ -1080,7 +1099,7 @@
 {&quot;page&quot;:0,&quot;obj&quot;:&quot;btn&quot;,&quot;id&quot;:2,&quot;x&quot;:75,&quot;y&quot;:290,&quot;w&quot;:90,&quot;h&quot;:30,&quot;opacity&quot;:100,&quot;text&quot;:&quot;\uE2DC&quot;,&quot;radius&quot;:0,&quot;bg_color&quot;:&quot;#34495E&quot;,&quot;text_color&quot;:&quot;#000000&quot;}
 {&quot;page&quot;:0,&quot;obj&quot;:&quot;btn&quot;,&quot;id&quot;:3,&quot;x&quot;:164,&quot;y&quot;:290,&quot;w&quot;:76,&quot;h&quot;:30,&quot;opacity&quot;:100,&quot;text&quot;:&quot;\uF054&quot;,&quot;radius&quot;:0,&quot;bg_color&quot;:&quot;#34495E&quot;,&quot;text_color&quot;:&quot;#000000&quot;}
 </code></pre></div>
-
+</td></tr></table>
 <p>Assuming your plate's configured MQTT topic is <code>plate35</code>, values for Temperature, Humidity and CO2 Sensor have to be sent from another device by publishing values to the appropriate command topic:</p>
 <ul>
 <li><code>hasp/plate35/command/p1b2.val %value%</code> - to update Temperature arc value</li>

@@ -1166,7 +1166,61 @@
 The night mode activates when sun goes down, and the day mode activates when the sun comes up. During the day mood light doesn't light, screen is on all the time but dimmed.</p>
 <p>Tested on Lanbon L8 and firmware 0.4.0.</p>
 <p>Put your <code>light.plate_my_room_moodlight</code> to a Lovelace card entity row and select a nice color for moodlight. Assuming your plate's configured MQTT node or group topic is <code>plate35</code>, add your automations:</p>
-<div class="codehilite"><pre><span></span><code><span class="p p-Indicator">-</span> <span class="nt">id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">openhasp-moodlight-on</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p p-Indicator">-</span> <span class="nt">id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">openhasp-moodlight-on</span>
   <span class="nt">alias</span><span class="p">:</span> <span class="s">&quot;openHASP</span><span class="nv"> </span><span class="s">Moodlight</span><span class="nv"> </span><span class="s">ON</span><span class="nv"> </span><span class="s">when</span><span class="nv"> </span><span class="s">Backlight</span><span class="nv"> </span><span class="s">OFF&quot;</span>
   <span class="nt">trigger</span><span class="p">:</span>
     <span class="p p-Indicator">-</span> <span class="nt">platform</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">state</span>
@@ -1222,12 +1276,26 @@ The night mode activates when sun goes down, and the day mode activates when the
         <span class="nt">topic</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">hasp/plate35/config/gui</span>
         <span class="nt">payload</span><span class="p">:</span> <span class="s">&#39;{&quot;idle2&quot;:0}&#39;</span>
 </code></pre></div>
-
+</td></tr></table>
 <p>Note the condition which assures to avoid triggering the automations falsely when Home Assistant (re)starts (allows running the automation only when Home Assistant has been up for at least 2 minutes).</p>
 <hr />
 <h2 id="return-to-home-page-after-some-idle-time">Return to home page after some idle time<a class="headerlink" href="#return-to-home-page-after-some-idle-time" title="Permanent link">~</a></h2>
 <p>Apart from the idle times controlling backlight levels, one may want to return to page 1 after a while. </p>
-<div class="codehilite"><pre><span></span><code><span class="p p-Indicator">-</span> <span class="nt">id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">openhasp-back-to-page-1</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p p-Indicator">-</span> <span class="nt">id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">openhasp-back-to-page-1</span>
   <span class="nt">alias</span><span class="p">:</span> <span class="s">&quot;openHASP</span><span class="nv"> </span><span class="s">back</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">page</span><span class="nv"> </span><span class="s">1&quot;</span>
   <span class="nt">trigger</span><span class="p">:</span>
     <span class="p p-Indicator">-</span> <span class="nt">platform</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">template</span>
@@ -1243,19 +1311,41 @@ The night mode activates when sun goes down, and the day mode activates when the
       <span class="nt">data</span><span class="p">:</span>
         <span class="nt">page</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1</span>
 </code></pre></div>
-
+</td></tr></table>
 <hr />
 <h2 id="reload-design-pages-from-home-assistant-configuration-directory">Reload design pages from Home Assistant configuration directory<a class="headerlink" href="#reload-design-pages-from-home-assistant-configuration-directory" title="Permanent link">~</a></h2>
 <p>It's possible to store the <code>pages.jsonl</code> plate design configuration files in a central location, namely your Home Assistant server. Practically you can do this by creating a directory where your <code>configuration.yaml</code> resides, say <code>hasp-lvgl</code> and you can drop your <code>pages.jsonl</code> files there for all your plates.</p>
-<p>You need to allow Home Assistant components to access this directory, this can be done in <code>configuration.yaml</code> with this directive (in case of hassio looks like this) :</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">homeassistant</span><span class="p">:</span>
+<p>You need to allow Home Assistant components to access this directory, this can be done in <code>configuration.yaml</code> with this directive (in case of hassio looks like this) :
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nt">homeassistant</span><span class="p">:</span>
   <span class="nt">allowlist_external_dirs</span><span class="p">:</span> 
     <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">/config/openhasp/</span>
 </code></pre></div>
-
+</td></tr></table></p>
 <p>With the <a href="#custom-component/services">services</a> <code>openhasp.clear_page</code> and <code>openhasp.load_pages</code> you can clear one or all the pages of your plate, and reload their configuration from the server, respectively.</p>
 <p>For the example automation below i've created an <a href="https://www.home-assistant.io/integrations/input_boolean/">input_boolean</a> named <code>load_pages_plate_my_room</code> in order to have a switch in Lovelace UI to trigger this manually.</p>
-<div class="codehilite"><pre><span></span><code><span class="p p-Indicator">-</span> <span class="nt">id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">openhasp-reload_pages</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p p-Indicator">-</span> <span class="nt">id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">openhasp-reload_pages</span>
   <span class="nt">alias</span><span class="p">:</span> <span class="s">&quot;openHASP</span><span class="nv"> </span><span class="s">reload</span><span class="nv"> </span><span class="s">pages&quot;</span>
   <span class="nt">trigger</span><span class="p">:</span>
     <span class="p p-Indicator">-</span> <span class="nt">platform</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">state</span>
@@ -1277,16 +1367,18 @@ The night mode activates when sun goes down, and the day mode activates when the
       <span class="nt">data</span><span class="p">:</span>
         <span class="nt">entity_id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">input_boolean.load_pages_plate_my_room</span>
 </code></pre></div>
-
+</td></tr></table>
 <p>If you omit the <code>openhasp.clear_page</code> service completely, the objects will be updated. It's important to know that they have to remain the same type (e.g. you can't update from a <code>label</code> type object to a <code>button</code> type object. If you need a change, you need to clear first.)</p>
 <p>If you omit lines <code>data:</code> and <code>page: 1</code>, all pages will be cleared.</p>
-<p>To trigger this automation when Home Assistant starts, you can use this in your automation:</p>
-<div class="codehilite"><pre><span></span><code>  <span class="nt">trigger</span><span class="p">:</span>
+<p>To trigger this automation when Home Assistant starts, you can use this in your automation:
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>  <span class="nt">trigger</span><span class="p">:</span>
     <span class="p p-Indicator">-</span> <span class="nt">platform</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">homeassistant</span>
       <span class="nt">event</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">start</span>
 </code></pre></div>
-
-<p><em>Note:</em> You can also use the <code>path</code> directive in the component config to load the design configuration at Home Assistant start, but that won't clear the existing pages (it assumes the pages are empty). </p>
+</td></tr></table>
+<em>Note:</em> You can also use the <code>path</code> directive in the component config to load the design configuration at Home Assistant start, but that won't clear the existing pages (it assumes the pages are empty). </p>
 <hr />
 <h2 id="prevent-burn-in-of-the-lcd-screen">Prevent burn-in of the LCD screen<a class="headerlink" href="#prevent-burn-in-of-the-lcd-screen" title="Permanent link">~</a></h2>
 <p>You can use this to protect and prolonge the lifetime of the LCD screens, thus being more green and generating less hazardous waste.</p>
@@ -1296,7 +1388,56 @@ The night mode activates when sun goes down, and the day mode activates when the
 <p>One way to reduce this is to "train" the pixels periodically with completely different other content.
 Assuming your group name is configured as <code>plates</code> in your 240x320 screens running openHASP, here is a possible solution to extend their life (all at once).</p>
 <p>The first automation runs for 1 minute by cycling an overlay with a full-screen base object every second through white, red, green, blue and black. It starts and remains turned off at Home Assistant start, to run it you need to turn it on using the service <code>automation.turn_on</code>.</p>
-<div class="codehilite"><pre><span></span><code><span class="p p-Indicator">-</span> <span class="nt">id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">openhasp_antiburn</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p p-Indicator">-</span> <span class="nt">id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">openhasp_antiburn</span>
   <span class="nt">alias</span><span class="p">:</span> <span class="s">&quot;openHASP</span><span class="nv"> </span><span class="s">anti</span><span class="nv"> </span><span class="s">burn-in</span><span class="nv"> </span><span class="s">screen</span><span class="nv"> </span><span class="s">protection&quot;</span>
   <span class="nt">initial_state</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
   <span class="nt">trigger</span><span class="p">:</span>
@@ -1347,9 +1488,27 @@ Assuming your group name is configured as <code>plates</code> in your 240x320 sc
       <span class="nt">target</span><span class="p">:</span>
         <span class="nt">entity_id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">automation.openhasp_anti_burn_in_screen_protection</span>
 </code></pre></div>
-
+</td></tr></table>
 <p>The second automation takes care to stop the looping colors when you touch the screen:</p>
-<div class="codehilite"><pre><span></span><code><span class="p p-Indicator">-</span> <span class="nt">id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">openhasp_antiburn_touch_stop</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p p-Indicator">-</span> <span class="nt">id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">openhasp_antiburn_touch_stop</span>
   <span class="nt">alias</span><span class="p">:</span> <span class="s">&quot;openHASP</span><span class="nv"> </span><span class="s">anti-burn-in</span><span class="nv"> </span><span class="s">stop</span><span class="nv"> </span><span class="s">when</span><span class="nv"> </span><span class="s">touched&quot;</span>
   <span class="nt">initial_state</span><span class="p">:</span> <span class="s">&#39;on&#39;</span>
   <span class="nt">mode</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">restart</span>
@@ -1369,9 +1528,22 @@ Assuming your group name is configured as <code>plates</code> in your 240x320 sc
         <span class="nt">topic</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">hasp/plates/command/p0b99.delete</span>
         <span class="nt">payload</span><span class="p">:</span> <span class="s">&#39;&#39;</span>
 </code></pre></div>
-
+</td></tr></table>
 <p>The third automation simply runs the first automation at 3 different times every night:</p>
-<div class="codehilite"><pre><span></span><code><span class="p p-Indicator">-</span> <span class="nt">id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">openhasp_antiburn_start_at_night</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p p-Indicator">-</span> <span class="nt">id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">openhasp_antiburn_start_at_night</span>
   <span class="nt">alias</span><span class="p">:</span> <span class="s">&quot;openHASP</span><span class="nv"> </span><span class="s">anti-burn-in</span><span class="nv"> </span><span class="s">start</span><span class="nv"> </span><span class="s">at</span><span class="nv"> </span><span class="s">night&quot;</span>
   <span class="nt">initial_state</span><span class="p">:</span> <span class="s">&#39;on&#39;</span>
   <span class="nt">trigger</span><span class="p">:</span>
@@ -1386,20 +1558,33 @@ Assuming your group name is configured as <code>plates</code> in your 240x320 sc
       <span class="nt">target</span><span class="p">:</span>
         <span class="nt">entity_id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">automation.openhasp_anti_burn_in_screen_protection</span>
 </code></pre></div>
-
+</td></tr></table>
 <h3>Clear pixels when backlight off</h3>
 
 <p>Another way to reduce the chance of burn-in is to clear the contents of the screen while the backlight is turned off, as nobody sees the pixels anyway.
 Just add these actions to the <a href="#turn-on-moodlight-when-backlight-off-and-vice-versa">first automation example</a> which draw an overlay with a black base object on page 0 when display is off, and deletes it when comes back on:</p>
 <p>for automation <code>openhasp-moodlight-on</code>, add to actions:</p>
-<div class="codehilite"><pre><span></span><code>    <span class="p p-Indicator">-</span> <span class="nt">service</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">mqtt.publish</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>    <span class="p p-Indicator">-</span> <span class="nt">service</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">mqtt.publish</span>
       <span class="nt">data</span><span class="p">:</span>
         <span class="nt">topic</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">hasp/plates/command/jsonl</span>
         <span class="nt">payload</span><span class="p">:</span> <span class="s">&#39;{&quot;page&quot;:0,&quot;id&quot;:99,&quot;obj&quot;:&quot;obj&quot;,&quot;x&quot;:0,&quot;y&quot;:0,&quot;w&quot;:240,&quot;h&quot;:320,&quot;radius&quot;:0,&quot;hidden&quot;:0,&quot;bg_grad_dir&quot;:0,&quot;bg_color&quot;:&quot;black&quot;}&#39;</span>
 </code></pre></div>
-
+</td></tr></table>
 <p>for automation <code>openhasp-moodlight-off</code>, add to actions:</p>
-<div class="codehilite"><pre><span></span><code>    <span class="p p-Indicator">-</span> <span class="nt">service</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">automation.turn_off</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>    <span class="p p-Indicator">-</span> <span class="nt">service</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">automation.turn_off</span>
       <span class="nt">target</span><span class="p">:</span>
         <span class="nt">entity_id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">automation.openhasp_anti_burn_in_screen_protection</span>
     <span class="p p-Indicator">-</span> <span class="nt">service</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">mqtt.publish</span>
@@ -1411,7 +1596,7 @@ Just add these actions to the <a href="#turn-on-moodlight-when-backlight-off-and
         <span class="nt">topic</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">hasp/plates/command/p0b99.delete</span>
         <span class="nt">payload</span><span class="p">:</span> <span class="s">&#39;&#39;</span>
 </code></pre></div>
-
+</td></tr></table>
 <p>Both methods can coexist.<br />
 Don't forget to adjust the size of the object to your screen if it's not 240x320.</p>
                 

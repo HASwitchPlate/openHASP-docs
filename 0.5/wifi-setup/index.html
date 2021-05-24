@@ -1169,11 +1169,13 @@ Or Check the serial log for the SSID and password to connect.</p>
 </ul>
 <h2 id="using-command-line">Using Command line<a class="headerlink" href="#using-command-line" title="Permanent link">~</a></h2>
 <p>You can also directly configure the Wi-Fi settings via the serial console:</p>
-<div class="codehilite"><pre><span></span><code>ssid myAccessPointName
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>ssid myAccessPointName
 pass myWifiPassword
 reboot
 </code></pre></div>
-
+</td></tr></table>
 <div class="admonition note">
 <p>To skip this step, Wi-Fi credentials can be saved into the .bin file when you compile the firmware yourself. Rename <code>user_config_override-template.h</code> to <code>user_config_override.h</code>, enter your credentials and use flag <code>-DUSE_CONFIG_OVERRIDE</code> when compiling</p>
 </div>

@@ -1104,11 +1104,12 @@
 <p>The ESP8266 firmware only has 1 built-in font: Unscii with font size 8pt.</p>
 <p>The ESP32 additionally contains the Roboto Condensed font in these font sizes: 12, 16, 22 and 28pt.</p>
 <p>The built-in fonts can be set by using the pointsize as parameter:</p>
-<p>for example:</p>
-<div class="codehilite"><pre><span></span><code><span class="err">p4b1.text_font=16</span>
-<span class="err">p4b2.value_font=8</span>
+<p>for example:
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>p4b1.text_font=16
+p4b2.value_font=8
 </code></pre></div>
-
+</td></tr></table></p>
 <h2 id="built-in-icons">Built-in Icons<a class="headerlink" href="#built-in-icons" title="Permanent link">~</a></h2>
 <p>These icons are included in the Roboto Condensed font:</p>
 <table>
@@ -1351,14 +1352,14 @@
 </table>
 <p>To use an icon in a text you need to prefix the UTF-8 value with <code>\u</code>.
 To ensure proper decoding the payload should be used with a <code>json</code> or <code>jsonl</code> command.</p>
-<p><code>jsonl</code> example:</p>
-<div class="codehilite"><pre><span></span><code><span class="err">{&quot;obj&quot;:&quot;label&quot;,&quot;id&quot;:10,&quot;x&quot;:0,&quot;y&quot;:0,&quot;w&quot;:70,&quot;h&quot;:50,&quot;parentid&quot;:5,&quot;text&quot;:&quot;\uf00c OK&quot;}</span>
+<p><code>jsonl</code> example:
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>{&quot;obj&quot;:&quot;label&quot;,&quot;id&quot;:10,&quot;x&quot;:0,&quot;y&quot;:0,&quot;w&quot;:70,&quot;h&quot;:50,&quot;parentid&quot;:5,&quot;text&quot;:&quot;\uf00c OK&quot;}
 </code></pre></div>
-
-<p><code>json</code> example:</p>
-<div class="codehilite"><pre><span></span><code><span class="err">[&quot;p3b10.text=\uf00c OK&quot;]</span>
+</td></tr></table></p>
+<p><code>json</code> example:
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>[&quot;p3b10.text=\uf00c OK&quot;]
 </code></pre></div>
-
+</td></tr></table></p>
 <h2 id="custom-fonts">Custom Fonts<a class="headerlink" href="#custom-fonts" title="Permanent link">~</a></h2>
 <p>You can add a custom font by uploading it to the internal flash.
 Apply it as the default font on the Configuration &gt; HASP Settings page.</p>

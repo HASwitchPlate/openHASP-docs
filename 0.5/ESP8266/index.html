@@ -1147,10 +1147,11 @@
 <h4>Using <a href="https://github.com/tasmota/tasmotizer">Tasmotizer</a> (Windows)</h4>
 <h4>Using esp-tool.py</h4>
 <p>When flashing the ESP8266 for the first time, it is best to erase the flash before uploading the new firmware:</p>
-<div class="codehilite"><pre><span></span><code>esptool.py -p <span class="s2">&quot;COM1&quot;</span> erase_flash
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>esptool.py -p <span class="s2">&quot;COM1&quot;</span> erase_flash
 esptool.py -p <span class="s2">&quot;COM1&quot;</span> write_flash --flash_mode qio 0x0 d1-mini-esp8266_ili9341_v0.3.2.bin
 </code></pre></div>
-
+</td></tr></table>
 <p>Change <code>COM1</code> to the correct port on your computer and <code>4m</code> to the correct size of the internal flash chip.</p>
                 
               

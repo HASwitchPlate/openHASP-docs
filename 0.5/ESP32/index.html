@@ -1144,10 +1144,11 @@
 <h2 id="install-the-firmware">Install the firmware<a class="headerlink" href="#install-the-firmware" title="Permanent link">~</a></h2>
 <h3>Flash ESP32</h3>
 <p>When flashing the ESP32 for the first time, you need to flash it over serial using the <strong>full</strong> firmware binary file:</p>
-<div class="codehilite"><pre><span></span><code>esptool.py --port COM1 erase_flash
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>esptool.py --port COM1 erase_flash
 esptool.py --port COM1 --baud <span class="m">921600</span> write_flash 0x0 d1-mini-esp32_ili9341_full_4MB_&lt;version&gt;.bin
 </code></pre></div>
-
+</td></tr></table>
 <p>Change <code>COM1</code> to the correct port on your computer.</p>
                 
               
