@@ -6,37 +6,34 @@ jobs:
   mkdocs:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-        with:
-          token: ${{ secrets.DEPLOYMENT_PERSONAL_ACCESS_TOKEN }}
-          submodules: true
-          # git-revision-date-localized-plugin and mkdocs-rss-plugin need full git history depth
-          fetch-depth: 0
+    steps:
+      - uses: actions/checkout@v2
 
-      - name: Set up Python
-        uses: actions/setup-python@v2.2.2
-        with:
-          python-version: "3.x"
-
-      - uses: actions/cache@v2.1.5
-        id: cache
+      - name: Cache pip
+        uses: actions/cache@v2
         with:
           path: ~/.cache/pip
-          key: ${{ runner.os }}-pip-${{ hashFiles('requirements.txt') }}
+          key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
           restore-keys: |
             ${{ runner.os }}-pip-
-      - name: Install dependencies
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+
+        - name: Install dependencies
         run: |
           python -m pip install --upgrade pip setuptools wheel
           python -m pip install -r requirements.txt
+
       - name: Build docs
         run: |
           mkdocs build
+
       - name: Validate generated HTML files
         run: |
           docker run -v $(pwd):/test --rm wjdp/htmltest --conf .htmltest.yml
       # On push to master or release branch, deploy docs
+      
       - name: Set up git author
         if: github.ref == 'refs/heads/master' || startsWith(github.ref, 'refs/heads/release/v')
         run: |
@@ -58,8 +55,8 @@ jobs:
         # env:
         #   CUSTOM_DOMAIN: docs.codacy.com
 
-      - name: Deploy docs (Self-hosted)
-        if: startsWith(github.ref, 'refs/heads/release/v')        
-        run: |
-          git fetch origin gh-pages --verbose
-          mike deploy ${GITHUB_REF##*/release/} -t "Self-hosted ${GITHUB_REF##*/release/}" --config-file "${GITHUB_WORKSPACE}/mkdocs.yml" --push --rebase
+      # - name: Deploy docs (Self-hosted)
+      #   if: startsWith(github.ref, 'refs/heads/release/v')        
+      #   run: |
+      #     git fetch origin gh-pages --verbose
+      #     mike deploy ${GITHUB_REF##*/release/} -t "Self-hosted ${GITHUB_REF##*/release/}" --config-file "${GITHUB_WORKSPACE}/mkdocs.yml" --push --rebase
