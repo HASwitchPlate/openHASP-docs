@@ -480,6 +480,136 @@
             
   
   
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Pages
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Pages
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#pagesjsonl" class="md-nav__link">
+    pages.jsonl
+  </a>
+  
+    <nav class="md-nav" aria-label="pages.jsonl">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#file-comments" class="md-nav__link">
+    File comments
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jsonl-command" class="md-nav__link">
+    jsonl command
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#objects" class="md-nav__link">
+    Objects
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#page-attributes" class="md-nav__link">
+    Page attributes
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../objects/" class="md-nav__link">
+        Objects
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fonts/" class="md-nav__link">
+        Fonts
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../styling/" class="md-nav__link">
+        Styling
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../commands/" class="md-nav__link">
+        Commands
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
   
     <li class="md-nav__item">
       <a href="../../../objects.nl.md" class="md-nav__link">
@@ -1177,7 +1307,7 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/fvanroie/new-docs/edit/master/docs/Design/pages.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/fvanroie/new-docs/edit/master/docs/Design/pages.en.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
@@ -1229,7 +1359,7 @@ If you then omit the <code>page</code> parameter in the lines below this comment
 <p>If the line is not valid json, the parsing of the rest of the file is also stopped.</p>
 </div>
 <h2 id="jsonl-command">jsonl command<a class="headerlink" href="#jsonl-command" title="Permanent link">~</a></h2>
-<p>See <a href="../commands/#jsonl">commands documentation</a> for the <code>jsonl</code> command. The payload of the command corresponds to what's exactly in one line of the <code>pages.jsonl</code> file above.</p>
+<p>See <a href="commands.md#jsonl">commands documentation</a> for the <code>jsonl</code> command. The payload of the command corresponds to what's exactly in one line of the <code>pages.jsonl</code> file above.</p>
 <h2 id="objects">Objects<a class="headerlink" href="#objects" title="Permanent link">~</a></h2>
 <p>Each line in <code>pages.jsonl</code> creates <strong>one object</strong> on a page and has to be in the json format.<br />
 The order of the objects also dictates the <em>layer</em> on the page from bottom to top. So the last drawn object will be the topmpost.</p>
@@ -1249,7 +1379,7 @@ p1b2.hidden=true
 <p>Page number <code>0</code> refers to an object visible on all pages.<br />
 An id of <code>0</code> refers to the page itself instead of an object.</p>
 <p><em>Tip:</em> If you add the objects on the page 0 last, you ensure that they will be always be visible on top of all other pages.</p>
-<p>See <a href="../objects/">objects dodumentation</a> for details.</p>
+<p>See <a href="objects.md">objects dodumentation</a> for details.</p>
 <h2 id="page-attributes">Page attributes<a class="headerlink" href="#page-attributes" title="Permanent link">~</a></h2>
 <p>A page can have the following attributes:</p>
 <ul>
@@ -1290,7 +1420,7 @@ The corresponding command is <code>p1b0.prev=5</code>.</p>
   
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
-        <a href="../objects/" class="md-footer__link md-footer__link--prev" rel="prev">
+        <a href="../../Configuration/wifi/" class="md-footer__link md-footer__link--prev" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -1299,19 +1429,19 @@ The corresponding command is <code>p1b0.prev=5</code>.</p>
               <span class="md-footer__direction">
                 Previous
               </span>
-              Objects
+              Wifi Settings
             </div>
           </div>
         </a>
       
       
-        <a href="../styling/" class="md-footer__link md-footer__link--next" rel="next">
+        <a href="../objects/" class="md-footer__link md-footer__link--next" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Styling
+              Objects
             </div>
           </div>
           <div class="md-footer__button md-icon">
