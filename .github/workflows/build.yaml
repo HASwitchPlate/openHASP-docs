@@ -28,10 +28,10 @@ jobs:
         run: |
           mkdocs build
 
-      - name: Validate generated HTML files
-        run: |
-          docker run -v $(pwd):/test --rm wjdp/htmltest --conf .htmltest.yml
-      # On push to master or release branch, deploy docs
+      # - name: Validate generated HTML files
+      #   run: |
+      #     docker run -v $(pwd):/test --rm wjdp/htmltest --conf .htmltest.yml
+      # # On push to master or release branch, deploy docs
 
       - name: Set up git author
         if: github.ref == 'refs/heads/master' || startsWith(github.ref, 'refs/heads/release/v')
