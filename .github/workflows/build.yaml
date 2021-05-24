@@ -48,7 +48,7 @@ jobs:
         if: github.ref == 'refs/heads/0.5'
         run: |
           git fetch origin gh-pages --verbose
-          mike deploy deploy --update-aliases 0.5 latest --config-file "${GITHUB_WORKSPACE}/mkdocs.yml" --push --rebase
+          mike deploy --update-aliases "0.5" latest --config-file "${GITHUB_WORKSPACE}/mkdocs.yml" --push --rebase
         # env:
         #   CUSTOM_DOMAIN: docs.codacy.com
 
