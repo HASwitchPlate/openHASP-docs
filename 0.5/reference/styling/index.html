@@ -6,7 +6,11 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
+        <meta name="description" content="Open firmware for MCUs to drive a low-cost commodity touch display">
       
+      
+      
+        <meta name="author" content="Francis Van Roie">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -14,7 +18,7 @@
     
     
       
-        <title>Styling - openHASP Docs</title>
+        <title>Styling - openHASP</title>
       
     
     
@@ -74,10 +78,9 @@
     
       <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="openHASP Docs" class="md-header__button md-logo" aria-label="openHASP Docs" data-md-component="logo">
+    <a href="../.." title="openHASP" class="md-header__button md-logo" aria-label="openHASP" data-md-component="logo">
       
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+  <img src="../../assets/images/logo.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -87,7 +90,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            openHASP Docs
+            openHASP
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -361,13 +364,12 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="openHASP Docs" class="md-nav__button md-logo" aria-label="openHASP Docs" data-md-component="logo">
+    <a href="../.." title="openHASP" class="md-nav__button md-logo" aria-label="openHASP" data-md-component="logo">
       
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+  <img src="../../assets/images/logo.png" alt="logo">
 
     </a>
-    openHASP Docs
+    openHASP
   </label>
   
     <div class="md-nav__source">
@@ -1445,7 +1447,138 @@ Some objects allow for more complex syling, effectively changing its appearance 
 <li>Short hex code (<code>#rgb</code>)</li>
 <li>RGB565 number format (<code>0..65535</code>)</li>
 </ul>
-<p>{{ read_csv("docs/assets/csv/colors.csv") }}</p>
+<table>
+<thead>
+<tr>
+<th align="left">Hex Code</th>
+<th align="left">Short Name</th>
+<th align="left">Hex Code</th>
+<th align="left">Short Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><div style='background-color:#00FFFF;text-align:center'>#00FFFF</div></td>
+<td align="left">Cyan <i>or</i> Aqua</td>
+<td align="left"><div style='background-color:#FFC0CB;text-align:center'>#FFC0CB</div></td>
+<td align="left">Pink</td>
+</tr>
+<tr>
+<td align="left"><div style='background-color:#00FF00;text-align:center'>#00FF00</div></td>
+<td align="left">Lime</td>
+<td align="left"><div style='background-color:#DDA0DD;text-align:center;color:white'>#DDA0DD</div></td>
+<td align="left">Plum</td>
+</tr>
+<tr>
+<td align="left"><div style='background-color:#008000;text-align:center;color:white'>#008000</div></td>
+<td align="left">Green</td>
+<td align="left"><div style='background-color:#DA70D6;text-align:center;color:white'>#DA70D6</div></td>
+<td align="left">Orchid</td>
+</tr>
+<tr>
+<td align="left"><div style='background-color:#008080;text-align:center;color:white'>#008080</div></td>
+<td align="left">Teal</td>
+<td align="left"><div style='background-color:#EE82EE;text-align:center;color:white'>#EE82EE</div></td>
+<td align="left">Violet</td>
+</tr>
+<tr>
+<td align="left"><div style='background-color:#0000FF;text-align:center;color:white'>#0000FF</div></td>
+<td align="left">Blue</td>
+<td align="left"><div style='background-color:#FF00FF;text-align:center;color:white'>#FF00FF</div></td>
+<td align="left">Magenta <i>or</i> Fuchsia</td>
+</tr>
+<tr>
+<td align="left"><div style='background-color:#000080;text-align:center;color:white'>#000080</div></td>
+<td align="left">Navy</td>
+<td align="left"><div style='background-color:#800080;text-align:center;color:white'>#800080</div></td>
+<td align="left">Purple</td>
+</tr>
+<tr>
+<td align="left"><div style='background-color:#808000;text-align:center;color:white'>#808000</div></td>
+<td align="left">Olive</td>
+<td align="left"><div style='background-color:#4B0082;text-align:center;color:white'>#4B0082</div></td>
+<td align="left">Indigo</td>
+</tr>
+<tr>
+<td align="left"><div style='background-color:#CD853F;text-align:center;color:white'>#CD853F</div></td>
+<td align="left">Peru</td>
+<td align="left"><div style='background-color:#B00000;text-align:center;color:white'>#B00000</div></td>
+<td align="left">Blush</td>
+</tr>
+<tr>
+<td align="left"><div style='background-color:#A0522D;text-align:center;color:white'>#A0522D</div></td>
+<td align="left">Sienna</td>
+<td align="left"><div style='background-color:#FF0000;text-align:center;color:white'>#FF0000</div></td>
+<td align="left">Red</td>
+</tr>
+<tr>
+<td align="left"><div style='background-color:#A52A2A;text-align:center;color:white'>#A52A2A</div></td>
+<td align="left">Brown</td>
+<td align="left"><div style='background-color:#FF6347;text-align:center;color:white'>#FF6347</div></td>
+<td align="left">Tomato</td>
+</tr>
+<tr>
+<td align="left"><div style='background-color:#800000;text-align:center;color:white'>#800000</div></td>
+<td align="left">Maroon</td>
+<td align="left"><div style='background-color:#FA8072;text-align:center;color:white'>#FA8072</div></td>
+<td align="left">Salmon</td>
+</tr>
+<tr>
+<td align="left"><div style='background-color:#FFFFFF;text-align:center'>#FFFFFF</div></td>
+<td align="left">White</td>
+<td align="left"><div style='background-color:#FF7F50;text-align:center;color:white'>#FF7F50</div></td>
+<td align="left">Coral</td>
+</tr>
+<tr>
+<td align="left"><div style='background-color:#FFFAFA;text-align:center'>#FFFAFA</div></td>
+<td align="left">Snow</td>
+<td align="left"><div style='background-color:#FFA500;text-align:center;color:white'>#FFA500</div></td>
+<td align="left">Orange</td>
+</tr>
+<tr>
+<td align="left"><div style='background-color:#FFFFF0;text-align:center'>#FFFFF0</div></td>
+<td align="left">Ivory</td>
+<td align="left"><div style='background-color:#FFD700;text-align:center'>#FFD700</div></td>
+<td align="left">Gold</td>
+</tr>
+<tr>
+<td align="left"><div style='background-color:#FAF0E6;text-align:center'>#FAF0E6</div></td>
+<td align="left">Linen</td>
+<td align="left"><div style='background-color:#FFFF00;text-align:center'>#FFFF00</div></td>
+<td align="left">Yellow</td>
+</tr>
+<tr>
+<td align="left"><div style='background-color:#F5F5DC;text-align:center'>#F5F5DC</div></td>
+<td align="left">Beige</td>
+<td align="left"><div style='background-color:#F0E68C;text-align:center'>#F0E68C</div></td>
+<td align="left">Khaki</td>
+</tr>
+<tr>
+<td align="left"><div style='background-color:#F0FFFF;text-align:center'>#F0FFFF</div></td>
+<td align="left">Azure</td>
+<td align="left"><div style='background-color:#FFE4C4;text-align:center'>#FFE4C4</div></td>
+<td align="left">Bisque</td>
+</tr>
+<tr>
+<td align="left"><div style='background-color:#C0C0C0;text-align:center'>#C0C0C0</div></td>
+<td align="left">Silver</td>
+<td align="left"><div style='background-color:#F5DEB3;text-align:center'>#F5DEB3</div></td>
+<td align="left">Wheat</td>
+</tr>
+<tr>
+<td align="left"><div style='background-color:#808080;text-align:center;color:white'>#808080</div></td>
+<td align="left">Gray <i>or</i> Grey</td>
+<td align="left"><div style='background-color:#D2B48C;text-align:center'>#D2B48C</div></td>
+<td align="left">Tan</td>
+</tr>
+<tr>
+<td align="left"><div style='background-color:#000000;text-align:center;color:white'>#000000</div></td>
+<td align="left">Black</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+</tbody>
+</table>
 <h3>Setting Color</h3>
 <p>Examples:</p>
 <pre><code class="language-json">p0b2.value_color=13891
