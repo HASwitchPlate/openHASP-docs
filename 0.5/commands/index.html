@@ -255,7 +255,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../reference/pages/" class="md-tabs__link md-tabs__link--active">
+      <a href="../pages/" class="md-tabs__link md-tabs__link--active">
         Design
       </a>
     </li>
@@ -665,7 +665,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../reference/pages/" class="md-nav__link">
+      <a href="../pages/" class="md-nav__link">
         Pages
       </a>
     </li>
@@ -677,7 +677,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../reference/objects/" class="md-nav__link">
+      <a href="../objects/" class="md-nav__link">
         Objects
       </a>
     </li>
@@ -689,7 +689,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../reference/fonts/" class="md-nav__link">
+      <a href="../fonts/" class="md-nav__link">
         Fonts
       </a>
     </li>
@@ -701,7 +701,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../reference/styling/" class="md-nav__link">
+      <a href="../styling/" class="md-nav__link">
         Styling
       </a>
     </li>
@@ -1470,7 +1470,7 @@ don't send too many lines in a single payload, you can always sends multiple jso
 <p>Example:    </p>
 <pre><code class="language-json">jsonl {&quot;obj&quot;:&quot;btn&quot;,&quot;id&quot;:14,&quot;x&quot;:120,&quot;y&quot;:1,&quot;w&quot;:30,&quot;h&quot;:40,&quot;text_font&quot;:&quot;2&quot;,&quot;text&quot;:&quot;Test&quot;,&quot;text_color&quot;:&quot;gray&quot;,&quot;bg_opa&quot;:0,&quot;border_width&quot;:0}
 </code></pre>
-<p><em>For more details see <a href="pages.md">Pages</a> and <a href="objects.md">Objects</a></em></p>
+<p><em>For more details see <a href="../pages/">Pages</a> and <a href="../objects/">Objects</a></em></p>
 <h2 id="json">json<a class="headerlink" href="#json" title="Permanent link">~</a></h2>
 <p><em>accepted parameters:</em> json array of strings</p>
 <p>Use the <code>json</code> command to send multiple commands as an array of strings in one payload.</p>
@@ -1550,9 +1550,9 @@ moodlight {&quot;color&quot;:12345}
 moodlight {&quot;state&quot;:&quot;on&quot;,&quot;r&quot;:255,&quot;g&quot;:0,&quot;b&quot;:255}
 </code></pre>
 <ul>
-<li>The <code>state</code> key accepts <a href="styling.md#boolean">boolean values</a> to turn the moodlight on or off</li>
+<li>The <code>state</code> key accepts <a href="../styling/#boolean">boolean values</a> to turn the moodlight on or off</li>
 <li>The <code>brightness</code> key can be set between <code>1</code> and <code>255</code> to dim the moodlight</li>
-<li>The <code>color</code> key accepts <a href="styling.md#colors">color values</a> to set the RGB channels at once</li>
+<li>The <code>color</code> key accepts <a href="../styling/#colors">color values</a> to set the RGB channels at once</li>
 <li>Individual <code>r</code>, <code>g</code> and <code>b</code> keys can also be used to set each channel seperately</li>
 </ul>
 <p>Calling the <code>moodlight</code> command without parameters (or sending an empty payload to the <code>hasp/&lt;nodename&gt;/command/moodlight</code> topic) returns the current state:</p>
@@ -1684,7 +1684,7 @@ config/gpio
   
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
-        <a href="../reference/styling/" class="md-footer__link md-footer__link--prev" rel="prev">
+        <a href="../styling/" class="md-footer__link md-footer__link--prev" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
