@@ -52,6 +52,14 @@ jobs:
         # env:
         #   CUSTOM_DOMAIN: docs.codacy.com
 
+      - name: Deploy docs (Dev)
+        if: github.ref == 'refs/heads/0.6'
+        run: |
+          git fetch origin gh-pages --verbose
+          mike deploy --update-aliases "0.6" dev --config-file "${GITHUB_WORKSPACE}/mkdocs.yml" --push --rebase
+        # env:
+        #   CUSTOM_DOMAIN: docs.codacy.com
+
       # - name: Deploy docs (Self-hosted)
       #   if: startsWith(github.ref, 'refs/heads/release/v')        
       #   run: |
