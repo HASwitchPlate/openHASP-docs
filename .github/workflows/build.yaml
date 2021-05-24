@@ -1,34 +1,65 @@
-name: Build version
+name: MkDocs
 
-on: [push, workflow_dispatch]
+on: push
 
 jobs:
-  deploy:
+  mkdocs:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-
-      - name: Setup Python
-        uses: actions/setup-python@v1
+      - name: Checkout code
+        uses: actions/checkout@v2
         with:
-          python-version: '3.8'
-          architecture: 'x64'
+          token: ${{ secrets.DEPLOYMENT_PERSONAL_ACCESS_TOKEN }}
+          submodules: true
+          # git-revision-date-localized-plugin and mkdocs-rss-plugin need full git history depth
+          fetch-depth: 0
 
+      - name: Set up Python
+        uses: actions/setup-python@v2.2.2
+        with:
+          python-version: "3.x"
+
+      - uses: actions/cache@v2.1.5
+        id: cache
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
       - name: Install dependencies
         run: |
-          pip install --upgrade pip
-          pip install -r ./requirements.txt
-      - name: Git Config
-        run: git config user.name fvanroie && git config user.email ${{secrets.GIT_EMAIL}}
+          python -m pip install --upgrade pip setuptools wheel
+          python -m pip install -r requirements.txt
+      - name: Build docs
+        run: |
+          mkdocs build
+      - name: Validate generated HTML files
+        run: |
+          docker run -v $(pwd):/test --rm wjdp/htmltest --conf .htmltest.yml
+      # On push to master or release branch, deploy docs
+      - name: Set up git author
+        if: github.ref == 'refs/heads/master' || startsWith(github.ref, 'refs/heads/release/v')
+        run: |
+          remote_repo="https://${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          git config --global user.name "${GITHUB_ACTOR}"
+          git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
+          git remote rm origin
+          git remote add origin "${remote_repo}"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: ls
-        run: ls && mike list
+      - name: Deploy docs (Latest)
+        if: github.ref == 'refs/heads/master'
+        run: |
+          echo "${CUSTOM_DOMAIN}" > "${GITHUB_WORKSPACE}/docs/CNAME"
+          echo -e "User-agent: *\nDisallow: /v*.*/\nSitemap: https://${CUSTOM_DOMAIN}/sitemap.xml" > "${GITHUB_WORKSPACE}/docs/robots.txt"
+          git fetch origin gh-pages --verbose
+          mike deploy . -t "Cloud (Latest)" --config-file "${GITHUB_WORKSPACE}/mkdocs.yml" --push --rebase
+        # env:
+        #   CUSTOM_DOMAIN: docs.codacy.com
 
-      - name: Mike Deploy 2.0
-        run: mike deploy --update-aliases 0.5 latest --push --force
-
-      # - name: Deploy
-      #   uses: peaceiris/actions-gh-pages@v3
-      #   with:
-      #     github_token: ${{ secrets.DEPLOY_TOKEN }}
-      #     publish_dir: ./site
+      - name: Deploy docs (Self-hosted)
+        if: startsWith(github.ref, 'refs/heads/release/v')        
+        run: |
+          git fetch origin gh-pages --verbose
+          mike deploy ${GITHUB_REF##*/release/} -t "Self-hosted ${GITHUB_REF##*/release/}" --config-file "${GITHUB_WORKSPACE}/mkdocs.yml" --push --rebase
