@@ -66,6 +66,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#the-font-looks-tiny" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -1070,9 +1075,58 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          FAQ
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         FAQ
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-font-looks-tiny" class="md-nav__link">
+    The font looks tiny
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-use-fontawesome-icons" class="md-nav__link">
+    How to use Fontawesome icons?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#is-there-a-file-browser-built-in" class="md-nav__link">
+    Is there a file browser built-in?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-delete-files-from-flash" class="md-nav__link">
+    How to delete files from flash?
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1115,6 +1169,57 @@
               </div>
             
             
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-font-looks-tiny" class="md-nav__link">
+    The font looks tiny
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-use-fontawesome-icons" class="md-nav__link">
+    How to use Fontawesome icons?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#is-there-a-file-browser-built-in" class="md-nav__link">
+    Is there a file browser built-in?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-delete-files-from-flash" class="md-nav__link">
+    How to delete files from flash?
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content" data-md-component="content">
             <article class="md-content__inner md-typeset">
@@ -1127,22 +1232,22 @@
                 
                 <h1>Frequently Asked Questions</h1>
 
-<h3><img alt="❓" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/2753.png" title=":question:" /> The font looks tiny</h3>
+<h3 id="the-font-looks-tiny"><img alt="❓" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/2753.png" title=":question:" /> The font looks tiny<a class="headerlink" href="#the-font-looks-tiny" title="Permanent link">~</a></h3>
 <p>On ESP8266, the out-of-the box font is Unscii 8pt because this font takes up very little space in memory and on flash.
 This default font is just intended to get the device setup, then you can Upload your own .zi font.</p>
 <p>On ESP32, the default font is Roboto Condensed 12.</p>
-<h3><img alt="❓" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/2753.png" title=":question:" /> How to use Fontawesome icons?</h3>
+<h3 id="how-to-use-fontawesome-icons"><img alt="❓" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/2753.png" title=":question:" /> How to use Fontawesome icons?<a class="headerlink" href="#how-to-use-fontawesome-icons" title="Permanent link">~</a></h3>
 <p>Upload another .zi file named fontawesome<em>xx</em>.zi of the same point size as the normal text .zi font.
 e.g. If your custom font is <code>arial24.zi´, you should also add a</code>fontawesome24.zi` file.</p>
 <p>You can download <code>fontawesome.zip</code> from the <a href="https://github.com/HASwitchPlate/HMI-Font-Pack/releases">HMI Font Pack</a> repository.</p>
-<h3><img alt="❓" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/2753.png" title=":question:" /> Is there a file browser built-in?</h3>
+<h3 id="is-there-a-file-browser-built-in"><img alt="❓" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/2753.png" title=":question:" /> Is there a file browser built-in?<a class="headerlink" href="#is-there-a-file-browser-built-in" title="Permanent link">~</a></h3>
 <p><em>A:</em> Since v0.6.0 there is a native file browser included on ESP32.</p>
 <p>You can use it to upload, download and edit files on the flash partition of the ESP32.
 Using that webpage, you can right-click and delete files:</p>
 <p><img alt="HTTP configuration" src="../../assets/images/faq/faq_file_delete.png" title="Delete file" /></p>
 <p>Click on the File Editor button on the Main Webpage:</p>
 <p><img alt="HTTP configuration" src="../../assets/images/faq/faq_file_browser.png" title="File Browser" /></p>
-<h3><img alt="❓" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/2753.png" title=":question:" /> How to delete files from flash?</h3>
+<h3 id="how-to-delete-files-from-flash"><img alt="❓" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/2753.png" title=":question:" /> How to delete files from flash?<a class="headerlink" href="#how-to-delete-files-from-flash" title="Permanent link">~</a></h3>
 <p>Yes: <em>See: Is there a file browser built-in?</em></p>
                 
               

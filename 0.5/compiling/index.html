@@ -1121,6 +1121,47 @@
     Compiling
   </a>
   
+    <nav class="md-nav" aria-label="Compiling">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mcu-environments" class="md-nav__link">
+    MCU Environments
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#native-linux-build" class="md-nav__link">
+    Native Linux build
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#native-macos-build" class="md-nav__link">
+    Native MacOS build
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#native-windows-build" class="md-nav__link">
+    Native Windows build
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#block-diagram" class="md-nav__link">
+    Block Diagram
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1246,6 +1287,47 @@
     Compiling
   </a>
   
+    <nav class="md-nav" aria-label="Compiling">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mcu-environments" class="md-nav__link">
+    MCU Environments
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#native-linux-build" class="md-nav__link">
+    Native Linux build
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#native-macos-build" class="md-nav__link">
+    Native MacOS build
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#native-windows-build" class="md-nav__link">
+    Native Windows build
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#block-diagram" class="md-nav__link">
+    Block Diagram
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1344,22 +1426,22 @@ extra_configs =
 <p>Copy it to <code>include\user_config_override.h</code> and change the settins per your needs. <br />
 Also uncomment <code>-DUSE_CONFIG_OVERRIDE</code> in <code>platformio_override.ini</code> to ensure that the config overrides are taken into account during the compilation process.</p>
 <h2 id="compiling">Compiling<a class="headerlink" href="#compiling" title="Permanent link">~</a></h2>
-<h3>MCU Environments</h3>
+<h3 id="mcu-environments">MCU Environments<a class="headerlink" href="#mcu-environments" title="Permanent link">~</a></h3>
 <p><img alt="Build All" src="../assets/images/compiling/build_all.png" /></p>
 <p>You can now run "Build" or "Build All" in PlatformIO to compile (all) the firmware.</p>
-<h3>Native Linux build</h3>
+<h3 id="native-linux-build">Native Linux build<a class="headerlink" href="#native-linux-build" title="Permanent link">~</a></h3>
 <p>For native linux_sdl builds, you also need:
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>sudo apt update
 sudo apt install build-essential libsdl2-dev
 </code></pre></div>
 </td></tr></table></p>
-<h3>Native MacOS build</h3>
+<h3 id="native-macos-build">Native MacOS build<a class="headerlink" href="#native-macos-build" title="Permanent link">~</a></h3>
 <p>For native darwin_sdl builds, you also need <a href="https://brew.sh">Homebrew</a>:</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>brew install gcc sdl2
 </code></pre></div>
 </td></tr></table>
-<h3>Native Windows build</h3>
+<h3 id="native-windows-build">Native Windows build<a class="headerlink" href="#native-windows-build" title="Permanent link">~</a></h3>
 <p>For native windows_sdl builds, you also need MingW:</p>
 <p>Use <a href="https://www.msys2.org/">MSYS2</a></p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>pacman -S mingw-w64-x86_64-gcc mingw-w64-x86_64-SDL2
@@ -1371,7 +1453,7 @@ variable (usually <code>C:\msys64\mingw64\bin</code>). See <a href="https://code
 ## Development
 -->
 
-<h3>Block Diagram</h3>
+<h3 id="block-diagram">Block Diagram<a class="headerlink" href="#block-diagram" title="Permanent link">~</a></h3>
 <p><img alt="Block Diagram" src="../assets/images/block-diagram.svg" /></p>
 <h2 id="mqtt-tests">MQTT Tests<a class="headerlink" href="#mqtt-tests" title="Permanent link">~</a></h2>
 <p>To run the tavern testing suite, install the tavern python package and configure <code>test\config.yaml</code> with your broker settings.</p>

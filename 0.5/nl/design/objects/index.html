@@ -576,6 +576,33 @@
     Common Parameters
   </a>
   
+    <nav class="md-nav" aria-label="Common Parameters">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#common-properties" class="md-nav__link">
+    Common Properties
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#events" class="md-nav__link">
+    Events
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#common-methods" class="md-nav__link">
+    Common Methods
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1325,6 +1352,33 @@
     Common Parameters
   </a>
   
+    <nav class="md-nav" aria-label="Common Parameters">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#common-properties" class="md-nav__link">
+    Common Properties
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#events" class="md-nav__link">
+    Events
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#common-methods" class="md-nav__link">
+    Common Methods
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1636,7 +1690,7 @@ tbody tr:nth-child(even) {
 </tbody>
 </table>
 <h2 id="common-parameters">Common Parameters<a class="headerlink" href="#common-parameters" title="Permanent link">~</a></h2>
-<h3>Common Properties</h3>
+<h3 id="common-properties">Common Properties<a class="headerlink" href="#common-properties" title="Permanent link">~</a></h3>
 <p>These are the common properties shared among all objects,
 but only the <code>id</code> and <code>obj</code> properties are required to create an object:</p>
 <table>
@@ -1783,7 +1837,7 @@ You can change the target pages using <code>prev</code>, <code>back</code> and <
 <h4>Swipe</h4>
 <p>Objects and page area (<code>p0bY</code>) support <code>swipe</code> property. Enabling this will process <code>left</code>, <code>right</code> and <code>down</code> swipes on the object as <code>next</code>, <code>prev</code> and <code>back</code> page changes, respectively. The start of the swipe needs to be on the element which has this property enabled for the feature to activate.<br />
 <em>Note:</em> Page id <code>p0b0</code> is not valid to set this property as it has to be set on real elements. </p>
-<h3>Events</h3>
+<h3 id="events">Events<a class="headerlink" href="#events" title="Permanent link">~</a></h3>
 <p>All objects are touchable by default and respond to touch events. To disable touch events for an object set its <code>enabled</code> property to <code>false</code>. In this case the touch event "goes through" to the object on the layer below or to the page itself.</p>
 <p>Events (and values) are published in a state topic corresponding to the object, eg. <code>hasp/&lt;nodename&gt;/state/p1b2</code> with payload in json format eg. <code>{"event":"up","val":1}</code>.<br />
 Possible events (depending on object type) are:</p>
@@ -1824,7 +1878,7 @@ Possible events (depending on object type) are:</p>
 <!-- - `LOST`: This event occurs when the object looses the focus while the screen is still being touched -->
 
 <p><em>Tip:</em> To actively see the sent out events you can use an MQTT client app and subscribe to the <code>hasp/#</code> topic.</p>
-<h3>Common Methods</h3>
+<h3 id="common-methods">Common Methods<a class="headerlink" href="#common-methods" title="Permanent link">~</a></h3>
 <p>These are the common methods shared among all objects,</p>
 <table>
 <thead>

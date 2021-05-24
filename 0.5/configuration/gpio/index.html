@@ -507,6 +507,47 @@
     Types
   </a>
   
+    <nav class="md-nav" aria-label="Types">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#button" class="md-nav__link">
+    Button
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#switch" class="md-nav__link">
+    Switch
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#relay" class="md-nav__link">
+    Relay
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#led" class="md-nav__link">
+    Led
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pwm" class="md-nav__link">
+    PWM
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1234,6 +1275,47 @@
     Types
   </a>
   
+    <nav class="md-nav" aria-label="Types">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#button" class="md-nav__link">
+    Button
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#switch" class="md-nav__link">
+    Switch
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#relay" class="md-nav__link">
+    Relay
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#led" class="md-nav__link">
+    Led
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pwm" class="md-nav__link">
+    PWM
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1293,7 +1375,7 @@ More complex actions should be performed by a home automation system, without li
 <li><code>LOW</code>: The default state is low using the internal PULL_DOWN resistor. </li>
 </ul>
 <h2 id="types">Types<a class="headerlink" href="#types" title="Permanent link">~</a></h2>
-<h3>Button</h3>
+<h3 id="button">Button<a class="headerlink" href="#button" title="Permanent link">~</a></h3>
 <p>A button gpio sends events to topic <code>input#</code> where <code>#</code> is the groupnumber.</p>
 <p>GPIO buttons send out <strong>events</strong> while they occur. The possible events are:</p>
 <ul>
@@ -1306,12 +1388,12 @@ More complex actions should be performed by a home automation system, without li
 <!-- - `LOST`: This event occurs when the object looses the focus while the screen is still being touched -->
 
 <p>The values of objects or gpios with the same groupid will be set to maximum when the button is being pressed and to minimum when the button is released.</p>
-<h3>Switch</h3>
+<h3 id="switch">Switch<a class="headerlink" href="#switch" title="Permanent link">~</a></h3>
 <p>A switch gpio sends events to <code>input#</code> where <code>#</code> is the groupnumber.</p>
 <p>GPIO Switches send out their <strong>value</strong> when toggled: {"val":"0"} or {"val":"1"}.</p>
 <p>The values of objects or gpios in the same group will be set to maximum when the switch is turned on
 and to minimum when the switch is turned off.</p>
-<h3>Relay</h3>
+<h3 id="relay">Relay<a class="headerlink" href="#relay" title="Permanent link">~</a></h3>
 <p>Set the relay ON or OFF when an event is received on <code>output#</code> where <code>#</code> is the groupnumber or from another group <code>intput</code>.</p>
 <p>When a relay is grouped with a button or switch in the same group, it will be turned ON or OFF according to the state of the button or switch.</p>
 <p>When a relay is controlled by a range object (slider, arc slider, roller, drop-down list) within the same group, the state will be be ON if the <code>.val</code> value is halfway the range or above.</p>
@@ -1321,7 +1403,7 @@ and to minimum when the switch is turned off.</p>
 Configuring gpios is done on your <strong>own responsibility</strong>.
 Be sure to test any system thoroughly using low voltages first.</p>
 </div>
-<h3>Led</h3>
+<h3 id="led">Led<a class="headerlink" href="#led" title="Permanent link">~</a></h3>
 <p>Set the brightness of the LED between <code>0</code> and <code>255</code> when a value is received on <code>output#</code> where <code>#</code> is the groupnumber.</p>
 <p>When a led is controlled by a button or switch in the same group, it will be turned ON or off according to the state of the button or switch.</p>
 <p>When a led is controlled by a range object (slider, arc slider, roller, drop-down list) in the same group, the brightness will be proportional to the <code>.val</code> value of the object within its range (<code>min-max</code>).</p>
@@ -1330,7 +1412,7 @@ Be sure to test any system thoroughly using low voltages first.</p>
 The <code>.val</code> values can range from 0 to 3.
 These will set the brightness of the led to 0 (0%), 84 (33%), 170 (66%) and 255 (100%) respectively.</p>
 <p>For a roller or drop-down list with 5 options, <code>.val</code> ranges between 0 and 4. The brightness of the led increases 25% with each step.</p>
-<h3>PWM</h3>
+<h3 id="pwm">PWM<a class="headerlink" href="#pwm" title="Permanent link">~</a></h3>
 <p>Set the duty cycle of the pin between <code>0</code> and <code>4095</code> when a value is received on <code>output#</code> where <code>#</code> is the groupnumber or from another group <code>intput</code>.</p>
 <p>When the PWM gpio is grouped with a button or switch, its duty cycle is either set to full-duty or off according to the state of the button or switch.</p>
 <p>When the PWM gpio is grouped with range object (slider, arc slider, roller, drop-down list), the duty cycle is proportional to the <code>.val</code> value of the object within its range (<code>min-max</code>).</p>
