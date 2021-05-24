@@ -1,5 +1,5 @@
 <img src="assets/images/logo.png" style="width:10rem"></img>
-<span style="font-family: 'Lato', 'Arial', helvetica;  font-size: 400%; font-weight: bold">openHASP<span>
+<span style="font-family: 'Lato', 'Arial', helvetica;  font-size: 400%; font-weight: bold">openHASP 0.6<span>
 
 Control your home-automation devices from a customizable touchscreen UI connected via MQTT.
 
