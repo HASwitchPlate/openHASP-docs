@@ -512,7 +512,7 @@
 <li>by creating a special file on the flash file system, which will be loaded and the layout with the objects displayed each time HASP starts up.</li>
 <li>by issuing commands through MQTT to draw/change the objects immediately</li>
 </ul>
-<p>You can create the file wity your favourite text editor and upload it <em>(and other resource assets like fonts)</em> using the web interface <a href="configuration/hasp.md">HASP Design</a> menu.</p>
+<p>You can create the file wity your favourite text editor and upload it <em>(and other resource assets like fonts)</em> using the web interface <a href="configuration/hasp">HASP Design</a> menu.</p>
 <h2 id="pagesjsonl">pages.jsonl<a class="headerlink" href="#pagesjsonl" title="Permanent link">~</a></h2>
 <p>The location of this file is <code>/pages.jsonl</code> in the root of the filesystem. 
 It uses the <a href="http://www.jsonlines.org">JSON Lines format</a> with one json object per line. 
@@ -552,7 +552,7 @@ If you then omit the <code>page</code> parameter in the lines below this comment
 <p>If the line is not valid json, the parsing of the rest of the file is also stopped.</p>
 </div>
 <h2 id="jsonl-command">jsonl command<a class="headerlink" href="#jsonl-command" title="Permanent link">~</a></h2>
-<p>See <a href="../commands/#jsonl">commands documentation</a> for the <code>jsonl</code> command. The payload of the command corresponds to what's exactly in one line of the <code>pages.jsonl</code> file above.</p>
+<p>See <a href="commands#jsonl">commands documentation</a> for the <code>jsonl</code> command. The payload of the command corresponds to what's exactly in one line of the <code>pages.jsonl</code> file above.</p>
 <h2 id="objects">Objects<a class="headerlink" href="#objects" title="Permanent link">~</a></h2>
 <p>Each line in <code>pages.jsonl</code> creates <strong>one object</strong> on a page and has to be in the json format.<br />
 The order of the objects also dictates the <em>layer</em> on the page from bottom to top. So the last drawn object will be the topmpost.</p>
@@ -572,7 +572,7 @@ p1b2.hidden=true
 <p>Page number <code>0</code> refers to an object visible on all pages.<br />
 An id of <code>0</code> refers to the page itself instead of an object.</p>
 <p><em>Tip:</em> If you add the objects on the page 0 last, you ensure that they will be always be visible on top of all other pages.</p>
-<p>See <a href="../objects/">objects dodumentation</a> for details.</p>
+<p>See <a href="objects">objects dodumentation</a> for details.</p>
 <h2 id="page-attributes">Page attributes<a class="headerlink" href="#page-attributes" title="Permanent link">~</a></h2>
 <p>A page can have the following attributes:</p>
 <ul>
@@ -594,7 +594,7 @@ The corresponding command is <code>p5b0.next=1</code>.</p>
 The corresponding command is <code>p1b0.prev=5</code>.</p>
 <p><em>Note:</em> Page id <code>p0b0</code> (as all pages) is not valid to set this attribute as it has to be set on real pages individually. </p>
 <p><code>back</code> acts like a <em>level up</em> action, so you can jump back to the home or menu page where you came from using <code>page back</code>. You can create a hierarchy of pages and menus this way.</p>
-<p>Check out the <a href="example-pagination.md">example</a> for how to implement a simple pagination bar.  </p>
+<p>Check out the <a href="example-pagination">example</a> for how to implement a simple pagination bar.  </p>
                 
               
               
