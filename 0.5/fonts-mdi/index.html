@@ -745,8 +745,8 @@
 <p>The ESP32 additionally contains the Ubuntu Condensed font in these font sizes: 12, 16, 22 and 28pt.</p>
 <p>The built-in fonts can be set by using the pointsize as parameter:</p>
 <p>for example:
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
-2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>p4b1.text_font=16
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>p4b1.text_font=16
 p4b2.value_font=8
 </code></pre></div>
 </td></tr></table></p>
@@ -1851,11 +1851,11 @@ this means importance &gt;=45 or &gt;=35:</p>
 <p>To use an icon in a text you need to prefix the UTF-8 value with <code>\u</code>.
 To ensure proper decoding the payload should be used with a <code>json</code> or <code>jsonl</code> command.</p>
 <p><code>jsonl</code> example:
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>{&quot;page&quot;:2,&quot;id&quot;:1,&quot;obj&quot;:&quot;label&quot;,&quot;x&quot;:0,&quot;y&quot;:50,&quot;w&quot;:150,&quot;h&quot;:50,&quot;text&quot;:&quot;\uE64A Hello world!&quot;}
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>{&quot;page&quot;:2,&quot;id&quot;:1,&quot;obj&quot;:&quot;label&quot;,&quot;x&quot;:0,&quot;y&quot;:50,&quot;w&quot;:150,&quot;h&quot;:50,&quot;text&quot;:&quot;\uE64A Hello world!&quot;}
 </code></pre></div>
 </td></tr></table></p>
 <p><code>json</code> example:
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>[&quot;p2b1.text=\uE64A Hello world!&quot;]
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>[&quot;p2b1.text=\uE64A Hello world!&quot;]
 </code></pre></div>
 </td></tr></table></p>
 <h2 id="custom-fonts">Custom Fonts<a class="headerlink" href="#custom-fonts" title="Permanent link">~</a></h2>
