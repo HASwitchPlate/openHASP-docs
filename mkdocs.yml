@@ -6,7 +6,7 @@ copyright: Copyright &copy; 2020 - 2021 Francis Van Roie and contributors
 
 repo_url: https://github.com/HASwitchPlate/openHASP
 repo_name: HASwitchPlate/openHASP
-edit_uri: https://github.com/fvanroie/new-docs/edit/master/docs/
+edit_uri: https://github.com/fvanroie/new-docs/edit/0.6/docs/
 
 theme:
   logo: "assets/images/logo.png"
