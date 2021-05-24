@@ -18,7 +18,7 @@
     
     
       
-        <title>Pages.en - openHASP</title>
+        <title>Pages - openHASP</title>
       
     
     
@@ -96,7 +96,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Pages.en
+              Pages
             
           </span>
         </div>
@@ -268,12 +268,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
       
       <label class="md-nav__link" for="__nav_2">
         Design
@@ -289,11 +291,81 @@
             
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../pages.md" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Pages
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Pages
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#pagesjsonl" class="md-nav__link">
+    pages.jsonl
+  </a>
+  
+    <nav class="md-nav" aria-label="pages.jsonl">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#file-comments" class="md-nav__link">
+    File comments
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jsonl-command" class="md-nav__link">
+    jsonl command
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#objects" class="md-nav__link">
+    Objects
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#page-attributes" class="md-nav__link">
+    Page attributes
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -303,7 +375,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../objects.md" class="md-nav__link">
+      <a href="../objects/" class="md-nav__link">
         Objects
       </a>
     </li>
@@ -392,7 +464,7 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/fvanroie/new-docs/edit/master/docs/design/pages.en.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/fvanroie/new-docs/edit/master/docs/design/pages.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
@@ -467,7 +539,7 @@ p1b2.hidden=true
 <p>Page number <code>0</code> refers to an object visible on all pages.<br />
 An id of <code>0</code> refers to the page itself instead of an object.</p>
 <p><em>Tip:</em> If you add the objects on the page 0 last, you ensure that they will be always be visible on top of all other pages.</p>
-<p>See <a href="objects.md">objects dodumentation</a> for details.</p>
+<p>See <a href="../objects/">objects dodumentation</a> for details.</p>
 <h2 id="page-attributes">Page attributes<a class="headerlink" href="#page-attributes" title="Permanent link">~</a></h2>
 <p>A page can have the following attributes:</p>
 <ul>
@@ -508,7 +580,7 @@ The corresponding command is <code>p1b0.prev=5</code>.</p>
   
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
-        <a href="../objects.nl/" class="md-footer__link md-footer__link--prev" rel="prev">
+        <a href="../.." class="md-footer__link md-footer__link--prev" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -517,19 +589,19 @@ The corresponding command is <code>p1b0.prev=5</code>.</p>
               <span class="md-footer__direction">
                 Previous
               </span>
-              Objects.nl
+              Home
             </div>
           </div>
         </a>
       
       
-        <a href="../pages.nl/" class="md-footer__link md-footer__link--next" rel="next">
+        <a href="../objects/" class="md-footer__link md-footer__link--next" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Pages.nl
+              Objects
             </div>
           </div>
           <div class="md-footer__button md-icon">
