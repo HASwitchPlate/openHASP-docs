@@ -34,7 +34,7 @@ jobs:
       # # On push to master or release branch, deploy docs
 
       - name: Set up git author
-        if: github.ref == 'refs/heads/0.5' || startsWith(github.ref, 'refs/heads/release/v')
+        # if: github.ref == 'refs/heads/0.5' || startsWith(github.ref, 'refs/heads/release/v')
         run: |
           remote_repo="https://${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
           git config --global user.name "${GITHUB_ACTOR}"
@@ -50,7 +50,7 @@ jobs:
           git fetch origin gh-pages --verbose
           mike deploy --update-aliases "0.5" latest --config-file "${GITHUB_WORKSPACE}/mkdocs.yml" --push --rebase
         # env:
-        #   CUSTOM_DOMAIN: docs.codacy.com
+        #   CUSTOM_DOMAIN: docs.haswitchplate.com
 
       - name: Deploy docs (Dev)
         if: github.ref == 'refs/heads/0.6'
@@ -58,7 +58,7 @@ jobs:
           git fetch origin gh-pages --verbose
           mike deploy --update-aliases "0.6" dev --config-file "${GITHUB_WORKSPACE}/mkdocs.yml" --push --rebase
         # env:
-        #   CUSTOM_DOMAIN: docs.codacy.com
+        #   CUSTOM_DOMAIN: docs.haswitchplate.com
 
       # - name: Deploy docs (Self-hosted)
       #   if: startsWith(github.ref, 'refs/heads/release/v')        
