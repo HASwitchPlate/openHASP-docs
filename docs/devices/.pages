@@ -1,7 +1,7 @@
 nav:
     - Adafruit Featherwing: featherwing.md
     - ESP32 TouchDown: esp32-touchdown.md
-    - FreeTouchDeack: freetouchdeck.md
+    - FreeTouchDeck: freetouchdeck.md
     - Lanbon L8: lanbon-l8.md
     - M5stack core2: m5stack-core2.md
     - Wireless-Tag: wt32-sc01.md
