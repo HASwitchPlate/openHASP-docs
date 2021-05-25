@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="author" content="Francis Van Roie">
+    
+    <link rel="shortcut icon" href="../../img/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <title>Adafruit Featherwing - openHASP</title>
+    
+    <link href="../../css/bootstrap-3.3.7.min.css" rel="stylesheet">
+    <link href="../../css/font-awesome-4.7.0.css" rel="stylesheet">
+    <link href="../../css/base.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/highlight.css">
+    <link rel="stylesheet" href="../../css/ekko-lightbox.min.css">
+
+    
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="../../js/jquery-3.2.1.min.js"></script>
+    <script src="../../js/bootstrap-3.3.7.min.js"></script>
+    <script src="../../js/highlight.pack.js"></script>
+    
+    <base target="_top">
+    <script src="../../js/ekko-lightbox.min.js"></script>
+
+    
+    <script>
+      var base_url = '../..';
+      var is_top_frame = false;
+        
+        var pageToc = [
+          {title: "Instructions", url: "#_top", children: [
+          ]},
+          {title: "Backlight", url: "#backlight", children: [
+          ]},
+          {title: "Product Videos", url: "#product-videos", children: [
+          ]},
+          {title: "3D Printed Case", url: "#3d-printed-case", children: [
+          ]},
+        ];
+
+    </script>
+    <script src="../../js/base.js"></script>
+    <script>
+        $(document).on('click', '[data-toggle="lightbox"]', function(event) {
+            event.preventDefault();
+            $(this).ekkoLightbox();
+        });
+    </script>
+ 
+</head>
+
+<body>
+<script>
+if (is_top_frame) { $('body').addClass('wm-top-page'); }
+</script>
+
+
+
+<div class="container-fluid wm-page-content">
+  <a name="_top"></a>
+    
+
+    
+    
+      
+    
+
+  <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
+    
+    <div class="wm-article-nav pull-right">
+      <a href="../esp32-touchdown/" class="btn btn-xs btn-default pull-right">
+        Next
+        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+      </a>
+      <a href="../esp32-touchdown/" class="btn btn-xs btn-link">
+        ESP32 TouchDown
+      </a>
+    </div>
+    
+    <div class="wm-article-nav">
+      <a href="../../gallery/" class="btn btn-xs btn-default pull-left">
+        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+        Previous</a><a href="../../gallery/" class="btn btn-xs btn-link">
+        Gallery
+      </a>
+    </div>
+    
+  </div>
+
+    
+
+    <h1>Adafruit Featherwing</h1>
+
+<div class="row justify-content-center">
+            <a href="https://raw.githubusercontent.com/HASwitchPlate/openHASP-docs/master/docs/assets/images/devices/featherwing24.png" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-8" data-title="<a href='https://learn.adafruit.com/3d-printed-case-for-adafruit-feather/tft-feather-wing'>Adafruit Featherwing</a>" data-footer="Original image by <a href='https://learn.adafruit.com/assets/40718'>Ruiz Brothers</a> - LICENSE: <a href='https://creativecommons.org/licenses/by-sa/3.0/'>Attribution-ShareAlike Creative Commons</a>">
+                <img src="../../assets/images/devices/featherwing24.png" class="img-fluid">
+            </a>
+</div>
+
+<p>You can run openHASP on the Adafruit HUZZAH32 – ESP32 Feather Board with a TFT Featherwing display.
+We provide pre-build firmware for this hardware combo. You can pick the 2.4" or 3.5" touchscreen.</p>
+<p>The HUZZAH32 – ESP32 Feather Boards come in 3 versions:</p>
+<ul>
+<li><a href="https://www.adafruit.com/product/3405">No headers soldered</a></li>
+<li><a href="https://www.adafruit.com/product/3591">Headers pre-soldered</a></li>
+<li><a href="https://www.adafruit.com/product/3619">Stacking headers pre-soldered</a></li>
+</ul>
+<p>The TFT Featherwing comes in 2 sizes:</p>
+<ul>
+<li><a href="https://www.adafruit.com/product/3315">TFT FeatherWing - 2.4" 320x240 Touchscreen</a>: ILI9341 with STMPE610 resistive touch</li>
+<li><a href="https://www.adafruit.com/product/3651">TFT FeatherWing - 3.5" 480x320 Touchscreen</a>: HX8357D with STMPE610 resistive touch</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title"><i class='fa fa-info-circle'></i>&nbsp; Note</p>
+<p>Don't use the ESP8266 based Feather HUZZAH because it lacks both in memory and MCU power.</p>
+</div>
+<h2 id="instructions">Instructions<a class="headerlink" href="#instructions" title="Permanent link">~</a></h2>
+<p>The HUZZAH32 – ESP32 and TFT Featherwings are plug-and-play. You only need to upload the firmware via the USB port.
+If you get a version with pre-soldered headers then no soldering is required to get started!</p>
+<p>Check out the Adafruit <a href="https://learn.adafruit.com/adafruit-2-4-tft-touch-screen-featherwing">TFT Featherwing tutorial</a> on learn.adafruit.com.
+It contains more detailed information, tutorials and wiring diagrams.</p>
+<h2 id="backlight">Backlight<a class="headerlink" href="#backlight" title="Permanent link">~</a></h2>
+<p>By default the display is always on. To get the dimmable backlight working you <em>do</em> need to solder 2 pads!
+There is a <code>Lite</code> pin which is not connected to any pads but you can connect it to control the backlight.
+You can connect it to a PWM output pin, like <code>GPIO 21</code>:</p>
+<div class="row justify-content-center">
+            <a href="https://raw.githubusercontent.com/HASwitchPlate/openHASP-docs/master/docs/assets/images/devices/featherwing35-backlight.png" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-8" data-title="Backlight Control" data-footer="Original image by altersis">
+                <img src="../../assets/images/devices/featherwing35-backlight.png" class="img-fluid">
+            </a>
+</div>
+
+<h2 id="product-videos">Product Videos<a class="headerlink" href="#product-videos" title="Permanent link">~</a></h2>
+<h3 id="24-tft-featherwing">2.4" TFT Featherwing<a class="headerlink" href="#24-tft-featherwing" title="Permanent link">~</a></h3>
+<p><img alt="YOUTUBE" src="0JUA1IHCI-o?start=630&amp;end=0" /></p>
+<h3 id="35-tft-featherwing">3.5" TFT Featherwing<a class="headerlink" href="#35-tft-featherwing" title="Permanent link">~</a></h3>
+<p><img alt="YOUTUBE" src="Wt_QXeipqpk?start=268&amp;end=0" /></p>
+<h2 id="3d-printed-case">3D Printed Case<a class="headerlink" href="#3d-printed-case" title="Permanent link">~</a></h2>
+<p>Check out the <a href="https://learn.adafruit.com/3d-printed-case-for-adafruit-feather/tft-feather-wing">2.4" TFT Feather Wing Enclosure</a>
+and <a href="https://www.thingiverse.com/thing:2776163">3.5" TFT Featherwing table top case</a>. Both designs are available on Thingiverse.</p>
+<div class="row justify-content-center">
+            <a href="https://raw.githubusercontent.com/HASwitchPlate/openHASP-docs/master/docs/assets/images/devices/3d_printing_done-assembly.gif" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-8" data-title="<a href='https://learn.adafruit.com/3d-printed-case-for-adafruit-feather/tft-feather-wing'>TFT Feather Wing Enclosure</a>" data-footer="Original image by <a href='https://learn.adafruit.com/assets/40717'>Ruiz Brothers</a> - LICENSE: <a href='https://creativecommons.org/licenses/by-sa/3.0/'>Attribution-ShareAlike Creative Commons</a>">
+                <img src="../../assets/images/devices/3d_printing_done-assembly.gif" class="img-fluid">
+            </a>
+</div>
+
+<h3 id="about-adafruit">About Adafruit<a class="headerlink" href="#about-adafruit" title="Permanent link">~</a></h3>
+<p><em>Adafruit invests time and resources providing open source code and libraries,
+please support Adafruit and open-source hardware by purchasing products from Adafruit!</em></p>
+
+  <br>
+    
+
+    
+    
+      
+    
+
+  <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
+    
+    <div class="wm-article-nav pull-right">
+      <a href="../esp32-touchdown/" class="btn btn-xs btn-default pull-right">
+        Next
+        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+      </a>
+      <a href="../esp32-touchdown/" class="btn btn-xs btn-link">
+        ESP32 TouchDown
+      </a>
+    </div>
+    
+    <div class="wm-article-nav">
+      <a href="../../gallery/" class="btn btn-xs btn-default pull-left">
+        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+        Previous</a><a href="../../gallery/" class="btn btn-xs btn-link">
+        Gallery
+      </a>
+    </div>
+    
+  </div>
+
+    <br>
+</div>
+
+<footer class="container-fluid wm-page-content">
+      <p>
+        <a href="https://github.com/HASwitchPlate/openHASP-docs/tree/master/docs/devices/featherwing.md"><i class="fa fa-github"></i>
+Edit on GitHub</a>
+      </p>
+  <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a> using <a href="https://github.com/gristlabs/mkdocs-windmill">Windmill</a> theme by Grist Labs.</p>
+</footer>
+
+</body>
+</html>

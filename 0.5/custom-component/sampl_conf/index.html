@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="author" content="Francis Van Roie">
+    
+    <link rel="shortcut icon" href="../../img/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <title>Example configurations - openHASP</title>
+    
+    <link href="../../css/bootstrap-3.3.7.min.css" rel="stylesheet">
+    <link href="../../css/font-awesome-4.7.0.css" rel="stylesheet">
+    <link href="../../css/base.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/highlight.css">
+    <link rel="stylesheet" href="../../css/ekko-lightbox.min.css">
+
+    
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="../../js/jquery-3.2.1.min.js"></script>
+    <script src="../../js/bootstrap-3.3.7.min.js"></script>
+    <script src="../../js/highlight.pack.js"></script>
+    
+    <base target="_top">
+    <script src="../../js/ekko-lightbox.min.js"></script>
+
+    
+    <script>
+      var base_url = '../..';
+      var is_top_frame = false;
+        
+        var pageToc = [
+          {title: "Display clock and temperature", url: "#_top", children: [
+          ]},
+          {title: "Some basic controls", url: "#some-basic-controls", children: [
+          ]},
+          {title: "RGB light color", url: "#rgb-light-color", children: [
+          ]},
+          {title: "Generic thermostat/climate", url: "#generic-thermostatclimate", children: [
+          ]},
+          {title: "Cover with state feedback", url: "#cover-with-state-feedback", children: [
+          ]},
+          {title: "Cover with button matrix", url: "#cover-with-button-matrix", children: [
+          ]},
+          {title: "Cover like in Lovelace", url: "#cover-like-in-lovelace", children: [
+          ]},
+          {title: "Media Player", url: "#media-player", children: [
+          ]},
+          {title: "Color coded icons", url: "#color-coded-icons", children: [
+          ]},
+        ];
+
+    </script>
+    <script src="../../js/base.js"></script>
+    <script>
+        $(document).on('click', '[data-toggle="lightbox"]', function(event) {
+            event.preventDefault();
+            $(this).ekkoLightbox();
+        });
+    </script>
+ 
+</head>
+
+<body>
+<script>
+if (is_top_frame) { $('body').addClass('wm-top-page'); }
+</script>
+
+
+
+<div class="container-fluid wm-page-content">
+  <a name="_top"></a>
+    
+
+    
+    
+      
+    
+
+  <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
+    
+    <div class="wm-article-nav pull-right">
+      <a href="../sampl_autom/" class="btn btn-xs btn-default pull-right">
+        Next
+        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+      </a>
+      <a href="../sampl_autom/" class="btn btn-xs btn-link">
+        Example automations
+      </a>
+    </div>
+    
+    <div class="wm-article-nav">
+      <a href="../howto/" class="btn btn-xs btn-default pull-left">
+        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+        Previous</a><a href="../howto/" class="btn btn-xs btn-link">
+        How-To
+      </a>
+    </div>
+    
+  </div>
+
+    
+
+    <h2 id="display-clock-and-temperature">Display clock and temperature<a class="headerlink" href="#display-clock-and-temperature" title="Permanent link">~</a></h2>
+<p><img alt="screenshot" src="../../assets/images/screenshots/cc_sampl_clocktemp.png" /></p>
+<p>The easiest example is to display the state of a clock and a temperature sensor from Home Assistant, using <em>label</em> objects in openHASP.</p>
+<p>Create a label object to display the temperature value, a separate label object to display the unit and a third label object for the clock:</p>
+<pre><code class="language-text">{&quot;page&quot;:0,&quot;id&quot;:4,&quot;obj&quot;:&quot;label&quot;,&quot;x&quot;:175,&quot;y&quot;:5,&quot;h&quot;:30,&quot;w&quot;:45,&quot;text&quot;:&quot;00.0&quot;,&quot;align&quot;:2,&quot;bg_color&quot;:&quot;#2C3E50&quot;,&quot;text_color&quot;:&quot;#FFFFFF&quot;}
+{&quot;page&quot;:0,&quot;id&quot;:5,&quot;obj&quot;:&quot;label&quot;,&quot;x&quot;:220,&quot;y&quot;:5,&quot;h&quot;:30,&quot;w&quot;:45,&quot;text&quot;:&quot;°C&quot;,&quot;align&quot;:0,&quot;bg_color&quot;:&quot;#2C3E50&quot;,&quot;text_color&quot;:&quot;#FFFFFF&quot;}
+{&quot;page&quot;:0,&quot;id&quot;:6,&quot;obj&quot;:&quot;label&quot;,&quot;x&quot;:3,&quot;y&quot;:5,&quot;h&quot;:30,&quot;w&quot;:62,&quot;text&quot;:&quot;00:00&quot;,&quot;align&quot;:0,&quot;bg_color&quot;:&quot;#2C3E50&quot;,&quot;text_color&quot;:&quot;#FFFFFF&quot;}
+</code></pre>
+<p>In component configuration all you need for the objects is:</p>
+<pre><code class="language-yaml">    objects:
+      - obj: &quot;p0b4&quot;
+        properties:
+          &quot;text&quot;: &quot;{{ states('sensor.my_room_temperature') }}&quot;
+      - obj: &quot;p0b6&quot;
+        properties:
+          &quot;text&quot;: &quot;{{ states('sensor.time') }}&quot;
+</code></pre>
+<h4 id="note">Note:<a class="headerlink" href="#note" title="Permanent link">~</a></h4>
+<p>You can of course omit the second label object with the unit and use the same for both value and unit:</p>
+<pre><code class="language-text">{&quot;page&quot;:0,&quot;id&quot;:4,&quot;obj&quot;:&quot;label&quot;,&quot;x&quot;:175,&quot;y&quot;:5,&quot;h&quot;:30,&quot;w&quot;:62,&quot;text&quot;:&quot;00.0°C&quot;,&quot;align&quot;:2,&quot;bg_color&quot;:&quot;#2C3E50&quot;,&quot;text_color&quot;:&quot;#FFFFFF&quot;}
+{&quot;page&quot;:0,&quot;id&quot;:6,&quot;obj&quot;:&quot;label&quot;,&quot;x&quot;:3,&quot;y&quot;:5,&quot;h&quot;:30,&quot;w&quot;:62,&quot;text&quot;:&quot;00:00&quot;,&quot;align&quot;:0,&quot;bg_color&quot;:&quot;#2C3E50&quot;,&quot;text_color&quot;:&quot;#FFFFFF&quot;}
+</code></pre>
+<p>In component configuration you will add the unit to the value using the template:</p>
+<pre><code class="language-yaml">    objects:
+      - obj: &quot;p0b4&quot;
+        properties:
+          &quot;text&quot;: &quot;{{ states('sensor.my_room_temperature') }}°C&quot;
+</code></pre>
+<p>All these being on page 0 means that they will appear on all the pages.</p>
+<hr />
+<h2 id="some-basic-controls">Some basic controls<a class="headerlink" href="#some-basic-controls" title="Permanent link">~</a></h2>
+<p>Jsonl and Home Assistant configuration:</p>
+<h4 id="toggle-a-light-or-any-switchable-entity-with-onoff-states">Toggle a light (or any switchable entity with on/off states)<a class="headerlink" href="#toggle-a-light-or-any-switchable-entity-with-onoff-states" title="Permanent link">~</a></h4>
+<p><img alt="screenshot" src="../../assets/images/screenshots/cc_sampl_lightswitch.png" /></p>
+<pre><code class="language-text">{&quot;page&quot;:1,&quot;id&quot;:2,&quot;obj&quot;:&quot;btn&quot;,&quot;x&quot;:10,&quot;y&quot;:40,&quot;w&quot;:105,&quot;h&quot;:90,&quot;toggle&quot;:true,&quot;text&quot;:&quot;\uE335&quot;,&quot;text_font&quot;:28,&quot;align&quot;:1}
+</code></pre>
+<pre><code class="language-yaml">      - obj: &quot;p1b2&quot; # switch, checkbox or btn with toggle true
+        properties:
+          &quot;val&quot;: '{{ 1 if is_state(&quot;light.my_lamp&quot;, &quot;on&quot;) else 0 }}'
+          &quot;text&quot;: '{{ &quot;\uE6E8&quot; if is_state(&quot;light.my_lamp&quot;, &quot;on&quot;) else &quot;\uE335&quot; | e }}'
+        event:
+          &quot;down&quot;:
+            - service: homeassistant.toggle
+              entity_id: &quot;light.my_lamp&quot;
+</code></pre>
+<h4 id="dropdown-self-populating-from-an-input_select">Dropdown (self-populating from an input_select)<a class="headerlink" href="#dropdown-self-populating-from-an-input_select" title="Permanent link">~</a></h4>
+<pre><code class="language-text">{&quot;page&quot;:1,&quot;id&quot;:3,&quot;obj&quot;:&quot;dropdown&quot;,&quot;x&quot;:5,&quot;y&quot;:40,&quot;w&quot;:230,&quot;h&quot;:30,&quot;options&quot;:&quot;&quot;}
+</code></pre>
+<pre><code class="language-yaml">      - obj: &quot;p1b3&quot; # dropdown
+        properties:
+          &quot;options&quot;: &gt;
+            {% if not (is_state('input_select.my_dropdown_selections','unavailable')) %}{%for item in state_attr('input_select.my_dropdown_selections','options')%}{{item+&quot;\n&quot;|e}}{%-if not loop.last%}{%-endif%}{%-endfor%}{% endif %}
+          &quot;val&quot;: &gt;
+            {% if not (is_state('input_select.my_dropdown_selections','unavailable')) %}{%for item in state_attr('input_select.my_dropdown_selections','options')%}
+            {{loop.index -1 if item == states('input_select.my_dropdown_selections') }}
+            {%-endfor%}{% endif %}
+        event:
+          &quot;changed&quot;:
+            - service: input_select.select_option
+              data:
+                entity_id: input_select.my_dropdown_selections
+                option: &quot;{{ text }}&quot;
+</code></pre>
+<p>See the other examples for pairing different kinds of objects to different kinds of Home Assistant entities.</p>
+<hr />
+<h2 id="rgb-light-color">RGB light color<a class="headerlink" href="#rgb-light-color" title="Permanent link">~</a></h2>
+<p><img alt="screenshot" src="../../assets/images/screenshots/cc_sampl_rgb.png" /></p>
+<p>Have an RGB light in Home Assistant controlled by hasp-lvgl. In our example we use Lanbon L8's moodlight.</p>
+<p>relevant <strong>openHASP config:</strong></p>
+<pre><code class="language-text">{&quot;page&quot;:1,&quot;id&quot;:4,&quot;obj&quot;:&quot;cpicker&quot;,&quot;x&quot;:20,&quot;y&quot;:70,&quot;w&quot;:200,&quot;h&quot;:200}`
+</code></pre>
+<p>relevant <strong>openHASP-custom-component config:</strong></p>
+<pre><code class="language-yaml">      - obj: &quot;p1b4&quot; # color picker
+        properties:
+          &quot;color&quot;: &gt;
+            {% if is_state('light.openhasp_lanbon_test_moodlight','on') %}
+            {% set rgb = state_attr('light.openhasp_lanbon_test_moodlight','rgb_color') %}
+            {{ &quot;#%02x%02x%02x&quot; | format(rgb[0],rgb[1],rgb[2]) }}            
+            {% endif %}
+        event:
+          &quot;up&quot;:
+            - service: light.turn_on
+              data:
+                entity_id: light.openhasp_lanbon_test_moodlight
+                rgb_color: &quot;[{{ r }},{{ g }},{{ b }}]&quot;
+</code></pre>
+<p>The <code>color</code> property gets updated from the <code>rgb_color</code> attriburte of <code>light.openhasp_lanbon_test_moodlight</code>. The R, G and B decimal color values are converted to hexadecimal html color code using a template whenever the color of the light changes in Home Assistant.</p>
+<p>Whenever somebody changes the color of the <code>cpicker</code> object on the plate, the light in Home Assustant gets updated with <code>rgb_color</code> values received in the MQTT message.</p>
+<hr />
+<h2 id="generic-thermostatclimate">Generic thermostat/climate<a class="headerlink" href="#generic-thermostatclimate" title="Permanent link">~</a></h2>
+<p><img alt="screenshot" src="../../assets/images/screenshots/cc_sampl_climate.png" />  </p>
+<p>Arc can be dragged by the handle, precise set possible from the +/-buttons. Note that the <code>min</code>, <code>max</code> and <code>val</code> values of the arc are multiplied and divided by 10 when set and read, because <a href="https://github.com/HASwitchPlate/openHASP/issues/81">LVGL only suppports integers</a> for object values. By multiplying and dividing by 10, it becomes possible to set decimal values for climate temperature.</p>
+<p>The objects self-populate with the supported attributes of the climate in Home Assistant:
+- the arc min and max get the min and max temperatures 
+- the dropdown gets the available heating modes, and changes accordingly during operation
+- the plus and minus buttons increase and decrease the temperature by the temperature step defined by the climate</p>
+<p>The circle in the middle changes color if it's heating, but also serves as a touch-catcher to minimize false arc-touch detections while manipulating with plus and minus buttons. Controls get disabled when entity is unavailable in HA.</p>
+<p>relevant <strong>openHASP config:</strong> (screen size 240x320) </p>
+<pre><code class="language-text">{&quot;page&quot;:2,&quot;id&quot;:2,&quot;obj&quot;:&quot;arc&quot;,&quot;x&quot;:10,&quot;y&quot;:70,&quot;w&quot;:220,&quot;h&quot;:220,&quot;min&quot;:180,&quot;max&quot;:250,&quot;border_side&quot;:0,&quot;type&quot;:0,&quot;rotation&quot;:0,&quot;start_angle&quot;:135,&quot;end_angle&quot;:45,&quot;start_angle1&quot;:135,&quot;end_angle1&quot;:45,&quot;value_font&quot;:28,&quot;value_color&quot;:&quot;#2C3E50&quot;,&quot;adjustable&quot;:&quot;true&quot;}
+{&quot;page&quot;:2,&quot;id&quot;:3,&quot;obj&quot;:&quot;obj&quot;,&quot;x&quot;:40,&quot;y&quot;:100,&quot;w&quot;:160,&quot;h&quot;:160,&quot;radius&quot;:100,&quot;opacity&quot;:100,&quot;border_opa&quot;:160,&quot;border_width&quot;:4,&quot;comment&quot;:&quot;touch-catcher&quot;}
+{&quot;page&quot;:2,&quot;id&quot;:4,&quot;obj&quot;:&quot;label&quot;,&quot;x&quot;:10,&quot;y&quot;:40,&quot;w&quot;:220,&quot;h&quot;:30,&quot;text&quot;:&quot;Kívánt hőmérséklet:&quot;,&quot;align&quot;:1,&quot;padh&quot;:50}
+{&quot;page&quot;:2,&quot;id&quot;:5,&quot;obj&quot;:&quot;dropdown&quot;,&quot;x&quot;:75,&quot;y&quot;:235,&quot;w&quot;:90,&quot;h&quot;:30,&quot;options&quot;:&quot;&quot;}
+{&quot;page&quot;:2,&quot;id&quot;:6,&quot;obj&quot;:&quot;btn&quot;,&quot;x&quot;:50,&quot;y&quot;:160,&quot;w&quot;:40,&quot;h&quot;:40,&quot;toggle&quot;:false,&quot;text&quot;:&quot;\uE374&quot;,&quot;text_font&quot;:28,&quot;align&quot;:1}
+{&quot;page&quot;:2,&quot;id&quot;:7,&quot;obj&quot;:&quot;btn&quot;,&quot;x&quot;:150,&quot;y&quot;:160,&quot;w&quot;:40,&quot;h&quot;:40,&quot;toggle&quot;:false,&quot;text&quot;:&quot;\uE415&quot;,&quot;text_font&quot;:28,&quot;align&quot;:1}
+{&quot;page&quot;:2,&quot;id&quot;:8,&quot;obj&quot;:&quot;label&quot;,&quot;x&quot;:60,&quot;y&quot;:115,&quot;w&quot;:120,&quot;h&quot;:30,&quot;text&quot;:&quot;Status&quot;,&quot;align&quot;:1,&quot;padh&quot;:50}
+</code></pre>
+<p>relevant <strong>openHASP-custom-component config:</strong></p>
+<pre><code class="language-yaml">      - obj: &quot;p2b2&quot;  # arc
+        properties:
+          &quot;val&quot;: &quot;{{ state_attr('climate.thermostat_1','temperature') * 10 | int if not (is_state('climate.thermostat_1','unavailable')) }}&quot;
+          &quot;value_str&quot;: &quot;{{ state_attr('climate.thermostat_1','temperature') if not (is_state('climate.thermostat_1','unavailable')) }}&quot;
+          &quot;min&quot;: &quot;{{ state_attr('climate.thermostat_1','min_temp') * 10 | int if not (is_state('climate.thermostat_1','unavailable')) }}&quot;
+          &quot;max&quot;: &quot;{{ state_attr('climate.thermostat_1','max_temp') * 10 | int if not (is_state('climate.thermostat_1','unavailable')) }}&quot;
+          &quot;opacity&quot;: &quot;{{ 60 if (is_state('climate.thermostat_1','unavailable') or is_state('climate.thermostat_1','unknown')) else 255 }}&quot;
+          &quot;click&quot;: &quot;{{ 'false' if (is_state('climate.thermostat_1','unavailable') or is_state('climate.thermostat_1','unknown')) else 'true' }}&quot;
+        event:
+          &quot;changed&quot;:
+            - service: climate.set_temperature
+              data:
+                entity_id: climate.thermostat_1
+                temperature: &quot;{{ val | int / 10 }}&quot;
+          &quot;up&quot;:
+            - service: climate.set_temperature
+              data:
+                entity_id: climate.thermostat_1
+                temperature: &quot;{{ val | int / 10 }}&quot;
+
+      - obj: &quot;p2b5&quot;  # dropdown with modes
+        properties:
+          &quot;options&quot;: &gt;
+            {% if not (is_state('climate.thermostat_1','unavailable')) %}{%for mode in state_attr('climate.thermostat_1','hvac_modes')%}{{mode+&quot;\n&quot;|e}}{%-if not loop.last%}{%-endif%}{%-endfor%}{% endif %}
+          &quot;val&quot;: &gt;
+            {% if not (is_state('climate.thermostat_1','unavailable')) %}{%for mode in state_attr('climate.thermostat_1','hvac_modes')%}
+            {{loop.index -1 if mode == states('climate.thermostat_1') }}
+            {%-endfor%}{% endif %}
+        event:
+          &quot;changed&quot;:
+            - service: climate.set_hvac_mode
+              data:
+                entity_id: climate.thermostat_1
+                hvac_mode: &quot;{{ text }}&quot;
+
+      - obj: &quot;p2b6&quot;  # plus
+        properties:
+          &quot;opacity&quot;: &quot;{{ 60 if (is_state('climate.thermostat_1','unavailable') or is_state('climate.thermostat_1','unknown')) else 255 }}&quot;
+          &quot;click&quot;: &quot;{{ 'false' if (is_state('climate.thermostat_1','unavailable') or is_state('climate.thermostat_1','unknown')) else 'true' }}&quot;
+        event:
+          &quot;down&quot;:
+            - service: climate.set_temperature
+              data:
+                entity_id: climate.thermostat_1
+                temperature: &quot;{{ state_attr('climate.thermostat_1','temperature') - state_attr('climate.thermostat_1','target_temp_step') | float}}&quot; 
+
+      - obj: &quot;p2b7&quot;  # minus
+        properties:
+          &quot;opacity&quot;: &quot;{{ 60 if (is_state('climate.thermostat_1','unavailable') or is_state('climate.thermostat_1','unknown')) else 255 }}&quot;
+          &quot;click&quot;: &quot;{{ 'false' if (is_state('climate.thermostat_1','unavailable') or is_state('climate.thermostat_1','unknown')) else 'true' }}&quot;
+        event:
+          &quot;down&quot;:
+            - service: climate.set_temperature
+              data:
+                entity_id: climate.thermostat_1
+                temperature: &quot;{{ state_attr('climate.thermostat_1','temperature') + state_attr('climate.thermostat_1','target_temp_step') | float}}&quot; 
+
+      - obj: &quot;p2b8&quot;  # status label
+        properties:
+          &quot;text&quot;: &quot;{{ state_attr('climate.thermostat_1','hvac_action') }}&quot;
+
+      - obj: &quot;p2b3&quot;  # color circle touch-catcher
+        properties:
+          &quot;border_color&quot;: &quot;{{ 'Blush' if is_state_attr('climate.thermostat_1', 'hvac_action', 'heating') else 'Silver' }}&quot;
+
+      - obj: &quot;p2b4&quot;  # top label
+        properties:
+          &quot;text&quot;: &quot;Desired temperature: {{ state_attr('climate.thermostat_1','temperature') if not (is_state('climate.thermostat_1','unavailable')) }}°C&quot;
+</code></pre>
+<hr />
+<h2 id="cover-with-state-feedback">Cover with state feedback<a class="headerlink" href="#cover-with-state-feedback" title="Permanent link">~</a></h2>
+<p><img alt="screenshot" src="../../assets/images/screenshots/cc_sampl_cover.png" />  </p>
+<p>The icon on the up and down buttons change color when covers move and set opacity when reached to limit. UI theme set to <code>Hasp Light</code> in plate's web interface. </p>
+<p>relevant <strong>openHASP config:</strong> (screen size 240x320) </p>
+<pre><code class="language-text">{&quot;page&quot;:1,&quot;id&quot;:4,&quot;obj&quot;:&quot;btn&quot;,&quot;x&quot;:5,&quot;y&quot;:140,&quot;w&quot;:73,&quot;h&quot;:60,&quot;toggle&quot;:false,&quot;text&quot;:&quot;\uE05D&quot;,&quot;text_font&quot;:28}
+{&quot;page&quot;:1,&quot;id&quot;:5,&quot;obj&quot;:&quot;btn&quot;,&quot;x&quot;:83,&quot;y&quot;:140,&quot;w&quot;:73,&quot;h&quot;:60,&quot;toggle&quot;:false,&quot;text&quot;:&quot;\uE4DB&quot;,&quot;text_font&quot;:28}
+{&quot;page&quot;:1,&quot;id&quot;:6,&quot;obj&quot;:&quot;btn&quot;,&quot;x&quot;:161,&quot;y&quot;:140,&quot;w&quot;:73,&quot;h&quot;:60,&quot;toggle&quot;:false,&quot;text&quot;:&quot;\uE045&quot;,&quot;text_font&quot;:28}
+</code></pre>
+<p>relevant <strong>openHASP-custom-component config:</strong></p>
+<pre><code class="language-yaml">      - obj: &quot;p1b4&quot;
+        properties:
+          &quot;text_color&quot;: &quot;{{ '#FFFF00' if is_state('cover.cover_1', 'opening') else '#FFFFFF' }}&quot;
+          &quot;text_opa&quot;: &quot;{{ '80' if is_state_attr('cover.cover_1','current_position', 100) else '255' }}&quot;
+        event:
+          &quot;down&quot;:
+            - service: cover.open_cover
+              target:
+                entity_id: &quot;cover.cover_1&quot;
+      - obj: &quot;p1b5&quot;
+        properties:
+          &quot;text&quot;: &gt;
+            {% if is_state('cover.cover_1', 'closing') %}
+            {{ &quot;\uE4DB&quot; | e }}
+            {%-elif is_state('cover.cover_1', 'opening') %}
+            {{ &quot;\uE4DB&quot; | e }}
+            {%-elif is_state('cover.cover_1', 'closed') %}
+            {{ &quot;\uF11C&quot; | e }}
+            {%-elif is_state('cover.cover_1', 'open') %}
+            {{ &quot;\uF11E&quot; | e }}
+            {% endif %}
+        event:
+          &quot;down&quot;:
+            - service: cover.stop_cover
+              target:
+                entity_id: &quot;cover.cover_1&quot;
+      - obj: &quot;p1b6&quot;
+        properties:
+          &quot;text_color&quot;: &quot;{{ '#FFFF00' if is_state('cover.cover_1', 'closing') else '#FFFFFF' }}&quot;
+          &quot;text_opa&quot;: &quot;{{ '80' if is_state_attr('cover.cover_1','current_position', 0) else '255' }}&quot;
+        event:
+          &quot;down&quot;:
+            - service: cover.close_cover
+              target:
+                entity_id: &quot;cover.cover_1&quot;
+</code></pre>
+<hr />
+<h2 id="cover-with-button-matrix">Cover with button matrix<a class="headerlink" href="#cover-with-button-matrix" title="Permanent link">~</a></h2>
+<p>A simpler cover control with only basic feedback. UI theme set to <code>Hasp Light</code> in plate's web interface. </p>
+<p>relevant <strong>openHASP config:</strong> (screen size 240x320) </p>
+<pre><code class="language-text">{&quot;page&quot;:4,&quot;id&quot;:20,&quot;obj&quot;:&quot;btnmatrix&quot;,&quot;x&quot;:0,&quot;y&quot;:20,&quot;w&quot;:240,&quot;h&quot;:70,&quot;options&quot;:[&quot;\uE05D&quot;,&quot;\uE4DB&quot;,&quot;\uE045&quot;],&quot;text_font&quot;:28,&quot;bg_opa&quot;:0,&quot;border_opa&quot;:0}
+</code></pre>
+<p>relevant <strong>openHASP-custom-component config:</strong></p>
+<pre><code class="language-yaml">      - obj: &quot;p4b20&quot;
+        properties:
+          &quot;options&quot;: &gt;
+            {% if is_state('cover.cover_1', 'closing') %}
+            [&quot;\uE05D&quot;,&quot;\uE4DB&quot;,&quot;#FFFF00 \uE045&quot;]
+            {%-elif is_state('cover.cover_1', 'opening') %}
+            [&quot;#FFFF00 \uE05D&quot;,&quot;\uE4DB&quot;,&quot;\uE045&quot;]
+            {%-else %}
+            [&quot;\uE05D&quot;,&quot;\uE4DB&quot;,&quot;\uE045&quot;]
+            {% endif %}
+        event:
+          &quot;down&quot;:
+            - service: &gt;
+                {% if val == 0 %}
+                cover.open_cover
+                {%-elif val == 1 %}
+                cover.stop_cover
+                {%-elif val == 2 %}
+                cover.close_cover
+                {% endif %}
+              target:
+                entity_id: cover.cover_1
+</code></pre>
+<hr />
+<h2 id="cover-like-in-lovelace">Cover like in Lovelace<a class="headerlink" href="#cover-like-in-lovelace" title="Permanent link">~</a></h2>
+<p><img alt="screenshot" src="../../assets/images/screenshots/cc_sampl_cover_lovelacee.png" />  </p>
+<p>The icon behaves like in Lovelace. UI theme set to <code>Hasp Light</code> in plate's web interface.</p>
+<p>relevant <strong>openHASP config:</strong> (screen size 240x320, UI Theme: Hasp Light) </p>
+<pre><code class="language-text">{&quot;page&quot;:5,&quot;id&quot;:2,&quot;obj&quot;:&quot;label&quot;,&quot;x&quot;:8,&quot;y&quot;:33,&quot;w&quot;:35,&quot;h&quot;:35,&quot;text&quot;:&quot;\uF11D&quot;,&quot;align&quot;:1,&quot;text_font&quot;:28,&quot;text_color&quot;:&quot;#164f6e&quot;}
+{&quot;page&quot;:5,&quot;id&quot;:3,&quot;obj&quot;:&quot;label&quot;,&quot;x&quot;:48,&quot;y&quot;:43,&quot;w&quot;:80,&quot;h&quot;:30,&quot;text&quot;:&quot;Cover 1&quot;,&quot;align&quot;:0,&quot;text_font&quot;:16,&quot;text_color&quot;:&quot;#164f6e&quot;}
+{&quot;page&quot;:5,&quot;id&quot;:4,&quot;obj&quot;:&quot;btn&quot;,&quot;x&quot;:125,&quot;y&quot;:37,&quot;w&quot;:30,&quot;h&quot;:30,&quot;toggle&quot;:false,&quot;text&quot;:&quot;\uE05D&quot;,&quot;text_font&quot;:28,&quot;bg_opa&quot;:0,&quot;border_opa&quot;:0,&quot;text_color&quot;:&quot;#164f6e&quot;}
+{&quot;page&quot;:5,&quot;id&quot;:5,&quot;obj&quot;:&quot;btn&quot;,&quot;x&quot;:165,&quot;y&quot;:37,&quot;w&quot;:30,&quot;h&quot;:30,&quot;toggle&quot;:false,&quot;text&quot;:&quot;\uE4DB&quot;,&quot;text_font&quot;:28,&quot;bg_opa&quot;:0,&quot;border_opa&quot;:0,&quot;text_color&quot;:&quot;#164f6e&quot;}
+{&quot;page&quot;:5,&quot;id&quot;:6,&quot;obj&quot;:&quot;btn&quot;,&quot;x&quot;:205,&quot;y&quot;:37,&quot;w&quot;:30,&quot;h&quot;:30,&quot;toggle&quot;:false,&quot;text&quot;:&quot;\uE045&quot;,&quot;text_font&quot;:28,&quot;bg_opa&quot;:0,&quot;border_opa&quot;:0,&quot;text_color&quot;:&quot;#164f6e&quot;}
+</code></pre>
+<p>relevant <strong>openHASP-custom-component config:</strong></p>
+<pre><code class="language-yaml">      - obj: &quot;p5b2&quot;
+        properties:
+          &quot;text&quot;: &gt;
+            {% if is_state('cover.my_cover', 'closing') %}
+            {{ &quot;\uE6C0&quot; | e }}
+            {%-elif is_state('cover.my_cover', 'opening') %}
+            {{ &quot;\uE6C3&quot; | e }}
+            {%-elif is_state('cover.my_cover', 'closed') %}
+            {{ &quot;\uF11C&quot; | e }}
+            {%-elif is_state('cover.my_cover', 'open') %}
+            {{ &quot;\uF11E&quot; | e }}
+            {% endif %}
+      - obj: &quot;p5b4&quot;
+        event:
+          &quot;down&quot;:
+            - service: cover.open_cover
+              target:
+                entity_id: &quot;cover.my_cover&quot;
+      - obj: &quot;p5b5&quot;
+        event:
+          &quot;down&quot;:
+            - service: cover.stop_cover
+              target:
+                entity_id: &quot;cover.my_cover&quot;
+      - obj: &quot;p5b6&quot;
+        event:
+          &quot;down&quot;:
+            - service: cover.close_cover
+              target:
+                entity_id: &quot;cover.my_cover&quot;
+</code></pre>
+<video width="360" height="640" controls>
+  <source src="../../assets/videos/cc_sampl_cover_lovelace.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video>
+
+<hr />
+<h2 id="media-player">Media Player<a class="headerlink" href="#media-player" title="Permanent link">~</a></h2>
+<p><img alt="screenshot" src="../../assets/images/screenshots/cc_sampl_mediaplayer.png" />  </p>
+<p>The labels with artist and title are scrolling, the progressbar fills if the media player provides duration and playback position. The dropdown lists containing the available sources and sound modes of the player get populated automatically by the values existing on the player in Home Assistant, also the actually selected value is in sync with the values selected in Home Assistant.<br />
+Player availability is shown by the opacity of the buttons. Player state (play/pause) is shown by the middle button. Power state shown by color, repeat, shuffle and muted state shown by appropriate icons on the buttons.
+UI theme set to <code>Hasp Light</code> in plate's web interface.</p>
+<p>relevant <strong>openHASP config:</strong> (screen size 240x320) </p>
+<pre><code class="language-text">{&quot;page&quot;:6,&quot;id&quot;:1,&quot;obj&quot;:&quot;obj&quot;,&quot;x&quot;:5,&quot;y&quot;:35,&quot;w&quot;:200,&quot;h&quot;:84,&quot;click&quot;:0}
+{&quot;page&quot;:6,&quot;id&quot;:2,&quot;obj&quot;:&quot;label&quot;,&quot;x&quot;:7,&quot;y&quot;:45,&quot;w&quot;:196,&quot;h&quot;:30,&quot;text&quot;:&quot;-&quot;,&quot;mode&quot;:&quot;scroll&quot;,&quot;align&quot;:1}
+{&quot;page&quot;:6,&quot;id&quot;:3,&quot;obj&quot;:&quot;label&quot;,&quot;x&quot;:7,&quot;y&quot;:80,&quot;w&quot;:196,&quot;h&quot;:30,&quot;text&quot;:&quot;-&quot;,&quot;mode&quot;:&quot;scroll&quot;,&quot;align&quot;:1}
+{&quot;page&quot;:6,&quot;id&quot;:4,&quot;obj&quot;:&quot;bar&quot;,&quot;x&quot;:5,&quot;y&quot;:108,&quot;w&quot;:200,&quot;h&quot;:11,&quot;min&quot;:0,&quot;max&quot;:100}
+{&quot;page&quot;:6,&quot;id&quot;:5,&quot;obj&quot;:&quot;dropdown&quot;,&quot;x&quot;:5,&quot;y&quot;:128,&quot;w&quot;:120,&quot;h&quot;:30,&quot;options&quot;:&quot;Source1\nSource2\nSource3&quot;,&quot;direction&quot;:3,&quot;max_height&quot;:300}
+{&quot;page&quot;:6,&quot;id&quot;:6,&quot;obj&quot;:&quot;dropdown&quot;,&quot;x&quot;:130,&quot;y&quot;:128,&quot;w&quot;:75,&quot;h&quot;:30,&quot;options&quot;:&quot;Jazz\nPop\nRock&quot;,&quot;direction&quot;:2}
+{&quot;page&quot;:6,&quot;id&quot;:7,&quot;obj&quot;:&quot;btn&quot;,&quot;x&quot;:5,&quot;y&quot;:170,&quot;w&quot;:50,&quot;h&quot;:60,&quot;toggle&quot;:false,&quot;text&quot;:&quot;\uE4AE&quot;,&quot;text_font&quot;:28}
+{&quot;page&quot;:6,&quot;id&quot;:8,&quot;obj&quot;:&quot;btn&quot;,&quot;x&quot;:63,&quot;y&quot;:170,&quot;w&quot;:83,&quot;h&quot;:60,&quot;toggle&quot;:false,&quot;text&quot;:&quot;\uE40A&quot;,&quot;text_font&quot;:28}
+{&quot;page&quot;:6,&quot;id&quot;:9,&quot;obj&quot;:&quot;btn&quot;,&quot;x&quot;:154,&quot;y&quot;:170,&quot;w&quot;:51,&quot;h&quot;:60,&quot;toggle&quot;:false,&quot;text&quot;:&quot;\uE4AD&quot;,&quot;text_font&quot;:28}
+{&quot;page&quot;:6,&quot;id&quot;:10,&quot;obj&quot;:&quot;slider&quot;,&quot;x&quot;:212,&quot;y&quot;:35,&quot;w&quot;:22,&quot;h&quot;:245,&quot;min&quot;:0,&quot;max&quot;:100}
+{&quot;page&quot;:6,&quot;id&quot;:12,&quot;obj&quot;:&quot;btn&quot;,&quot;x&quot;:57,&quot;y&quot;:242,&quot;w&quot;:45,&quot;h&quot;:37,&quot;toggle&quot;:false,&quot;text&quot;:&quot;\uE457&quot;,&quot;text_font&quot;:28}
+{&quot;page&quot;:6,&quot;id&quot;:13,&quot;obj&quot;:&quot;btn&quot;,&quot;x&quot;:108,&quot;y&quot;:242,&quot;w&quot;:45,&quot;h&quot;:37,&quot;toggle&quot;:false,&quot;text&quot;:&quot;\uE49E&quot;,&quot;text_font&quot;:28}
+{&quot;page&quot;:6,&quot;id&quot;:14,&quot;obj&quot;:&quot;btn&quot;,&quot;x&quot;:5,&quot;y&quot;:242,&quot;w&quot;:45,&quot;h&quot;:37,&quot;toggle&quot;:false,&quot;text&quot;:&quot;\uE425&quot;,&quot;text_font&quot;:28}
+{&quot;page&quot;:6,&quot;id&quot;:15,&quot;obj&quot;:&quot;btn&quot;,&quot;x&quot;:160,&quot;y&quot;:242,&quot;w&quot;:45,&quot;h&quot;:37,&quot;toggle&quot;:false,&quot;text&quot;:&quot;\uE57E&quot;,&quot;text_font&quot;:28}
+</code></pre>
+<p>relevant <strong>openHASP-custom-component config:</strong></p>
+<pre><code class="language-yaml">      - obj: &quot;p6b2&quot; # artist
+        properties:
+          &quot;text&quot;: &quot;{{ state_attr('media_player.sound_my_room','media_artist') if state_attr('media_player.sound_my_room','media_artist') else '-' }}&quot;
+
+      - obj: &quot;p6b3&quot; # title
+        properties:
+          &quot;text&quot;: &quot;{{ state_attr('media_player.sound_my_room','media_title') if state_attr('media_player.sound_my_room','media_title') else '-' }}&quot;
+
+      - obj: &quot;p6b5&quot; # sources list
+        properties:
+          &quot;options&quot;: &gt;
+            {% if not (is_state('media_player.sound_my_room','unavailable')) %}{{&quot;(no source)\n&quot;|e}}{%for source in state_attr('media_player.sound_my_room','source_list')%}{{source+&quot;\n&quot;|e}}{%-if not loop.last%}{%-endif%}{%-endfor%}{% endif %}
+          &quot;val&quot;: &gt;
+            {% if not (is_state('media_player.sound_my_room','unavailable')) %}{%for source in state_attr('media_player.sound_my_room','source_list')%}
+            {{loop.index if source == state_attr('media_player.sound_my_room','source') }}
+            {%-endfor%}{% endif %}
+          &quot;click&quot;: &quot;{{ 'false' if (is_state('media_player.sound_my_room','unavailable') or is_state('media_player.sound_my_room','unknown')) else 'true' }}&quot;
+        event:
+          &quot;changed&quot;:
+            - service: media_player.select_source
+              data:
+                entity_id: media_player.sound_my_room
+                source: &quot;{{ text }}&quot;
+
+      - obj: &quot;p6b6&quot; # sound modes list
+        properties:
+          &quot;options&quot;: &gt;
+            {% if not (is_state('media_player.sound_my_room','unavailable')) %}{%for soundmode in state_attr('media_player.sound_my_room','sound_mode_list')%}{{soundmode+&quot;\n&quot;|e}}{%-if not loop.last%}{%-endif%}{%-endfor%}{% endif %}
+          &quot;val&quot;: &gt;
+            {% if not (is_state('media_player.sound_my_room','unavailable')) %}{%for source in state_attr('media_player.sound_my_room','sound_mode_list')%}
+            {{loop.index -1 if source == state_attr('media_player.sound_my_room','sound_mode') }}
+            {%-endfor%}{% endif %}
+          &quot;click&quot;: &quot;{{ 'false' if (is_state('media_player.sound_my_room','unavailable') or is_state('media_player.sound_my_room','unknown')) else 'true' }}&quot;
+        event:
+          &quot;changed&quot;:
+            - service: media_player.select_sound_mode
+              data:
+                entity_id: media_player.sound_my_room
+                sound_mode: &quot;{{ text }}&quot;
+
+      - obj: &quot;p6b4&quot; # progressbar
+        properties:
+          &quot;max&quot;: &quot;{{ state_attr('media_player.sound_my_room','media_duration') | int }}&quot;
+          &quot;val&quot;: &quot;{{ state_attr('media_player.sound_my_room','media_position') | int }}&quot;
+
+      - obj: &quot;p6b7&quot; # prev
+        properties:
+          &quot;text_opa&quot;: &quot;{{ '80' if (is_state('media_player.sound_my_room','unavailable') or is_state('media_player.sound_my_room','unknown')) else '255' }}&quot;
+        event:
+          &quot;down&quot;:
+            - service: media_player.media_previous_track
+              target:
+                entity_id: media_player.sound_my_room
+
+      - obj: &quot;p6b9&quot; # next
+        properties:
+          &quot;text_opa&quot;: &quot;{{ '80' if (is_state('media_player.sound_my_room','unavailable') or is_state('media_player.sound_my_room','unknown')) else '255' }}&quot;
+        event:
+          &quot;down&quot;:
+            - service: media_player.media_next_track
+              target:
+                entity_id: media_player.sound_my_room
+
+      - obj: &quot;p6b8&quot; # play/pause
+        properties:
+          &quot;text&quot;: &gt;
+            {% if is_state('media_player.sound_my_room', 'playing') %}
+            {{ &quot;\uE3E4&quot; | e }}
+            {%-else %}
+            {{ &quot;\uE40A&quot; | e }}
+            {%-endif %}
+          &quot;text_opa&quot;: &quot;{{ '80' if (is_state('media_player.sound_my_room','unavailable') or is_state('media_player.sound_my_room','unknown')) else '255' }}&quot;
+        event:
+          &quot;down&quot;:
+            - service: media_player.media_play_pause
+              target:
+                entity_id: media_player.sound_my_room
+
+      - obj: &quot;p6b10&quot; # volume slider
+        properties:
+          &quot;val&quot;: &quot;{{ state_attr('media_player.sound_my_room','volume_level') * 100 | int }}&quot;
+          &quot;click&quot;: &quot;{{ 'false' if (is_state('media_player.sound_my_room','unavailable') or is_state('media_player.sound_my_room','unknown')) else 'true' }}&quot;
+        event:
+          &quot;changed&quot;:
+            - service: media_player.volume_set
+              data:
+                entity_id: media_player.sound_my_room
+                volume_level: &quot;{{ val | int / 100 }}&quot;
+          &quot;up&quot;:
+            - service: media_player.volume_set
+              data:
+                entity_id: media_player.sound_my_room
+                volume_level: &quot;{{ val | int / 100 }}&quot;
+
+      - obj: &quot;p6b12&quot; # repeat
+        properties:
+          &quot;text&quot;: &gt;
+            {% if is_state_attr('media_player.sound_my_room', 'repeat', 'one') %}
+            {{ &quot;\uE458&quot; | e }}
+            {% elif is_state_attr('media_player.sound_my_room', 'repeat', 'all') %}
+            {{ &quot;\uE456&quot; | e }}
+            {%-else %}
+            {{ &quot;\uE457&quot; | e }}
+            {%-endif %}
+          &quot;text_opa&quot;: &quot;{{ '80' if (is_state('media_player.sound_my_room','unavailable') or is_state('media_player.sound_my_room','unknown')) else '255' }}&quot;
+        event:
+          &quot;down&quot;:
+            - service: media_player.repeat_set
+              data:
+                entity_id: media_player.sound_my_room
+                repeat: &gt;
+                  {% if is_state_attr('media_player.sound_my_room', 'repeat', 'one') %}
+                  all
+                  {% elif is_state_attr('media_player.sound_my_room', 'repeat', 'all') %}
+                  off
+                  {% elif is_state_attr('media_player.sound_my_room', 'repeat', 'off') %}
+                  one
+                  {%-endif %}
+
+      - obj: &quot;p6b13&quot; # shuffle
+        properties:
+          &quot;text&quot;: &gt;
+            {% if state_attr('media_player.sound_my_room', 'shuffle') %}
+            {{ &quot;\uE49D&quot; | e }}
+            {%-else %}
+            {{ &quot;\uE49E&quot; | e }}
+            {%-endif %}
+          &quot;text_opa&quot;: &quot;{{ '80' if (is_state('media_player.sound_my_room','unavailable') or is_state('media_player.sound_my_room','unknown')) else '255' }}&quot;
+        event:
+          &quot;down&quot;:
+            - service: media_player.shuffle_set
+              data:
+                entity_id: media_player.sound_my_room
+                shuffle:  &gt;
+                  {% if state_attr('media_player.sound_my_room', 'shuffle') %}
+                  false
+                  {% else %}
+                  true
+                  {%-endif %}
+
+      - obj: &quot;p6b15&quot; # mute
+        properties:
+          &quot;text&quot;: &gt;
+            {% if state_attr('media_player.sound_my_room', 'is_volume_muted') %}
+            {{ &quot;\uE75F&quot; | e }}
+            {%-else %}
+            {{ &quot;\uE57E&quot; | e }}
+            {%-endif %}
+          &quot;text_opa&quot;: &quot;{{ '80' if (is_state('media_player.sound_my_room','unavailable') or is_state('media_player.sound_my_room','unknown')) else '255' }}&quot;
+        event:
+          &quot;down&quot;:
+            - service: media_player.volume_mute
+              data:
+                entity_id: media_player.sound_my_room
+                is_volume_muted:  &gt;
+                  {% if state_attr('media_player.sound_my_room', 'is_volume_muted') %}
+                  false
+                  {% else %}
+                  true
+                  {%-endif %}
+
+      - obj: &quot;p6b14&quot; # power
+        properties:
+          &quot;text_color&quot;: &quot;{{ '#B00000' if states('media_player.sound_my_room') == 'off' else '#FFFFFF' }}&quot;
+          &quot;text_opa&quot;: &quot;{{ '80' if (is_state('media_player.sound_my_room','unavailable') or is_state('media_player.sound_my_room','unknown')) else '255' }}&quot;
+        event:
+          &quot;down&quot;:
+            - service: media_player.toggle
+              data:
+                entity_id: media_player.sound_my_room
+
+</code></pre>
+<p>Note that the <code>val</code> value of the slider is multiplied and divided by 100 when read and set, because <a href="https://github.com/HASwitchPlate/openHASP/issues/81">LVGL only suppports integers</a> for object values. By multiplying and dividing by 100, it becomes possible to set volume between 0 and 1 as required by Home Assistant.</p>
+<hr />
+<h2 id="color-coded-icons">Color coded icons<a class="headerlink" href="#color-coded-icons" title="Permanent link">~</a></h2>
+<h4>Color code a WiFi icon according to RSSI reported by the plate</h4>
+
+<p><strong>openHASP config:</strong> (screen size 240x320) </p>
+<pre><code class="language-text">{&quot;obj&quot;:&quot;btn&quot;,&quot;id&quot;:1,&quot;x&quot;:120,&quot;y&quot;:1,&quot;w&quot;:30,&quot;h&quot;:40,&quot;text_font&quot;:&quot;2&quot;,&quot;text&quot;:&quot;\uF76B&quot;,&quot;text_color&quot;:&quot;gray&quot;,&quot;bg_opa&quot;:0,&quot;border_width&quot;:0}
+</code></pre>
+<p>relevant <strong>openHASP-custom-component config:</strong></p>
+<pre><code class="language-yaml">    - obj: &quot;p0b1&quot;
+      properties:
+        &quot;text_color&quot;: &quot;{% if -30 &lt;= state_attr('openhasp.openhasp_plate','rssi') |int %}green{% elif -31 &gt; state_attr('openhasp.openhasp_plate','rssi') |int &gt;= -50 %}orange{% elif -51 &gt; state_attr('openhasp.openhasp_plate','rssi') |int &gt;= -80 %}tomato{% else %}red{% endif %}&quot;```
+</code></pre>
+<h4>Color code a temperature icon according to sensor values</h4>
+
+<p><strong>openHASP config:</strong> (screen size 240x320) </p>
+<pre><code class="language-text">{&quot;obj&quot;:&quot;btn&quot;,&quot;id&quot;:3,&quot;x&quot;:165,&quot;y&quot;:1,&quot;w&quot;:30,&quot;h&quot;:40,&quot;text_font&quot;:&quot;2&quot;,&quot;text&quot;:&quot;\uF1EB&quot;,&quot;text_color&quot;:&quot;gray&quot;,&quot;bg_opa&quot;:0,&quot;border_width&quot;:0}
+</code></pre>
+<p>relevant <strong>openHASP-custom-component config:</strong></p>
+<pre><code class="language-yaml">    - obj: &quot;p0b3&quot;
+      properties:
+        &quot;text_color&quot;: &quot;{% if states('sensor.room_temperature') |int &lt;= 21  %}#4682B4{% elif 21 &lt; states('sensor.room_temperature') |int &lt;= 26 %}green{% else %}red{% endif %}&quot;
+</code></pre>
+
+  <br>
+    
+
+    
+    
+      
+    
+
+  <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
+    
+    <div class="wm-article-nav pull-right">
+      <a href="../sampl_autom/" class="btn btn-xs btn-default pull-right">
+        Next
+        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+      </a>
+      <a href="../sampl_autom/" class="btn btn-xs btn-link">
+        Example automations
+      </a>
+    </div>
+    
+    <div class="wm-article-nav">
+      <a href="../howto/" class="btn btn-xs btn-default pull-left">
+        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+        Previous</a><a href="../howto/" class="btn btn-xs btn-link">
+        How-To
+      </a>
+    </div>
+    
+  </div>
+
+    <br>
+</div>
+
+<footer class="container-fluid wm-page-content">
+      <p>
+        <a href="https://github.com/HASwitchPlate/openHASP-docs/tree/master/docs/custom-component/sampl_conf.md"><i class="fa fa-github"></i>
+Edit on GitHub</a>
+      </p>
+  <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a> using <a href="https://github.com/gristlabs/mkdocs-windmill">Windmill</a> theme by Grist Labs.</p>
+</footer>
+
+</body>
+</html>

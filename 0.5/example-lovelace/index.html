@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="author" content="Francis Van Roie">
+    
+    <link rel="shortcut icon" href="../img/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <title>Lovelace Entities - openHASP</title>
+    
+    <link href="../css/bootstrap-3.3.7.min.css" rel="stylesheet">
+    <link href="../css/font-awesome-4.7.0.css" rel="stylesheet">
+    <link href="../css/base.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/highlight.css">
+    <link rel="stylesheet" href="../css/ekko-lightbox.min.css">
+
+    
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="../js/jquery-3.2.1.min.js"></script>
+    <script src="../js/bootstrap-3.3.7.min.js"></script>
+    <script src="../js/highlight.pack.js"></script>
+    
+    <base target="_top">
+    <script src="../js/ekko-lightbox.min.js"></script>
+
+    
+    <script>
+      var base_url = '..';
+      var is_top_frame = false;
+        
+        var pageToc = [
+        ];
+
+    </script>
+    <script src="../js/base.js"></script>
+    <script>
+        $(document).on('click', '[data-toggle="lightbox"]', function(event) {
+            event.preventDefault();
+            $(this).ekkoLightbox();
+        });
+    </script>
+ 
+</head>
+
+<body>
+<script>
+if (is_top_frame) { $('body').addClass('wm-top-page'); }
+</script>
+
+
+
+<div class="container-fluid wm-page-content">
+  <a name="_top"></a>
+    
+
+    
+    
+      
+    
+
+  <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
+    
+    <div class="wm-article-nav pull-right">
+      <a href="../commands/" class="btn btn-xs btn-default pull-right">
+        Next
+        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+      </a>
+      <a href="../commands/" class="btn btn-xs btn-link">
+        Commands
+      </a>
+    </div>
+    
+    <div class="wm-article-nav">
+      <a href="../example-widgets/" class="btn btn-xs btn-default pull-left">
+        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+        Previous</a><a href="../example-widgets/" class="btn btn-xs btn-link">
+        Widgets Demo
+      </a>
+    </div>
+    
+  </div>
+
+    
+
+    <h1>Lovelace-like entities</h1>
+
+<h2>Code</h2>
+
+<p>To add an openHASP plate to your installation with the Dash UI sample configuration, upload a <code>pages.jsonl</code> file with the folowing content to your plate:</p>
+<pre><code class="language-text">{&quot;page&quot;:1,&quot;id&quot;:1,&quot;obj&quot;:&quot;btn&quot;,&quot;x&quot;:0,&quot;y&quot;:0,&quot;w&quot;:240,&quot;h&quot;:30,&quot;text&quot;:&quot;ENTITIES&quot;,&quot;value_font&quot;:22,&quot;bg_color&quot;:&quot;#2C3E50&quot;,&quot;text_color&quot;:&quot;#FFFFFF&quot;,&quot;radius&quot;:0,&quot;border_side&quot;:0,&quot;enabled&quot;:0}
+
+{&quot;page&quot;:1,&quot;id&quot;:11,&quot;obj&quot;:&quot;label&quot;,&quot;x&quot;:8,&quot;y&quot;:30,&quot;w&quot;:30,&quot;h&quot;:35,&quot;text&quot;:&quot;\uE004&quot;,&quot;align&quot;:1,&quot;text_font&quot;:28,&quot;text_color&quot;:&quot;black&quot;}
+{&quot;page&quot;:1,&quot;id&quot;:12,&quot;obj&quot;:&quot;label&quot;,&quot;x&quot;:48,&quot;y&quot;:40,&quot;w&quot;:130,&quot;h&quot;:30,&quot;text&quot;:&quot;Presence override&quot;,&quot;align&quot;:0,&quot;text_font&quot;:16,&quot;text_color&quot;:&quot;black&quot;}
+{&quot;page&quot;:1,&quot;id&quot;:13,&quot;obj&quot;:&quot;switch&quot;,&quot;x&quot;:180,&quot;y&quot;:37,&quot;w&quot;:50,&quot;h&quot;:25,&quot;radius&quot;:25,&quot;radius2&quot;:15}
+
+{&quot;page&quot;:1,&quot;id&quot;:21,&quot;obj&quot;:&quot;label&quot;,&quot;x&quot;:8,&quot;y&quot;:65,&quot;w&quot;:30,&quot;h&quot;:35,&quot;text&quot;:&quot;\uF054&quot;,&quot;align&quot;:1,&quot;text_font&quot;:28,&quot;text_color&quot;:&quot;black&quot;}
+{&quot;page&quot;:1,&quot;id&quot;:22,&quot;obj&quot;:&quot;label&quot;,&quot;x&quot;:48,&quot;y&quot;:75,&quot;w&quot;:130,&quot;h&quot;:30,&quot;text&quot;:&quot;Front gate&quot;,&quot;align&quot;:0,&quot;text_font&quot;:16,&quot;text_color&quot;:&quot;black&quot;}
+{&quot;page&quot;:1,&quot;id&quot;:23,&quot;obj&quot;:&quot;switch&quot;,&quot;x&quot;:180,&quot;y&quot;:72,&quot;w&quot;:50,&quot;h&quot;:25,&quot;radius&quot;:25,&quot;radius2&quot;:15}
+
+{&quot;page&quot;:1,&quot;id&quot;:31,&quot;obj&quot;:&quot;label&quot;,&quot;x&quot;:8,&quot;y&quot;:100,&quot;w&quot;:30,&quot;h&quot;:35,&quot;text&quot;:&quot;\uF054&quot;,&quot;align&quot;:1,&quot;text_font&quot;:28,&quot;text_color&quot;:&quot;black&quot;}
+{&quot;page&quot;:1,&quot;id&quot;:32,&quot;obj&quot;:&quot;label&quot;,&quot;x&quot;:48,&quot;y&quot;:110,&quot;w&quot;:130,&quot;h&quot;:30,&quot;text&quot;:&quot;Back yard&quot;,&quot;align&quot;:0,&quot;text_font&quot;:16,&quot;text_color&quot;:&quot;black&quot;}
+{&quot;page&quot;:1,&quot;id&quot;:33,&quot;obj&quot;:&quot;switch&quot;,&quot;x&quot;:180,&quot;y&quot;:107,&quot;w&quot;:50,&quot;h&quot;:25,&quot;radius&quot;:25,&quot;radius2&quot;:15}
+
+{&quot;page&quot;:1,&quot;id&quot;:41,&quot;obj&quot;:&quot;label&quot;,&quot;x&quot;:8,&quot;y&quot;:135,&quot;w&quot;:30,&quot;h&quot;:35,&quot;text&quot;:&quot;\uEA7A&quot;,&quot;align&quot;:1,&quot;text_font&quot;:28,&quot;text_color&quot;:&quot;black&quot;}
+{&quot;page&quot;:1,&quot;id&quot;:42,&quot;obj&quot;:&quot;label&quot;,&quot;x&quot;:48,&quot;y&quot;:145,&quot;w&quot;:130,&quot;h&quot;:30,&quot;text&quot;:&quot;Trash service&quot;,&quot;align&quot;:0,&quot;text_font&quot;:16,&quot;text_color&quot;:&quot;black&quot;}
+{&quot;page&quot;:1,&quot;id&quot;:43,&quot;obj&quot;:&quot;label&quot;,&quot;x&quot;:100,&quot;y&quot;:145,&quot;w&quot;:130,&quot;h&quot;:30,&quot;text&quot;:&quot;in 6 days&quot;,&quot;align&quot;:2,&quot;text_color&quot;:&quot;black&quot;}
+
+{&quot;page&quot;:1,&quot;id&quot;:51,&quot;obj&quot;:&quot;label&quot;,&quot;x&quot;:8,&quot;y&quot;:170,&quot;w&quot;:30,&quot;h&quot;:35,&quot;text&quot;:&quot;\uE70D&quot;,&quot;align&quot;:1,&quot;text_font&quot;:28,&quot;text_color&quot;:&quot;black&quot;}
+{&quot;page&quot;:1,&quot;id&quot;:52,&quot;obj&quot;:&quot;label&quot;,&quot;x&quot;:48,&quot;y&quot;:180,&quot;w&quot;:130,&quot;h&quot;:30,&quot;text&quot;:&quot;Selective trash&quot;,&quot;align&quot;:0,&quot;text_font&quot;:16,&quot;text_color&quot;:&quot;black&quot;}
+{&quot;page&quot;:1,&quot;id&quot;:53,&quot;obj&quot;:&quot;label&quot;,&quot;x&quot;:100,&quot;y&quot;:180,&quot;w&quot;:130,&quot;h&quot;:30,&quot;text&quot;:&quot;in 10 days&quot;,&quot;align&quot;:2,&quot;text_color&quot;:&quot;black&quot;}
+
+{&quot;page&quot;:1,&quot;id&quot;:61,&quot;obj&quot;:&quot;label&quot;,&quot;x&quot;:8,&quot;y&quot;:205,&quot;w&quot;:30,&quot;h&quot;:35,&quot;text&quot;:&quot;\uE32A&quot;,&quot;align&quot;:1,&quot;text_font&quot;:28,&quot;text_color&quot;:&quot;black&quot;}
+{&quot;page&quot;:1,&quot;id&quot;:62,&quot;obj&quot;:&quot;label&quot;,&quot;x&quot;:48,&quot;y&quot;:215,&quot;w&quot;:130,&quot;h&quot;:30,&quot;text&quot;:&quot;Green energy active&quot;,&quot;align&quot;:0,&quot;text_font&quot;:16,&quot;text_color&quot;:&quot;black&quot;}
+{&quot;page&quot;:1,&quot;id&quot;:63,&quot;obj&quot;:&quot;label&quot;,&quot;x&quot;:100,&quot;y&quot;:215,&quot;w&quot;:130,&quot;h&quot;:30,&quot;text&quot;:&quot;Yes :)&quot;,&quot;align&quot;:2,&quot;text_color&quot;:&quot;black&quot;}
+
+{&quot;page&quot;:1,&quot;id&quot;:71,&quot;obj&quot;:&quot;label&quot;,&quot;x&quot;:8,&quot;y&quot;:240,&quot;w&quot;:30,&quot;h&quot;:35,&quot;text&quot;:&quot;\uE026&quot;,&quot;align&quot;:1,&quot;text_font&quot;:28,&quot;text_color&quot;:&quot;black&quot;}
+{&quot;page&quot;:1,&quot;id&quot;:72,&quot;obj&quot;:&quot;label&quot;,&quot;x&quot;:48,&quot;y&quot;:250,&quot;w&quot;:130,&quot;h&quot;:30,&quot;text&quot;:&quot;Air quality&quot;,&quot;align&quot;:0,&quot;text_font&quot;:16,&quot;text_color&quot;:&quot;black&quot;}
+{&quot;page&quot;:1,&quot;id&quot;:73,&quot;obj&quot;:&quot;label&quot;,&quot;x&quot;:100,&quot;y&quot;:250,&quot;w&quot;:130,&quot;h&quot;:30,&quot;text&quot;:&quot;OK (29.58 µg/m3)&quot;,&quot;align&quot;:2,&quot;text_color&quot;:&quot;black&quot;}
+</code></pre>
+<p>Check out the <a href="../example-pagination/">pagination example</a> to learn how to implement the bottom bar.<br />
+Check out the <a href="../custom-component/sampl_conf/#display-clock-and-temperature">clock and temperature example</a> to learn how to implement values to the top.<br />
+Check out the <a href="../custom-component/sampl_conf/#cover-like-in-lovelace">Lovelace cover example</a> to learn how to bring life to the objects.  </p>
+<h2>Result</h2>
+
+<p><img align="left" alt="Screenshot" src="../assets/images/screenshots/demo_lovelace_entities.png" /></p>
+<div style="clear:both;"></div>
+
+  <br>
+    
+
+    
+    
+      
+    
+
+  <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
+    
+    <div class="wm-article-nav pull-right">
+      <a href="../commands/" class="btn btn-xs btn-default pull-right">
+        Next
+        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+      </a>
+      <a href="../commands/" class="btn btn-xs btn-link">
+        Commands
+      </a>
+    </div>
+    
+    <div class="wm-article-nav">
+      <a href="../example-widgets/" class="btn btn-xs btn-default pull-left">
+        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+        Previous</a><a href="../example-widgets/" class="btn btn-xs btn-link">
+        Widgets Demo
+      </a>
+    </div>
+    
+  </div>
+
+    <br>
+</div>
+
+<footer class="container-fluid wm-page-content">
+      <p>
+        <a href="https://github.com/HASwitchPlate/openHASP-docs/tree/master/docs/example-lovelace.md"><i class="fa fa-github"></i>
+Edit on GitHub</a>
+      </p>
+  <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a> using <a href="https://github.com/gristlabs/mkdocs-windmill">Windmill</a> theme by Grist Labs.</p>
+</footer>
+
+</body>
+</html>

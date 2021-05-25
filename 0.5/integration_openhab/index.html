@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="author" content="Francis Van Roie">
+    
+    <link rel="shortcut icon" href="../img/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <title>Installation and Example - openHASP</title>
+    
+    <link href="../css/bootstrap-3.3.7.min.css" rel="stylesheet">
+    <link href="../css/font-awesome-4.7.0.css" rel="stylesheet">
+    <link href="../css/base.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/highlight.css">
+    <link rel="stylesheet" href="../css/ekko-lightbox.min.css">
+
+    
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="../js/jquery-3.2.1.min.js"></script>
+    <script src="../js/bootstrap-3.3.7.min.js"></script>
+    <script src="../js/highlight.pack.js"></script>
+    
+    <base target="_top">
+    <script src="../js/ekko-lightbox.min.js"></script>
+
+    
+    <script>
+      var base_url = '..';
+      var is_top_frame = false;
+        
+        var pageToc = [
+        ];
+
+    </script>
+    <script src="../js/base.js"></script>
+    <script>
+        $(document).on('click', '[data-toggle="lightbox"]', function(event) {
+            event.preventDefault();
+            $(this).ekkoLightbox();
+        });
+    </script>
+ 
+</head>
+
+<body>
+<script>
+if (is_top_frame) { $('body').addClass('wm-top-page'); }
+</script>
+
+
+
+<div class="container-fluid wm-page-content">
+  <a name="_top"></a>
+    
+
+    
+    
+      
+    
+
+  <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
+    
+    <div class="wm-article-nav pull-right">
+      <a href="../example-pagination/" class="btn btn-xs btn-default pull-right">
+        Next
+        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+      </a>
+      <a href="../example-pagination/" class="btn btn-xs btn-link">
+        Page navigation
+      </a>
+    </div>
+    
+    <div class="wm-article-nav">
+      <a href="../custom-component/sampl_autom/" class="btn btn-xs btn-default pull-left">
+        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+        Previous</a><a href="../custom-component/sampl_autom/" class="btn btn-xs btn-link">
+        Example automations
+      </a>
+    </div>
+    
+  </div>
+
+    
+
+    <p>We call <em>plate</em> any device running openHASP in your system.</p>
+<h1>Jaffa Sunrise sample for openHAB</h1>
+
+<p>The openHAB configuration files to have this demo load automatically can be found <a href="https://github.com/HASwitchPlate/openHASP-demo">here</a>.</p>
+<p>Update the IP-address for your MQTT-broker in the <code>haspLVGL_demo.things</code> file. </p>
+<p>Make sure you have your plate connected to the network and to your MQTT boker, and your topic is set to <code>demo_plate</code>.</p>
+<h2>Configuration example</h2>
+
+<p>To add an openhasp plate to your installation with Jaffa Sunrise sample configuration, upload a <code>pages.jsonl</code> file with the folowing content to your plate:</p>
+<pre><code class="language-json">{&quot;page&quot;:1,&quot;comment&quot;:&quot;---------- Page 1 ----------&quot;}
+{&quot;obj&quot;:&quot;btn&quot;,&quot;id&quot;:4,&quot;x&quot;:5,&quot;y&quot;:5,&quot;w&quot;:230,&quot;h&quot;:58,&quot;bg_color&quot;:&quot;#000000&quot;,&quot;border_color&quot;:&quot;#FFAC00&quot;,&quot;border_width&quot;:2,&quot;radius&quot;:10,&quot;radius1&quot;:10,&quot;radius2&quot;:10,&quot;text&quot;:&quot;Lights On&quot;,&quot;value_ofs_x&quot;:-85,&quot;value_font&quot;:28,&quot;value_str&quot;:&quot;\uE6E8&quot;,&quot;value_color&quot;:&quot;#B6B6B6&quot;,&quot;text_color&quot;:&quot;#B6B6B6&quot;,&quot;text_font&quot;:22}
+{&quot;obj&quot;:&quot;btn&quot;,&quot;id&quot;:5,&quot;x&quot;:5,&quot;y&quot;:68,&quot;w&quot;:230,&quot;h&quot;:58,&quot;bg_color&quot;:&quot;#000000&quot;,&quot;border_color&quot;:&quot;#FFAC00&quot;,&quot;border_width&quot;:2,&quot;radius&quot;:10,&quot;radius1&quot;:10,&quot;radius2&quot;:10,&quot;text&quot;:&quot;Daylight&quot;,&quot;value_ofs_x&quot;:-85,&quot;value_font&quot;:28,&quot;value_str&quot;:&quot;\uE599&quot;,&quot;value_color&quot;:&quot;#B6B6B6&quot;,&quot;text_color&quot;:&quot;#B6B6B6&quot;,&quot;text_font&quot;:22}
+{&quot;obj&quot;:&quot;btn&quot;,&quot;id&quot;:6,&quot;x&quot;:5,&quot;y&quot;:131,&quot;w&quot;:230,&quot;h&quot;:58,&quot;bg_color&quot;:&quot;#000000&quot;,&quot;border_color&quot;:&quot;#FFAC00&quot;,&quot;border_width&quot;:2,&quot;radius&quot;:10,&quot;radius1&quot;:10,&quot;radius2&quot;:10,&quot;text&quot;:&quot;Night&quot;,&quot;value_ofs_x&quot;:-85,&quot;value_font&quot;:28,&quot;value_str&quot;:&quot;\uE594&quot;,&quot;value_color&quot;:&quot;#B6B6B6&quot;,&quot;text_color&quot;:&quot;#B6B6B6&quot;,&quot;text_font&quot;:22}
+{&quot;obj&quot;:&quot;btn&quot;,&quot;id&quot;:7,&quot;x&quot;:5,&quot;y&quot;:194,&quot;w&quot;:230,&quot;h&quot;:58,&quot;bg_color&quot;:&quot;#000000&quot;,&quot;border_color&quot;:&quot;#FFAC00&quot;,&quot;border_width&quot;:2,&quot;radius&quot;:10,&quot;radius1&quot;:10,&quot;radius2&quot;:10,&quot;text&quot;:&quot;Lights Off&quot;,&quot;value_ofs_x&quot;:-85,&quot;value_font&quot;:28,&quot;value_str&quot;:&quot;\uE335&quot;,&quot;value_color&quot;:&quot;#B6B6B6&quot;,&quot;text_color&quot;:&quot;#B6B6B6&quot;,&quot;text_font&quot;:22}
+
+{&quot;page&quot;:2,&quot;comment&quot;:&quot;---------- Page 2 ----------&quot;}
+{&quot;obj&quot;:&quot;label&quot;,&quot;id&quot;:8,&quot;x&quot;:5,&quot;y&quot;:5,&quot;w&quot;:230,&quot;h&quot;:30,&quot;bg_color&quot;:&quot;#000000&quot;,&quot;border_color&quot;:&quot;#C7BAA7&quot;,&quot;border_width&quot;:0,&quot;radius&quot;:10,&quot;radius1&quot;:10,&quot;radius2&quot;:10,&quot;text&quot;:&quot;Kitchen Dimmer&quot;,&quot;text_color&quot;:&quot;#B6B6B6&quot;,&quot;text_font&quot;:22}
+{&quot;obj&quot;:&quot;label&quot;,&quot;id&quot;:9,&quot;x&quot;:5,&quot;y&quot;:80,&quot;w&quot;:230,&quot;h&quot;:30,&quot;bg_color&quot;:&quot;#000000&quot;,&quot;border_color&quot;:&quot;#C7BAA7&quot;,&quot;border_width&quot;:0,&quot;radius&quot;:10,&quot;radius1&quot;:10,&quot;radius2&quot;:10,&quot;text&quot;:&quot;Dining Dimmer&quot;,&quot;text_color&quot;:&quot;#B6B6B6&quot;,&quot;text_font&quot;:22}
+{&quot;obj&quot;:&quot;label&quot;,&quot;id&quot;:10,&quot;x&quot;:5,&quot;y&quot;:165,&quot;w&quot;:230,&quot;h&quot;:30,&quot;bg_color&quot;:&quot;#000000&quot;,&quot;border_color&quot;:&quot;#C7BAA7&quot;,&quot;border_width&quot;:0,&quot;radius&quot;:10,&quot;radius1&quot;:10,&quot;radius2&quot;:10,&quot;text&quot;:&quot;Front Blinds&quot;,&quot;text_color&quot;:&quot;#B6B6B6&quot;,&quot;text_font&quot;:22}
+{&quot;obj&quot;:&quot;slider&quot;,&quot;id&quot;:11,&quot;x&quot;:20,&quot;y&quot;:40,&quot;w&quot;:200,&quot;h&quot;:30,&quot;bg_color&quot;:&quot;#C7BAA7&quot;,&quot;border_color&quot;:&quot;#C7BAA7&quot;,&quot;border_width&quot;:0,&quot;radius&quot;:15,&quot;radius1&quot;:15,&quot;radius2&quot;:20,&quot;text_font&quot;:1,&quot;val&quot;:80,&quot;bg_color1&quot;:&quot;#FFAC00&quot;,&quot;bg_color2&quot;:&quot;#DC5C05&quot;}
+{&quot;obj&quot;:&quot;slider&quot;,&quot;id&quot;:12,&quot;x&quot;:20,&quot;y&quot;:120,&quot;w&quot;:200,&quot;h&quot;:30,&quot;bg_color&quot;:&quot;#C7BAA7&quot;,&quot;border_color&quot;:&quot;#C7BAA7&quot;,&quot;border_width&quot;:0,&quot;radius&quot;:15,&quot;radius1&quot;:15,&quot;radius2&quot;:20,&quot;text_font&quot;:1,&quot;val&quot;:65,&quot;bg_color1&quot;:&quot;#FFAC00&quot;,&quot;bg_color2&quot;:&quot;#DC5C05&quot;}
+{&quot;obj&quot;:&quot;slider&quot;,&quot;id&quot;:13,&quot;x&quot;:20,&quot;y&quot;:205,&quot;w&quot;:200,&quot;h&quot;:30,&quot;bg_color&quot;:&quot;#C7BAA7&quot;,&quot;border_color&quot;:&quot;#C7BAA7&quot;,&quot;border_width&quot;:0,&quot;radius&quot;:15,&quot;radius1&quot;:15,&quot;radius2&quot;:20,&quot;text_font&quot;:1,&quot;val&quot;:25,&quot;bg_color1&quot;:&quot;#FFAC00&quot;,&quot;bg_color2&quot;:&quot;#DC5C05&quot;}
+
+{&quot;page&quot;:3,&quot;comment&quot;:&quot;---------- Page 3 ----------&quot;}
+{&quot;obj&quot;:&quot;label&quot;,&quot;id&quot;:14,&quot;x&quot;:42,&quot;y&quot;:10,&quot;w&quot;:236,&quot;h&quot;:30,&quot;bg_color&quot;:&quot;#000000&quot;,&quot;border_color&quot;:&quot;#C7BAA7&quot;,&quot;border_width&quot;:0,&quot;text&quot;:&quot;Gold&quot;,&quot;text_color&quot;:&quot;#C7BAA7&quot;,&quot;text_font&quot;:22}
+{&quot;obj&quot;:&quot;label&quot;,&quot;id&quot;:15,&quot;x&quot;:42,&quot;y&quot;:60,&quot;mode&quot;:&quot;scroll&quot;,&quot;w&quot;:236,&quot;h&quot;:30,&quot;bg_color&quot;:&quot;#000000&quot;,&quot;border_color&quot;:&quot;#C7BAA7&quot;,&quot;border_width&quot;:0,&quot;text&quot;:&quot;Chet Faker&quot;,&quot;text_color&quot;:&quot;#C7BAA7&quot;,&quot;text_font&quot;:22}
+{&quot;obj&quot;:&quot;btn&quot;,&quot;id&quot;:16,&quot;x&quot;:2,&quot;y&quot;:140,&quot;w&quot;:76,&quot;h&quot;:61,&quot;bg_color&quot;:&quot;#000000&quot;,&quot;border_color&quot;:&quot;#FFAC00&quot;,&quot;border_width&quot;:2,&quot;radius&quot;:10,&quot;radius1&quot;:10,&quot;radius2&quot;:10,&quot;text&quot;:&quot;\uE4AE&quot;,&quot;text_color&quot;:&quot;#C7BAA7&quot;,&quot;text_font&quot;:28}
+{&quot;obj&quot;:&quot;btn&quot;,&quot;id&quot;:17,&quot;x&quot;:82,&quot;y&quot;:140,&quot;w&quot;:76,&quot;h&quot;:61,&quot;bg_color&quot;:&quot;#000000&quot;,&quot;border_color&quot;:&quot;#FFAC00&quot;,&quot;border_width&quot;:2,&quot;radius&quot;:10,&quot;radius1&quot;:10,&quot;radius2&quot;:10,&quot;text&quot;:&quot;\uE3E4&quot;,&quot;text_color&quot;:&quot;#C7BAA7&quot;,&quot;text_font&quot;:28}
+{&quot;obj&quot;:&quot;btn&quot;,&quot;id&quot;:18,&quot;x&quot;:162,&quot;y&quot;:140,&quot;w&quot;:76,&quot;h&quot;:61,&quot;bg_color&quot;:&quot;#000000&quot;,&quot;border_color&quot;:&quot;#FFAC00&quot;,&quot;border_width&quot;:2,&quot;radius&quot;:10,&quot;radius1&quot;:10,&quot;radius2&quot;:10,&quot;text&quot;:&quot;\uE4AD&quot;,&quot;text_color&quot;:&quot;#C7BAA7&quot;,&quot;text_font&quot;:28}
+{&quot;obj&quot;:&quot;bar&quot;,&quot;id&quot;:19,&quot;x&quot;:2,&quot;y&quot;:105,&quot;w&quot;:236,&quot;h&quot;:20,&quot;bg_color&quot;:&quot;#C7BAA7&quot;,&quot;border_color&quot;:&quot;#C7BAA7&quot;,&quot;border_width&quot;:0,&quot;radius&quot;:15,&quot;radius1&quot;:15,&quot;radius2&quot;:15,&quot;text_font&quot;:1,&quot;val&quot;:65,&quot;bg_color1&quot;:&quot;#FFAC00&quot;}
+{&quot;obj&quot;:&quot;slider&quot;,&quot;id&quot;:20,&quot;x&quot;:35,&quot;y&quot;:220,&quot;w&quot;:170,&quot;h&quot;:30,&quot;bg_color&quot;:&quot;#C7BAA7&quot;,&quot;border_color&quot;:&quot;#C7BAA7&quot;,&quot;border_width&quot;:0,&quot;radius&quot;:15,&quot;radius1&quot;:15,&quot;radius2&quot;:20,&quot;text_font&quot;:1,&quot;val&quot;:30,&quot;bg_color1&quot;:&quot;#FFAC00&quot;,&quot;bg_color2&quot;:&quot;#DC5C05&quot;}
+{&quot;obj&quot;:&quot;label&quot;,&quot;id&quot;:21,&quot;x&quot;:2,&quot;y&quot;:10,&quot;w&quot;:40,&quot;h&quot;:61,&quot;bg_color&quot;:&quot;#000000&quot;,&quot;border_color&quot;:&quot;#C7BAA7&quot;,&quot;border_width&quot;:0,&quot;text&quot;:&quot;\uE75A&quot;,&quot;text_color&quot;:&quot;#C7BAA7&quot;,&quot;text_font&quot;:22}
+{&quot;obj&quot;:&quot;label&quot;,&quot;id&quot;:22,&quot;x&quot;:2,&quot;y&quot;:60,&quot;w&quot;:36,&quot;h&quot;:61,&quot;bg_color&quot;:&quot;#000000&quot;,&quot;border_color&quot;:&quot;#C7BAA7&quot;,&quot;border_width&quot;:0,&quot;text&quot;:&quot;\uE004&quot;,&quot;text_color&quot;:&quot;#C7BAA7&quot;,&quot;text_font&quot;:22}
+{&quot;obj&quot;:&quot;label&quot;,&quot;id&quot;:23,&quot;x&quot;:5,&quot;y&quot;:224,&quot;w&quot;:25,&quot;h&quot;:40,&quot;bg_color&quot;:&quot;#000000&quot;,&quot;border_color&quot;:&quot;#C7BAA7&quot;,&quot;border_width&quot;:0,&quot;text&quot;:&quot;\uE75F&quot;,&quot;text_color&quot;:&quot;#C7BAA7&quot;,&quot;text_font&quot;:22}
+{&quot;obj&quot;:&quot;label&quot;,&quot;id&quot;:24,&quot;x&quot;:210,&quot;y&quot;:224,&quot;w&quot;:25,&quot;h&quot;:40,&quot;bg_color&quot;:&quot;#000000&quot;,&quot;border_color&quot;:&quot;#C7BAA7&quot;,&quot;border_width&quot;:0,&quot;text&quot;:&quot;\uE57E&quot;,&quot;text_color&quot;:&quot;#C7BAA7&quot;,&quot;text_font&quot;:22}
+
+{&quot;page&quot;:0,&quot;comment&quot;:&quot;---------- All pages ----------&quot;}
+{&quot;obj&quot;:&quot;btn&quot;,&quot;id&quot;:1,&quot;x&quot;:5,&quot;y&quot;:257,&quot;w&quot;:73,&quot;h&quot;:58,&quot;bg_color&quot;:&quot;#000000&quot;,&quot;border_color&quot;:&quot;#C7BAA7&quot;,&quot;border_width&quot;:0,&quot;radius&quot;:10,&quot;radius1&quot;:10,&quot;radius2&quot;:10,&quot;text&quot;:&quot;\uE04D&quot;,&quot;text_color&quot;:&quot;#978B7D&quot;,&quot;text_font&quot;:28}
+{&quot;obj&quot;:&quot;btn&quot;,&quot;id&quot;:2,&quot;x&quot;:83,&quot;y&quot;:257,&quot;w&quot;:73,&quot;h&quot;:58,&quot;bg_color&quot;:&quot;#000000&quot;,&quot;border_color&quot;:&quot;#C7BAA7&quot;,&quot;border_width&quot;:0,&quot;radius&quot;:10,&quot;radius1&quot;:10,&quot;radius2&quot;:10,&quot;text&quot;:&quot;\uE2DC&quot;,&quot;text_color&quot;:&quot;#978B7D&quot;,&quot;text_font&quot;:28}
+{&quot;obj&quot;:&quot;btn&quot;,&quot;id&quot;:3,&quot;x&quot;:161,&quot;y&quot;:257,&quot;w&quot;:73,&quot;h&quot;:58,&quot;bg_color&quot;:&quot;#000000&quot;,&quot;border_color&quot;:&quot;#C7BAA7&quot;,&quot;border_width&quot;:0,&quot;radius&quot;:10,&quot;radius1&quot;:10,&quot;radius2&quot;:10,&quot;text&quot;:&quot;\uE054&quot;,&quot;text_color&quot;:&quot;#978B7D&quot;,&quot;text_font&quot;:28}
+
+</code></pre>
+<p>Restart the plate and the demo page should load automatically to your device.</p>
+<h2>Result</h2>
+
+<p><img align="left" alt="Screenshot" src="../assets/images/screenshots/demo_jaffa1.png" />
+<img align="left" alt="Screenshot" src="../assets/images/screenshots/demo_jaffa2.png" />
+<img align="left" alt="Screenshot" src="../assets/images/screenshots/demo_jaffa3.png" /></p>
+<div style="clear:both;"></div>
+
+  <br>
+    
+
+    
+    
+      
+    
+
+  <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
+    
+    <div class="wm-article-nav pull-right">
+      <a href="../example-pagination/" class="btn btn-xs btn-default pull-right">
+        Next
+        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+      </a>
+      <a href="../example-pagination/" class="btn btn-xs btn-link">
+        Page navigation
+      </a>
+    </div>
+    
+    <div class="wm-article-nav">
+      <a href="../custom-component/sampl_autom/" class="btn btn-xs btn-default pull-left">
+        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+        Previous</a><a href="../custom-component/sampl_autom/" class="btn btn-xs btn-link">
+        Example automations
+      </a>
+    </div>
+    
+  </div>
+
+    <br>
+</div>
+
+<footer class="container-fluid wm-page-content">
+      <p>
+        <a href="https://github.com/HASwitchPlate/openHASP-docs/tree/master/docs/integration_openhab.md"><i class="fa fa-github"></i>
+Edit on GitHub</a>
+      </p>
+  <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a> using <a href="https://github.com/gristlabs/mkdocs-windmill">Windmill</a> theme by Grist Labs.</p>
+</footer>
+
+</body>
+</html>

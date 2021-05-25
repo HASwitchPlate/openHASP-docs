@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="author" content="Francis Van Roie">
+    
+    <link rel="shortcut icon" href="../img/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <title>Compiling online with Gitpod - openHASP</title>
+    
+    <link href="../css/bootstrap-3.3.7.min.css" rel="stylesheet">
+    <link href="../css/font-awesome-4.7.0.css" rel="stylesheet">
+    <link href="../css/base.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/highlight.css">
+    <link rel="stylesheet" href="../css/ekko-lightbox.min.css">
+
+    
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="../js/jquery-3.2.1.min.js"></script>
+    <script src="../js/bootstrap-3.3.7.min.js"></script>
+    <script src="../js/highlight.pack.js"></script>
+    
+    <base target="_top">
+    <script src="../js/ekko-lightbox.min.js"></script>
+
+    
+    <script>
+      var base_url = '..';
+      var is_top_frame = false;
+        
+        var pageToc = [
+          {title: "Compiling online with Gitpod", url: "#_top", children: [
+              {title: "Load openHASP project in Gitpod", url: "#load-openhasp-project-in-gitpod" },
+              {title: "Choose the version you need", url: "#choose-the-version-you-need" },
+              {title: "Build the firmware", url: "#build-the-firmware" },
+              {title: "Download the build", url: "#download-the-build" },
+          ]},
+        ];
+
+    </script>
+    <script src="../js/base.js"></script>
+    <script>
+        $(document).on('click', '[data-toggle="lightbox"]', function(event) {
+            event.preventDefault();
+            $(this).ekkoLightbox();
+        });
+    </script>
+ 
+</head>
+
+<body>
+<script>
+if (is_top_frame) { $('body').addClass('wm-top-page'); }
+</script>
+
+
+
+<div class="container-fluid wm-page-content">
+  <a name="_top"></a>
+    
+
+    
+    
+      
+    
+
+  <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
+    
+    <div class="wm-article-nav pull-right">
+      <a href="../compiling-customize/" class="btn btn-xs btn-default pull-right">
+        Next
+        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+      </a>
+      <a href="../compiling-customize/" class="btn btn-xs btn-link">
+        Customization
+      </a>
+    </div>
+    
+    <div class="wm-article-nav">
+      <a href="../compiling-locally/" class="btn btn-xs btn-default pull-left">
+        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+        Previous</a><a href="../compiling-locally/" class="btn btn-xs btn-link">
+        Compiling locally
+      </a>
+    </div>
+    
+  </div>
+
+    
+
+    <h1 id="compiling-online-with-gitpod">Compiling online with Gitpod<a class="headerlink" href="#compiling-online-with-gitpod" title="Permanent link">~</a></h1>
+<p>Even though openHASP is available in several pre-compiled firmware variants, sometimes the ready-to-flash binaries aren't enough.
+If you need to customize some features, or simply change some parameters, then you need to compile a firmware binary yourself.<br />
+If you don't want to install an IDE (Integrated Development Environment) like PlatformIO or ATOM on your computer, compiling your own firmware is a breeze using <a href="https://www.gitpod.io/">Gitpod</a>.</p>
+<p>Gitpod is a web browser based online IDE. All you need to use it is to link your GitHub account (or make a new one <a href="https://github.com/join?source=header">here</a>). Gitpod will take care of all the necessary software package dependencies for you.</p>
+<h2 id="load-openhasp-project-in-gitpod">Load openHASP project in Gitpod<a class="headerlink" href="#load-openhasp-project-in-gitpod" title="Permanent link">~</a></h2>
+<p>Click on one of the links below, and that will automatically load Gitpod with openHASP prepared for creating your custom build:</p>
+<ul>
+<li>Master release: <a href="https://gitpod.io#https://github.com/HASwitchPlate/openHASP">https://gitpod.io#https://github.com/HASwitchPlate/openHASP</a></li>
+<li>Development branch (for example 0.5.0): <a href="https://gitpod.io#https://github.com/HASwitchPlate/openHASP/tree/0.5.0">https://gitpod.io#https://github.com/HASwitchPlate/openHASP/tree/0.5.0</a></li>
+</ul>
+<h2 id="choose-the-version-you-need">Choose the version you need<a class="headerlink" href="#choose-the-version-you-need" title="Permanent link">~</a></h2>
+<p>After Gitpod loads the project, you will be greeted by the main window.</p>
+<p><img alt="gitpod" src="https://user-images.githubusercontent.com/1550668/118104245-2e3ea800-b3db-11eb-8a8d-ba28e09f9e5e.png" /></p>
+<p>A copy of <code>platformio_override-template.ini</code> to <code>platformio_override.ini</code> will be readily prepared for you.<br />
+Click <code>platformio_override.ini</code> to open it, and to select your firmware flavour for your hardware uncomment in the <code>extra_configs</code> section the platform of your hadware, for example for ESP32:</p>
+<pre><code class="language-text">[platformio]
+extra_configs =
+    ; Uncomment or edit the lines to show more User Setups in the PIO sidebar
+    ; user_setups/darwin_sdl/*.ini
+     user_setups/esp32/*.ini
+    ; user_setups/esp8266/*.ini
+    ; user_setups/linux_sdl/*.ini
+</code></pre>
+<p>If you use <a href="../compiling-customize/">customization</a>, remove the comment from the line <code>-DUSE_CONFIG_OVERRIDE</code> and make sure you have your own <code>user_config_override.h</code> in place: <br />
+(please consider before saving your wifi and mqtt credentials to an online cloud)</p>
+<pre><code class="language-text">[override]
+; -- Hasp config options --------------------------------------
+build_flags =
+; -- Uncomment the next line to use the file include/user_config_override.h settings
+    -DUSE_CONFIG_OVERRIDE
+</code></pre>
+<p>And finally select your supported hardware from the <code>extra_default_envs</code> section by uncommenting the corresponding line. For example to build firmware for Lanbon L8, you should remove that comment only:</p>
+<pre><code class="language-text">extra_default_envs =
+    ; Comment unneeded environments or create extra
+    ; arduitouch-esp32_ili9341
+    ; d1-mini-esp32_ili9341
+    ; d1-mini-esp8266_ili9341
+    ; d132-unoshield
+    ; esp12e-st7735
+    ; esp32dev-mrb3511
+    ; esp32dev-ili9488
+     lanbon_l8
+    ; lolin-d32-pro_ili9341
+    ; my_custom_build
+    ; nodemcu32s-raspi
+    ; wt32-sc01
+    ; ttgo_esp32_poe-ili9341
+</code></pre>
+<p>Save the file by pressing <code>Ctrl + S</code> or selecting <code>Save</code> from the top-left menu.</p>
+<div class="admonition note">
+<p class="admonition-title"> </p>
+<p><em>You can of course uncomment multiple lines, the system will make builds for each. Note that these environments rely on the platforms above so double-check that your hardware has the correct platform enabled in the <code>extra_configs</code> section!</em></p>
+</div>
+<h2 id="build-the-firmware">Build the firmware<a class="headerlink" href="#build-the-firmware" title="Permanent link">~</a></h2>
+<p>To generate your customized firmware build, type <code>platformio run</code> in the command line area at the bottom, and press Enter key.</p>
+<h2 id="download-the-build">Download the build<a class="headerlink" href="#download-the-build" title="Permanent link">~</a></h2>
+<p>After the build successfully finishes, you will be able to find the downloadable binaries on the left panel, in the <code>build_output\firmware</code> folder.</p>
+
+  <br>
+    
+
+    
+    
+      
+    
+
+  <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
+    
+    <div class="wm-article-nav pull-right">
+      <a href="../compiling-customize/" class="btn btn-xs btn-default pull-right">
+        Next
+        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+      </a>
+      <a href="../compiling-customize/" class="btn btn-xs btn-link">
+        Customization
+      </a>
+    </div>
+    
+    <div class="wm-article-nav">
+      <a href="../compiling-locally/" class="btn btn-xs btn-default pull-left">
+        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+        Previous</a><a href="../compiling-locally/" class="btn btn-xs btn-link">
+        Compiling locally
+      </a>
+    </div>
+    
+  </div>
+
+    <br>
+</div>
+
+<footer class="container-fluid wm-page-content">
+      <p>
+        <a href="https://github.com/HASwitchPlate/openHASP-docs/tree/master/docs/compiling-gitpod.md"><i class="fa fa-github"></i>
+Edit on GitHub</a>
+      </p>
+  <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a> using <a href="https://github.com/gristlabs/mkdocs-windmill">Windmill</a> theme by Grist Labs.</p>
+</footer>
+
+</body>
+</html>

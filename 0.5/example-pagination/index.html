@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="author" content="Francis Van Roie">
+    
+    <link rel="shortcut icon" href="../img/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <title>Page navigation - openHASP</title>
+    
+    <link href="../css/bootstrap-3.3.7.min.css" rel="stylesheet">
+    <link href="../css/font-awesome-4.7.0.css" rel="stylesheet">
+    <link href="../css/base.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/highlight.css">
+    <link rel="stylesheet" href="../css/ekko-lightbox.min.css">
+
+    
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="../js/jquery-3.2.1.min.js"></script>
+    <script src="../js/bootstrap-3.3.7.min.js"></script>
+    <script src="../js/highlight.pack.js"></script>
+    
+    <base target="_top">
+    <script src="../js/ekko-lightbox.min.js"></script>
+
+    
+    <script>
+      var base_url = '..';
+      var is_top_frame = false;
+        
+        var pageToc = [
+        ];
+
+    </script>
+    <script src="../js/base.js"></script>
+    <script>
+        $(document).on('click', '[data-toggle="lightbox"]', function(event) {
+            event.preventDefault();
+            $(this).ekkoLightbox();
+        });
+    </script>
+ 
+</head>
+
+<body>
+<script>
+if (is_top_frame) { $('body').addClass('wm-top-page'); }
+</script>
+
+
+
+<div class="container-fluid wm-page-content">
+  <a name="_top"></a>
+    
+
+    
+    
+      
+    
+
+  <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
+    
+    <div class="wm-article-nav pull-right">
+      <a href="../example-dashui/" class="btn btn-xs btn-default pull-right">
+        Next
+        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+      </a>
+      <a href="../example-dashui/" class="btn btn-xs btn-link">
+        Dash UI
+      </a>
+    </div>
+    
+    <div class="wm-article-nav">
+      <a href="../integration_openhab/" class="btn btn-xs btn-default pull-left">
+        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+        Previous</a><a href="../integration_openhab/" class="btn btn-xs btn-link">
+        Installation and Example
+      </a>
+    </div>
+    
+  </div>
+
+    
+
+    <h1>Simple page navigation</h1>
+
+<p><img alt="pagination" src="https://user-images.githubusercontent.com/1550668/115120975-aa96c480-9fb0-11eb-9bda-95abcc16ec8e.png" /></p>
+<p>Pagination can be executed <em>locally</em> using the <a href="../objects/#actions">action</a> attribute of the objects.<br />
+The <code>jsonl</code> lines below will setup 3 buttons to the bottom of a 240x320 screen which will navigate back and forth between the pages using <code>action</code> attribute:</p>
+<pre><code class="language-text">{&quot;page&quot;:0,&quot;id&quot;:1,&quot;obj&quot;:&quot;btn&quot;,&quot;action&quot;:&quot;prev&quot;,&quot;x&quot;:0,&quot;y&quot;:290,&quot;w&quot;:79,&quot;h&quot;:32,&quot;bg_color&quot;:&quot;#2C3E50&quot;,&quot;text&quot;:&quot;\uE141&quot;,&quot;text_color&quot;:&quot;#FFFFFF&quot;,&quot;radius&quot;:0,&quot;border_side&quot;:0,&quot;text_font&quot;:28}
+{&quot;page&quot;:0,&quot;id&quot;:2,&quot;obj&quot;:&quot;btn&quot;,&quot;action&quot;:&quot;back&quot;,&quot;x&quot;:80,&quot;y&quot;:290,&quot;w&quot;:80,&quot;h&quot;:32,&quot;bg_color&quot;:&quot;#2C3E50&quot;,&quot;text&quot;:&quot;\uE2DC&quot;,&quot;text_color&quot;:&quot;#FFFFFF&quot;,&quot;radius&quot;:0,&quot;border_side&quot;:0,&quot;text_font&quot;:22}
+{&quot;page&quot;:0,&quot;id&quot;:3,&quot;obj&quot;:&quot;btn&quot;,&quot;action&quot;:&quot;next&quot;,&quot;x&quot;:161,&quot;y&quot;:290,&quot;w&quot;:79,&quot;h&quot;:32,&quot;bg_color&quot;:&quot;#2C3E50&quot;,&quot;text&quot;:&quot;\uE142&quot;,&quot;text_color&quot;:&quot;#FFFFFF&quot;,&quot;radius&quot;:0,&quot;border_side&quot;:0,&quot;text_font&quot;:28}
+</code></pre>
+<p>Local pagination can be also acomplished by enabling <a href="../objects/#swipe">swipe</a> gesture on certain objects.<br />
+The <code>jsonl</code> line below will setup an invisible rectangle overlay at the top of the screen with enabled <code>swipe</code>:</p>
+<pre><code class="language-text">{&quot;page&quot;:0,&quot;id&quot;:6,&quot;obj&quot;:&quot;obj&quot;,&quot;swipe&quot;:1,&quot;x&quot;:0,&quot;y&quot;:0,&quot;h&quot;:30,&quot;w&quot;:240,&quot;opacity&quot;:0,&quot;comment&quot;:&quot;swipe-area-at-top&quot;}
+</code></pre>
+<div class="admonition note">
+<p class="admonition-title"><i class='fa fa-info-circle'></i>&nbsp; Note</p>
+<p>You should to make sure that in your <a href="../pages/#pagesjsonl"><code>pages.jsonl</code></a> these lines appear at the end of the file, so that these objects remain at the top, and no others will be drawn on top of them.</p>
+</div>
+<hr />
+<p>To limit page navigation only to page numbers between 1 and 6:</p>
+<pre><code class="language-text">{&quot;page&quot;:1,&quot;id&quot;:0,&quot;prev&quot;:6}
+{&quot;page&quot;:6,&quot;id&quot;:0,&quot;next&quot;:1}
+</code></pre>
+
+  <br>
+    
+
+    
+    
+      
+    
+
+  <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
+    
+    <div class="wm-article-nav pull-right">
+      <a href="../example-dashui/" class="btn btn-xs btn-default pull-right">
+        Next
+        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+      </a>
+      <a href="../example-dashui/" class="btn btn-xs btn-link">
+        Dash UI
+      </a>
+    </div>
+    
+    <div class="wm-article-nav">
+      <a href="../integration_openhab/" class="btn btn-xs btn-default pull-left">
+        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+        Previous</a><a href="../integration_openhab/" class="btn btn-xs btn-link">
+        Installation and Example
+      </a>
+    </div>
+    
+  </div>
+
+    <br>
+</div>
+
+<footer class="container-fluid wm-page-content">
+      <p>
+        <a href="https://github.com/HASwitchPlate/openHASP-docs/tree/master/docs/example-pagination.md"><i class="fa fa-github"></i>
+Edit on GitHub</a>
+      </p>
+  <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a> using <a href="https://github.com/gristlabs/mkdocs-windmill">Windmill</a> theme by Grist Labs.</p>
+</footer>
+
+</body>
+</html>

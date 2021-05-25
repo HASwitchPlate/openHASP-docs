@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="author" content="Francis Van Roie">
+    
+    <link rel="shortcut icon" href="../../img/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <title>Test - openHASP</title>
+    
+    <link href="../../css/bootstrap-3.3.7.min.css" rel="stylesheet">
+    <link href="../../css/font-awesome-4.7.0.css" rel="stylesheet">
+    <link href="../../css/base.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/highlight.css">
+    <link rel="stylesheet" href="../../css/ekko-lightbox.min.css">
+
+    
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="../../js/jquery-3.2.1.min.js"></script>
+    <script src="../../js/bootstrap-3.3.7.min.js"></script>
+    <script src="../../js/highlight.pack.js"></script>
+    
+    <base target="_top">
+    <script src="../../js/ekko-lightbox.min.js"></script>
+
+    
+    <script>
+      var base_url = '../..';
+      var is_top_frame = false;
+        
+        var pageToc = [
+          {title: "Features", url: "#_top", children: [
+          ]},
+          {title: "Product Video", url: "#product-video", children: [
+          ]},
+          {title: "Backlight Control", url: "#backlight-control", children: [
+          ]},
+          {title: "3D Printed Cases", url: "#3d-printed-cases", children: [
+          ]},
+          {title: "Flashing", url: "#flashing", children: [
+          ]},
+          {title: "GPIO Settings", url: "#gpio-settings", children: [
+          ]},
+          {title: "PCB Blueprint", url: "#pcb-blueprint", children: [
+          ]},
+          {title: "HASP build_flags", url: "#hasp-build_flags", children: [
+          ]},
+        ];
+
+    </script>
+    <script src="../../js/base.js"></script>
+    <script>
+        $(document).on('click', '[data-toggle="lightbox"]', function(event) {
+            event.preventDefault();
+            $(this).ekkoLightbox();
+        });
+    </script>
+ 
+</head>
+
+<body>
+<script>
+if (is_top_frame) { $('body').addClass('wm-top-page'); }
+</script>
+
+
+
+<div class="container-fluid wm-page-content">
+  <a name="_top"></a>
+    
+
+    
+
+    <h1>ESP32 TouchDown</h1>
+
+<style type="text/css">
+
+
+.ekko-lightbox-container > div > iframe
+{
+  height: 240px;
+  max-height: 240px;
+}
+
+
+</style>
+</style>
+<div class="row justify-content-center">
+
+
+<a href="http://haswitchplate.github.io/openHASP-docs/lv_ex_roller_1/index.html?w=320&h=240"   data-lightbox="iframe" data-toggle="lightbox"  data-gallery="example-gallery" data-title="Roller demo" >Roller demo</a>
+
+</div>
+
+<h2 id="features">Features<a class="headerlink" href="#features" title="Permanent link">~</a></h2>
+<ul>
+<li>ESP32-WROOM-32D</li>
+<li>ILI9488 3.5" (480*320) TFT screen in 4-wire SPI mode</li>
+<li>FT62x6 Capacitive Touch Controller</li>
+<li>APK2112 3.3V regulator</li>
+<li>MCP73831 battery management IC</li>
+<li>CP2102 USB-to-UART IC</li>
+<li>USB-C connector</li>
+<li>Piezo Speaker</li>
+<li>microSD card holder</li>
+<li>Battery voltage divider connected to GPIO35</li>
+<li>Stemma / JST-PH I2C connector</li>
+<li>Compact size: 100x57x15mm</li>
+</ul>
+<p>This board was originaly created for the <a href="https://github.com/DustinWatts/FreeTouchDeck">FreeTouchDeck project</a>
+and the hardware is also open source. Due to the extensive documentation it was easy to port openHASP to the ESP32 TouchDown.</p>
+<p>Available on
+<a href="https://www.tindie.com/products/dustinwattsnl/esp32-touchdown/"><img alt="Tindie" src="../../assets/images/tindie-logo.png" /></a></p>
+<h2 id="product-video">Product Video<a class="headerlink" href="#product-video" title="Permanent link">~</a></h2>
+<p><img alt="YOUTUBE" src="sdVtHU2Gz7Y" /></p>
+<h2 id="backlight-control">Backlight Control<a class="headerlink" href="#backlight-control" title="Permanent link">~</a></h2>
+<p>To enable backlight control, make sure the solder jumper pad is in position 2-1:</p>
+<p><img alt="Backlight Control" src="../../assets/images/devices/esp32-touchdown-backlight.png" /></p>
+<h2 id="3d-printed-cases">3D Printed Cases<a class="headerlink" href="#3d-printed-cases" title="Permanent link">~</a></h2>
+<p>You can find several different <a href="https://github.com/DustinWatts/esp32-touchdown/tree/main/Case">3D printable cases</a> in the <a href="https://github.com/DustinWatts/esp32-touchdown/">ESP32 TouchDown repository</a>:</p>
+<h2 id="flashing">Flashing<a class="headerlink" href="#flashing" title="Permanent link">~</a></h2>
+<p>The ESP32 TouchDown can easily be flashed over USB like any ESP32 development board.</p>
+<h2 id="gpio-settings">GPIO Settings<a class="headerlink" href="#gpio-settings" title="Permanent link">~</a></h2>
+<p>These pins can be used freely as GPIOs:</p>
+<h2 id="pcb-blueprint">PCB Blueprint<a class="headerlink" href="#pcb-blueprint" title="Permanent link">~</a></h2>
+<p>The ESP32 TouchDown is fully <a href="https://github.com/DustinWatts/esp32-touchdown/tree/main/Hardware">Open Source Hardware</a>:</p>
+<ul>
+<li>Schematics</li>
+<li>Bill of materials</li>
+<li>PCB layout</li>
+<li>Datasheets</li>
+</ul>
+<p><img alt="PCB Dimensions" src="../../assets/images/devices/esp32-touchdown-dimensions.png" /></p>
+<h2 id="hasp-build_flags">HASP build_flags<a class="headerlink" href="#hasp-build_flags" title="Permanent link">~</a></h2>
+<p>Specify the LCD Configuration to use and define the GPIOs in the environment build flags:</p>
+<pre><code>build_flags =
+    ${env.build_flags}
+    ${esp32.build_flags}
+    ${esp32.vspi}        ; Use VSPI hardware SPI bus
+
+;region -- TFT_eSPI build options ------------------------
+    -D USER_SETUP_LOADED=1
+    -D ILI9488_DRIVER=1
+    -D TFT_ROTATION=0 ; 0=0, 1=90, 2=180 or 3=270 degree
+    -D TFT_WIDTH=320
+    -D TFT_HEIGHT=480
+    -D TFT_CS=15  ;// Chip select control pin
+    -D TFT_DC=2  ;// Data Command control pin
+    -D TFT_RST=4 ;// Reset pin (could connect to RST pin)
+    -D TFT_BCKL=5  ;None, configurable via web UI (e.g. 2 for D4)
+    -D SUPPORT_TRANSACTIONS
+    -D TOUCH_DRIVER=6336 ; XPT2606 Resistive touch panel driver 
+    -D TOUCH_SDA=21
+    -D TOUCH_SCL=22
+    -D TOUCH_IRQ=27   ; not connected
+    -D TOUCH_RST=-1   ; not used, connected to 3.3V
+    -D TOUCH_FREQUENCY=400000
+    -D SPI_FREQUENCY=27000000
+    -D SPI_READ_FREQUENCY=16000000
+;endregion
+</code></pre>
+
+  <br>
+    
+
+    <br>
+</div>
+
+<footer class="container-fluid wm-page-content">
+      <p>
+        <a href="https://github.com/HASwitchPlate/openHASP-docs/tree/master/docs/devices/test.md"><i class="fa fa-github"></i>
+Edit on GitHub</a>
+      </p>
+  <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a> using <a href="https://github.com/gristlabs/mkdocs-windmill">Windmill</a> theme by Grist Labs.</p>
+</footer>
+
+</body>
+</html>

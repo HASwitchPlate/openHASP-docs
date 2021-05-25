@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="author" content="Francis Van Roie">
+    
+    <link rel="shortcut icon" href="../img/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <title>Dash UI - openHASP</title>
+    
+    <link href="../css/bootstrap-3.3.7.min.css" rel="stylesheet">
+    <link href="../css/font-awesome-4.7.0.css" rel="stylesheet">
+    <link href="../css/base.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/highlight.css">
+    <link rel="stylesheet" href="../css/ekko-lightbox.min.css">
+
+    
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="../js/jquery-3.2.1.min.js"></script>
+    <script src="../js/bootstrap-3.3.7.min.js"></script>
+    <script src="../js/highlight.pack.js"></script>
+    
+    <base target="_top">
+    <script src="../js/ekko-lightbox.min.js"></script>
+
+    
+    <script>
+      var base_url = '..';
+      var is_top_frame = false;
+        
+        var pageToc = [
+        ];
+
+    </script>
+    <script src="../js/base.js"></script>
+    <script>
+        $(document).on('click', '[data-toggle="lightbox"]', function(event) {
+            event.preventDefault();
+            $(this).ekkoLightbox();
+        });
+    </script>
+ 
+</head>
+
+<body>
+<script>
+if (is_top_frame) { $('body').addClass('wm-top-page'); }
+</script>
+
+
+
+<div class="container-fluid wm-page-content">
+  <a name="_top"></a>
+    
+
+    
+    
+      
+    
+
+  <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
+    
+    <div class="wm-article-nav pull-right">
+      <a href="../example-widgets/" class="btn btn-xs btn-default pull-right">
+        Next
+        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+      </a>
+      <a href="../example-widgets/" class="btn btn-xs btn-link">
+        Widgets Demo
+      </a>
+    </div>
+    
+    <div class="wm-article-nav">
+      <a href="../example-pagination/" class="btn btn-xs btn-default pull-left">
+        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+        Previous</a><a href="../example-pagination/" class="btn btn-xs btn-link">
+        Page navigation
+      </a>
+    </div>
+    
+  </div>
+
+    
+
+    <h1>Dash UI</h1>
+
+<h2>Code</h2>
+
+<p>To add an openHASP plate to your installation with the Dash UI sample configuration, upload a <code>pages.jsonl</code> file with the folowing content to your plate:</p>
+<pre><code class="language-text">{&quot;page&quot;:1,&quot;comment&quot;:&quot;---------- Page 1 ----------&quot;}
+{&quot;id&quot;:0,&quot;bg_color&quot;:&quot;#FFFFFF&quot;,&quot;text_color&quot;:&quot;#000000&quot;,&quot;radius&quot;:0,&quot;border_side&quot;:0}
+{&quot;obj&quot;:&quot;btn&quot;,&quot;id&quot;:1,&quot;x&quot;:0,&quot;y&quot;:0,&quot;w&quot;:240,&quot;h&quot;:30,&quot;text&quot;:&quot;LIVING ROOM&quot;,&quot;value_font&quot;:22,&quot;bg_color&quot;:&quot;#2C3E50&quot;,&quot;text_color&quot;:&quot;#FFFFFF&quot;,&quot;radius&quot;:0,&quot;border_side&quot;:0}
+{&quot;obj&quot;:&quot;arc&quot;,&quot;id&quot;:2,&quot;x&quot;:5,&quot;y&quot;:45,&quot;w&quot;:140,&quot;h&quot;:100,&quot;max&quot;:40,&quot;border_side&quot;:0,&quot;type&quot;:0,&quot;rotation&quot;:0,&quot;start_angle&quot;:180,&quot;end_angle&quot;:0,&quot;start_angle1&quot;:180,&quot;value_font&quot;:12,&quot;value_ofs_x&quot;:-19,&quot;value_ofs_y&quot;:-4,&quot;bg_opa&quot;:0}
+{&quot;obj&quot;:&quot;arc&quot;,&quot;id&quot;:3,&quot;x&quot;:130,&quot;y&quot;:45,&quot;w&quot;:140,&quot;h&quot;:100,&quot;max&quot;:100,&quot;border_side&quot;:0,&quot;type&quot;:0,&quot;start_angle&quot;:180,&quot;end_angle&quot;:0,&quot;start_angle1&quot;:180,&quot;value_font&quot;:12,&quot;value_color&quot;:&quot;#000000&quot;,&quot;value_ofs_x&quot;:-19,&quot;value_ofs_y&quot;:-4,&quot;bg_opa&quot;:0}
+{&quot;obj&quot;:&quot;btn&quot;,&quot;id&quot;:4,&quot;x&quot;:0,&quot;y&quot;:120,&quot;w&quot;:240,&quot;h&quot;:20,&quot;val&quot;:0,&quot;text&quot;:&quot;CO2 levels: &quot;,&quot;radius&quot;:0,&quot;border_side&quot;:0}
+{&quot;obj&quot;:&quot;label&quot;,&quot;id&quot;:5,&quot;x&quot;:2,&quot;y&quot;:35,&quot;w&quot;:140,&quot;text&quot;:&quot;Temperature&quot;}
+{&quot;obj&quot;:&quot;label&quot;,&quot;id&quot;:6,&quot;x&quot;:140,&quot;y&quot;:35,&quot;w&quot;:140,&quot;text&quot;:&quot;Humidity&quot;}
+{&quot;obj&quot;:&quot;btn&quot;,&quot;id&quot;:7,&quot;x&quot;:0,&quot;y&quot;:160,&quot;w&quot;:240,&quot;h&quot;:20,&quot;text&quot;:&quot;LIGHTS&quot;,&quot;bg_color&quot;:&quot;#F1C40F&quot;,&quot;text_color&quot;:&quot;#FFFFFF&quot;,&quot;radius&quot;:0,&quot;border_side&quot;:0}
+{&quot;obj&quot;:&quot;label&quot;,&quot;id&quot;:8,&quot;x&quot;:20,&quot;y&quot;:190,&quot;w&quot;:140,&quot;h&quot;:20,&quot;text&quot;:&quot;Ceiling Light&quot;}
+{&quot;obj&quot;:&quot;switch&quot;,&quot;id&quot;:9,&quot;x&quot;:160,&quot;y&quot;:190,&quot;w&quot;:40,&quot;h&quot;:20,&quot;toggle&quot;:&quot;TRUE&quot;}
+{&quot;obj&quot;:&quot;label&quot;,&quot;id&quot;:10,&quot;x&quot;:20,&quot;y&quot;:215,&quot;w&quot;:140,&quot;h&quot;:20,&quot;text&quot;:&quot;Wall Light&quot;}
+{&quot;obj&quot;:&quot;switch&quot;,&quot;id&quot;:11,&quot;x&quot;:160,&quot;y&quot;:215,&quot;w&quot;:40,&quot;h&quot;:20,&quot;toggle&quot;:&quot;TRUE&quot;}
+{&quot;obj&quot;:&quot;label&quot;,&quot;id&quot;:12,&quot;x&quot;:20,&quot;y&quot;:240,&quot;w&quot;:200,&quot;h&quot;:20,&quot;text&quot;:&quot;Ambient Light&quot;}
+{&quot;obj&quot;:&quot;slider&quot;,&quot;id&quot;:13,&quot;x&quot;:30,&quot;y&quot;:265,&quot;w&quot;:200,&quot;h&quot;:10}
+
+{&quot;page&quot;:0,&quot;comment&quot;:&quot;---------- All pages ----------&quot;}
+{&quot;page&quot;:0,&quot;obj&quot;:&quot;btn&quot;,&quot;id&quot;:1,&quot;x&quot;:0,&quot;y&quot;:290,&quot;w&quot;:76,&quot;h&quot;:30,&quot;opacity&quot;:50,&quot;text&quot;:&quot;\uE141&quot;,&quot;radius&quot;:0,&quot;bg_color&quot;:&quot;#34495E&quot;,&quot;text_color&quot;:&quot;#000000&quot;}
+{&quot;page&quot;:0,&quot;obj&quot;:&quot;btn&quot;,&quot;id&quot;:2,&quot;x&quot;:75,&quot;y&quot;:290,&quot;w&quot;:90,&quot;h&quot;:30,&quot;opacity&quot;:100,&quot;text&quot;:&quot;\uE2DC&quot;,&quot;radius&quot;:0,&quot;bg_color&quot;:&quot;#34495E&quot;,&quot;text_color&quot;:&quot;#000000&quot;}
+{&quot;page&quot;:0,&quot;obj&quot;:&quot;btn&quot;,&quot;id&quot;:3,&quot;x&quot;:164,&quot;y&quot;:290,&quot;w&quot;:76,&quot;h&quot;:30,&quot;opacity&quot;:100,&quot;text&quot;:&quot;\uF054&quot;,&quot;radius&quot;:0,&quot;bg_color&quot;:&quot;#34495E&quot;,&quot;text_color&quot;:&quot;#000000&quot;}
+</code></pre>
+<p>Assuming your plate's configured MQTT topic is <code>plate35</code>, values for Temperature, Humidity and CO2 Sensor have to be sent from another device by publishing values to the appropriate command topic:</p>
+<ul>
+<li><code>hasp/plate35/command/p1b2.val %value%</code> - to update Temperature arc value</li>
+<li><code>hasp/plate35/command/p1b2.value_str %value%°C</code> - to update Temperature text value</li>
+<li><code>hasp/plate35/command/p1b3.val %value%</code> - to update Humidity arc value </li>
+<li><code>hasp/plate35/command/p1b3.value_str %value% %</code> - to update Humidity text value</li>
+<li><code>hasp/plate35/command/p1b4.text CO2 levels: %value%</code> - to update CO2 level value</li>
+</ul>
+<h2>Result</h2>
+
+<p><img align="left" alt="Screenshot" src="../assets/images/screenshots/lanbon.png" /></p>
+<div style="clear:both;"></div>
+
+  <br>
+    
+
+    
+    
+      
+    
+
+  <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
+    
+    <div class="wm-article-nav pull-right">
+      <a href="../example-widgets/" class="btn btn-xs btn-default pull-right">
+        Next
+        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+      </a>
+      <a href="../example-widgets/" class="btn btn-xs btn-link">
+        Widgets Demo
+      </a>
+    </div>
+    
+    <div class="wm-article-nav">
+      <a href="../example-pagination/" class="btn btn-xs btn-default pull-left">
+        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+        Previous</a><a href="../example-pagination/" class="btn btn-xs btn-link">
+        Page navigation
+      </a>
+    </div>
+    
+  </div>
+
+    <br>
+</div>
+
+<footer class="container-fluid wm-page-content">
+      <p>
+        <a href="https://github.com/HASwitchPlate/openHASP-docs/tree/master/docs/example-dashui.md"><i class="fa fa-github"></i>
+Edit on GitHub</a>
+      </p>
+  <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a> using <a href="https://github.com/gristlabs/mkdocs-windmill">Windmill</a> theme by Grist Labs.</p>
+</footer>
+
+</body>
+</html>
