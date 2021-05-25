@@ -1064,7 +1064,7 @@ tbody tr:nth-child(even) {
 <td align="left"><a href="#arc">Arc</a></td>
 </tr>
 <tr>
-<td align="left">lmeter</td>
+<td align="left">linemeter</td>
 <td align="left">Range</td>
 <td align="left"><a href="#line-meter">Line Meter</a></td>
 </tr>
@@ -1213,11 +1213,13 @@ but only the <code>id</code> and <code>obj</code> properties are required to cre
 <p><code>"page":0</code> indicates that the object is visible on <strong>all</strong> pages. It can be used for example to specify a static menu bar.
 You can still hide the object on select pages if needed. Objects on page 0 appear on <strong>top</strong> of any objects on the underlying page.</p>
 <h4 id="actions">Actions<a class="headerlink" href="#actions" title="Permanent link">~</a></h4>
-<p>Action commands are supported only by <em>binary</em> or <em>visual</em> type of objects and they are performed locally on the plate. The following actions can be set for these objects:
-- <code>p1</code> to <code>p12</code> to switch to the corresponding page numbers directly
-- <code>prev</code> to switch to the previous page
-- <code>next</code> to switch to the next page
-- <code>back</code> to go back to the home page</p>
+<p>Action commands are supported only by <em>binary</em> or <em>visual</em> type of objects and they are performed locally on the plate. The following actions can be set for these objects:</p>
+<ul>
+<li><code>p1</code> to <code>p12</code> to switch to the corresponding page numbers directly</li>
+<li><code>prev</code> to switch to the previous page</li>
+<li><code>next</code> to switch to the next page</li>
+<li><code>back</code> to go back to the home page</li>
+</ul>
 <p>Check out the <a href="example-pagination">example</a> for how to implement actions.<br />
 You can change the target pages using <code>prev</code>, <code>back</code> and <code>next</code> <a href="../pages#page-attributes">page attributes</a> operation on the page object<code>pXb0</code>.  </p>
 <h4 id="swipe">Swipe<a class="headerlink" href="#swipe" title="Permanent link">~</a></h4>
@@ -1862,7 +1864,7 @@ To change the items in the list, use the <code>options</code> attribute.</p>
 </td></tr></table></p>
 <p>When the item is changed both <code>val</code> and <code>text</code> of the newly selected item are send out accompanied by the <code>change</code> event.</p>
 <h2 id="line-meter">Line Meter<a class="headerlink" href="#line-meter" title="Permanent link">~</a></h2>
-<p><strong>obj:<code>lmeter</code></strong></p>
+<p><strong>obj:<code>linemeter</code></strong></p>
 <p><img align="center" alt="lv_lmeter" src="../../assets/images/objects/lv_ex_linemeter_1.png" /></p>
 <table>
 <thead>
@@ -1920,7 +1922,7 @@ To change the items in the list, use the <code>options</code> attribute.</p>
 </table>
 <p>Use <a href="../styling#line">line</a> and <a href="../styling#scale">scale</a> properties to customize.</p>
 <p>Example <code>jsonl</code>:
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;page&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">12</span><span class="p">,</span><span class="nt">&quot;obj&quot;</span><span class="p">:</span><span class="s2">&quot;lmeter&quot;</span><span class="p">,</span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="mi">20</span><span class="p">,</span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="mi">70</span><span class="p">,</span><span class="nt">&quot;w&quot;</span><span class="p">:</span><span class="mi">200</span><span class="p">,</span><span class="nt">&quot;h&quot;</span><span class="p">:</span><span class="mi">200</span><span class="p">,</span><span class="nt">&quot;value_str&quot;</span><span class="p">:</span><span class="s2">&quot;Temp&quot;</span><span class="p">,</span><span class="nt">&quot;val&quot;</span><span class="p">:</span><span class="mi">75</span><span class="p">,</span><span class="nt">&quot;line_count&quot;</span><span class="p">:</span><span class="mi">35</span><span class="p">,</span><span class="nt">&quot;line_rounded&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">}</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;page&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">12</span><span class="p">,</span><span class="nt">&quot;obj&quot;</span><span class="p">:</span><span class="s2">&quot;linemeter&quot;</span><span class="p">,</span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="mi">20</span><span class="p">,</span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="mi">70</span><span class="p">,</span><span class="nt">&quot;w&quot;</span><span class="p">:</span><span class="mi">200</span><span class="p">,</span><span class="nt">&quot;h&quot;</span><span class="p">:</span><span class="mi">200</span><span class="p">,</span><span class="nt">&quot;value_str&quot;</span><span class="p">:</span><span class="s2">&quot;Temp&quot;</span><span class="p">,</span><span class="nt">&quot;val&quot;</span><span class="p">:</span><span class="mi">75</span><span class="p">,</span><span class="nt">&quot;line_count&quot;</span><span class="p">:</span><span class="mi">35</span><span class="p">,</span><span class="nt">&quot;line_rounded&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">}</span>
 </code></pre></div>
 </td></tr></table></p>
 <h2 id="gauge">Gauge<a class="headerlink" href="#gauge" title="Permanent link">~</a></h2>
