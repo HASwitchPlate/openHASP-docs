@@ -75,12 +75,15 @@ extra:
   #     lang: nl
 
   social:
-    - icon: fontawesome/brands/github
-      link: https://github.com/HASwitchPlate/openHASP
-      name: GitHub
-    - icon: fontawesome/brands/discord
+    - icon: material/github
+      link: https://github.com/HASwitchPlate/openHASP/discussions
+      name: GitHub Discussions
+    - icon: material/discord
       link: https://discord.gg/VCWyuhF
-      name: Discord
+      name: Discord Chat
+    - icon: material/home-assistant
+      link: https://community.home-assistant.io/t/openhasp-an-mqtt-driven-touchscreen-scene-controller/300853
+      name: Home Assistant Forum
 
   version:
     provider: mike
@@ -101,37 +104,38 @@ extra:
 #           - Widgets Demo: example-widgets.md
 #           - Lovelace Entities: example-lovelace.md
 
-nav:
-  - Home: index.md
-  - Getting Started: getting-started.md
-  - Installation:
-    - ESP32: installation/ESP32.md
-    - ESP8266: installation/ESP8266.md
-    - Wifi Setup: installation/wifi-setup.md
-    - Firmware Upgrade: installation/firmware-update.md
-  - Design:
-    - Pages: pages.md
-    - Objects: objects.md
-    - Styling: styling.md
-    - Fonts: fonts.md
-    - Commands: commands.md
-  - Hardware:
-      - Devices:
-          - ESP32-Touchdown: devices/esp32-touchdown.md
-          - devices/freetouchdeck.md
-          - Lanbon L8: devices/lanbon-l8.md
-          - M5Stack core2: devices/m5stack-core2.md
-          - Wireless-Tag: devices/wt32-sc01.md
-      - Displays:
-          - displays/ILI9341_IPS.md
-          - displays/MHS4001.md
-          - displays/MRB3511.md
-          - displays/MSPxxxx.md
-          - displays/Waveshare_RPi_LCD_Rev_C.md
-  - Gallery: gallery.md
-  - FAQ: faq.md
-  - Compiling: compiling.md
-  - License: license.md
+# nav:
+#   - Home: index.md
+#   - Getting Started: getting-started.md
+#   - Installation:
+#     - ESP32: installation/ESP32.md
+#     - ESP8266: installation/ESP8266.md
+#     - Wifi Setup: installation/wifi-setup.md
+#     - Firmware Upgrade: installation/firmware-update.md
+#   - Design:
+#     - Pages: pages.md
+#     - Objects: objects.md
+#     - Styling: styling.md
+#     - Fonts: fonts.md
+#     - Commands: commands.md
+#   - Hardware:
+#       - Devices:
+#           - ESP32-Touchdown: devices/esp32-touchdown.md
+#           - devices/freetouchdeck.md
+#           - Lanbon L8: devices/lanbon-l8.md
+#           - M5Stack core2: devices/m5stack-core2.md
+#           - Wireless-Tag: devices/wt32-sc01.md
+#       - Displays:
+#           - displays/ILI9341_IPS.md
+#           - displays/MHS4001.md
+#           - displays/MRB3511.md
+#           - displays/MSPxxxx.md
+#           - displays/Waveshare_RPi_LCD_Rev_C.md
+#   - Gallery: gallery.md
+#   - FAQ: faq.md
+#   - Compiling: compiling.md
+#   - License: license.md
+#   - ...
 
 plugins:
   - search

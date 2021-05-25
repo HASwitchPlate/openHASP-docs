@@ -1,0 +1,13 @@
+nav:
+    - index.md
+    - getting-started.md
+    - instalaltion
+    - configuration
+    - design
+    - commands.md
+    - devices
+    - displays
+    - gallery.md
+    - FAQ: faq.md
+    - compiling.md
+    - license.md

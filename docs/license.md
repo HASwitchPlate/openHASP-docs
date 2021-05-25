@@ -39,7 +39,7 @@ openHASP is based on the existing work of the following open source developers:
   LVGL is distributed under the terms of the [MIT License](http://opensource.org/licenses/MIT).
 
 - [ArduinoJson](https://arduinojson.org/)
-  Copyright© 2014-2020 Benoit BLANCHON
+  Copyright© 2014-2021 Benoit BLANCHON
   [MIT License](http://opensource.org/licenses/MIT).
 
 ### MCU
@@ -70,6 +70,10 @@ openHASP is based on the existing work of the following open source developers:
 
 - [AceButton](https://github.com/bxparks/AceButton)
   Copyright© 2018 Brian T. Park
+  [MIT License](http://opensource.org/licenses/MIT).
+
+- [ArduinoStreamUtils](https://github.com/bblanchon/ArduinoStreamUtils)
+  Copyright© 2019 Benoit BLANCHON
   [MIT License](http://opensource.org/licenses/MIT).
 
 ### Native Application

@@ -72,6 +72,10 @@ openHASP is based on the existing work of the following open source developers:
   Copyright© 2018 Brian T. Park
   [MIT License](http://opensource.org/licenses/MIT).
 
+- [ArduinoStreamUtils](https://github.com/bblanchon/ArduinoStreamUtils)
+  Copyright© 2019 Benoit BLANCHON
+  [MIT License](http://opensource.org/licenses/MIT).
+
 ### Native Application
 
 - paho.mqtt.c client library

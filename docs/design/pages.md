@@ -20,13 +20,13 @@ If you are missing objects, check the logs to see which line was processed last.
 You probably have a typo in the following line which blocks parsing the rest of the file.  
 Blank lines are allowed for readability and are ignored.
 
-!!! note "<i class='fa fa-info-circle'></i>&nbsp; Note"
+!!! note "Note"
     The complete file in its entirety is *not* a valid json file.
     Each individual line however must be a valid json object.
     The file extension is `.jsonl` and not `.json`.
 
 
-!!! note "<i class='fa fa-info-circle'></i>&nbsp; Note"
+!!! note "Note"
     The maximum number of pages and objects is limited by the memory available in the MCU.
 
     
@@ -89,7 +89,7 @@ An id of `0` refers to the page itself instead of an object.
 
 _Tip:_ If you add the objects on the page 0 last, you ensure that they will be always be visible on top of all other pages.
 
-See [objects dodumentation](../objects) for details.
+See [objects documentation](../objects) for details.
 
 ## Page attributes
 

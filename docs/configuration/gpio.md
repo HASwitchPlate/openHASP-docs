@@ -106,7 +106,7 @@ When the PWM gpio is grouped with range object (slider, arc slider, roller, drop
 
 The GPIO pins do *not* affect the idle state of the device. Only interacting with the touchscreen automatically resets the idle state.
 
-If you want a GPIO pin to wakeup the device, you should monitor its mqtt topic and use the `wakeup`, `dim` and `light` [commands](../commands#dim) appropriately.
+If you want a GPIO pin to wakeup the device, you should monitor its mqtt topic and use the [`idle`](../../commands#idle) and [`backlight`](../../commands#backlight) commands appropriately.
 
 
 ---

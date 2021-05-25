@@ -4551,6 +4551,8 @@ input[type=submit].btn-block {
     display: block
 }
 
+
+/*
 .navbar {
     position: relative;
     display: -ms-flexbox;
@@ -5007,6 +5009,8 @@ input[type=submit].btn-block {
 .navbar-dark .navbar-text a:hover {
     color: #fff
 }
+
+*/
 
 .card {
     position: relative;

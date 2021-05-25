@@ -20,7 +20,7 @@ Example:
 jsonl {"obj":"btn","id":14,"x":120,"y":1,"w":30,"h":40,"text_font":"2","text":"Test","text_color":"gray","bg_opa":0,"border_width":0}
 ```
 
-*For more details see [Pages](../pages) and [Objects](../objects)*
+*For more details see [Pages](../design/pages) and [Objects](../design/objects)*
 
 
 ## json
@@ -277,7 +277,7 @@ config/gpio
 To update the configuration simply issue the same command `config/<submodule>` with updated json payload.
 
 
-[1]: styling#colors
-[2]: styling#boolean
-[3]: configuration/gpio.md
-[4]: configuration/display#short-idle
+[1]: ../design/styling#colors
+[2]: ../design/styling#boolean
+[3]: ../configuration/gpio
+[4]: ../configuration/display#short-idle
