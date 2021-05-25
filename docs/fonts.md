@@ -1,26 +1,6 @@
-
 <style type="text/css">
 
-.md-typeset__table {
-   min-width: 100%;
-}
 
-table th:first-child{
-  border-radius:5px 0 0 0;
-}
-
-table th:last-child{
-  border-radius:0 5px 0 0;
-}
-
-tbody tr:nth-child(even) {
-  background: #88888811;
-}
-
-.md-typeset table:not([class])
-{
-    display: table;
-}
 
 .md-typeset table:not([class]) td
 {
@@ -41,6 +21,8 @@ th:nth-child(3n+2) { width: 8%; text-align: center;}
 th:nth-child(3n+3) { width: 34%; text-align: left; }
 
 td:nth-child(3n+2) { white-space: nowrap; }
+
+
 
 </style>
 

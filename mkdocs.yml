@@ -10,9 +10,11 @@ edit_uri: https://github.com/fvanroie/new-docs/edit/0.6/docs/
 
 theme:
   logo: "assets/images/logo.png"
+  favicon: favicon.ico
   icon:
     repo: fontawesome/brands/github
   name: material
+  custom_dir: custom_theme
   language: en
   palette:
     - media: "(prefers-color-scheme: light)"
@@ -24,7 +26,7 @@ theme:
         name: Dark mode
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
-      primary: teal
+      primary: cyan
       accent: deep orange
       toggle:
         icon: material/toggle-switch
@@ -133,6 +135,7 @@ nav:
 
 plugins:
   - search
+  - git-revision-date
   - awesome-pages:
       strict: false
   - table-reader
