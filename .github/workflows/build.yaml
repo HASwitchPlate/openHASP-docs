@@ -48,7 +48,7 @@ jobs:
         if: github.ref == 'refs/heads/0.5'
         run: |
           git fetch origin gh-pages --verbose
-          mike deploy --update-aliases "0.5" latest --config-file "${GITHUB_WORKSPACE}/mkdocs.yml" --push --rebase
+          mike deploy --update-aliases "0.5" latest --title="0.5.2" --config-file "${GITHUB_WORKSPACE}/mkdocs.yml" --push --rebase
         # env:
         #   CUSTOM_DOMAIN: docs.haswitchplate.com
 
@@ -56,7 +56,7 @@ jobs:
         if: github.ref == 'refs/heads/0.6'
         run: |
           git fetch origin gh-pages --verbose
-          mike deploy --update-aliases "0.6" dev --config-file "${GITHUB_WORKSPACE}/mkdocs.yml" --push --rebase
+          mike deploy --update-aliases "0.6" dev --title="0.6.0" --config-file "${GITHUB_WORKSPACE}/mkdocs.yml" --push --rebase
         # env:
         #   CUSTOM_DOMAIN: docs.haswitchplate.com
 
