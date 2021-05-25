@@ -1,7 +1,4 @@
 <style type="text/css">
-
-
-
 .md-typeset table:not([class]) td
 {
   padding: 0.5em 0.25m;
@@ -21,9 +18,6 @@ th:nth-child(3n+2) { width: 8%; text-align: center;}
 th:nth-child(3n+3) { width: 34%; text-align: left; }
 
 td:nth-child(3n+2) { white-space: nowrap; }
-
-
-
 </style>
 
 
