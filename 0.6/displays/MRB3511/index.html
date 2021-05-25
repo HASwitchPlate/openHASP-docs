@@ -1034,28 +1034,28 @@
 <span class="normal">19</span>
 <span class="normal">20</span>
 <span class="normal">21</span>
-<span class="normal">22</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>build_flags =
-    ${flags.esp32_flags}
-; -- TFT_eSPI build options ------------------------
-    ${lcd.mrb3511}
-    -D TFT_BCKL=5  ;None, configurable via web UI (e.g. 2 for D4)
-    -D TFT_CS=33  ; Chip select control pin
-    -D TFT_DC=15  ; =RS; Data Command control pin - must use a pin in the range 0-31
-    -D TFT_RST=32 ; Reset pin
-    -D TFT_WR=4   ; Write strobe control pin - must use a pin in the range 0-31
-    -D TFT_RD=2
-    -D TFT_D0=12  ; Must use pins in the range 0-31 for the data bus
-    -D TFT_D1=13  ; so a single register write sets/clears all bits
-    -D TFT_D2=26
-    -D TFT_D3=25
-    -D TFT_D4=17
-    -D TFT_D5=16
-    -D TFT_D6=27
-    -D TFT_D7=14
-    -D TOUCH_SDA=21
-    -D TOUCH_SCL=22
-    -D TOUCH_IRQ=34   ; use 34-39 as these are input only pins
-    -D TOUCH_RST=-1   ; not used, connected to 3.3V
+<span class="normal">22</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="na">build_flags</span> <span class="o">=</span>
+    <span class="na">${flags.esp32_flags}</span>
+<span class="c1">; -- TFT_eSPI build options ------------------------</span>
+    <span class="na">${lcd.mrb3511}</span>
+    <span class="na">-D TFT_BCKL</span><span class="o">=</span><span class="s">5  ;None, configurable via web UI (e.g. 2 for D4)</span>
+    <span class="na">-D TFT_CS</span><span class="o">=</span><span class="s">33  ; Chip select control pin</span>
+    <span class="na">-D TFT_DC</span><span class="o">=</span><span class="s">15  ; =RS; Data Command control pin - must use a pin in the range 0-31</span>
+    <span class="na">-D TFT_RST</span><span class="o">=</span><span class="s">32 ; Reset pin</span>
+    <span class="na">-D TFT_WR</span><span class="o">=</span><span class="s">4   ; Write strobe control pin - must use a pin in the range 0-31</span>
+    <span class="na">-D TFT_RD</span><span class="o">=</span><span class="s">2</span>
+    <span class="na">-D TFT_D0</span><span class="o">=</span><span class="s">12  ; Must use pins in the range 0-31 for the data bus</span>
+    <span class="na">-D TFT_D1</span><span class="o">=</span><span class="s">13  ; so a single register write sets/clears all bits</span>
+    <span class="na">-D TFT_D2</span><span class="o">=</span><span class="s">26</span>
+    <span class="na">-D TFT_D3</span><span class="o">=</span><span class="s">25</span>
+    <span class="na">-D TFT_D4</span><span class="o">=</span><span class="s">17</span>
+    <span class="na">-D TFT_D5</span><span class="o">=</span><span class="s">16</span>
+    <span class="na">-D TFT_D6</span><span class="o">=</span><span class="s">27</span>
+    <span class="na">-D TFT_D7</span><span class="o">=</span><span class="s">14</span>
+    <span class="na">-D TOUCH_SDA</span><span class="o">=</span><span class="s">21</span>
+    <span class="na">-D TOUCH_SCL</span><span class="o">=</span><span class="s">22</span>
+    <span class="na">-D TOUCH_IRQ</span><span class="o">=</span><span class="s">34   ; use 34-39 as these are input only pins</span>
+    <span class="na">-D TOUCH_RST</span><span class="o">=</span><span class="s">-1   ; not used, connected to 3.3V</span>
 </code></pre></div>
 </td></tr></table>
                 

@@ -829,8 +829,8 @@ The order of the objects also dictates the <em>layer</em> on the page from botto
 <p>Once the object is created, you can reference it with <code>pXbY</code> where <code>X</code> is the page number and <code>Y</code> is the id of the object.</p>
 <p>For example:
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>p1b1.w=100
-p1b2.hidden=true
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="err">p</span><span class="mi">1</span><span class="err">b</span><span class="mf">1.</span><span class="err">w=</span><span class="mi">100</span>
+<span class="err">p</span><span class="mi">1</span><span class="err">b</span><span class="mf">2.</span><span class="err">hidde</span><span class="kc">n</span><span class="err">=</span><span class="kc">true</span>
 </code></pre></div>
 </td></tr></table></p>
 <p>Page number <code>0</code> refers to an object visible on all pages.<br />
@@ -847,12 +847,12 @@ An id of <code>0</code> refers to the page itself instead of an object.</p>
 <p>By default all pages cycle in a round-robin fashion (after the last page jump back to first), but you can change this behaviour by adjusting the <code>prev</code>, <code>next</code> and <code>back</code> target pages.</p>
 <p><em>For example, to limit cycle through page 1-5 only:</em></p>
 <p>on page 5, <code>page next</code> action will jump back to page 1:
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>{&quot;page&quot;:5,&quot;id&quot;:0,&quot;next&quot;:1}
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;page&quot;</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="nt">&quot;next&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">}</span>
 </code></pre></div>
 </td></tr></table>
 The corresponding command is <code>p5b0.next=1</code>.</p>
 <p>on page 1, <code>page prev</code> action will go to page 5 (instead of default page 12 on an ESP32)
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>{&quot;page&quot;:1,&quot;id&quot;:0,&quot;prev&quot;:5}
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;page&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="nt">&quot;prev&quot;</span><span class="p">:</span><span class="mi">5</span><span class="p">}</span>
 </code></pre></div>
 </td></tr></table>
 The corresponding command is <code>p1b0.prev=5</code>.</p>

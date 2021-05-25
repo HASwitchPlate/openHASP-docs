@@ -934,52 +934,52 @@
 <span class="normal">43</span>
 <span class="normal">44</span>
 <span class="normal">45</span>
-<span class="normal">46</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>;-- ILI9341 SPI version ------------------------
-[env:esp32_ili9341_spi]
-platform = espressif32
-platform_packages = framework-arduinoespressif32
-framework = arduino
-board = esp32dev
-monitor_port = COM4
-upload_port = ${env:esp32_ili9341_spi.monitor_port}
-monitor_filters = esp32_exception_decoder
-board_build.partitions = user_setups/esp32_partition_app1300k_spiffs1216k.csv
+<span class="normal">46</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1">;-- ILI9341 SPI version ------------------------</span>
+<span class="k">[env:esp32_ili9341_spi]</span>
+<span class="na">platform</span> <span class="o">=</span> <span class="s">espressif32</span>
+<span class="na">platform_packages</span> <span class="o">=</span> <span class="s">framework-arduinoespressif32</span>
+<span class="na">framework</span> <span class="o">=</span> <span class="s">arduino</span>
+<span class="na">board</span> <span class="o">=</span> <span class="s">esp32dev</span>
+<span class="na">monitor_port</span> <span class="o">=</span> <span class="s">COM4</span>
+<span class="na">upload_port</span> <span class="o">=</span> <span class="s">${env:esp32_ili9341_spi.monitor_port}</span>
+<span class="na">monitor_filters</span> <span class="o">=</span> <span class="s">esp32_exception_decoder</span>
+<span class="na">board_build.partitions</span> <span class="o">=</span> <span class="s">user_setups/esp32_partition_app1300k_spiffs1216k.csv</span>
 
-build_flags =
-    ${env.build_flags}
-    ${esp32.build_flags}
-    -D ILI9341_DRIVER=1
-    -D TFT_WIDTH=240
-    -D TFT_HEIGHT=320
-    -D TFT_ROTATION=0 ; see TFT_ROTATION values
-    -D INVERT_COLORS=1  ; to fix colors
-    -D SPI_FREQUENCY=60000000
-    -D SPI_TOUCH_FREQUENCY=2500000
-    -D SPI_READ_FREQUENCY=20000000
-    -D USER_SETUP_LOADED=1
-    -D TOUCH_DRIVER=2046     ; XPT2046 Resistive SPI touch panel driver
-    -D SUPPORT_TRANSACTIONS
-    ${esp32.vspi}        ; Use VSPI hardware SPI bus: 
-                         ; TFT_MISO=19 | TFT_MOSI=23 | TFT_SCLK=18
-                         ; MISO    = 8 | MOSI    = 4 | CLK     = 3
-; wiring recommendations, change pins according to your wiring
-    -D TFT_DC=5          ; DC,  lcd pin 3
-    -D TFT_RST=15        ; RES, lcd pin 5
-    -D TFT_BCKL=-1       ; BLK, lcd pin 7 (configurable via web UI (e.g. 21))
-    -D TFT_CS=26         ; CS1, lcd pin 9
-    -D TOUCH_CS=17       ; CS2, lcd pin 10  
+<span class="na">build_flags</span> <span class="o">=</span>
+    <span class="na">${env.build_flags}</span>
+    <span class="na">${esp32.build_flags}</span>
+    <span class="na">-D ILI9341_DRIVER</span><span class="o">=</span><span class="s">1</span>
+    <span class="na">-D TFT_WIDTH</span><span class="o">=</span><span class="s">240</span>
+    <span class="na">-D TFT_HEIGHT</span><span class="o">=</span><span class="s">320</span>
+    <span class="na">-D TFT_ROTATION</span><span class="o">=</span><span class="s">0 ; see TFT_ROTATION values</span>
+    <span class="na">-D INVERT_COLORS</span><span class="o">=</span><span class="s">1  ; to fix colors</span>
+    <span class="na">-D SPI_FREQUENCY</span><span class="o">=</span><span class="s">60000000</span>
+    <span class="na">-D SPI_TOUCH_FREQUENCY</span><span class="o">=</span><span class="s">2500000</span>
+    <span class="na">-D SPI_READ_FREQUENCY</span><span class="o">=</span><span class="s">20000000</span>
+    <span class="na">-D USER_SETUP_LOADED</span><span class="o">=</span><span class="s">1</span>
+    <span class="na">-D TOUCH_DRIVER</span><span class="o">=</span><span class="s">2046     ; XPT2046 Resistive SPI touch panel driver</span>
+    <span class="na">-D SUPPORT_TRANSACTIONS</span>
+    <span class="na">${esp32.vspi}        ; Use VSPI hardware SPI bus: </span>
+                         <span class="c1">; TFT_MISO=19 | TFT_MOSI=23 | TFT_SCLK=18</span>
+                         <span class="c1">; MISO    = 8 | MOSI    = 4 | CLK     = 3</span>
+<span class="c1">; wiring recommendations, change pins according to your wiring</span>
+    <span class="na">-D TFT_DC</span><span class="o">=</span><span class="s">5          ; DC,  lcd pin 3</span>
+    <span class="na">-D TFT_RST</span><span class="o">=</span><span class="s">15        ; RES, lcd pin 5</span>
+    <span class="na">-D TFT_BCKL</span><span class="o">=</span><span class="s">-1       ; BLK, lcd pin 7 (configurable via web UI (e.g. 21))</span>
+    <span class="na">-D TFT_CS</span><span class="o">=</span><span class="s">26         ; CS1, lcd pin 9</span>
+    <span class="na">-D TOUCH_CS</span><span class="o">=</span><span class="s">17       ; CS2, lcd pin 10  </span>
 
-lib_deps =
-    ${env.lib_deps}
-    ${esp32.lib_deps}
+<span class="na">lib_deps</span> <span class="o">=</span>
+    <span class="na">${env.lib_deps}</span>
+    <span class="na">${esp32.lib_deps}</span>
 
-lib_ignore =
-    ${env.lib_ignore}
-    ${esp32.lib_ignore}
+<span class="na">lib_ignore</span> <span class="o">=</span>
+    <span class="na">${env.lib_ignore}</span>
+    <span class="na">${esp32.lib_ignore}</span>
 
-extra_scripts =
-    ${env.extra_scripts}
-    ${esp32.extra_scripts}
+<span class="na">extra_scripts</span> <span class="o">=</span>
+    <span class="na">${env.extra_scripts}</span>
+    <span class="na">${esp32.extra_scripts}</span>
 </code></pre></div>
 </td></tr></table>
                 

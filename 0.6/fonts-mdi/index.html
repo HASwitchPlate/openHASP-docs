@@ -757,8 +757,8 @@
 <p>The built-in fonts can be set by using the pointsize as parameter:</p>
 <p>for example:
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>p4b1.text_font=16
-p4b2.value_font=8
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="err">p</span><span class="mi">4</span><span class="err">b</span><span class="mf">1.</span><span class="kc">te</span><span class="err">x</span><span class="kc">t</span><span class="err">_</span><span class="kc">f</span><span class="err">o</span><span class="kc">nt</span><span class="err">=</span><span class="mi">16</span>
+<span class="err">p</span><span class="mi">4</span><span class="err">b</span><span class="mf">2.</span><span class="err">value_</span><span class="kc">f</span><span class="err">o</span><span class="kc">nt</span><span class="err">=</span><span class="mi">8</span>
 </code></pre></div>
 </td></tr></table></p>
 <h2 id="proposed-built-in-icons">Proposed built-in Icons<a class="headerlink" href="#proposed-built-in-icons" title="Permanent link">~</a></h2>
@@ -1862,11 +1862,11 @@ this means importance &gt;=45 or &gt;=35:</p>
 <p>To use an icon in a text you need to prefix the UTF-8 value with <code>\u</code>.
 To ensure proper decoding the payload should be used with a <code>json</code> or <code>jsonl</code> command.</p>
 <p><code>jsonl</code> example:
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>{&quot;page&quot;:2,&quot;id&quot;:1,&quot;obj&quot;:&quot;label&quot;,&quot;x&quot;:0,&quot;y&quot;:50,&quot;w&quot;:150,&quot;h&quot;:50,&quot;text&quot;:&quot;\uE64A Hello world!&quot;}
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;page&quot;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="nt">&quot;obj&quot;</span><span class="p">:</span><span class="s2">&quot;label&quot;</span><span class="p">,</span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="mi">50</span><span class="p">,</span><span class="nt">&quot;w&quot;</span><span class="p">:</span><span class="mi">150</span><span class="p">,</span><span class="nt">&quot;h&quot;</span><span class="p">:</span><span class="mi">50</span><span class="p">,</span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="s2">&quot;\uE64A Hello world!&quot;</span><span class="p">}</span>
 </code></pre></div>
 </td></tr></table></p>
 <p><code>json</code> example:
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>[&quot;p2b1.text=\uE64A Hello world!&quot;]
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">[</span><span class="s2">&quot;p2b1.text=\uE64A Hello world!&quot;</span><span class="p">]</span>
 </code></pre></div>
 </td></tr></table></p>
 <h2 id="custom-fonts">Custom Fonts<a class="headerlink" href="#custom-fonts" title="Permanent link">~</a></h2>
