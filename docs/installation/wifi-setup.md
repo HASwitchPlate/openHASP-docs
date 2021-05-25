@@ -1,4 +1,4 @@
-<h1>Wi-Fi Setup</h1>
+# Wi-Fi Setup
 
 At first boot, when no Wi-Fi setup is found, the device will create an initial Access Point for configuring the device.
 If the touchscreen is properly connected it will display a QR code, along with a temporary SSID and password, to connect to the device.

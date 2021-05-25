@@ -80,17 +80,17 @@ Switches the backlight on or off, independent of the set dim level. Turning the 
 -->
 
 
-## dim
+## dim :material-alert-decagram:{ .tag-medium }
 
-Obsolete, use `backlight` instead
-
-
-## light
-
-Obsolete, use `backlight` instead
+Deprecated, use `backlight` instead
 
 
-## backlight :material-new-box:{ .new-medium }
+## light :material-alert-decagram:{ .tag-medium }
+
+Deprecated, use `backlight` instead
+
+
+## backlight :material-new-box:{ .tag-medium }
 _accepted json keys:_
 
 - **state:** `on`/`off`, `true`/`false`, `0`/`1`, `yes`/`no`
@@ -112,7 +112,7 @@ A simple integer payload of `1..255` will adjust the brightness.
 _accepted json keys:_
 
 - **state:** `on`/`off`, `true`/`false`, `0`/`1`, `yes`/`no`
-- **brightness:** `1..255`
+- **brightness:** `1..255` :material-new-box:{ .tag-small }
 - **color** or
 - **r, g, b:** `0..255`
 
@@ -140,7 +140,7 @@ Calling the `moodlight` command without parameters (or sending an empty payload 
 The color is returned as a hexadecimal value and as individual RGB channels.
 
 
-## idle :material-new-box:{ .new-medium }
+## idle :material-new-box:{ .tag-medium }
 _accepted parameters:_ `off`
 
 Clears the idle state of the device and publishes a `state/idle = OFF` status message.
@@ -150,12 +150,12 @@ It resets the idle counter as if a touch event occurred on the device. This is h
 Calling the `idle` command without a parameter will return the current idle state `short`, `long` or `off` in the `state/idle` topic.
 
 
-## wakeup
+## wakeup :material-alert-decagram:{ .tag-medium }
 
-Obsolete, use the `idle off` command instead
+Deprecated, use the `idle off` command instead
 
 
-## output[x] :material-new-box:{ .new-medium }
+## output[x] :material-new-box:{ .tag-medium }
 
 where `[x]` is number of the gpio pin (0-39)
 

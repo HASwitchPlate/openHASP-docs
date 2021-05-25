@@ -1,0 +1,5 @@
+nav:
+    - Page Navigation: example-pagination.md
+    - Dash UI: example-dashui.md
+    - Widgets Demo: example-widgets.md
+    - Lovelace Entities: example-lovelace.md

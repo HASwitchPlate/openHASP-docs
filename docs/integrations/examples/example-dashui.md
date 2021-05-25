@@ -38,6 +38,6 @@ Assuming your plate's configured MQTT topic is `plate35`, values for Temperature
 
 <h2>Result</h2>
 
-![Screenshot](assets/images/screenshots/lanbon.png){: align=left }
+![Screenshot](../../assets/images/screenshots/lanbon.png){: align=left }
 
 <div style="clear:both;"></div>

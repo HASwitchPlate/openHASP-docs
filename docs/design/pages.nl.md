@@ -5,7 +5,7 @@ The layout of the pages can be defined in several ways:
 - by creating a special file on the flash file system, which will be loaded and the layout with the objects displayed each time HASP starts up.
 - by issuing commands through MQTT to draw/change the objects immediately
 
-You can create the file wity your favourite text editor and upload it *(and other resource assets like fonts)* using the web interface [HASP Design](configuration/hasp) menu.
+You can create the file wity your favourite text editor and upload it *(and other resource assets like fonts)* using the web interface [HASP Design](../../configuration/hasp) menu.
 
 ## pages.jsonl
 

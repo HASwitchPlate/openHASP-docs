@@ -1,4 +1,4 @@
-<h1>Installation</h1>
+# Flash ESP32
 
 ## Download the firmware
 

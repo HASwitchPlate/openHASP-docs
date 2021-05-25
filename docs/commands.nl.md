@@ -83,12 +83,12 @@ Switches the backlight on or off, independent of the set dim level. Turning the 
 
 ## dim
 
-Obsolete, use `backlight` instead
+Deprecated, use `backlight` instead
 
 
 ## light
 
-Obsolete, use `backlight` instead
+Deprecated, use `backlight` instead
 
 
 ## backlight
@@ -153,7 +153,7 @@ Calling the `idle` command without a parameter will return the current idle stat
 
 ## wakeup
 
-Obsolete, use the `idle off` command instead
+Deprecated, use the `idle off` command instead
 
 
 ## output[x]

@@ -1,4 +1,3 @@
-
 <h1>Widgets Demo</h1>
 
 <h2>Code</h2>
@@ -38,9 +37,9 @@ This is a real-world example of a `pages.jsonl` file:
 
 <h2>Result</h2>
 
-![kép](https://user-images.githubusercontent.com/1550668/113473564-87c1c780-946a-11eb-9af5-d55788207b22.png)
-![kép](https://user-images.githubusercontent.com/1550668/113473575-99a36a80-946a-11eb-9c21-753baa5f216d.png)
-![kép](https://user-images.githubusercontent.com/1550668/113473578-9f994b80-946a-11eb-9208-fd9918daf7de.png)
-![kép](https://user-images.githubusercontent.com/1550668/113473588-a58f2c80-946a-11eb-9005-b85399283194.png)
+![Image](https://user-images.githubusercontent.com/1550668/113473564-87c1c780-946a-11eb-9af5-d55788207b22.png)
+![Image](https://user-images.githubusercontent.com/1550668/113473575-99a36a80-946a-11eb-9c21-753baa5f216d.png)
+![Image](https://user-images.githubusercontent.com/1550668/113473578-9f994b80-946a-11eb-9208-fd9918daf7de.png)
+![Image](https://user-images.githubusercontent.com/1550668/113473588-a58f2c80-946a-11eb-9005-b85399283194.png)
 
 

@@ -48,13 +48,13 @@ There are two ways to create an object on the screen:
 | led       | Visual | [LED](#led-indicator)
 | spinner   | Visual | [Spinner](#spinner)
 | obj       | Visual | [Base Object](#base-object)
-| img :material-new-box:{ .new-small }      | Visual | [Image](#image)
+| img :material-new-box:{ .tag-small }      | Visual | [Image](#image)
 | dropdown  | Selector | [Dropdown List](#dropdown-list)
 | roller    | Selector | [Roller](#roller)
 | btnmatrix | Selector | [Button Matrix](#button-matrix)
-| msgbox  :material-new-box:{ .new-small }    | Selector | [Messagebox](#messagebox)
-| tabview  :material-new-box:{ .new-small }   | Selector | [Tabview](#tabview)
-| tab  :material-new-box:{ .new-small }       | Selector | [Tab](#tab)
+| msgbox  :material-new-box:{ .tag-small }    | Selector | [Messagebox](#messagebox)
+| tabview  :material-new-box:{ .tag-small }   | Selector | [Tabview](#tabview)
+| tab  :material-new-box:{ .tag-small }       | Selector | [Tab](#tab)
 | cpicker   | Selector | [Color picker](#color-picker)
 | bar       | Range | [Progress Bar](#progress-bar)
 | slider    | Range | [Slider](#slider)
@@ -85,8 +85,8 @@ but only the `id` and `obj` properties are required to create an object:
 | action   || string    | no       | 0       | command handled locally _(see below)_
 | swipe    || [bool][2] | no       | false   | page navigation using swipe gestures _(see below)_
 | click    || [bool][2] | no       | true    | object is touch/clickable _(also see [enabled][4])_
-| ext_click_h | :material-new-box:{ .new-small }  | 0..255 | no       | 0       | extended horizontal clickable are on the left and right 
-| ext_click_v | :material-new-box:{ .new-small }  | 0..255 | no       | 0       | extended vertical clickable are on the top and bottom
+| ext_click_h | :material-new-box:{ .tag-small }  | 0..255 | no       | 0       | extended horizontal clickable are on the left and right 
+| ext_click_v | :material-new-box:{ .tag-small }  | 0..255 | no       | 0       | extended vertical clickable are on the top and bottom
 
 !!! note "Note"
     Further customizable properties can be found in [styling](../styling).
@@ -108,7 +108,7 @@ Action commands are supported only by _binary_ or _visual_ type of objects and t
 Check out the [example](example-pagination) for how to implement actions.  
 You can change the target pages using `prev`, `back` and `next` [page attributes](../pages#page-attributes) operation on the page object`pXb0`.  
 
-#### Swipe  
+#### Swipe <a name="swipe"></a>
 Objects and page area (`p0bY`) support `swipe` property. Enabling this will process `left`, `right` and `down` swipes on the object as `next`, `prev` and `back` page changes, respectively. The start of the swipe needs to be on the element which has this property enabled for the feature to activate.  
 _Note:_ Page id `p0b0` is not valid to set this property as it has to be set on real elements. 
 
@@ -137,7 +137,7 @@ These are the common methods shared among all objects,
 
 | Method   | Parameters | Description |
 |:---------|:----------:|:------------|
-| `clear`   :material-new-box:{ .new-small } |            | Delete the children from the object
+| `clear`   :material-new-box:{ .tag-small } |            | Delete the children from the object
 | `delete`   |            | Delete the object and its children from the page
 | `to_front` |            | Bring the object to the front on the page
 | `to_back`  |            | Send the object to the back on the page
@@ -466,7 +466,7 @@ Example `jsonl`:
 Use [scale][8] properties to customize.
 
 
-## Tabview  :material-new-box:{ .new-medium }  
+## Tabview  :material-new-box:{ .tag-medium }  
 **obj:`tabview`**
 
 ![lv_tabview](../assets/images/objects/lv_ex_tabview_1.png)
@@ -489,7 +489,7 @@ Example `jsonl`:
 ```
 
 
-## Tab  :material-new-box:{ .new-medium }  
+## Tab  :material-new-box:{ .tag-medium }  
 **obj:`tab`**
 
 | Property | Value      | Default | Description
@@ -589,7 +589,7 @@ Example `jsonl`:
 ```
 
 
-## Messagebox  :material-new-box:{ .new-medium }  
+## Messagebox  :material-new-box:{ .tag-medium }  
 **obj:`msgbox`**
 
 ![lv_msgbox](../assets/images/objects/lv_ex_msgbox_1.png)
@@ -613,7 +613,7 @@ Example `jsonl`:
 ```
 
 
-## Image  :material-new-box:{ .new-medium }  
+## Image  :material-new-box:{ .tag-medium }  
 **obj:`img`**
 
 ![lv_img](../assets/images/objects/lv_ex_img_1.png)

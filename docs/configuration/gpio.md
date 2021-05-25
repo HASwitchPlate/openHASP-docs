@@ -1,4 +1,4 @@
-<h1>GPIO Settings</h1>
+# GPIO Settings
 
 You can attach external devices like buttons, switches, relays or LEDs using the GPIO pins of the ESP.
 

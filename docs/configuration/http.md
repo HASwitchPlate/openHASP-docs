@@ -1,4 +1,3 @@
-
 # HTTP Settings
 
 To restrict access to the web user interface you can set a Username and Password.

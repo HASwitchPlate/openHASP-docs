@@ -5,6 +5,7 @@ nav:
     - configuration
     - design
     - commands.md
+    - integrations
     - devices
     - displays
     - gallery.md

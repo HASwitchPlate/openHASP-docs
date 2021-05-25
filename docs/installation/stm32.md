@@ -1,3 +1,4 @@
+# Flash STM32
 
 ## Experimental MCUs
 
@@ -40,12 +41,12 @@ table th:last-of-type {
 There are several cheap STM32F407xx Black boards available on the market with a TFT display header
 and accompanying 3.2" ILI9341 FSMC screen (320x240). This hardware is experimental and not fully supported.
 
-![STM32F407VGT6_diymore-1](/assets/images/boards/STM32F407VGT6_diymore-1.jpg)
-![STM32F407VGT6_STM32F4XX_M-1](assets/images/boards/STM32F407VGT6_STM32F4XX_M-1.jpg)
-![STM32F407VET6_STM32_F4VE_V2.0-1](assets/images/boards/STM32F407VET6_STM32_F4VE_V2.0-1.jpg)
-![STM32F407ZET6-STM32F4XX-1](assets/images/boards/STM32F407ZET6-STM32F4XX-1.jpg)
-![STM32F407ZGT6_Euse_M4_DEMO_Large-1](assets/images/boards/STM32F407ZGT6_Euse_M4_DEMO_Large-1.jpg)
-![STM32F407VET6_Euse_M4_DEMO_Medium-1](assets/images/boards/STM32F407VET6_Euse_M4_DEMO_Medium-1.jpg)
+![STM32F407VGT6_diymore-1](../assets/images/boards/STM32F407VGT6_diymore-1.jpg)
+![STM32F407VGT6_STM32F4XX_M-1](../assets/images/boards/STM32F407VGT6_STM32F4XX_M-1.jpg)
+![STM32F407VET6_STM32_F4VE_V2.0-1](../assets/images/boards/STM32F407VET6_STM32_F4VE_V2.0-1.jpg)
+![STM32F407ZET6-STM32F4XX-1](../assets/images/boards/STM32F407ZET6-STM32F4XX-1.jpg)
+![STM32F407ZGT6_Euse_M4_DEMO_Large-1](../assets/images/boards/STM32F407ZGT6_Euse_M4_DEMO_Large-1.jpg)
+![STM32F407VET6_Euse_M4_DEMO_Medium-1](../assets/images/boards/STM32F407VET6_Euse_M4_DEMO_Medium-1.jpg)
 	<figcaption>Selection of STM32F407 boards.</figcaption>
 
 !!! danger "Make sure to purchase a compatible screen, preferably from the same vendor."
@@ -59,9 +60,9 @@ You can however use jumper cables instead, but it won't be plug-and-plug anymore
 The following boards are being tested:
 
 #### STM32F407VET6 Black (v2.1) with 512 KB flash
-  ![STM32F407VET6_STM32_F4VE_V2.0-1](assets/images/boards/STM32F407VET6_STM32_F4VE_V2.0-1.jpg)
-  ![STM32F407VET6_STM32_F4VE_V2.0-2](assets/images/boards/STM32F407VET6_STM32_F4VE_V2.0-2.jpg)
-  ![STM32F407VET6_STM32_F4VE_V2.0-3](assets/images/boards/STM32F407VET6_STM32_F4VE_V2.0-3.jpg)
+  ![STM32F407VET6_STM32_F4VE_V2.0-1](../assets/images/boards/STM32F407VET6_STM32_F4VE_V2.0-1.jpg)
+  ![STM32F407VET6_STM32_F4VE_V2.0-2](../assets/images/boards/STM32F407VET6_STM32_F4VE_V2.0-2.jpg)
+  ![STM32F407VET6_STM32_F4VE_V2.0-3](../assets/images/boards/STM32F407VET6_STM32_F4VE_V2.0-3.jpg)
     <figcaption>STM32F407VET6 Black (v2.0 and v2.1)</figcaption>
 
 - Purchase Links:
@@ -71,9 +72,9 @@ The following boards are being tested:
 - Documentation can be found on [GitHub](https://github.com/mcauser/BLACK_F407VE) 
 
 #### STM32F407ZGT6 Black (V3.0) with 1 MB flash
-  ![STM32F407ZET6-STM32F4XX-1](assets/images/boards/STM32F407ZET6-STM32F4XX-1.jpg)
-  ![STM32F407ZET6-STM32F4XX-2](assets/images/boards/STM32F407ZET6-STM32F4XX-2.jpg)
-  ![STM32F407ZET6-STM32F4XX-3](assets/images/boards/STM32F407ZET6-STM32F4XX-3.jpg)
+  ![STM32F407ZET6-STM32F4XX-1](../assets/images/boards/STM32F407ZET6-STM32F4XX-1.jpg)
+  ![STM32F407ZET6-STM32F4XX-2](../assets/images/boards/STM32F407ZET6-STM32F4XX-2.jpg)
+  ![STM32F407ZET6-STM32F4XX-3](../assets/images/boards/STM32F407ZET6-STM32F4XX-3.jpg)
     <figcaption>STM32F407ZGT6 Black (v3.0)</figcaption>
 
 - Purchase Link: 
