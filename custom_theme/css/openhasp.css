@@ -35,3 +35,13 @@ table th:last-child {
 .md-footer__link {
     padding-top: 1rem;
 }
+
+.new-medium {
+    color: var(--md-accent-fg-color);
+    font-size: 1.2rem;
+}
+
+.new-small {
+    color: var(--md-accent-fg-color);
+    font-size: 0.8rem;
+}

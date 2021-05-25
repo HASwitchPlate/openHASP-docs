@@ -19,7 +19,7 @@ This is a real-world example of a `pages.jsonl` file:
 {"obj":"slider","id":1,"x":10,"y":170,"w":200,"h":50}
 {"obj":"gauge","id":3,"x":13,"y":10,"w":100,"h":100}
 {"obj":"bar","id":4,"x":10,"y":110,"w":200,"h":50}
-{"obj":"lmeter","id":5,"x":127,"y":10,"w":100,"h":100}
+{"obj":"linemeter","id":5,"x":127,"y":10,"w":100,"h":100}
 {"obj":"label","id":10,"x":0,"y":0,"w":70,"h":50,"parentid":5,"text":"\uf00c OK"}
 
 {"comment":"---------- Page 3 ----------"}

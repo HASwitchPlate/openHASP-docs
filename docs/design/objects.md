@@ -48,18 +48,18 @@ There are two ways to create an object on the screen:
 | led       | Visual | [LED](#led-indicator)
 | spinner   | Visual | [Spinner](#spinner)
 | obj       | Visual | [Base Object](#base-object)
-| img       | Visual | [Image](#image)
+| img :material-new-box:{ .new-small }      | Visual | [Image](#image)
 | dropdown  | Selector | [Dropdown List](#dropdown-list)
 | roller    | Selector | [Roller](#roller)
 | btnmatrix | Selector | [Button Matrix](#button-matrix)
-| msgbox    | Selector | [Messagebox](#messagebox)
-| tabview   | Selector | [Tabview](#tabview)
-| tab       | Selector | [Tab](#tab)
+| msgbox  :material-new-box:{ .new-small }    | Selector | [Messagebox](#messagebox)
+| tabview  :material-new-box:{ .new-small }   | Selector | [Tabview](#tabview)
+| tab  :material-new-box:{ .new-small }       | Selector | [Tab](#tab)
 | cpicker   | Selector | [Color picker](#color-picker)
 | bar       | Range | [Progress Bar](#progress-bar)
 | slider    | Range | [Slider](#slider)
 | arc       | Range | [Arc](#arc)
-| lmeter    | Range | [Line Meter](#line-meter)
+| linemeter    | Range | [Line Meter](#line-meter)
 | gauge     | Range | [Gauge](#gauge)
 
 ## Common Parameters
@@ -69,24 +69,24 @@ There are two ways to create an object on the screen:
 These are the common properties shared among all objects,
 but only the `id` and `obj` properties are required to create an object:
 
-| Property | Value     | Required | Default | Description
-|:---------|:---------:|:--------:|:-------:|:----
-| id       | 1..255    | yes      | n/a     | ID of the object on this page
-| obj      | string    | yes      | n/a     | Name of the object type _(see below)_ 
-| page     | 0..12     | no       | n/a     | ID of the page the object appears on _(see below)_
-| groupid  | 0..15     | no       | 0 (none)| ID of the [GPIO group][3] the object belongs to
-| x        | int16     | no       | 0       | horizontal position on the page
-| y        | int16     | no       | 0       | vertical position on the page
-| w        | int16     | no       | 0       | width of the object
-| h        | int16     | no       | 0       | height of the object
-| hidden   | [bool][2] | no       | false   | object is hidden
-| opacity  | 0..255    | no       | 255     | how much the the object is opaque
-| radius   | uint16    | no       | depends<BR>on theme | the radius of the rounded corners of the object:<BR>`0` square corners<BR>`100` pill shaped object (true circle if object has same width and height)
-| action   | string    | no       | 0       | command handled locally _(see below)_
-| swipe    | [bool][2] | no       | false   | page navigation using swipe gestures _(see below)_
-| click    | [bool][2] | no       | true    | object is touch/clickable _(also see [enabled][4])_
-| ext_click_h | 0..255 | no       | 0       | extended horizontal clickable are on the left and right 
-| ext_click_v | 0.255  | no       | 0       | extended vertical clickable are on the top and bottom
+| Property || Value     | Required | Default | Description
+|:---------||:---------:|:--------:|:-------:|:----
+| id       || 1..255    | yes      | n/a     | ID of the object on this page
+| obj      || string    | yes      | n/a     | Name of the object type _(see below)_ 
+| page     || 0..12     | no       | n/a     | ID of the page the object appears on _(see below)_
+| groupid  || 0..15     | no       | 0 (none)| ID of the [GPIO group][3] the object belongs to
+| x        || int16     | no       | 0       | horizontal position on the page
+| y        || int16     | no       | 0       | vertical position on the page
+| w        || int16     | no       | 0       | width of the object
+| h        || int16     | no       | 0       | height of the object
+| hidden   || [bool][2] | no       | false   | object is hidden
+| opacity  || 0..255    | no       | 255     | how much the the object is opaque
+| radius   || uint16    | no       | depends<BR>on theme | the radius of the rounded corners of the object:<BR>`0` square corners<BR>`100` pill shaped object (true circle if object has same width and height)
+| action   || string    | no       | 0       | command handled locally _(see below)_
+| swipe    || [bool][2] | no       | false   | page navigation using swipe gestures _(see below)_
+| click    || [bool][2] | no       | true    | object is touch/clickable _(also see [enabled][4])_
+| ext_click_h | :material-new-box:{ .new-small }  | 0..255 | no       | 0       | extended horizontal clickable are on the left and right 
+| ext_click_v | :material-new-box:{ .new-small }  | 0..255 | no       | 0       | extended vertical clickable are on the top and bottom
 
 !!! note "Note"
     Further customizable properties can be found in [styling](../styling).
@@ -99,6 +99,7 @@ You can still hide the object on select pages if needed. Objects on page 0 appea
 
 #### Actions  
 Action commands are supported only by _binary_ or _visual_ type of objects and they are performed locally on the plate. The following actions can be set for these objects:
+
 - `p1` to `p12` to switch to the corresponding page numbers directly
 - `prev` to switch to the previous page
 - `next` to switch to the next page
@@ -136,7 +137,7 @@ These are the common methods shared among all objects,
 
 | Method   | Parameters | Description |
 |:---------|:----------:|:------------|
-| `clear`    |            | Delete the children from the object
+| `clear`   :material-new-box:{ .new-small } |            | Delete the children from the object
 | `delete`   |            | Delete the object and its children from the page
 | `to_front` |            | Bring the object to the front on the page
 | `to_back`  |            | Send the object to the back on the page
@@ -410,7 +411,7 @@ Example `jsonl`:
 When the item is changed both `val` and `text` of the newly selected item are send out accompanied by the `change` event.
 
 ## Line Meter
-**obj:`lmeter`**
+**obj:`linemeter`**
 
 ![lv_lmeter](../assets/images/objects/lv_ex_linemeter_1.png){: align=center }
 
@@ -428,7 +429,7 @@ Use [line][7] and [scale][8] properties to customize.
 
 Example `jsonl`:
 ```json
-{"page":1,"id":12,"obj":"lmeter","x":20,"y":70,"w":200,"h":200,"value_str":"Temp","val":75,"line_count":35,"line_rounded":1}
+{"page":1,"id":12,"obj":"linemeter","x":20,"y":70,"w":200,"h":200,"value_str":"Temp","val":75,"line_count":35,"line_rounded":1}
 ```
 
 ## Gauge
@@ -465,7 +466,7 @@ Example `jsonl`:
 Use [scale][8] properties to customize.
 
 
-## Tabview
+## Tabview  :material-new-box:{ .new-medium }  
 **obj:`tabview`**
 
 ![lv_tabview](../assets/images/objects/lv_ex_tabview_1.png)
@@ -488,7 +489,7 @@ Example `jsonl`:
 ```
 
 
-## Tab
+## Tab  :material-new-box:{ .new-medium }  
 **obj:`tab`**
 
 | Property | Value      | Default | Description
@@ -588,7 +589,7 @@ Example `jsonl`:
 ```
 
 
-## Messagebox
+## Messagebox  :material-new-box:{ .new-medium }  
 **obj:`msgbox`**
 
 ![lv_msgbox](../assets/images/objects/lv_ex_msgbox_1.png)
@@ -612,7 +613,7 @@ Example `jsonl`:
 ```
 
 
-## Image
+## Image  :material-new-box:{ .new-medium }  
 **obj:`img`**
 
 ![lv_img](../assets/images/objects/lv_ex_img_1.png)

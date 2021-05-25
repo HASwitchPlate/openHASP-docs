@@ -52,6 +52,7 @@ td:nth-child(3n+2) { white-space: nowrap; }
 The ESP8266 firmware only has 1 built-in font: Unscii with font size 8pt.
 
 The ESP32 firmware builds additionally contain the Roboto Condensed font in _four_ font sizes depending on the display resolution:
+
 - 320x240: 12, 16, 24 and 32pt including
 - 480x320: 16, 24, 32 and 48pt including
 

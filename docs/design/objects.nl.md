@@ -59,7 +59,7 @@ There are two ways to create an object on the screen:
 | bar       | Range | [Progress Bar](#progress-bar)
 | slider    | Range | [Slider](#slider)
 | arc       | Range | [Arc](#arc)
-| lmeter    | Range | [Line Meter](#line-meter)
+| linemeter | Range | [Line Meter](#line-meter)
 | gauge     | Range | [Gauge](#gauge)
 
 ## Common Parameters
@@ -99,6 +99,7 @@ You can still hide the object on select pages if needed. Objects on page 0 appea
 
 #### Actions  
 Action commands are supported only by _binary_ or _visual_ type of objects and they are performed locally on the plate. The following actions can be set for these objects:
+
 - `p1` to `p12` to switch to the corresponding page numbers directly
 - `prev` to switch to the previous page
 - `next` to switch to the next page
@@ -410,7 +411,7 @@ Example `jsonl`:
 When the item is changed both `val` and `text` of the newly selected item are send out accompanied by the `change` event.
 
 ## Line Meter
-**obj:`lmeter`**
+**obj:`linemeter`**
 
 ![lv_lmeter](../assets/images/objects/lv_ex_linemeter_1.png){: align=center }
 
@@ -428,7 +429,7 @@ Use [line][7] and [scale][8] properties to customize.
 
 Example `jsonl`:
 ```json
-{"page":1,"id":12,"obj":"lmeter","x":20,"y":70,"w":200,"h":200,"value_str":"Temp","val":75,"line_count":35,"line_rounded":1}
+{"page":1,"id":12,"obj":"linemeter","x":20,"y":70,"w":200,"h":200,"value_str":"Temp","val":75,"line_count":35,"line_rounded":1}
 ```
 
 ## Gauge
