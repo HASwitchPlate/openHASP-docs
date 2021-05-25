@@ -2,151 +2,84 @@ site_name: "openHASP"
 site_description: "Open firmware for MCUs to drive a low-cost commodity touch display"
 site_author: "Francis Van Roie"
 
-copyright: Copyright &copy; 2020 - 2021 Francis Van Roie and contributors
-
 repo_url: https://github.com/HASwitchPlate/openHASP
-repo_name: HASwitchPlate/openHASP
-edit_uri: https://github.com/fvanroie/new-docs/edit/0.5/docs/
+edit_uri: https://github.com/HASwitchPlate/openHASP-docs/tree/master/docs
 
 theme:
-  logo: "assets/images/logo.png"
-  icon:
-    repo: fontawesome/brands/github
-  name: material
-  language: en
-  palette:
-    - media: "(prefers-color-scheme: light)"
-      scheme: default
-      primary: teal
-      accent: deep orange
-      toggle:
-        icon: material/toggle-switch-off-outline
-        name: Dark mode
-    - media: "(prefers-color-scheme: dark)"
-      scheme: slate
-      primary: teal
-      accent: deep orange
-      toggle:
-        icon: material/toggle-switch
-        name: Light mode
-  features:
-    - navigation.instant
-    - navigation.tracking
-#    - navigation.tabs
-#    - navigation.tabs.sticky
-#    - navigation.sections
-#    - navigation.expand
-    - search.suggest
-    - search.highlight
+  name: windmill
+  custom_dir: custom_theme
 
-markdown_extensions:
-  - admonition
-  - attr_list
-  - pymdownx.highlight:
-      linenums: true
-  - pymdownx.superfences
-  - pymdownx.details
-  - pymdownx.tabbed
-  - pymdownx.emoji
-  - toc:
-      permalink: "~"
-      toc_depth: 3
-
-extra:
-  version: v0.6.0 beta
-
-  generator: false
-
-  # alternate:
-  #   - name: Default (en)
-  #     link: ./
-  #     lang: en
-
-  #   # Switch to English
-  #   - name: English
-  #     link: ./en/
-  #     lang: en
-
-  #   # Switch to Dutch
-  #   - name: Nederlands
-  #     link: ./nl/
-  #     lang: nl
-
-  social:
-    - icon: fontawesome/brands/github
-      link: https://github.com/HASwitchPlate/openHASP
-      name: GitHub
-    - icon: fontawesome/brands/discord
-      link: https://discord.gg/VCWyuhF
-      name: Discord
-
-  version:
-    provider: mike
-    default: 0.5
-
-
-# nav:
-#   - Integrations:
-#       - Home Assistant:
-#           - How-To: custom-component/howto.md
-#           - Example configurations: custom-component/sampl_conf.md
-#           - Example automations: custom-component/sampl_autom.md
-#       - openHAB:
-#           - Installation and Example: integration_openhab.md
-#       - Other examples:
-#           - Page navigation: example-pagination.md
-#           - Dash UI: example-dashui.md
-#           - Widgets Demo: example-widgets.md
-#           - Lovelace Entities: example-lovelace.md
+strict: true
 
 nav:
   - Home: index.md
   - Getting Started: getting-started.md
   - Installation:
-    - ESP32: installation/ESP32.md
-    - ESP8266: installation/ESP8266.md
-    - Wifi Setup: installation/wifi-setup.md
-    - Firmware Upgrade: installation/firmware-update.md
+      - ESP32 Installation: ESP32.md
+      - ESP8266 Installation: ESP8266.md
+      - Wi-Fi Setup: wifi-setup.md
+  - Configuration:
+      - configuration/http.md
+      - configuration/wifi.md
+      - configuration/mqtt.md
+      - configuration/hasp.md
+      - configuration/display.md
+      - configuration/gpio.md
+      - configuration/debug.md
   - Design:
-    - Pages: pages.md
-    - Objects: objects.md
-    - Styling: styling.md
-    - Fonts: fonts.md
-    - Commands: commands.md
-  - Hardware:
-      - Devices:
-          - ESP32-Touchdown: devices/esp32-touchdown.md
-          - devices/freetouchdeck.md
-          - Lanbon L8: devices/lanbon-l8.md
-          - M5Stack core2: devices/m5stack-core2.md
-          - Wireless-Tag: devices/wt32-sc01.md
-      - Displays:
-          - displays/ILI9341_IPS.md
-          - displays/MHS4001.md
-          - displays/MRB3511.md
-          - displays/MSPxxxx.md
-          - displays/Waveshare_RPi_LCD_Rev_C.md
-  - Gallery: gallery.md
+      - pages.md
+      - objects.md
+      - fonts.md
+      - styling.md
+  - Integrations:
+      - Home Assistant:
+          - How-To: custom-component/howto.md
+          - Example configurations: custom-component/sampl_conf.md
+          - Example automations: custom-component/sampl_autom.md
+      - openHAB:
+          - Installation and Example: integration_openhab.md
+      - Other examples:
+          - Page navigation: example-pagination.md
+          - Dash UI: example-dashui.md
+          - Widgets Demo: example-widgets.md
+          - Lovelace Entities: example-lovelace.md
+  - commands.md
   - FAQ: faq.md
-  - Compiling: compiling.md
-  - License: license.md
+  - firmware-update.md
+  - gallery.md
+  - Devices:
+      - Adafruit Featherwing: devices/featherwing.md
+      - ESP32 TouchDown: devices/esp32-touchdown.md
+      - devices/freetouchdeck.md
+      - Lanbon L8: devices/lanbon-l8.md
+      - M5Stack core2: devices/m5stack-core2.md
+      - Wireless-Tag: devices/wt32-sc01.md
+  - Displays:
+      - displays/ILI9341_IPS.md
+      - displays/MHS4001.md
+      - displays/MRB3511.md
+      - displays/MSPxxxx.md
+      - displays/Waveshare_RPi_LCD_Rev_C.md
+  - Compiling:
+      - compiling-locally.md
+      - compiling-gitpod.md
+      - compiling-customize.md
+      - block-diagram-tests.md
+  - license.md
+
+markdown_extensions:
+  - toc:
+      permalink: "~"
+      toc_depth: 2
+  - admonition
+  - pymdownx.emoji
+  - attr_list
+
+extra:
+  history_buttons: false
+  version: v0.5.2
+  logo: "assets/images/logo.png"
 
 plugins:
   - search
-  - awesome-pages:
-      strict: false
   - table-reader
-  # - i18n:
-  #     default_language: en
-  #     languages:
-  #       en: English
-  #       nl: Nederlands
-  #     nav_translations:
-  #       nl:
-  #         Home: Thuis
-  #         Design: Ontwerp
-  #         Pages: Pagina's
-  #         Objects: Objecten
-  #         Styling: Stijleigenschappen
-  #         Fonts: Lettertypen
-  #         Commands: Commando's
