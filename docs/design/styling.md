@@ -1,50 +1,8 @@
 
-<h1>Styling Properties</h1>
+# Styling Properties
 
 You can adjust the appearance of objects by changing the foreground, background and/or border color of each object.
 Some objects allow for more complex syling, effectively changing its appearance or its sub-components.
-
-## Boolean
-Properties with a boolean data type accept these values and are case insensitive:
-
-- true / ON / 1 / yes
-- false / OFF / 0 / no
-
-## Colors
-Color values can be:
-
-- Short names (from table below)
-- RGB hex code (`#rrggbb`)
-- Short hex code (`#rgb`)
-- RGB565 number format (`0..65535`)
-
-{{ read_csv("docs/assets/csv/colors.csv") }}
-
-### Setting Color
-
-Examples:
-```json
-p0b2.value_color=13891
-p1b5.text_color=silver
-p2b3.bg_color=#C042A3
-p2b4.border_color=#9f9
-```
-
-### Return values
-
-When retrieving the color of an object, both the HTML representation as the RGB values are returned seperately.
-
-The format will be a json object with components:
-
-- color : 6 digit hexadecimal code preceeded by a hash `#` sign.
-- r : byte value for red (`0..255`)
-- g : byte value for green (`0..255`)
-- b : byte value for blue (`0..255`)
-
-For example, the color returned by a color picker change event is:
-```json
-{"color":"#00fff6","r":0,"g":255,"b":246}
-```
 
 ## General
 

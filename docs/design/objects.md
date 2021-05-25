@@ -627,10 +627,10 @@ Example `jsonl`:
 
 You can use image_recolor and image_recolor_opa from the [image styling][5] properties to apply a color overlay mask.
 
-Example `jsonl`:
-```json
-{"page":1,"id":34,"obj":"img","src":"/littlefs/image.png","auto_size":0,"w":50}
-```
+??? example "Example `jsonl`"
+    ```json
+    {"page":1,"id":34,"obj":"img","src":"/littlefs/image.png","auto_size":0,"w":50}
+    ```
 
 
 ## Base Object
@@ -642,8 +642,8 @@ The Base Object can be directly used as a simple, empty widget. It is nothing mo
 
 You can use it as a background shape for other objects by putting its jsonl line before the object. It catches touches!
 
-[1]: ../styling#colors
-[2]: ../styling#boolean
+[1]: ../data-types#colors
+[2]: ../data-types#boolean
 [3]: ../../configuration/gpio#groupid
 [4]: ../styling#general
 [5]: ../styling#image

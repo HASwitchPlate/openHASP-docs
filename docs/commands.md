@@ -277,7 +277,7 @@ config/gpio
 To update the configuration simply issue the same command `config/<submodule>` with updated json payload.
 
 
-[1]: ../design/styling#colors
-[2]: ../design/styling#boolean
+[1]: ../design/data-types#colors
+[2]: ../design/data-types#boolean
 [3]: ../configuration/gpio
 [4]: ../configuration/display#short-idle
