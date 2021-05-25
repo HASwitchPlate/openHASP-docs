@@ -79,6 +79,10 @@ To configure the GPIOs at once for L8-HS send to topic `hasp/<nodename>/config` 
 ```json
 {"gpio":{"config":[2360346,2491680,2623009,2097420,2097678,2097947,0,0]}}
 ```
+When using MQTT send to topic `hasp/<nodename>/config/gpio` a message with payload 
+```json
+{"config":[2360346,2491680,2623009,2097420,2097678,2097947,0,0]}
+```
 
 Pin| L8-HD      | Group | Default
 ---|------------|---|----
@@ -94,7 +98,6 @@ To configure the GPIOs at once for L8-HD send to topic `hasp/<nodename>/config` 
 
 !!! note
     You can [create you own firmware](../compiling#create-a-configuration) build with GPIOs and many other parameters pre-configured in `user_config_override.h` as factory defaults for Lanbon L8.
-
 
 ## Wiring Diagrams
 

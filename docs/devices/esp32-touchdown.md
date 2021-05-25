@@ -1,8 +1,23 @@
-<h1>ESP32-Touchdown</h1>
+# ESP32 TouchDown
 
-![ESP32-Touchdown](../assets/images/devices/esp32-touchdown.jpg)
+<div class="row justify-content-center">
+        <a href="https://raw.githubusercontent.com/HASwitchPlate/openHASP-docs/master/docs/assets/images/devices/esp32-touchdown.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-6" data-title="ESP32 TouchDown" data-footer="Original image by Dustin Watts - Used with permission">
+            <img src="../../assets/images/devices/esp32-touchdown.jpg" class="img-fluid">
+        </a>
 
-Features:
+        <a href="https://raw.githubusercontent.com/HASwitchPlate/openHASP-docs/master/docs/assets/images/devices/esp32-touchdown-color_wheel.png" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-6" data-title="ESP32 TouchDown" data-footer="Original image by Dustin Watts - Used with permission">
+            <img src="../../assets/images/devices/esp32-touchdown-color_wheel.png" class="img-fluid">
+        </a>
+</div>
+<div>
+        <a href="https://raw.githubusercontent.com/HASwitchPlate/openHASP-docs/master/docs/assets/images/devices/esp32-touchdown-usbc.jpg" data-toggle="lightbox" data-gallery="example-gallery" rel="lightbox[work]" data-title="ESP32 TouchDown" data-footer="Original image by Dustin Watts - Used with permission">more images...</a>
+        <a href="https://raw.githubusercontent.com/HASwitchPlate/openHASP-docs/master/docs/assets/images/devices/esp32-touchdown-speaker.jpg" data-toggle="lightbox" data-gallery="example-gallery" rel="lightbox[vacation]" data-title="ESP32 TouchDown" data-footer="Original image by Dustin Watts - Used with permission"></a>
+        <a href="https://raw.githubusercontent.com/HASwitchPlate/openHASP-docs/master/docs/assets/images/devices/esp32-touchdown-sdcard.jpg" data-toggle="lightbox" data-gallery="example-gallery" rel="lightbox[vacation]" data-title="ESP32 TouchDown" data-footer="Original image by Dustin Watts - Used with permission"></a>
+        <a href="https://raw.githubusercontent.com/HASwitchPlate/openHASP-docs/master/docs/assets/images/devices/esp32-touchdown-features.png" data-toggle="lightbox" data-gallery="example-gallery" rel="lightbox[vacation]" data-title="ESP32 TouchDown" data-footer="Original image by Dustin Watts - Used with permission"></a>
+</div>
+
+
+## Features
 
    - ESP32-WROOM-32D
    - ILI9488 3.5" (480*320) TFT screen in 4-wire SPI mode
@@ -32,7 +47,7 @@ The speaker and SD card are not supported by openHASP 0.6.0.
 Available on
 [![Tindie](../assets/images/tindie-logo.png)](https://www.tindie.com/products/dustinwattsnl/esp32-touchdown/)
 
-## Video
+## Product Video
 
 ![YOUTUBE](sdVtHU2Gz7Y)
 
@@ -44,11 +59,11 @@ To enable backlight control, make sure the solder jumper pad is in position 2-1:
 
 ## 3D Printed Cases
 
-You can find several different [3D printable cases](https://github.com/DustinWatts/esp32-touchdown/tree/main/Case) in the [ESP32-Touchdown repository](https://github.com/DustinWatts/esp32-touchdown/):
+You can find several different [3D printable cases](https://github.com/DustinWatts/esp32-touchdown/tree/main/Case) in the [ESP32 TouchDown repository](https://github.com/DustinWatts/esp32-touchdown/):
 
 ## Flashing
 
-The ESP32-Touchdown can easily be flashed over USB like any ESP32 development board.
+The ESP32 TouchDown can easily be flashed over USB like any ESP32 development board.
 
 ## GPIO Settings
 
@@ -56,7 +71,7 @@ These pins can be used freely as GPIOs:
 
 ## PCB Blueprint
 
-The ESP32-Touchdown is fully [Open Source Hardware](https://github.com/DustinWatts/esp32-touchdown/tree/main/Hardware):
+The ESP32 TouchDown is fully [Open Source Hardware](https://github.com/DustinWatts/esp32-touchdown/tree/main/Hardware):
 
 - Schematics
 - Bill of materials
