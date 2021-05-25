@@ -110,8 +110,8 @@ extra:
 #   - Home: index.md
 #   - Getting Started: getting-started.md
 #   - Installation:
-#     - ESP32: installation/ESP32.md
-#     - ESP8266: installation/ESP8266.md
+#     - ESP32: installation/esp32.md
+#     - ESP8266: installation/esp8266.md
 #     - Wifi Setup: installation/wifi-setup.md
 #     - Firmware Upgrade: installation/firmware-update.md
 #   - Design:

@@ -90,7 +90,7 @@ Obsolete, use `backlight` instead
 Obsolete, use `backlight` instead
 
 
-## backlight
+## backlight :material-new-box:{ .new-medium }
 _accepted json keys:_
 
 - **state:** `on`/`off`, `true`/`false`, `0`/`1`, `yes`/`no`
@@ -140,7 +140,7 @@ Calling the `moodlight` command without parameters (or sending an empty payload 
 The color is returned as a hexadecimal value and as individual RGB channels.
 
 
-## idle
+## idle :material-new-box:{ .new-medium }
 _accepted parameters:_ `off`
 
 Clears the idle state of the device and publishes a `state/idle = OFF` status message.
@@ -155,7 +155,7 @@ Calling the `idle` command without a parameter will return the current idle stat
 Obsolete, use the `idle off` command instead
 
 
-## output[x]
+## output[x] :material-new-box:{ .new-medium }
 
 where `[x]` is number of the gpio pin (0-39)
 
