@@ -9,7 +9,7 @@ The ESP32 additionally contains the Roboto Condensed font in these font sizes: 1
 The built-in fonts can be set by using the pointsize as parameter:
 
 for example:
-```
+```json
 p4b1.text_font=16
 p4b2.value_font=8
 ```
@@ -53,12 +53,12 @@ To use an icon in a text you need to prefix the UTF-8 value with `\u`.
 To ensure proper decoding the payload should be used with a `json` or `jsonl` command.
 
 `jsonl` example:
-```
+```json
 {"obj":"label","id":10,"x":0,"y":0,"w":70,"h":50,"parentid":5,"text":"\uf00c OK"}
 ```
 
 `json` example:
-```
+```json
 ["p3b10.text=\uf00c OK"]
 ```
 

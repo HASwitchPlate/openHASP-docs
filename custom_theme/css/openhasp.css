@@ -27,3 +27,11 @@ table th:last-child {
 .md-typeset table:not([class]) {
     display: table;
 }
+
+.md-footer-social {
+    margin-top: 2em;
+}
+
+.md-footer__link {
+    padding-top: 1rem;
+}

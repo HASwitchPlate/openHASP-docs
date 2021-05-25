@@ -47,7 +47,7 @@ The PCB Combiner is fully [Open Source Hardware](https://github.com/DustinWatts/
 
 Specify the LCD Configuration to use and define the GPIOs in the environment build flags:
 
-```
+```ini
 build_flags =
     ${env.build_flags}
     ${esp32.build_flags}

@@ -128,7 +128,7 @@ st7789v =
 
 Specify the LCD Configuration to use and define the GPIOs in the environment build flags:
 
-```
+```ini
 build_flags =
     ${env.build_flags}
     ${esp32.build_flags}

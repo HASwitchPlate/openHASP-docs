@@ -6,7 +6,7 @@ The easiest example is to display the state of a clock and a temperature sensor 
 
 Create a label object to display the temperature value, a separate label object to display the unit and a third label object for the clock:
 
-```text
+```json
 {"page":0,"id":4,"obj":"label","x":175,"y":5,"h":30,"w":45,"text":"00.0","align":2,"bg_color":"#2C3E50","text_color":"#FFFFFF"}
 {"page":0,"id":5,"obj":"label","x":220,"y":5,"h":30,"w":45,"text":"°C","align":0,"bg_color":"#2C3E50","text_color":"#FFFFFF"}
 {"page":0,"id":6,"obj":"label","x":3,"y":5,"h":30,"w":62,"text":"00:00","align":0,"bg_color":"#2C3E50","text_color":"#FFFFFF"}
@@ -27,7 +27,7 @@ In component configuration all you need for the objects is:
 #### Note:
 You can of course omit the second label object with the unit and use the same for both value and unit:
 
-```text
+```json
 {"page":0,"id":4,"obj":"label","x":175,"y":5,"h":30,"w":62,"text":"00.0°C","align":2,"bg_color":"#2C3E50","text_color":"#FFFFFF"}
 {"page":0,"id":6,"obj":"label","x":3,"y":5,"h":30,"w":62,"text":"00:00","align":0,"bg_color":"#2C3E50","text_color":"#FFFFFF"}
 ```
@@ -53,7 +53,7 @@ Jsonl and Home Assistant configuration:
 
 ![screenshot](../assets/images/screenshots/cc_sampl_lightswitch.png)
 
-```text
+```json
 {"page":1,"id":2,"obj":"btn","x":10,"y":40,"w":105,"h":90,"toggle":true,"text":"\uE335","text_font":28,"align":1}
 ```
 
@@ -70,7 +70,7 @@ Jsonl and Home Assistant configuration:
 
 #### Dropdown (self-populating from an input_select)
 
-```text
+```json
 {"page":1,"id":3,"obj":"dropdown","x":5,"y":40,"w":230,"h":30,"options":""}
 ```
 
@@ -104,7 +104,7 @@ Have an RGB light in Home Assistant controlled by hasp-lvgl. In our example we u
 
 relevant **openHASP config:**
 
-```text
+```json
 {"page":1,"id":4,"obj":"cpicker","x":20,"y":70,"w":200,"h":200}`
 ```
 
@@ -145,7 +145,7 @@ The objects self-populate with the supported attributes of the climate in Home A
 The circle in the middle changes color if it's heating, but also serves as a touch-catcher to minimize false arc-touch detections while manipulating with plus and minus buttons. Controls get disabled when entity is unavailable in HA.
 
 relevant **openHASP config:** (screen size 240x320) 
-```text
+```json
 {"page":2,"id":2,"obj":"arc","x":10,"y":70,"w":220,"h":220,"min":180,"max":250,"border_side":0,"type":0,"rotation":0,"start_angle":135,"end_angle":45,"start_angle1":135,"end_angle1":45,"value_font":28,"value_color":"#2C3E50","adjustable":"true"}
 {"page":2,"id":3,"obj":"obj","x":40,"y":100,"w":160,"h":160,"radius":100,"opacity":100,"border_opa":160,"border_width":4,"comment":"touch-catcher"}
 {"page":2,"id":4,"obj":"label","x":10,"y":40,"w":220,"h":30,"text":"Kívánt hőmérséklet:","align":1,"padh":50}
@@ -237,7 +237,7 @@ The icon on the up and down buttons change color when covers move and set opacit
 
 relevant **openHASP config:** (screen size 240x320) 
 
-```text
+```json
 {"page":1,"id":4,"obj":"btn","x":5,"y":140,"w":73,"h":60,"toggle":false,"text":"\uE05D","text_font":28}
 {"page":1,"id":5,"obj":"btn","x":83,"y":140,"w":73,"h":60,"toggle":false,"text":"\uE4DB","text_font":28}
 {"page":1,"id":6,"obj":"btn","x":161,"y":140,"w":73,"h":60,"toggle":false,"text":"\uE045","text_font":28}
@@ -291,7 +291,7 @@ A simpler cover control with only basic feedback. UI theme set to `Hasp Light` i
 
 relevant **openHASP config:** (screen size 240x320) 
 
-```text
+```json
 {"page":4,"id":20,"obj":"btnmatrix","x":0,"y":20,"w":240,"h":70,"options":["\uE05D","\uE4DB","\uE045"],"text_font":28,"bg_opa":0,"border_opa":0}
 ```
 
@@ -331,7 +331,7 @@ relevant **openHASP-custom-component config:**
 The icon behaves like in Lovelace. UI theme set to `Hasp Light` in plate's web interface.
 
 relevant **openHASP config:** (screen size 240x320, UI Theme: Hasp Light) 
-```text
+```json
 {"page":5,"id":2,"obj":"label","x":8,"y":33,"w":35,"h":35,"text":"\uF11D","align":1,"text_font":28,"text_color":"#164f6e"}
 {"page":5,"id":3,"obj":"label","x":48,"y":43,"w":80,"h":30,"text":"Cover 1","align":0,"text_font":16,"text_color":"#164f6e"}
 {"page":5,"id":4,"obj":"btn","x":125,"y":37,"w":30,"h":30,"toggle":false,"text":"\uE05D","text_font":28,"bg_opa":0,"border_opa":0,"text_color":"#164f6e"}
@@ -389,7 +389,7 @@ Player availability is shown by the opacity of the buttons. Player state (play/p
 UI theme set to `Hasp Light` in plate's web interface.
 
 relevant **openHASP config:** (screen size 240x320) 
-```text
+```json
 {"page":6,"id":1,"obj":"obj","x":5,"y":35,"w":200,"h":84,"click":0}
 {"page":6,"id":2,"obj":"label","x":7,"y":45,"w":196,"h":30,"text":"-","mode":"scroll","align":1}
 {"page":6,"id":3,"obj":"label","x":7,"y":80,"w":196,"h":30,"text":"-","mode":"scroll","align":1}
@@ -590,7 +590,7 @@ Note that the `val` value of the slider is multiplied and divided by 100 when re
 
 **openHASP config:** (screen size 240x320) 
 
-```text
+```json
 {"obj":"btn","id":1,"x":120,"y":1,"w":30,"h":40,"text_font":"2","text":"\uF76B","text_color":"gray","bg_opa":0,"border_width":0}
 ```
 
@@ -606,7 +606,7 @@ relevant **openHASP-custom-component config:**
 
 **openHASP config:** (screen size 240x320) 
 
-```text
+```json
 {"obj":"btn","id":3,"x":165,"y":1,"w":30,"h":40,"text_font":"2","text":"\uF1EB","text_color":"gray","bg_opa":0,"border_width":0}
 ```
 

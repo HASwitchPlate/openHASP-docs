@@ -79,7 +79,7 @@ Example Objects:
 Once the object is created, you can reference it with `pXbY` where `X` is the page number and `Y` is the id of the object.
 
 For example:
-```
+```json
 p1b1.w=100
 p1b2.hidden=true
 ```
@@ -104,14 +104,14 @@ By default all pages cycle in a round-robin fashion (after the last page jump ba
 _For example, to limit cycle through page 1-5 only:_
 
 on page 5, `page next` action will jump back to page 1:
-```
+```json
 {"page":5,"id":0,"next":1}
 ```
 The corresponding command is `p5b0.next=1`.
 
 
 on page 1, `page prev` action will go to page 5 (instead of default page 12 on an ESP32)
-```
+```json
 {"page":1,"id":0,"prev":5}
 ```
 The corresponding command is `p1b0.prev=5`.

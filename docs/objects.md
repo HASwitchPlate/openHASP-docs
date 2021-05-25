@@ -526,7 +526,7 @@ By long pressing the inner preview circle, the color picker will through the col
 #### Setting Color
 
 Example MQTT commands:
-```text
+```json
 hasp/<nodename>/command/p0b2.color 13891
 hasp/<nodename>/command/p1b5.color silver
 hasp/<nodename>/command/p2b3.color #C0C0C0
@@ -627,7 +627,7 @@ Example `jsonl`:
 You can use image_recolor and image_recolor_opa from the [image styling][5] properties to apply a color overlay mask.
 
 Example `jsonl`:
-```javascript
+```json
 {"page":1,"id":34,"obj":"img","src":"/littlefs/image.png","auto_size":0,"w":50}
 ```
 

@@ -264,7 +264,7 @@ You can get or set the configuration of an openHASP submodule in json format.
 To get the configuration, use the command `config/<submodule>`. 
 The result will be published to `hasp/<nodename>/state/config`. Passwords will be omitted from the result.
 
-```
+```json
 config/wifi
 config/mqtt
 config/http

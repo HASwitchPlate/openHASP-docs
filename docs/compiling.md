@@ -7,7 +7,7 @@
 - on [Windows](https://code.visualstudio.com/docs/setup/windows)
 
 Additional packages on Linux:
-```
+```bash
 sudo apt update
 sudo apt install git python3-venv
 ```
@@ -51,7 +51,7 @@ Restart Visual Studio Code when the PIO installation completes.
 
 Copy `platformio_override-template.ini` to `platformio_override.ini` and uncomment the platforms for `esp32`and `esp8266`:
 
-```
+```ini
 [platformio]
 extra_configs =
 	; Uncomment or edit the lines to show more User Setups in the PIO sidebar
@@ -90,7 +90,7 @@ You can now run "Build" or "Build All" in PlatformIO to compile (all) the firmwa
 ### Native Linux build
 
 For native linux_sdl builds, you also need:
-```
+```bash
 sudo apt update
 sudo apt install build-essential libsdl2-dev
 ```

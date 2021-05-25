@@ -9,7 +9,7 @@ The ESP32 additionally contains the Ubuntu Condensed font in these font sizes: 1
 The built-in fonts can be set by using the pointsize as parameter:
 
 for example:
-```
+```json
 p4b1.text_font=16
 p4b2.value_font=8
 ```
@@ -25,12 +25,12 @@ To use an icon in a text you need to prefix the UTF-8 value with `\u`.
 To ensure proper decoding the payload should be used with a `json` or `jsonl` command.
 
 `jsonl` example:
-```
+```json
 {"page":2,"id":1,"obj":"label","x":0,"y":50,"w":150,"h":50,"text":"\uE64A Hello world!"}
 ```
 
 `json` example:
-```
+```json
 ["p2b1.text=\uE64A Hello world!"]
 ```
 

@@ -14,7 +14,7 @@ You need to [download](https://github.com/HASwitchPlate/openHASP-custom-componen
 
 Using your Home Assustant configuration directory as a starting point you should now also have this:
 
-```text
+```bash
 custom_components/openhasp/__init__.py
 custom_components/openhasp/common.py
 custom_components/openhasp/const.py
@@ -35,7 +35,7 @@ Make sure you have your plates connected to the network and each of them has a u
 
 To add an openHASP plate to your installation with a sample configuration, upload a `pages.jsonl` file with the folowing content to your plate first:
 
-```text
+```json
 {"page":1,"id":1,"obj":"btn","x":0,"y":0,"w":240,"h":30,"text":"openHASP","value_font":22,"bg_color":"#2C3E50","text_color":"#FFFFFF","radius":0,"border_side":0}
 {"page":1,"id":2,"obj":"btn","x":10,"y":40,"w":105,"h":90,"toggle":true,"text":"\uE335","text_font":26,"mode":"break","align":1}
 {"page":1,"id":3,"obj":"dropdown","x":10,"y":130,"w":160,"h":30,"options":"Apples\nBananas\nOranges\nMelon"}

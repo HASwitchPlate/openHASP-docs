@@ -5,7 +5,7 @@
 
 This is a real-world example of a `pages.jsonl` file:
 
-```text
+```json
 {"page":1,"comment":"---------- Page 1 ----------"}
 {"obj":"btn","id":1,"x":10,"y":45,"w":220,"h":55,"toggle":true,"text":"Push Me \uf0a6"}
 {"obj":"checkbox","id":2,"x":10,"y":100,"w":220,"h":55,"text":"A Checkbox"}

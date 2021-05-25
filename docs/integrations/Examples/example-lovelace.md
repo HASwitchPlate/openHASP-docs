@@ -5,7 +5,7 @@
 
 To add an openHASP plate to your installation with the Dash UI sample configuration, upload a `pages.jsonl` file with the folowing content to your plate:
 
-```text
+```json
 {"page":1,"id":1,"obj":"btn","x":0,"y":0,"w":240,"h":30,"text":"ENTITIES","value_font":22,"bg_color":"#2C3E50","text_color":"#FFFFFF","radius":0,"border_side":0,"enabled":0}
 
 {"page":1,"id":11,"obj":"label","x":8,"y":30,"w":30,"h":35,"text":"\uE004","align":1,"text_font":28,"text_color":"black"}
