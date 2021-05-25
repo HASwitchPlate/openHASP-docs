@@ -724,7 +724,19 @@
   
     <li class="md-nav__item">
       <a href="../styling/" class="md-nav__link">
-        Styling
+        Styling Properties
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data-types/" class="md-nav__link">
+        Data Types
       </a>
     </li>
   
@@ -1657,7 +1669,7 @@ but only the <code>id</code> and <code>obj</code> properties are required to cre
 <tr>
 <td align="left">hidden</td>
 <td></td>
-<td align="center"><a href="../styling#boolean">bool</a></td>
+<td align="center"><a href="../data-types#boolean">bool</a></td>
 <td align="center">no</td>
 <td align="center">false</td>
 <td align="left">object is hidden</td>
@@ -1689,7 +1701,7 @@ but only the <code>id</code> and <code>obj</code> properties are required to cre
 <tr>
 <td align="left">swipe</td>
 <td></td>
-<td align="center"><a href="../styling#boolean">bool</a></td>
+<td align="center"><a href="../data-types#boolean">bool</a></td>
 <td align="center">no</td>
 <td align="center">false</td>
 <td align="left">page navigation using swipe gestures <em>(see below)</em></td>
@@ -1697,7 +1709,7 @@ but only the <code>id</code> and <code>obj</code> properties are required to cre
 <tr>
 <td align="left">click</td>
 <td></td>
-<td align="center"><a href="../styling#boolean">bool</a></td>
+<td align="center"><a href="../data-types#boolean">bool</a></td>
 <td align="center">no</td>
 <td align="center">true</td>
 <td align="left">object is touch/clickable <em>(also see <a href="../styling#general">enabled</a>)</em></td>
@@ -1877,7 +1889,7 @@ Besides the common properties listed above, each object type can have specific p
 <tbody>
 <tr>
 <td>toggle</td>
-<td><a href="../styling#boolean">bool</a></td>
+<td><a href="../data-types#boolean">bool</a></td>
 <td>false</td>
 <td>When enabled, creates a toggle-on/toggle-off button. If false, creates a normal button</td>
 </tr>
@@ -1960,19 +1972,19 @@ Besides the common properties listed above, each object type can have specific p
 <tbody>
 <tr>
 <td>val</td>
-<td><a href="../styling#boolean">bool</a></td>
+<td><a href="../data-types#boolean">bool</a></td>
 <td>0</td>
 <td><code>1</code> = on, <code>0</code> = off</td>
 </tr>
 <tr>
 <td>bg_color1</td>
-<td><a href="../styling#colors">color</a></td>
+<td><a href="../data-types#colors">color</a></td>
 <td>0</td>
 <td>changes indicator color</td>
 </tr>
 <tr>
 <td>bg_color2</td>
-<td><a href="../styling#colors">color</a></td>
+<td><a href="../data-types#colors">color</a></td>
 <td>0</td>
 <td>changes knob color</td>
 </tr>
@@ -2182,7 +2194,7 @@ While pressing and dragging the <code>slider</code> object the following events 
 </tr>
 <tr>
 <td>adjustable</td>
-<td><a href="../styling#boolean">bool</a></td>
+<td><a href="../data-types#boolean">bool</a></td>
 <td>false</td>
 <td>Add knob that the user can operate to change the value</td>
 </tr>
@@ -2279,7 +2291,7 @@ While pressing and dragging the <code>slider</code> object the following events 
 </tr>
 <tr>
 <td>show_selected</td>
-<td><a href="../styling#boolean">bool</a></td>
+<td><a href="../data-types#boolean">bool</a></td>
 <td>true</td>
 <td>Show the selected option or a static text</td>
 </tr>
@@ -2621,7 +2633,7 @@ You first create the <code>tabview</code> object and then add <code>tab</code> o
 <tbody>
 <tr>
 <td>color</td>
-<td><a href="../styling#colors">color</a></td>
+<td><a href="../data-types#colors">color</a></td>
 <td>0</td>
 <td>The selected color in html format #rrggbb</td>
 </tr>
@@ -2746,13 +2758,13 @@ You first create the <code>tabview</code> object and then add <code>tab</code> o
 </tr>
 <tr>
 <td>toggle</td>
-<td><a href="../styling#boolean">bool</a></td>
+<td><a href="../data-types#boolean">bool</a></td>
 <td>false</td>
 <td>All buttons behave as toggle buttons or normal buttons</td>
 </tr>
 <tr>
 <td>one_check</td>
-<td><a href="../styling#boolean">bool</a></td>
+<td><a href="../data-types#boolean">bool</a></td>
 <td>false</td>
 <td>Allow only one button to be checked (toggled) at once</td>
 </tr>
@@ -2791,7 +2803,7 @@ To change the color of a single label you can prefix the text with a <code>#RRGG
 </tr>
 <tr>
 <td><del>modal</del></td>
-<td><a href="../styling#boolean">bool</a></td>
+<td><a href="../data-types#boolean">bool</a></td>
 <td>false</td>
 <td>Make the messagebox a modal dialog requiring user input</td>
 </tr>
@@ -2853,10 +2865,10 @@ The pop-up is centered on the screen.</p>
 </tbody>
 </table>
 <p>You can use image_recolor and image_recolor_opa from the <a href="../styling#image">image styling</a> properties to apply a color overlay mask.</p>
-<p>Example <code>jsonl</code>:
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;page&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">34</span><span class="p">,</span><span class="nt">&quot;obj&quot;</span><span class="p">:</span><span class="s2">&quot;img&quot;</span><span class="p">,</span><span class="nt">&quot;src&quot;</span><span class="p">:</span><span class="s2">&quot;/littlefs/image.png&quot;</span><span class="p">,</span><span class="nt">&quot;auto_size&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="nt">&quot;w&quot;</span><span class="p">:</span><span class="mi">50</span><span class="p">}</span>
+<details class="example"><summary>Example <code>jsonl</code></summary><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;page&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">34</span><span class="p">,</span><span class="nt">&quot;obj&quot;</span><span class="p">:</span><span class="s2">&quot;img&quot;</span><span class="p">,</span><span class="nt">&quot;src&quot;</span><span class="p">:</span><span class="s2">&quot;/littlefs/image.png&quot;</span><span class="p">,</span><span class="nt">&quot;auto_size&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="nt">&quot;w&quot;</span><span class="p">:</span><span class="mi">50</span><span class="p">}</span>
 </code></pre></div>
-</td></tr></table></p>
+</td></tr></table>
+</details>
 <h2 id="base-object">Base Object<a class="headerlink" href="#base-object" title="Permanent link">~</a></h2>
 <p><strong>obj:<code>obj</code></strong></p>
 <p><img alt="lv_base_object" src="../../assets/images/objects/lv_ex_base_object_1.png" /></p>

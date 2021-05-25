@@ -512,7 +512,19 @@
   
     <li class="md-nav__item">
       <a href="../design/styling/" class="md-nav__link">
-        Styling
+        Styling Properties
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../design/data-types/" class="md-nav__link">
+        Data Types
       </a>
     </li>
   
@@ -1248,9 +1260,9 @@ These leds can then be controlled together using the <code>moodlight</code> comm
 </code></pre></div>
 </td></tr></table>
 <ul>
-<li>The <code>state</code> key accepts <a href="../design/styling#boolean">boolean values</a> to turn the moodlight on or off</li>
+<li>The <code>state</code> key accepts <a href="../design/data-types#boolean">boolean values</a> to turn the moodlight on or off</li>
 <li>The <code>brightness</code> key can be set between <code>1</code> and <code>255</code> to dim the moodlight</li>
-<li>The <code>color</code> key accepts <a href="../design/styling#colors">color values</a> to set the RGB channels at once</li>
+<li>The <code>color</code> key accepts <a href="../design/data-types#colors">color values</a> to set the RGB channels at once</li>
 <li>Individual <code>r</code>, <code>g</code> and <code>b</code> keys can also be used to set each channel seperately</li>
 </ul>
 <p>Calling the <code>moodlight</code> command without parameters (or sending an empty payload to the <code>hasp/&lt;nodename&gt;/command/moodlight</code> topic) returns the current state:</p>

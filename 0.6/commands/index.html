@@ -512,7 +512,19 @@
   
     <li class="md-nav__item">
       <a href="../design/styling/" class="md-nav__link">
-        Styling
+        Styling Properties
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../design/data-types/" class="md-nav__link">
+        Data Types
       </a>
     </li>
   
@@ -1394,9 +1406,9 @@ These leds can then be controlled together using the <code>moodlight</code> comm
 </code></pre></div>
 </td></tr></table>
 <ul>
-<li>The <code>state</code> key accepts <a href="../design/styling#boolean">boolean values</a> to turn the moodlight on or off</li>
+<li>The <code>state</code> key accepts <a href="../design/data-types#boolean">boolean values</a> to turn the moodlight on or off</li>
 <li>The <code>brightness</code> key can be set between <code>1</code> and <code>255</code> to dim the moodlight</li>
-<li>The <code>color</code> key accepts <a href="../design/styling#colors">color values</a> to set the RGB channels at once</li>
+<li>The <code>color</code> key accepts <a href="../design/data-types#colors">color values</a> to set the RGB channels at once</li>
 <li>Individual <code>r</code>, <code>g</code> and <code>b</code> keys can also be used to set each channel seperately</li>
 </ul>
 <p>Calling the <code>moodlight</code> command without parameters (or sending an empty payload to the <code>hasp/&lt;nodename&gt;/command/moodlight</code> topic) returns the current state:</p>
@@ -1568,7 +1580,7 @@ The result will be published to <code>hasp/&lt;nodename&gt;/state/config</code>.
     
     <nav class="md-footer__inner md-grid" aria-label="Footer">
         
-        <a href="../design/styling/" class="md-footer__link md-footer__link--prev" rel="prev">
+        <a href="../design/data-types/" class="md-footer__link md-footer__link--prev" rel="prev">
             <div class="md-footer__button md-icon">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -1576,7 +1588,7 @@ The result will be published to <code>hasp/&lt;nodename&gt;/state/config</code>.
                 <div class="md-ellipsis">
                     <span class="md-footer__direction">
                   Previous
-                </span> Styling
+                </span> Data Types
                 </div>
             </div>
         </a>
