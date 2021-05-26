@@ -11,7 +11,7 @@ Gitpod is a web browser based online IDE. All you need to use it is to link your
 Click on one of the links below, and that will automatically load Gitpod with openHASP prepared for creating your custom build:
 
 - Master release: [https://gitpod.io#https://github.com/HASwitchPlate/openHASP](https://gitpod.io#https://github.com/HASwitchPlate/openHASP)
-- Development branch (for example 0.5.0): [https://gitpod.io#https://github.com/HASwitchPlate/openHASP/tree/0.5.0](https://gitpod.io#https://github.com/HASwitchPlate/openHASP/tree/0.5.0)
+- Development branch (for example 0.6.0): [https://gitpod.io#https://github.com/HASwitchPlate/openHASP/tree/0.6.0](https://gitpod.io#https://github.com/HASwitchPlate/openHASP/tree/0.6.0)
 
 ## Choose the version you need
 
@@ -32,7 +32,7 @@ extra_configs =
     ; user_setups/linux_sdl/*.ini
 ```
 
-If you use [customization](compiling-customize.md), remove the comment from the line `-DUSE_CONFIG_OVERRIDE` and make sure you have your own `user_config_override.h` in place:   
+If you use [customization](customize.md), remove the comment from the line `-DUSE_CONFIG_OVERRIDE` and make sure you have your own `user_config_override.h` in place:   
 (please consider before saving your wifi and mqtt credentials to an online cloud)
 
 ```text
