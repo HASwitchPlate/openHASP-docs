@@ -53,7 +53,7 @@ The performance of the ESP8266 will be slow due to its low memory and CPU freque
 It is okay for getting started, for small project where speed is not needed or when you have one at hand.
 
 !!! warning "Tip"
-    Advanced users can [build and compile](../compiling) custom configurations using PlatformIO, however this is not currently supported.
+    Advanced users can build and compile custom configurations using PlatformIO [locally](../compiling/local.md) or [online with Gitpod](../compiling/gitpod.md), however this is not currently supported.
 
 
 ## Recommended Display
