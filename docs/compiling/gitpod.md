@@ -64,8 +64,8 @@ extra_default_envs =
 ```
 Save the file by pressing `Ctrl + S` or selecting `Save` from the top-left menu.
 
-!!! note " "
-    *You can of course uncomment multiple lines, the system will make builds for each. Note that these environments rely on the platforms above so double-check that your hardware has the correct platform enabled in the `extra_configs` section!*
+!!! note "Note"
+    You can of course uncomment multiple lines, the system will make builds for each. Note that these environments rely on the platforms above so double-check that your hardware has the correct platform enabled in the `extra_configs` section!
 
 
 ## Build the firmware
