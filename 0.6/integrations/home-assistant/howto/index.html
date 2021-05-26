@@ -1250,7 +1250,7 @@
 <span class="p">{</span><span class="nt">&quot;page&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="nt">&quot;obj&quot;</span><span class="p">:</span><span class="s2">&quot;label&quot;</span><span class="p">,</span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="mi">175</span><span class="p">,</span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span><span class="nt">&quot;h&quot;</span><span class="p">:</span><span class="mi">30</span><span class="p">,</span><span class="nt">&quot;w&quot;</span><span class="p">:</span><span class="mi">62</span><span class="p">,</span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="s2">&quot;00.0°C&quot;</span><span class="p">,</span><span class="nt">&quot;align&quot;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="nt">&quot;bg_color&quot;</span><span class="p">:</span><span class="s2">&quot;#2C3E50&quot;</span><span class="p">,</span><span class="nt">&quot;text_color&quot;</span><span class="p">:</span><span class="s2">&quot;#FFFFFF&quot;</span><span class="p">}</span>
 </code></pre></div>
 </td></tr></table>
-<p>Assuming your plate's configured MQTT node name is <code>plate35</code>, you can add the following to your <code>configuration.yaml</code> file:</p>
+<p>Assuming your plate's configured MQTT node name is <code>plate35</code>, add the following to your <code>configuration.yaml</code> file (Home Assistant will deliberatey ask for it when finished autodetection procedure):</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -1296,7 +1296,7 @@
 <p><strong>openhasp:</strong> <em>(Required)</em>  <br />
 The platform identifier. Required once in the configuration, this will activate the custom component.</p>
 <p><strong>plate35:</strong> <em>(Required)</em>  <br />
-Your plate identifier. For each plate in your sytem, such an entry is required, has to be unique. It is generated automatically from the plate name you gave during discovery, which by default equals to the <em>HASP Node Name</em> set in the plate's <a href="../../../configuration/mqtt/">configuration</a>.</p>
+Your plate identifier slug. For each plate in your sytem, such an entry is required, has to be unique. It is generated automatically from the plate name you gave during discovery, which by default equals to the <em>HASP Node Name</em> set in the plate's <a href="../../../configuration/mqtt/">configuration</a>.</p>
 <!--
 **path:** *(path) (Optional)*     
 Path to a `pages.jsonl` file containing design for this plate, to be loaded on Home Assistant start and on plate availability (becoming online).<br>
