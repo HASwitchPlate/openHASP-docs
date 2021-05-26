@@ -1,15 +1,15 @@
-The openHASP Custom Component simplifies synchronization of objects on one or more openHASP plates with Home Assistant entities.
+The [openHASP Custom Component][1] simplifies synchronization of objects on one or more openHASP plates with Home Assistant entities.
 
 We call _plate_ any device running openHASP in your system.
 
 # Installation
 
-[![hacs_badge](https://img.shields.io/badge/HACS-Default-orange.svg?style=for-the-badge)](https://github.com/custom-components/hacs)
+[![hacs_badge](https://img.shields.io/badge/HACS-Default-orange.svg?style=for-the-badge)][3]
 
-Install using [HACS](https://hacs.xyz/) in one-click. This is the preferred and recommended method, as HACS provides a very effective way to keep the component updated and/or choose between various versions.
+Install using [HACS][4] in one-click. This is the preferred and recommended method, as HACS provides a very effective way to keep the component updated and/or choose between various versions.
 
 !!! note "Note"
-    Alternatively, you can also install it manually ([download](https://github.com/HASwitchPlate/openHASP-custom-component/archive/refs/heads/main.zip) and follow these steps): 
+    Alternatively, you can also install it manually ([download][2] and follow these steps): 
 
     1. Using the tool of choice open the directory (folder) for your HA configuration (where you find `configuration.yaml`).
     2. If you do not have a `custom_components` directory there, you need to create it.
@@ -127,7 +127,7 @@ openhasp:
 
 #### Split configuration
 
-You can use Home Assistant's [split configuration](https://www.home-assistant.io/docs/configuration/splitting_configuration/) to help better organizing your config files.
+You can use Home Assistant's [split configuration][5] to help better organizing your config files.
 
 Instead of keeping the configuration of all openHASP plates in Home Assistant's main config file, you can keep openHASP config separately, by adding only this to `configuration.yaml`:
 
@@ -170,3 +170,8 @@ This component implements some specific services to make interactions with the p
   
   Check out the example automations for further information on how to use the services within Home Assistant.
 
+[1]: https://github.com/HASwitchPlate/openHASP-custom-component
+[2]: https://github.com/HASwitchPlate/openHASP-custom-component/archive/refs/heads/main.zip
+[3]: https://github.com/custom-components/hacs
+[4]: https://hacs.xyz/
+[5]: https://www.home-assistant.io/docs/configuration/splitting_configuration/
