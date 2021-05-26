@@ -17,7 +17,9 @@ Pagination can be also acomplished by enabling [swipe](../../../design/objects#s
 ```json
 {"page":0,"id":6,"obj":"obj","swipe":1,"x":0,"y":0,"h":30,"w":240,"opacity":0,"comment":"swipe-area-at-top"}
 ```
-!!! note You should to make sure that in your [`pages.jsonl`](../../../design/pages#pagesjsonl) these lines appear at the end of the file, so that these objects remain at the top, and no others will be drawn on top of them.
+
+!!! note "Tip"
+    You should put these lines to the end of your [`pages.jsonl`](../../../design/pages#pagesjsonl) config file, so that these objects remain at the top, and no others will be drawn on top of them.
 
 * * * * *
 
