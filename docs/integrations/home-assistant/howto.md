@@ -8,7 +8,7 @@ We call _plate_ any device running openHASP in your system.
 
 Install using [HACS](https://hacs.xyz/) in one-click. This is the preferred and recommended method, as HACS provides a very effective way to keep the component updated and/or choose between various versions.
 
-Alternatively, you can also install it manually ([download](https://github.com/HASwitchPlate/openHASP-custom-component/archive/refs/heads/main.zip) follow these steps): 
+Alternatively, you can also install it manually ([download](https://github.com/HASwitchPlate/openHASP-custom-component/archive/refs/heads/main.zip) and follow these steps): 
 
 1. Using the tool of choice open the directory (folder) for your HA configuration (where you find `configuration.yaml`).
 2. If you do not have a `custom_components` directory there, you need to create it.
