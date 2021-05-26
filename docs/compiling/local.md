@@ -64,7 +64,7 @@ extra_configs =
     ; user_setups/stm32f4xx/*.ini
 ```
 
-If you use [customization](compiling-customize.md), remove the comment from the line `-DUSE_CONFIG_OVERRIDE`:
+If you use [customization](customize.md), remove the comment from the line `-DUSE_CONFIG_OVERRIDE`:
 
 ```text
 [override]
