@@ -8,15 +8,16 @@ We call _plate_ any device running openHASP in your system.
 
 Install using [HACS](https://hacs.xyz/) in one-click. This is the preferred and recommended method, as HACS provides a very effective way to keep the component updated and/or choose between various versions.
 
-Alternatively, you can also install it manually ([download](https://github.com/HASwitchPlate/openHASP-custom-component/archive/refs/heads/main.zip) and follow these steps): 
+!!! note "Note"
+    Alternatively, you can also install it manually ([download](https://github.com/HASwitchPlate/openHASP-custom-component/archive/refs/heads/main.zip) and follow these steps): 
 
-1. Using the tool of choice open the directory (folder) for your HA configuration (where you find `configuration.yaml`).
-2. If you do not have a `custom_components` directory there, you need to create it.
-3. In the `custom_components` directory create a new folder called `openhasp`.
-4. Download _all_ the files from the `custom_components/openhasp/` directory in this repository.
-5. Place the files you downloaded in the new directory you created.
-6. Edit your `configuration.yaml` file add an entry similar to the example below.
-7. Restart Home Assistant
+    1. Using the tool of choice open the directory (folder) for your HA configuration (where you find `configuration.yaml`).
+    2. If you do not have a `custom_components` directory there, you need to create it.
+    3. In the `custom_components` directory create a new folder called `openhasp`.
+    4. Download _all_ the files from the `custom_components/openhasp/` directory in this repository.
+    5. Place the files you downloaded in the new directory you created.
+    6. Edit your `configuration.yaml` file add an entry similar to the example below.
+    7. Restart Home Assistant
 
 !!! warning "Warning"
     You have to use component version consistently with the firmware version on your plates. For example, if your plates are at firmware version 0.5.x, you also need to use component version 0.5.x to ensure interoperability. Home Assistant will show a warning if it finds a version mismatch. Note that you can only have one version of the component installed at a time so a mix of plate versions cannot be deployed.
@@ -25,9 +26,9 @@ Alternatively, you can also install it manually ([download](https://github.com/H
 
 First prepare your plates to be integrated with Home Assistant:
 
-- Connect your plates to the [network](../../installation/wifi-setup.md). Static DHCP or fixed IP is not needed as communication only happes through MQTT.
-- Set the [GPIO configuration](../../configuration/gpio.md) corresponding to your hardware, save and reboot.
-- Set the [MQTT server](../../configuration/mqtt.md) settings and make sure each platge has a unique node name, save and reboot.
+1. Connect your plates to the [network](../../installation/wifi-setup.md). Static DHCP or fixed IP is not needed as communication only happes through MQTT.
+2. Set the [GPIO configuration](../../configuration/gpio.md) corresponding to your hardware, save and reboot.
+3. Set the [MQTT server](../../configuration/mqtt.md) settings and make sure each platge has a unique node name, save and reboot.
 
 The component will automatically discover them and you will see them appearing in _Home Assistant > Configuration > Integrations > HASP-Open Hardware Edition_.
 
