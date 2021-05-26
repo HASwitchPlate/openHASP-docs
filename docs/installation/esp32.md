@@ -4,9 +4,7 @@
 
 Go to the [releases](https://github.com/HASwitchPlate/openHASP/releases) page on GitHub to download the latest openHASP binaries.
 
-Get the files required for ESP32:
-
-- d1-mini-esp32_ili9341_full_4MB_v0.4.0.bin
+Get the *full* binary file for your ESP32 device: *e.g.* d1-mini-esp32_ili9341_full_4MB_v0.4.0.bin
 
 !!! note
     You can also download the *nightly* openHASP firmware.zip file from the [Actions tab](https://github.com/HASwitchPlate/openHASP/actions) on Github.
@@ -17,6 +15,12 @@ Get the files required for ESP32:
 !!! important
     When flashing openHASP onto the ESP32 for the first time, you need to flash it over serial using the **full** firmware binary file.
     You need to write the full binary to the ESP32 flash chip, starting @ address `0x0`.
+
+Before starting the flash process you have to put the ESP into *boot mode*:
+
+1. Connect `GPIO0` to `GND` before booting the devide
+2. Power-on or reset the ESP while `GPIO0` is connected to `GND`
+3. Start the flash process
 
 The actual procedure to flash the ESP32 depends on the tool used. Click on the tab below that matches your flash tool:
 

@@ -1,45 +1,72 @@
 # GPIO Settings
 
-You can attach external devices like buttons, switches, relays or LEDs using the GPIO pins of the ESP.
+## GPIO Overview
 
-## Web UI
+You can attach external devices like buttons, switches, relays, lights or LEDs using the GPIO pins of the ESP.
 
-![GPIO Settings](../assets/images/settings/gpio_addpin.png "GPIO Add New Pin") &nbsp;
-![GPIO Pin Configuration](../assets/images/settings/gpio_pinconfig.png "GPIO Pin Configuration")
+<div class="row justify-content-center">
+            <a href="../../assets/images/settings/gpio_addpin.png" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-8" data-title="GPIO Overview" data-footer="">
+                <img src="../../assets/images/settings/gpio_addpin-thumbnail.png" class="img-fluid img-thumbnail">
+            </a>
+</div>
 
-## Pin
 
-Select the pin of the gpio to use.
 
-Pins known to be in use will be hidden from this list.
-Check the documentation of your board to see which pins are free to be used as gpio.
+## Input Pin
 
-## Groupid
+<div class="row justify-content-center">
+            <a href="../../assets/images/settings/gpio_input.png" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-8" data-title="GPIO Input" data-footer="">
+                <img src="../../assets/images/settings/gpio_input-thumbnail.png" class="img-fluid img-thumbnail">
+            </a>
+</div>
 
-GPIOs and objects can be grouped together by specifying a groupid. The state of objects is then altered by any object in the same group. This allows for simple action-reaction scenarios without relying on a home automation system:
+### Pin
+
+Select the GPIO number of the input pin to use.
+
+!!! note
+    Pins known to be in use will be hidden from this list of available pins.
+    Check the documentation of your board to see which pins are free to be used as GPIO.
+
+### Group
+
+GPIOs and objects can be grouped together by specifying a `groupid`. The state of objects in the same group is altered by the value of this input.
+This allows for simple action-reaction scenarios without relying on a home automation system:
 
 - Link a switch and relay together
 - Link a push button and doorbell together
 
-The applied value is *normalized* and *proportionate* to the value of the input object, much like a percentage:
-
-- Binary objects, like a switch, checkbox or toggle button only pass along 0% and 100% values.
-- Range objects, like a slider, arc slider, roller or drop-down list pass along a value between 0-65535, depending on their current `min`, `max` and `val` attributes.
+The state of a digital input can only be `on` or `off` and will set all group members to either 100% or 0% of their maximum value.
 
 !!! note "Note"
     The grouping of multiple gpios and objects together is intended for simple actions only.
     More complex actions should be performed by a home automation system, without linking groupids together.
 
-## Default state
+### Default state
 
-The polarity of the gpio when it is *not* being engaged i.e. the gpio is not connected, zero or idle:
+The state of the input when it is *not* being engaged:
+*i.e.* the switch, button or sensor is idle *(not active)*:
 
-- `HIGH`: The default state is high using the internal PULL_UP resistor. 
-- `LOW`: The default state is low using the internal PULL_DOWN resistor. 
+- **Normally Open**: The default state interrupts the circuit
+- **Normally Closed**: The default state completes the circuit
 
-## Types
+### Resistor
 
-### Button
+To avoid ghost events and RF interference each input should either have a *pullup* or *pulldown* resistor.
+This ensures the signal in the default state is always `HIGH` or `LOW` respectively.
+
+Most input pins have either an internal *pullup* or *pulldown* resistor that can be activated by the firmware.
+Check the documentation of your MCU whether the pin you want to use provides this functionality.
+If an internal *pullup* or *pulldown* resistor is not available on that pin you **must** add an external resistor and connect it either to `3.3V` or `GND`.
+
+- **Internal Pullup**: The pin is pulled `HIGH` internally by the firmware 
+- **Internal Pulldown**: The pin is pulled `LOW` internally by the firmware
+- **External Pullup**: The pin is pulled `HIGH` by an external resistor
+- **External Pulldown**: The pin is pulled `LOW` by an external resistor
+
+### Type
+
+#### Button
 
 A button gpio sends events to topic `input#` where `#` is the groupnumber.
 
@@ -55,7 +82,7 @@ GPIO buttons send out **events** while they occur. The possible events are:
 
 The values of objects or gpios with the same groupid will be set to maximum when the button is being pressed and to minimum when the button is released.
 
-### Switch
+#### Switch
 
 A switch gpio sends events to `input#` where `#` is the groupnumber.
 
@@ -63,6 +90,30 @@ GPIO Switches send out their **value** when toggled: {"val":"0"} or {"val":"1"}.
 
 The values of objects or gpios in the same group will be set to maximum when the switch is turned on
 and to minimum when the switch is turned off.
+
+## Output Pin
+
+<div class="row justify-content-center">
+            <a href="../../assets/images/settings/gpio_output.png" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-8" data-title="GPIO Output" data-footer="">
+                <img src="../../assets/images/settings/gpio_output-thumbnail.png" class="img-fluid img-thumbnail">
+            </a>
+</div>
+
+### Pin
+
+Select the GPIO number of the output pin to use.
+
+!!! note
+    Pins known to be in use will be hidden from this list of available pins.
+    Check the documentation of your board to see which pins are free to be used as GPIO.
+
+### Group
+
+The applied value is *normalized* and *proportionate* to the value of the input object, much like a percentage:
+
+- Binary objects, like a switch, checkbox or toggle button only pass along 0% and 100% values.
+- Range objects, like a slider, arc slider, roller or drop-down list pass along a value between 0-65535, depending on their current `min`, `max` and `val` attributes.
+
 
 ### Relay
 
@@ -72,10 +123,11 @@ When a relay is grouped with a button or switch in the same group, it will be tu
 
 When a relay is controlled by a range object (slider, arc slider, roller, drop-down list) within the same group, the state will be be ON if the `.val` value is halfway the range or above.
 
-!!! danger "Warning"
+!!! danger "Warning!"
     Attaching devices to mains power can be dangerous!
     Configuring gpios is done on your **own responsibility**.
     Be sure to test any system thoroughly using low voltages first.
+    By using the firmware you accept the [License](../../license).
 
 ### Led
 
