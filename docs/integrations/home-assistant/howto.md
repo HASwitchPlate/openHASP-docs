@@ -69,7 +69,7 @@ openhasp:
 ### Variable definitions
 
 **openhasp:** *(Required)*    
-The platform identifier. Required once in the configuration, this will activate the custom component.
+The platform identifier. Required once in the configuration.
 
 **plate35:** *(Required)*    
 Your plate identifier slug. For each plate in your sytem, such an entry is required, has to be unique. It is generated automatically from the plate name you gave during discovery, which by default equals to the _HASP Node Name_ set in the plate's [configuration](../../configuration/mqtt.md).
