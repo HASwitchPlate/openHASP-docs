@@ -38,5 +38,5 @@ reboot
 ```
 
 !!! note ""
-    To skip this step, Wi-Fi credentials can be saved into the .bin file when you compile the firmware yourself. Rename `user_config_override-template.h` to `user_config_override.h`, enter your credentials and use flag `-DUSE_CONFIG_OVERRIDE` when compiling
+    To skip this step, Wi-Fi credentials can be saved into the .bin file when you compile the firmware yourself using [customization](../compiling/customize.md). 
 
