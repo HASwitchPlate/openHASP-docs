@@ -867,6 +867,26 @@
     GPIO Settings
   </a>
   
+    <nav class="md-nav" aria-label="GPIO Settings">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#3-gang-version-l8-hs" class="md-nav__link">
+    3-gang version L8-HS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dimmer-version-l8-hd" class="md-nav__link">
+    Dimmer version L8-HD
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1046,10 +1066,61 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../compiling/" class="md-nav__link">
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_12" type="checkbox" id="__nav_12" >
+      
+      <label class="md-nav__link" for="__nav_12">
         Compiling
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Compiling" data-md-level="1">
+        <label class="md-nav__title" for="__nav_12">
+          <span class="md-nav__icon md-icon"></span>
+          Compiling
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../compiling/local/" class="md-nav__link">
+        Compiling locally
       </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../compiling/gitpod/" class="md-nav__link">
+        Compiling online with Gitpod
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../compiling/customize/" class="md-nav__link">
+        Customization
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
     
@@ -1137,6 +1208,26 @@
   <a href="#gpio-settings" class="md-nav__link">
     GPIO Settings
   </a>
+  
+    <nav class="md-nav" aria-label="GPIO Settings">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#3-gang-version-l8-hs" class="md-nav__link">
+    3-gang version L8-HS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dimmer-version-l8-hd" class="md-nav__link">
+    Dimmer version L8-HD
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1263,6 +1354,7 @@
 </ol>
 <p>Once the serial connections are made, flash the <a href="../installation">Lanbon-L8 ESP32 firmware</a> like any other device.</p>
 <h2 id="gpio-settings">GPIO Settings<a class="headerlink" href="#gpio-settings" title="Permanent link">~</a></h2>
+<h3 id="3-gang-version-l8-hs">3-gang version L8-HS<a class="headerlink" href="#3-gang-version-l8-hs" title="Permanent link">~</a></h3>
 <table>
 <thead>
 <tr>
@@ -1312,13 +1404,14 @@
 </tbody>
 </table>
 <p>To configure the GPIOs at once for L8-HS send to topic <code>hasp/&lt;nodename&gt;/config</code> a message with payload:<br />
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;gpio&quot;</span><span class="p">:{</span><span class="nt">&quot;config&quot;</span><span class="p">:[</span><span class="mi">2360346</span><span class="p">,</span><span class="mi">2491680</span><span class="p">,</span><span class="mi">2623009</span><span class="p">,</span><span class="mi">2097420</span><span class="p">,</span><span class="mi">2097678</span><span class="p">,</span><span class="mi">2097947</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]}}</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;gpio&quot;</span><span class="p">:{</span><span class="nt">&quot;config&quot;</span><span class="p">:[</span><span class="mi">197658</span><span class="p">,</span><span class="mi">263456</span><span class="p">,</span><span class="mi">329249</span><span class="p">,</span><span class="mi">655628</span><span class="p">,</span><span class="mi">655886</span><span class="p">,</span><span class="mi">656155</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]}}</span>
 </code></pre></div>
 </td></tr></table>
 When using MQTT send to topic <code>hasp/&lt;nodename&gt;/config/gpio</code> a message with payload 
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;config&quot;</span><span class="p">:[</span><span class="mi">2360346</span><span class="p">,</span><span class="mi">2491680</span><span class="p">,</span><span class="mi">2623009</span><span class="p">,</span><span class="mi">2097420</span><span class="p">,</span><span class="mi">2097678</span><span class="p">,</span><span class="mi">2097947</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]}</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;config&quot;</span><span class="p">:[</span><span class="mi">197658</span><span class="p">,</span><span class="mi">263456</span><span class="p">,</span><span class="mi">329249</span><span class="p">,</span><span class="mi">655628</span><span class="p">,</span><span class="mi">655886</span><span class="p">,</span><span class="mi">656155</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]}</span>
 </code></pre></div>
 </td></tr></table></p>
+<h3 id="dimmer-version-l8-hd">Dimmer version L8-HD<a class="headerlink" href="#dimmer-version-l8-hd" title="Permanent link">~</a></h3>
 <table>
 <thead>
 <tr>
@@ -1356,12 +1449,12 @@ When using MQTT send to topic <code>hasp/&lt;nodename&gt;/config/gpio</code> a m
 </tbody>
 </table>
 <p>To configure the GPIOs at once for L8-HD send to topic <code>hasp/&lt;nodename&gt;/config</code> a message with payload:<br />
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code> <span class="p">{</span><span class="nt">&quot;gpio&quot;</span><span class="p">:{</span><span class="nt">&quot;config&quot;</span><span class="p">:[</span><span class="mi">6360076</span><span class="p">,</span><span class="mi">2229274</span><span class="p">,</span><span class="mi">2491680</span><span class="p">,</span><span class="mi">2623009</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]}}</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code> <span class="p">{</span><span class="nt">&quot;gpio&quot;</span><span class="p">:{</span><span class="nt">&quot;config&quot;</span><span class="p">:[</span><span class="mi">3214348</span><span class="p">,</span><span class="mi">197658</span><span class="p">,</span><span class="mi">263456</span><span class="p">,</span><span class="mi">329249</span><span class="p">,</span><span class="mi">94699520</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]}}</span>
 </code></pre></div>
 </td></tr></table></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>You can <a href="../compiling#create-a-configuration">create you own firmware</a> build with GPIOs and many other parameters pre-configured in <code>user_config_override.h</code> as factory defaults for Lanbon L8.</p>
+<p>You can <a href="../../compiling/customize/">create you own firmware</a> build with GPIOs and many other parameters pre-configured in <code>user_config_override.h</code> as factory defaults for Lanbon L8.</p>
 </div>
 <h2 id="wiring-diagrams">Wiring Diagrams<a class="headerlink" href="#wiring-diagrams" title="Permanent link">~</a></h2>
 <p>The switch supports several wiring configurations:</p>
