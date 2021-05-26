@@ -606,7 +606,7 @@ The pop-up is centered on the screen.
 !!! note "Note"
     The messagebox object is automatically deleted when it is closed. You will need to create it again using `jsonl` to pop-up a new message.
 
-Example `jsonl`:
+??? example "Example `jsonl`"
 ```json
 {"page":1,"id":24,"obj":"msgbox","text":"A message box with two buttons","options":["Apply","Close"]}
 ```
@@ -624,7 +624,13 @@ Example `jsonl`:
 | offset_x | int        | 0       | Shift the picture horizontally relative to the image object
 | offset_y | int        | 0       | Shift the picture vertically relative to the image object
 
+Only PNG image files are supported, from flash. 
+   
 You can use image_recolor and image_recolor_opa from the [image styling][5] properties to apply a color overlay mask.
+   
+!!! note "Note"
+    The decoding of the images is done in memory, thus you'll be able to display full-screen images only if your microcontroller [has installed PSram memory](../getting-started/#recommended-boards), else you will be limited to small icons only.
+
 
 ??? example "Example `jsonl`"
     ```json
