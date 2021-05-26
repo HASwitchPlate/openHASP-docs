@@ -39,7 +39,9 @@ Both models have the same recessed housing sliding in the wall, sized 50x50mm, w
 | 8 MB flash     | Mood LEDS not uniform
 | 8 MB PSram     | 
 | Capactitive touch |
+| Built-in PSU |
 | Energy monitor |
+| Standard wallmount form factor both EU and US |
 
 ## Contents
 
