@@ -1293,22 +1293,22 @@ sudo apt install git python3-venv
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>git submodule update --init --recursive
 </code></pre></div>
 </td></tr></table>
-<p>To switch to a different branch use:</p>
+<p>To switch to a different branch (for example 0.6.0) use:</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
 <span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>git clone --recursive https://github.com/HASwitchPlate/openHASP
 <span class="nb">cd</span> openHASP
-git checkout <span class="m">0</span>.4.0
+git checkout <span class="m">0</span>.6.0
 git submodule update --init --recursive
 </code></pre></div>
 </td></tr></table>
 <h2 id="open-in-platformio">Open in PlatformIO<a class="headerlink" href="#open-in-platformio" title="Permanent link">~</a></h2>
-<p><img alt="Install PIO" src="assets/images/compiling/install_pio.png" /></p>
+<p><img alt="Install PIO" src="../../assets/images/compiling/install_pio.png" /></p>
 <p>Open the project folder in <a href="https://code.visualstudio.com">Visual Studio Code</a>.
 You will receive a popup to install PlatformIO IDE if it is not already installed.
 This will automatically install all PlatformIO dependencies and the MCU compiler frameworks needed.</p>
-<p><img alt="PIO Installed" src="assets/images/compiling/pio_installed.png" /></p>
+<p><img alt="PIO Installed" src="../../assets/images/compiling/pio_installed.png" /></p>
 <p>Restart Visual Studio Code when the PIO installation completes.</p>
 <h2 id="create-a-configuration">Create a configuration<a class="headerlink" href="#create-a-configuration" title="Permanent link">~</a></h2>
 <p>Copy <code>platformio_override-template.ini</code> to <code>platformio_override.ini</code> and uncomment the platforms for <code>esp32</code>and <code>esp8266</code>:</p>
@@ -1340,7 +1340,7 @@ build_flags =
 <p>Then Click on the "Refresh Project tasks" icon in PlatformIO to list all the configured environments.</p>
 <h2 id="compiling">Compiling<a class="headerlink" href="#compiling" title="Permanent link">~</a></h2>
 <h3 id="mcu-environments">MCU Environments<a class="headerlink" href="#mcu-environments" title="Permanent link">~</a></h3>
-<p><img alt="Build All" src="assets/images/compiling/build_all.png" /></p>
+<p><img alt="Build All" src="../../assets/images/compiling/build_all.png" /></p>
 <p>You can now run "Build" or "Build All" in PlatformIO to compile (all) the firmware.</p>
 <h3 id="native-linux-build">Native Linux build<a class="headerlink" href="#native-linux-build" title="Permanent link">~</a></h3>
 <p>For native linux_sdl builds, you also need:
