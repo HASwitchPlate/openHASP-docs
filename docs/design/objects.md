@@ -100,12 +100,12 @@ You can still hide the object on select pages if needed. Objects on page 0 appea
 #### Actions  
 Action commands are supported only by _binary_ or _visual_ type of objects and they are performed locally on the plate. The following actions can be set for these objects:
 
-- `p1` to `p12` to switch to the corresponding page numbers directly
+- `p1` to `p12` to switch to the corresponding page numbers directly (for ESP32; in case of ESP8266 it's only `p1` to `p4`)
 - `prev` to switch to the previous page
 - `next` to switch to the next page
 - `back` to go back to the home page
 
-Check out the [example](example-pagination) for how to implement actions.  
+Check out the [example](../integrations/examples/example-pagination.md) for how to implement actions.  
 You can change the target pages using `prev`, `back` and `next` [page attributes](../pages#page-attributes) operation on the page object`pXb0`.  
 
 #### Swipe <a name="swipe"></a>
@@ -388,8 +388,7 @@ When the item is changed both `val` and `text` of the newly selected item are se
 ## Roller
 **obj:`roller`**
 
-<iframe width=320 height=240 scrolling="no" style="display: block; border-style:none;" src="https://haswitchplate.github.io/openHASP-docs/lv_ex_roller_1/index.html?w=320&h=240"></iframe><p></p>
-
+![lv_dropdown](../assets/images/objects/lv_ex_roller_1.png){: align=center }
 
 | Property | Value      | Default | Description
 |----------|------------|---------|--------------------------
