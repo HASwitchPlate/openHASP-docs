@@ -18,7 +18,7 @@ You can download `fontawesome.zip` from the [HMI Font Pack](https://github.com/f
 
 ### :question: Is there a file browser built-in?
 
-*A:* Since v0.6.0 there is a native file browser included on ESP32.
+Since v0.6.0 there is a native file browser included on ESP32.
 
 You can use it to upload, download and edit files on the flash partition of the ESP32.
 Using that webpage, you can right-click and delete files:
