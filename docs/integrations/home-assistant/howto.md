@@ -1,8 +1,14 @@
 The openHASP Custom Component simplifies synchronization of objects on one or more openHASP plates with Home Assistant entities.
 
-You need to [download](https://github.com/HASwitchPlate/openHASP-custom-component/archive/refs/heads/main.zip) it and install it in Home Assistant manually.
+We call _plate_ any device running openHASP in your system.
 
 # Installation
+
+[![hacs_badge](https://img.shields.io/badge/HACS-Default-orange.svg?style=for-the-badge)](https://github.com/custom-components/hacs)
+
+Install using [HACS](https://hacs.xyz/) in one-click. This is the preferred and recommended method, as HACS provides a very effective way to keep the component updated and/or choose between various versions.
+
+Alternatively, you can also install it manually ([download](https://github.com/HASwitchPlate/openHASP-custom-component/archive/refs/heads/main.zip) follow these steps): 
 
 1. Using the tool of choice open the directory (folder) for your HA configuration (where you find `configuration.yaml`).
 2. If you do not have a `custom_components` directory there, you need to create it.
@@ -12,24 +18,16 @@ You need to [download](https://github.com/HASwitchPlate/openHASP-custom-componen
 6. Edit your `configuration.yaml` file add an entry similar to the example below.
 7. Restart Home Assistant
 
-Using your Home Assustant configuration directory as a starting point you should now also have this:
-
-```bash
-custom_components/openhasp/__init__.py
-custom_components/openhasp/common.py
-custom_components/openhasp/const.py
-custom_components/openhasp/light.json
-custom_components/openhasp/manifest.json
-custom_components/openhasp/services.yaml
-```
+!!! warning "Warning"
+    You have to use component version consistently with the firmware version on your plates. For example, if your plates are at firmware version 0.5.x, you also need to use component version 0.5.x to ensure interoperability. Home Assistant will show a warning if it finds a version mismatch. Note that you can only have one version of the component installed at a time so a mix of plate versions cannot be deployed.
 
 * * * * *
 
-We call _plate_ any device running openHASP in your system.
-
-Make sure you have your plates connected to the network and each of them has a unique MQTT topic. Static DHCP or fixed IP are not needed as communication only happes through MQTT. 
+Connect your plates to the network and make sure each of them has a unique MQTT topic. Static DHCP or fixed IP are not needed as communication only happes through MQTT. The component will automatically discover them and you will see them appearing in _Home Assistant > Configuration > Integrations > HASP-Open Hardware Edition_.
 
 ## Configuration 
+
+When Home Assistant detects your plate, you will have to give it a name. In the examples below both name and node name is `plate35`.
 
 ### Example
 
@@ -43,14 +41,11 @@ To add an openHASP plate to your installation with a sample configuration, uploa
 {"page":0,"id":1,"obj":"label","x":175,"y":5,"h":30,"w":62,"text":"00.0°C","align":2,"bg_color":"#2C3E50","text_color":"#FFFFFF"}
 ```
 
-Assuming your plate's configured MQTT topic is `plate35`, you can add the following to your `configuration.yaml` file:
+Assuming your plate's configured MQTT node name is `plate35`, you can add the following to your `configuration.yaml` file:
 
 ```yaml
 openhasp:
-  plate_my_room:
-    topic: "hasp/plate35"
-    path: "/config/openhasp/pages_my_room.jsonl"
-    idle_brightness: 35
+  plate35:
     objects:
       - obj: "p0b1"  # temperature label on all pages
         properties:
@@ -76,18 +71,17 @@ openhasp:
 **openhasp:** *(Required)*    
 The platform identifier. Required once in the configuration, this will activate the custom component.
 
-**plate_my_room:** *(Required)*    
-Your plate identifier. For each plate in your sytem, such an entry is required, has to be unique.
+**plate35:** *(Required)*    
+Your plate identifier. For each plate in your sytem, such an entry is required, has to be unique. It is generated automatically from the plate name you gave during discovery, which by default equals to the _HASP Node Name_ set in the plate's [configuration](../../configuration/mqtt.md).
 
-**topic:** *(string) (Required)*     
-The MQTT topic your plate is configured with.
-
+<!--
 **path:** *(path) (Optional)*     
 Path to a `pages.jsonl` file containing design for this plate, to be loaded on Home Assistant start and on plate availability (becoming online).<br>
 _Note:_ Don't upload any `pages.jsonl` file to the plate's flash memory at all! This assumes your plate pages are empty at boot. Checkout the _services_ section for requirements to use this.
 
 **idle_brightness:** *(int) (Optional)*    
 The brightness of the screen when idle (before long idle). Numeric value between 1 and 255. Default 25. 
+-->
 
 **objects:** *(Optional)*     
 Definition of the objects reacting to changes in Home Assistant, or generating events for Home Assistant.
