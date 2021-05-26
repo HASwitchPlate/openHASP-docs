@@ -24,13 +24,13 @@ Install using [HACS](https://hacs.xyz/) in one-click. This is the preferred and 
 
 ## Configuration 
 
-First prepare your plates to be integrated with Home Assistant:
+First prepare your plates to be integrated with Home Assistant (follow steps in order):
 
 1. Connect your plates to the [network](../../installation/wifi-setup.md). Static DHCP or fixed IP is not needed as communication only happes through MQTT.
-2. Set the [GPIO configuration](../../configuration/gpio.md) corresponding to your hardware, save and reboot.
-3. Set the [MQTT server](../../configuration/mqtt.md) settings and make sure each platge has a unique node name, save and reboot.
+2. Set the [GPIO configuration](../../configuration/gpio.md) corresponding to your hardware (important for them to be detected as entities), save and reboot.
+3. Set the [MQTT server](../../configuration/mqtt.md) settings and make sure each plate has a unique node name, save and reboot.
 
-The component will automatically discover them and you will see them appearing in _Home Assistant > Configuration > Integrations > HASP-Open Hardware Edition_.
+The component will automatically discover the plates and you will see them appearing in _Home Assistant > Configuration > Integrations > HASP-Open Hardware Edition_.
 
 When Home Assistant detects your plate, you will have to give it a name. In the examples below both name and node name is `plate35`.
 
