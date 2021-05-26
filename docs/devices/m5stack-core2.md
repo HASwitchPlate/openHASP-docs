@@ -1,4 +1,4 @@
-<h1>M5Stack core2</h1>
+# M5Stack core2
 
 ![M5Stack core2](../assets/images/devices/m5stack-core2.jpg)
 

@@ -66,7 +66,7 @@ p4b2.value_font=12
 ```
 
 !!! note
-    It is possible to create custom builds with built-in fonts of other sizes (choose any _four_ of 12, 14, 16, 20, 22, 24, 26, 28, 32, 36, 38, 40, 44, 48) and supporting Latin-2 or Cyrillic character sets (even combined) by [customizing](../../compiling#customization) `user_config_override.h`.
+    It is possible to create custom builds with built-in fonts of other sizes (choose any _four_ of 12, 14, 16, 20, 22, 24, 26, 28, 32, 36, 38, 40, 44, 48) and supporting Latin-2 or Cyrillic character sets (even combined) by [customizing](../compiling/customize.md) `user_config_override.h`.
 
 ## Built-in Icons
 

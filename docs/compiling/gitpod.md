@@ -15,7 +15,9 @@ Click on one of the links below, and that will automatically load Gitpod with op
 
 After Gitpod loads the project, you will be greeted by the main window.
 
-![gitpod](../assets/images/compiling/gitpod.png)
+<a href="../../assets/images/compiling/gitpod.png" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-8" data-title="GitPod" data-footer="">
+    <img src="../../assets/images/compiling/gitpod.png" class="img-thumbnail">
+</a>
 
 ## Choose the version you need
 

@@ -1,21 +1,37 @@
-<h1>FreeTouchDeck</h1>
+# FreeTouchDeck
 
-![FreeTouchDeck](../assets/images/devices/freetouchdeck.png)
+<div class="row justify-content-center">
+        <a href="../../assets/images/devices/freetouchdeck.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-6" data-title="FreeTouchDeck in 3D printed case" data-footer="Original image by Dustin Watts - Used with permission">
+            <img src="../../assets/images/devices/freetouchdeck.jpg" class="img-fluid">
+        </a>
+
+        <a href="../../assets/images/devices/freetouchdeck-side.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-6" data-title="FreeTouchDeck in 3D printed case" data-footer="Original image by Dustin Watts - Used with permission">
+            <img src="../../assets/images/devices/freetouchdeck-side.jpg" class="img-fluid">
+        </a>
+</div>
+<div>
+        <a href="../../assets/images/devices/freetouchdeck-bare.jpg" data-toggle="lightbox" data-gallery="example-gallery" rel="lightbox[work]" data-title="FreeTouchDeck PCB combiner with display" data-footer="Original image by Dustin Watts - Used with permission">more images...</a>
+</div>
 
 Features:
 
    - ESP32 DevKitC (38pin)
-   - ili9488 TFT SPI 4-WIRE
-   - xpt2046 resistive touch controller
+   - ILI9488 TFT SPI 4-WIRE
+   - XPT2046 resistive touch controller
 
 This board is created for the [FreeTouchDeck project](https://github.com/DustinWatts/FreeTouchDeck)
 and the [PCB-combiner board](https://www.pcbway.com/project/shareproject/ESP32_TFT_Combiner_V1.html) is open source. Due to the extensive documentation it was easy to port openHASP to the FreeTouchDeck.
 
-| Pros              | Cons
-|:-----             |:----
-| 480x320 display   | 4 MB flash
-| Price             | No PSram
-|  | Resistive touch
+| Pros               | Cons
+|:-----              |:----
+| 480x320 Display    | 4 MB flash
+| Price              | No PSram
+| [Build Instructions][1] | Resistive touch
+
+[1]: https://www.instructables.com/A-Bluetooth-ESP32-TFT-Touch-Macro-Keypad/
+
+This is a kit so you need to assemble the parts yourself. Some soldering skills are required.
+You can 3D print a custom enclosure.
 
 
 ## Video
@@ -25,6 +41,20 @@ and the [PCB-combiner board](https://www.pcbway.com/project/shareproject/ESP32_T
 ## 3D Printed Cases
 
 You can find a 3D printable case on [Thingiverse]((https://www.thingiverse.com/thing:4661069)) and [Github](https://github.com/DustinWatts/FreeTouchDeck/tree/master/case/ESP32_TFT_Combiner_Case).
+
+<div class="row justify-content-center">
+        <a href="../../assets/images/devices/freetouchdeck-case1.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4" data-title="FreeTouchDeck in 3D printed case" data-footer="Original image by Dustin Watts - Used with permission">
+            <img src="../../assets/images/devices/freetouchdeck-case1.jpg" class="img-fluid">
+        </a>
+
+        <a href="../../assets/images/devices/freetouchdeck-case2.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4" data-title="FreeTouchDeck in 3D printed case" data-footer="Original image by Dustin Watts - Used with permission">
+            <img src="../../assets/images/devices/freetouchdeck-case2.jpg" class="img-fluid">
+        </a>
+
+        <a href="../../assets/images/devices/freetouchdeck-case3.png" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4" data-title="FreeTouchDeck in 3D printed case" data-footer="Original image by Dustin Watts - Used with permission">
+            <img src="../../assets/images/devices/freetouchdeck-case3.png" class="img-fluid">
+        </a>
+</div>
 
 ## Flashing
 
@@ -41,7 +71,9 @@ The PCB Combiner is fully [Open Source Hardware](https://github.com/DustinWatts/
 - Schematics
 - PCB layout
 
-![PCB Combiner](../assets/images/devices/freetouchdeck-pcb.png)
+<a href="../../assets/images/devices/freetouchdeck-pcb.png" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4" data-title="FreeTouchDeck PCB Combiner" data-footer="Original image by Dustin Watts - Used with permission">
+    <img src="../../assets/images/devices/freetouchdeck-pcb.png" class="img-fluid">
+</a>
 
 ## HASP build_flags
 

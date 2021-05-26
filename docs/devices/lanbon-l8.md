@@ -1,4 +1,4 @@
-<h1>Lanbon L8</h1>
+# Lanbon L8
 
 ![Display image](../assets/images/devices/lanbon-l8-models.png)
 

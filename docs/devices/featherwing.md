@@ -1,9 +1,9 @@
-<h1>Adafruit Featherwing</h1>
+# Adafruit Featherwing
 
 <div class="row justify-content-center">
-            <a href="https://raw.githubusercontent.com/HASwitchPlate/openHASP-docs/master/docs/assets/images/devices/featherwing24.png" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-8" data-title="<a href='https://learn.adafruit.com/3d-printed-case-for-adafruit-feather/tft-feather-wing'>Adafruit Featherwing</a>" data-footer="Original image by <a href='https://learn.adafruit.com/assets/40718'>Ruiz Brothers</a> - LICENSE: <a href='https://creativecommons.org/licenses/by-sa/3.0/'>Attribution-ShareAlike Creative Commons</a>">
-                <img src="../../assets/images/devices/featherwing24.png" class="img-fluid">
-            </a>
+    <a href="../../assets/images/devices/featherwing24.png" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-8" data-title="<a href='https://learn.adafruit.com/3d-printed-case-for-adafruit-feather/tft-feather-wing'>Adafruit Featherwing</a>" data-footer="Original image by <a href='https://learn.adafruit.com/assets/40718'>Ruiz Brothers</a> - LICENSE: <a href='https://creativecommons.org/licenses/by-sa/3.0/'>Attribution-ShareAlike Creative Commons</a>">
+        <img src="../../assets/images/devices/featherwing24.png" class="img-fluid">
+    </a>
 </div>
 
 You can run openHASP on the Adafruit HUZZAH32 – ESP32 Feather Board with a TFT Featherwing display.
