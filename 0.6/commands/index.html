@@ -1476,9 +1476,26 @@ These leds can then be controlled together using the <code>moodlight</code> comm
 <p>Deprecated, use the <code>idle off</code> command instead</p>
 <h2 id="outputx">output[x] <span class="twemoji tag-medium"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 4c1.11 0 2 .89 2 2v12c0 1.11-.89 2-2 2H4c-1.11 0-2-.89-2-2V6c0-1.11.89-2 2-2h16M8.5 15V9H7.25v3.5L4.75 9H3.5v6h1.25v-3.5L7.3 15h1.2m5-4.74V9h-4v6h4v-1.25H11v-1.11h2.5v-1.26H11v-1.12h2.5m7 3.74V9h-1.25v4.5h-1.12V10h-1.25v3.5h-1.13V9H14.5v5a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1z"/></svg></span><a class="headerlink" href="#outputx" title="Permanent link">~</a></h2>
 <p>where <code>[x]</code> is number of the gpio pin (0-39)</p>
-<p><em>accepted parameters:</em> <code>1</code> or <code>0</code>, <code>on</code> or <code>off</code>, <code>true</code> or <code>false</code></p>
-<p>Sets <strong>all</strong> GPIO's assigned to the group number &lt;x&gt; in <strong>Configuration -&gt; <a href="../configuration/gpio">GPIO Configuration</a></strong> to "0" or "1".</p>
-<p>GUI objects that are assigned to the same group using <code>groupid</code> during object creation will change state accordingly.</p>
+<p><em>accepted json keys:</em></p>
+<ul>
+<li><strong>state:</strong> <code>on</code>/<code>off</code>, <code>true</code>/<code>false</code>, <code>0</code>/<code>1</code>, <code>yes</code>/<code>no</code></li>
+<li><strong>val:</strong> <code>0..255</code></li>
+</ul>
+<p>Changes the state GPIO pin to <code>on</code> or <code>off</code>. If the pin is configured as a <code>LED</code> or <code>Serial Dimmer</code> then the <code>val</code> key will control the brightness.</p>
+<div class="admonition bug">
+<p class="admonition-title">Bug</p>
+<p>It is currently required to set <strong>both</strong> <code>state</code> and <code>val</code> for relays:
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="err">ou</span><span class="kc">t</span><span class="err">pu</span><span class="kc">t</span><span class="mi">12</span> <span class="p">{</span><span class="nt">&quot;state&quot;</span><span class="p">:</span><span class="s2">&quot;on&quot;</span><span class="p">,</span><span class="nt">&quot;val&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">}</span>
+<span class="err">ou</span><span class="kc">t</span><span class="err">pu</span><span class="kc">t</span><span class="mi">12</span> <span class="p">{</span><span class="nt">&quot;state&quot;</span><span class="p">:</span><span class="s2">&quot;off&quot;</span><span class="p">,</span><span class="nt">&quot;val&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+Without <code>val</code> the relay won't switch.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If the GPIO is assigned to a group then objects and other GPIOs that share the same <code>groupid</code> will change state accordingly.</p>
+</div>
 <h2 id="system-commands">System Commands<a class="headerlink" href="#system-commands" title="Permanent link">~</a></h2>
 <div class="admonition danger">
 <p class="admonition-title"><code>calibrate</code></p>
