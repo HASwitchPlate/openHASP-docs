@@ -20,7 +20,7 @@ Example:
 jsonl {"obj":"btn","id":14,"x":120,"y":1,"w":30,"h":40,"text_font":"2","text":"Test","text_color":"gray","bg_opa":0,"border_width":0}
 ```
 
-*For more details see [Pages](../design/pages) and [Objects](../design/objects)*
+_For more details see [Pages](../design/pages) and [Objects](../design/objects)._
 
 
 ## json
