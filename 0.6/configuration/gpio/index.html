@@ -460,51 +460,78 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#web-ui" class="md-nav__link">
-    Web UI
+  <a href="#gpio-overview" class="md-nav__link">
+    GPIO Overview
   </a>
   
 </li>
       
         <li class="md-nav__item">
+  <a href="#input-pin" class="md-nav__link">
+    Input Pin
+  </a>
+  
+    <nav class="md-nav" aria-label="Input Pin">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#pin" class="md-nav__link">
     Pin
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#groupid" class="md-nav__link">
-    Groupid
+        
+          <li class="md-nav__item">
+  <a href="#group" class="md-nav__link">
+    Group
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#default-state" class="md-nav__link">
     Default state
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#types" class="md-nav__link">
-    Types
-  </a>
-  
-    <nav class="md-nav" aria-label="Types">
-      <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#button" class="md-nav__link">
-    Button
+  <a href="#resistor" class="md-nav__link">
+    Resistor
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#switch" class="md-nav__link">
-    Switch
+  <a href="#type" class="md-nav__link">
+    Type
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#output-pin" class="md-nav__link">
+    Output Pin
+  </a>
+  
+    <nav class="md-nav" aria-label="Output Pin">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pin_1" class="md-nav__link">
+    Pin
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#group_1" class="md-nav__link">
+    Group
   </a>
   
 </li>
@@ -1146,51 +1173,78 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#web-ui" class="md-nav__link">
-    Web UI
+  <a href="#gpio-overview" class="md-nav__link">
+    GPIO Overview
   </a>
   
 </li>
       
         <li class="md-nav__item">
+  <a href="#input-pin" class="md-nav__link">
+    Input Pin
+  </a>
+  
+    <nav class="md-nav" aria-label="Input Pin">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#pin" class="md-nav__link">
     Pin
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#groupid" class="md-nav__link">
-    Groupid
+        
+          <li class="md-nav__item">
+  <a href="#group" class="md-nav__link">
+    Group
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#default-state" class="md-nav__link">
     Default state
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#types" class="md-nav__link">
-    Types
-  </a>
-  
-    <nav class="md-nav" aria-label="Types">
-      <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#button" class="md-nav__link">
-    Button
+  <a href="#resistor" class="md-nav__link">
+    Resistor
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#switch" class="md-nav__link">
-    Switch
+  <a href="#type" class="md-nav__link">
+    Type
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#output-pin" class="md-nav__link">
+    Output Pin
+  </a>
+  
+    <nav class="md-nav" aria-label="Output Pin">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pin_1" class="md-nav__link">
+    Pin
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#group_1" class="md-nav__link">
+    Group
   </a>
   
 </li>
@@ -1246,38 +1300,62 @@
                 
                 
                 <h1 id="gpio-settings">GPIO Settings<a class="headerlink" href="#gpio-settings" title="Permanent link">~</a></h1>
-<p>You can attach external devices like buttons, switches, relays or LEDs using the GPIO pins of the ESP.</p>
-<h2 id="web-ui">Web UI<a class="headerlink" href="#web-ui" title="Permanent link">~</a></h2>
-<p><img alt="GPIO Settings" src="../../assets/images/settings/gpio_addpin.png" title="GPIO Add New Pin" /> &nbsp;
-<img alt="GPIO Pin Configuration" src="../../assets/images/settings/gpio_pinconfig.png" title="GPIO Pin Configuration" /></p>
-<h2 id="pin">Pin<a class="headerlink" href="#pin" title="Permanent link">~</a></h2>
-<p>Select the pin of the gpio to use.</p>
-<p>Pins known to be in use will be hidden from this list.
-Check the documentation of your board to see which pins are free to be used as gpio.</p>
-<h2 id="groupid">Groupid<a class="headerlink" href="#groupid" title="Permanent link">~</a></h2>
-<p>GPIOs and objects can be grouped together by specifying a groupid. The state of objects is then altered by any object in the same group. This allows for simple action-reaction scenarios without relying on a home automation system:</p>
+<h2 id="gpio-overview">GPIO Overview<a class="headerlink" href="#gpio-overview" title="Permanent link">~</a></h2>
+<p>You can attach external devices like buttons, switches, relays, lights or LEDs using the GPIO pins of the ESP.</p>
+<div class="row justify-content-center">
+            <a href="../../assets/images/settings/gpio_addpin.png" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-8" data-title="GPIO Overview" data-footer="">
+                <img src="../../assets/images/settings/gpio_addpin-thumbnail.png" class="img-fluid img-thumbnail">
+            </a>
+</div>
+
+<h2 id="input-pin">Input Pin<a class="headerlink" href="#input-pin" title="Permanent link">~</a></h2>
+<div class="row justify-content-center">
+            <a href="../../assets/images/settings/gpio_input.png" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-8" data-title="GPIO Input" data-footer="">
+                <img src="../../assets/images/settings/gpio_input-thumbnail.png" class="img-fluid img-thumbnail">
+            </a>
+</div>
+
+<h3 id="pin">Pin<a class="headerlink" href="#pin" title="Permanent link">~</a></h3>
+<p>Select the GPIO number of the input pin to use.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Pins known to be in use will be hidden from this list of available pins.
+Check the documentation of your board to see which pins are free to be used as GPIO.</p>
+</div>
+<h3 id="group">Group<a class="headerlink" href="#group" title="Permanent link">~</a></h3>
+<p>GPIOs and objects can be grouped together by specifying a <code>groupid</code>. The state of objects in the same group is altered by the value of this input.
+This allows for simple action-reaction scenarios without relying on a home automation system:</p>
 <ul>
 <li>Link a switch and relay together</li>
 <li>Link a push button and doorbell together</li>
 </ul>
-<p>The applied value is <em>normalized</em> and <em>proportionate</em> to the value of the input object, much like a percentage:</p>
-<ul>
-<li>Binary objects, like a switch, checkbox or toggle button only pass along 0% and 100% values.</li>
-<li>Range objects, like a slider, arc slider, roller or drop-down list pass along a value between 0-65535, depending on their current <code>min</code>, <code>max</code> and <code>val</code> attributes.</li>
-</ul>
+<p>The state of a digital input can only be <code>on</code> or <code>off</code> and will set all group members to either 100% or 0% of their maximum value.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The grouping of multiple gpios and objects together is intended for simple actions only.
 More complex actions should be performed by a home automation system, without linking groupids together.</p>
 </div>
-<h2 id="default-state">Default state<a class="headerlink" href="#default-state" title="Permanent link">~</a></h2>
-<p>The polarity of the gpio when it is <em>not</em> being engaged i.e. the gpio is not connected, zero or idle:</p>
+<h3 id="default-state">Default state<a class="headerlink" href="#default-state" title="Permanent link">~</a></h3>
+<p>The state of the input when it is <em>not</em> being engaged:
+<em>i.e.</em> the switch, button or sensor is idle <em>(not active)</em>:</p>
 <ul>
-<li><code>HIGH</code>: The default state is high using the internal PULL_UP resistor. </li>
-<li><code>LOW</code>: The default state is low using the internal PULL_DOWN resistor. </li>
+<li><strong>Normally Open</strong>: The default state interrupts the circuit</li>
+<li><strong>Normally Closed</strong>: The default state completes the circuit</li>
 </ul>
-<h2 id="types">Types<a class="headerlink" href="#types" title="Permanent link">~</a></h2>
-<h3 id="button">Button<a class="headerlink" href="#button" title="Permanent link">~</a></h3>
+<h3 id="resistor">Resistor<a class="headerlink" href="#resistor" title="Permanent link">~</a></h3>
+<p>To avoid ghost events and RF interference each input should either have a <em>pullup</em> or <em>pulldown</em> resistor.
+This ensures the signal in the default state is always <code>HIGH</code> or <code>LOW</code> respectively.</p>
+<p>Most input pins have either an internal <em>pullup</em> or <em>pulldown</em> resistor that can be activated by the firmware.
+Check the documentation of your MCU whether the pin you want to use provides this functionality.
+If an internal <em>pullup</em> or <em>pulldown</em> resistor is not available on that pin you <strong>must</strong> add an external resistor and connect it either to <code>3.3V</code> or <code>GND</code>.</p>
+<ul>
+<li><strong>Internal Pullup</strong>: The pin is pulled <code>HIGH</code> internally by the firmware </li>
+<li><strong>Internal Pulldown</strong>: The pin is pulled <code>LOW</code> internally by the firmware</li>
+<li><strong>External Pullup</strong>: The pin is pulled <code>HIGH</code> by an external resistor</li>
+<li><strong>External Pulldown</strong>: The pin is pulled <code>LOW</code> by an external resistor</li>
+</ul>
+<h3 id="type">Type<a class="headerlink" href="#type" title="Permanent link">~</a></h3>
+<h4 id="button">Button<a class="headerlink" href="#button" title="Permanent link">~</a></h4>
 <p>A button gpio sends events to topic <code>input#</code> where <code>#</code> is the groupnumber.</p>
 <p>GPIO buttons send out <strong>events</strong> while they occur. The possible events are:</p>
 <ul>
@@ -1290,20 +1368,41 @@ More complex actions should be performed by a home automation system, without li
 <!-- - `LOST`: This event occurs when the object looses the focus while the screen is still being touched -->
 
 <p>The values of objects or gpios with the same groupid will be set to maximum when the button is being pressed and to minimum when the button is released.</p>
-<h3 id="switch">Switch<a class="headerlink" href="#switch" title="Permanent link">~</a></h3>
+<h4 id="switch">Switch<a class="headerlink" href="#switch" title="Permanent link">~</a></h4>
 <p>A switch gpio sends events to <code>input#</code> where <code>#</code> is the groupnumber.</p>
 <p>GPIO Switches send out their <strong>value</strong> when toggled: {"val":"0"} or {"val":"1"}.</p>
 <p>The values of objects or gpios in the same group will be set to maximum when the switch is turned on
 and to minimum when the switch is turned off.</p>
+<h2 id="output-pin">Output Pin<a class="headerlink" href="#output-pin" title="Permanent link">~</a></h2>
+<div class="row justify-content-center">
+            <a href="../../assets/images/settings/gpio_output.png" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-8" data-title="GPIO Output" data-footer="">
+                <img src="../../assets/images/settings/gpio_output-thumbnail.png" class="img-fluid img-thumbnail">
+            </a>
+</div>
+
+<h3 id="pin_1">Pin<a class="headerlink" href="#pin_1" title="Permanent link">~</a></h3>
+<p>Select the GPIO number of the output pin to use.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Pins known to be in use will be hidden from this list of available pins.
+Check the documentation of your board to see which pins are free to be used as GPIO.</p>
+</div>
+<h3 id="group_1">Group<a class="headerlink" href="#group_1" title="Permanent link">~</a></h3>
+<p>The applied value is <em>normalized</em> and <em>proportionate</em> to the value of the input object, much like a percentage:</p>
+<ul>
+<li>Binary objects, like a switch, checkbox or toggle button only pass along 0% and 100% values.</li>
+<li>Range objects, like a slider, arc slider, roller or drop-down list pass along a value between 0-65535, depending on their current <code>min</code>, <code>max</code> and <code>val</code> attributes.</li>
+</ul>
 <h3 id="relay">Relay<a class="headerlink" href="#relay" title="Permanent link">~</a></h3>
 <p>Set the relay ON or OFF when an event is received on <code>output#</code> where <code>#</code> is the groupnumber or from another group <code>intput</code>.</p>
 <p>When a relay is grouped with a button or switch in the same group, it will be turned ON or OFF according to the state of the button or switch.</p>
 <p>When a relay is controlled by a range object (slider, arc slider, roller, drop-down list) within the same group, the state will be be ON if the <code>.val</code> value is halfway the range or above.</p>
 <div class="admonition danger">
-<p class="admonition-title">Warning</p>
+<p class="admonition-title">Warning!</p>
 <p>Attaching devices to mains power can be dangerous!
 Configuring gpios is done on your <strong>own responsibility</strong>.
-Be sure to test any system thoroughly using low voltages first.</p>
+Be sure to test any system thoroughly using low voltages first.
+By using the firmware you accept the <a href="../../license">License</a>.</p>
 </div>
 <h3 id="led">Led<a class="headerlink" href="#led" title="Permanent link">~</a></h3>
 <p>Set the brightness of the LED between <code>0</code> and <code>255</code> when a value is received on <code>output#</code> where <code>#</code> is the groupnumber.</p>
@@ -1331,7 +1430,7 @@ These will set the brightness of the led to 0 (0%), 84 (33%), 170 (66%) and 255 
 <div class="md-source-date">
   <small>
     
-      Last update: 2021-05-25
+      Last update: 2021-05-26
     
   </small>
 </div>
