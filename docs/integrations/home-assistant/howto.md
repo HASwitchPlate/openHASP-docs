@@ -24,6 +24,7 @@ Alternatively, you can also install it manually ([download](https://github.com/H
 ## Configuration 
 
 First prepare your plates to be integrated with Home Assistant:
+
 - Connect your plates to the [network](../../installation/wifi-setup.md). Static DHCP or fixed IP is not needed as communication only happes through MQTT.
 - Set the [GPIO configuration](../../configuration/gpio.md) corresponding to your hardware, save and reboot.
 - Set the [MQTT server](../../configuration/mqtt.md) settings and make sure each platge has a unique node name, save and reboot.
