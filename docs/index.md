@@ -12,10 +12,10 @@ This project also adds ESP32 and STM32F4 support to take advantage of the additi
 
 ### Demo Screens
 
-[![screenshot](assets/images/screenshots/demo_switches_covers.png)](custom-component/sampl_conf#some-basic-controls) &nbsp; 
-[![screenshot](assets/images/screenshots/demo_mediaplayer.png)](custom-component/sampl_conf#media-player) &nbsp;     
-[![Screenshot](assets/images/screenshots/lanbon.png)](example-dashui) &nbsp;
-[![Screenshot](assets/images/screenshots/demo_jaffa1.png)](integration_openhab) &nbsp; 
+[![screenshot](assets/images/screenshots/demo_switches_covers.png)](integrations/home-assistant/sampl_conf#some-basic-controls) &nbsp; 
+[![screenshot](assets/images/screenshots/demo_mediaplayer.png)](integrations/home-assistant/sampl_conf#media-player) &nbsp;     
+[![Screenshot](assets/images/screenshots/lanbon.png)](integrations/examples/example-dashui.md) &nbsp;
+[![Screenshot](assets/images/screenshots/demo_jaffa1.png)](integrations/openhab/integration_openhab.md) &nbsp; 
 
 ### Features
 
@@ -35,9 +35,11 @@ This project also adds ESP32 and STM32F4 support to take advantage of the additi
 
 ### Support
 
-For support using openHASP, please join the [#openHASP channel][5] on Discord
-or use [Discussions][3] on Github.
+For support using openHASP please find us on Github, Discord or Home Assistant:
 
+[:material-github: Github Discussions][3]{ .md-button .md-button--primary }
+[:material-discord: Discord Chat][5]{ .md-button .md-button--primary }
+[:material-home-assistant: Home Assistant Forum][6]{ .md-button .md-button--primary }
 
 
 [1]: https://github.com/HASwitchPlate/HASPone
@@ -45,3 +47,4 @@ or use [Discussions][3] on Github.
 [3]: https://github.com/HASwitchPlate/openHASP/discussions
 [4]: https://github.com/fvanroie/HMI-Font-Pack/releases
 [5]: https://discord.gg/VCWyuhF
+[6]: https://community.home-assistant.io/t/openhasp-an-mqtt-driven-touchscreen-scene-controller/300853
