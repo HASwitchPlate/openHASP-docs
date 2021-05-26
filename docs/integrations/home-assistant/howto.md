@@ -41,7 +41,7 @@ To add an openHASP plate to your installation with a sample configuration, uploa
 {"page":0,"id":1,"obj":"label","x":175,"y":5,"h":30,"w":62,"text":"00.0°C","align":2,"bg_color":"#2C3E50","text_color":"#FFFFFF"}
 ```
 
-Assuming your plate's configured MQTT node name is `plate35`, you can add the following to your `configuration.yaml` file:
+Assuming your plate's configured MQTT node name is `plate35`, add the following to your `configuration.yaml` file (Home Assistant will deliberatey ask for it when finished autodetection procedure):
 
 ```yaml
 openhasp:
@@ -72,7 +72,7 @@ openhasp:
 The platform identifier. Required once in the configuration, this will activate the custom component.
 
 **plate35:** *(Required)*    
-Your plate identifier. For each plate in your sytem, such an entry is required, has to be unique. It is generated automatically from the plate name you gave during discovery, which by default equals to the _HASP Node Name_ set in the plate's [configuration](../../configuration/mqtt.md).
+Your plate identifier slug. For each plate in your sytem, such an entry is required, has to be unique. It is generated automatically from the plate name you gave during discovery, which by default equals to the _HASP Node Name_ set in the plate's [configuration](../../configuration/mqtt.md).
 
 <!--
 **path:** *(path) (Optional)*     
