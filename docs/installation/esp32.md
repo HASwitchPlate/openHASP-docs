@@ -30,7 +30,7 @@ The actual procedure to flash the ESP32 depends on the tool used. Click on the t
     esptool.py --port COM1 --baud 921600 write_flash 0x0 d1-mini-esp32_ili9341_full_4MB_<version>.bin
     ```
 
-    Change `COM1` to the correct port on your computer.
+    Change `COM1` to the correct port on your computer. If you get an error at the end of the flash procedure, you can try with a lower the baudrate eg. 460800.
 
 === "Tasmota-PyFlasher :material-microsoft-windows:"
     [Tasmota-PyFlasher](https://github.com/tasmota/tasmota-pyflasher/releases/tag/1.0) is a simple GUI tool for flashing ESP32 firmware wihout any installation.
