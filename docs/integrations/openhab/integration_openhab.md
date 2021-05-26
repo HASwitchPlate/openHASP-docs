@@ -54,9 +54,9 @@ Restart the plate and the demo page should load automatically to your device.
 
 ## Result
 
-![Screenshot](../../assets/images/screenshots/demo_jaffa1.png){: align=left }
-![Screenshot](../../assets/images/screenshots/demo_jaffa2.png){: align=left }
-![Screenshot](../../assets/images/screenshots/demo_jaffa3.png){: align=left }
+![Screenshot](../../assets/images/screenshots/demo_jaffa1.png)
+![Screenshot](../../assets/images/screenshots/demo_jaffa2.png)
+![Screenshot](../../assets/images/screenshots/demo_jaffa3.png)
 
 
 <div style="clear:both;"></div>
