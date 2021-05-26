@@ -103,7 +103,7 @@ no need to use any jumper cables:
 
 !!! note "Note"
     If you have a Lolin TFT 2.4" Display and a compatible ESP development board, you have all the hardware that is needed.
-    In that case you can skip ahead to the [Firmware Installation](../installation/esp32).
+    In that case you can skip ahead to the [Firmware Installation](installation/esp32).
 
 ## Alternative SPI Display
 
@@ -119,6 +119,6 @@ You will need to connect [the GPIO pins](../displays/MSPxxxx) using jumper wires
 
 Some manufacturers offer IoT devices which are ready to go with openHASP:
 
-- [ESP32-Touchdown](../devices/esp32-touchdown)
-- [FreeTouchDeck](../devices/freetouchdeck)
-- [Lanbon L8](../devices/lanbon-l8)
+- [ESP32-Touchdown](devices/esp32-touchdown)
+- [FreeTouchDeck](devices/freetouchdeck)
+- [Lanbon L8](devices/lanbon-l8)
