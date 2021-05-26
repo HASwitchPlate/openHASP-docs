@@ -159,11 +159,23 @@ Deprecated, use the `idle off` command instead
 
 where `[x]` is number of the gpio pin (0-39)
 
-_accepted parameters:_ `1` or `0`, `on` or `off`, `true` or `false`
+_accepted json keys:_
 
-Sets **all** GPIO's assigned to the group number &lt;x> in **Configuration -> [GPIO Configuration][3]** to "0" or "1".
+- **state:** `on`/`off`, `true`/`false`, `0`/`1`, `yes`/`no`
+- **val:** `0..255`
 
-GUI objects that are assigned to the same group using `groupid` during object creation will change state accordingly.
+Changes the state GPIO pin to `on` or `off`. If the pin is configured as a `LED` or `Serial Dimmer` then the `val` key will control the brightness.
+
+!!! bug
+    It is currently required to set **both** `state` and `val` for relays:
+    ```json
+    output12 {"state":"on","val":1}
+    output12 {"state":"off","val":0}
+    ```
+    Without `val` the relay won't switch.
+
+!!! note
+    If the GPIO is assigned to a group then objects and other GPIOs that share the same `groupid` will change state accordingly.
 
 
 ## System Commands
