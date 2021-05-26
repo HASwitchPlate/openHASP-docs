@@ -1215,8 +1215,11 @@
                 
                 
                 <p>The openHASP Custom Component simplifies synchronization of objects on one or more openHASP plates with Home Assistant entities.</p>
-<p>You need to <a href="https://github.com/HASwitchPlate/openHASP-custom-component/archive/refs/heads/main.zip">download</a> it and install it in Home Assistant manually.</p>
+<p>We call <em>plate</em> any device running openHASP in your system.</p>
 <h1 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">~</a></h1>
+<p><a href="https://github.com/custom-components/hacs"><img alt="hacs_badge" src="https://img.shields.io/badge/HACS-Default-orange.svg?style=for-the-badge" /></a></p>
+<p>Install using <a href="https://hacs.xyz/">HACS</a> in one-click. This is the preferred and recommended method, as HACS provides a very effective way to keep the component updated and/or choose between various versions.</p>
+<p>Alternatively, you can also install it manually (<a href="https://github.com/HASwitchPlate/openHASP-custom-component/archive/refs/heads/main.zip">download</a> follow these steps): </p>
 <ol>
 <li>Using the tool of choice open the directory (folder) for your HA configuration (where you find <code>configuration.yaml</code>).</li>
 <li>If you do not have a <code>custom_components</code> directory there, you need to create it.</li>
@@ -1226,24 +1229,14 @@
 <li>Edit your <code>configuration.yaml</code> file add an entry similar to the example below.</li>
 <li>Restart Home Assistant</li>
 </ol>
-<p>Using your Home Assustant configuration directory as a starting point you should now also have this:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>custom_components/openhasp/__init__.py
-custom_components/openhasp/common.py
-custom_components/openhasp/const.py
-custom_components/openhasp/light.json
-custom_components/openhasp/manifest.json
-custom_components/openhasp/services.yaml
-</code></pre></div>
-</td></tr></table>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>You have to use component version consistently with the firmware version on your plates. For example, if your plates are at firmware version 0.5.x, you also need to use component version 0.5.x to ensure interoperability. Home Assistant will show a warning if it finds a version mismatch. Note that you can only have one version of the component installed at a time so a mix of plate versions cannot be deployed.</p>
+</div>
 <hr />
-<p>We call <em>plate</em> any device running openHASP in your system.</p>
-<p>Make sure you have your plates connected to the network and each of them has a unique MQTT topic. Static DHCP or fixed IP are not needed as communication only happes through MQTT. </p>
+<p>Connect your plates to the network and make sure each of them has a unique MQTT topic. Static DHCP or fixed IP are not needed as communication only happes through MQTT. The component will automatically discover them and you will see them appearing in <em>Home Assistant &gt; Configuration &gt; Integrations &gt; HASP-Open Hardware Edition</em>.</p>
 <h2 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">~</a></h2>
+<p>When Home Assistant detects your plate, you will have to give it a name. In the examples below both name and node name is <code>plate35</code>.</p>
 <h3 id="example">Example<a class="headerlink" href="#example" title="Permanent link">~</a></h3>
 <p>To add an openHASP plate to your installation with a sample configuration, upload a <code>pages.jsonl</code> file with the folowing content to your plate first:</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
@@ -1257,7 +1250,7 @@ custom_components/openhasp/services.yaml
 <span class="p">{</span><span class="nt">&quot;page&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="nt">&quot;obj&quot;</span><span class="p">:</span><span class="s2">&quot;label&quot;</span><span class="p">,</span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="mi">175</span><span class="p">,</span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span><span class="nt">&quot;h&quot;</span><span class="p">:</span><span class="mi">30</span><span class="p">,</span><span class="nt">&quot;w&quot;</span><span class="p">:</span><span class="mi">62</span><span class="p">,</span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="s2">&quot;00.0°C&quot;</span><span class="p">,</span><span class="nt">&quot;align&quot;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="nt">&quot;bg_color&quot;</span><span class="p">:</span><span class="s2">&quot;#2C3E50&quot;</span><span class="p">,</span><span class="nt">&quot;text_color&quot;</span><span class="p">:</span><span class="s2">&quot;#FFFFFF&quot;</span><span class="p">}</span>
 </code></pre></div>
 </td></tr></table>
-<p>Assuming your plate's configured MQTT topic is <code>plate35</code>, you can add the following to your <code>configuration.yaml</code> file:</p>
+<p>Assuming your plate's configured MQTT node name is <code>plate35</code>, you can add the following to your <code>configuration.yaml</code> file:</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -1277,14 +1270,8 @@ custom_components/openhasp/services.yaml
 <span class="normal">17</span>
 <span class="normal">18</span>
 <span class="normal">19</span>
-<span class="normal">20</span>
-<span class="normal">21</span>
-<span class="normal">22</span>
-<span class="normal">23</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nt">openhasp</span><span class="p">:</span>
-  <span class="nt">plate_my_room</span><span class="p">:</span>
-    <span class="nt">topic</span><span class="p">:</span> <span class="s">&quot;hasp/plate35&quot;</span>
-    <span class="nt">path</span><span class="p">:</span> <span class="s">&quot;/config/openhasp/pages_my_room.jsonl&quot;</span>
-    <span class="nt">idle_brightness</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">35</span>
+<span class="normal">20</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nt">openhasp</span><span class="p">:</span>
+  <span class="nt">plate35</span><span class="p">:</span>
     <span class="nt">objects</span><span class="p">:</span>
       <span class="p p-Indicator">-</span> <span class="nt">obj</span><span class="p">:</span> <span class="s">&quot;p0b1&quot;</span>  <span class="c1"># temperature label on all pages</span>
         <span class="nt">properties</span><span class="p">:</span>
@@ -1308,15 +1295,17 @@ custom_components/openhasp/services.yaml
 <h3 id="variable-definitions">Variable definitions<a class="headerlink" href="#variable-definitions" title="Permanent link">~</a></h3>
 <p><strong>openhasp:</strong> <em>(Required)</em>  <br />
 The platform identifier. Required once in the configuration, this will activate the custom component.</p>
-<p><strong>plate_my_room:</strong> <em>(Required)</em>  <br />
-Your plate identifier. For each plate in your sytem, such an entry is required, has to be unique.</p>
-<p><strong>topic:</strong> <em>(string) (Required)</em>   <br />
-The MQTT topic your plate is configured with.</p>
-<p><strong>path:</strong> <em>(path) (Optional)</em>   <br />
-Path to a <code>pages.jsonl</code> file containing design for this plate, to be loaded on Home Assistant start and on plate availability (becoming online).<br>
-<em>Note:</em> Don't upload any <code>pages.jsonl</code> file to the plate's flash memory at all! This assumes your plate pages are empty at boot. Checkout the <em>services</em> section for requirements to use this.</p>
-<p><strong>idle_brightness:</strong> <em>(int) (Optional)</em>  <br />
-The brightness of the screen when idle (before long idle). Numeric value between 1 and 255. Default 25. </p>
+<p><strong>plate35:</strong> <em>(Required)</em>  <br />
+Your plate identifier. For each plate in your sytem, such an entry is required, has to be unique. It is generated automatically from the plate name you gave during discovery, which by default equals to the <em>HASP Node Name</em> set in the plate's <a href="../../../configuration/mqtt/">configuration</a>.</p>
+<!--
+**path:** *(path) (Optional)*     
+Path to a `pages.jsonl` file containing design for this plate, to be loaded on Home Assistant start and on plate availability (becoming online).<br>
+_Note:_ Don't upload any `pages.jsonl` file to the plate's flash memory at all! This assumes your plate pages are empty at boot. Checkout the _services_ section for requirements to use this.
+
+**idle_brightness:** *(int) (Optional)*    
+The brightness of the screen when idle (before long idle). Numeric value between 1 and 255. Default 25. 
+-->
+
 <p><strong>objects:</strong> <em>(Optional)</em>   <br />
 Definition of the objects reacting to changes in Home Assistant, or generating events for Home Assistant.</p>
 <p><strong>obj:</strong> <em>(string) (Required)</em>   <br />
