@@ -30,24 +30,24 @@ If you already cloned openHASP without the submodules, you can fetch the submodu
 git submodule update --init --recursive
 ```
 
-To switch to a different branch use:
+To switch to a different branch (for example 0.6.0) use:
 
 ```bash
 git clone --recursive https://github.com/HASwitchPlate/openHASP
 cd openHASP
-git checkout 0.4.0
+git checkout 0.6.0
 git submodule update --init --recursive
 ```
 
 ## Open in PlatformIO
 
-![Install PIO](assets/images/compiling/install_pio.png)
+![Install PIO](../assets/images/compiling/install_pio.png)
 
 Open the project folder in [Visual Studio Code](https://code.visualstudio.com).
 You will receive a popup to install PlatformIO IDE if it is not already installed.
 This will automatically install all PlatformIO dependencies and the MCU compiler frameworks needed.
 
-![PIO Installed](assets/images/compiling/pio_installed.png)
+![PIO Installed](../assets/images/compiling/pio_installed.png)
 
 Restart Visual Studio Code when the PIO installation completes.
 
@@ -81,7 +81,7 @@ Then Click on the "Refresh Project tasks" icon in PlatformIO to list all the con
 
 ### MCU Environments
 
-![Build All](assets/images/compiling/build_all.png)
+![Build All](../assets/images/compiling/build_all.png)
 
 You can now run "Build" or "Build All" in PlatformIO to compile (all) the firmware.
 
