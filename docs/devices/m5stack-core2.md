@@ -32,6 +32,10 @@ Dimensions: 54 x 54 x 16mm
 | Internal Battery |
 | Capacitive Touchscreen |
 
+## Video
+
+![YOUTUBE](axN3O232WN0)
+
 ## Schematic
 
 <a href="../../assets/images/devices/m5stack-core2-schematic.png" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-6" data-title="M5stack core2 Schematic" data-footer="">
