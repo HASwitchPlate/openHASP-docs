@@ -21,8 +21,6 @@ Alternatively, you can also install it manually ([download](https://github.com/H
 !!! warning "Warning"
     You have to use component version consistently with the firmware version on your plates. For example, if your plates are at firmware version 0.5.x, you also need to use component version 0.5.x to ensure interoperability. Home Assistant will show a warning if it finds a version mismatch. Note that you can only have one version of the component installed at a time so a mix of plate versions cannot be deployed.
 
-* * * * *
-
 Connect your plates to the network and make sure each of them has a unique MQTT topic. Static DHCP or fixed IP are not needed as communication only happes through MQTT. The component will automatically discover them and you will see them appearing in _Home Assistant > Configuration > Integrations > HASP-Open Hardware Edition_.
 
 ## Configuration 
