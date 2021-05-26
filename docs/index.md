@@ -29,13 +29,13 @@ This project also adds ESP32 and STM32F4 support to take advantage of the additi
 | Dynamic Objects         | :white_check_mark: yes | :white_check_mark: yes | :white_check_mark: yes
 | Theme Support           | yes     | yes     | yes
 | [Custom .zi V5 font][4] | :white_check_mark: yes (latin1) | :white_check_mark: yes (latin1) | no
-| [MDI and FontAwesome Icons][5]  | :white_check_mark: 1300+ | :white_check_mark: 1300+ | no
-| PNG images              | :x: no | :grey_question: tbd | :grey_question: tbd 
+| MDI Icons               | :white_check_mark: yes | :white_check_mark: yes | no
+| PNG images              | :x: no | :white_check_mark: yes | :white_check_mark: yes
 | Network                 | :white_check_mark: Wi-Fi | :white_check_mark: Wi-Fi | :white_check_mark: Ethernet
 
 ### Support
 
-For support using openHASP, please join the [#openHASP channel][6] on Discord
+For support using openHASP, please join the [#openHASP channel][5] on Discord
 or use [Discussions][3] on Github.
 
 
@@ -44,5 +44,4 @@ or use [Discussions][3] on Github.
 [2]: https://github.com/lvgl/lvgl
 [3]: https://github.com/HASwitchPlate/openHASP/discussions
 [4]: https://github.com/fvanroie/HMI-Font-Pack/releases
-[5]: https://fontawesome.com/cheatsheet/
-[6]: https://discord.gg/VCWyuhF
+[5]: https://discord.gg/VCWyuhF
