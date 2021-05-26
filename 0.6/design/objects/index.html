@@ -2870,10 +2870,10 @@ The pop-up is centered on the screen.</p>
 <p class="admonition-title">Note</p>
 <p>The messagebox object is automatically deleted when it is closed. You will need to create it again using <code>jsonl</code> to pop-up a new message.</p>
 </div>
-<p>Example <code>jsonl</code>:
+<details class="example"><summary>Example <code>jsonl</code></summary></details>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;page&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">24</span><span class="p">,</span><span class="nt">&quot;obj&quot;</span><span class="p">:</span><span class="s2">&quot;msgbox&quot;</span><span class="p">,</span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="s2">&quot;A message box with two buttons&quot;</span><span class="p">,</span><span class="nt">&quot;options&quot;</span><span class="p">:[</span><span class="s2">&quot;Apply&quot;</span><span class="p">,</span><span class="s2">&quot;Close&quot;</span><span class="p">]}</span>
 </code></pre></div>
-</td></tr></table></p>
+</td></tr></table>
 <h2 id="image">Image  <span class="twemoji tag-medium"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 4c1.11 0 2 .89 2 2v12c0 1.11-.89 2-2 2H4c-1.11 0-2-.89-2-2V6c0-1.11.89-2 2-2h16M8.5 15V9H7.25v3.5L4.75 9H3.5v6h1.25v-3.5L7.3 15h1.2m5-4.74V9h-4v6h4v-1.25H11v-1.11h2.5v-1.26H11v-1.12h2.5m7 3.74V9h-1.25v4.5h-1.12V10h-1.25v3.5h-1.13V9H14.5v5a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1z"/></svg></span><a class="headerlink" href="#image" title="Permanent link">~</a></h2>
 <p><strong>obj:<code>img</code></strong></p>
 <p><img alt="lv_img" src="../../assets/images/objects/lv_ex_img_1.png" /></p>
@@ -2913,7 +2913,12 @@ The pop-up is centered on the screen.</p>
 </tr>
 </tbody>
 </table>
+<p>Only PNG image files are supported, from flash. </p>
 <p>You can use image_recolor and image_recolor_opa from the <a href="../styling#image">image styling</a> properties to apply a color overlay mask.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The decoding of the images is done in memory, thus you'll be able to display full-screen images only if your microcontroller <a href="../getting-started/#recommended-boards">has installed PSram memory</a>, else you will be limited to small icons only.</p>
+</div>
 <details class="example"><summary>Example <code>jsonl</code></summary><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;page&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">34</span><span class="p">,</span><span class="nt">&quot;obj&quot;</span><span class="p">:</span><span class="s2">&quot;img&quot;</span><span class="p">,</span><span class="nt">&quot;src&quot;</span><span class="p">:</span><span class="s2">&quot;/littlefs/image.png&quot;</span><span class="p">,</span><span class="nt">&quot;auto_size&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="nt">&quot;w&quot;</span><span class="p">:</span><span class="mi">50</span><span class="p">}</span>
 </code></pre></div>
 </td></tr></table>
