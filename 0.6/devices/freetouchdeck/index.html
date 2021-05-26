@@ -92,7 +92,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#video" class="md-skip">
+        <a href="#freetouchdeck" class="md-skip">
           Skip to content
         </a>
       
@@ -807,6 +807,8 @@
       <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
       
       
+        
+      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
           FreeTouchDeck
@@ -821,6 +823,8 @@
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
+  
+    
   
   
     <label class="md-nav__title" for="__toc">
@@ -1142,6 +1146,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -1208,14 +1214,25 @@
                   </a>
                 
                 
-                <h1>FreeTouchDeck</h1>
+                <h1 id="freetouchdeck">FreeTouchDeck<a class="headerlink" href="#freetouchdeck" title="Permanent link">~</a></h1>
+<div class="row justify-content-center">
+        <a href="../../assets/images/devices/freetouchdeck.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-6" data-title="FreeTouchDeck in 3D printed case" data-footer="Original image by Dustin Watts - Used with permission">
+            <img src="../../assets/images/devices/freetouchdeck.jpg" class="img-fluid">
+        </a>
 
-<p><img alt="FreeTouchDeck" src="../../assets/images/devices/freetouchdeck.png" /></p>
+        <a href="../../assets/images/devices/freetouchdeck-side.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-6" data-title="FreeTouchDeck in 3D printed case" data-footer="Original image by Dustin Watts - Used with permission">
+            <img src="../../assets/images/devices/freetouchdeck-side.jpg" class="img-fluid">
+        </a>
+</div>
+<div>
+        <a href="../../assets/images/devices/freetouchdeck-bare.jpg" data-toggle="lightbox" data-gallery="example-gallery" rel="lightbox[work]" data-title="FreeTouchDeck PCB combiner with display" data-footer="Original image by Dustin Watts - Used with permission">more images...</a>
+</div>
+
 <p>Features:</p>
 <ul>
 <li>ESP32 DevKitC (38pin)</li>
-<li>ili9488 TFT SPI 4-WIRE</li>
-<li>xpt2046 resistive touch controller</li>
+<li>ILI9488 TFT SPI 4-WIRE</li>
+<li>XPT2046 resistive touch controller</li>
 </ul>
 <p>This board is created for the <a href="https://github.com/DustinWatts/FreeTouchDeck">FreeTouchDeck project</a>
 and the <a href="https://www.pcbway.com/project/shareproject/ESP32_TFT_Combiner_V1.html">PCB-combiner board</a> is open source. Due to the extensive documentation it was easy to port openHASP to the FreeTouchDeck.</p>
@@ -1228,7 +1245,7 @@ and the <a href="https://www.pcbway.com/project/shareproject/ESP32_TFT_Combiner_
 </thead>
 <tbody>
 <tr>
-<td align="left">480x320 display</td>
+<td align="left">480x320 Display</td>
 <td align="left">4 MB flash</td>
 </tr>
 <tr>
@@ -1236,15 +1253,31 @@ and the <a href="https://www.pcbway.com/project/shareproject/ESP32_TFT_Combiner_
 <td align="left">No PSram</td>
 </tr>
 <tr>
-<td align="left"></td>
+<td align="left"><a href="https://www.instructables.com/A-Bluetooth-ESP32-TFT-Touch-Macro-Keypad/">Build Instructions</a></td>
 <td align="left">Resistive touch</td>
 </tr>
 </tbody>
 </table>
+<p>This is a kit so you need to assemble the parts yourself. Some soldering skills are required.
+You can 3D print a custom enclosure.</p>
 <h2 id="video">Video<a class="headerlink" href="#video" title="Permanent link">~</a></h2>
 <p><img alt="YOUTUBE" src="s2X4BQ9VmEU" /></p>
 <h2 id="3d-printed-cases">3D Printed Cases<a class="headerlink" href="#3d-printed-cases" title="Permanent link">~</a></h2>
 <p>You can find a 3D printable case on <a href="(https://www.thingiverse.com/thing:4661069)">Thingiverse</a> and <a href="https://github.com/DustinWatts/FreeTouchDeck/tree/master/case/ESP32_TFT_Combiner_Case">Github</a>.</p>
+<div class="row justify-content-center">
+        <a href="../../assets/images/devices/freetouchdeck-case1.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4" data-title="FreeTouchDeck in 3D printed case" data-footer="Original image by Dustin Watts - Used with permission">
+            <img src="../../assets/images/devices/freetouchdeck-case1.jpg" class="img-fluid">
+        </a>
+
+        <a href="../../assets/images/devices/freetouchdeck-case2.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4" data-title="FreeTouchDeck in 3D printed case" data-footer="Original image by Dustin Watts - Used with permission">
+            <img src="../../assets/images/devices/freetouchdeck-case2.jpg" class="img-fluid">
+        </a>
+
+        <a href="../../assets/images/devices/freetouchdeck-case3.png" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4" data-title="FreeTouchDeck in 3D printed case" data-footer="Original image by Dustin Watts - Used with permission">
+            <img src="../../assets/images/devices/freetouchdeck-case3.png" class="img-fluid">
+        </a>
+</div>
+
 <h2 id="flashing">Flashing<a class="headerlink" href="#flashing" title="Permanent link">~</a></h2>
 <p>The FreeTouchDeck can easily be flashed over USB like any ESP32 development board.</p>
 <h2 id="gpio-settings">GPIO Settings<a class="headerlink" href="#gpio-settings" title="Permanent link">~</a></h2>
@@ -1255,7 +1288,9 @@ and the <a href="https://www.pcbway.com/project/shareproject/ESP32_TFT_Combiner_
 <li>Schematics</li>
 <li>PCB layout</li>
 </ul>
-<p><img alt="PCB Combiner" src="../../assets/images/devices/freetouchdeck-pcb.png" /></p>
+<p><a href="../../assets/images/devices/freetouchdeck-pcb.png" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4" data-title="FreeTouchDeck PCB Combiner" data-footer="Original image by Dustin Watts - Used with permission">
+    <img src="../../assets/images/devices/freetouchdeck-pcb.png" class="img-fluid">
+</a></p>
 <h2 id="hasp-build_flags">HASP build_flags<a class="headerlink" href="#hasp-build_flags" title="Permanent link">~</a></h2>
 <p>Specify the LCD Configuration to use and define the GPIOs in the environment build flags:</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
