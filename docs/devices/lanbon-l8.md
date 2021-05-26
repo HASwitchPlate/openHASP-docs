@@ -66,6 +66,8 @@ Once the serial connections are made, flash the [Lanbon-L8 ESP32 firmware](../in
 
 ## GPIO Settings
 
+### 3-gang version L8-HS
+
 Pin| L8-HS      | Group | Default
 ---|------------|---|----
 12 | Relay K3   | 1 | Low
@@ -77,12 +79,14 @@ Pin| L8-HS      | Group | Default
 
 To configure the GPIOs at once for L8-HS send to topic `hasp/<nodename>/config` a message with payload:  
 ```json
-{"gpio":{"config":[2360346,2491680,2623009,2097420,2097678,2097947,0,0]}}
+{"gpio":{"config":[197658,263456,329249,655628,655886,656155,0,0]}}
 ```
 When using MQTT send to topic `hasp/<nodename>/config/gpio` a message with payload 
 ```json
-{"config":[2360346,2491680,2623009,2097420,2097678,2097947,0,0]}
+{"config":[197658,263456,329249,655628,655886,656155,0,0]}
 ```
+
+### Dimmer version L8-HD
 
 Pin| L8-HD      | Group | Default
 ---|------------|---|----
@@ -93,11 +97,11 @@ Pin| L8-HD      | Group | Default
 
 To configure the GPIOs at once for L8-HD send to topic `hasp/<nodename>/config` a message with payload:  
 ```json
- {"gpio":{"config":[6360076,2229274,2491680,2623009,0,0,0,0]}}
+ {"gpio":{"config":[3214348,197658,263456,329249,94699520,0,0,0]}}
 ```
 
 !!! note
-    You can [create you own firmware](../compiling#create-a-configuration) build with GPIOs and many other parameters pre-configured in `user_config_override.h` as factory defaults for Lanbon L8.
+    You can [create you own firmware](../compiling/customize.md) build with GPIOs and many other parameters pre-configured in `user_config_override.h` as factory defaults for Lanbon L8.
 
 ## Wiring Diagrams
 
