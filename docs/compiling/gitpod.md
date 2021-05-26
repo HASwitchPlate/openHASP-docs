@@ -17,7 +17,7 @@ Click on one of the links below, and that will automatically load Gitpod with op
 
 After Gitpod loads the project, you will be greeted by the main window.
 
-![gitpod](https://user-images.githubusercontent.com/1550668/118104245-2e3ea800-b3db-11eb-8a8d-ba28e09f9e5e.png)
+![gitpod](assets/images/compiling/gitpod.png)
 
 A copy of `platformio_override-template.ini` to `platformio_override.ini` will be readily prepared for you.  
 Click `platformio_override.ini` to open it, and to select your firmware flavour for your hardware uncomment in the `extra_configs` section the platform of your hadware, for example for ESP32:
