@@ -13,7 +13,7 @@ This project also adds ESP32 and STM32F4 support to take advantage of the additi
 ### Demo Screens
 
 [![screenshot](assets/images/screenshots/demo_switches_covers.png)](custom-component/sampl_conf#some-basic-controls) &nbsp; 
-[![screenshot](assets/images/screenshots/demo_mediaplayer.png)](custom-component/sampl_conf#media-player) &nbsp; 
+[![screenshot](assets/images/screenshots/demo_mediaplayer.png)](custom-component/sampl_conf#media-player) &nbsp;     
 [![Screenshot](assets/images/screenshots/lanbon.png)](example-dashui) &nbsp;
 [![Screenshot](assets/images/screenshots/demo_jaffa1.png)](integration_openhab) &nbsp; 
 
