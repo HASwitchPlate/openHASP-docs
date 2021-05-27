@@ -88,7 +88,7 @@ Pin| Mode   | L8-HS      | Group | Default
     ```json
     {"config":[721164,721422,197658,721691,263456,329249,0,0]}
     ```
-    The difference is only the device class _light_ vs. _switch_ you want them to be autodetected in Home Assistant.
+    The difference is only the device class you want them to be autodetected as in Home Assistant: _light_ vs. _switch_
 
 
 ??? example "Example `jsonl`"
