@@ -178,6 +178,18 @@ Changes the state GPIO pin to `on` or `off`. If the pin is configured as a `LED`
     If the GPIO is assigned to a group then objects and other GPIOs that share the same `groupid` will change state accordingly.
 
 
+## input[x] :material-new-box:{ .tag-medium }
+
+where `[x]` is number of the gpio pin (0-39)
+
+_read-only_
+
+Returns a JSON object containing the current state of the input, either `on` or `off`
+
+```json
+input4 => {"state":"on"}
+```
+
 ## System Commands
 
 !!! danger "`calibrate`"
