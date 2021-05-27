@@ -44,7 +44,7 @@ To add an openHASP plate to your installation with a sample configuration, uploa
 ```json
 {"page":1,"id":1,"obj":"btn","x":0,"y":0,"w":240,"h":30,"text":"openHASP","value_font":22,"bg_color":"#2C3E50","text_color":"#FFFFFF","radius":0,"border_side":0}
 {"page":1,"id":2,"obj":"btn","x":10,"y":40,"w":105,"h":90,"toggle":true,"text":"\uE335","text_font":32,"mode":"break","align":1}
-{"page":1,"id":3,"obj":"dropdown","x":10,"y":130,"w":160,"h":30,"options":"Apples\nBananas\nOranges\nMelon"}
+{"page":1,"id":3,"obj":"dropdown","x":10,"y":140,"w":170,"h":30,"options":"Apples\nBananas\nOranges\nMelon"}
 {"page":0,"id":1,"obj":"label","x":175,"y":5,"h":30,"w":62,"text":"00.0°C","align":2,"bg_color":"#2C3E50","text_color":"#FFFFFF"}
 ```
 
