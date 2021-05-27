@@ -1241,10 +1241,12 @@
 <ol>
 <li>Connect your plates to the <a href="../../../installation/wifi-setup/">network</a>. Static DHCP or fixed IP is not needed as communication only happes through MQTT.</li>
 <li>Set the <a href="../../../configuration/gpio/">GPIO configuration</a> corresponding to your hardware (important for them to be detected as entities), save and reboot.</li>
+<li>Restart Home Assistant.</li>
 <li>Set the <a href="../../../configuration/mqtt/">MQTT server</a> settings and make sure each plate has a unique node name, save and reboot.</li>
 </ol>
 <p>The component will automatically discover the plates and you will see them appearing in <em>Home Assistant &gt; Configuration &gt; Integrations &gt; HASP-Open Hardware Edition</em>.</p>
 <p>When Home Assistant detects your plate, you will have to give it a name. In the examples below both name and node name is <code>plate35</code>.</p>
+<p>Currently you will get a warning that you need to add manual configuration for the objects in your <code>configuration.yaml</code>, that's no problem, read ahead.</p>
 <h3 id="example">Example<a class="headerlink" href="#example" title="Permanent link">~</a></h3>
 <p>To add an openHASP plate to your installation with a sample configuration, upload a <code>pages.jsonl</code> file with the folowing content to your plate first:</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
