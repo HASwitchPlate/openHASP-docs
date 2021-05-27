@@ -1,6 +1,22 @@
 # Lanbon L8
 
-![Display image](../assets/images/devices/lanbon-l8-models.png)
+<div class="row justify-content-center">
+        <a href="../../assets/images/devices/lanbon-l8-us-white.png" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-3" data-title="Lanbon L8 - US white" data-footer="">
+            <img src="../../assets/images/devices/lanbon-l8-us-white.png" class="img-fluid">
+        </a>
+
+        <a href="../../assets/images/devices/lanbon-l8-us-black.png" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-3" data-title="Lanbon L8 - US black" data-footer="">
+            <img src="../../assets/images/devices/lanbon-l8-us-black.png" class="img-fluid">
+        </a>
+
+        <a href="../../assets/images/devices/lanbon-l8-eu-white.png" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-3" data-title="Lanbon L8 - EU white" data-footer="">
+            <img src="../../assets/images/devices/lanbon-l8-eu-white.png" class="img-fluid">
+        </a>
+
+        <a href="../../assets/images/devices/lanbon-l8-eu-black.png" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-3" data-title="Lanbon L8 - EU black" data-footer="">
+            <img src="../../assets/images/devices/lanbon-l8-eu-black.png" class="img-fluid">
+        </a>
+</div>
 
 ## Models
 
@@ -16,7 +32,15 @@
 
 Both models are rated at AC 100-250V ~50-60Hz, the form factor can be a design choice regardless of the continental area.
 
-![Dimensions](../assets/images/devices/lanbon-l8-dimensions.png)
+<div class="row justify-content-center">
+        <a href="../../assets/images/devices/lanbon-l8-dimensions-us.png" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-6" data-title="Lanbon L8 - US dimensions" data-footer="">
+            <img src="../../assets/images/devices/lanbon-l8-dimensions-us.png" class="img-fluid">
+        </a>
+
+        <a href="../../assets/images/devices/lanbon-l8-dimensions-eu.png" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-6" data-title="Lanbon L8 - EU dimensions" data-footer="">
+            <img src="../../assets/images/devices/lanbon-l8-dimensions-eu.png" class="img-fluid">
+        </a>
+</div>
 
 Both models have the same recessed housing sliding in the wall, sized 50x50mm, with rounded corners creating a diameter of about 59mm. This makes them suitable for both EU and US wall fixtures. The EU model fits in a properly deployed, standard 60mm round wall box and can be fixed with two side screws (use the screws which belong to the box instead of the ones shipped with the device), the US model fits in the standard rectangular box and can be fixed through the oval holes located 3 1/4" apart. The depth of the wall box has to be at least 35-40mm because some room is needed for the wires coming out straight of the device.
 
@@ -124,6 +148,10 @@ Pin| Mode   | L8-HD      | Group | Default
 The switch supports several wiring configurations:
 
 ![Display image](../assets/images/devices/lanbon-l8-wiring.png)
+
+!!! danger "Important"
+    Always follow the instructions from the installation guide and local safety regulations.
+    Consult a licensed electrician when changing your electrical wiring.</br>
 
 ## Video
 
