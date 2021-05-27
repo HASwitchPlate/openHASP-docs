@@ -64,7 +64,7 @@ Steps:
      - Either supply 3.3V or 5V on the corresponding power pin, depending on the voltage supplied by the UART ttl (not both at the same time).
 5. Because there is no `RESET` pin, you need to powercycle the board with IO0 connected to GND to activate flash mode
 
-Once the serial connections are made, flash the [Lanbon-L8 ESP32 binary](../installation/esp32.md) like any other device.
+Once the serial connections are made, flash the [Lanbon-L8 ESP32 binary](../installation/esp32.md) like on any other device.
 
 ## GPIO Settings
 
@@ -117,7 +117,7 @@ Pin| Mode   | L8-HD      | Group | Default
     ```
 
 !!! note
-    You can [create you own firmware](../compiling/customize.md) build with GPIOs and many other parameters pre-configured in `user_config_override.h` as factory defaults for Lanbon L8.
+    You can [build your own firmware](../compiling/customize.md) with GPIOs and many other parameters pre-configured in `user_config_override.h` as factory defaults for Lanbon L8.
 
 ## Wiring Diagrams
 
