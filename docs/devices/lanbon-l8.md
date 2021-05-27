@@ -95,7 +95,7 @@ To create a page displaying the local relays as switches, try this very simple [
 {"page":1,"id":2,"obj":"switch","x":30,"y":122,"w":180,"h":75,"radius":40,"radius2":40,"groupid":2}
 {"page":1,"id":3,"obj":"switch","x":30,"y":205,"w":180,"h":75,"radius":40,"radius2":40,"groupid":3}
 ```
-![lanbon-3-switch-display](../assets/images/devices/lanbon-3-switch-display.png)
+![lanbon-3-switch-display](../assets/images/screenshots/lanbon-3-switch-display.png)
 
 
 
