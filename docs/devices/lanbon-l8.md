@@ -80,15 +80,16 @@ Pin| Mode   | L8-HS      | Group | Default
 33 | Output | Mood Blue  | 6 | Low (Normal)
 
 !!! note "Tip"
-    To configure the GPIOs at once for L8-HS send to topic `hasp/<nodename>/config` a message with payload:  
-    ```json
-    {"gpio":{"config":[197658,263456,329249,655628,655886,656155,0,0]}}
-    ```
-
-    When using MQTT send to topic `hasp/<nodename>/config/gpio` a message with payload 
+    To configure the GPIOs _as light switches_ at once for L8-HS send to topic `hasp/<nodename>/config/gpio` a message with payload:  
     ```json
     {"config":[197658,263456,329249,655628,655886,656155,0,0]}
     ```
+    Or for _power switches_:
+    ```json
+    {"config":[721164,721422,197658,721691,263456,329249,0,0]}
+    ```
+    The difference is only the device class _light_ vs. _switch_ you want them to be autodetected in Home Assistant.
+
 
 ??? example "Example `jsonl`"
     To create a page displaying the local relays as switches, try this very simple [pages.jsonl](../design/pages.md):
