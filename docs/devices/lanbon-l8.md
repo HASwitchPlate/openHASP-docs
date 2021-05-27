@@ -70,14 +70,14 @@ Once the serial connections are made, flash the [Lanbon-L8 ESP32 firmware](../in
 
 ### 3-gang version L8-HS
 
-Pin| L8-HS      | Group | Default
----|------------|---|----
-12 | Relay K3   | 1 | Low
-14 | Relay      | 2 | Low
-26 | Mood Red   | 4 | Low
-27 | Relay      | 3 | Low
-32 | Mood Green | 5 | Low
-33 | Mood Blue  | 6 | Low
+Pin| Mode   | L8-HS      | Group | Default
+---|--------|------------|-------|----
+12 | Output | Relay (K3)   | 1 | Low (Normal)
+14 | Output | Relay      | 2 | Low (Normal)
+26 | Output | Mood Red   | 4 | Low (Normal)
+27 | Output | Relay      | 3 | Low (Normal)
+32 | Output | Mood Green | 5 | Low (Normal)
+33 | Output | Mood Blue  | 6 | Low (Normal)
 
 To configure the GPIOs at once for L8-HS send to topic `hasp/<nodename>/config` a message with payload:  
 ```json
@@ -90,12 +90,12 @@ When using MQTT send to topic `hasp/<nodename>/config/gpio` a message with paylo
 
 ### Dimmer version L8-HD
 
-Pin| L8-HD      | Group | Default
----|------------|---|----
-12 | Dimmer TX (K3)  | 1 | Low
-26 | Mood Red   | 4 | Low
-32 | Mood Green | 5 | Low
-33 | Mood Blue  | 6 | Low
+Pin| Mode   | L8-HD      | Group | Default
+---|--------|------------|---|----
+12 | Output | Dimmer TX (K3)  | 1 | Low (Normal)
+26 | Output | Mood Red   | 4 | Low (Normal)
+32 | Output | Mood Green | 5 | Low (Normal)
+33 | Output | Mood Blue  | 6 | Low (Normal)
 
 To configure the GPIOs at once for L8-HD send to topic `hasp/<nodename>/config` a message with payload:  
 ```json
