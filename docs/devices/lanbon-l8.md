@@ -79,23 +79,25 @@ Pin| Mode   | L8-HS      | Group | Default
 32 | Output | Mood Green | 5 | Low (Normal)
 33 | Output | Mood Blue  | 6 | Low (Normal)
 
-To configure the GPIOs at once for L8-HS send to topic `hasp/<nodename>/config` a message with payload:  
-```json
-{"gpio":{"config":[197658,263456,329249,655628,655886,656155,0,0]}}
-```
+!!! note "Tip"
+    To configure the GPIOs at once for L8-HS send to topic `hasp/<nodename>/config` a message with payload:  
+    ```json
+    {"gpio":{"config":[197658,263456,329249,655628,655886,656155,0,0]}}
+    ```
 
-When using MQTT send to topic `hasp/<nodename>/config/gpio` a message with payload 
-```json
-{"config":[197658,263456,329249,655628,655886,656155,0,0]}
-```
+    When using MQTT send to topic `hasp/<nodename>/config/gpio` a message with payload 
+    ```json
+    {"config":[197658,263456,329249,655628,655886,656155,0,0]}
+    ```
 
-To create a page displaying the local relays as switches, try this very simple [pages.jsonl](../design/pages.md):
-```json
-{"page":1,"id":1,"obj":"switch","x":30,"y":40,"w":180,"h":75,"radius":40,"radius2":40,"groupid":1}
-{"page":1,"id":2,"obj":"switch","x":30,"y":122,"w":180,"h":75,"radius":40,"radius2":40,"groupid":2}
-{"page":1,"id":3,"obj":"switch","x":30,"y":205,"w":180,"h":75,"radius":40,"radius2":40,"groupid":3}
-```
-![lanbon-3-switch-display](../assets/images/screenshots/lanbon-3-switch-display.png)
+??? example "Example `jsonl`"
+    To create a page displaying the local relays as switches, try this very simple [pages.jsonl](../design/pages.md):
+    ```json
+    {"page":1,"id":1,"obj":"switch","x":30,"y":40,"w":180,"h":75,"radius":40,"radius2":40,"groupid":1}
+    {"page":1,"id":2,"obj":"switch","x":30,"y":122,"w":180,"h":75,"radius":40,"radius2":40,"groupid":2}
+    {"page":1,"id":3,"obj":"switch","x":30,"y":205,"w":180,"h":75,"radius":40,"radius2":40,"groupid":3}
+    ```
+    ![lanbon-3-switch-display](../assets/images/screenshots/lanbon-3-switch-display.png)
 
 
 
@@ -108,10 +110,11 @@ Pin| Mode   | L8-HD      | Group | Default
 32 | Output | Mood Green | 5 | Low (Normal)
 33 | Output | Mood Blue  | 6 | Low (Normal)
 
-To configure the GPIOs at once for L8-HD send to topic `hasp/<nodename>/config` a message with payload:  
-```json
- {"gpio":{"config":[3214348,197658,263456,329249,94699520,0,0,0]}}
-```
+!!! note "Tip"
+    To configure the GPIOs at once for L8-HD send to topic `hasp/<nodename>/config` a message with payload:  
+    ```json
+    {"gpio":{"config":[3214348,197658,263456,329249,94699520,0,0,0]}}
+    ```
 
 !!! note
     You can [create you own firmware](../compiling/customize.md) build with GPIOs and many other parameters pre-configured in `user_config_override.h` as factory defaults for Lanbon L8.
