@@ -1425,14 +1425,15 @@
 </table>
 <div class="admonition note">
 <p class="admonition-title">Tip</p>
-<p>To configure the GPIOs at once for L8-HS send to topic <code>hasp/&lt;nodename&gt;/config</code> a message with payload:<br />
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;gpio&quot;</span><span class="p">:{</span><span class="nt">&quot;config&quot;</span><span class="p">:[</span><span class="mi">197658</span><span class="p">,</span><span class="mi">263456</span><span class="p">,</span><span class="mi">329249</span><span class="p">,</span><span class="mi">655628</span><span class="p">,</span><span class="mi">655886</span><span class="p">,</span><span class="mi">656155</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]}}</span>
-</code></pre></div>
-</td></tr></table></p>
-<p>When using MQTT send to topic <code>hasp/&lt;nodename&gt;/config/gpio</code> a message with payload 
+<p>To configure the GPIOs <em>as light switches</em> at once for L8-HS send to topic <code>hasp/&lt;nodename&gt;/config/gpio</code> a message with payload:<br />
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;config&quot;</span><span class="p">:[</span><span class="mi">197658</span><span class="p">,</span><span class="mi">263456</span><span class="p">,</span><span class="mi">329249</span><span class="p">,</span><span class="mi">655628</span><span class="p">,</span><span class="mi">655886</span><span class="p">,</span><span class="mi">656155</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]}</span>
 </code></pre></div>
-</td></tr></table></p>
+</td></tr></table>
+Or for <em>power switches</em>:
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;config&quot;</span><span class="p">:[</span><span class="mi">721164</span><span class="p">,</span><span class="mi">721422</span><span class="p">,</span><span class="mi">197658</span><span class="p">,</span><span class="mi">721691</span><span class="p">,</span><span class="mi">263456</span><span class="p">,</span><span class="mi">329249</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]}</span>
+</code></pre></div>
+</td></tr></table>
+The difference is only the device class <em>light</em> vs. <em>switch</em> you want them to be autodetected in Home Assistant.</p>
 </div>
 <details class="example"><summary>Example <code>jsonl</code></summary><p>To create a page displaying the local relays as switches, try this very simple <a href="../../design/pages/">pages.jsonl</a>:
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
