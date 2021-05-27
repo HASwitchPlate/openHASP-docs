@@ -1423,6 +1423,8 @@
 </tr>
 </tbody>
 </table>
+<div class="admonition note">
+<p class="admonition-title">Tip</p>
 <p>To configure the GPIOs at once for L8-HS send to topic <code>hasp/&lt;nodename&gt;/config</code> a message with payload:<br />
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;gpio&quot;</span><span class="p">:{</span><span class="nt">&quot;config&quot;</span><span class="p">:[</span><span class="mi">197658</span><span class="p">,</span><span class="mi">263456</span><span class="p">,</span><span class="mi">329249</span><span class="p">,</span><span class="mi">655628</span><span class="p">,</span><span class="mi">655886</span><span class="p">,</span><span class="mi">656155</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]}}</span>
 </code></pre></div>
@@ -1431,7 +1433,8 @@
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;config&quot;</span><span class="p">:[</span><span class="mi">197658</span><span class="p">,</span><span class="mi">263456</span><span class="p">,</span><span class="mi">329249</span><span class="p">,</span><span class="mi">655628</span><span class="p">,</span><span class="mi">655886</span><span class="p">,</span><span class="mi">656155</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]}</span>
 </code></pre></div>
 </td></tr></table></p>
-<p>To create a page displaying the local relays as switches, try this very simple <a href="../../design/pages/">pages.jsonl</a>:
+</div>
+<details class="example"><summary>Example <code>jsonl</code></summary><p>To create a page displaying the local relays as switches, try this very simple <a href="../../design/pages/">pages.jsonl</a>:
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;page&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="nt">&quot;obj&quot;</span><span class="p">:</span><span class="s2">&quot;switch&quot;</span><span class="p">,</span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="mi">30</span><span class="p">,</span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="mi">40</span><span class="p">,</span><span class="nt">&quot;w&quot;</span><span class="p">:</span><span class="mi">180</span><span class="p">,</span><span class="nt">&quot;h&quot;</span><span class="p">:</span><span class="mi">75</span><span class="p">,</span><span class="nt">&quot;radius&quot;</span><span class="p">:</span><span class="mi">40</span><span class="p">,</span><span class="nt">&quot;radius2&quot;</span><span class="p">:</span><span class="mi">40</span><span class="p">,</span><span class="nt">&quot;groupid&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">}</span>
@@ -1440,6 +1443,7 @@
 </code></pre></div>
 </td></tr></table>
 <img alt="lanbon-3-switch-display" src="../../assets/images/screenshots/lanbon-3-switch-display.png" /></p>
+</details>
 <h3 id="dimmer-version-l8-hd">Dimmer version L8-HD<a class="headerlink" href="#dimmer-version-l8-hd" title="Permanent link">~</a></h3>
 <table>
 <thead>
@@ -1482,10 +1486,13 @@
 </tr>
 </tbody>
 </table>
+<div class="admonition note">
+<p class="admonition-title">Tip</p>
 <p>To configure the GPIOs at once for L8-HD send to topic <code>hasp/&lt;nodename&gt;/config</code> a message with payload:<br />
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code> <span class="p">{</span><span class="nt">&quot;gpio&quot;</span><span class="p">:{</span><span class="nt">&quot;config&quot;</span><span class="p">:[</span><span class="mi">3214348</span><span class="p">,</span><span class="mi">197658</span><span class="p">,</span><span class="mi">263456</span><span class="p">,</span><span class="mi">329249</span><span class="p">,</span><span class="mi">94699520</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]}}</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;gpio&quot;</span><span class="p">:{</span><span class="nt">&quot;config&quot;</span><span class="p">:[</span><span class="mi">3214348</span><span class="p">,</span><span class="mi">197658</span><span class="p">,</span><span class="mi">263456</span><span class="p">,</span><span class="mi">329249</span><span class="p">,</span><span class="mi">94699520</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]}}</span>
 </code></pre></div>
 </td></tr></table></p>
+</div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>You can <a href="../../compiling/customize/">create you own firmware</a> build with GPIOs and many other parameters pre-configured in <code>user_config_override.h</code> as factory defaults for Lanbon L8.</p>
