@@ -2,7 +2,7 @@
 
 ## GPIO Overview
 
-You can attach external devices like buttons, switches, relays, lights or LEDs using the GPIO pins of the ESP.
+You can attach external devices like buttons, switches, relays, lights or LEDs using the GPIO pins of the ESP. The _Devices_ section of the documentation contains pin descriptions and ways to set them up for specific hardware configurations.
 
 When integrated with [Home Assistant](../integrations/home-assistant/howto.md), the configured GPIOs will be added automatically during discovery as appropriate entities in the system.
 

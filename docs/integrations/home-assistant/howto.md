@@ -28,11 +28,14 @@ First prepare your plates to be integrated with Home Assistant (follow steps in 
 
 1. Connect your plates to the [network](../../installation/wifi-setup.md). Static DHCP or fixed IP is not needed as communication only happes through MQTT.
 2. Set the [GPIO configuration](../../configuration/gpio.md) corresponding to your hardware (important for them to be detected as entities), save and reboot.
-3. Set the [MQTT server](../../configuration/mqtt.md) settings and make sure each plate has a unique node name, save and reboot.
+3. Restart Home Assistant.
+4. Set the [MQTT server](../../configuration/mqtt.md) settings and make sure each plate has a unique node name, save and reboot.
 
 The component will automatically discover the plates and you will see them appearing in _Home Assistant > Configuration > Integrations > HASP-Open Hardware Edition_.
 
 When Home Assistant detects your plate, you will have to give it a name. In the examples below both name and node name is `plate35`.
+
+Currently you will get a warning that you need to add manual configuration for the objects in your `configuration.yaml`, that's no problem, read ahead.
 
 ### Example
 
@@ -40,9 +43,8 @@ To add an openHASP plate to your installation with a sample configuration, uploa
 
 ```json
 {"page":1,"id":1,"obj":"btn","x":0,"y":0,"w":240,"h":30,"text":"openHASP","value_font":22,"bg_color":"#2C3E50","text_color":"#FFFFFF","radius":0,"border_side":0}
-{"page":1,"id":2,"obj":"btn","x":10,"y":40,"w":105,"h":90,"toggle":true,"text":"\uE335","text_font":26,"mode":"break","align":1}
-{"page":1,"id":3,"obj":"dropdown","x":10,"y":130,"w":160,"h":30,"options":"Apples\nBananas\nOranges\nMelon"}
-
+{"page":1,"id":2,"obj":"btn","x":10,"y":40,"w":105,"h":90,"toggle":true,"text":"\uE335","text_font":32,"mode":"break","align":1}
+{"page":1,"id":3,"obj":"dropdown","x":10,"y":140,"w":170,"h":30,"options":"Apples\nBananas\nOranges\nMelon"}
 {"page":0,"id":1,"obj":"label","x":175,"y":5,"h":30,"w":62,"text":"00.0°C","align":2,"bg_color":"#2C3E50","text_color":"#FFFFFF"}
 ```
 
