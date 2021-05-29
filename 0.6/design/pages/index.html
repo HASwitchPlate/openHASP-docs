@@ -1231,7 +1231,7 @@ The file extension is <code>.jsonl</code> and not <code>.json</code>.</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The maximum number of pages and objects is limited by the memory available in the MCU.</p>
+<p>The maximum number of pages and objects is limited by the memory available in the MCU, it depends on the <a href="../..#features">microcontroller type</a> you use.</p>
 </div>
 <h3 id="file-comments">File comments<a class="headerlink" href="#file-comments" title="Permanent link">~</a></h3>
 <p>If any of the required <code>id</code> or <code>obj</code> properties are missing -<em>and the line is still valid json</em>- then it is interpreted as a comment.</p>
@@ -1251,10 +1251,6 @@ If you then omit the <code>page</code> parameter in the lines below this comment
 </td></tr></table>
 <div class="admonition danger">
 <p>If the line is not valid json, the parsing of the rest of the file is also stopped.</p>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The total number of available pages depends on the <a href="../..#features">microcontroller type</a> you use.</p>
 </div>
 <h2 id="jsonl-command">jsonl command<a class="headerlink" href="#jsonl-command" title="Permanent link">~</a></h2>
 <p>See <a href="../commands#jsonl">commands documentation</a> for the <code>jsonl</code> command. The payload of the command corresponds to what's exactly in one line of the <code>pages.jsonl</code> file above.</p>
