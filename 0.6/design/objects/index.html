@@ -1656,7 +1656,7 @@ but only the <code>id</code> and <code>obj</code> properties are required to cre
 <tr>
 <td align="left">id</td>
 <td></td>
-<td align="center">1..255</td>
+<td align="center">1..254</td>
 <td align="center">yes</td>
 <td align="center">n/a</td>
 <td align="left">ID of the object on this page</td>
@@ -1787,6 +1787,8 @@ but only the <code>id</code> and <code>obj</code> properties are required to cre
 <p class="admonition-title">Note</p>
 <p>Further customizable properties can be found in <a href="../styling">styling</a>.</p>
 </div>
+<p>Ids start from 1 on <em>each page</em>.
+You can have a maximum of 254 ids on each page. You don't have to use them in ascending order, you can for example use them for logical numbering (start labels from 11, 12, 13, buttons from 21, 22, 23 etc.)</p>
 <h4 id="pages">Pages<a class="headerlink" href="#pages" title="Permanent link">~</a></h4>
 <p>If the <code>page</code> parameter is not present, the object is placed on the same page as the <em>previous object</em>. If <code>page</code> is not specified for the first object either, the <em>current page</em> being displayed is used.</p>
 <p><code>"page":0</code> indicates that the object is visible on <strong>all</strong> pages. It can be used for example to specify a static menu bar.
