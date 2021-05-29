@@ -3,7 +3,7 @@
 If your plate has moodlights, it is useful in dark situations, when you don't want to have the screen backlit on all the time, but have the mood light on instead.
 The night mode activates when sun goes down, and the day mode activates when the sun comes up. During the day mood light doesn't light, screen is on all the time but dimmed.
 
-Tested on Lanbon L8 and firmware 0.4.0.
+Tested on Lanbon L8 and firmware 0.6.0.
 
 Put your `light.plate_my_room_moodlight` to a Lovelace card entity row and select a nice color for moodlight. Assuming your plate's configured MQTT node or group topic is `plate35`, add your automations:
 
@@ -12,25 +12,25 @@ Put your `light.plate_my_room_moodlight` to a Lovelace card entity row and selec
   alias: "openHASP Moodlight ON when Backlight OFF"
   trigger:
     - platform: state
-      entity_id: light.openhasp_plate_my_room_backlight
+      entity_id: light.plate_my_room_backlight
       from: 'on'
       to: 'off'
   action:
     - service: light.turn_on
       target:
-        entity_id: light.openhasp_plate_my_room_moodlight
+        entity_id: light.plate_my_room_moodlight
 
 - id: openhasp-moodlight-off
   alias: "openHASP Moodlight OFF when Backlight ON"
   trigger:
     - platform: state
-      entity_id: light.openhasp_plate_my_room_backlight
+      entity_id: light.plate_my_room_backlight
       from: 'off'
       to: 'on'
   action:
     - service: light.turn_off
       target:
-        entity_id: light.openhasp_plate_my_room_moodlight
+        entity_id: light.plate_my_room_moodlight
 
 - id: openhasp-night
   alias: "openHASP Night mode"
@@ -91,7 +91,7 @@ Apart from the idle times controlling backlight levels, one may want to return t
         page: 1
 
 ```
-
+<!--
 * * * * *
 
 ## Reload design pages from Home Assistant configuration directory
@@ -145,6 +145,7 @@ To trigger this automation when Home Assistant starts, you can use this in your 
 ```
 _Note:_ You can also use the `path` directive in the component config to load the design configuration at Home Assistant start, but that won't clear the existing pages (it assumes the pages are empty). 
 
+-->
 * * * * *
 
 ## Prevent burn-in of the LCD screen
