@@ -42,10 +42,10 @@ Example 1: Add a comment on a single line that is ignored.
 {"comment":" ----------- Page 1 layout ------------"}
 ```
 
-Example 2: Set the default `page` for next object(s) to `1` besides adding a comment as well.
+Example 2: Set the default `page` to `2` for objects in the following lines, besides adding a comment as well.
 
 ```json
-{"page":1,"comment":" ---- My Awesome Color Picker Layout ----"}
+{"page":2,"comment":" ---- My Awesome Color Picker Layout ----"}
 ```
 If you then omit the `page` parameter in the lines below this comment, those objects will appear by default on page `2`.
 
