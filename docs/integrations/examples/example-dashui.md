@@ -9,8 +9,8 @@
 
 To add an openHASP plate to your installation with the Dash UI sample configuration:
 
-- in the plate's web UI select for `UI Theme` the `Material Light` theme, and choose a purple color in the `Hue` color bar,
-- upload a `pages.jsonl` file with the folowing content to your plate:
+- in the plate's web UI select for `UI Theme` the `Material Light` theme, and choose a purple color in the `Hue` color bar and reboot,
+- upload a `pages.jsonl` file with the folowing content to your plate and reboot:
 
 ```json
 {"page":1,"comment":"---------- Page 1 ----------"}
