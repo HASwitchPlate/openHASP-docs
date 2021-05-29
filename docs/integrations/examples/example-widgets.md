@@ -1,5 +1,12 @@
 <h1>Widgets Demo</h1>
 
+<h2>Page Layout</h2>
+
+![screenshot](https://user-images.githubusercontent.com/1550668/120073363-3ca5e880-c098-11eb-82d8-ad58cf4a9d66.png)
+![screenshot](https://user-images.githubusercontent.com/1550668/120073369-44658d00-c098-11eb-9ad7-c318866c62c2.png)
+![screenshot](https://user-images.githubusercontent.com/1550668/120073374-492a4100-c098-11eb-9ac2-1144bd039eea.png)
+![screenshot](https://user-images.githubusercontent.com/1550668/120074302-7b3da200-c09c-11eb-9fa8-7396e02b63bc.png)
+
 <h2>Code</h2>
 
 This is a real-world example of a `pages.jsonl` file:
@@ -41,13 +48,4 @@ This is a real-world example of a `pages.jsonl` file:
 ```
 
 Upload [this logo](https://raw.githubusercontent.com/HASwitchPlate/openHASP-docs/0.6/docs/assets/images/logo-medium.png) to the plate.
-
-<h2>Result</h2>
-
-![screenshot](https://user-images.githubusercontent.com/1550668/120073363-3ca5e880-c098-11eb-82d8-ad58cf4a9d66.png)
-![screenshot](https://user-images.githubusercontent.com/1550668/120073369-44658d00-c098-11eb-9ad7-c318866c62c2.png)
-![screenshot](https://user-images.githubusercontent.com/1550668/120073374-492a4100-c098-11eb-9ac2-1144bd039eea.png)
-![screenshot](https://user-images.githubusercontent.com/1550668/120074302-7b3da200-c09c-11eb-9fa8-7396e02b63bc.png)
-
-
 

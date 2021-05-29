@@ -1,6 +1,10 @@
 
 <h1>Dash UI</h1>
 
+<h2>Layout</h2>
+
+![Screenshot](../../assets/images/screenshots/lanbon.png){: align=left }
+
 <h2>Code</h2>
 
 To add an openHASP plate to your installation with the Dash UI sample configuration, upload a `pages.jsonl` file with the folowing content to your plate:
@@ -35,9 +39,5 @@ Assuming your plate's configured MQTT topic is `plate35`, values for Temperature
 - `hasp/plate35/command/p1b3.val %value%` - to update Humidity arc value 
 - `hasp/plate35/command/p1b3.value_str %value% %` - to update Humidity text value
 - `hasp/plate35/command/p1b4.text CO2 levels: %value%` - to update CO2 level value
-
-<h2>Result</h2>
-
-![Screenshot](../../assets/images/screenshots/lanbon.png){: align=left }
 
 <div style="clear:both;"></div>

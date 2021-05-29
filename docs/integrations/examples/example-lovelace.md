@@ -1,6 +1,10 @@
 
 <h1>Lovelace-like entities</h1>
 
+<h2>Layout</h2>
+
+![Screenshot](../../assets/images/screenshots/demo_lovelace_entities.png){: align=left }
+
 <h2>Code</h2>
 
 To add an openHASP plate to your installation with a sample configuration looking a bit like Home Assistant's Lovelace UI, upload a `pages.jsonl` file with the folowing content to your plate:
@@ -39,9 +43,5 @@ To add an openHASP plate to your installation with a sample configuration lookin
 Check out the [pagination example](../example-pagination) to learn how to implement the bottom bar.  
 Check out the [clock and temperature example](../../home-assistant/sampl_conf#display-clock-and-temperature) to learn how to implement values to the top.  
 Check out the [Lovelace cover example](../../home-assistant/sampl_conf#cover-like-in-lovelace) to learn how to bring life to the objects.  
-
-<h2>Result</h2>
-
-![Screenshot](../../assets/images/screenshots/demo_lovelace_entities.png){: align=left }
 
 <div style="clear:both;"></div>
