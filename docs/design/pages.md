@@ -27,7 +27,7 @@ Blank lines are allowed for readability and are ignored.
 
 
 !!! note "Note"
-    The maximum number of pages and objects is limited by the memory available in the MCU.
+    The maximum number of pages and objects is limited by the memory available in the MCU, it depends on the [microcontroller type](../index.md#features) you use.
 
     
 ### File comments
@@ -58,9 +58,6 @@ Example 3: Insert a comment for an object.
 
 !!! danger ""
     If the line is not valid json, the parsing of the rest of the file is also stopped.
-
-!!! note "Note"
-    The total number of available pages depends on the [microcontroller type](../index.md#features) you use.
 
 ## jsonl command
 
