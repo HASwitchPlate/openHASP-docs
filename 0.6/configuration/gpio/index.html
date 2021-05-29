@@ -1449,6 +1449,7 @@ Check the documentation of your board to see which pins are free to be used as G
 <p>Set the relay ON or OFF when an event is received on <code>output#</code> where <code>#</code> is the groupnumber or from another group <code>intput</code>.</p>
 <p>When a relay is grouped with a button or switch in the same group, it will be turned ON or OFF according to the state of the button or switch.</p>
 <p>When a relay is controlled by a range object (slider, arc slider, roller, drop-down list) within the same group, the state will be be ON if the <code>.val</code> value is halfway the range or above.</p>
+<p>The various relay types (Light, Power, Shutter) denote only the device class you want them to be autodetected as in Home Assistant: light vs. switch etc.</p>
 <div class="admonition danger">
 <p class="admonition-title">Warning</p>
 <p>Attaching devices to mains power can be dangerous!
