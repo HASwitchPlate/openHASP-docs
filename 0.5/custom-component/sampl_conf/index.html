@@ -114,9 +114,9 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
 <p><img alt="screenshot" src="../../assets/images/screenshots/cc_sampl_clocktemp.png" /></p>
 <p>The easiest example is to display the state of a clock and a temperature sensor from Home Assistant, using <em>label</em> objects in openHASP.</p>
 <p>Create a label object to display the temperature value, a separate label object to display the unit and a third label object for the clock:</p>
-<pre><code class="language-text">{&quot;page&quot;:0,&quot;id&quot;:4,&quot;obj&quot;:&quot;label&quot;,&quot;x&quot;:175,&quot;y&quot;:5,&quot;h&quot;:30,&quot;w&quot;:45,&quot;text&quot;:&quot;00.0&quot;,&quot;align&quot;:2,&quot;bg_color&quot;:&quot;#2C3E50&quot;,&quot;text_color&quot;:&quot;#FFFFFF&quot;}
-{&quot;page&quot;:0,&quot;id&quot;:5,&quot;obj&quot;:&quot;label&quot;,&quot;x&quot;:220,&quot;y&quot;:5,&quot;h&quot;:30,&quot;w&quot;:45,&quot;text&quot;:&quot;°C&quot;,&quot;align&quot;:0,&quot;bg_color&quot;:&quot;#2C3E50&quot;,&quot;text_color&quot;:&quot;#FFFFFF&quot;}
-{&quot;page&quot;:0,&quot;id&quot;:6,&quot;obj&quot;:&quot;label&quot;,&quot;x&quot;:3,&quot;y&quot;:5,&quot;h&quot;:30,&quot;w&quot;:62,&quot;text&quot;:&quot;00:00&quot;,&quot;align&quot;:0,&quot;bg_color&quot;:&quot;#2C3E50&quot;,&quot;text_color&quot;:&quot;#FFFFFF&quot;}
+<pre><code class="language-json">{&quot;page&quot;:0,&quot;id&quot;:4,&quot;obj&quot;:&quot;label&quot;,&quot;x&quot;:175,&quot;y&quot;:5,&quot;h&quot;:30,&quot;w&quot;:45,&quot;text&quot;:&quot;00.0&quot;,&quot;align&quot;:2,&quot;bg_color&quot;:&quot;#2C3E50&quot;}
+{&quot;page&quot;:0,&quot;id&quot;:5,&quot;obj&quot;:&quot;label&quot;,&quot;x&quot;:220,&quot;y&quot;:5,&quot;h&quot;:30,&quot;w&quot;:45,&quot;text&quot;:&quot;°C&quot;,&quot;align&quot;:0,&quot;bg_color&quot;:&quot;#2C3E50&quot;}
+{&quot;page&quot;:0,&quot;id&quot;:6,&quot;obj&quot;:&quot;label&quot;,&quot;x&quot;:3,&quot;y&quot;:5,&quot;h&quot;:30,&quot;w&quot;:62,&quot;text&quot;:&quot;00:00&quot;,&quot;align&quot;:0,&quot;bg_color&quot;:&quot;#2C3E50&quot;}
 </code></pre>
 <p>In component configuration all you need for the objects is:</p>
 <pre><code class="language-yaml">    objects:
@@ -129,8 +129,8 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
 </code></pre>
 <h4 id="note">Note:<a class="headerlink" href="#note" title="Permanent link">~</a></h4>
 <p>You can of course omit the second label object with the unit and use the same for both value and unit:</p>
-<pre><code class="language-text">{&quot;page&quot;:0,&quot;id&quot;:4,&quot;obj&quot;:&quot;label&quot;,&quot;x&quot;:175,&quot;y&quot;:5,&quot;h&quot;:30,&quot;w&quot;:62,&quot;text&quot;:&quot;00.0°C&quot;,&quot;align&quot;:2,&quot;bg_color&quot;:&quot;#2C3E50&quot;,&quot;text_color&quot;:&quot;#FFFFFF&quot;}
-{&quot;page&quot;:0,&quot;id&quot;:6,&quot;obj&quot;:&quot;label&quot;,&quot;x&quot;:3,&quot;y&quot;:5,&quot;h&quot;:30,&quot;w&quot;:62,&quot;text&quot;:&quot;00:00&quot;,&quot;align&quot;:0,&quot;bg_color&quot;:&quot;#2C3E50&quot;,&quot;text_color&quot;:&quot;#FFFFFF&quot;}
+<pre><code class="language-json">{&quot;page&quot;:0,&quot;id&quot;:4,&quot;obj&quot;:&quot;label&quot;,&quot;x&quot;:175,&quot;y&quot;:5,&quot;h&quot;:30,&quot;w&quot;:62,&quot;text&quot;:&quot;00.0°C&quot;,&quot;align&quot;:2,&quot;bg_color&quot;:&quot;#2C3E50&quot;}
+{&quot;page&quot;:0,&quot;id&quot;:6,&quot;obj&quot;:&quot;label&quot;,&quot;x&quot;:3,&quot;y&quot;:5,&quot;h&quot;:30,&quot;w&quot;:62,&quot;text&quot;:&quot;00:00&quot;,&quot;align&quot;:0,&quot;bg_color&quot;:&quot;#2C3E50&quot;}
 </code></pre>
 <p>In component configuration you will add the unit to the value using the template:</p>
 <pre><code class="language-yaml">    objects:
@@ -144,7 +144,7 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
 <p>Jsonl and Home Assistant configuration:</p>
 <h4 id="toggle-a-light-or-any-switchable-entity-with-onoff-states">Toggle a light (or any switchable entity with on/off states)<a class="headerlink" href="#toggle-a-light-or-any-switchable-entity-with-onoff-states" title="Permanent link">~</a></h4>
 <p><img alt="screenshot" src="../../assets/images/screenshots/cc_sampl_lightswitch.png" /></p>
-<pre><code class="language-text">{&quot;page&quot;:1,&quot;id&quot;:2,&quot;obj&quot;:&quot;btn&quot;,&quot;x&quot;:10,&quot;y&quot;:40,&quot;w&quot;:105,&quot;h&quot;:90,&quot;toggle&quot;:true,&quot;text&quot;:&quot;\uE335&quot;,&quot;text_font&quot;:28,&quot;align&quot;:1}
+<pre><code class="language-json">{&quot;page&quot;:1,&quot;id&quot;:2,&quot;obj&quot;:&quot;btn&quot;,&quot;x&quot;:10,&quot;y&quot;:40,&quot;w&quot;:105,&quot;h&quot;:90,&quot;toggle&quot;:true,&quot;text&quot;:&quot;\uE335&quot;,&quot;text_font&quot;:32,&quot;align&quot;:1}
 </code></pre>
 <pre><code class="language-yaml">      - obj: &quot;p1b2&quot; # switch, checkbox or btn with toggle true
         properties:
@@ -156,7 +156,7 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
               entity_id: &quot;light.my_lamp&quot;
 </code></pre>
 <h4 id="dropdown-self-populating-from-an-input_select">Dropdown (self-populating from an input_select)<a class="headerlink" href="#dropdown-self-populating-from-an-input_select" title="Permanent link">~</a></h4>
-<pre><code class="language-text">{&quot;page&quot;:1,&quot;id&quot;:3,&quot;obj&quot;:&quot;dropdown&quot;,&quot;x&quot;:5,&quot;y&quot;:40,&quot;w&quot;:230,&quot;h&quot;:30,&quot;options&quot;:&quot;&quot;}
+<pre><code class="language-json">{&quot;page&quot;:1,&quot;id&quot;:3,&quot;obj&quot;:&quot;dropdown&quot;,&quot;x&quot;:5,&quot;y&quot;:40,&quot;w&quot;:230,&quot;h&quot;:30,&quot;options&quot;:&quot;&quot;}
 </code></pre>
 <pre><code class="language-yaml">      - obj: &quot;p1b3&quot; # dropdown
         properties:
@@ -179,7 +179,7 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
 <p><img alt="screenshot" src="../../assets/images/screenshots/cc_sampl_rgb.png" /></p>
 <p>Have an RGB light in Home Assistant controlled by hasp-lvgl. In our example we use Lanbon L8's moodlight.</p>
 <p>relevant <strong>openHASP config:</strong></p>
-<pre><code class="language-text">{&quot;page&quot;:1,&quot;id&quot;:4,&quot;obj&quot;:&quot;cpicker&quot;,&quot;x&quot;:20,&quot;y&quot;:70,&quot;w&quot;:200,&quot;h&quot;:200}`
+<pre><code class="language-json">{&quot;page&quot;:1,&quot;id&quot;:4,&quot;obj&quot;:&quot;cpicker&quot;,&quot;x&quot;:20,&quot;y&quot;:70,&quot;w&quot;:200,&quot;h&quot;:200}
 </code></pre>
 <p>relevant <strong>openHASP-custom-component config:</strong></p>
 <pre><code class="language-yaml">      - obj: &quot;p1b4&quot; # color picker
@@ -208,12 +208,12 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
 - the plus and minus buttons increase and decrease the temperature by the temperature step defined by the climate</p>
 <p>The circle in the middle changes color if it's heating, but also serves as a touch-catcher to minimize false arc-touch detections while manipulating with plus and minus buttons. Controls get disabled when entity is unavailable in HA.</p>
 <p>relevant <strong>openHASP config:</strong> (screen size 240x320) </p>
-<pre><code class="language-text">{&quot;page&quot;:2,&quot;id&quot;:2,&quot;obj&quot;:&quot;arc&quot;,&quot;x&quot;:10,&quot;y&quot;:70,&quot;w&quot;:220,&quot;h&quot;:220,&quot;min&quot;:180,&quot;max&quot;:250,&quot;border_side&quot;:0,&quot;type&quot;:0,&quot;rotation&quot;:0,&quot;start_angle&quot;:135,&quot;end_angle&quot;:45,&quot;start_angle1&quot;:135,&quot;end_angle1&quot;:45,&quot;value_font&quot;:28,&quot;value_color&quot;:&quot;#2C3E50&quot;,&quot;adjustable&quot;:&quot;true&quot;}
+<pre><code class="language-json">{&quot;page&quot;:2,&quot;id&quot;:2,&quot;obj&quot;:&quot;arc&quot;,&quot;x&quot;:10,&quot;y&quot;:70,&quot;w&quot;:220,&quot;h&quot;:220,&quot;min&quot;:180,&quot;max&quot;:250,&quot;border_side&quot;:0,&quot;type&quot;:0,&quot;rotation&quot;:0,&quot;start_angle&quot;:135,&quot;end_angle&quot;:45,&quot;start_angle1&quot;:135,&quot;end_angle1&quot;:45,&quot;value_font&quot;:32,&quot;value_color&quot;:&quot;#2C3E50&quot;,&quot;adjustable&quot;:&quot;true&quot;}
 {&quot;page&quot;:2,&quot;id&quot;:3,&quot;obj&quot;:&quot;obj&quot;,&quot;x&quot;:40,&quot;y&quot;:100,&quot;w&quot;:160,&quot;h&quot;:160,&quot;radius&quot;:100,&quot;opacity&quot;:100,&quot;border_opa&quot;:160,&quot;border_width&quot;:4,&quot;comment&quot;:&quot;touch-catcher&quot;}
 {&quot;page&quot;:2,&quot;id&quot;:4,&quot;obj&quot;:&quot;label&quot;,&quot;x&quot;:10,&quot;y&quot;:40,&quot;w&quot;:220,&quot;h&quot;:30,&quot;text&quot;:&quot;Kívánt hőmérséklet:&quot;,&quot;align&quot;:1,&quot;padh&quot;:50}
 {&quot;page&quot;:2,&quot;id&quot;:5,&quot;obj&quot;:&quot;dropdown&quot;,&quot;x&quot;:75,&quot;y&quot;:235,&quot;w&quot;:90,&quot;h&quot;:30,&quot;options&quot;:&quot;&quot;}
-{&quot;page&quot;:2,&quot;id&quot;:6,&quot;obj&quot;:&quot;btn&quot;,&quot;x&quot;:50,&quot;y&quot;:160,&quot;w&quot;:40,&quot;h&quot;:40,&quot;toggle&quot;:false,&quot;text&quot;:&quot;\uE374&quot;,&quot;text_font&quot;:28,&quot;align&quot;:1}
-{&quot;page&quot;:2,&quot;id&quot;:7,&quot;obj&quot;:&quot;btn&quot;,&quot;x&quot;:150,&quot;y&quot;:160,&quot;w&quot;:40,&quot;h&quot;:40,&quot;toggle&quot;:false,&quot;text&quot;:&quot;\uE415&quot;,&quot;text_font&quot;:28,&quot;align&quot;:1}
+{&quot;page&quot;:2,&quot;id&quot;:6,&quot;obj&quot;:&quot;btn&quot;,&quot;x&quot;:50,&quot;y&quot;:160,&quot;w&quot;:40,&quot;h&quot;:40,&quot;toggle&quot;:false,&quot;text&quot;:&quot;\uE374&quot;,&quot;text_font&quot;:32,&quot;align&quot;:1}
+{&quot;page&quot;:2,&quot;id&quot;:7,&quot;obj&quot;:&quot;btn&quot;,&quot;x&quot;:150,&quot;y&quot;:160,&quot;w&quot;:40,&quot;h&quot;:40,&quot;toggle&quot;:false,&quot;text&quot;:&quot;\uE415&quot;,&quot;text_font&quot;:32,&quot;align&quot;:1}
 {&quot;page&quot;:2,&quot;id&quot;:8,&quot;obj&quot;:&quot;label&quot;,&quot;x&quot;:60,&quot;y&quot;:115,&quot;w&quot;:120,&quot;h&quot;:30,&quot;text&quot;:&quot;Status&quot;,&quot;align&quot;:1,&quot;padh&quot;:50}
 </code></pre>
 <p>relevant <strong>openHASP-custom-component config:</strong></p>
@@ -291,9 +291,9 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
 <p><img alt="screenshot" src="../../assets/images/screenshots/cc_sampl_cover.png" />  </p>
 <p>The icon on the up and down buttons change color when covers move and set opacity when reached to limit. UI theme set to <code>Hasp Light</code> in plate's web interface. </p>
 <p>relevant <strong>openHASP config:</strong> (screen size 240x320) </p>
-<pre><code class="language-text">{&quot;page&quot;:1,&quot;id&quot;:4,&quot;obj&quot;:&quot;btn&quot;,&quot;x&quot;:5,&quot;y&quot;:140,&quot;w&quot;:73,&quot;h&quot;:60,&quot;toggle&quot;:false,&quot;text&quot;:&quot;\uE05D&quot;,&quot;text_font&quot;:28}
-{&quot;page&quot;:1,&quot;id&quot;:5,&quot;obj&quot;:&quot;btn&quot;,&quot;x&quot;:83,&quot;y&quot;:140,&quot;w&quot;:73,&quot;h&quot;:60,&quot;toggle&quot;:false,&quot;text&quot;:&quot;\uE4DB&quot;,&quot;text_font&quot;:28}
-{&quot;page&quot;:1,&quot;id&quot;:6,&quot;obj&quot;:&quot;btn&quot;,&quot;x&quot;:161,&quot;y&quot;:140,&quot;w&quot;:73,&quot;h&quot;:60,&quot;toggle&quot;:false,&quot;text&quot;:&quot;\uE045&quot;,&quot;text_font&quot;:28}
+<pre><code class="language-json">{&quot;page&quot;:1,&quot;id&quot;:4,&quot;obj&quot;:&quot;btn&quot;,&quot;x&quot;:5,&quot;y&quot;:140,&quot;w&quot;:73,&quot;h&quot;:60,&quot;toggle&quot;:false,&quot;text&quot;:&quot;\uE05D&quot;,&quot;text_font&quot;:32}
+{&quot;page&quot;:1,&quot;id&quot;:5,&quot;obj&quot;:&quot;btn&quot;,&quot;x&quot;:83,&quot;y&quot;:140,&quot;w&quot;:73,&quot;h&quot;:60,&quot;toggle&quot;:false,&quot;text&quot;:&quot;\uE4DB&quot;,&quot;text_font&quot;:32}
+{&quot;page&quot;:1,&quot;id&quot;:6,&quot;obj&quot;:&quot;btn&quot;,&quot;x&quot;:161,&quot;y&quot;:140,&quot;w&quot;:73,&quot;h&quot;:60,&quot;toggle&quot;:false,&quot;text&quot;:&quot;\uE045&quot;,&quot;text_font&quot;:32}
 </code></pre>
 <p>relevant <strong>openHASP-custom-component config:</strong></p>
 <pre><code class="language-yaml">      - obj: &quot;p1b4&quot;
@@ -336,7 +336,7 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
 <h2 id="cover-with-button-matrix">Cover with button matrix<a class="headerlink" href="#cover-with-button-matrix" title="Permanent link">~</a></h2>
 <p>A simpler cover control with only basic feedback. UI theme set to <code>Hasp Light</code> in plate's web interface. </p>
 <p>relevant <strong>openHASP config:</strong> (screen size 240x320) </p>
-<pre><code class="language-text">{&quot;page&quot;:4,&quot;id&quot;:20,&quot;obj&quot;:&quot;btnmatrix&quot;,&quot;x&quot;:0,&quot;y&quot;:20,&quot;w&quot;:240,&quot;h&quot;:70,&quot;options&quot;:[&quot;\uE05D&quot;,&quot;\uE4DB&quot;,&quot;\uE045&quot;],&quot;text_font&quot;:28,&quot;bg_opa&quot;:0,&quot;border_opa&quot;:0}
+<pre><code class="language-json">{&quot;page&quot;:4,&quot;id&quot;:20,&quot;obj&quot;:&quot;btnmatrix&quot;,&quot;x&quot;:0,&quot;y&quot;:20,&quot;w&quot;:240,&quot;h&quot;:70,&quot;options&quot;:[&quot;\uE05D&quot;,&quot;\uE4DB&quot;,&quot;\uE045&quot;],&quot;text_font&quot;:32,&quot;bg_opa&quot;:0,&quot;border_opa&quot;:0}
 </code></pre>
 <p>relevant <strong>openHASP-custom-component config:</strong></p>
 <pre><code class="language-yaml">      - obj: &quot;p4b20&quot;
@@ -367,11 +367,12 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
 <p><img alt="screenshot" src="../../assets/images/screenshots/cc_sampl_cover_lovelacee.png" />  </p>
 <p>The icon behaves like in Lovelace. UI theme set to <code>Hasp Light</code> in plate's web interface.</p>
 <p>relevant <strong>openHASP config:</strong> (screen size 240x320, UI Theme: Hasp Light) </p>
-<pre><code class="language-text">{&quot;page&quot;:5,&quot;id&quot;:2,&quot;obj&quot;:&quot;label&quot;,&quot;x&quot;:8,&quot;y&quot;:33,&quot;w&quot;:35,&quot;h&quot;:35,&quot;text&quot;:&quot;\uF11D&quot;,&quot;align&quot;:1,&quot;text_font&quot;:28,&quot;text_color&quot;:&quot;#164f6e&quot;}
+<pre><code class="language-json">{&quot;page&quot;:5,&quot;id&quot;:2,&quot;obj&quot;:&quot;label&quot;,&quot;x&quot;:8,&quot;y&quot;:33,&quot;w&quot;:35,&quot;h&quot;:35,&quot;text&quot;:&quot;\uF11D&quot;,&quot;align&quot;:1,&quot;text_font&quot;:32,&quot;text_color&quot;:&quot;#164f6e&quot;}
 {&quot;page&quot;:5,&quot;id&quot;:3,&quot;obj&quot;:&quot;label&quot;,&quot;x&quot;:48,&quot;y&quot;:43,&quot;w&quot;:80,&quot;h&quot;:30,&quot;text&quot;:&quot;Cover 1&quot;,&quot;align&quot;:0,&quot;text_font&quot;:16,&quot;text_color&quot;:&quot;#164f6e&quot;}
-{&quot;page&quot;:5,&quot;id&quot;:4,&quot;obj&quot;:&quot;btn&quot;,&quot;x&quot;:125,&quot;y&quot;:37,&quot;w&quot;:30,&quot;h&quot;:30,&quot;toggle&quot;:false,&quot;text&quot;:&quot;\uE05D&quot;,&quot;text_font&quot;:28,&quot;bg_opa&quot;:0,&quot;border_opa&quot;:0,&quot;text_color&quot;:&quot;#164f6e&quot;}
-{&quot;page&quot;:5,&quot;id&quot;:5,&quot;obj&quot;:&quot;btn&quot;,&quot;x&quot;:165,&quot;y&quot;:37,&quot;w&quot;:30,&quot;h&quot;:30,&quot;toggle&quot;:false,&quot;text&quot;:&quot;\uE4DB&quot;,&quot;text_font&quot;:28,&quot;bg_opa&quot;:0,&quot;border_opa&quot;:0,&quot;text_color&quot;:&quot;#164f6e&quot;}
-{&quot;page&quot;:5,&quot;id&quot;:6,&quot;obj&quot;:&quot;btn&quot;,&quot;x&quot;:205,&quot;y&quot;:37,&quot;w&quot;:30,&quot;h&quot;:30,&quot;toggle&quot;:false,&quot;text&quot;:&quot;\uE045&quot;,&quot;text_font&quot;:28,&quot;bg_opa&quot;:0,&quot;border_opa&quot;:0,&quot;text_color&quot;:&quot;#164f6e&quot;}
+{&quot;page&quot;:5,&quot;id&quot;:4,&quot;obj&quot;:&quot;btn&quot;,&quot;x&quot;:125,&quot;y&quot;:37,&quot;w&quot;:30,&quot;h&quot;:30,&quot;toggle&quot;:false,&quot;text&quot;:&quot;\uE05D&quot;,&quot;text_font&quot;:32,&quot;bg_opa&quot;:0,&quot;border_opa&quot;:0,&quot;text_color&quot;:&quot;#164f6e&quot;}
+{&quot;page&quot;:5,&quot;id&quot;:5,&quot;obj&quot;:&quot;btn&quot;,&quot;x&quot;:165,&quot;y&quot;:37,&quot;w&quot;:30,&quot;h&quot;:30,&quot;toggle&quot;:false,&quot;text&quot;:&quot;\uE4DB&quot;,&quot;text_font&quot;:32,&quot;bg_opa&quot;:0,&quot;border_opa&quot;:0,&quot;text_color&quot;:&quot;#164f6e&quot;}
+{&quot;page&quot;:5,&quot;id&quot;:6,&quot;obj&quot;:&quot;btn&quot;,&quot;x&quot;:205,&quot;y&quot;:37,&quot;w&quot;:30,&quot;h&quot;:30,&quot;toggle&quot;:false,&quot;text&quot;:&quot;\uE045&quot;,&quot;text_font&quot;:32,&quot;bg_opa&quot;:0,&quot;border_opa&quot;:0,&quot;text_color&quot;:&quot;#164f6e&quot;}
+
 </code></pre>
 <p>relevant <strong>openHASP-custom-component config:</strong></p>
 <pre><code class="language-yaml">      - obj: &quot;p5b2&quot;
@@ -417,20 +418,20 @@ Your browser does not support the video tag.
 Player availability is shown by the opacity of the buttons. Player state (play/pause) is shown by the middle button. Power state shown by color, repeat, shuffle and muted state shown by appropriate icons on the buttons.
 UI theme set to <code>Hasp Light</code> in plate's web interface.</p>
 <p>relevant <strong>openHASP config:</strong> (screen size 240x320) </p>
-<pre><code class="language-text">{&quot;page&quot;:6,&quot;id&quot;:1,&quot;obj&quot;:&quot;obj&quot;,&quot;x&quot;:5,&quot;y&quot;:35,&quot;w&quot;:200,&quot;h&quot;:84,&quot;click&quot;:0}
+<pre><code class="language-json">{&quot;page&quot;:6,&quot;id&quot;:1,&quot;obj&quot;:&quot;obj&quot;,&quot;x&quot;:5,&quot;y&quot;:35,&quot;w&quot;:200,&quot;h&quot;:84,&quot;click&quot;:0}
 {&quot;page&quot;:6,&quot;id&quot;:2,&quot;obj&quot;:&quot;label&quot;,&quot;x&quot;:7,&quot;y&quot;:45,&quot;w&quot;:196,&quot;h&quot;:30,&quot;text&quot;:&quot;-&quot;,&quot;mode&quot;:&quot;scroll&quot;,&quot;align&quot;:1}
 {&quot;page&quot;:6,&quot;id&quot;:3,&quot;obj&quot;:&quot;label&quot;,&quot;x&quot;:7,&quot;y&quot;:80,&quot;w&quot;:196,&quot;h&quot;:30,&quot;text&quot;:&quot;-&quot;,&quot;mode&quot;:&quot;scroll&quot;,&quot;align&quot;:1}
 {&quot;page&quot;:6,&quot;id&quot;:4,&quot;obj&quot;:&quot;bar&quot;,&quot;x&quot;:5,&quot;y&quot;:108,&quot;w&quot;:200,&quot;h&quot;:11,&quot;min&quot;:0,&quot;max&quot;:100}
 {&quot;page&quot;:6,&quot;id&quot;:5,&quot;obj&quot;:&quot;dropdown&quot;,&quot;x&quot;:5,&quot;y&quot;:128,&quot;w&quot;:120,&quot;h&quot;:30,&quot;options&quot;:&quot;Source1\nSource2\nSource3&quot;,&quot;direction&quot;:3,&quot;max_height&quot;:300}
 {&quot;page&quot;:6,&quot;id&quot;:6,&quot;obj&quot;:&quot;dropdown&quot;,&quot;x&quot;:130,&quot;y&quot;:128,&quot;w&quot;:75,&quot;h&quot;:30,&quot;options&quot;:&quot;Jazz\nPop\nRock&quot;,&quot;direction&quot;:2}
-{&quot;page&quot;:6,&quot;id&quot;:7,&quot;obj&quot;:&quot;btn&quot;,&quot;x&quot;:5,&quot;y&quot;:170,&quot;w&quot;:50,&quot;h&quot;:60,&quot;toggle&quot;:false,&quot;text&quot;:&quot;\uE4AE&quot;,&quot;text_font&quot;:28}
-{&quot;page&quot;:6,&quot;id&quot;:8,&quot;obj&quot;:&quot;btn&quot;,&quot;x&quot;:63,&quot;y&quot;:170,&quot;w&quot;:83,&quot;h&quot;:60,&quot;toggle&quot;:false,&quot;text&quot;:&quot;\uE40A&quot;,&quot;text_font&quot;:28}
-{&quot;page&quot;:6,&quot;id&quot;:9,&quot;obj&quot;:&quot;btn&quot;,&quot;x&quot;:154,&quot;y&quot;:170,&quot;w&quot;:51,&quot;h&quot;:60,&quot;toggle&quot;:false,&quot;text&quot;:&quot;\uE4AD&quot;,&quot;text_font&quot;:28}
+{&quot;page&quot;:6,&quot;id&quot;:7,&quot;obj&quot;:&quot;btn&quot;,&quot;x&quot;:5,&quot;y&quot;:170,&quot;w&quot;:50,&quot;h&quot;:60,&quot;toggle&quot;:false,&quot;text&quot;:&quot;\uE4AE&quot;,&quot;text_font&quot;:32}
+{&quot;page&quot;:6,&quot;id&quot;:8,&quot;obj&quot;:&quot;btn&quot;,&quot;x&quot;:63,&quot;y&quot;:170,&quot;w&quot;:83,&quot;h&quot;:60,&quot;toggle&quot;:false,&quot;text&quot;:&quot;\uE40A&quot;,&quot;text_font&quot;:32}
+{&quot;page&quot;:6,&quot;id&quot;:9,&quot;obj&quot;:&quot;btn&quot;,&quot;x&quot;:154,&quot;y&quot;:170,&quot;w&quot;:51,&quot;h&quot;:60,&quot;toggle&quot;:false,&quot;text&quot;:&quot;\uE4AD&quot;,&quot;text_font&quot;:32}
 {&quot;page&quot;:6,&quot;id&quot;:10,&quot;obj&quot;:&quot;slider&quot;,&quot;x&quot;:212,&quot;y&quot;:35,&quot;w&quot;:22,&quot;h&quot;:245,&quot;min&quot;:0,&quot;max&quot;:100}
-{&quot;page&quot;:6,&quot;id&quot;:12,&quot;obj&quot;:&quot;btn&quot;,&quot;x&quot;:57,&quot;y&quot;:242,&quot;w&quot;:45,&quot;h&quot;:37,&quot;toggle&quot;:false,&quot;text&quot;:&quot;\uE457&quot;,&quot;text_font&quot;:28}
-{&quot;page&quot;:6,&quot;id&quot;:13,&quot;obj&quot;:&quot;btn&quot;,&quot;x&quot;:108,&quot;y&quot;:242,&quot;w&quot;:45,&quot;h&quot;:37,&quot;toggle&quot;:false,&quot;text&quot;:&quot;\uE49E&quot;,&quot;text_font&quot;:28}
-{&quot;page&quot;:6,&quot;id&quot;:14,&quot;obj&quot;:&quot;btn&quot;,&quot;x&quot;:5,&quot;y&quot;:242,&quot;w&quot;:45,&quot;h&quot;:37,&quot;toggle&quot;:false,&quot;text&quot;:&quot;\uE425&quot;,&quot;text_font&quot;:28}
-{&quot;page&quot;:6,&quot;id&quot;:15,&quot;obj&quot;:&quot;btn&quot;,&quot;x&quot;:160,&quot;y&quot;:242,&quot;w&quot;:45,&quot;h&quot;:37,&quot;toggle&quot;:false,&quot;text&quot;:&quot;\uE57E&quot;,&quot;text_font&quot;:28}
+{&quot;page&quot;:6,&quot;id&quot;:12,&quot;obj&quot;:&quot;btn&quot;,&quot;x&quot;:57,&quot;y&quot;:242,&quot;w&quot;:45,&quot;h&quot;:37,&quot;toggle&quot;:false,&quot;text&quot;:&quot;\uE457&quot;,&quot;text_font&quot;:32}
+{&quot;page&quot;:6,&quot;id&quot;:13,&quot;obj&quot;:&quot;btn&quot;,&quot;x&quot;:108,&quot;y&quot;:242,&quot;w&quot;:45,&quot;h&quot;:37,&quot;toggle&quot;:false,&quot;text&quot;:&quot;\uE49E&quot;,&quot;text_font&quot;:32}
+{&quot;page&quot;:6,&quot;id&quot;:14,&quot;obj&quot;:&quot;btn&quot;,&quot;x&quot;:5,&quot;y&quot;:242,&quot;w&quot;:45,&quot;h&quot;:37,&quot;toggle&quot;:false,&quot;text&quot;:&quot;\uE425&quot;,&quot;text_font&quot;:32}
+{&quot;page&quot;:6,&quot;id&quot;:15,&quot;obj&quot;:&quot;btn&quot;,&quot;x&quot;:160,&quot;y&quot;:242,&quot;w&quot;:45,&quot;h&quot;:37,&quot;toggle&quot;:false,&quot;text&quot;:&quot;\uE57E&quot;,&quot;text_font&quot;:32}
 </code></pre>
 <p>relevant <strong>openHASP-custom-component config:</strong></p>
 <pre><code class="language-yaml">      - obj: &quot;p6b2&quot; # artist
@@ -608,10 +609,11 @@ UI theme set to <code>Hasp Light</code> in plate's web interface.</p>
 <p>Note that the <code>val</code> value of the slider is multiplied and divided by 100 when read and set, because <a href="https://github.com/HASwitchPlate/openHASP/issues/81">LVGL only suppports integers</a> for object values. By multiplying and dividing by 100, it becomes possible to set volume between 0 and 1 as required by Home Assistant.</p>
 <hr />
 <h2 id="color-coded-icons">Color coded icons<a class="headerlink" href="#color-coded-icons" title="Permanent link">~</a></h2>
+<p><img alt="icons" src="https://user-images.githubusercontent.com/1550668/120081781-9372e880-c0bf-11eb-8c9a-62d2a16c24c5.png" /></p>
 <h4>Color code a WiFi icon according to RSSI reported by the plate</h4>
 
 <p><strong>openHASP config:</strong> (screen size 240x320) </p>
-<pre><code class="language-text">{&quot;obj&quot;:&quot;btn&quot;,&quot;id&quot;:1,&quot;x&quot;:120,&quot;y&quot;:1,&quot;w&quot;:30,&quot;h&quot;:40,&quot;text_font&quot;:&quot;2&quot;,&quot;text&quot;:&quot;\uF76B&quot;,&quot;text_color&quot;:&quot;gray&quot;,&quot;bg_opa&quot;:0,&quot;border_width&quot;:0}
+<pre><code class="language-json">{&quot;obj&quot;:&quot;btn&quot;,&quot;id&quot;:1,&quot;x&quot;:120,&quot;y&quot;:1,&quot;w&quot;:30,&quot;h&quot;:40,&quot;text_font&quot;:&quot;2&quot;,&quot;text&quot;:&quot;\uE5A9&quot;,&quot;text_color&quot;:&quot;gray&quot;,&quot;bg_opa&quot;:0,&quot;border_width&quot;:0}
 </code></pre>
 <p>relevant <strong>openHASP-custom-component config:</strong></p>
 <pre><code class="language-yaml">    - obj: &quot;p0b1&quot;
@@ -621,7 +623,7 @@ UI theme set to <code>Hasp Light</code> in plate's web interface.</p>
 <h4>Color code a temperature icon according to sensor values</h4>
 
 <p><strong>openHASP config:</strong> (screen size 240x320) </p>
-<pre><code class="language-text">{&quot;obj&quot;:&quot;btn&quot;,&quot;id&quot;:3,&quot;x&quot;:165,&quot;y&quot;:1,&quot;w&quot;:30,&quot;h&quot;:40,&quot;text_font&quot;:&quot;2&quot;,&quot;text&quot;:&quot;\uF1EB&quot;,&quot;text_color&quot;:&quot;gray&quot;,&quot;bg_opa&quot;:0,&quot;border_width&quot;:0}
+<pre><code class="language-json">{&quot;obj&quot;:&quot;btn&quot;,&quot;id&quot;:3,&quot;x&quot;:165,&quot;y&quot;:1,&quot;w&quot;:30,&quot;h&quot;:40,&quot;text_font&quot;:&quot;2&quot;,&quot;text&quot;:&quot;\uE50F&quot;,&quot;text_color&quot;:&quot;gray&quot;,&quot;bg_opa&quot;:0,&quot;border_width&quot;:0}
 </code></pre>
 <p>relevant <strong>openHASP-custom-component config:</strong></p>
 <pre><code class="language-yaml">    - obj: &quot;p0b3&quot;
