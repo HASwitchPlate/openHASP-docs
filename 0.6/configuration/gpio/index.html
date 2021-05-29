@@ -537,35 +537,14 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#relay" class="md-nav__link">
-    Relay
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#led" class="md-nav__link">
-    Led
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#pwm" class="md-nav__link">
-    PWM
+  <a href="#type_1" class="md-nav__link">
+    Type
   </a>
   
 </li>
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#idle-state" class="md-nav__link">
-    Idle State
-  </a>
   
 </li>
       
@@ -1301,35 +1280,14 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#relay" class="md-nav__link">
-    Relay
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#led" class="md-nav__link">
-    Led
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#pwm" class="md-nav__link">
-    PWM
+  <a href="#type_1" class="md-nav__link">
+    Type
   </a>
   
 </li>
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#idle-state" class="md-nav__link">
-    Idle State
-  </a>
   
 </li>
       
@@ -1407,7 +1365,9 @@ If an internal <em>pullup</em> or <em>pulldown</em> resistor is not available on
 <li><strong>External Pulldown</strong>: The pin is pulled <code>LOW</code> by an external resistor</li>
 </ul>
 <h3 id="type">Type<a class="headerlink" href="#type" title="Permanent link">~</a></h3>
-<h4 id="button">Button<a class="headerlink" href="#button" title="Permanent link">~</a></h4>
+<ul>
+<li>Button</li>
+</ul>
 <p>A button gpio sends events to topic <code>input#</code> where <code>#</code> is the groupnumber.</p>
 <p>GPIO buttons send out <strong>events</strong> while they occur. The possible events are:</p>
 <ul>
@@ -1420,11 +1380,18 @@ If an internal <em>pullup</em> or <em>pulldown</em> resistor is not available on
 <!-- - `LOST`: This event occurs when the object looses the focus while the screen is still being touched -->
 
 <p>The values of objects or gpios with the same groupid will be set to maximum when the button is being pressed and to minimum when the button is released.</p>
-<h4 id="switch">Switch<a class="headerlink" href="#switch" title="Permanent link">~</a></h4>
+<ul>
+<li>Switch</li>
+</ul>
 <p>A switch gpio sends events to <code>input#</code> where <code>#</code> is the groupnumber.</p>
 <p>GPIO Switches send out their <strong>value</strong> when toggled: {"val":"0"} or {"val":"1"}.</p>
 <p>The values of objects or gpios in the same group will be set to maximum when the switch is turned on
 and to minimum when the switch is turned off.</p>
+<div class="admonition note">
+<p class="admonition-title">Idle State</p>
+<p>The input pins do <em>not</em> affect the idle state of the device. Only interacting with the touchscreen automatically resets the idle state.</p>
+<p>If you want a GPIO pin to wakeup the device then you should monitor its mqtt topic and use the <a href="../../commands#idle"><code>idle</code></a> and <a href="../../commands#backlight"><code>backlight</code></a> commands appropriately.</p>
+</div>
 <h2 id="output-pin">Output Pin<a class="headerlink" href="#output-pin" title="Permanent link">~</a></h2>
 <div class="row justify-content-center">
             <a href="../../assets/images/settings/gpio_output.png" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-8" data-title="GPIO Output" data-footer="">
@@ -1445,10 +1412,38 @@ Check the documentation of your board to see which pins are free to be used as G
 <li>Binary objects, like a switch, checkbox or toggle button only pass along 0% and 100% values.</li>
 <li>Range objects, like a slider, arc slider, roller or drop-down list pass along a value between 0-65535, depending on their current <code>min</code>, <code>max</code> and <code>val</code> attributes.</li>
 </ul>
-<h3 id="relay">Relay<a class="headerlink" href="#relay" title="Permanent link">~</a></h3>
+<h3 id="type_1">Type<a class="headerlink" href="#type_1" title="Permanent link">~</a></h3>
+<h4 id="dimmable-lights">Dimmable Lights:<a class="headerlink" href="#dimmable-lights" title="Permanent link">~</a></h4>
+<ul>
+<li>Led</li>
+<li>L8-HD (EU)</li>
+<li>L8-HD (AU)</li>
+</ul>
+<p>Set the brightness of the light or LED between <code>0</code> and <code>255</code> when a value is received on <code>output#</code> where <code>#</code> is the groupnumber.</p>
+<p>When a led is controlled by a button or switch in the same group, it will be turned ON or OFF according to the state of the button or switch.</p>
+<p>When a led is controlled by a range object (slider, arc slider, roller, drop-down list) in the same group, the brightness will be proportional to the <code>.val</code> value of the object within its range (<code>min-max</code>).</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Consider a roller or drop-down list with 4 options: <code>OFF</code>, <code>Low</code>, <code>Medium</code> and <code>High</code>.
+The <code>.val</code> values can range from 0 to 3.
+These will set the brightness of the led to 0 (0%), 84 (33%), 170 (66%) and 255 (100%) respectively.</p>
+<p>For a roller or drop-down list with 5 options, <code>.val</code> ranges between 0 and 4. The brightness of the led increases 25% with each step.</p>
+</div>
+<h4 id="moodlight">Moodlight:<a class="headerlink" href="#moodlight" title="Permanent link">~</a></h4>
+<ul>
+<li>Mood Red</li>
+<li>Mood Green</li>
+<li>Mood Blue</li>
+</ul>
+<p>Assigns the pin to an RGB channel of the moodlight. The three RGB channels can be controlled together using the <a href="../../commands#moodlight"><code>moodlight</code></a> command.</p>
+<h4 id="relays">Relays:<a class="headerlink" href="#relays" title="Permanent link">~</a></h4>
+<ul>
+<li>Light Relay</li>
+<li>Power Relay</li>
+</ul>
 <p>Set the relay ON or OFF when an event is received on <code>output#</code> where <code>#</code> is the groupnumber or from another group <code>intput</code>.</p>
 <p>When a relay is grouped with a button or switch in the same group, it will be turned ON or OFF according to the state of the button or switch.</p>
-<p>When a relay is controlled by a range object (slider, arc slider, roller, drop-down list) within the same group, the state will be be ON if the <code>.val</code> value is halfway the range or above.</p>
+<p>When a relay is controlled by a range object (slider, arc slider, roller, drop-down list) within the same group, the state will be be ON if the <code>val</code> value is larger then its <code>min</code> value.</p>
 <p>The various relay types (Light, Power) denote only the device class you want them to be autodetected as in Home Assistant: <em>light</em> vs. <em>switch</em> etc.</p>
 <div class="admonition danger">
 <p class="admonition-title">Warning</p>
@@ -1457,22 +1452,11 @@ Configuring gpios is done on your <strong>own responsibility</strong>.
 Be sure to test any system thoroughly using low voltages first.
 By using the firmware you accept the <a href="../../license">License</a>.</p>
 </div>
-<h3 id="led">Led<a class="headerlink" href="#led" title="Permanent link">~</a></h3>
-<p>Set the brightness of the LED between <code>0</code> and <code>255</code> when a value is received on <code>output#</code> where <code>#</code> is the groupnumber.</p>
-<p>When a led is controlled by a button or switch in the same group, it will be turned ON or off according to the state of the button or switch.</p>
-<p>When a led is controlled by a range object (slider, arc slider, roller, drop-down list) in the same group, the brightness will be proportional to the <code>.val</code> value of the object within its range (<code>min-max</code>).</p>
-<p>For example:</p>
-<p>Consider a roller or drop-down list with 4 options: <code>OFF</code>, <code>Low</code>, <code>Medium</code> and <code>High</code>.
-The <code>.val</code> values can range from 0 to 3.
-These will set the brightness of the led to 0 (0%), 84 (33%), 170 (66%) and 255 (100%) respectively.</p>
-<p>For a roller or drop-down list with 5 options, <code>.val</code> ranges between 0 and 4. The brightness of the led increases 25% with each step.</p>
-<h3 id="pwm">PWM<a class="headerlink" href="#pwm" title="Permanent link">~</a></h3>
+<h4 id="pwm">PWM<a class="headerlink" href="#pwm" title="Permanent link">~</a></h4>
+<p><em>Experimental</em></p>
 <p>Set the duty cycle of the pin between <code>0</code> and <code>4095</code> when a value is received on <code>output#</code> where <code>#</code> is the groupnumber or from another group <code>intput</code>.</p>
 <p>When the PWM gpio is grouped with a button or switch, its duty cycle is either set to full-duty or off according to the state of the button or switch.</p>
 <p>When the PWM gpio is grouped with range object (slider, arc slider, roller, drop-down list), the duty cycle is proportional to the <code>.val</code> value of the object within its range (<code>min-max</code>).</p>
-<h2 id="idle-state">Idle State<a class="headerlink" href="#idle-state" title="Permanent link">~</a></h2>
-<p>The GPIO pins do <em>not</em> affect the idle state of the device. Only interacting with the touchscreen automatically resets the idle state.</p>
-<p>If you want a GPIO pin to wakeup the device, you should monitor its mqtt topic and use the <a href="../../commands#idle"><code>idle</code></a> and <a href="../../commands#backlight"><code>backlight</code></a> commands appropriately.</p>
 <hr />
 <p>Click 'Save Settings' to save your settings to the device. A restart is required to make the settings active. Navigate back to the Main Menu and click Restart to activate the settings.</p>
                 
