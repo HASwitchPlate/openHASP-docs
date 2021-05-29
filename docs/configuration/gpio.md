@@ -68,7 +68,7 @@ If an internal *pullup* or *pulldown* resistor is not available on that pin you 
 
 ### Type
 
-#### Button
+- Button
 
 A button gpio sends events to topic `input#` where `#` is the groupnumber.
 
@@ -84,7 +84,7 @@ GPIO buttons send out **events** while they occur. The possible events are:
 
 The values of objects or gpios with the same groupid will be set to maximum when the button is being pressed and to minimum when the button is released.
 
-#### Switch
+- Switch
 
 A switch gpio sends events to `input#` where `#` is the groupnumber.
 
@@ -92,6 +92,11 @@ GPIO Switches send out their **value** when toggled: {"val":"0"} or {"val":"1"}.
 
 The values of objects or gpios in the same group will be set to maximum when the switch is turned on
 and to minimum when the switch is turned off.
+
+!!! note "Idle State"
+    The input pins do *not* affect the idle state of the device. Only interacting with the touchscreen automatically resets the idle state.
+
+    If you want a GPIO pin to wakeup the device then you should monitor its mqtt topic and use the [`idle`](../../commands#idle) and [`backlight`](../../commands#backlight) commands appropriately.
 
 ## Output Pin
 
@@ -117,13 +122,43 @@ The applied value is *normalized* and *proportionate* to the value of the input 
 - Range objects, like a slider, arc slider, roller or drop-down list pass along a value between 0-65535, depending on their current `min`, `max` and `val` attributes.
 
 
-### Relay
+### Type
+
+#### Dimmable Lights:
+- Led
+- L8-HD (EU)
+- L8-HD (AU)
+
+Set the brightness of the light or LED between `0` and `255` when a value is received on `output#` where `#` is the groupnumber.
+
+When a led is controlled by a button or switch in the same group, it will be turned ON or OFF according to the state of the button or switch.
+
+When a led is controlled by a range object (slider, arc slider, roller, drop-down list) in the same group, the brightness will be proportional to the `.val` value of the object within its range (`min-max`).
+
+!!! example
+
+    Consider a roller or drop-down list with 4 options: `OFF`, `Low`, `Medium` and `High`.
+    The `.val` values can range from 0 to 3.
+    These will set the brightness of the led to 0 (0%), 84 (33%), 170 (66%) and 255 (100%) respectively.
+
+    For a roller or drop-down list with 5 options, `.val` ranges between 0 and 4. The brightness of the led increases 25% with each step.
+
+#### Moodlight:
+- Mood Red
+- Mood Green
+- Mood Blue
+
+Assigns the pin to an RGB channel of the moodlight. The three RGB channels can be controlled together using the [`moodlight`](../../commands#moodlight) command.
+
+#### Relays:
+- Light Relay
+- Power Relay
 
 Set the relay ON or OFF when an event is received on `output#` where `#` is the groupnumber or from another group `intput`.
 
 When a relay is grouped with a button or switch in the same group, it will be turned ON or OFF according to the state of the button or switch.
 
-When a relay is controlled by a range object (slider, arc slider, roller, drop-down list) within the same group, the state will be be ON if the `.val` value is halfway the range or above.
+When a relay is controlled by a range object (slider, arc slider, roller, drop-down list) within the same group, the state will be be ON if the `val` value is larger then its `min` value.
 
 !!! danger "Warning"
     Attaching devices to mains power can be dangerous!
@@ -131,24 +166,11 @@ When a relay is controlled by a range object (slider, arc slider, roller, drop-d
     Be sure to test any system thoroughly using low voltages first.
     By using the firmware you accept the [License](../../license).
 
-### Led
-
-Set the brightness of the LED between `0` and `255` when a value is received on `output#` where `#` is the groupnumber.
-
-When a led is controlled by a button or switch in the same group, it will be turned ON or off according to the state of the button or switch.
-
-When a led is controlled by a range object (slider, arc slider, roller, drop-down list) in the same group, the brightness will be proportional to the `.val` value of the object within its range (`min-max`).
-
-For example:
-
-Consider a roller or drop-down list with 4 options: `OFF`, `Low`, `Medium` and `High`.
-The `.val` values can range from 0 to 3.
-These will set the brightness of the led to 0 (0%), 84 (33%), 170 (66%) and 255 (100%) respectively.
-
-For a roller or drop-down list with 5 options, `.val` ranges between 0 and 4. The brightness of the led increases 25% with each step.
 
 
-### PWM
+#### PWM
+
+*Experimental*
 
 Set the duty cycle of the pin between `0` and `4095` when a value is received on `output#` where `#` is the groupnumber or from another group `intput`.
 
@@ -156,11 +178,6 @@ When the PWM gpio is grouped with a button or switch, its duty cycle is either s
 
 When the PWM gpio is grouped with range object (slider, arc slider, roller, drop-down list), the duty cycle is proportional to the `.val` value of the object within its range (`min-max`).
 
-## Idle State
-
-The GPIO pins do *not* affect the idle state of the device. Only interacting with the touchscreen automatically resets the idle state.
-
-If you want a GPIO pin to wakeup the device, you should monitor its mqtt topic and use the [`idle`](../../commands#idle) and [`backlight`](../../commands#backlight) commands appropriately.
 
 
 ---
