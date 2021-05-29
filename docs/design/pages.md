@@ -42,10 +42,10 @@ Example 1: Add a comment on a single line that is ignored.
 {"comment":" ----------- Page 1 layout ------------"}
 ```
 
-Example 2: Set the default `page` for next object(s) to `3` besides adding a comment as well.
+Example 2: Set the default `page` for next object(s) to `1` besides adding a comment as well.
 
 ```json
-{"page":2,"comment":" ---- My Awesome Color Picker Layout ----"}
+{"page":1,"comment":" ---- My Awesome Color Picker Layout ----"}
 ```
 If you then omit the `page` parameter in the lines below this comment, those objects will appear by default on page `2`.
 
@@ -53,13 +53,14 @@ If you then omit the `page` parameter in the lines below this comment, those obj
 Example 3: Insert a comment for an object.
 
 ```json
-{"page":2,"id":3,"obj":"obj","x":40,"y":100,"w":160,"h":160,"radius":100,"opacity":100,"border_opa":160,"border_width":4,"comment":"touch-catcher"}
+{"page":1,"id":3,"obj":"obj","x":40,"y":100,"w":160,"h":160,"radius":100,"opacity":100,"border_opa":160,"border_width":4,"comment":"touch-catcher"}
 ```
 
 !!! danger ""
     If the line is not valid json, the parsing of the rest of the file is also stopped.
 
-
+!!! note "Note"
+    The total number of available pages depends on the [microcontroller type](../index.md#features) you use.
 
 ## jsonl command
 
@@ -84,10 +85,13 @@ p1b1.w=100
 p1b2.hidden=true
 ```
 
-Page number `0` refers to an object visible on all pages.  
-An id of `0` refers to the page itself instead of an object.
+Ids start from `1` on each page.    
+You can have a maximum of 254 ids on each page. You don't have to use them in ascending order, you can for example use them for logical numbering (start labels from 11, 12, 13, buttons from 21, 22, 23 etc.)   
+Page number `0` refers to an object visible on all pages.   
+An id of `0` refers to the page itself instead of an object.   
 
-_Tip:_ If you add the objects on the page 0 last, you ensure that they will be always be visible on top of all other pages.
+!!! note "Tip"
+    If you add the objects on the page `0` last, you ensure that they will be always be visible on top of all other pages.
 
 See [objects documentation](../objects) for details.
 
