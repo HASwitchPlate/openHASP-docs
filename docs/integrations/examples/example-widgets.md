@@ -2,10 +2,10 @@
 
 <h2>Page Layout</h2>
 
-![screenshot](https://user-images.githubusercontent.com/1550668/120073363-3ca5e880-c098-11eb-82d8-ad58cf4a9d66.png)
-![screenshot](https://user-images.githubusercontent.com/1550668/120073369-44658d00-c098-11eb-9ad7-c318866c62c2.png)
-![screenshot](https://user-images.githubusercontent.com/1550668/120073374-492a4100-c098-11eb-9ac2-1144bd039eea.png)
-![screenshot](https://user-images.githubusercontent.com/1550668/120074302-7b3da200-c09c-11eb-9fa8-7396e02b63bc.png)
+![screenshot](https://user-images.githubusercontent.com/1550668/120076205-b217b600-c0a4-11eb-846c-2c2828da2df3.png)
+![screenshot](https://user-images.githubusercontent.com/1550668/120076212-b8a62d80-c0a4-11eb-94e5-f6254bec9ab0.png)
+![screenshot](https://user-images.githubusercontent.com/1550668/120076226-c3f95900-c0a4-11eb-82eb-49f85975d0c4.png)
+![screenshot](https://user-images.githubusercontent.com/1550668/120076231-cc519400-c0a4-11eb-9161-c676e2ed6d39.png)
 
 <h2>Code</h2>
 
@@ -13,28 +13,33 @@ This is a real-world example of a `pages.jsonl` file:
 
 ```json
 {"page":1,"comment":"---------- Page 1 ----------"}
-{"id":1,"obj":"btn","x":10,"y":45,"w":220,"h":55,"toggle":true,"text":"Push Me \uF40B"}
+{"id":1,"obj":"btn","x":10,"y":45,"w":220,"h":55,"toggle":true,"text":"Touch me \uE96B","text_font":32}
 {"id":2,"obj":"checkbox","x":10,"y":100,"w":220,"h":55,"text":" My Checkbox"}
 {"id":3,"obj":"label","x":10,"y":10,"w":220,"h":30,"text":"\uE75A My Label","align":1,"padh":50}
-{"id":4,"obj":"switch","x":100,"y":220,"w":120,"h":55}
-{"id":5,"obj":"led","x":10,"y":220,"w":55,"h":55}
+{"id":4,"obj":"switch","x":125,"y":220,"w":100,"h":55,"radius":40,"radius2":40}
+{"id":5,"obj":"led","x":22,"y":220,"w":55,"h":55}
 {"id":6,"obj":"dropdown","x":10,"y":160,"w":130,"options":"\uE40A Apples\n\uE40A Oranges\n\uE40A Bananas"}
 {"id":7,"obj":"spinner","x":160,"y":140,"w":70,"h":70}
 
 {"page":2,"comment":"---------- Page 2 ----------"}
-{"id":11,"obj":"slider","x":20,"y":260,"w":200,"h":20,"val":25}
-{"id":12,"obj":"gauge","x":10,"y":10,"w":150,"h":150,"val":75}
-{"id":13,"obj":"bar","x":20,"y":232,"w":200,"h":20, "val":75}
-{"id":14,"obj":"linemeter","x":130,"y":125,"w":100,"h":100,"val":32}
-{"id":15,"obj":"label","x":30,"y":65,"w":70,"h":70,"parentid":14,"text":"\uE12C OK"}
+{"id":1,"obj":"obj","x":5,"y":5,"w":230,"h":280,"click":0}
+{"id":11,"obj":"gauge","x":10,"y":10,"w":150,"h":150,"val":75}
+{"id":12,"obj":"linemeter","x":130,"y":120,"w":100,"h":100,"val":32}
+{"id":13,"obj":"label","x":28,"y":65,"w":70,"h":70,"parentid":12,"text":"\uE12C OK"}
+{"id":14,"obj":"bar","x":20,"y":225,"w":200,"h":20, "val":75}
+{"id":15,"obj":"slider","x":20,"y":254,"w":200,"h":20,"val":25}
 
 {"comment":"---------- Page 3 ----------"}
-{"page":3,"id":1,"obj":"cpicker","page":3,"x":20,"y":0,"w":200,"h":200}
-{"page":3,"id":2,"obj":"cpicker","page":3,"x":30,"y":220,"w":200,"h":40,"rect":true}
+{"page":3,"id":1,"obj":"cpicker","page":3,"x":20,"y":10,"w":200,"h":200}
+{"page":3,"id":2,"obj":"cpicker","page":3,"x":30,"y":230,"w":200,"h":30,"rect":true}
 
 {"page":4,"comment":"---------- Page 4 ----------"}
-{"id":1,"obj":"roller","x":40,"y":15,"w":160,"rows":3,"options":"2020\n2021\n2022\n2023\n2024"}
-{"id":2,"obj":"img","src":"/littlefs/logo-medium.png","x":45,"y":130,"auto_size":1,"w":150}
+{"id":1,"obj":"tabview","btn_pos":1}
+{"id":10,"obj":"tab","parentid":1,"text":"Tab 1"}
+{"id":20,"obj":"tab","parentid":1,"text":"Tab 2"}
+{"id":30,"obj":"tab","parentid":1,"text":"Tab 3"}
+{"id":11,"obj":"roller","x":40,"y":10,"w":160,"rows":2,"options":"2020\n2021\n2022\n2023\n2024","parentid":10}
+{"id":12,"obj":"img","src":"/littlefs/logo-medium.png","x":45,"y":80,"auto_size":1,"w":150,"parentid":10}
 
 {"comment":"---------- All Pages ----------"}
 {"page":0,"id":7,"obj":"btn","action":"prev","x":0,"y":290,"w":79,"h":32,"text":"\uE141","text_color":"#FFFFFF","radius":0,"border_side":0,"text_font":32}
