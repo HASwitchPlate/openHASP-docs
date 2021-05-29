@@ -26,8 +26,8 @@ This is a real-world example of a `pages.jsonl` file:
 {"page":3,"id":2,"obj":"cpicker","page":3,"x":30,"y":220,"w":200,"h":40,"rect":true}
 
 {"page":4,"comment":"---------- Page 4 ----------"}
-{"id":1,"obj":"dropdown","x":10,"y":20,"w":220,"options":"Spring\nSummer\nAutumn\nWinter"}
-{"id":2,"obj":"roller","x":40,"y":80,"w":160,"rows":3,"options":"2020\n2021\n2022\n2023\n2024"}
+{"id":1,"obj":"roller","x":40,"y":15,"w":160,"rows":3,"options":"2020\n2021\n2022\n2023\n2024"}
+{"id":2,"obj":"img","src":"/littlefs/logo-medium.png","x":45,"y":130,"auto_size":1,"w":150}
 
 {"comment":"---------- All Pages ----------"}
 {"page":0,"id":7,"obj":"btn","action":"prev","x":0,"y":290,"w":79,"h":32,"text":"\uE141","text_color":"#FFFFFF","radius":0,"border_side":0,"text_font":32}
@@ -37,13 +37,17 @@ This is a real-world example of a `pages.jsonl` file:
 {"comment":"---------- Limit page prev/next between 1 and 4 ----------"}
 {"page":1,"id":0,"prev":4}
 {"page":4,"id":0,"next":1}
+
 ```
+
+Upload [this logo](https://github.com/HASwitchPlate/openHASP-docs/blob/0.6/docs/assets/images/logo-medium.png) to the plate.
 
 <h2>Result</h2>
 
 ![screenshot](https://user-images.githubusercontent.com/1550668/120073363-3ca5e880-c098-11eb-82d8-ad58cf4a9d66.png)
 ![screenshot](https://user-images.githubusercontent.com/1550668/120073369-44658d00-c098-11eb-9ad7-c318866c62c2.png)
 ![screenshot](https://user-images.githubusercontent.com/1550668/120073374-492a4100-c098-11eb-9ac2-1144bd039eea.png)
-![screenshot](https://user-images.githubusercontent.com/1550668/120073393-5a734d80-c098-11eb-8eda-3f9157710710.png)
+![screenshot](https://user-images.githubusercontent.com/1550668/120074302-7b3da200-c09c-11eb-9fa8-7396e02b63bc.png)
+
 
 
