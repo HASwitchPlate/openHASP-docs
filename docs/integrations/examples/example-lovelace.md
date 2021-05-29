@@ -3,7 +3,7 @@
 
 <h2>Layout</h2>
 
-![Screenshot](../../assets/images/screenshots/demo_lovelace_entities.png){: align=left }
+![Screenshot](../../assets/images/screenshots/demo_lovelace_entities.png)
 
 <h2>Code</h2>
 
@@ -43,5 +43,3 @@ To add an openHASP plate to your installation with a sample configuration lookin
 Check out the [pagination example](../example-pagination) to learn how to implement the bottom bar.  
 Check out the [clock and temperature example](../../home-assistant/sampl_conf#display-clock-and-temperature) to learn how to implement values to the top.  
 Check out the [Lovelace cover example](../../home-assistant/sampl_conf#cover-like-in-lovelace) to learn how to bring life to the objects.  
-
-<div style="clear:both;"></div>

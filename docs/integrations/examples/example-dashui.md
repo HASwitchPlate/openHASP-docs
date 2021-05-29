@@ -3,7 +3,7 @@
 
 <h2>Layout</h2>
 
-![Screenshot](../../assets/images/screenshots/lanbon.png){: align=left }
+![Screenshot](../../assets/images/screenshots/lanbon.png)
 
 <h2>Code</h2>
 
@@ -40,4 +40,3 @@ Assuming your plate's configured MQTT topic is `plate35`, values for Temperature
 - `hasp/plate35/command/p1b3.value_str %value% %` - to update Humidity text value
 - `hasp/plate35/command/p1b4.text CO2 levels: %value%` - to update CO2 level value
 
-<div style="clear:both;"></div>
