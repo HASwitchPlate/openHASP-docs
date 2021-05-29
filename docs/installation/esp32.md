@@ -14,9 +14,11 @@ Get the *full* binary file for your ESP32 device: *e.g.* d1-mini-esp32_ili9341_f
 
 !!! important
     When flashing openHASP onto the ESP32 for the first time, you need to flash it over serial using the **full** firmware binary file.
-    You need to write the full binary to the ESP32 flash chip, starting @ address `0x0`.
+    You need to write the full binary to the ESP32 flash chip at address `0x0`.
 
-Before starting the flash process you have to put the ESP into *boot mode*:
+    The full binary also contains a bootloader and partition scheme needed to properly boot the ESP32.
+
+Before starting the flash process you have to put the ESP into *flash mode*:
 
 1. Connect `GPIO0` to `GND` before booting the devide
 2. Power-on or reset the ESP while `GPIO0` is connected to `GND`

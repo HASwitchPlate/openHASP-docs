@@ -49,8 +49,8 @@ The state of a digital input can only be `on` or `off` and will set all group me
 The state of the input when it is *not* being engaged:
 *i.e.* the switch, button or sensor is idle *(not active)*:
 
-- **Normally Open**: The default state interrupts the circuit
-- **Normally Closed**: The default state completes the circuit
+- **Normally Open**: The default state interrupts the circuit :material-electric-switch:
+- **Normally Closed**: The default state completes the circuit :material-electric-switch-closed:
 
 ### Resistor
 
@@ -125,7 +125,7 @@ When a relay is grouped with a button or switch in the same group, it will be tu
 
 When a relay is controlled by a range object (slider, arc slider, roller, drop-down list) within the same group, the state will be be ON if the `.val` value is halfway the range or above.
 
-!!! danger "Warning!"
+!!! danger "Warning"
     Attaching devices to mains power can be dangerous!
     Configuring gpios is done on your **own responsibility**.
     Be sure to test any system thoroughly using low voltages first.

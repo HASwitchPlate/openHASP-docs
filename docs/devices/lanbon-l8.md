@@ -150,7 +150,7 @@ The switch supports several wiring configurations:
 
 ![Display image](../assets/images/devices/lanbon-l8-wiring.png)
 
-!!! danger "Important"
+!!! danger "Warning"
     Always follow the instructions from the installation guide and local safety regulations.
     Consult a licensed electrician when changing your electrical wiring.</br>
 
