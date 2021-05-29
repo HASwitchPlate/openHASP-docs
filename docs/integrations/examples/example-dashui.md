@@ -3,7 +3,7 @@
 
 <h2>Layout</h2>
 
-![Screenshot](https://user-images.githubusercontent.com/1550668/120077719-112cf900-c0ac-11eb-9aa0-82edc3067c0f.png)
+![screenshot](../../assets/images/screenshots/dashui-060.png)
 
 <h2>Code</h2>
 
