@@ -3,7 +3,7 @@
 If your plate has moodlights, it is useful in dark situations, when you don't want to have the screen backlit on all the time, but have the mood light on instead.
 The night mode activates when sun goes down, and the day mode activates when the sun comes up. During the day mood light doesn't light, screen is on all the time but dimmed.
 
-Tested on Lanbon L8 and firmware 0.4.0.
+Tested on Lanbon L8 and firmware 0.5.2.
 
 Put your `light.plate_my_room_moodlight` to a Lovelace card entity row and select a nice color for moodlight. Assuming your plate's configured MQTT node or group topic is `plate35`, add your automations:
 
