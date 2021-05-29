@@ -5,8 +5,8 @@ There are 5 major data types that openHASP uses when communicating over MQTT:
 ## Boolean
 Properties with a boolean data type accept these values and are case insensitive:
 
-- true / ON / 1 / yes
-- false / OFF / 0 / no
+- `true` / `ON` / `1` / `yes`
+- `false` / `OFF` / `0` / `no`
 
 The return value will be either `1`/`0` or `on`/`off` depending on the context.
 
