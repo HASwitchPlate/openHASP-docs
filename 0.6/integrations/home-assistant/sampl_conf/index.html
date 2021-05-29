@@ -1255,7 +1255,7 @@
                   <h1>Example Configurations</h1>
                 
                 <h2 id="display-clock-and-temperature">Display clock and temperature<a class="headerlink" href="#display-clock-and-temperature" title="Permanent link">~</a></h2>
-<p><img alt="screenshot" src="../assets/images/screenshots/cc_sampl_clocktemp.png" /></p>
+<p><img alt="screenshot" src="../../../assets/images/screenshots/cc_sampl_clocktemp.png" /></p>
 <p>The easiest example is to display the state of a clock and a temperature sensor from Home Assistant, using <em>label</em> objects in openHASP.</p>
 <p>Create a label object to display the temperature value, a separate label object to display the unit and a third label object for the clock:</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
@@ -1303,7 +1303,7 @@
 <h2 id="some-basic-controls">Some basic controls<a class="headerlink" href="#some-basic-controls" title="Permanent link">~</a></h2>
 <p>Jsonl and Home Assistant configuration:</p>
 <h4 id="toggle-a-light-or-any-switchable-entity-with-onoff-states">Toggle a light (or any switchable entity with on/off states)<a class="headerlink" href="#toggle-a-light-or-any-switchable-entity-with-onoff-states" title="Permanent link">~</a></h4>
-<p><img alt="screenshot" src="../assets/images/screenshots/cc_sampl_lightswitch.png" /></p>
+<p><img alt="screenshot" src="../../../assets/images/screenshots/cc_sampl_lightswitch.png" /></p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;page&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="nt">&quot;obj&quot;</span><span class="p">:</span><span class="s2">&quot;btn&quot;</span><span class="p">,</span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="mi">10</span><span class="p">,</span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="mi">40</span><span class="p">,</span><span class="nt">&quot;w&quot;</span><span class="p">:</span><span class="mi">105</span><span class="p">,</span><span class="nt">&quot;h&quot;</span><span class="p">:</span><span class="mi">90</span><span class="p">,</span><span class="nt">&quot;toggle&quot;</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="s2">&quot;\uE335&quot;</span><span class="p">,</span><span class="nt">&quot;text_font&quot;</span><span class="p">:</span><span class="mi">32</span><span class="p">,</span><span class="nt">&quot;align&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">}</span>
 </code></pre></div>
 </td></tr></table>
@@ -1360,7 +1360,7 @@
 <p>See the other examples for pairing different kinds of objects to different kinds of Home Assistant entities.</p>
 <hr />
 <h2 id="rgb-light-color">RGB light color<a class="headerlink" href="#rgb-light-color" title="Permanent link">~</a></h2>
-<p><img alt="screenshot" src="../assets/images/screenshots/cc_sampl_rgb.png" /></p>
+<p><img alt="screenshot" src="../../../assets/images/screenshots/cc_sampl_rgb.png" /></p>
 <p>Have an RGB light in Home Assistant controlled by hasp-lvgl. In our example we use Lanbon L8's moodlight.</p>
 <p>relevant <strong>openHASP config:</strong></p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;page&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">4</span><span class="p">,</span><span class="nt">&quot;obj&quot;</span><span class="p">:</span><span class="s2">&quot;cpicker&quot;</span><span class="p">,</span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="mi">20</span><span class="p">,</span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="mi">70</span><span class="p">,</span><span class="nt">&quot;w&quot;</span><span class="p">:</span><span class="mi">200</span><span class="p">,</span><span class="nt">&quot;h&quot;</span><span class="p">:</span><span class="mi">200</span><span class="p">}</span>
@@ -1398,7 +1398,7 @@ The <code>color</code> property gets updated from the <code>rgb_color</code> att
 <p>Whenever somebody changes the color of the <code>cpicker</code> object on the plate, the light in Home Assustant gets updated with <code>rgb_color</code> values received in the MQTT message.</p>
 <hr />
 <h2 id="generic-thermostatclimate">Generic thermostat/climate<a class="headerlink" href="#generic-thermostatclimate" title="Permanent link">~</a></h2>
-<p><img alt="screenshot" src="../assets/images/screenshots/cc_sampl_climate.png" />  </p>
+<p><img alt="screenshot" src="../../../assets/images/screenshots/cc_sampl_climate.png" />  </p>
 <p>Arc can be dragged by the handle, precise set possible from the +/-buttons. Note that the <code>min</code>, <code>max</code> and <code>val</code> values of the arc are multiplied and divided by 10 when set and read, because <a href="https://github.com/HASwitchPlate/openHASP/issues/81">LVGL only suppports integers</a> for object values. By multiplying and dividing by 10, it becomes possible to set decimal values for climate temperature.</p>
 <p>The objects self-populate with the supported attributes of the climate in Home Assistant:
 - the arc min and max get the min and max temperatures 
@@ -1561,7 +1561,7 @@ The <code>color</code> property gets updated from the <code>rgb_color</code> att
 </td></tr></table>
 <hr />
 <h2 id="cover-with-state-feedback">Cover with state feedback<a class="headerlink" href="#cover-with-state-feedback" title="Permanent link">~</a></h2>
-<p><img alt="screenshot" src="../assets/images/screenshots/cc_sampl_cover.png" />  </p>
+<p><img alt="screenshot" src="../../../assets/images/screenshots/cc_sampl_cover.png" />  </p>
 <p>The icon on the up and down buttons change color when covers move and set opacity when reached to limit. UI theme set to <code>Hasp Light</code> in plate's web interface. </p>
 <p>relevant <strong>openHASP config:</strong> (screen size 240x320) </p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
@@ -1698,7 +1698,7 @@ The <code>color</code> property gets updated from the <code>rgb_color</code> att
 </td></tr></table>
 <hr />
 <h2 id="cover-like-in-lovelace">Cover like in Lovelace<a class="headerlink" href="#cover-like-in-lovelace" title="Permanent link">~</a></h2>
-<p><img alt="screenshot" src="../assets/images/screenshots/cc_sampl_cover_lovelacee.png" />  </p>
+<p><img alt="screenshot" src="../../../assets/images/screenshots/cc_sampl_cover_lovelacee.png" />  </p>
 <p>The icon behaves like in Lovelace. UI theme set to <code>Hasp Light</code> in plate's web interface.</p>
 <p>relevant <strong>openHASP config:</strong> (screen size 240x320, UI Theme: Hasp Light) </p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
@@ -1775,13 +1775,13 @@ The <code>color</code> property gets updated from the <code>rgb_color</code> att
 </code></pre></div>
 </td></tr></table>
 <video width="360" height="640" controls>
-  <source src="../../assets/videos/cc_sampl_cover_lovelace.mp4" type="video/mp4">
+  <source src="../../../assets/videos/cc_sampl_cover_lovelace.mp4" type="video/mp4">
 Your browser does not support the video tag.
 </video>
 
 <hr />
 <h2 id="media-player">Media Player<a class="headerlink" href="#media-player" title="Permanent link">~</a></h2>
-<p><img alt="screenshot" src="../assets/images/screenshots/cc_sampl_mediaplayer.png" />  </p>
+<p><img alt="screenshot" src="../../../assets/images/screenshots/cc_sampl_mediaplayer.png" />  </p>
 <p>The labels with artist and title are scrolling, the progressbar fills if the media player provides duration and playback position. The dropdown lists containing the available sources and sound modes of the player get populated automatically by the values existing on the player in Home Assistant, also the actually selected value is in sync with the values selected in Home Assistant.<br />
 Player availability is shown by the opacity of the buttons. Player state (play/pause) is shown by the middle button. Power state shown by color, repeat, shuffle and muted state shown by appropriate icons on the buttons.
 UI theme set to <code>Hasp Light</code> in plate's web interface.</p>
