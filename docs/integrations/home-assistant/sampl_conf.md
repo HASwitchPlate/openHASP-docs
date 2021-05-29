@@ -1,6 +1,6 @@
 ## Display clock and temperature
 
-![screenshot](../assets/images/screenshots/cc_sampl_clocktemp.png)
+![screenshot](../../assets/images/screenshots/cc_sampl_clocktemp.png)
 
 The easiest example is to display the state of a clock and a temperature sensor from Home Assistant, using _label_ objects in openHASP.
 
@@ -51,7 +51,7 @@ Jsonl and Home Assistant configuration:
 
 #### Toggle a light (or any switchable entity with on/off states)
 
-![screenshot](../assets/images/screenshots/cc_sampl_lightswitch.png)
+![screenshot](../../assets/images/screenshots/cc_sampl_lightswitch.png)
 
 ```json
 {"page":1,"id":2,"obj":"btn","x":10,"y":40,"w":105,"h":90,"toggle":true,"text":"\uE335","text_font":32,"align":1}
@@ -98,7 +98,7 @@ See the other examples for pairing different kinds of objects to different kinds
 
 ## RGB light color
 
-![screenshot](../assets/images/screenshots/cc_sampl_rgb.png)
+![screenshot](../../assets/images/screenshots/cc_sampl_rgb.png)
 
 Have an RGB light in Home Assistant controlled by hasp-lvgl. In our example we use Lanbon L8's moodlight.
 
@@ -133,7 +133,7 @@ Whenever somebody changes the color of the `cpicker` object on the plate, the li
 
 ## Generic thermostat/climate
 
-![screenshot](../assets/images/screenshots/cc_sampl_climate.png)  
+![screenshot](../../assets/images/screenshots/cc_sampl_climate.png)  
 
 Arc can be dragged by the handle, precise set possible from the +/-buttons. Note that the `min`, `max` and `val` values of the arc are multiplied and divided by 10 when set and read, because [LVGL only suppports integers](https://github.com/HASwitchPlate/openHASP/issues/81) for object values. By multiplying and dividing by 10, it becomes possible to set decimal values for climate temperature.
 
@@ -233,7 +233,7 @@ relevant **openHASP-custom-component config:**
 
 ## Cover with state feedback
 
-![screenshot](../assets/images/screenshots/cc_sampl_cover.png)  
+![screenshot](../../assets/images/screenshots/cc_sampl_cover.png)  
 
 
 The icon on the up and down buttons change color when covers move and set opacity when reached to limit. UI theme set to `Hasp Light` in plate's web interface. 
@@ -329,7 +329,7 @@ relevant **openHASP-custom-component config:**
 
 ## Cover like in Lovelace
 
-![screenshot](../assets/images/screenshots/cc_sampl_cover_lovelacee.png)  
+![screenshot](../../assets/images/screenshots/cc_sampl_cover_lovelacee.png)  
 
 The icon behaves like in Lovelace. UI theme set to `Hasp Light` in plate's web interface.
 
@@ -379,7 +379,7 @@ relevant **openHASP-custom-component config:**
                 entity_id: "cover.my_cover"
 ```
 <video width="360" height="640" controls>
-  <source src="../../assets/videos/cc_sampl_cover_lovelace.mp4" type="video/mp4">
+  <source src="../../../assets/videos/cc_sampl_cover_lovelace.mp4" type="video/mp4">
 Your browser does not support the video tag.
 </video>
 
@@ -388,7 +388,7 @@ Your browser does not support the video tag.
 
 ## Media Player
 
-![screenshot](../assets/images/screenshots/cc_sampl_mediaplayer.png)  
+![screenshot](../../assets/images/screenshots/cc_sampl_mediaplayer.png)  
 
 The labels with artist and title are scrolling, the progressbar fills if the media player provides duration and playback position. The dropdown lists containing the available sources and sound modes of the player get populated automatically by the values existing on the player in Home Assistant, also the actually selected value is in sync with the values selected in Home Assistant.  
 Player availability is shown by the opacity of the buttons. Player state (play/pause) is shown by the middle button. Power state shown by color, repeat, shuffle and muted state shown by appropriate icons on the buttons.
