@@ -22,8 +22,8 @@ This is a real-world example of a `pages.jsonl` file:
 {"obj":"label","id":10,"x":0,"y":0,"w":70,"h":50,"parentid":5,"text":"\uf00c OK"}
 
 {"comment":"---------- Page 3 ----------"}
-{"obj":"cpicker","id":1,"page":3,"x":20,"y":0,"w":200,"h":200}
-{"obj":"cpicker","id":2,"page":3,"x":20,"y":210,"w":200,"h":50,"rect":true}
+{"page":3,"obj":"cpicker","id":1,"page":3,"x":20,"y":0,"w":200,"h":200}
+{"page":3,"obj":"cpicker","id":2,"page":3,"x":20,"y":210,"w":200,"h":50,"rect":true}
 
 {"page":4,"comment":"---------- Page 4 ----------"}
 {"obj":"dropdown","id":1,"x":10,"y":10,"w":220,"options":"Spring\nSummer\nAutumn\nWinter"}
