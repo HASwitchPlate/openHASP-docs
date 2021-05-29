@@ -664,13 +664,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#reload-design-pages-from-home-assistant-configuration-directory" class="md-nav__link">
-    Reload design pages from Home Assistant configuration directory
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#prevent-burn-in-of-the-lcd-screen" class="md-nav__link">
     Prevent burn-in of the LCD screen
   </a>
@@ -1152,13 +1145,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#reload-design-pages-from-home-assistant-configuration-directory" class="md-nav__link">
-    Reload design pages from Home Assistant configuration directory
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#prevent-burn-in-of-the-lcd-screen" class="md-nav__link">
     Prevent burn-in of the LCD screen
   </a>
@@ -1187,7 +1173,7 @@
                 <h2 id="turn-on-moodlight-when-backlight-off-and-vice-versa">Turn on moodlight when backlight off (and vice-versa)<a class="headerlink" href="#turn-on-moodlight-when-backlight-off-and-vice-versa" title="Permanent link">~</a></h2>
 <p>If your plate has moodlights, it is useful in dark situations, when you don't want to have the screen backlit on all the time, but have the mood light on instead.
 The night mode activates when sun goes down, and the day mode activates when the sun comes up. During the day mood light doesn't light, screen is on all the time but dimmed.</p>
-<p>Tested on Lanbon L8 and firmware 0.4.0.</p>
+<p>Tested on Lanbon L8 and firmware 0.6.0.</p>
 <p>Put your <code>light.plate_my_room_moodlight</code> to a Lovelace card entity row and select a nice color for moodlight. Assuming your plate's configured MQTT node or group topic is <code>plate35</code>, add your automations:</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
@@ -1247,25 +1233,25 @@ The night mode activates when sun goes down, and the day mode activates when the
   <span class="nt">alias</span><span class="p">:</span> <span class="s">&quot;openHASP</span><span class="nv"> </span><span class="s">Moodlight</span><span class="nv"> </span><span class="s">ON</span><span class="nv"> </span><span class="s">when</span><span class="nv"> </span><span class="s">Backlight</span><span class="nv"> </span><span class="s">OFF&quot;</span>
   <span class="nt">trigger</span><span class="p">:</span>
     <span class="p p-Indicator">-</span> <span class="nt">platform</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">state</span>
-      <span class="nt">entity_id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">light.openhasp_plate_my_room_backlight</span>
+      <span class="nt">entity_id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">light.plate_my_room_backlight</span>
       <span class="nt">from</span><span class="p">:</span> <span class="s">&#39;on&#39;</span>
       <span class="nt">to</span><span class="p">:</span> <span class="s">&#39;off&#39;</span>
   <span class="nt">action</span><span class="p">:</span>
     <span class="p p-Indicator">-</span> <span class="nt">service</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">light.turn_on</span>
       <span class="nt">target</span><span class="p">:</span>
-        <span class="nt">entity_id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">light.openhasp_plate_my_room_moodlight</span>
+        <span class="nt">entity_id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">light.plate_my_room_moodlight</span>
 
 <span class="p p-Indicator">-</span> <span class="nt">id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">openhasp-moodlight-off</span>
   <span class="nt">alias</span><span class="p">:</span> <span class="s">&quot;openHASP</span><span class="nv"> </span><span class="s">Moodlight</span><span class="nv"> </span><span class="s">OFF</span><span class="nv"> </span><span class="s">when</span><span class="nv"> </span><span class="s">Backlight</span><span class="nv"> </span><span class="s">ON&quot;</span>
   <span class="nt">trigger</span><span class="p">:</span>
     <span class="p p-Indicator">-</span> <span class="nt">platform</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">state</span>
-      <span class="nt">entity_id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">light.openhasp_plate_my_room_backlight</span>
+      <span class="nt">entity_id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">light.plate_my_room_backlight</span>
       <span class="nt">from</span><span class="p">:</span> <span class="s">&#39;off&#39;</span>
       <span class="nt">to</span><span class="p">:</span> <span class="s">&#39;on&#39;</span>
   <span class="nt">action</span><span class="p">:</span>
     <span class="p p-Indicator">-</span> <span class="nt">service</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">light.turn_off</span>
       <span class="nt">target</span><span class="p">:</span>
-        <span class="nt">entity_id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">light.openhasp_plate_my_room_moodlight</span>
+        <span class="nt">entity_id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">light.plate_my_room_moodlight</span>
 
 <span class="p p-Indicator">-</span> <span class="nt">id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">openhasp-night</span>
   <span class="nt">alias</span><span class="p">:</span> <span class="s">&quot;openHASP</span><span class="nv"> </span><span class="s">Night</span><span class="nv"> </span><span class="s">mode&quot;</span>
@@ -1335,19 +1321,26 @@ The night mode activates when sun goes down, and the day mode activates when the
         <span class="nt">page</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1</span>
 </code></pre></div>
 </td></tr></table>
-<hr />
-<h2 id="reload-design-pages-from-home-assistant-configuration-directory">Reload design pages from Home Assistant configuration directory<a class="headerlink" href="#reload-design-pages-from-home-assistant-configuration-directory" title="Permanent link">~</a></h2>
-<p>It's possible to store the <code>pages.jsonl</code> plate design configuration files in a central location, namely your Home Assistant server. Practically you can do this by creating a directory where your <code>configuration.yaml</code> resides, say <code>hasp-lvgl</code> and you can drop your <code>pages.jsonl</code> files there for all your plates.</p>
-<p>You need to allow Home Assistant components to access this directory, this can be done in <code>configuration.yaml</code> with this directive (in case of hassio looks like this) :
+<!--
+* * * * *
+
+## Reload design pages from Home Assistant configuration directory
+
+It's possible to store the `pages.jsonl` plate design configuration files in a central location, namely your Home Assistant server. Practically you can do this by creating a directory where your `configuration.yaml` resides, say `hasp-lvgl` and you can drop your `pages.jsonl` files there for all your plates.
+
+You need to allow Home Assistant components to access this directory, this can be done in `configuration.yaml` with this directive (in case of hassio looks like this) :
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nt">homeassistant</span><span class="p">:</span>
   <span class="nt">allowlist_external_dirs</span><span class="p">:</span> 
     <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">/config/openhasp/</span>
 </code></pre></div>
-</td></tr></table></p>
-<p>With the <a href="#custom-component/services">services</a> <code>openhasp.clear_page</code> and <code>openhasp.load_pages</code> you can clear one or all the pages of your plate, and reload their configuration from the server, respectively.</p>
-<p>For the example automation below i've created an <a href="https://www.home-assistant.io/integrations/input_boolean/">input_boolean</a> named <code>load_pages_plate_my_room</code> in order to have a switch in Lovelace UI to trigger this manually.</p>
+</td></tr></table>
+
+With the [services](#custom-component/services) `openhasp.clear_page` and `openhasp.load_pages` you can clear one or all the pages of your plate, and reload their configuration from the server, respectively.
+
+For the example automation below i've created an [input_boolean](https://www.home-assistant.io/integrations/input_boolean/) named `load_pages_plate_my_room` in order to have a switch in Lovelace UI to trigger this manually.
+
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -1391,9 +1384,12 @@ The night mode activates when sun goes down, and the day mode activates when the
         <span class="nt">entity_id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">input_boolean.load_pages_plate_my_room</span>
 </code></pre></div>
 </td></tr></table>
-<p>If you omit the <code>openhasp.clear_page</code> service completely, the objects will be updated. It's important to know that they have to remain the same type (e.g. you can't update from a <code>label</code> type object to a <code>button</code> type object. If you need a change, you need to clear first.)</p>
-<p>If you omit lines <code>data:</code> and <code>page: 1</code>, all pages will be cleared.</p>
-<p>To trigger this automation when Home Assistant starts, you can use this in your automation:
+
+If you omit the `openhasp.clear_page` service completely, the objects will be updated. It's important to know that they have to remain the same type (e.g. you can't update from a `label` type object to a `button` type object. If you need a change, you need to clear first.)
+
+If you omit lines `data:` and `page: 1`, all pages will be cleared.
+
+To trigger this automation when Home Assistant starts, you can use this in your automation:
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>  <span class="nt">trigger</span><span class="p">:</span>
@@ -1401,7 +1397,9 @@ The night mode activates when sun goes down, and the day mode activates when the
       <span class="nt">event</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">start</span>
 </code></pre></div>
 </td></tr></table>
-<em>Note:</em> You can also use the <code>path</code> directive in the component config to load the design configuration at Home Assistant start, but that won't clear the existing pages (it assumes the pages are empty). </p>
+_Note:_ You can also use the `path` directive in the component config to load the design configuration at Home Assistant start, but that won't clear the existing pages (it assumes the pages are empty). 
+
+-->
 <hr />
 <h2 id="prevent-burn-in-of-the-lcd-screen">Prevent burn-in of the LCD screen<a class="headerlink" href="#prevent-burn-in-of-the-lcd-screen" title="Permanent link">~</a></h2>
 <p>You can use this to protect and prolonge the lifetime of the LCD screens, thus being more green and generating less hazardous waste.</p>
