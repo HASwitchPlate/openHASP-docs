@@ -1170,9 +1170,10 @@
 <div class="admonition important">
 <p class="admonition-title">Important</p>
 <p>When flashing openHASP onto the ESP32 for the first time, you need to flash it over serial using the <strong>full</strong> firmware binary file.
-You need to write the full binary to the ESP32 flash chip, starting @ address <code>0x0</code>.</p>
+You need to write the full binary to the ESP32 flash chip at address <code>0x0</code>.</p>
+<p>The full binary also contains a bootloader and partition scheme needed to properly boot the ESP32.</p>
 </div>
-<p>Before starting the flash process you have to put the ESP into <em>boot mode</em>:</p>
+<p>Before starting the flash process you have to put the ESP into <em>flash mode</em>:</p>
 <ol>
 <li>Connect <code>GPIO0</code> to <code>GND</code> before booting the devide</li>
 <li>Power-on or reset the ESP while <code>GPIO0</code> is connected to <code>GND</code></li>
