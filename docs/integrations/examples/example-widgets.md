@@ -40,7 +40,7 @@ This is a real-world example of a `pages.jsonl` file:
 
 ```
 
-Upload [this logo](https://github.com/HASwitchPlate/openHASP-docs/blob/0.6/docs/assets/images/logo-medium.png) to the plate.
+Upload [this logo](https://raw.githubusercontent.com/HASwitchPlate/openHASP-docs/0.6/docs/assets/images/logo-medium.png) to the plate.
 
 <h2>Result</h2>
 
