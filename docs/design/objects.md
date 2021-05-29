@@ -71,7 +71,7 @@ but only the `id` and `obj` properties are required to create an object:
 
 | Property || Value     | Required | Default | Description
 |:---------||:---------:|:--------:|:-------:|:----
-| id       || 1..255    | yes      | n/a     | ID of the object on this page
+| id       || 1..254    | yes      | n/a     | ID of the object on this page
 | obj      || string    | yes      | n/a     | Name of the object type _(see below)_ 
 | page     || 0..12     | no       | n/a     | ID of the page the object appears on _(see below)_
 | groupid  || 0..15     | no       | 0 (none)| ID of the [GPIO group][3] the object belongs to
@@ -91,6 +91,9 @@ but only the `id` and `obj` properties are required to create an object:
 !!! note "Note"
     Further customizable properties can be found in [styling](../styling).
 
+Ids start from 1 on _each page_.
+You can have a maximum of 254 ids on each page. You don't have to use them in ascending order, you can for example use them for logical numbering (start labels from 11, 12, 13, buttons from 21, 22, 23 etc.)
+   
 #### Pages  
 If the `page` parameter is not present, the object is placed on the same page as the _previous object_. If `page` is not specified for the first object either, the _current page_ being displayed is used.
 
