@@ -2,10 +2,10 @@
 
 <h2>Page Layout</h2>
 
-![screenshot](https://user-images.githubusercontent.com/1550668/120076205-b217b600-c0a4-11eb-846c-2c2828da2df3.png)
-![screenshot](https://user-images.githubusercontent.com/1550668/120076212-b8a62d80-c0a4-11eb-94e5-f6254bec9ab0.png)
-![screenshot](https://user-images.githubusercontent.com/1550668/120076226-c3f95900-c0a4-11eb-82eb-49f85975d0c4.png)
-![screenshot](https://user-images.githubusercontent.com/1550668/120076231-cc519400-c0a4-11eb-9161-c676e2ed6d39.png)
+![screenshot](../../assets/images/screenshots/demo-widgets-1.png)
+![screenshot](../../assets/images/screenshots/demo-widgets-2.png)
+![screenshot](../../assets/images/screenshots/demo-widgets-3.png)
+![screenshot](../../assets/images/screenshots/demo-widgets-4.png)
 
 <h2>Code</h2>
 
