@@ -7,7 +7,7 @@
 
 <h2>Code</h2>
 
-To add an openHASP plate to your installation with a sample configuration looking a bit like Home Assistant's Lovelace UI, upload a `pages.jsonl` file with the folowing content to your plate:
+To add an openHASP plate to your installation with a sample design looking a bit like Home Assistant's Lovelace UI, upload a `pages.jsonl` file with the folowing content to your plate:
 
 ```json
 {"page":1,"id":1,"obj":"btn","x":0,"y":0,"w":240,"h":30,"text":"ENTITIES","value_font":22,"bg_color":"#2C3E50","text_color":"#FFFFFF","radius":0,"border_side":0,"enabled":0}
