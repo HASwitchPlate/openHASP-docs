@@ -160,6 +160,8 @@ When a relay is grouped with a button or switch in the same group, it will be tu
 
 When a relay is controlled by a range object (slider, arc slider, roller, drop-down list) within the same group, the state will be be ON if the `val` value is larger then its `min` value.
 
+The various relay types (Light, Power) denote only the device class you want them to be autodetected as in Home Assistant: _light_ vs. _switch_ etc.
+
 !!! danger "Warning"
     Attaching devices to mains power can be dangerous!
     Configuring gpios is done on your **own responsibility**.
