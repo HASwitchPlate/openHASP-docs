@@ -229,7 +229,7 @@ Reports the status of the MCU. The response will be posted to the state topic. F
 
 Saves any changes in the configuration file and reboots the device.
 
-!!! danger "`update`
+!!! danger "`update`"
     _accepted parameters:_ `[url]`
 
 Update the firmware from the url provided. Reboots when update was successful.
