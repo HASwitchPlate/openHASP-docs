@@ -1227,7 +1227,7 @@
 </ul>
 <p>You can create the file wity your favourite text editor and upload it <em>(and other resource assets like fonts)</em> using the web interface <a href="../../configuration/hasp">HASP Design</a> menu.</p>
 <h2 id="pagesjsonl">pages.jsonl<a class="headerlink" href="#pagesjsonl" title="Permanent link">~</a></h2>
-<p>The location of this file is <code>/pages.jsonl</code> in the root of the filesystem. 
+<p>The location of this file is <code>/pages.jsonl</code> in the root of the flash filesystem. 
 It uses the <a href="http://www.jsonlines.org">JSON Lines format</a> with one json object per line. 
 Each line should contain exactly <strong>one</strong> valid json object and end with a line-break <code>\n</code> <em>(not a comma)</em>.</p>
 <p>The jsonl lines are interpreted line-by-line.</p>
@@ -1247,7 +1247,7 @@ The file extension is <code>.jsonl</code> and not <code>.json</code>.</p>
 </div>
 <h3 id="file-comments">File comments<a class="headerlink" href="#file-comments" title="Permanent link">~</a></h3>
 <p>If any of the required <code>id</code> or <code>obj</code> properties are missing -<em>and the line is still valid json</em>- then it is interpreted as a comment.</p>
-<p>When you upload the file to your plate's flash memory, you can also use the <code>page</code> parameter in a comment to set the default page for new objects that don't have a <code>page</code> parameter.</p>
+<p>When you upload the file to your plate's flash filesystem, you can also use the <code>page</code> parameter in a comment to set the default page for new objects that don't have a <code>page</code> parameter.</p>
 <p>Example 1: Add a comment on a single line that is ignored.</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;comment&quot;</span><span class="p">:</span><span class="s2">&quot; ----------- Page 1 layout ------------&quot;</span><span class="p">}</span>
 </code></pre></div>
@@ -1268,7 +1268,7 @@ If you then omit the <code>page</code> parameter in the lines below this comment
 <p>See <a href="../commands#jsonl">commands documentation</a> for the <code>jsonl</code> command. The payload of the command corresponds to what's exactly in one line of the <code>pages.jsonl</code> file above, with a minor exception: page numbers are not kept between the commands - you need to specfiy the page with each!</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>Some integrations like the custom component for Home Assistant can store the <code>pages.jsonl</code> centrally for your plates, in such cases you have the to specfiy the page number for each object, as those files are actually parsed line by line using the <code>jsonl</code> command.</p>
+<p>Some integrations like the <a href="../../integrations/home-assistant/howto/">custom component for Home Assistant</a> can store the <code>pages.jsonl</code> centrally for your plates, in such cases you have the to specify the page number for each object, as those files are actually parsed line by line using the <code>jsonl</code> command.</p>
 </div>
 <h2 id="objects">Objects<a class="headerlink" href="#objects" title="Permanent link">~</a></h2>
 <p>Each line in <code>pages.jsonl</code> creates <strong>one object</strong> on a page and has to be in the json format.<br />
