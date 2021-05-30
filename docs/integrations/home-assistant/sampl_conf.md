@@ -327,7 +327,7 @@ relevant **openHASP-custom-component config:**
 
 *  *  *  *  *
 
-## Cover like in Lovelace
+## Covers like in Lovelace
 
 ![screenshot](../../assets/images/screenshots/cc_sampl_cover_lovelacee.png)  
 
@@ -388,7 +388,7 @@ relevant **openHASP-custom-component config:**
 Your browser does not support the video tag.
 </video>
 
-Check out the [Lovelace-like entities](../../examples/example-lovelace.md) for similar placement.  
+Check out the [Lovelace-like entities](../examples/example-lovelace.md) for similar placement.  
 
 *  *  *  *  *
 
