@@ -187,8 +187,13 @@ This component implements some specific services to make interactions with the p
     
     Unless you clear the page first, the objects will be updated.
 <!--
-**openhasp.command**
-:   Wraps up any [command](../../commands.md) so that it can be called against the _entity_id_ of the plate. Useful in Automations and Blueprints.
+**openhasp.publish**
+:   Wraps up any raw [command](../../commands.md) so that it can be called against the _entity_id_ of the plate. Useful in Automations and Blueprints.
+
+    !!! warning "Warning"
+        This service handles data without any input validation. Only for advanced users. No support for any problems caused by using this!
+
+
 -->
 Check out the example automations for further information on how to use these services within Home Assistant.
 
