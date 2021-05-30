@@ -120,7 +120,8 @@ on page 1, `page prev` action will go to page 5 (instead of default page 12 on a
 ```
 The corresponding command is `p1b0.prev=5`.
 
-_Note:_ Page id `p0b0` (as all pages) is not valid to set this attribute as it has to be set on real pages individually. 
+!!! note "Tip"
+    Page id `p0b0` (as all pages) is not valid to set this attribute for. It has to be set individually on each real page starting from 1. 
 
 `back` acts like a _level up_ action, so you can jump back to the home or menu page where you came from using `page back`. You can create a hierarchy of pages and menus this way.
 
