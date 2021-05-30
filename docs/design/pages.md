@@ -34,7 +34,8 @@ Blank lines are allowed for readability and are ignored.
 
 If any of the required `id` or `obj` properties are missing -*and the line is still valid json*- then it is interpreted as a comment.
 
-You can also use the `page` parameter in a comment to set the default page for new objects that don't have a `page` parameter.
+When you upload the file to your plate's flash memory, you can also use the `page` parameter in a comment to set the default page for new objects that don't have a `page` parameter.
+
 
 Example 1: Add a comment on a single line that is ignored.
 
@@ -61,7 +62,11 @@ Example 3: Insert a comment for an object.
 
 ## jsonl command
 
-See [commands documentation](../commands#jsonl) for the `jsonl` command. The payload of the command corresponds to what's exactly in one line of the `pages.jsonl` file above.
+See [commands documentation](../commands#jsonl) for the `jsonl` command. The payload of the command corresponds to what's exactly in one line of the `pages.jsonl` file above, with a minor exception: page numbers are not kept between the commands - you need to specfiy the page with each!
+
+!!! warning "Warning"
+    Some integrations like the custom component for Home Assistant can store the `pages.jsonl` centrally for your plates, in such cases you have the to specfiy the page number for each object, as those files are actually parsed line by line using the `jsonl` command.
+
 
 ## Objects
 Each line in `pages.jsonl` creates **one object** on a page and has to be in the json format.  
