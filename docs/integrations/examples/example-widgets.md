@@ -9,7 +9,7 @@
 
 <h2>Code</h2>
 
-This is a real-world example of a `pages.jsonl` file:
+This is a real-world example of a `pages.jsonl` file. Upload it to your plate's flash memory and restart the plate:
 
 ```json
 {"page":1,"comment":"---------- Page 1 ----------"}
