@@ -670,6 +670,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#send-jsonl-files-from-home-assistant" class="md-nav__link">
+    Send jsonl files from Home Assistant
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#debugging" class="md-nav__link">
+    Debugging
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1197,6 +1211,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#send-jsonl-files-from-home-assistant" class="md-nav__link">
+    Send jsonl files from Home Assistant
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#debugging" class="md-nav__link">
+    Debugging
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1217,11 +1245,23 @@
                 <p>The <a href="https://github.com/HASwitchPlate/openHASP-custom-component">openHASP Custom Component</a> simplifies synchronization of objects on one or more openHASP plates with Home Assistant entities.</p>
 <p>We call <em>plate</em> any device running openHASP in your system.</p>
 <h1 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">~</a></h1>
+<p>You have the option to install the custom component using HACS or via manual download:</p>
+<div class="tabbed-set" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">Using HACS</label><div class="tabbed-content">
 <p><a href="https://github.com/custom-components/hacs"><img alt="hacs_badge" src="https://img.shields.io/badge/HACS-Default-orange.svg?style=for-the-badge" /></a></p>
 <p>Install using <a href="https://hacs.xyz/">HACS</a> in one-click. This is the preferred and recommended method, as HACS provides a very effective way to keep the component updated and/or choose between various versions.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
+<ol>
+<li>Goto <em>Home Assistant &gt; HACS &gt; Integrations</em>.</li>
+<li>Click the <em>Explore &amp; Add Repositories</em> button.</li>
+<li>Search for <code>openHASP</code> and click on the openHasp logo</li>
+<li>Click <em>Install this repository in HACS</em></li>
+<li><strong>Important:</strong> Select the <em>Main</em> version for 0.6 !</li>
+<li>Click Install</li>
+<li>Reboot Home-Assistant</li>
+</ol>
+</div>
+<input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">Manual Install</label><div class="tabbed-content">
 <p>Alternatively, you can also install it manually (<a href="https://github.com/HASwitchPlate/openHASP-custom-component/archive/refs/heads/main.zip">download</a> and follow these steps): </p>
+<p><a class="md-button md-button--primary" href="https://github.com/HASwitchPlate/openHASP-custom-component/archive/refs/heads/main.zip"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14 2 6 6v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8m4 18V9h-5V4H6v16h12m-6-1-4-4h2.5v-3h3v3H16l-4 4z"/></svg></span> Download ZIP</a></p>
 <ol>
 <li>Using the tool of choice open the directory (folder) for your HA configuration (where you find <code>configuration.yaml</code>).</li>
 <li>If you do not have a <code>custom_components</code> directory there, you need to create it.</li>
@@ -1232,9 +1272,10 @@
 <li>Restart Home Assistant</li>
 </ol>
 </div>
+</div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>You have to use component version consistently with the firmware version on your plates. For example, if your plates are at firmware version 0.5.x, you also need to use component version 0.5.x to ensure interoperability. Home Assistant will show a warning if it finds a version mismatch. Note that you can only have one version of the component installed at a time so a mix of plate versions cannot be deployed.</p>
+<p>You have to use component version consistently with the firmware version on your plates. For example, if your plates are at firmware version 0.6.x, you also need to use component version 0.6.x to ensure interoperability. Home Assistant will show a warning if it finds a version mismatch. Note that you can only have one version of the component installed at a time so a mix of plate versions cannot be deployed.</p>
 </div>
 <h2 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">~</a></h2>
 <p>First prepare your plates to be integrated with Home Assistant (follow steps in order):</p>
@@ -1301,10 +1342,12 @@
 </code></pre></div>
 </td></tr></table>
 <h3 id="variable-definitions">Variable definitions<a class="headerlink" href="#variable-definitions" title="Permanent link">~</a></h3>
-<p><strong>openhasp:</strong> <em>(Required)</em>  <br />
-The platform identifier. Required once in the configuration.</p>
-<p><strong>plate35:</strong> <em>(Required)</em>  <br />
-Your plate identifier slug. For each plate in your sytem, such an entry is required, has to be unique. It is generated automatically from the plate name you gave during discovery, which by default equals to the <em>HASP Node Name</em> set in the plate's <a href="../../../configuration/mqtt/">configuration</a>.</p>
+<dl>
+<dt><strong>openhasp:</strong> <em>(Required)</em></dt>
+<dd>The platform identifier. Required once in the configuration.</dd>
+<dt><strong>plate35:</strong> <em>(Required)</em></dt>
+<dd>Your plate identifier slug. For each plate in your sytem, such an entry is required, has to be unique. It is generated automatically from the plate name you gave during discovery, which by default equals to the <em>HASP Node Name</em> set in the plate's <a href="../../../configuration/mqtt/">configuration</a>.</dd>
+</dl>
 <!--
 **path:** *(path) (Optional)*     
 Path to a `pages.jsonl` file containing design for this plate, to be loaded on Home Assistant start and on plate availability (becoming online).<br>
@@ -1314,16 +1357,21 @@ _Note:_ Don't upload any `pages.jsonl` file to the plate's flash memory at all! 
 The brightness of the screen when idle (before long idle). Numeric value between 1 and 255. Default 25. 
 -->
 
-<p><strong>objects:</strong> <em>(Optional)</em>   <br />
-Definition of the objects reacting to changes in Home Assistant, or generating events for Home Assistant.</p>
-<p><strong>obj:</strong> <em>(string) (Required)</em>   <br />
-The object identifier which we want to integrate with Home Assistant. Its name has the form <code>pXbY</code> where <code>X</code> represents the page where the object is located, and <code>Y</code> represents the <code>id</code> of the object on that page.</p>
-<p><strong>properties:</strong> <em>(Optional)</em>   <br />
-List containing the properties of the object which we want to modify based on changes occurring in Home Assistant. In the example above <code>text</code> property gets updated whenever <code>sensor.my_room_temperature</code> changes. </p>
-<p><strong>event:</strong> <em>(Optional)</em>   <br />
-List containing the events generated by the object when touched on the screen. These are object-specific and can be observed accurately with an MQTT client. Each event defines a list of services which will be processed in order (like actions list in an automation).  </p>
+<dl>
+<dt><strong>objects:</strong> <em>(Optional)</em></dt>
+<dd>Definition of the objects reacting to changes in Home Assistant, or generating events for Home Assistant.</dd>
+<dt><strong>obj:</strong> <em>(string) (Required)</em></dt>
+<dd>The object identifier which we want to integrate with Home Assistant. Its name has the form <code>pXbY</code> where <code>X</code> represents the page where the object is located, and <code>Y</code> represents the <code>id</code> of the object on that page.</dd>
+<dt><strong>properties:</strong> <em>(Optional)</em></dt>
+<dd>List containing the properties of the object which we want to modify based on changes occurring in Home Assistant. In the example above <code>text</code> property gets updated whenever <code>sensor.my_room_temperature</code> changes. </dd>
+<dt><strong>event:</strong> <em>(Optional)</em></dt>
+<dd>List containing the events generated by the object when touched on the screen. These are object-specific and can be observed accurately with an MQTT client. Each event defines a list of services which will be processed in order (like actions list in an automation).  </dd>
+</dl>
 <p>In the example above, when object <code>p1b2</code> (which is a toggle button) generates the <code>on</code> event, <code>light.my_room</code> will be turned on by the service call <code>light.turn_on</code> as specified in the event config. And similarily when <code>off</code> event comes through MQTT, the light will be turned off by the corresponding service call.  </p>
-<p><em>Note:</em> Any variable coming from the MQTT message can be used between curly brackets and passed to the service call. In the example above when object <code>p1b3</code> (which is a dropdown selector) generates the <code>changed</code> event, a persistent notification will appear in Home Assistant's Lovelace interface containing the selected text from the object, which was passed over from the MQTT message. See <a href="../../../design/objects#events">object events</a> for more types of generated events.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Any variable coming from the MQTT message can be used between curly brackets and passed to the service call. In the example above when object <code>p1b3</code> (which is a dropdown selector) generates the <code>changed</code> event, a persistent notification will appear in Home Assistant's Lovelace interface containing the selected text from the object, which was passed over from the MQTT message. See <a href="../../../design/objects#events">object events</a> for more types of generated events.</p>
+</div>
 <h3 id="configuration-tips">Configuration tips<a class="headerlink" href="#configuration-tips" title="Permanent link">~</a></h3>
 <h4 id="multiple-plates">Multiple plates<a class="headerlink" href="#multiple-plates" title="Permanent link">~</a></h4>
 <p>If you have multiple plates you can add them all using different plate identifiers. Their configured topics have to be unique too:</p>
@@ -1336,22 +1384,16 @@ List containing the events generated by the object when touched on the screen. T
 <span class="normal"> 7</span>
 <span class="normal"> 8</span>
 <span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nt">openhasp</span><span class="p">:</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nt">openhasp</span><span class="p">:</span>
   <span class="nt">plate_my_room_1</span><span class="p">:</span>
-    <span class="nt">topic</span><span class="p">:</span> <span class="s">&quot;hasp/plate1&quot;</span>
     <span class="nt">objects</span><span class="p">:</span>
-      <span class="l l-Scalar l-Scalar-Plain">...</span>
+      <span class="c1"># ...</span>
   <span class="nt">plate_my_room_2</span><span class="p">:</span>
-    <span class="nt">topic</span><span class="p">:</span> <span class="s">&quot;hasp/plate2&quot;</span>
     <span class="nt">objects</span><span class="p">:</span>
-      <span class="l l-Scalar l-Scalar-Plain">...</span>
+      <span class="c1"># ...</span>
   <span class="nt">plate_my_room_3</span><span class="p">:</span>
-    <span class="nt">topic</span><span class="p">:</span> <span class="s">&quot;hasp/plate3&quot;</span>
     <span class="nt">objects</span><span class="p">:</span>
-      <span class="l l-Scalar l-Scalar-Plain">...</span>
+      <span class="c1"># ...</span>
 </code></pre></div>
 </td></tr></table>
 <h4 id="split-configuration">Split configuration<a class="headerlink" href="#split-configuration" title="Permanent link">~</a></h4>
@@ -1363,24 +1405,52 @@ List containing the events generated by the object when touched on the screen. T
 <p><code>openhasp: !include_dir_merge_named openhasp_configs/</code></p>
 <p>Create a directory <code>openhasp_configs</code> right near <code>configuration.yaml</code>, and put in it all your plates configuration (only with <code>plate_my_room:</code> level) in separate yaml files and restart Home Assistant.</p>
 <hr />
-<p>This component implements some specific services to make interactions with the plate even more comfortable.</p>
 <h2 id="services">Services<a class="headerlink" href="#services" title="Permanent link">~</a></h2>
-<p><strong>openhasp.wakeup</strong><br />
-  Wakes up the display when an external event has occurred, like a presence or a PIR motion sensor.</p>
-<p><strong>openhasp.next_page</strong><br />
-  Changes plate to the next page.</p>
-<p><strong>openhasp.prev_page</strong><br />
-  Changes plate to the previous page.</p>
-<p><strong>openhasp.change_page</strong><br />
-  Changes plate directly to the specified page number.</p>
-<p><strong>openhasp.clear_page</strong><br />
-  Clears the contents of the specified page number. If page number not specified, clears all the pages.</p>
-<p><strong>openhasp.load_pages</strong><br />
-  Loads new design from pages.jsonl file from <em>full path</em>. <br />
-  The file must be located in an authorised location defined by <a href="https://www.home-assistant.io/docs/configuration/basic/#allowlist_external_dirs">allowlist_external_dirs</a> (in case of hassio <code>/config/</code> is the directory where Home Assistant's configuration.yaml resides, so in case of a subdirectory called <code>openhasp</code> the full path would be e.g. <code>/config/openhasp/pages.jsonl</code>, and you need to add  <code>/config/openhasp/</code> to your <code>allowlist_external_dirs</code>).<br />
-<em>Important:</em> the contents of the file are loaded line by line thus <code>"page":X</code> has to be defined for each object. <br />
-  Unless you clear the page first, the objects will be updated.</p>
+<p>This component implements some specific services to make interactions with the plate even more comfortable.</p>
+<dl>
+<dt><strong>openhasp.wakeup</strong></dt>
+<dd>Wakes up the display when an external event has occurred, like a presence or a PIR motion sensor.</dd>
+<dt><strong>openhasp.next_page</strong></dt>
+<dd>Changes plate to the next page.</dd>
+<dt><strong>openhasp.prev_page</strong></dt>
+<dd>Changes plate to the previous page.</dd>
+<dt><strong>openhasp.change_page</strong></dt>
+<dd>Changes plate directly to the specified page number.</dd>
+<dt><strong>openhasp.clear_page</strong></dt>
+<dd>Clears the contents of the specified page number. If page number not specified, clears all the pages.</dd>
+<dt><strong>openhasp.load_pages</strong></dt>
+<dd>
+<p>Loads new design from pages.jsonl file from <em>full path</em>.</p>
+<p>The file must be located in an authorised location defined by <a href="https://www.home-assistant.io/docs/configuration/basic/#allowlist_external_dirs">allowlist_external_dirs</a> (in case of hassio <code>/config/</code> is the directory where Home Assistant's configuration.yaml resides, so in case of a subdirectory called <code>openhasp</code> the full path would be e.g. <code>/config/openhasp/pages.jsonl</code>, and you need to add  <code>/config/openhasp/</code> to your <code>allowlist_external_dirs</code>).</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>The contents of the file are loaded line by line thus <code>"page":X</code> has to be defined for each object.</p>
+</div>
+<p>Unless you clear the page first, the objects will be updated.</p>
+</dd>
+</dl>
 <p>Check out the example automations for further information on how to use the services within Home Assistant.</p>
+<h2 id="send-jsonl-files-from-home-assistant">Send jsonl files from Home Assistant<a class="headerlink" href="#send-jsonl-files-from-home-assistant" title="Permanent link">~</a></h2>
+<p>You can save your jsonl files in Home Assistant too. The custom component can send the contents of the file when the plate connects.
+To allow read-access to the folder, add these lines to your <code>configuration.yaml</code>:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nt">homeassistant</span><span class="p">:</span>
+  <span class="nt">allowlist_external_dirs</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="s">&quot;/config/openhasp&quot;</span>
+</code></pre></div>
+</td></tr></table>
+<h2 id="debugging">Debugging<a class="headerlink" href="#debugging" title="Permanent link">~</a></h2>
+<p>Add these lines to your <code>configuration.yaml</code> configuration and restart Home Assistant:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nt">logger</span><span class="p">:</span>
+  <span class="nt">default</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">warning</span>
+  <span class="nt">logs</span><span class="p">:</span>
+    <span class="nt">custom_components.openhasp</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">debug</span>
+</code></pre></div>
+</td></tr></table>
                 
                   
                     
@@ -1389,7 +1459,7 @@ List containing the events generated by the object when touched on the screen. T
 <div class="md-source-date">
   <small>
     
-      Last update: 2021-05-29
+      Last update: 2021-05-30
     
   </small>
 </div>

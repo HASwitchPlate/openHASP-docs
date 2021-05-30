@@ -598,14 +598,14 @@
       
         <li class="md-nav__item">
   <a href="#dim" class="md-nav__link">
-    dim 
+    dim
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#light" class="md-nav__link">
-    light 
+    light
   </a>
   
 </li>
@@ -633,7 +633,7 @@
       
         <li class="md-nav__item">
   <a href="#wakeup" class="md-nav__link">
-    wakeup 
+    wakeup
   </a>
   
 </li>
@@ -1260,14 +1260,14 @@
       
         <li class="md-nav__item">
   <a href="#dim" class="md-nav__link">
-    dim 
+    dim
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#light" class="md-nav__link">
-    light 
+    light
   </a>
   
 </li>
@@ -1295,7 +1295,7 @@
       
         <li class="md-nav__item">
   <a href="#wakeup" class="md-nav__link">
-    wakeup 
+    wakeup
   </a>
   
 </li>
@@ -1429,10 +1429,14 @@ Switches the backlight on or off, independent of the set dim level. Turning the 
 
 -->
 
-<h2 id="dim">dim <span class="twemoji tag-medium"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m23 12-2.44-2.78.34-3.68-3.61-.82-1.89-3.18L12 3 8.6 1.54 6.71 4.72l-3.61.81.34 3.68L1 12l2.44 2.78-.34 3.69 3.61.82 1.89 3.18L12 21l3.4 1.46 1.89-3.18 3.61-.82-.34-3.68L23 12m-10 5h-2v-2h2v2m0-4h-2V7h2v6z"/></svg></span><a class="headerlink" href="#dim" title="Permanent link">~</a></h2>
-<p>Deprecated, use <code>backlight</code> instead</p>
-<h2 id="light">light <span class="twemoji tag-medium"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m23 12-2.44-2.78.34-3.68-3.61-.82-1.89-3.18L12 3 8.6 1.54 6.71 4.72l-3.61.81.34 3.68L1 12l2.44 2.78-.34 3.69 3.61.82 1.89 3.18L12 21l3.4 1.46 1.89-3.18 3.61-.82-.34-3.68L23 12m-10 5h-2v-2h2v2m0-4h-2V7h2v6z"/></svg></span><a class="headerlink" href="#light" title="Permanent link">~</a></h2>
-<p>Deprecated, use <code>backlight</code> instead</p>
+<h2 id="dim">dim<a class="headerlink" href="#dim" title="Permanent link">~</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Deprecated, use <code>backlight</code> instead</p>
+</div>
+<h2 id="light">light<a class="headerlink" href="#light" title="Permanent link">~</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Deprecated, use <code>backlight</code> instead</p>
+</div>
 <h2 id="backlight">backlight <span class="twemoji tag-medium"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 4c1.11 0 2 .89 2 2v12c0 1.11-.89 2-2 2H4c-1.11 0-2-.89-2-2V6c0-1.11.89-2 2-2h16M8.5 15V9H7.25v3.5L4.75 9H3.5v6h1.25v-3.5L7.3 15h1.2m5-4.74V9h-4v6h4v-1.25H11v-1.11h2.5v-1.26H11v-1.12h2.5m7 3.74V9h-1.25v4.5h-1.12V10h-1.25v3.5h-1.13V9H14.5v5a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1z"/></svg></span><a class="headerlink" href="#backlight" title="Permanent link">~</a></h2>
 <p><em>accepted json keys:</em></p>
 <ul>
@@ -1486,8 +1490,10 @@ These leds can then be controlled together using the <code>moodlight</code> comm
 <p>Clears the idle state of the device and publishes a <code>state/idle = OFF</code> status message.</p>
 <p>It resets the idle counter as if a touch event occurred on the device. This is helpful e.g. when you want to wake up the display when an external event has occurred, like a PIR motion sensor.</p>
 <p>Calling the <code>idle</code> command without a parameter will return the current idle state <code>short</code>, <code>long</code> or <code>off</code> in the <code>state/idle</code> topic.</p>
-<h2 id="wakeup">wakeup <span class="twemoji tag-medium"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m23 12-2.44-2.78.34-3.68-3.61-.82-1.89-3.18L12 3 8.6 1.54 6.71 4.72l-3.61.81.34 3.68L1 12l2.44 2.78-.34 3.69 3.61.82 1.89 3.18L12 21l3.4 1.46 1.89-3.18 3.61-.82-.34-3.68L23 12m-10 5h-2v-2h2v2m0-4h-2V7h2v6z"/></svg></span><a class="headerlink" href="#wakeup" title="Permanent link">~</a></h2>
-<p>Deprecated, use the <code>idle off</code> command instead</p>
+<h2 id="wakeup">wakeup<a class="headerlink" href="#wakeup" title="Permanent link">~</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Deprecated, use <code>idle off</code> instead</p>
+</div>
 <h2 id="outputx">output[x] <span class="twemoji tag-medium"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 4c1.11 0 2 .89 2 2v12c0 1.11-.89 2-2 2H4c-1.11 0-2-.89-2-2V6c0-1.11.89-2 2-2h16M8.5 15V9H7.25v3.5L4.75 9H3.5v6h1.25v-3.5L7.3 15h1.2m5-4.74V9h-4v6h4v-1.25H11v-1.11h2.5v-1.26H11v-1.12h2.5m7 3.74V9h-1.25v4.5h-1.12V10h-1.25v3.5h-1.13V9H14.5v5a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1z"/></svg></span><a class="headerlink" href="#outputx" title="Permanent link">~</a></h2>
 <p>where <code>[x]</code> is number of the gpio pin (0-39)</p>
 <p><em>accepted json keys:</em></p>
@@ -1498,13 +1504,7 @@ These leds can then be controlled together using the <code>moodlight</code> comm
 <p>Changes the state GPIO pin to <code>on</code> or <code>off</code>. If the pin is configured as a <code>LED</code> or <code>Serial Dimmer</code> then the <code>val</code> key will control the brightness.</p>
 <div class="admonition bug">
 <p class="admonition-title">Bug</p>
-<p>It is currently required to set <strong>both</strong> <code>state</code> and <code>val</code> for relays:
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="err">ou</span><span class="kc">t</span><span class="err">pu</span><span class="kc">t</span><span class="mi">12</span> <span class="p">{</span><span class="nt">&quot;state&quot;</span><span class="p">:</span><span class="s2">&quot;on&quot;</span><span class="p">,</span><span class="nt">&quot;val&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">}</span>
-<span class="err">ou</span><span class="kc">t</span><span class="err">pu</span><span class="kc">t</span><span class="mi">12</span> <span class="p">{</span><span class="nt">&quot;state&quot;</span><span class="p">:</span><span class="s2">&quot;off&quot;</span><span class="p">,</span><span class="nt">&quot;val&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">}</span>
-</code></pre></div>
-</td></tr></table>
-Without <code>val</code> the relay won't switch.</p>
+<p>Update to the latest 0.6-dev release, otherwise the relay won't switch without also setting the <code>val</code> property.</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -1646,7 +1646,7 @@ The result will be published to <code>hasp/&lt;nodename&gt;/state/config</code>.
 <div class="md-source-date">
   <small>
     
-      Last update: 2021-05-29
+      Last update: 2021-05-30
     
   </small>
 </div>

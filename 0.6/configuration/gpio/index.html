@@ -1368,7 +1368,7 @@ If an internal <em>pullup</em> or <em>pulldown</em> resistor is not available on
 <ul>
 <li>Button</li>
 </ul>
-<p>A button gpio sends events to topic <code>input#</code> where <code>#</code> is the groupnumber.</p>
+<p>A button gpio sends events to topic <code>input#</code> where <code>#</code> is the pin number.</p>
 <p>GPIO buttons send out <strong>events</strong> while they occur. The possible events are:</p>
 <ul>
 <li><code>down</code>: Occurs when a button goes from depressed to pressed</li>
@@ -1452,6 +1452,12 @@ Configuring gpios is done on your <strong>own responsibility</strong>.
 Be sure to test any system thoroughly using low voltages first.
 By using the firmware you accept the <a href="../../license">License</a>.</p>
 </div>
+<p>Use the hasp/<platename>/command/output[x] topic (where x is the pin number) with an empty payload to query the current state of the relay.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>hasp/my_plate/command/output27
+hasp/my_plate/state/output27 {&quot;state&quot;:&quot;off&quot;}
+</code></pre></div>
+</td></tr></table>
 <h4 id="pwm">PWM<a class="headerlink" href="#pwm" title="Permanent link">~</a></h4>
 <p><em>Experimental</em></p>
 <p>Set the duty cycle of the pin between <code>0</code> and <code>4095</code> when a value is received on <code>output#</code> where <code>#</code> is the groupnumber or from another group <code>intput</code>.</p>
@@ -1467,7 +1473,7 @@ By using the firmware you accept the <a href="../../license">License</a>.</p>
 <div class="md-source-date">
   <small>
     
-      Last update: 2021-05-29
+      Last update: 2021-05-30
     
   </small>
 </div>
