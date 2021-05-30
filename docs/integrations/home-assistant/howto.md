@@ -178,7 +178,7 @@ This component implements some specific services to make interactions with the p
 :   Clears the contents of the specified page number. If page number not specified, clears all the pages.
 
 **openhasp.load_pages**  
-:   Loads new design from pages.jsonl file from _full path_.
+:   Loads new design from `pages.jsonl` file from _full path_.
 
     The file must be located in an authorised location defined by [allowlist_external_dirs](https://www.home-assistant.io/docs/configuration/basic/#allowlist_external_dirs) (in case of hassio `/config/` is the directory where Home Assistant's configuration.yaml resides, so in case of a subdirectory called `openhasp` the full path would be e.g. `/config/openhasp/pages.jsonl`, and you need to add  `/config/openhasp/` to your `allowlist_external_dirs`).
 
@@ -186,8 +186,11 @@ This component implements some specific services to make interactions with the p
         The contents of the file are loaded line by line thus `"page":X` has to be defined for each object.
     
     Unless you clear the page first, the objects will be updated.
-  
-Check out the example automations for further information on how to use the services within Home Assistant.
+
+**openhasp.command**
+:   Wraps up any [command](../../commands.md) so that it can be called against the _entity_id_ of the plate. Useful in Automations and Blueprints.
+
+Check out the example automations for further information on how to use these services within Home Assistant.
 
 ## Send jsonl files from Home Assistant
 
