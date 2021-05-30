@@ -9,7 +9,7 @@ You can create the file wity your favourite text editor and upload it *(and othe
 
 ## pages.jsonl
 
-The location of this file is `/pages.jsonl` in the root of the filesystem. 
+The location of this file is `/pages.jsonl` in the root of the flash filesystem. 
 It uses the [JSON Lines format](http://www.jsonlines.org) with one json object per line. 
 Each line should contain exactly **one** valid json object and end with a line-break `\n` *(not a comma)*.
 
@@ -25,7 +25,6 @@ Blank lines are allowed for readability and are ignored.
     Each individual line however must be a valid json object.
     The file extension is `.jsonl` and not `.json`.
 
-
 !!! note "Note"
     The maximum number of pages and objects is limited by the memory available in the MCU, it depends on the [microcontroller type](../index.md#features) you use.
 
@@ -34,8 +33,7 @@ Blank lines are allowed for readability and are ignored.
 
 If any of the required `id` or `obj` properties are missing -*and the line is still valid json*- then it is interpreted as a comment.
 
-When you upload the file to your plate's flash memory, you can also use the `page` parameter in a comment to set the default page for new objects that don't have a `page` parameter.
-
+When you upload the file to your plate's flash filesystem, you can also use the `page` parameter in a comment to set the default page for new objects that don't have a `page` parameter.
 
 Example 1: Add a comment on a single line that is ignored.
 
@@ -65,7 +63,7 @@ Example 3: Insert a comment for an object.
 See [commands documentation](../commands#jsonl) for the `jsonl` command. The payload of the command corresponds to what's exactly in one line of the `pages.jsonl` file above, with a minor exception: page numbers are not kept between the commands - you need to specfiy the page with each!
 
 !!! warning "Warning"
-    Some integrations like the custom component for Home Assistant can store the `pages.jsonl` centrally for your plates, in such cases you have the to specfiy the page number for each object, as those files are actually parsed line by line using the `jsonl` command.
+    Some integrations like the [custom component for Home Assistant](../integrations/home-assistant/howto.md) can store the `pages.jsonl` centrally for your plates, in such cases you have the to specify the page number for each object, as those files are actually parsed line by line using the `jsonl` command.
 
 
 ## Objects
