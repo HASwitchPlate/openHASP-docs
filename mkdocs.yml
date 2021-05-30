@@ -44,6 +44,7 @@ theme:
 markdown_extensions:
   - admonition
   - attr_list
+  - def_list
   - pymdownx.highlight:
       linenums: true
   - pymdownx.superfences

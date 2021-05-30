@@ -80,14 +80,14 @@ Switches the backlight on or off, independent of the set dim level. Turning the 
 -->
 
 
-## dim :material-alert-decagram:{ .tag-medium }
+## dim
 
-Deprecated, use `backlight` instead
+!!! warning "Deprecated, use `backlight` instead"
 
 
-## light :material-alert-decagram:{ .tag-medium }
+## light
 
-Deprecated, use `backlight` instead
+!!! warning "Deprecated, use `backlight` instead"
 
 
 ## backlight :material-new-box:{ .tag-medium }
@@ -150,9 +150,9 @@ It resets the idle counter as if a touch event occurred on the device. This is h
 Calling the `idle` command without a parameter will return the current idle state `short`, `long` or `off` in the `state/idle` topic.
 
 
-## wakeup :material-alert-decagram:{ .tag-medium }
+## wakeup
 
-Deprecated, use the `idle off` command instead
+!!! warning "Deprecated, use `idle off` instead"
 
 
 ## output[x] :material-new-box:{ .tag-medium }
@@ -167,12 +167,7 @@ _accepted json keys:_
 Changes the state GPIO pin to `on` or `off`. If the pin is configured as a `LED` or `Serial Dimmer` then the `val` key will control the brightness.
 
 !!! bug
-    It is currently required to set **both** `state` and `val` for relays:
-    ```json
-    output12 {"state":"on","val":1}
-    output12 {"state":"off","val":0}
-    ```
-    Without `val` the relay won't switch.
+    Update to the latest 0.6-dev release, otherwise the relay won't switch without also setting the `val` property.
 
 !!! note
     If the GPIO is assigned to a group then objects and other GPIOs that share the same `groupid` will change state accordingly.

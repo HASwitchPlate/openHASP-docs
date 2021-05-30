@@ -70,7 +70,7 @@ If an internal *pullup* or *pulldown* resistor is not available on that pin you 
 
 - Button
 
-A button gpio sends events to topic `input#` where `#` is the groupnumber.
+A button gpio sends events to topic `input#` where `#` is the pin number.
 
 GPIO buttons send out **events** while they occur. The possible events are:
 
@@ -168,7 +168,12 @@ The various relay types (Light, Power) denote only the device class you want the
     Be sure to test any system thoroughly using low voltages first.
     By using the firmware you accept the [License](../../license).
 
+Use the hasp/<platename>/command/output[x] topic (where x is the pin number) with an empty payload to query the current state of the relay.
 
+```jsonl
+hasp/my_plate/command/output27
+hasp/my_plate/state/output27 {"state":"off"}
+```
 
 #### PWM
 
