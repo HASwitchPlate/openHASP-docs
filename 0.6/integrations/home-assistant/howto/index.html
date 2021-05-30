@@ -1432,7 +1432,7 @@ The brightness of the screen when idle (before long idle). Numeric value between
 <dd>Clears the contents of the specified page number. If page number not specified, clears all the pages.</dd>
 <dt><strong>openhasp.load_pages</strong></dt>
 <dd>
-<p>Loads new design from pages.jsonl file from <em>full path</em>.</p>
+<p>Loads new design from <code>pages.jsonl</code> file from <em>full path</em>.</p>
 <p>The file must be located in an authorised location defined by <a href="https://www.home-assistant.io/docs/configuration/basic/#allowlist_external_dirs">allowlist_external_dirs</a> (in case of hassio <code>/config/</code> is the directory where Home Assistant's configuration.yaml resides, so in case of a subdirectory called <code>openhasp</code> the full path would be e.g. <code>/config/openhasp/pages.jsonl</code>, and you need to add  <code>/config/openhasp/</code> to your <code>allowlist_external_dirs</code>).</p>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
@@ -1440,8 +1440,10 @@ The brightness of the screen when idle (before long idle). Numeric value between
 </div>
 <p>Unless you clear the page first, the objects will be updated.</p>
 </dd>
+<dt><strong>openhasp.command</strong></dt>
+<dd>Wraps up any <a href="../../../commands/">command</a> so that it can be called against the <em>entity_id</em> of the plate. Useful in Automations and Blueprints.</dd>
 </dl>
-<p>Check out the example automations for further information on how to use the services within Home Assistant.</p>
+<p>Check out the example automations for further information on how to use these services within Home Assistant.</p>
 <h2 id="send-jsonl-files-from-home-assistant">Send jsonl files from Home Assistant<a class="headerlink" href="#send-jsonl-files-from-home-assistant" title="Permanent link">~</a></h2>
 <p>You can save your jsonl files in Home Assistant too. The custom component can send the contents of the file when the plate connects.
 To allow read-access to the folder, add these lines to your <code>configuration.yaml</code>:</p>
