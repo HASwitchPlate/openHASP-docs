@@ -1,4 +1,4 @@
-## Keep backlight ON during the day, and turn it OFF during the night
+## Keep backlight ON (dimmed) during the day, and turn it OFF during the night
 
 The night mode activates when sun goes down, and the day mode activates when the sun comes up. During the day, when the screen is after short idle, it dims to the level configured in Home Assistant, but never turns off. During the night, the screen turns off after the long idle period.
 
