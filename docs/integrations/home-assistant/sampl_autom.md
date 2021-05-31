@@ -1,11 +1,53 @@
-## Turn on moodlight when backlight off (and vice-versa)
+## Keep backlight ON during the day, and turn it OFF during the night
 
-If your plate has moodlights, it is useful in dark situations, when you don't want to have the screen backlit on all the time, but have the mood light on instead.
-The night mode activates when sun goes down, and the day mode activates when the sun comes up. During the day mood light doesn't light, screen is on all the time but dimmed.
+The night mode activates when sun goes down, and the day mode activates when the sun comes up.    
+During the day, when the screen is after short idle, it dims to the level configured in Home Assistant, but never turns off. During the night, the screen turns off after the long idle period.
 
-Tested on Lanbon L8 and firmware 0.6.0.
+Assuming your plate's configured MQTT _group name_ is `plates`, this will affect all the plates in your system at once:
 
-Put your `light.plate_my_room_moodlight` to a Lovelace card entity row and select a nice color for moodlight. Assuming your plate's configured MQTT node or group topic is `plate35`, add your automations:
+```
+- id: openhasp-night
+  alias: "openHASP Night mode"
+  trigger:
+    - platform: numeric_state
+      entity_id: sun.sun
+      attribute: elevation
+      below: -1
+  condition:
+    - condition: template
+      value_template: "{{ (as_timestamp(now()) - as_timestamp(states('sensor.ha_uptime_moment'))) / 60 > 2 }}"
+  action:
+    - service: mqtt.publish
+      data:
+        topic: hasp/plates/config/gui
+        payload: '{"idle2":120}'
+
+- id: openhasp-day
+  alias: "openHASP Day mode"
+  trigger:
+    - platform: numeric_state
+      entity_id: sun.sun
+      attribute: elevation
+      above: 1
+  condition:
+    - condition: template
+      value_template: "{{ (as_timestamp(now()) - as_timestamp(states('sensor.ha_uptime_moment'))) / 60 > 2 }}"
+  action:
+    - service: mqtt.publish
+      data:
+        topic: hasp/plates/config/gui
+        payload: '{"idle2":0}'
+```
+
+Note the condition which assures to avoid triggering the automations falsely when Home Assistant (re)starts (allows running the automation only when Home Assistant has been up for at least 2 minutes).
+
+* * * * *
+
+## Turn ON moodlight when backlight goes OFF (and back)
+
+If your plate has moodlights, it is useful in dark situations, when you don't want to have the screen backlit on all the time as above, but have the mood light on instead. During the day mood light doesn't light.
+
+Put your `light.plate_my_room_moodlight` to a Lovelace card entity row and select a nice color for moodlight. Assuming your plate's configured MQTT node name is `plate35`, add your automations:
 
 ```yaml
 - id: openhasp-moodlight-on
@@ -31,41 +73,7 @@ Put your `light.plate_my_room_moodlight` to a Lovelace card entity row and selec
     - service: light.turn_off
       target:
         entity_id: light.plate_my_room_moodlight
-
-- id: openhasp-night
-  alias: "openHASP Night mode"
-  trigger:
-    - platform: numeric_state
-      entity_id: sun.sun
-      attribute: elevation
-      below: -1
-  condition:
-    - condition: template
-      value_template: "{{ (as_timestamp(now()) - as_timestamp(states('sensor.ha_uptime_moment'))) / 60 > 2 }}"
-  action:
-    - service: mqtt.publish
-      data:
-        topic: hasp/plate35/config/gui
-        payload: '{"idle2":120}'
-
-- id: openhasp-day
-  alias: "openHASP Day mode"
-  trigger:
-    - platform: numeric_state
-      entity_id: sun.sun
-      attribute: elevation
-      above: 1
-  condition:
-    - condition: template
-      value_template: "{{ (as_timestamp(now()) - as_timestamp(states('sensor.ha_uptime_moment'))) / 60 > 2 }}"
-  action:
-    - service: mqtt.publish
-      data:
-        topic: hasp/plate35/config/gui
-        payload: '{"idle2":0}'
 ```
-
-Note the condition which assures to avoid triggering the automations falsely when Home Assistant (re)starts (allows running the automation only when Home Assistant has been up for at least 2 minutes).
 
 * * * * *
 
