@@ -1,5 +1,11 @@
 # Installation and Example
 
+<h2>Page Layout</h2>
+
+![Screenshot](../../assets/images/screenshots/demo_jaffa1.png)
+![Screenshot](../../assets/images/screenshots/demo_jaffa2.png)
+![Screenshot](../../assets/images/screenshots/demo_jaffa3.png)
+
 We call _plate_ any device running openHASP in your system.
 
 ## Installation
@@ -10,7 +16,7 @@ Update the IP-address for your MQTT-broker in the `haspLVGL_demo.things` file.
 
 Make sure you have your plate connected to the network and to your MQTT boker, and your topic is set to `demo_plate`.
 
-## Jaffa Sunrise example
+## Code
 
 To add an openhasp plate to your installation with Jaffa Sunrise sample configuration, upload a `pages.jsonl` file with the folowing content to your plate:
 
@@ -54,11 +60,3 @@ To add an openhasp plate to your installation with Jaffa Sunrise sample configur
 Restart the plate and the demo page should load automatically to your device.
 
 
-## Result
-
-![Screenshot](../../assets/images/screenshots/demo_jaffa1.png)
-![Screenshot](../../assets/images/screenshots/demo_jaffa2.png)
-![Screenshot](../../assets/images/screenshots/demo_jaffa3.png)
-
-
-<div style="clear:both;"></div>
