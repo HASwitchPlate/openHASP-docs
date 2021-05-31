@@ -1,9 +1,8 @@
 ## Keep backlight ON during the day, and turn it OFF during the night
 
-The night mode activates when sun goes down, and the day mode activates when the sun comes up.    
-During the day, when the screen is after short idle, it dims to the level configured in Home Assistant, but never turns off. During the night, the screen turns off after the long idle period.
+The night mode activates when sun goes down, and the day mode activates when the sun comes up. During the day, when the screen is after short idle, it dims to the level configured in Home Assistant, but never turns off. During the night, the screen turns off after the long idle period.
 
-Assuming your plate's configured MQTT _group name_ is `plates`, this will affect all the plates in your system at once:
+Assuming your plate's configured MQTT _group name_ is `plates`, this will affect _all_ the plates in your system at once:
 
 ```yaml
 - id: openhasp-night
@@ -47,7 +46,7 @@ Note the condition which assures to avoid triggering the automations falsely whe
 
 If your plate has moodlights, it is useful in dark situations, when you don't want to have the screen backlit on all the time as above, but have the mood light on instead. During the day mood light doesn't light.
 
-Put your `light.plate_my_room_moodlight` to a Lovelace card entity row and select a nice color for moodlight. Assuming your plate's configured MQTT node name is `plate35`, add your automations:
+Put your `light.plate_my_room_moodlight` to a Lovelace card entity row and select a nice color for moodlight.
 
 ```yaml
 - id: openhasp-moodlight-on
