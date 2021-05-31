@@ -92,7 +92,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#turn-on-moodlight-when-backlight-off-and-vice-versa" class="md-skip">
+        <a href="#keep-backlight-on-during-the-day-and-turn-it-off-during-the-night" class="md-skip">
           Skip to content
         </a>
       
@@ -650,8 +650,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#turn-on-moodlight-when-backlight-off-and-vice-versa" class="md-nav__link">
-    Turn on moodlight when backlight off (and vice-versa)
+  <a href="#keep-backlight-on-during-the-day-and-turn-it-off-during-the-night" class="md-nav__link">
+    Keep backlight ON during the day, and turn it OFF during the night
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#turn-on-moodlight-when-backlight-goes-off-and-back" class="md-nav__link">
+    Turn ON moodlight when backlight goes OFF (and back)
   </a>
   
 </li>
@@ -1143,8 +1150,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#turn-on-moodlight-when-backlight-off-and-vice-versa" class="md-nav__link">
-    Turn on moodlight when backlight off (and vice-versa)
+  <a href="#keep-backlight-on-during-the-day-and-turn-it-off-during-the-night" class="md-nav__link">
+    Keep backlight ON during the day, and turn it OFF during the night
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#turn-on-moodlight-when-backlight-goes-off-and-back" class="md-nav__link">
+    Turn ON moodlight when backlight goes OFF (and back)
   </a>
   
 </li>
@@ -1182,11 +1196,10 @@
                 
                   <h1>Example Automations</h1>
                 
-                <h2 id="turn-on-moodlight-when-backlight-off-and-vice-versa">Turn on moodlight when backlight off (and vice-versa)<a class="headerlink" href="#turn-on-moodlight-when-backlight-off-and-vice-versa" title="Permanent link">~</a></h2>
-<p>If your plate has moodlights, it is useful in dark situations, when you don't want to have the screen backlit on all the time, but have the mood light on instead.
-The night mode activates when sun goes down, and the day mode activates when the sun comes up. During the day mood light doesn't light, screen is on all the time but dimmed.</p>
-<p>Tested on Lanbon L8 and firmware 0.6.0.</p>
-<p>Put your <code>light.plate_my_room_moodlight</code> to a Lovelace card entity row and select a nice color for moodlight. Assuming your plate's configured MQTT node or group topic is <code>plate35</code>, add your automations:</p>
+                <h2 id="keep-backlight-on-during-the-day-and-turn-it-off-during-the-night">Keep backlight ON during the day, and turn it OFF during the night<a class="headerlink" href="#keep-backlight-on-during-the-day-and-turn-it-off-during-the-night" title="Permanent link">~</a></h2>
+<p>The night mode activates when sun goes down, and the day mode activates when the sun comes up.  <br />
+During the day, when the screen is after short idle, it dims to the level configured in Home Assistant, but never turns off. During the night, the screen turns off after the long idle period.</p>
+<p>Assuming your plate's configured MQTT <em>group name</em> is <code>plates</code>, this will affect all the plates in your system at once:</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -1217,31 +1230,67 @@ The night mode activates when sun goes down, and the day mode activates when the
 <span class="normal">28</span>
 <span class="normal">29</span>
 <span class="normal">30</span>
-<span class="normal">31</span>
-<span class="normal">32</span>
-<span class="normal">33</span>
-<span class="normal">34</span>
-<span class="normal">35</span>
-<span class="normal">36</span>
-<span class="normal">37</span>
-<span class="normal">38</span>
-<span class="normal">39</span>
-<span class="normal">40</span>
-<span class="normal">41</span>
-<span class="normal">42</span>
-<span class="normal">43</span>
-<span class="normal">44</span>
-<span class="normal">45</span>
-<span class="normal">46</span>
-<span class="normal">47</span>
-<span class="normal">48</span>
-<span class="normal">49</span>
-<span class="normal">50</span>
-<span class="normal">51</span>
-<span class="normal">52</span>
-<span class="normal">53</span>
-<span class="normal">54</span>
-<span class="normal">55</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p p-Indicator">-</span> <span class="nt">id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">openhasp-moodlight-on</span>
+<span class="normal">31</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>- id: openhasp-night
+  alias: &quot;openHASP Night mode&quot;
+  trigger:
+    - platform: numeric_state
+      entity_id: sun.sun
+      attribute: elevation
+      below: -1
+  condition:
+    - condition: template
+      value_template: &quot;{{ (as_timestamp(now()) - as_timestamp(states(&#39;sensor.ha_uptime_moment&#39;))) / 60 &gt; 2 }}&quot;
+  action:
+    - service: mqtt.publish
+      data:
+        topic: hasp/plates/config/gui
+        payload: &#39;{&quot;idle2&quot;:120}&#39;
+
+- id: openhasp-day
+  alias: &quot;openHASP Day mode&quot;
+  trigger:
+    - platform: numeric_state
+      entity_id: sun.sun
+      attribute: elevation
+      above: 1
+  condition:
+    - condition: template
+      value_template: &quot;{{ (as_timestamp(now()) - as_timestamp(states(&#39;sensor.ha_uptime_moment&#39;))) / 60 &gt; 2 }}&quot;
+  action:
+    - service: mqtt.publish
+      data:
+        topic: hasp/plates/config/gui
+        payload: &#39;{&quot;idle2&quot;:0}&#39;
+</code></pre></div>
+</td></tr></table>
+<p>Note the condition which assures to avoid triggering the automations falsely when Home Assistant (re)starts (allows running the automation only when Home Assistant has been up for at least 2 minutes).</p>
+<hr />
+<h2 id="turn-on-moodlight-when-backlight-goes-off-and-back">Turn ON moodlight when backlight goes OFF (and back)<a class="headerlink" href="#turn-on-moodlight-when-backlight-goes-off-and-back" title="Permanent link">~</a></h2>
+<p>If your plate has moodlights, it is useful in dark situations, when you don't want to have the screen backlit on all the time as above, but have the mood light on instead. During the day mood light doesn't light.</p>
+<p>Put your <code>light.plate_my_room_moodlight</code> to a Lovelace card entity row and select a nice color for moodlight. Assuming your plate's configured MQTT node name is <code>plate35</code>, add your automations:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p p-Indicator">-</span> <span class="nt">id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">openhasp-moodlight-on</span>
   <span class="nt">alias</span><span class="p">:</span> <span class="s">&quot;openHASP</span><span class="nv"> </span><span class="s">Moodlight</span><span class="nv"> </span><span class="s">ON</span><span class="nv"> </span><span class="s">when</span><span class="nv"> </span><span class="s">Backlight</span><span class="nv"> </span><span class="s">OFF&quot;</span>
   <span class="nt">trigger</span><span class="p">:</span>
     <span class="p p-Indicator">-</span> <span class="nt">platform</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">state</span>
@@ -1264,41 +1313,8 @@ The night mode activates when sun goes down, and the day mode activates when the
     <span class="p p-Indicator">-</span> <span class="nt">service</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">light.turn_off</span>
       <span class="nt">target</span><span class="p">:</span>
         <span class="nt">entity_id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">light.plate_my_room_moodlight</span>
-
-<span class="p p-Indicator">-</span> <span class="nt">id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">openhasp-night</span>
-  <span class="nt">alias</span><span class="p">:</span> <span class="s">&quot;openHASP</span><span class="nv"> </span><span class="s">Night</span><span class="nv"> </span><span class="s">mode&quot;</span>
-  <span class="nt">trigger</span><span class="p">:</span>
-    <span class="p p-Indicator">-</span> <span class="nt">platform</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">numeric_state</span>
-      <span class="nt">entity_id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">sun.sun</span>
-      <span class="nt">attribute</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">elevation</span>
-      <span class="nt">below</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">-1</span>
-  <span class="nt">condition</span><span class="p">:</span>
-    <span class="p p-Indicator">-</span> <span class="nt">condition</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">template</span>
-      <span class="nt">value_template</span><span class="p">:</span> <span class="s">&quot;{{</span><span class="nv"> </span><span class="s">(as_timestamp(now())</span><span class="nv"> </span><span class="s">-</span><span class="nv"> </span><span class="s">as_timestamp(states(&#39;sensor.ha_uptime_moment&#39;)))</span><span class="nv"> </span><span class="s">/</span><span class="nv"> </span><span class="s">60</span><span class="nv"> </span><span class="s">&gt;</span><span class="nv"> </span><span class="s">2</span><span class="nv"> </span><span class="s">}}&quot;</span>
-  <span class="nt">action</span><span class="p">:</span>
-    <span class="p p-Indicator">-</span> <span class="nt">service</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">mqtt.publish</span>
-      <span class="nt">data</span><span class="p">:</span>
-        <span class="nt">topic</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">hasp/plate35/config/gui</span>
-        <span class="nt">payload</span><span class="p">:</span> <span class="s">&#39;{&quot;idle2&quot;:120}&#39;</span>
-
-<span class="p p-Indicator">-</span> <span class="nt">id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">openhasp-day</span>
-  <span class="nt">alias</span><span class="p">:</span> <span class="s">&quot;openHASP</span><span class="nv"> </span><span class="s">Day</span><span class="nv"> </span><span class="s">mode&quot;</span>
-  <span class="nt">trigger</span><span class="p">:</span>
-    <span class="p p-Indicator">-</span> <span class="nt">platform</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">numeric_state</span>
-      <span class="nt">entity_id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">sun.sun</span>
-      <span class="nt">attribute</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">elevation</span>
-      <span class="nt">above</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1</span>
-  <span class="nt">condition</span><span class="p">:</span>
-    <span class="p p-Indicator">-</span> <span class="nt">condition</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">template</span>
-      <span class="nt">value_template</span><span class="p">:</span> <span class="s">&quot;{{</span><span class="nv"> </span><span class="s">(as_timestamp(now())</span><span class="nv"> </span><span class="s">-</span><span class="nv"> </span><span class="s">as_timestamp(states(&#39;sensor.ha_uptime_moment&#39;)))</span><span class="nv"> </span><span class="s">/</span><span class="nv"> </span><span class="s">60</span><span class="nv"> </span><span class="s">&gt;</span><span class="nv"> </span><span class="s">2</span><span class="nv"> </span><span class="s">}}&quot;</span>
-  <span class="nt">action</span><span class="p">:</span>
-    <span class="p p-Indicator">-</span> <span class="nt">service</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">mqtt.publish</span>
-      <span class="nt">data</span><span class="p">:</span>
-        <span class="nt">topic</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">hasp/plate35/config/gui</span>
-        <span class="nt">payload</span><span class="p">:</span> <span class="s">&#39;{&quot;idle2&quot;:0}&#39;</span>
 </code></pre></div>
 </td></tr></table>
-<p>Note the condition which assures to avoid triggering the automations falsely when Home Assistant (re)starts (allows running the automation only when Home Assistant has been up for at least 2 minutes).</p>
 <hr />
 <h2 id="return-to-home-page-after-some-idle-time">Return to home page after some idle time<a class="headerlink" href="#return-to-home-page-after-some-idle-time" title="Permanent link">~</a></h2>
 <p>Apart from the idle times controlling backlight levels, one may want to return to page 1 after a while. </p>
@@ -1640,7 +1656,7 @@ Don't forget to adjust the size of the object to your screen if it's not 240x320
 <div class="md-source-date">
   <small>
     
-      Last update: 2021-05-30
+      Last update: 2021-05-31
     
   </small>
 </div>
