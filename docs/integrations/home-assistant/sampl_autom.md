@@ -5,7 +5,7 @@ During the day, when the screen is after short idle, it dims to the level config
 
 Assuming your plate's configured MQTT _group name_ is `plates`, this will affect all the plates in your system at once:
 
-```
+```yaml
 - id: openhasp-night
   alias: "openHASP Night mode"
   trigger:
