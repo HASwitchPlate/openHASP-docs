@@ -1197,9 +1197,8 @@
                   <h1>Example Automations</h1>
                 
                 <h2 id="keep-backlight-on-during-the-day-and-turn-it-off-during-the-night">Keep backlight ON during the day, and turn it OFF during the night<a class="headerlink" href="#keep-backlight-on-during-the-day-and-turn-it-off-during-the-night" title="Permanent link">~</a></h2>
-<p>The night mode activates when sun goes down, and the day mode activates when the sun comes up.  <br />
-During the day, when the screen is after short idle, it dims to the level configured in Home Assistant, but never turns off. During the night, the screen turns off after the long idle period.</p>
-<p>Assuming your plate's configured MQTT <em>group name</em> is <code>plates</code>, this will affect all the plates in your system at once:</p>
+<p>The night mode activates when sun goes down, and the day mode activates when the sun comes up. During the day, when the screen is after short idle, it dims to the level configured in Home Assistant, but never turns off. During the night, the screen turns off after the long idle period.</p>
+<p>Assuming your plate's configured MQTT <em>group name</em> is <code>plates</code>, this will affect <em>all</em> the plates in your system at once:</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -1267,7 +1266,7 @@ During the day, when the screen is after short idle, it dims to the level config
 <hr />
 <h2 id="turn-on-moodlight-when-backlight-goes-off-and-back">Turn ON moodlight when backlight goes OFF (and back)<a class="headerlink" href="#turn-on-moodlight-when-backlight-goes-off-and-back" title="Permanent link">~</a></h2>
 <p>If your plate has moodlights, it is useful in dark situations, when you don't want to have the screen backlit on all the time as above, but have the mood light on instead. During the day mood light doesn't light.</p>
-<p>Put your <code>light.plate_my_room_moodlight</code> to a Lovelace card entity row and select a nice color for moodlight. Assuming your plate's configured MQTT node name is <code>plate35</code>, add your automations:</p>
+<p>Put your <code>light.plate_my_room_moodlight</code> to a Lovelace card entity row and select a nice color for moodlight.</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
