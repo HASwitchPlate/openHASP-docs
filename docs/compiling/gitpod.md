@@ -69,6 +69,8 @@ Save the file by pressing `Ctrl + S` or selecting `Save` from the top-left menu.
 !!! note "Note"
     You can of course uncomment multiple lines, the system will make builds for each. Note that these environments rely on the platforms above so double-check that your hardware has the correct platform enabled in the `extra_configs` section!
 
+!!! warning "Warning"
+    If you build from a development branch, you may not get the expected results, as it may contain undocumented or buggy features. Also, most likely a development branch has verbose logging enabled by default which adversely affects performance (for example setting `HASP_LOG_LEVEL` back to `LOG_LEVEL_TRACE` may bring speed to normal, otherwise the plate may become laggy).
 
 ## Build the firmware
 
