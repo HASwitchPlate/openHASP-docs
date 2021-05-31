@@ -1281,6 +1281,10 @@ Save the file by pressing <code>Ctrl + S</code> or selecting <code>Save</code> f
 <p class="admonition-title">Note</p>
 <p>You can of course uncomment multiple lines, the system will make builds for each. Note that these environments rely on the platforms above so double-check that your hardware has the correct platform enabled in the <code>extra_configs</code> section!</p>
 </div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>If you build from a development branch, you may not get the expected results, as it may contain undocumented or buggy features. Also, most likely a development branch has verbose logging enabled by default which adversely affects performance (for example setting <code>HASP_LOG_LEVEL</code> back to <code>LOG_LEVEL_TRACE</code> may bring speed to normal, otherwise the plate may become laggy).</p>
+</div>
 <h2 id="build-the-firmware">Build the firmware<a class="headerlink" href="#build-the-firmware" title="Permanent link">~</a></h2>
 <p>To generate your customized firmware build, type <code>platformio run</code> in the command line area at the bottom, and press Enter key.</p>
 <h2 id="download-the-build">Download the build<a class="headerlink" href="#download-the-build" title="Permanent link">~</a></h2>
