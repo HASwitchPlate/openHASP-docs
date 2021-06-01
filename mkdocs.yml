@@ -59,8 +59,6 @@ markdown_extensions:
       toc_depth: 3
 
 extra:
-  version: v0.6.0 beta
-
   # alternate:
   #   - name: Default (en)
   #     link: ./

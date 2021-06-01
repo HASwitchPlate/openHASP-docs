@@ -31,7 +31,7 @@ To switch to a different branch use:
 ```bash
 git clone --recursive https://github.com/HASwitchPlate/openHASP
 cd openHASP
-git checkout 0.4.0
+git checkout 0.6.0
 git submodule update --init --recursive
 ```
 
