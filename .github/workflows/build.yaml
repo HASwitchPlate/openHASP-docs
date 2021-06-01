@@ -44,10 +44,17 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Fetch pages
+        run: |
+          git fetch origin gh-pages --verbose
+
+      - name: Set default
+        run: |
+          mike set-default "latest"
+
       - name: Deploy docs (Latest)
         if: github.ref == 'refs/heads/0.5'
         run: |
-          git fetch origin gh-pages --verbose
           mike deploy "0.5" --title="0.5.2" --config-file "${GITHUB_WORKSPACE}/mkdocs.yml" --push --rebase
         # env:
         #   CUSTOM_DOMAIN: docs.haswitchplate.com
@@ -55,14 +62,12 @@ jobs:
       - name: Deploy docs (Dev)
         if: github.ref == 'refs/heads/0.6'
         run: |
-          git fetch origin gh-pages --verbose
           mike deploy --update-aliases "0.6" latest --title="0.6.0" --config-file "${GITHUB_WORKSPACE}/mkdocs.yml" --push --rebase
 
       - name: Deploy docs (Dev)
-        if: github.ref == 'refs/heads/dev'
+        if: github.ref == 'refs/heads/0.6-dev'
         run: |
-          git fetch origin gh-pages --verbose
-          mike deploy dev --title="dev" --config-file "${GITHUB_WORKSPACE}/mkdocs.yml" --push --rebase
+          mike deploy --update-aliases "0.6-dev" dev --title="dev" --config-file "${GITHUB_WORKSPACE}/mkdocs.yml" --push --rebase
 
         # env:
         #   CUSTOM_DOMAIN: docs.haswitchplate.com
