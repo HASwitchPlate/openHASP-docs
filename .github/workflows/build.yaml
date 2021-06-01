@@ -81,3 +81,4 @@ jobs:
       #   run: |
       #     git fetch origin gh-pages --verbose
       #     mike deploy ${GITHUB_REF##*/release/} -t "Self-hosted ${GITHUB_REF##*/release/}" --config-file "${GITHUB_WORKSPACE}/mkdocs.yml" --push --rebase
+      
