@@ -1,0 +1,3023 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Open firmware for MCUs to drive a low-cost commodity touch display">
+      
+      
+      
+        <meta name="author" content="Francis Van Roie">
+      
+      
+      <link rel="icon" href="../../favicon.ico">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.6">
+    
+    
+      
+        <title>Objects - openHASP</title>
+      
+    
+     
+      <link rel="stylesheet" href="../../assets/stylesheets/main.875de78c.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.f1a3b89f.min.css">
+        
+      
+    
+<link rel="stylesheet" href="../../css/openhasp.css">
+<link rel="stylesheet" href="../../css/ekko-lightbox.min.css">
+<link rel="stylesheet" href="../../css/bootstrap4.min.css"> 
+     
+
+<!-- Jquery from Google CDN -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<!-- Load Jquery UI -->
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+<!-- Handle jQuery plugin naming conflict between jQuery UI and Bootstrap 
+    https://stackoverflow.com/questions/13731400/jqueryui-tooltips-are-competing-with-twitter-bootstrap
+    -->
+
+<!--
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/pepper-grinder/jquery-ui.css">
+    -->
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+<!-- Bootstrap theme -->
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.11.0/build/css/themes/bootstrap.min.css" />
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="deep-orange">
+  
+    
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+      <script>var palette=__get("__palette");if(null!==palette&&"object"==typeof palette.color)for(var key in palette.color)document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#cheatsheet" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="openHASP" class="md-header__button md-logo" aria-label="openHASP" data-md-component="logo">
+      
+  <img src="../../assets/images/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            openHASP
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Objects
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="deep-orange" type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 10a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2m10-3a5 5 0 0 1 5 5 5 5 0 0 1-5 5H7a5 5 0 0 1-5-5 5 5 0 0 1 5-5h10M7 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3h10a3 3 0 0 0 3-3 3 3 0 0 0-3-3H7z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="cyan" data-md-color-accent="deep-orange" type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/HASwitchPlate/openHASP/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    HASwitchPlate/openHASP
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                      
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+    <label class="md-nav__title" for="__drawer">
+      <a href="../.." title="openHASP" class="md-nav__button md-logo" aria-label="openHASP" data-md-component="logo">
+        
+  <img src="../../assets/images/logo.png" alt="logo">
+
+      </a>
+      openHASP
+    </label> 
+    <div class="md-nav__source">
+        
+<a href="https://github.com/HASwitchPlate/openHASP/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    HASwitchPlate/openHASP
+  </div>
+</a>
+    </div>
+    
+    <ul class="md-nav__list" data-md-scrollfix>
+           
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+    
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/" class="md-nav__link">
+        Getting started
+      </a>
+    </li>
+  
+    
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      <label class="md-nav__link" for="__nav_3">
+        Installation
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Installation" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Installation
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../installation/esp32/" class="md-nav__link">
+        ESP32
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../installation/esp8266/" class="md-nav__link">
+        ESP8266
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../installation/wifi-setup/" class="md-nav__link">
+        Wifi Setup
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../installation/firmware-update/" class="md-nav__link">
+        Firmware Update
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+    
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      <label class="md-nav__link" for="__nav_4">
+        Configuration
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Configuration" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Configuration
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../configuration/hasp/" class="md-nav__link">
+        HASP Design
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../configuration/wifi/" class="md-nav__link">
+        Wifi Settings
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../configuration/http/" class="md-nav__link">
+        HTTP Settings
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../configuration/mqtt/" class="md-nav__link">
+        MQTT Settings
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../configuration/display/" class="md-nav__link">
+        Display Settings
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../configuration/gpio/" class="md-nav__link">
+        GPIO Settings
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../configuration/debug/" class="md-nav__link">
+        Debug Settings
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+    
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" checked>
+      
+      <label class="md-nav__link" for="__nav_5">
+        Design
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Design" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Design
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pages/" class="md-nav__link">
+        Pages
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Objects
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Objects
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#cheatsheet" class="md-nav__link">
+    Cheatsheet
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-parameters" class="md-nav__link">
+    Common Parameters
+  </a>
+  
+    <nav class="md-nav" aria-label="Common Parameters">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#common-properties" class="md-nav__link">
+    Common Properties
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#events" class="md-nav__link">
+    Events
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#common-methods" class="md-nav__link">
+    Common Methods
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#text-label" class="md-nav__link">
+    Text Label
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#button" class="md-nav__link">
+    Button
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#switch" class="md-nav__link">
+    Switch
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#checkbox" class="md-nav__link">
+    Checkbox
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#progress-bar" class="md-nav__link">
+    Progress Bar
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#slider" class="md-nav__link">
+    Slider
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#arc" class="md-nav__link">
+    Arc
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dropdown-list" class="md-nav__link">
+    Dropdown List
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#roller" class="md-nav__link">
+    Roller
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#line-meter" class="md-nav__link">
+    Line Meter
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gauge" class="md-nav__link">
+    Gauge
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tabview" class="md-nav__link">
+    Tabview  
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tab" class="md-nav__link">
+    Tab  
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#color-picker" class="md-nav__link">
+    Color picker
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#spinner" class="md-nav__link">
+    Spinner
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#led-indicator" class="md-nav__link">
+    LED Indicator
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#button-matrix" class="md-nav__link">
+    Button Matrix
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#messagebox" class="md-nav__link">
+    Messagebox  
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#image" class="md-nav__link">
+    Image  
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#base-object" class="md-nav__link">
+    Base Object
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fonts/" class="md-nav__link">
+        Fonts
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../styling/" class="md-nav__link">
+        Styling Properties
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data-types/" class="md-nav__link">
+        Data Types
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+    
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../commands/" class="md-nav__link">
+        Commands
+      </a>
+    </li>
+  
+    
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+      
+      <label class="md-nav__link" for="__nav_7">
+        Integrations
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Integrations" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Integrations
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_1" type="checkbox" id="__nav_7_1" >
+      
+      <label class="md-nav__link" for="__nav_7_1">
+        Home Assistant
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Home Assistant" data-md-level="2">
+        <label class="md-nav__title" for="__nav_7_1">
+          <span class="md-nav__icon md-icon"></span>
+          Home Assistant
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../integrations/home-assistant/howto/" class="md-nav__link">
+        How-To
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../integrations/home-assistant/sampl_conf/" class="md-nav__link">
+        Example Configurations
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../integrations/home-assistant/sampl_autom/" class="md-nav__link">
+        Example Automations
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_2" type="checkbox" id="__nav_7_2" >
+      
+      <label class="md-nav__link" for="__nav_7_2">
+        OpenHAB
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="OpenHAB" data-md-level="2">
+        <label class="md-nav__title" for="__nav_7_2">
+          <span class="md-nav__icon md-icon"></span>
+          OpenHAB
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../integrations/openhab/integration_openhab/" class="md-nav__link">
+        Installation and Example
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_3" type="checkbox" id="__nav_7_3" >
+      
+      <label class="md-nav__link" for="__nav_7_3">
+        Other examples
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Other examples" data-md-level="2">
+        <label class="md-nav__title" for="__nav_7_3">
+          <span class="md-nav__icon md-icon"></span>
+          Other examples
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../integrations/examples/example-pagination/" class="md-nav__link">
+        Page Navigation
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../integrations/examples/example-dashui/" class="md-nav__link">
+        Dash UI
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../integrations/examples/example-widgets/" class="md-nav__link">
+        Widgets Demo
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../integrations/examples/example-lovelace/" class="md-nav__link">
+        Lovelace Entities
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../integrations/examples/surprise/" class="md-nav__link">
+        Some fun
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+    
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" >
+      
+      <label class="md-nav__link" for="__nav_8">
+        Devices
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Devices" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          Devices
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devices/featherwing/" class="md-nav__link">
+        Adafruit Featherwing
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devices/esp32-touchdown/" class="md-nav__link">
+        ESP32 TouchDown
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devices/freetouchdeck/" class="md-nav__link">
+        FreeTouchDeck
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devices/lanbon-l8/" class="md-nav__link">
+        Lanbon L8
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devices/m5stack-core2/" class="md-nav__link">
+        M5stack core2
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devices/wt32-sc01/" class="md-nav__link">
+        Wireless-Tag
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+    
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" type="checkbox" id="__nav_9" >
+      
+      <label class="md-nav__link" for="__nav_9">
+        Displays
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Displays" data-md-level="1">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          Displays
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../displays/ILI9341_IPS/" class="md-nav__link">
+        ILI9341 IPS
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../displays/MHS4001/" class="md-nav__link">
+        MHS4001
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../displays/MRB3511/" class="md-nav__link">
+        MRB3511
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../displays/MSPxxxx/" class="md-nav__link">
+        MSPxxxx
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../displays/Waveshare_RPi_LCD_Rev_C/" class="md-nav__link">
+        Waveshare RPi LCD Rev C
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+    
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gallery/" class="md-nav__link">
+        Gallery
+      </a>
+    </li>
+  
+    
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/" class="md-nav__link">
+        FAQ
+      </a>
+    </li>
+  
+    
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_12" type="checkbox" id="__nav_12" >
+      
+      <label class="md-nav__link" for="__nav_12">
+        Compiling
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Compiling" data-md-level="1">
+        <label class="md-nav__title" for="__nav_12">
+          <span class="md-nav__icon md-icon"></span>
+          Compiling
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../compiling/local/" class="md-nav__link">
+        Compiling locally
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../compiling/gitpod/" class="md-nav__link">
+        Compiling online with Gitpod
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../compiling/customize/" class="md-nav__link">
+        Customization
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+    
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../license/" class="md-nav__link">
+        License
+      </a>
+    </li>
+  
+ 
+    </ul>
+</nav>
+<nav>
+    
+  <div class="md-footer-social">
+    
+      
+      
+      <a href="https://github.com/HASwitchPlate/openHASP/discussions" target="_blank" rel="noopener" title="GitHub Discussions" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/></svg>
+      </a>
+    
+      
+      
+      <a href="https://discord.gg/VCWyuhF" target="_blank" rel="noopener" title="Discord Chat" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m22 24-5.25-5 .63 2H4.5A2.5 2.5 0 0 1 2 18.5v-15A2.5 2.5 0 0 1 4.5 1h15A2.5 2.5 0 0 1 22 3.5V24M12 6.8c-2.68 0-4.56 1.15-4.56 1.15 1.03-.92 2.83-1.45 2.83-1.45l-.17-.17c-1.69.03-3.22 1.2-3.22 1.2-1.72 3.59-1.61 6.69-1.61 6.69 1.4 1.81 3.48 1.68 3.48 1.68l.71-.9c-1.25-.27-2.04-1.38-2.04-1.38S9.3 14.9 12 14.9s4.58-1.28 4.58-1.28-.79 1.11-2.04 1.38l.71.9s2.08.13 3.48-1.68c0 0 .11-3.1-1.61-6.69 0 0-1.53-1.17-3.22-1.2l-.17.17s1.8.53 2.83 1.45c0 0-1.88-1.15-4.56-1.15m-2.07 3.79c.65 0 1.18.57 1.17 1.27 0 .69-.52 1.27-1.17 1.27-.64 0-1.16-.58-1.16-1.27 0-.7.51-1.27 1.16-1.27m4.17 0c.65 0 1.17.57 1.17 1.27 0 .69-.52 1.27-1.17 1.27-.64 0-1.16-.58-1.16-1.27 0-.7.51-1.27 1.16-1.27z"/></svg>
+      </a>
+    
+      
+      
+      <a href="https://community.home-assistant.io/t/openhasp-an-mqtt-driven-touchscreen-scene-controller/300853" target="_blank" rel="noopener" title="Home Assistant Forum" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.8 13H20v8h-7v-3.33l2.79-2.79.71.12a2.1 2.1 0 1 0 0-4.2 2.1 2.1 0 0 0-2.1 2.1l.1.71-1.5 1.52V9.65c.66-.36 1.1-1.05 1.1-1.85A2.1 2.1 0 0 0 12 5.7a2.1 2.1 0 0 0-2.1 2.1c0 .8.44 1.49 1.1 1.85v5.48l-1.5-1.52.1-.71a2.1 2.1 0 0 0-2.1-2.1 2.1 2.1 0 0 0-2.1 2.1A2.1 2.1 0 0 0 7.5 15l.71-.12L11 17.67V21H4v-8H2.25c-.42 0-.83 0-.83-.21.01-.22.43-.64.86-1.07L11 3c.33-.33.67-.67 1-.67.33 0 .67.34 1 .67l4 4V6h2v3l2.78 2.78c.4.4.81.81.82 1.02 0 .2-.4.2-.8.2M7.5 12a.9.9 0 0 1 .9.9.9.9 0 0 1-.9.9.9.9 0 0 1-.9-.9.9.9 0 0 1 .9-.9m9 0c.5 0 .9.4.9.9s-.4.9-.9.9a.9.9 0 0 1-.9-.9.9.9 0 0 1 .9-.9M12 6.9c.5 0 .9.4.9.9s-.4.9-.9.9-.9-.4-.9-.9.4-.9.9-.9z"/></svg>
+      </a>
+    
+  </div>
+
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#cheatsheet" class="md-nav__link">
+    Cheatsheet
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-parameters" class="md-nav__link">
+    Common Parameters
+  </a>
+  
+    <nav class="md-nav" aria-label="Common Parameters">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#common-properties" class="md-nav__link">
+    Common Properties
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#events" class="md-nav__link">
+    Events
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#common-methods" class="md-nav__link">
+    Common Methods
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#text-label" class="md-nav__link">
+    Text Label
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#button" class="md-nav__link">
+    Button
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#switch" class="md-nav__link">
+    Switch
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#checkbox" class="md-nav__link">
+    Checkbox
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#progress-bar" class="md-nav__link">
+    Progress Bar
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#slider" class="md-nav__link">
+    Slider
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#arc" class="md-nav__link">
+    Arc
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dropdown-list" class="md-nav__link">
+    Dropdown List
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#roller" class="md-nav__link">
+    Roller
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#line-meter" class="md-nav__link">
+    Line Meter
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gauge" class="md-nav__link">
+    Gauge
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tabview" class="md-nav__link">
+    Tabview  
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tab" class="md-nav__link">
+    Tab  
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#color-picker" class="md-nav__link">
+    Color picker
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#spinner" class="md-nav__link">
+    Spinner
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#led-indicator" class="md-nav__link">
+    LED Indicator
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#button-matrix" class="md-nav__link">
+    Button Matrix
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#messagebox" class="md-nav__link">
+    Messagebox  
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#image" class="md-nav__link">
+    Image  
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#base-object" class="md-nav__link">
+    Base Object
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/HASwitchPlate/openHASP-docs/edit/0.6/docs/design/objects.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                <style type="text/css">
+
+.md-typeset__table {
+   min-width: 100%;
+}
+
+table th:first-child{
+  border-radius:5px 0 0 0;
+}
+
+table th:last-child{
+  border-radius:0 5px 0 0;
+}
+
+tbody tr:nth-child(even) {
+  background: #88888811;
+}
+
+.md-typeset table:not([class])
+{
+    display: table;
+}
+
+.md-typeset table:not([class]) td
+{
+ padding: 0.5em 1.25em;
+  line-height: 1.25;
+}
+
+
+</style>
+
+<h1>Objects</h1>
+
+<p>There are two ways to create an object on the screen:</p>
+<ul>
+<li>Uploading a <a href="../pages#pagesjsonl"><code>pages.jsonl</code></a> file onto the internal flash</li>
+<li>Use the <a href="../../commands#jsonl"><code>jsonl</code></a> command <em>(via MQTT, serial or telnet console)</em></li>
+</ul>
+<h2 id="cheatsheet">Cheatsheet<a class="headerlink" href="#cheatsheet" title="Permanent link">~</a></h2>
+<table>
+<thead>
+<tr>
+<th align="left">obj</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">btn</td>
+<td align="left">Binary</td>
+<td align="left"><a href="#button">Button</a></td>
+</tr>
+<tr>
+<td align="left">switch</td>
+<td align="left">Toggle</td>
+<td align="left"><a href="#switch">Switch</a></td>
+</tr>
+<tr>
+<td align="left">checkbox</td>
+<td align="left">Toggle</td>
+<td align="left"><a href="#checkbox">Checkbox</a></td>
+</tr>
+<tr>
+<td align="left">label</td>
+<td align="left">Visual</td>
+<td align="left"><a href="#text-label">Label</a></td>
+</tr>
+<tr>
+<td align="left">led</td>
+<td align="left">Visual</td>
+<td align="left"><a href="#led-indicator">LED</a></td>
+</tr>
+<tr>
+<td align="left">spinner</td>
+<td align="left">Visual</td>
+<td align="left"><a href="#spinner">Spinner</a></td>
+</tr>
+<tr>
+<td align="left">obj</td>
+<td align="left">Visual</td>
+<td align="left"><a href="#base-object">Base Object</a></td>
+</tr>
+<tr>
+<td align="left">img <span class="twemoji tag-small"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 4c1.11 0 2 .89 2 2v12c0 1.11-.89 2-2 2H4c-1.11 0-2-.89-2-2V6c0-1.11.89-2 2-2h16M8.5 15V9H7.25v3.5L4.75 9H3.5v6h1.25v-3.5L7.3 15h1.2m5-4.74V9h-4v6h4v-1.25H11v-1.11h2.5v-1.26H11v-1.12h2.5m7 3.74V9h-1.25v4.5h-1.12V10h-1.25v3.5h-1.13V9H14.5v5a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1z"/></svg></span></td>
+<td align="left">Visual</td>
+<td align="left"><a href="#image">Image</a></td>
+</tr>
+<tr>
+<td align="left">dropdown</td>
+<td align="left">Selector</td>
+<td align="left"><a href="#dropdown-list">Dropdown List</a></td>
+</tr>
+<tr>
+<td align="left">roller</td>
+<td align="left">Selector</td>
+<td align="left"><a href="#roller">Roller</a></td>
+</tr>
+<tr>
+<td align="left">btnmatrix</td>
+<td align="left">Selector</td>
+<td align="left"><a href="#button-matrix">Button Matrix</a></td>
+</tr>
+<tr>
+<td align="left">msgbox  <span class="twemoji tag-small"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 4c1.11 0 2 .89 2 2v12c0 1.11-.89 2-2 2H4c-1.11 0-2-.89-2-2V6c0-1.11.89-2 2-2h16M8.5 15V9H7.25v3.5L4.75 9H3.5v6h1.25v-3.5L7.3 15h1.2m5-4.74V9h-4v6h4v-1.25H11v-1.11h2.5v-1.26H11v-1.12h2.5m7 3.74V9h-1.25v4.5h-1.12V10h-1.25v3.5h-1.13V9H14.5v5a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1z"/></svg></span></td>
+<td align="left">Selector</td>
+<td align="left"><a href="#messagebox">Messagebox</a></td>
+</tr>
+<tr>
+<td align="left">tabview  <span class="twemoji tag-small"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 4c1.11 0 2 .89 2 2v12c0 1.11-.89 2-2 2H4c-1.11 0-2-.89-2-2V6c0-1.11.89-2 2-2h16M8.5 15V9H7.25v3.5L4.75 9H3.5v6h1.25v-3.5L7.3 15h1.2m5-4.74V9h-4v6h4v-1.25H11v-1.11h2.5v-1.26H11v-1.12h2.5m7 3.74V9h-1.25v4.5h-1.12V10h-1.25v3.5h-1.13V9H14.5v5a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1z"/></svg></span></td>
+<td align="left">Selector</td>
+<td align="left"><a href="#tabview">Tabview</a></td>
+</tr>
+<tr>
+<td align="left">tab  <span class="twemoji tag-small"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 4c1.11 0 2 .89 2 2v12c0 1.11-.89 2-2 2H4c-1.11 0-2-.89-2-2V6c0-1.11.89-2 2-2h16M8.5 15V9H7.25v3.5L4.75 9H3.5v6h1.25v-3.5L7.3 15h1.2m5-4.74V9h-4v6h4v-1.25H11v-1.11h2.5v-1.26H11v-1.12h2.5m7 3.74V9h-1.25v4.5h-1.12V10h-1.25v3.5h-1.13V9H14.5v5a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1z"/></svg></span></td>
+<td align="left">Selector</td>
+<td align="left"><a href="#tab">Tab</a></td>
+</tr>
+<tr>
+<td align="left">cpicker</td>
+<td align="left">Selector</td>
+<td align="left"><a href="#color-picker">Color picker</a></td>
+</tr>
+<tr>
+<td align="left">bar</td>
+<td align="left">Range</td>
+<td align="left"><a href="#progress-bar">Progress Bar</a></td>
+</tr>
+<tr>
+<td align="left">slider</td>
+<td align="left">Range</td>
+<td align="left"><a href="#slider">Slider</a></td>
+</tr>
+<tr>
+<td align="left">arc</td>
+<td align="left">Range</td>
+<td align="left"><a href="#arc">Arc</a></td>
+</tr>
+<tr>
+<td align="left">linemeter</td>
+<td align="left">Range</td>
+<td align="left"><a href="#line-meter">Line Meter</a></td>
+</tr>
+<tr>
+<td align="left">gauge</td>
+<td align="left">Range</td>
+<td align="left"><a href="#gauge">Gauge</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="common-parameters">Common Parameters<a class="headerlink" href="#common-parameters" title="Permanent link">~</a></h2>
+<h3 id="common-properties">Common Properties<a class="headerlink" href="#common-properties" title="Permanent link">~</a></h3>
+<p>These are the common properties shared among all objects,
+but only the <code>id</code> and <code>obj</code> properties are required to create an object:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Property</th>
+<th></th>
+<th align="center">Value</th>
+<th align="center">Required</th>
+<th align="center">Default</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">id</td>
+<td></td>
+<td align="center">1..254</td>
+<td align="center">yes</td>
+<td align="center">n/a</td>
+<td align="left">ID of the object on this page</td>
+</tr>
+<tr>
+<td align="left">obj</td>
+<td></td>
+<td align="center">string</td>
+<td align="center">yes</td>
+<td align="center">n/a</td>
+<td align="left">Name of the object type <em>(see below)</em></td>
+</tr>
+<tr>
+<td align="left">page</td>
+<td></td>
+<td align="center">0..12</td>
+<td align="center">no</td>
+<td align="center">n/a</td>
+<td align="left">ID of the page the object appears on <em>(see below)</em></td>
+</tr>
+<tr>
+<td align="left">groupid</td>
+<td></td>
+<td align="center">0..15</td>
+<td align="center">no</td>
+<td align="center">0 (none)</td>
+<td align="left">ID of the <a href="../../configuration/gpio#groupid">GPIO group</a> the object belongs to</td>
+</tr>
+<tr>
+<td align="left">x</td>
+<td></td>
+<td align="center">int16</td>
+<td align="center">no</td>
+<td align="center">0</td>
+<td align="left">horizontal position on the page</td>
+</tr>
+<tr>
+<td align="left">y</td>
+<td></td>
+<td align="center">int16</td>
+<td align="center">no</td>
+<td align="center">0</td>
+<td align="left">vertical position on the page</td>
+</tr>
+<tr>
+<td align="left">w</td>
+<td></td>
+<td align="center">int16</td>
+<td align="center">no</td>
+<td align="center">0</td>
+<td align="left">width of the object</td>
+</tr>
+<tr>
+<td align="left">h</td>
+<td></td>
+<td align="center">int16</td>
+<td align="center">no</td>
+<td align="center">0</td>
+<td align="left">height of the object</td>
+</tr>
+<tr>
+<td align="left">hidden</td>
+<td></td>
+<td align="center"><a href="../data-types#boolean">bool</a></td>
+<td align="center">no</td>
+<td align="center">false</td>
+<td align="left">object is hidden</td>
+</tr>
+<tr>
+<td align="left">opacity</td>
+<td></td>
+<td align="center">0..255</td>
+<td align="center">no</td>
+<td align="center">255</td>
+<td align="left">how much the the object is opaque</td>
+</tr>
+<tr>
+<td align="left">radius</td>
+<td></td>
+<td align="center">uint16</td>
+<td align="center">no</td>
+<td align="center">depends<BR>on theme</td>
+<td align="left">the radius of the rounded corners of the object:<BR><code>0</code> square corners<BR><code>100</code> pill shaped object (true circle if object has same width and height)</td>
+</tr>
+<tr>
+<td align="left">action</td>
+<td></td>
+<td align="center">string</td>
+<td align="center">no</td>
+<td align="center">0</td>
+<td align="left">command handled locally <em>(see below)</em></td>
+</tr>
+<tr>
+<td align="left">swipe</td>
+<td></td>
+<td align="center"><a href="../data-types#boolean">bool</a></td>
+<td align="center">no</td>
+<td align="center">false</td>
+<td align="left">page navigation using swipe gestures <em>(see below)</em></td>
+</tr>
+<tr>
+<td align="left">click</td>
+<td></td>
+<td align="center"><a href="../data-types#boolean">bool</a></td>
+<td align="center">no</td>
+<td align="center">true</td>
+<td align="left">object is touch/clickable <em>(also see <a href="../styling#general">enabled</a>)</em></td>
+</tr>
+<tr>
+<td align="left">ext_click_h</td>
+<td><span class="twemoji tag-small"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 4c1.11 0 2 .89 2 2v12c0 1.11-.89 2-2 2H4c-1.11 0-2-.89-2-2V6c0-1.11.89-2 2-2h16M8.5 15V9H7.25v3.5L4.75 9H3.5v6h1.25v-3.5L7.3 15h1.2m5-4.74V9h-4v6h4v-1.25H11v-1.11h2.5v-1.26H11v-1.12h2.5m7 3.74V9h-1.25v4.5h-1.12V10h-1.25v3.5h-1.13V9H14.5v5a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1z"/></svg></span></td>
+<td align="center">0..255</td>
+<td align="center">no</td>
+<td align="center">0</td>
+<td align="left">extended horizontal clickable are on the left and right</td>
+</tr>
+<tr>
+<td align="left">ext_click_v</td>
+<td><span class="twemoji tag-small"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 4c1.11 0 2 .89 2 2v12c0 1.11-.89 2-2 2H4c-1.11 0-2-.89-2-2V6c0-1.11.89-2 2-2h16M8.5 15V9H7.25v3.5L4.75 9H3.5v6h1.25v-3.5L7.3 15h1.2m5-4.74V9h-4v6h4v-1.25H11v-1.11h2.5v-1.26H11v-1.12h2.5m7 3.74V9h-1.25v4.5h-1.12V10h-1.25v3.5h-1.13V9H14.5v5a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1z"/></svg></span></td>
+<td align="center">0..255</td>
+<td align="center">no</td>
+<td align="center">0</td>
+<td align="left">extended vertical clickable are on the top and bottom</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Further customizable properties can be found in <a href="../styling">styling</a>.</p>
+</div>
+<p>Ids start from 1 on <em>each page</em>.
+You can have a maximum of 254 ids on each page. You don't have to use them in ascending order, you can for example use them for logical numbering (start labels from 11, 12, 13, buttons from 21, 22, 23 etc.)</p>
+<h4 id="pages">Pages<a class="headerlink" href="#pages" title="Permanent link">~</a></h4>
+<p>If the <code>page</code> parameter is not present, the object is placed on the same page as the <em>previous object</em>. If <code>page</code> is not specified for the first object either, the <em>current page</em> being displayed is used.</p>
+<p><code>"page":0</code> indicates that the object is visible on <strong>all</strong> pages. It can be used for example to specify a static menu bar.
+You can still hide the object on select pages if needed. Objects on page 0 appear on <strong>top</strong> of any objects on the underlying page.</p>
+<h4 id="actions">Actions<a class="headerlink" href="#actions" title="Permanent link">~</a></h4>
+<p>Action commands are supported only by <em>binary</em> or <em>visual</em> type of objects and they are performed locally on the plate. The following actions can be set for these objects:</p>
+<ul>
+<li><code>p1</code> to <code>p12</code> to switch to the corresponding page numbers directly (for ESP32; in case of ESP8266 it's only <code>p1</code> to <code>p4</code>)</li>
+<li><code>prev</code> to switch to the previous page</li>
+<li><code>next</code> to switch to the next page</li>
+<li><code>back</code> to go back to the home page</li>
+</ul>
+<p>Check out the <a href="../../integrations/examples/example-pagination/">example</a> for how to implement actions.<br />
+You can change the target pages using <code>prev</code>, <code>back</code> and <code>next</code> <a href="../pages#page-attributes">page attributes</a> operation on the page object<code>pXb0</code>.  </p>
+<h4 id="swipe">Swipe <a name="swipe"></a><a class="headerlink" href="#swipe" title="Permanent link">~</a></h4>
+<p>Objects and page area (<code>p0bY</code>) support <code>swipe</code> property. Enabling this will process <code>left</code>, <code>right</code> and <code>down</code> swipes on the object as <code>next</code>, <code>prev</code> and <code>back</code> page changes, respectively. The start of the swipe needs to be on the element which has this property enabled for the feature to activate.<br />
+<em>Note:</em> Page id <code>p0b0</code> is not valid to set this property as it has to be set on real elements. </p>
+<h3 id="events">Events<a class="headerlink" href="#events" title="Permanent link">~</a></h3>
+<p>All objects are touchable by default and respond to touch events. To disable touch events for an object set its <code>enabled</code> property to <code>false</code>. In this case the touch event "goes through" to the object on the layer below or to the page itself.</p>
+<p>Events (and values) are published in a state topic corresponding to the object, eg. <code>hasp/&lt;nodename&gt;/state/p1b2</code> with payload in json format eg. <code>{"event":"up","val":1}</code>.<br />
+Possible events (depending on object type) are:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Event</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>down</code></td>
+<td align="left">Occurs when a button goes from depressed to pressed (the moment of touch)</td>
+</tr>
+<tr>
+<td align="left"><code>up</code></td>
+<td align="left">The button was released within a short time i.e. a short press has occurred</td>
+</tr>
+<tr>
+<td align="left"><code>release</code></td>
+<td align="left">The button is released after being pressed for over the threshold time</td>
+</tr>
+<tr>
+<td align="left"><code>long</code></td>
+<td align="left">Event is sent when the button is <em>still</em> being pressed after the threshold time of 400ms</td>
+</tr>
+<tr>
+<td align="left"><code>hold</code></td>
+<td align="left">The HOLD event is repeated every 200ms while the button is still pressed</td>
+</tr>
+<tr>
+<td align="left"><code>changed</code></td>
+<td align="left">Event is sent when the value of the object has changed during the event</td>
+</tr>
+</tbody>
+</table>
+<!-- - `LOST`: This event occurs when the object looses the focus while the screen is still being touched -->
+
+<div class="admonition note">
+<p class="admonition-title">Tip</p>
+<p>To actively see the sent out events you can use an MQTT client app and subscribe to the <code>hasp/#</code> topic.</p>
+</div>
+<h3 id="common-methods">Common Methods<a class="headerlink" href="#common-methods" title="Permanent link">~</a></h3>
+<p>These are the common methods shared among all objects,</p>
+<table>
+<thead>
+<tr>
+<th align="left">Method</th>
+<th align="center">Parameters</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>clear</code>   <span class="twemoji tag-small"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 4c1.11 0 2 .89 2 2v12c0 1.11-.89 2-2 2H4c-1.11 0-2-.89-2-2V6c0-1.11.89-2 2-2h16M8.5 15V9H7.25v3.5L4.75 9H3.5v6h1.25v-3.5L7.3 15h1.2m5-4.74V9h-4v6h4v-1.25H11v-1.11h2.5v-1.26H11v-1.12h2.5m7 3.74V9h-1.25v4.5h-1.12V10h-1.25v3.5h-1.13V9H14.5v5a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1z"/></svg></span></td>
+<td align="center"></td>
+<td align="left">Delete the children from the object</td>
+</tr>
+<tr>
+<td align="left"><code>delete</code></td>
+<td align="center"></td>
+<td align="left">Delete the object and its children from the page</td>
+</tr>
+<tr>
+<td align="left"><code>to_front</code></td>
+<td align="center"></td>
+<td align="left">Bring the object to the front on the page</td>
+</tr>
+<tr>
+<td align="left"><code>to_back</code></td>
+<td align="center"></td>
+<td align="left">Send the object to the back on the page</td>
+</tr>
+</tbody>
+</table>
+<p>Example commands:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="err">p</span><span class="mi">1</span><span class="err">b</span><span class="mf">5.</span><span class="err">dele</span><span class="kc">te</span>
+<span class="err">p</span><span class="mi">1</span><span class="err">b</span><span class="mf">3.</span><span class="kc">t</span><span class="err">o_</span><span class="kc">fr</span><span class="err">o</span><span class="kc">nt</span>
+</code></pre></div>
+</td></tr></table>
+<H2>Object Types</H2>
+
+<p>Each object type is an ID that indicates which object type that line represents.
+Besides the common properties listed above, each object type can have specific properties.</p>
+<h2 id="text-label">Text Label<a class="headerlink" href="#text-label" title="Permanent link">~</a></h2>
+<p><strong>obj:<code>label</code></strong></p>
+<p><img align="center" alt="lv_label" src="../../assets/images/objects/lv_ex_label_1.png" /></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>text</td>
+<td>string</td>
+<td>"Text"</td>
+<td>The text of the label, <code>\n</code> for line break.</td>
+</tr>
+<tr>
+<td>mode</td>
+<td>string</td>
+<td><code>crop</code></td>
+<td>The wrapping mode of long text labels:<br><code>expand</code> Expand the object size to the text size<br><code>break</code> Keep the object width, break the too long lines and expand the object height<br><code>dots</code> Keep the size and write dots at the end if the text is too long<br><code>scroll</code> Keep the size and roll the text back and forth<br><code>loop</code> Keep the size and roll the text circularly<br><code>crop</code> Keep the size and crop the text out of it</td>
+</tr>
+<tr>
+<td>align</td>
+<td>0..2</td>
+<td>0</td>
+<td>Text alignment: <code>0</code> = left, <code>1</code> = center, <code>2</code> = right</td>
+</tr>
+</tbody>
+</table>
+<details class="example"><summary>Example <code>jsonl</code></summary><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;page&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="nt">&quot;obj&quot;</span><span class="p">:</span><span class="s2">&quot;label&quot;</span><span class="p">,</span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="mi">50</span><span class="p">,</span><span class="nt">&quot;w&quot;</span><span class="p">:</span><span class="mi">150</span><span class="p">,</span><span class="nt">&quot;h&quot;</span><span class="p">:</span><span class="mi">50</span><span class="p">,</span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="s2">&quot;\uE64A Hello world!&quot;</span><span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+</details>
+<h2 id="button">Button<a class="headerlink" href="#button" title="Permanent link">~</a></h2>
+<p><strong>obj:<code>btn</code></strong></p>
+<p><img alt="lv_btn" src="../../assets/images/objects/lv_ex_btn_1.png" /></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>toggle</td>
+<td><a href="../data-types#boolean">bool</a></td>
+<td>false</td>
+<td>When enabled, creates a toggle-on/toggle-off button. If false, creates a normal button</td>
+</tr>
+<tr>
+<td>val</td>
+<td>int16</td>
+<td>0</td>
+<td>The value: <code>0</code> = untoggled, <code>1</code> = toggled</td>
+</tr>
+<tr>
+<td>text</td>
+<td>string</td>
+<td>""</td>
+<td>The text of the label</td>
+</tr>
+<tr>
+<td>mode</td>
+<td>string</td>
+<td><code>expand</code></td>
+<td>The wrapping mode of long text labels.<br><code>expand</code> Expand the object size to the text size<br><code>break</code> Keep the object width, break the too long lines and expand the object height<br><code>dots</code> Keep the size and write dots at the end if the text is too long<br><code>scroll</code> Keep the size and roll the text back and forth<br><code>loop</code> Keep the size and roll the text circularly<br><code>crop</code> Keep the size and crop the text out of it</td>
+</tr>
+<tr>
+<td>align</td>
+<td>0..2</td>
+<td>0</td>
+<td>Text alignment: <code>0</code> = left, <code>1</code> = center, <code>2</code> = right</td>
+</tr>
+</tbody>
+</table>
+<details class="example"><summary>Example <code>jsonl</code></summary><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;page&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="nt">&quot;obj&quot;</span><span class="p">:</span><span class="s2">&quot;btn&quot;</span><span class="p">,</span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="mi">10</span><span class="p">,</span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="mi">40</span><span class="p">,</span><span class="nt">&quot;w&quot;</span><span class="p">:</span><span class="mi">105</span><span class="p">,</span><span class="nt">&quot;h&quot;</span><span class="p">:</span><span class="mi">90</span><span class="p">,</span><span class="nt">&quot;toggle&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="s2">&quot;Normal Button&quot;</span><span class="p">,</span><span class="nt">&quot;mode&quot;</span><span class="p">:</span><span class="s2">&quot;break&quot;</span><span class="p">,</span><span class="nt">&quot;align&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">}</span>
+<span class="p">{</span><span class="nt">&quot;page&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span><span class="nt">&quot;obj&quot;</span><span class="p">:</span><span class="s2">&quot;btn&quot;</span><span class="p">,</span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="mi">125</span><span class="p">,</span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="mi">40</span><span class="p">,</span><span class="nt">&quot;w&quot;</span><span class="p">:</span><span class="mi">105</span><span class="p">,</span><span class="nt">&quot;h&quot;</span><span class="p">:</span><span class="mi">90</span><span class="p">,</span><span class="nt">&quot;toggle&quot;</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="s2">&quot;Toggle Button&quot;</span><span class="p">,</span><span class="nt">&quot;mode&quot;</span><span class="p">:</span><span class="s2">&quot;break&quot;</span><span class="p">,</span><span class="nt">&quot;align&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+</details>
+<p><strong>Normal</strong> buttons (<code>toggle=false</code>) send touch events while they occur: </p>
+<p>Short touch:
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;event&quot;</span><span class="p">:</span><span class="s2">&quot;down&quot;</span><span class="p">}</span>
+<span class="p">{</span><span class="nt">&quot;event&quot;</span><span class="p">:</span><span class="s2">&quot;up&quot;</span><span class="p">}</span>
+</code></pre></div>
+</td></tr></table></p>
+<p>Long press:
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;event&quot;</span><span class="p">:</span><span class="s2">&quot;down&quot;</span><span class="p">}</span>
+<span class="p">{</span><span class="nt">&quot;event&quot;</span><span class="p">:</span><span class="s2">&quot;long&quot;</span><span class="p">}</span>
+<span class="p">{</span><span class="nt">&quot;event&quot;</span><span class="p">:</span><span class="s2">&quot;hold&quot;</span><span class="p">}</span>
+<span class="p">{</span><span class="nt">&quot;event&quot;</span><span class="p">:</span><span class="s2">&quot;hold&quot;</span><span class="p">}</span>
+<span class="p">{</span><span class="nt">&quot;event&quot;</span><span class="p">:</span><span class="s2">&quot;release&quot;</span><span class="p">}</span>
+</code></pre></div>
+</td></tr></table></p>
+<p><strong>Toggle</strong> buttons (<code>toggle=true</code>) send out the old value in the <code>down</code> event and the new value in the <code>up</code> event when released:</p>
+<p>Toggle ON:
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;event&quot;</span><span class="p">:</span><span class="s2">&quot;down&quot;</span><span class="p">,</span><span class="nt">&quot;val&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">}</span>
+<span class="p">{</span><span class="nt">&quot;event&quot;</span><span class="p">:</span><span class="s2">&quot;up&quot;</span><span class="p">,</span><span class="nt">&quot;val&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">}</span>
+</code></pre></div>
+</td></tr></table></p>
+<p>Toggle OFF:
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;event&quot;</span><span class="p">:</span><span class="s2">&quot;down&quot;</span><span class="p">,</span><span class="nt">&quot;val&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">}</span>
+<span class="p">{</span><span class="nt">&quot;event&quot;</span><span class="p">:</span><span class="s2">&quot;up&quot;</span><span class="p">,</span><span class="nt">&quot;val&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">}</span>
+</code></pre></div>
+</td></tr></table></p>
+<h2 id="switch">Switch<a class="headerlink" href="#switch" title="Permanent link">~</a></h2>
+<p><strong>obj:<code>switch</code></strong></p>
+<p><img align="center" alt="lv_switch" src="../../assets/images/objects/lv_ex_switch_1.png" /></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>val</td>
+<td><a href="../data-types#boolean">bool</a></td>
+<td>0</td>
+<td><code>1</code> = on, <code>0</code> = off</td>
+</tr>
+<tr>
+<td>bg_color1</td>
+<td><a href="../data-types#colors">color</a></td>
+<td>0</td>
+<td>changes indicator color</td>
+</tr>
+<tr>
+<td>bg_color2</td>
+<td><a href="../data-types#colors">color</a></td>
+<td>0</td>
+<td>changes knob color</td>
+</tr>
+<tr>
+<td>radius2</td>
+<td>int16</td>
+<td>depends<BR>on theme</td>
+<td>changes knob corner radius (also see <a href="#common-properties">radius</a>)</td>
+</tr>
+</tbody>
+</table>
+<details class="example"><summary>Example <code>jsonl</code></summary><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;page&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">4</span><span class="p">,</span><span class="nt">&quot;obj&quot;</span><span class="p">:</span><span class="s2">&quot;switch&quot;</span><span class="p">,</span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="mi">125</span><span class="p">,</span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="mi">145</span><span class="p">,</span><span class="nt">&quot;w&quot;</span><span class="p">:</span><span class="mi">105</span><span class="p">,</span><span class="nt">&quot;h&quot;</span><span class="p">:</span><span class="mi">55</span><span class="p">,</span><span class="nt">&quot;radius&quot;</span><span class="p">:</span><span class="mi">15</span><span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+</details>
+<p>Events generated by switch are similar to the ones generate by the <em>toggle</em> buttons.</p>
+<h2 id="checkbox">Checkbox<a class="headerlink" href="#checkbox" title="Permanent link">~</a></h2>
+<p><strong>obj:<code>checkbox</code></strong></p>
+<p><img align="center" alt="lv_checkbox" src="../../assets/images/objects/lv_ex_checkbox_1.png" /></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>val</td>
+<td>int16</td>
+<td>0</td>
+<td><code>1</code> = checked<br><code>0</code> = unchecked</td>
+</tr>
+<tr>
+<td>text</td>
+<td>string</td>
+<td>"Checkbox"</td>
+<td>The label of the checkbox</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The checkbox object ignores the <code>w</code> and <code>h</code> attribute. These are calculated
+based on the font and text.</p>
+</div>
+<details class="example"><summary>Example <code>jsonl</code></summary><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;page&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span><span class="nt">&quot;obj&quot;</span><span class="p">:</span><span class="s2">&quot;checkbox&quot;</span><span class="p">,</span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="mi">10</span><span class="p">,</span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="mi">145</span><span class="p">,</span><span class="nt">&quot;w&quot;</span><span class="p">:</span><span class="mi">105</span><span class="p">,</span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="s2">&quot; Checkbox&quot;</span><span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+</details>
+<p>Events generated by checkbox are similar to the ones generate by the <em>toggle</em> buttons.</p>
+<h2 id="progress-bar">Progress Bar<a class="headerlink" href="#progress-bar" title="Permanent link">~</a></h2>
+<p><strong>obj:<code>bar</code></strong></p>
+<p><img align="center" alt="lv_bar" src="../../assets/images/objects/lv_ex_bar_1.png" /></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>min</td>
+<td>int16</td>
+<td>0</td>
+<td>minimum value of the indicator</td>
+</tr>
+<tr>
+<td>max</td>
+<td>int16</td>
+<td>100</td>
+<td>maximum value of the indicator</td>
+</tr>
+<tr>
+<td>val</td>
+<td>int16</td>
+<td>0</td>
+<td>current value of the indicator</td>
+</tr>
+<tr>
+<td>start_value</td>
+<td>int16</td>
+<td>0</td>
+<td>optional start value of the indicator</td>
+</tr>
+</tbody>
+</table>
+<p>Vertical bars can be created if the width of the object is smaller than its height.</p>
+<h2 id="slider">Slider<a class="headerlink" href="#slider" title="Permanent link">~</a></h2>
+<p><strong>obj:<code>slider</code></strong></p>
+<p><img align="center" alt="lv_slider" src="../../assets/images/objects/lv_ex_slider_1.png" /></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>min</td>
+<td>int16</td>
+<td>0</td>
+<td>minimum value of the indicator</td>
+</tr>
+<tr>
+<td>max</td>
+<td>int16</td>
+<td>100</td>
+<td>maximum value of the indicator</td>
+</tr>
+<tr>
+<td>val</td>
+<td>int16</td>
+<td>0</td>
+<td>current value of the indicator</td>
+</tr>
+<tr>
+<td>start_value</td>
+<td>int16</td>
+<td>0</td>
+<td>optional start value of the indicator</td>
+</tr>
+</tbody>
+</table>
+<p>Vertical sliders can be created if the width of the object is smaller than its height.</p>
+<details class="example"><summary>Example <code>jsonl</code></summary><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;page&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">6</span><span class="p">,</span><span class="nt">&quot;obj&quot;</span><span class="p">:</span><span class="s2">&quot;slider&quot;</span><span class="p">,</span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="mi">20</span><span class="p">,</span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="mi">250</span><span class="p">,</span><span class="nt">&quot;w&quot;</span><span class="p">:</span><span class="mi">200</span><span class="p">,</span><span class="nt">&quot;h&quot;</span><span class="p">:</span><span class="mi">20</span><span class="p">,</span><span class="nt">&quot;min&quot;</span><span class="p">:</span><span class="mi">15</span><span class="p">,</span><span class="nt">&quot;max&quot;</span><span class="p">:</span><span class="mi">35</span><span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+</details>
+<p>While pressing and dragging the <code>slider</code> object the following events are sent: <code>down</code> (old value), <code>changed</code> (repeatedly until released) and <code>up</code> (value at the moment of releasing it):</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;event&quot;</span><span class="p">:</span><span class="s2">&quot;down&quot;</span><span class="p">,</span><span class="nt">&quot;val&quot;</span><span class="p">:</span><span class="mi">21</span><span class="p">}</span>
+<span class="p">{</span><span class="nt">&quot;event&quot;</span><span class="p">:</span><span class="s2">&quot;changed&quot;</span><span class="p">,</span><span class="nt">&quot;val&quot;</span><span class="p">:</span><span class="mi">22</span><span class="p">}</span>
+<span class="p">{</span><span class="nt">&quot;event&quot;</span><span class="p">:</span><span class="s2">&quot;changed&quot;</span><span class="p">,</span><span class="nt">&quot;val&quot;</span><span class="p">:</span><span class="mi">23</span><span class="p">}</span>
+<span class="p">{</span><span class="nt">&quot;event&quot;</span><span class="p">:</span><span class="s2">&quot;changed&quot;</span><span class="p">,</span><span class="nt">&quot;val&quot;</span><span class="p">:</span><span class="mi">25</span><span class="p">}</span>
+<span class="p">{</span><span class="nt">&quot;event&quot;</span><span class="p">:</span><span class="s2">&quot;changed&quot;</span><span class="p">,</span><span class="nt">&quot;val&quot;</span><span class="p">:</span><span class="mi">27</span><span class="p">}</span>
+<span class="p">{</span><span class="nt">&quot;event&quot;</span><span class="p">:</span><span class="s2">&quot;changed&quot;</span><span class="p">,</span><span class="nt">&quot;val&quot;</span><span class="p">:</span><span class="mi">29</span><span class="p">}</span>
+<span class="p">{</span><span class="nt">&quot;event&quot;</span><span class="p">:</span><span class="s2">&quot;up&quot;</span><span class="p">,</span><span class="nt">&quot;val&quot;</span><span class="p">:</span><span class="mi">31</span><span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+<!--
+## Double Slider
+**objid:30**
+
+| Property | Value      | Default | Description
+|----------|------------|---------|---------------
+| min      | int16      | 0       | minimum value of the indicator
+| max      | int16      | 100     | maximum value of the indicator
+| val      | int16      | 0       | current value of the indicator
+-->
+
+<h2 id="arc">Arc<a class="headerlink" href="#arc" title="Permanent link">~</a></h2>
+<p><strong>obj:<code>arc</code></strong></p>
+<p><img align="center" alt="lv_arc" src="../../assets/images/objects/lv_ex_arc_1.png" /></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>min</td>
+<td>int16</td>
+<td>0</td>
+<td>minimum value of the indicator</td>
+</tr>
+<tr>
+<td>max</td>
+<td>int16</td>
+<td>100</td>
+<td>maximum value of the indicator</td>
+</tr>
+<tr>
+<td>val</td>
+<td>int16</td>
+<td>0</td>
+<td>current value of the indicator</td>
+</tr>
+<tr>
+<td>rotation</td>
+<td>int16</td>
+<td>0</td>
+<td>offset to the 0 degree position</td>
+</tr>
+<tr>
+<td>type</td>
+<td>0-2</td>
+<td>0</td>
+<td><code>0</code> = normal, <code>1</code> = symmetrical, <code>2</code> = reverse</td>
+</tr>
+<tr>
+<td>adjustable</td>
+<td><a href="../data-types#boolean">bool</a></td>
+<td>false</td>
+<td>Add knob that the user can operate to change the value</td>
+</tr>
+<tr>
+<td>start_angle</td>
+<td>0-360</td>
+<td></td>
+<td>start angle of the arc background (see note)</td>
+</tr>
+<tr>
+<td>end_angle</td>
+<td>0-360</td>
+<td></td>
+<td>end angle of the arc background (see note)</td>
+</tr>
+<tr>
+<td>start_angle1</td>
+<td>0-360</td>
+<td></td>
+<td>start angle of the arc indicator (see note)</td>
+</tr>
+<tr>
+<td>end_angle1</td>
+<td>0-360</td>
+<td></td>
+<td>end angle of the arc indicator (see note)</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Zero degree is at the middle right (3 o'clock) of the object and the degrees are increasing in a clockwise direction. The angles should be in the [0-360] range.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Check out <a href="../styling#value">value styling</a> to display a textual value in the middle of the arc.</p>
+</div>
+<details class="example"><summary>Example <code>jsonl</code></summary><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;page&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">9</span><span class="p">,</span><span class="nt">&quot;obj&quot;</span><span class="p">:</span><span class="s2">&quot;arc&quot;</span><span class="p">,</span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="mi">20</span><span class="p">,</span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="mi">75</span><span class="p">,</span><span class="nt">&quot;w&quot;</span><span class="p">:</span><span class="mi">200</span><span class="p">,</span><span class="nt">&quot;h&quot;</span><span class="p">:</span><span class="mi">200</span><span class="p">,</span><span class="nt">&quot;min&quot;</span><span class="p">:</span><span class="mi">15</span><span class="p">,</span><span class="nt">&quot;max&quot;</span><span class="p">:</span><span class="mi">35</span><span class="p">,</span><span class="nt">&quot;border_side&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="nt">&quot;rotation&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="nt">&quot;start_angle&quot;</span><span class="p">:</span><span class="mi">135</span><span class="p">,</span><span class="nt">&quot;end_angle&quot;</span><span class="p">:</span><span class="mi">45</span><span class="p">,</span><span class="nt">&quot;start_angle1&quot;</span><span class="p">:</span><span class="mi">135</span><span class="p">,</span><span class="nt">&quot;end_angle1&quot;</span><span class="p">:</span><span class="mi">45</span><span class="p">,</span><span class="nt">&quot;adjustable&quot;</span><span class="p">:</span><span class="kc">true</span><span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+</details>
+<p>While pressing and dragging the <code>arc</code> object the following events are sent: <code>down</code> (old value), <code>changed</code> (repeatedly until released) and <code>up</code> (value at the moment of releasing it):</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;event&quot;</span><span class="p">:</span><span class="s2">&quot;down&quot;</span><span class="p">,</span><span class="nt">&quot;val&quot;</span><span class="p">:</span><span class="mi">21</span><span class="p">}</span>
+<span class="p">{</span><span class="nt">&quot;event&quot;</span><span class="p">:</span><span class="s2">&quot;changed&quot;</span><span class="p">,</span><span class="nt">&quot;val&quot;</span><span class="p">:</span><span class="mi">22</span><span class="p">}</span>
+<span class="p">{</span><span class="nt">&quot;event&quot;</span><span class="p">:</span><span class="s2">&quot;changed&quot;</span><span class="p">,</span><span class="nt">&quot;val&quot;</span><span class="p">:</span><span class="mi">23</span><span class="p">}</span>
+<span class="p">{</span><span class="nt">&quot;event&quot;</span><span class="p">:</span><span class="s2">&quot;changed&quot;</span><span class="p">,</span><span class="nt">&quot;val&quot;</span><span class="p">:</span><span class="mi">25</span><span class="p">}</span>
+<span class="p">{</span><span class="nt">&quot;event&quot;</span><span class="p">:</span><span class="s2">&quot;changed&quot;</span><span class="p">,</span><span class="nt">&quot;val&quot;</span><span class="p">:</span><span class="mi">27</span><span class="p">}</span>
+<span class="p">{</span><span class="nt">&quot;event&quot;</span><span class="p">:</span><span class="s2">&quot;changed&quot;</span><span class="p">,</span><span class="nt">&quot;val&quot;</span><span class="p">:</span><span class="mi">29</span><span class="p">}</span>
+<span class="p">{</span><span class="nt">&quot;event&quot;</span><span class="p">:</span><span class="s2">&quot;up&quot;</span><span class="p">,</span><span class="nt">&quot;val&quot;</span><span class="p">:</span><span class="mi">31</span><span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+<h2 id="dropdown-list">Dropdown List<a class="headerlink" href="#dropdown-list" title="Permanent link">~</a></h2>
+<p><strong>obj:<code>dropdown</code></strong></p>
+<p><img align="center" alt="lv_dropdown" src="../../assets/images/objects/lv_ex_dropdown_1.png" /></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>options</td>
+<td>string</td>
+<td>""</td>
+<td>List of items separated by <code>\n</code></td>
+</tr>
+<tr>
+<td>val</td>
+<td>int16</td>
+<td>0</td>
+<td>The number of the selected item</td>
+</tr>
+<tr>
+<td>text</td>
+<td>string</td>
+<td>""</td>
+<td><em>Read-only</em> The text of the selected item</td>
+</tr>
+<tr>
+<td>direction</td>
+<td>byte</td>
+<td>0</td>
+<td>Direction where the dropdown expands:<BR> <code>0</code> = down, <code>1</code> = up, <code>2</code> = left, <code>3</code> = right <BR><em>Note:</em> up and down are superseeded by the screen size.</td>
+</tr>
+<tr>
+<td>show_selected</td>
+<td><a href="../data-types#boolean">bool</a></td>
+<td>true</td>
+<td>Show the selected option or a static text</td>
+</tr>
+<tr>
+<td>max_height</td>
+<td>int16</td>
+<td>3/4 of screen height</td>
+<td>The maximum height of the open drop-down list</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>open</td>
+<td></td>
+<td>To manually open the drop-down list</td>
+</tr>
+<tr>
+<td>close</td>
+<td></td>
+<td>To manually close the drop-down list</td>
+</tr>
+</tbody>
+</table>
+<p>To change the currently selected item, use the <code>val</code> attribute.  <br />
+To change the items in the list, use the <code>options</code> attribute.</p>
+<details class="example"><summary>Example <code>jsonl</code></summary><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;page&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">10</span><span class="p">,</span><span class="nt">&quot;obj&quot;</span><span class="p">:</span><span class="s2">&quot;dropdown&quot;</span><span class="p">,</span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="mi">10</span><span class="p">,</span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="mi">205</span><span class="p">,</span><span class="nt">&quot;w&quot;</span><span class="p">:</span><span class="mi">105</span><span class="p">,</span><span class="nt">&quot;h&quot;</span><span class="p">:</span><span class="mi">30</span><span class="p">,</span><span class="nt">&quot;options&quot;</span><span class="p">:</span><span class="s2">&quot;Apple\nBanana\nOrange\nMelon&quot;</span><span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+</details>
+<p>When the item is changed both <code>val</code> and <code>text</code> of the newly selected item are send out accompanied by the <code>change</code> event.</p>
+<h2 id="roller">Roller<a class="headerlink" href="#roller" title="Permanent link">~</a></h2>
+<p><strong>obj:<code>roller</code></strong></p>
+<p><img align="center" alt="lv_dropdown" src="../../assets/images/objects/lv_ex_roller_1.png" /></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>options</td>
+<td>string</td>
+<td>""</td>
+<td>List of items separated by <code>\n</code></td>
+</tr>
+<tr>
+<td>val</td>
+<td>int16</td>
+<td>0</td>
+<td>The number of the selected item</td>
+</tr>
+<tr>
+<td>text</td>
+<td>string</td>
+<td>""</td>
+<td><em>Read-only</em> The text of the selected item</td>
+</tr>
+<tr>
+<td>rows</td>
+<td>int8</td>
+<td>3</td>
+<td>The number of rows that are visible<BR>Use this property instead of <code>h</code> to set object height</td>
+</tr>
+<tr>
+<td>mode</td>
+<td>0..1</td>
+<td>0</td>
+<td>Roller mode: <code>0</code> = normal (finite), <code>1</code> = infinite</td>
+</tr>
+<tr>
+<td>align</td>
+<td>0..2</td>
+<td>1</td>
+<td>Text alignment: <code>0</code> = left, <code>1</code> = center, <code>2</code> = right</td>
+</tr>
+</tbody>
+</table>
+<p>To change the currently selected item, use the <code>val</code> attribute.  <br />
+To change the items in the list, use the <code>options</code> attribute.</p>
+<details class="example"><summary>Example <code>jsonl</code></summary><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;page&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">11</span><span class="p">,</span><span class="nt">&quot;obj&quot;</span><span class="p">:</span><span class="s2">&quot;roller&quot;</span><span class="p">,</span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="mi">125</span><span class="p">,</span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="mi">205</span><span class="p">,</span><span class="nt">&quot;w&quot;</span><span class="p">:</span><span class="mi">105</span><span class="p">,</span><span class="nt">&quot;h&quot;</span><span class="p">:</span><span class="mi">30</span><span class="p">,</span><span class="nt">&quot;options&quot;</span><span class="p">:</span><span class="s2">&quot;Apple\nBanana\nOrange\nMelon&quot;</span><span class="p">,</span><span class="nt">&quot;mode&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+</details>
+<p>When the item is changed both <code>val</code> and <code>text</code> of the newly selected item are send out accompanied by the <code>change</code> event.</p>
+<h2 id="line-meter">Line Meter<a class="headerlink" href="#line-meter" title="Permanent link">~</a></h2>
+<p><strong>obj:<code>linemeter</code></strong></p>
+<p><img align="center" alt="lv_lmeter" src="../../assets/images/objects/lv_ex_linemeter_1.png" /></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>min</td>
+<td>int16</td>
+<td>0</td>
+<td>minimum value of the indicator</td>
+</tr>
+<tr>
+<td>max</td>
+<td>int16</td>
+<td>100</td>
+<td>maximum value of the indicator</td>
+</tr>
+<tr>
+<td>val</td>
+<td>int16</td>
+<td>0</td>
+<td>current value of the indicator</td>
+</tr>
+<tr>
+<td>angle</td>
+<td>0-360</td>
+<td>240</td>
+<td>angle between start and end of the scale</td>
+</tr>
+<tr>
+<td>line_count</td>
+<td>uint16</td>
+<td>31</td>
+<td>tick count of the scale</td>
+</tr>
+<tr>
+<td>rotation</td>
+<td>0-360</td>
+<td>0</td>
+<td>offset for the scale angles to rotate it</td>
+</tr>
+<tr>
+<td>type</td>
+<td>0-1</td>
+<td>0</td>
+<td><code>0</code> = indicator lines are activated clock-wise<br><code>1</code> = indicator lines are activated counter-clock-wise</td>
+</tr>
+</tbody>
+</table>
+<p>Use <a href="../styling#line">line</a> and <a href="../styling#scale">scale</a> properties to customize.</p>
+<details class="example"><summary>Example <code>jsonl</code></summary><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;page&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">12</span><span class="p">,</span><span class="nt">&quot;obj&quot;</span><span class="p">:</span><span class="s2">&quot;linemeter&quot;</span><span class="p">,</span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="mi">20</span><span class="p">,</span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="mi">70</span><span class="p">,</span><span class="nt">&quot;w&quot;</span><span class="p">:</span><span class="mi">200</span><span class="p">,</span><span class="nt">&quot;h&quot;</span><span class="p">:</span><span class="mi">200</span><span class="p">,</span><span class="nt">&quot;value_str&quot;</span><span class="p">:</span><span class="s2">&quot;Temp&quot;</span><span class="p">,</span><span class="nt">&quot;val&quot;</span><span class="p">:</span><span class="mi">75</span><span class="p">,</span><span class="nt">&quot;line_count&quot;</span><span class="p">:</span><span class="mi">35</span><span class="p">,</span><span class="nt">&quot;line_rounded&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+</details>
+<h2 id="gauge">Gauge<a class="headerlink" href="#gauge" title="Permanent link">~</a></h2>
+<p><strong>obj:<code>gauge</code></strong></p>
+<p><img align="center" alt="lv_gauge" src="../../assets/images/objects/lv_ex_gauge_1.png" /></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>min</td>
+<td>int16</td>
+<td>0</td>
+<td>minimum value of the indicator</td>
+</tr>
+<tr>
+<td>max</td>
+<td>int16</td>
+<td>100</td>
+<td>maximum value of the indicator</td>
+</tr>
+<tr>
+<td>val</td>
+<td>int16</td>
+<td>0</td>
+<td>current value of the indicator</td>
+</tr>
+<tr>
+<td>critical_value</td>
+<td>int16</td>
+<td>80</td>
+<td>scale color will be changed to scale_end_color after this value</td>
+</tr>
+<tr>
+<td>angle</td>
+<td>0-360</td>
+<td>240</td>
+<td>angle between start and end of the scale</td>
+</tr>
+<tr>
+<td>label_count</td>
+<td>uint8</td>
+<td></td>
+<td>number of labels (and major ticks) of the scale</td>
+</tr>
+<tr>
+<td>line_count</td>
+<td>uint16</td>
+<td>31</td>
+<td>number of minor ticks of the entire scale</td>
+</tr>
+<tr>
+<td>rotation</td>
+<td>0-360</td>
+<td>0</td>
+<td>offset for the gauge's angles to rotate it</td>
+</tr>
+<tr>
+<td>format</td>
+<td>uint16</td>
+<td>0</td>
+<td>divider for major tick values</td>
+</tr>
+</tbody>
+</table>
+<p>To strip trailing zero's of major tick labels the <code>format</code> divider can be used to scale the values before printing:</p>
+<ul>
+<li><code>0</code> : print the major tick value as is</li>
+<li><code>1</code> : strip 1 zero, i.e. divide tick value by 10 before printing the major tick label</li>
+<li><code>2</code> : strip 2 zeros, i.e. divide tick value by 100 before printing the major tick label</li>
+<li><code>3</code> : strip 3 zeros, i.e. divide tick value by 1000 before printing the major tick label</li>
+<li><code>4</code> : strip 4 zeros, i.e. divide tick value by 10000 before printing the major tick label</li>
+</ul>
+<p>Only these values are allowed, arbitrary numbers are not supported.</p>
+<details class="example"><summary>Example <code>jsonl</code></summary><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;page&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">13</span><span class="p">,</span><span class="nt">&quot;obj&quot;</span><span class="p">:</span><span class="s2">&quot;gauge&quot;</span><span class="p">,</span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="mi">20</span><span class="p">,</span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="mi">70</span><span class="p">,</span><span class="nt">&quot;w&quot;</span><span class="p">:</span><span class="mi">200</span><span class="p">,</span><span class="nt">&quot;h&quot;</span><span class="p">:</span><span class="mi">200</span><span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+</details>
+<p>Use <a href="../styling#scale">scale</a> properties to customize.</p>
+<h2 id="tabview">Tabview  <span class="twemoji tag-medium"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 4c1.11 0 2 .89 2 2v12c0 1.11-.89 2-2 2H4c-1.11 0-2-.89-2-2V6c0-1.11.89-2 2-2h16M8.5 15V9H7.25v3.5L4.75 9H3.5v6h1.25v-3.5L7.3 15h1.2m5-4.74V9h-4v6h4v-1.25H11v-1.11h2.5v-1.26H11v-1.12h2.5m7 3.74V9h-1.25v4.5h-1.12V10h-1.25v3.5h-1.13V9H14.5v5a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1z"/></svg></span><a class="headerlink" href="#tabview" title="Permanent link">~</a></h2>
+<p><strong>obj:<code>tabview</code></strong></p>
+<p><img alt="lv_tabview" src="../../assets/images/objects/lv_ex_tabview_1.png" /></p>
+<p>A tabview is an object that can hold multiple tab objects.
+You first create the <code>tabview</code> object and then add <code>tab</code> objects to it.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>val</td>
+<td>int8</td>
+<td>0</td>
+<td>The number of the active tab, starting at 0</td>
+</tr>
+<tr>
+<td>text</td>
+<td>string</td>
+<td>""</td>
+<td>The name of the active tab</td>
+</tr>
+<tr>
+<td>btn_pos</td>
+<td>0..4</td>
+<td>1</td>
+<td>Position of the tab buttons:</br><code>0</code> = none</br><code>1</code> = top</br><code>2</code> = bottom</br><code>3</code> = left</br><code>4</code> = right</td>
+</tr>
+<tr>
+<td>count</td>
+<td>int</td>
+<td>0</td>
+<td><em>Read-only</em> The number of tabs of the tabview</td>
+</tr>
+</tbody>
+</table>
+<p>To change the currently visible tab, use the <code>val</code> attribute after all tabs have been added.</p>
+<details class="example"><summary>Example <code>jsonl</code></summary><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;page&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">10</span><span class="p">,</span><span class="nt">&quot;obj&quot;</span><span class="p">:</span><span class="s2">&quot;tabview&quot;</span><span class="p">,</span><span class="nt">&quot;btn_pos&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+</details>
+<h2 id="tab">Tab  <span class="twemoji tag-medium"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 4c1.11 0 2 .89 2 2v12c0 1.11-.89 2-2 2H4c-1.11 0-2-.89-2-2V6c0-1.11.89-2 2-2h16M8.5 15V9H7.25v3.5L4.75 9H3.5v6h1.25v-3.5L7.3 15h1.2m5-4.74V9h-4v6h4v-1.25H11v-1.11h2.5v-1.26H11v-1.12h2.5m7 3.74V9h-1.25v4.5h-1.12V10h-1.25v3.5h-1.13V9H14.5v5a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1z"/></svg></span><a class="headerlink" href="#tab" title="Permanent link">~</a></h2>
+<p><strong>obj:<code>tab</code></strong></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>parentid</td>
+<td>int8</td>
+<td>0</td>
+<td>The <code>id</code> of the tabview object to which this tab is added</td>
+</tr>
+<tr>
+<td>text</td>
+<td>string</td>
+<td>"Tab"</td>
+<td>The name of tab</td>
+</tr>
+</tbody>
+</table>
+<p>Set the parent object by referencing the <code>parentid</code> in the tab. It must be a <code>tabview</code> object.</p>
+<details class="example"><summary>Example <code>jsonl</code></summary><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;page&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">50</span><span class="p">,</span><span class="nt">&quot;obj&quot;</span><span class="p">:</span><span class="s2">&quot;tab&quot;</span><span class="p">,</span><span class="nt">&quot;parentid&quot;</span><span class="p">:</span><span class="mi">10</span><span class="p">,</span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="s2">&quot;Tab 1&quot;</span><span class="p">}</span>
+<span class="p">{</span><span class="nt">&quot;page&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">51</span><span class="p">,</span><span class="nt">&quot;obj&quot;</span><span class="p">:</span><span class="s2">&quot;tab&quot;</span><span class="p">,</span><span class="nt">&quot;parentid&quot;</span><span class="p">:</span><span class="mi">10</span><span class="p">,</span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="s2">&quot;Tab 2&quot;</span><span class="p">}</span>
+<span class="p">{</span><span class="nt">&quot;page&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">52</span><span class="p">,</span><span class="nt">&quot;obj&quot;</span><span class="p">:</span><span class="s2">&quot;tab&quot;</span><span class="p">,</span><span class="nt">&quot;parentid&quot;</span><span class="p">:</span><span class="mi">10</span><span class="p">,</span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="s2">&quot;Tab 3&quot;</span><span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+</details>
+<p>To add other objects to these tabs, also use the <code>parentid</code> when creating those objects.</p>
+<h2 id="color-picker">Color picker<a class="headerlink" href="#color-picker" title="Permanent link">~</a></h2>
+<p><strong>obj:<code>cpicker</code></strong></p>
+<p><img align="center" alt="lv_cpicker" src="../../assets/images/objects/lv_ex_cpicker_1.png" /></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>color</td>
+<td><a href="../data-types#colors">color</a></td>
+<td>0</td>
+<td>The selected color in html format #rrggbb</td>
+</tr>
+<tr>
+<td>scale_width</td>
+<td>int</td>
+<td>25</td>
+<td>The width of the color gradient of the circle</td>
+</tr>
+<tr>
+<td>pad_inner</td>
+<td>int</td>
+<td>10</td>
+<td>The padding between the circle and the inner preview circle</td>
+</tr>
+</tbody>
+</table>
+<p>The object will automatically adjust based on the <code>w</code> and <code>h</code> properties: when the object is longer then it is height a rectangular color picker is created, otherwise it will be circular.</p>
+<p>By long pressing the inner preview circle, the color picker will through the color modes: hue &gt; saturation &gt; value. Double-click on the inner preview circle to reset the current value.</p>
+<h4 id="setting-color">Setting Color<a class="headerlink" href="#setting-color" title="Permanent link">~</a></h4>
+<p>Example MQTT commands:
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="err">hasp/&lt;</span><span class="kc">n</span><span class="err">ode</span><span class="kc">na</span><span class="err">me&gt;/comma</span><span class="kc">n</span><span class="err">d/p</span><span class="mi">0</span><span class="err">b</span><span class="mf">2.</span><span class="err">color</span> <span class="mi">13891</span>
+<span class="err">hasp/&lt;</span><span class="kc">n</span><span class="err">ode</span><span class="kc">na</span><span class="err">me&gt;/comma</span><span class="kc">n</span><span class="err">d/p</span><span class="mi">1</span><span class="err">b</span><span class="mf">5.</span><span class="err">color</span> <span class="err">silver</span>
+<span class="err">hasp/&lt;</span><span class="kc">n</span><span class="err">ode</span><span class="kc">na</span><span class="err">me&gt;/comma</span><span class="kc">n</span><span class="err">d/p</span><span class="mi">2</span><span class="err">b</span><span class="mf">3.</span><span class="err">color</span> <span class="err">#C</span><span class="mi">0</span><span class="err">C</span><span class="mi">0</span><span class="err">C</span><span class="mi">0</span>
+</code></pre></div>
+</td></tr></table></p>
+<h4 id="events_1">Events<a class="headerlink" href="#events_1" title="Permanent link">~</a></h4>
+<p>While pressing and dragging the <code>cpicker</code> object the following events are sent: <code>down</code> (old color), <code>changed</code> (repeatedly until released) and <code>up</code> (value at the moment of releasing it):</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;event&quot;</span><span class="p">:</span><span class="s2">&quot;down&quot;</span><span class="p">,</span><span class="nt">&quot;color&quot;</span><span class="p">:</span><span class="s2">&quot;#8300ff&quot;</span><span class="p">,</span><span class="nt">&quot;r&quot;</span><span class="p">:</span><span class="mi">131</span><span class="p">,</span><span class="nt">&quot;g&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="nt">&quot;b&quot;</span><span class="p">:</span><span class="mi">255</span><span class="p">}</span>
+<span class="p">{</span><span class="nt">&quot;event&quot;</span><span class="p">:</span><span class="s2">&quot;changed&quot;</span><span class="p">,</span><span class="nt">&quot;color&quot;</span><span class="p">:</span><span class="s2">&quot;#7300ff&quot;</span><span class="p">,</span><span class="nt">&quot;r&quot;</span><span class="p">:</span><span class="mi">115</span><span class="p">,</span><span class="nt">&quot;g&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="nt">&quot;b&quot;</span><span class="p">:</span><span class="mi">255</span><span class="p">}</span>
+<span class="p">{</span><span class="nt">&quot;event&quot;</span><span class="p">:</span><span class="s2">&quot;changed&quot;</span><span class="p">,</span><span class="nt">&quot;color&quot;</span><span class="p">:</span><span class="s2">&quot;#6200ff&quot;</span><span class="p">,</span><span class="nt">&quot;r&quot;</span><span class="p">:</span><span class="mi">98</span><span class="p">,</span><span class="nt">&quot;g&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="nt">&quot;b&quot;</span><span class="p">:</span><span class="mi">255</span><span class="p">}</span>
+<span class="p">{</span><span class="nt">&quot;event&quot;</span><span class="p">:</span><span class="s2">&quot;up&quot;</span><span class="p">,</span><span class="nt">&quot;color&quot;</span><span class="p">:</span><span class="s2">&quot;#6200ff&quot;</span><span class="p">,</span><span class="nt">&quot;r&quot;</span><span class="p">:</span><span class="mi">98</span><span class="p">,</span><span class="nt">&quot;g&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="nt">&quot;b&quot;</span><span class="p">:</span><span class="mi">255</span><span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+<h2 id="spinner">Spinner<a class="headerlink" href="#spinner" title="Permanent link">~</a></h2>
+<p><strong>obj:<code>spinner</code></strong></p>
+<p><img align="center" alt="lv_spinner" src="../../assets/images/objects/lv_ex_spinner_1.png" /></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>speed</td>
+<td>int16</td>
+<td>1000</td>
+<td>The time for 1 turn in ms</td>
+</tr>
+<tr>
+<td>direction</td>
+<td>int16</td>
+<td>0</td>
+<td><code>0</code> = clockwise, <code>1</code> = counter-clockwise</td>
+</tr>
+<tr>
+<td>angle</td>
+<td>0-360</td>
+<td>60</td>
+<td>The length of the arc in degrees</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Placing objects over/under the spinner will increase the CPU load because all objects need to be redrawn constantly.</p>
+</div>
+<h2 id="led-indicator">LED Indicator<a class="headerlink" href="#led-indicator" title="Permanent link">~</a></h2>
+<p><strong>obj:<code>led</code></strong></p>
+<p><img align="center" alt="lv_led" src="../../assets/images/objects/lv_ex_led_1.png" /></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>val</td>
+<td>byte</td>
+<td>0</td>
+<td>The brightness of the indicator [<code>0..255</code>]</td>
+</tr>
+</tbody>
+</table>
+<h2 id="button-matrix">Button Matrix<a class="headerlink" href="#button-matrix" title="Permanent link">~</a></h2>
+<p><strong>obj:<code>btnmatrix</code></strong></p>
+<p><img align="center" alt="lv_btnmatrix" src="../../assets/images/objects/lv_ex_btnmatrix_1.png" /></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>options</td>
+<td>json array</td>
+<td>"Text"</td>
+<td>Json array of strings where each element is the label of a button. Use <code>"\n"</code> for a new line of buttons</td>
+</tr>
+<tr>
+<td>align</td>
+<td>0..2</td>
+<td>1</td>
+<td>Text alignment: <code>0</code> = left, <code>1</code> = center, <code>2</code> = right</td>
+</tr>
+<tr>
+<td>toggle</td>
+<td><a href="../data-types#boolean">bool</a></td>
+<td>false</td>
+<td>All buttons behave as toggle buttons or normal buttons</td>
+</tr>
+<tr>
+<td>one_check</td>
+<td><a href="../data-types#boolean">bool</a></td>
+<td>false</td>
+<td>Allow only one button to be checked (toggled) at once</td>
+</tr>
+</tbody>
+</table>
+<p>The <a href="../styling">styling properties</a> apply to <em>all</em> buttons in the matrix.
+To change the color of a single label you can prefix the text with a <code>#RRGGBB</code> hexadecimal color code and close with a single hash <code>#</code> tag.</p>
+<details class="example"><summary>Example <code>jsonl</code></summary><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;page&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">20</span><span class="p">,</span><span class="nt">&quot;obj&quot;</span><span class="p">:</span><span class="s2">&quot;btnmatrix&quot;</span><span class="p">,</span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="mi">10</span><span class="p">,</span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="mi">10</span><span class="p">,</span><span class="nt">&quot;w&quot;</span><span class="p">:</span><span class="mi">220</span><span class="p">,</span><span class="nt">&quot;h&quot;</span><span class="p">:</span><span class="mi">150</span><span class="p">,</span><span class="nt">&quot;options&quot;</span><span class="p">:[</span><span class="s2">&quot;#FF0000 Red Text#&quot;</span><span class="p">,</span><span class="s2">&quot;#0000FF Cyan Text#&quot;</span><span class="p">,</span><span class="s2">&quot;\n&quot;</span><span class="p">,</span><span class="s2">&quot;#FFFF00 Yellow Text#&quot;</span><span class="p">],</span><span class="nt">&quot;toggle&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="nt">&quot;one_check&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+</details>
+<h2 id="messagebox">Messagebox  <span class="twemoji tag-medium"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 4c1.11 0 2 .89 2 2v12c0 1.11-.89 2-2 2H4c-1.11 0-2-.89-2-2V6c0-1.11.89-2 2-2h16M8.5 15V9H7.25v3.5L4.75 9H3.5v6h1.25v-3.5L7.3 15h1.2m5-4.74V9h-4v6h4v-1.25H11v-1.11h2.5v-1.26H11v-1.12h2.5m7 3.74V9h-1.25v4.5h-1.12V10h-1.25v3.5h-1.13V9H14.5v5a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1z"/></svg></span><a class="headerlink" href="#messagebox" title="Permanent link">~</a></h2>
+<p><strong>obj:<code>msgbox</code></strong></p>
+<p><img alt="lv_msgbox" src="../../assets/images/objects/lv_ex_msgbox_1.png" /></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>text</td>
+<td>string</td>
+<td>""</td>
+<td>The text of the message to be displayed</td>
+</tr>
+<tr>
+<td>options</td>
+<td>json array</td>
+<td>["OK"]</td>
+<td>Json array of strings where each element is the label of a button</td>
+</tr>
+<tr>
+<td><del>modal</del></td>
+<td><a href="../data-types#boolean">bool</a></td>
+<td>false</td>
+<td>Make the messagebox a modal dialog requiring user input</td>
+</tr>
+<tr>
+<td>auto_close</td>
+<td>int16</td>
+<td>0</td>
+<td>Close the pop-up message automatically after this number of milliseconds have passed</td>
+</tr>
+</tbody>
+</table>
+<p>The Message boxes act as a pop-up. The default width is the horizontal screen size, the height adjusts according to the contents of the message.
+The pop-up is centered on the screen.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The messagebox object is automatically deleted when it is closed. You will need to create it again using <code>jsonl</code> to pop-up a new message.</p>
+</div>
+<details class="example"><summary>Example <code>jsonl</code></summary><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;page&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">24</span><span class="p">,</span><span class="nt">&quot;obj&quot;</span><span class="p">:</span><span class="s2">&quot;msgbox&quot;</span><span class="p">,</span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="s2">&quot;A message box with two buttons&quot;</span><span class="p">,</span><span class="nt">&quot;options&quot;</span><span class="p">:[</span><span class="s2">&quot;Apply&quot;</span><span class="p">,</span><span class="s2">&quot;Close&quot;</span><span class="p">]}</span>
+</code></pre></div>
+</td></tr></table>
+</details>
+<h2 id="image">Image  <span class="twemoji tag-medium"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 4c1.11 0 2 .89 2 2v12c0 1.11-.89 2-2 2H4c-1.11 0-2-.89-2-2V6c0-1.11.89-2 2-2h16M8.5 15V9H7.25v3.5L4.75 9H3.5v6h1.25v-3.5L7.3 15h1.2m5-4.74V9h-4v6h4v-1.25H11v-1.11h2.5v-1.26H11v-1.12h2.5m7 3.74V9h-1.25v4.5h-1.12V10h-1.25v3.5h-1.13V9H14.5v5a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1z"/></svg></span><a class="headerlink" href="#image" title="Permanent link">~</a></h2>
+<p><strong>obj:<code>img</code></strong></p>
+<p><img alt="lv_img" src="../../assets/images/objects/lv_ex_img_1.png" /></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>src</td>
+<td>string</td>
+<td>""</td>
+<td>The name of the image file</td>
+</tr>
+<tr>
+<td>auto_size</td>
+<td>bool</td>
+<td>true</td>
+<td>Automatically set the size of the image object to the image source</td>
+</tr>
+<tr>
+<td>offset_x</td>
+<td>int</td>
+<td>0</td>
+<td>Shift the picture horizontally relative to the image object</td>
+</tr>
+<tr>
+<td>offset_y</td>
+<td>int</td>
+<td>0</td>
+<td>Shift the picture vertically relative to the image object</td>
+</tr>
+</tbody>
+</table>
+<p>Only PNG image files are supported, from flash. </p>
+<p>You can use image_recolor and image_recolor_opa from the <a href="../styling#image">image styling</a> properties to apply a color overlay mask.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The decoding of the images is done in memory, thus you'll be able to display full-screen images only if your microcontroller <a href="../../getting-started/#recommended-boards">has installed PSram memory</a>, else you will be limited to small icons.</p>
+</div>
+<details class="example"><summary>Example <code>jsonl</code></summary><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;page&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">34</span><span class="p">,</span><span class="nt">&quot;obj&quot;</span><span class="p">:</span><span class="s2">&quot;img&quot;</span><span class="p">,</span><span class="nt">&quot;src&quot;</span><span class="p">:</span><span class="s2">&quot;/littlefs/image.png&quot;</span><span class="p">,</span><span class="nt">&quot;auto_size&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="nt">&quot;w&quot;</span><span class="p">:</span><span class="mi">50</span><span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+</details>
+<h2 id="base-object">Base Object<a class="headerlink" href="#base-object" title="Permanent link">~</a></h2>
+<p><strong>obj:<code>obj</code></strong></p>
+<p><img alt="lv_base_object" src="../../assets/images/objects/lv_ex_base_object_1.png" /></p>
+<p>The Base Object can be directly used as a simple, empty widget. It is nothing more then a (rounded) rectangle.</p>
+<p>You can use it as a background shape for other objects by putting its jsonl line before the object. It catches touches!</p>
+                
+                  
+                    
+
+<hr>
+<div class="md-source-date">
+  <small>
+    
+      Last update: 2021-06-01
+    
+  </small>
+</div>
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+        
+        <a href="../pages/" class="md-footer__link md-footer__link--prev" rel="prev">
+            <div class="md-footer__button md-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer__title">
+                <div class="md-ellipsis">
+                    <span class="md-footer__direction">
+                  Previous
+                </span> Pages
+                </div>
+            </div>
+        </a>
+         
+        <a href="../fonts/" class="md-footer__link md-footer__link--next" rel="next">
+            <div class="md-footer__title">
+                <div class="md-ellipsis">
+                    <span class="md-footer__direction">
+                  Next
+                </span> Fonts
+                </div>
+            </div>
+            <div class="md-footer__button md-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+        </a>
+        
+    </nav>
+    
+
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tracking", "search.suggest", "search.highlight"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../../assets/javascripts/workers/search.d351de03.min.js", "version": {"default": 0.5, "provider": "mike"}}</script>
+    
+     
+      <script src="../../assets/javascripts/bundle.34eae1b6.min.js"></script>
+      
+    
+<script src="../../js/ekko-lightbox.min.js"></script>
+<script>
+    $(document).on('click', '[data-toggle="lightbox"]', function(event) {
+        event.preventDefault();
+        $(this).ekkoLightbox();
+    });
+</script>
+
+  </body>
+</html>

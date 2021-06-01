@@ -1,0 +1,1809 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Open firmware for MCUs to drive a low-cost commodity touch display">
+      
+      
+      
+        <meta name="author" content="Francis Van Roie">
+      
+      
+      <link rel="icon" href="../../favicon.ico">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.6">
+    
+    
+      
+        <title>Fonts - openHASP</title>
+      
+    
+     
+      <link rel="stylesheet" href="../../assets/stylesheets/main.875de78c.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.f1a3b89f.min.css">
+        
+      
+    
+<link rel="stylesheet" href="../../css/openhasp.css">
+<link rel="stylesheet" href="../../css/ekko-lightbox.min.css">
+<link rel="stylesheet" href="../../css/bootstrap4.min.css"> 
+     
+
+<!-- Jquery from Google CDN -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<!-- Load Jquery UI -->
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+<!-- Handle jQuery plugin naming conflict between jQuery UI and Bootstrap 
+    https://stackoverflow.com/questions/13731400/jqueryui-tooltips-are-competing-with-twitter-bootstrap
+    -->
+
+<!--
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/pepper-grinder/jquery-ui.css">
+    -->
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+<!-- Bootstrap theme -->
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.11.0/build/css/themes/bootstrap.min.css" />
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="deep-orange">
+  
+    
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+      <script>var palette=__get("__palette");if(null!==palette&&"object"==typeof palette.color)for(var key in palette.color)document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#built-in-fonts" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="openHASP" class="md-header__button md-logo" aria-label="openHASP" data-md-component="logo">
+      
+  <img src="../../assets/images/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            openHASP
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Fonts
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="deep-orange" type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 10a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2m10-3a5 5 0 0 1 5 5 5 5 0 0 1-5 5H7a5 5 0 0 1-5-5 5 5 0 0 1 5-5h10M7 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3h10a3 3 0 0 0 3-3 3 3 0 0 0-3-3H7z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="cyan" data-md-color-accent="deep-orange" type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/HASwitchPlate/openHASP/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    HASwitchPlate/openHASP
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                      
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+    <label class="md-nav__title" for="__drawer">
+      <a href="../.." title="openHASP" class="md-nav__button md-logo" aria-label="openHASP" data-md-component="logo">
+        
+  <img src="../../assets/images/logo.png" alt="logo">
+
+      </a>
+      openHASP
+    </label> 
+    <div class="md-nav__source">
+        
+<a href="https://github.com/HASwitchPlate/openHASP/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    HASwitchPlate/openHASP
+  </div>
+</a>
+    </div>
+    
+    <ul class="md-nav__list" data-md-scrollfix>
+           
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+    
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/" class="md-nav__link">
+        Getting started
+      </a>
+    </li>
+  
+    
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      <label class="md-nav__link" for="__nav_3">
+        Installation
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Installation" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Installation
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../installation/esp32/" class="md-nav__link">
+        ESP32
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../installation/esp8266/" class="md-nav__link">
+        ESP8266
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../installation/wifi-setup/" class="md-nav__link">
+        Wifi Setup
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../installation/firmware-update/" class="md-nav__link">
+        Firmware Update
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+    
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      <label class="md-nav__link" for="__nav_4">
+        Configuration
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Configuration" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Configuration
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../configuration/hasp/" class="md-nav__link">
+        HASP Design
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../configuration/wifi/" class="md-nav__link">
+        Wifi Settings
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../configuration/http/" class="md-nav__link">
+        HTTP Settings
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../configuration/mqtt/" class="md-nav__link">
+        MQTT Settings
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../configuration/display/" class="md-nav__link">
+        Display Settings
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../configuration/gpio/" class="md-nav__link">
+        GPIO Settings
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../configuration/debug/" class="md-nav__link">
+        Debug Settings
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+    
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" checked>
+      
+      <label class="md-nav__link" for="__nav_5">
+        Design
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Design" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Design
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pages/" class="md-nav__link">
+        Pages
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../objects/" class="md-nav__link">
+        Objects
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Fonts
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Fonts
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#built-in-fonts" class="md-nav__link">
+    Built-in Fonts
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#built-in-icons" class="md-nav__link">
+    Built-in Icons
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#external-fonts" class="md-nav__link">
+    External Fonts
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../styling/" class="md-nav__link">
+        Styling Properties
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data-types/" class="md-nav__link">
+        Data Types
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+    
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../commands/" class="md-nav__link">
+        Commands
+      </a>
+    </li>
+  
+    
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+      
+      <label class="md-nav__link" for="__nav_7">
+        Integrations
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Integrations" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Integrations
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_1" type="checkbox" id="__nav_7_1" >
+      
+      <label class="md-nav__link" for="__nav_7_1">
+        Home Assistant
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Home Assistant" data-md-level="2">
+        <label class="md-nav__title" for="__nav_7_1">
+          <span class="md-nav__icon md-icon"></span>
+          Home Assistant
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../integrations/home-assistant/howto/" class="md-nav__link">
+        How-To
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../integrations/home-assistant/sampl_conf/" class="md-nav__link">
+        Example Configurations
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../integrations/home-assistant/sampl_autom/" class="md-nav__link">
+        Example Automations
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_2" type="checkbox" id="__nav_7_2" >
+      
+      <label class="md-nav__link" for="__nav_7_2">
+        OpenHAB
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="OpenHAB" data-md-level="2">
+        <label class="md-nav__title" for="__nav_7_2">
+          <span class="md-nav__icon md-icon"></span>
+          OpenHAB
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../integrations/openhab/integration_openhab/" class="md-nav__link">
+        Installation and Example
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_3" type="checkbox" id="__nav_7_3" >
+      
+      <label class="md-nav__link" for="__nav_7_3">
+        Other examples
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Other examples" data-md-level="2">
+        <label class="md-nav__title" for="__nav_7_3">
+          <span class="md-nav__icon md-icon"></span>
+          Other examples
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../integrations/examples/example-pagination/" class="md-nav__link">
+        Page Navigation
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../integrations/examples/example-dashui/" class="md-nav__link">
+        Dash UI
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../integrations/examples/example-widgets/" class="md-nav__link">
+        Widgets Demo
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../integrations/examples/example-lovelace/" class="md-nav__link">
+        Lovelace Entities
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../integrations/examples/surprise/" class="md-nav__link">
+        Some fun
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+    
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" >
+      
+      <label class="md-nav__link" for="__nav_8">
+        Devices
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Devices" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          Devices
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devices/featherwing/" class="md-nav__link">
+        Adafruit Featherwing
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devices/esp32-touchdown/" class="md-nav__link">
+        ESP32 TouchDown
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devices/freetouchdeck/" class="md-nav__link">
+        FreeTouchDeck
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devices/lanbon-l8/" class="md-nav__link">
+        Lanbon L8
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devices/m5stack-core2/" class="md-nav__link">
+        M5stack core2
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devices/wt32-sc01/" class="md-nav__link">
+        Wireless-Tag
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+    
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" type="checkbox" id="__nav_9" >
+      
+      <label class="md-nav__link" for="__nav_9">
+        Displays
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Displays" data-md-level="1">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          Displays
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../displays/ILI9341_IPS/" class="md-nav__link">
+        ILI9341 IPS
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../displays/MHS4001/" class="md-nav__link">
+        MHS4001
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../displays/MRB3511/" class="md-nav__link">
+        MRB3511
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../displays/MSPxxxx/" class="md-nav__link">
+        MSPxxxx
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../displays/Waveshare_RPi_LCD_Rev_C/" class="md-nav__link">
+        Waveshare RPi LCD Rev C
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+    
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gallery/" class="md-nav__link">
+        Gallery
+      </a>
+    </li>
+  
+    
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/" class="md-nav__link">
+        FAQ
+      </a>
+    </li>
+  
+    
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_12" type="checkbox" id="__nav_12" >
+      
+      <label class="md-nav__link" for="__nav_12">
+        Compiling
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Compiling" data-md-level="1">
+        <label class="md-nav__title" for="__nav_12">
+          <span class="md-nav__icon md-icon"></span>
+          Compiling
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../compiling/local/" class="md-nav__link">
+        Compiling locally
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../compiling/gitpod/" class="md-nav__link">
+        Compiling online with Gitpod
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../compiling/customize/" class="md-nav__link">
+        Customization
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+    
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../license/" class="md-nav__link">
+        License
+      </a>
+    </li>
+  
+ 
+    </ul>
+</nav>
+<nav>
+    
+  <div class="md-footer-social">
+    
+      
+      
+      <a href="https://github.com/HASwitchPlate/openHASP/discussions" target="_blank" rel="noopener" title="GitHub Discussions" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/></svg>
+      </a>
+    
+      
+      
+      <a href="https://discord.gg/VCWyuhF" target="_blank" rel="noopener" title="Discord Chat" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m22 24-5.25-5 .63 2H4.5A2.5 2.5 0 0 1 2 18.5v-15A2.5 2.5 0 0 1 4.5 1h15A2.5 2.5 0 0 1 22 3.5V24M12 6.8c-2.68 0-4.56 1.15-4.56 1.15 1.03-.92 2.83-1.45 2.83-1.45l-.17-.17c-1.69.03-3.22 1.2-3.22 1.2-1.72 3.59-1.61 6.69-1.61 6.69 1.4 1.81 3.48 1.68 3.48 1.68l.71-.9c-1.25-.27-2.04-1.38-2.04-1.38S9.3 14.9 12 14.9s4.58-1.28 4.58-1.28-.79 1.11-2.04 1.38l.71.9s2.08.13 3.48-1.68c0 0 .11-3.1-1.61-6.69 0 0-1.53-1.17-3.22-1.2l-.17.17s1.8.53 2.83 1.45c0 0-1.88-1.15-4.56-1.15m-2.07 3.79c.65 0 1.18.57 1.17 1.27 0 .69-.52 1.27-1.17 1.27-.64 0-1.16-.58-1.16-1.27 0-.7.51-1.27 1.16-1.27m4.17 0c.65 0 1.17.57 1.17 1.27 0 .69-.52 1.27-1.17 1.27-.64 0-1.16-.58-1.16-1.27 0-.7.51-1.27 1.16-1.27z"/></svg>
+      </a>
+    
+      
+      
+      <a href="https://community.home-assistant.io/t/openhasp-an-mqtt-driven-touchscreen-scene-controller/300853" target="_blank" rel="noopener" title="Home Assistant Forum" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.8 13H20v8h-7v-3.33l2.79-2.79.71.12a2.1 2.1 0 1 0 0-4.2 2.1 2.1 0 0 0-2.1 2.1l.1.71-1.5 1.52V9.65c.66-.36 1.1-1.05 1.1-1.85A2.1 2.1 0 0 0 12 5.7a2.1 2.1 0 0 0-2.1 2.1c0 .8.44 1.49 1.1 1.85v5.48l-1.5-1.52.1-.71a2.1 2.1 0 0 0-2.1-2.1 2.1 2.1 0 0 0-2.1 2.1A2.1 2.1 0 0 0 7.5 15l.71-.12L11 17.67V21H4v-8H2.25c-.42 0-.83 0-.83-.21.01-.22.43-.64.86-1.07L11 3c.33-.33.67-.67 1-.67.33 0 .67.34 1 .67l4 4V6h2v3l2.78 2.78c.4.4.81.81.82 1.02 0 .2-.4.2-.8.2M7.5 12a.9.9 0 0 1 .9.9.9.9 0 0 1-.9.9.9.9 0 0 1-.9-.9.9.9 0 0 1 .9-.9m9 0c.5 0 .9.4.9.9s-.4.9-.9.9a.9.9 0 0 1-.9-.9.9.9 0 0 1 .9-.9M12 6.9c.5 0 .9.4.9.9s-.4.9-.9.9-.9-.4-.9-.9.4-.9.9-.9z"/></svg>
+      </a>
+    
+  </div>
+
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#built-in-fonts" class="md-nav__link">
+    Built-in Fonts
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#built-in-icons" class="md-nav__link">
+    Built-in Icons
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#external-fonts" class="md-nav__link">
+    External Fonts
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/HASwitchPlate/openHASP-docs/edit/0.6/docs/design/fonts.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                <style type="text/css">
+.md-typeset table:not([class]) td
+{
+  padding: 0.5em 0.25m;
+  line-height: 1.25;
+  vertical-align: middle;
+}
+
+.md-typeset table:not([class]) th
+{
+  min-width: 5%;
+  padding: 0.5em 0.25m;
+
+}
+
+th:nth-child(3n+1) { width: 8%; text-align: center;}
+th:nth-child(3n+2) { width: 8%; text-align: center;}
+th:nth-child(3n+3) { width: 34%; text-align: left; }
+
+td:nth-child(3n+2) { white-space: nowrap; }
+</style>
+
+<h1>Fonts</h1>
+
+<h2 id="built-in-fonts">Built-in Fonts<a class="headerlink" href="#built-in-fonts" title="Permanent link">~</a></h2>
+<p>The ESP8266 firmware only has 1 built-in font: Unscii with font size 8pt.</p>
+<p>The ESP32 firmware builds additionally contain the Roboto Condensed font in <em>four</em> font sizes depending on the display resolution:</p>
+<ul>
+<li>320x240: 12, 16, 24 and 32pt</li>
+<li>480x320: 16, 24, 32 and 48pt</li>
+</ul>
+<p>Including selected glyphs of Latin-1 character set and MaterialDesign icons below.</p>
+<p>The built-in fonts can be set by using the pointsize as parameter. For example:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="err">p</span><span class="mi">4</span><span class="err">b</span><span class="mf">1.</span><span class="kc">te</span><span class="err">x</span><span class="kc">t</span><span class="err">_</span><span class="kc">f</span><span class="err">o</span><span class="kc">nt</span><span class="err">=</span><span class="mi">24</span>
+<span class="err">p</span><span class="mi">4</span><span class="err">b</span><span class="mf">2.</span><span class="err">value_</span><span class="kc">f</span><span class="err">o</span><span class="kc">nt</span><span class="err">=</span><span class="mi">12</span>
+</code></pre></div>
+</td></tr></table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>It is possible to create custom builds with built-in fonts of other sizes (choose any <em>four</em> of 12, 14, 16, 20, 22, 24, 26, 28, 32, 36, 38, 40, 44, 48) and supporting Latin-2 or Cyrillic character sets (even combined) by <a href="../../compiling/customize/">customizing</a> <code>user_config_override.h</code>.</p>
+</div>
+<h2 id="built-in-icons">Built-in Icons<a class="headerlink" href="#built-in-icons" title="Permanent link">~</a></h2>
+<p>The icons in the list below are included with the built-in font sizes.
+Included are a range of arrows, navigation, climate, controls, devices, energy, lights, places, presence, security, sound, time and wireless icons.</p>
+<table>
+<thead>
+<tr>
+<th align="left">Icon</th>
+<th align="left">Code</th>
+<th align="left">Name</th>
+<th align="left">Icon</th>
+<th align="left">Code</th>
+<th align="left">Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><span class="mdi-icon" style="mask:url(../../assets/svgs/materialdesign/svg/arrow-down.svg);-webkit-mask-box-image:url(../../assets/svgs/materialdesign/svg/arrow-down.svg)"></span></td>
+<td align="left"><code>E045</code></td>
+<td align="left">arrow-down</td>
+<td align="left"><span class="mdi-icon" style="mask:url(../../assets/svgs/materialdesign/svg/lightning-bolt.svg);-webkit-mask-box-image:url(../../assets/svgs/materialdesign/svg/lightning-bolt.svg)"></span></td>
+<td align="left"><code>F40B</code></td>
+<td align="left">lightning-bolt</td>
+</tr>
+<tr>
+<td align="left"><span class="mdi-icon" style="mask:url(../../assets/svgs/materialdesign/svg/arrow-down-box.svg);-webkit-mask-box-image:url(../../assets/svgs/materialdesign/svg/arrow-down-box.svg)"></span></td>
+<td align="left"><code>E6C0</code></td>
+<td align="left">arrow-down-box</td>
+<td align="left"><span class="mdi-icon" style="mask:url(../../assets/svgs/materialdesign/svg/power.svg);-webkit-mask-box-image:url(../../assets/svgs/materialdesign/svg/power.svg)"></span></td>
+<td align="left"><code>E425</code></td>
+<td align="left">power</td>
+</tr>
+<tr>
+<td align="left"><span class="mdi-icon" style="mask:url(../../assets/svgs/materialdesign/svg/arrow-left.svg);-webkit-mask-box-image:url(../../assets/svgs/materialdesign/svg/arrow-left.svg)"></span></td>
+<td align="left"><code>E04D</code></td>
+<td align="left">arrow-left</td>
+<td align="left"><span class="mdi-icon" style="mask:url(../../assets/svgs/materialdesign/svg/power-plug.svg);-webkit-mask-box-image:url(../../assets/svgs/materialdesign/svg/power-plug.svg)"></span></td>
+<td align="left"><code>E6A5</code></td>
+<td align="left">power-plug</td>
+</tr>
+<tr>
+<td align="left"><span class="mdi-icon" style="mask:url(../../assets/svgs/materialdesign/svg/arrow-right.svg);-webkit-mask-box-image:url(../../assets/svgs/materialdesign/svg/arrow-right.svg)"></span></td>
+<td align="left"><code>E054</code></td>
+<td align="left">arrow-right</td>
+<td align="left"><span class="mdi-icon" style="mask:url(../../assets/svgs/materialdesign/svg/ceiling-light.svg);-webkit-mask-box-image:url(../../assets/svgs/materialdesign/svg/ceiling-light.svg)"></span></td>
+<td align="left"><code>E769</code></td>
+<td align="left">ceiling-light</td>
+</tr>
+<tr>
+<td align="left"><span class="mdi-icon" style="mask:url(../../assets/svgs/materialdesign/svg/arrow-up.svg);-webkit-mask-box-image:url(../../assets/svgs/materialdesign/svg/arrow-up.svg)"></span></td>
+<td align="left"><code>E05D</code></td>
+<td align="left">arrow-up</td>
+<td align="left"><span class="mdi-icon" style="mask:url(../../assets/svgs/materialdesign/svg/coach-lamp.svg);-webkit-mask-box-image:url(../../assets/svgs/materialdesign/svg/coach-lamp.svg)"></span></td>
+<td align="left"><code>F020</code></td>
+<td align="left">coach-lamp</td>
+</tr>
+<tr>
+<td align="left"><span class="mdi-icon" style="mask:url(../../assets/svgs/materialdesign/svg/arrow-up-box.svg);-webkit-mask-box-image:url(../../assets/svgs/materialdesign/svg/arrow-up-box.svg)"></span></td>
+<td align="left"><code>E6C3</code></td>
+<td align="left">arrow-up-box</td>
+<td align="left"><span class="mdi-icon" style="mask:url(../../assets/svgs/materialdesign/svg/desk-lamp.svg);-webkit-mask-box-image:url(../../assets/svgs/materialdesign/svg/desk-lamp.svg)"></span></td>
+<td align="left"><code>E95F</code></td>
+<td align="left">desk-lamp</td>
+</tr>
+<tr>
+<td align="left"><span class="mdi-icon" style="mask:url(../../assets/svgs/materialdesign/svg/chevron-down.svg);-webkit-mask-box-image:url(../../assets/svgs/materialdesign/svg/chevron-down.svg)"></span></td>
+<td align="left"><code>E140</code></td>
+<td align="left">chevron-down</td>
+<td align="left"><span class="mdi-icon" style="mask:url(../../assets/svgs/materialdesign/svg/floor-lamp.svg);-webkit-mask-box-image:url(../../assets/svgs/materialdesign/svg/floor-lamp.svg)"></span></td>
+<td align="left"><code>E8DD</code></td>
+<td align="left">floor-lamp</td>
+</tr>
+<tr>
+<td align="left"><span class="mdi-icon" style="mask:url(../../assets/svgs/materialdesign/svg/chevron-left.svg);-webkit-mask-box-image:url(../../assets/svgs/materialdesign/svg/chevron-left.svg)"></span></td>
+<td align="left"><code>E141</code></td>
+<td align="left">chevron-left</td>
+<td align="left"><span class="mdi-icon" style="mask:url(../../assets/svgs/materialdesign/svg/lamp.svg);-webkit-mask-box-image:url(../../assets/svgs/materialdesign/svg/lamp.svg)"></span></td>
+<td align="left"><code>E6B5</code></td>
+<td align="left">lamp</td>
+</tr>
+<tr>
+<td align="left"><span class="mdi-icon" style="mask:url(../../assets/svgs/materialdesign/svg/chevron-right.svg);-webkit-mask-box-image:url(../../assets/svgs/materialdesign/svg/chevron-right.svg)"></span></td>
+<td align="left"><code>E142</code></td>
+<td align="left">chevron-right</td>
+<td align="left"><span class="mdi-icon" style="mask:url(../../assets/svgs/materialdesign/svg/lightbulb.svg);-webkit-mask-box-image:url(../../assets/svgs/materialdesign/svg/lightbulb.svg)"></span></td>
+<td align="left"><code>E335</code></td>
+<td align="left">lightbulb</td>
+</tr>
+<tr>
+<td align="left"><span class="mdi-icon" style="mask:url(../../assets/svgs/materialdesign/svg/chevron-up.svg);-webkit-mask-box-image:url(../../assets/svgs/materialdesign/svg/chevron-up.svg)"></span></td>
+<td align="left"><code>E143</code></td>
+<td align="left">chevron-up</td>
+<td align="left"><span class="mdi-icon" style="mask:url(../../assets/svgs/materialdesign/svg/lightbulb-on.svg);-webkit-mask-box-image:url(../../assets/svgs/materialdesign/svg/lightbulb-on.svg)"></span></td>
+<td align="left"><code>E6E8</code></td>
+<td align="left">lightbulb-on</td>
+</tr>
+<tr>
+<td align="left"><span class="mdi-icon" style="mask:url(../../assets/svgs/materialdesign/svg/subdirectory-arrow-left.svg);-webkit-mask-box-image:url(../../assets/svgs/materialdesign/svg/subdirectory-arrow-left.svg)"></span></td>
+<td align="left"><code>E60C</code></td>
+<td align="left">subdirectory-arrow-left</td>
+<td align="left"><span class="mdi-icon" style="mask:url(../../assets/svgs/materialdesign/svg/outdoor-lamp.svg);-webkit-mask-box-image:url(../../assets/svgs/materialdesign/svg/outdoor-lamp.svg)"></span></td>
+<td align="left"><code>F054</code></td>
+<td align="left">outdoor-lamp</td>
+</tr>
+<tr>
+<td align="left"><span class="mdi-icon" style="mask:url(../../assets/svgs/materialdesign/svg/check.svg);-webkit-mask-box-image:url(../../assets/svgs/materialdesign/svg/check.svg)"></span></td>
+<td align="left"><code>E12C</code></td>
+<td align="left">check</td>
+<td align="left"><span class="mdi-icon" style="mask:url(../../assets/svgs/materialdesign/svg/string-lights.svg);-webkit-mask-box-image:url(../../assets/svgs/materialdesign/svg/string-lights.svg)"></span></td>
+<td align="left"><code>F2BA</code></td>
+<td align="left">string-lights</td>
+</tr>
+<tr>
+<td align="left"><span class="mdi-icon" style="mask:url(../../assets/svgs/materialdesign/svg/close.svg);-webkit-mask-box-image:url(../../assets/svgs/materialdesign/svg/close.svg)"></span></td>
+<td align="left"><code>E156</code></td>
+<td align="left">close</td>
+<td align="left"><span class="mdi-icon" style="mask:url(../../assets/svgs/materialdesign/svg/vanity-light.svg);-webkit-mask-box-image:url(../../assets/svgs/materialdesign/svg/vanity-light.svg)"></span></td>
+<td align="left"><code>F1E1</code></td>
+<td align="left">vanity-light</td>
+</tr>
+<tr>
+<td align="left"><span class="mdi-icon" style="mask:url(../../assets/svgs/materialdesign/svg/cog.svg);-webkit-mask-box-image:url(../../assets/svgs/materialdesign/svg/cog.svg)"></span></td>
+<td align="left"><code>E493</code></td>
+<td align="left">cog</td>
+<td align="left"><span class="mdi-icon" style="mask:url(../../assets/svgs/materialdesign/svg/wall-sconce.svg);-webkit-mask-box-image:url(../../assets/svgs/materialdesign/svg/wall-sconce.svg)"></span></td>
+<td align="left"><code>E91C</code></td>
+<td align="left">wall-sconce</td>
+</tr>
+<tr>
+<td align="left"><span class="mdi-icon" style="mask:url(../../assets/svgs/materialdesign/svg/home.svg);-webkit-mask-box-image:url(../../assets/svgs/materialdesign/svg/home.svg)"></span></td>
+<td align="left"><code>E2DC</code></td>
+<td align="left">home</td>
+<td align="left"><span class="mdi-icon" style="mask:url(../../assets/svgs/materialdesign/svg/dots-vertical.svg);-webkit-mask-box-image:url(../../assets/svgs/materialdesign/svg/dots-vertical.svg)"></span></td>
+<td align="left"><code>E1D9</code></td>
+<td align="left">dots-vertical</td>
+</tr>
+<tr>
+<td align="left"><span class="mdi-icon" style="mask:url(../../assets/svgs/materialdesign/svg/home-outline.svg);-webkit-mask-box-image:url(../../assets/svgs/materialdesign/svg/home-outline.svg)"></span></td>
+<td align="left"><code>E6A1</code></td>
+<td align="left">home-outline</td>
+<td align="left"><span class="mdi-icon" style="mask:url(../../assets/svgs/materialdesign/svg/bed.svg);-webkit-mask-box-image:url(../../assets/svgs/materialdesign/svg/bed.svg)"></span></td>
+<td align="left"><code>E2E3</code></td>
+<td align="left">bed</td>
+</tr>
+<tr>
+<td align="left"><span class="mdi-icon" style="mask:url(../../assets/svgs/materialdesign/svg/minus.svg);-webkit-mask-box-image:url(../../assets/svgs/materialdesign/svg/minus.svg)"></span></td>
+<td align="left"><code>E374</code></td>
+<td align="left">minus</td>
+<td align="left"><span class="mdi-icon" style="mask:url(../../assets/svgs/materialdesign/svg/car.svg);-webkit-mask-box-image:url(../../assets/svgs/materialdesign/svg/car.svg)"></span></td>
+<td align="left"><code>E10B</code></td>
+<td align="left">car</td>
+</tr>
+<tr>
+<td align="left"><span class="mdi-icon" style="mask:url(../../assets/svgs/materialdesign/svg/plus.svg);-webkit-mask-box-image:url(../../assets/svgs/materialdesign/svg/plus.svg)"></span></td>
+<td align="left"><code>E415</code></td>
+<td align="left">plus</td>
+<td align="left"><span class="mdi-icon" style="mask:url(../../assets/svgs/materialdesign/svg/coffee.svg);-webkit-mask-box-image:url(../../assets/svgs/materialdesign/svg/coffee.svg)"></span></td>
+<td align="left"><code>E176</code></td>
+<td align="left">coffee</td>
+</tr>
+<tr>
+<td align="left"><span class="mdi-icon" style="mask:url(../../assets/svgs/materialdesign/svg/air-conditioner.svg);-webkit-mask-box-image:url(../../assets/svgs/materialdesign/svg/air-conditioner.svg)"></span></td>
+<td align="left"><code>E01B</code></td>
+<td align="left">air-conditioner</td>
+<td align="left"><span class="mdi-icon" style="mask:url(../../assets/svgs/materialdesign/svg/pool.svg);-webkit-mask-box-image:url(../../assets/svgs/materialdesign/svg/pool.svg)"></span></td>
+<td align="left"><code>E606</code></td>
+<td align="left">pool</td>
+</tr>
+<tr>
+<td align="left"><span class="mdi-icon" style="mask:url(../../assets/svgs/materialdesign/svg/fire.svg);-webkit-mask-box-image:url(../../assets/svgs/materialdesign/svg/fire.svg)"></span></td>
+<td align="left"><code>E238</code></td>
+<td align="left">fire</td>
+<td align="left"><span class="mdi-icon" style="mask:url(../../assets/svgs/materialdesign/svg/shower.svg);-webkit-mask-box-image:url(../../assets/svgs/materialdesign/svg/shower.svg)"></span></td>
+<td align="left"><code>E9A0</code></td>
+<td align="left">shower</td>
+</tr>
+<tr>
+<td align="left"><span class="mdi-icon" style="mask:url(../../assets/svgs/materialdesign/svg/radiator.svg);-webkit-mask-box-image:url(../../assets/svgs/materialdesign/svg/radiator.svg)"></span></td>
+<td align="left"><code>E438</code></td>
+<td align="left">radiator</td>
+<td align="left"><span class="mdi-icon" style="mask:url(../../assets/svgs/materialdesign/svg/silverware-fork-knife.svg);-webkit-mask-box-image:url(../../assets/svgs/materialdesign/svg/silverware-fork-knife.svg)"></span></td>
+<td align="left"><code>EA70</code></td>
+<td align="left">silverware-fork-knife</td>
+</tr>
+<tr>
+<td align="left"><span class="mdi-icon" style="mask:url(../../assets/svgs/materialdesign/svg/radiator-disabled.svg);-webkit-mask-box-image:url(../../assets/svgs/materialdesign/svg/radiator-disabled.svg)"></span></td>
+<td align="left"><code>EAD7</code></td>
+<td align="left">radiator-disabled</td>
+<td align="left"><span class="mdi-icon" style="mask:url(../../assets/svgs/materialdesign/svg/sofa.svg);-webkit-mask-box-image:url(../../assets/svgs/materialdesign/svg/sofa.svg)"></span></td>
+<td align="left"><code>E4B9</code></td>
+<td align="left">sofa</td>
+</tr>
+<tr>
+<td align="left"><span class="mdi-icon" style="mask:url(../../assets/svgs/materialdesign/svg/snowflake.svg);-webkit-mask-box-image:url(../../assets/svgs/materialdesign/svg/snowflake.svg)"></span></td>
+<td align="left"><code>E717</code></td>
+<td align="left">snowflake</td>
+<td align="left"><span class="mdi-icon" style="mask:url(../../assets/svgs/materialdesign/svg/toilet.svg);-webkit-mask-box-image:url(../../assets/svgs/materialdesign/svg/toilet.svg)"></span></td>
+<td align="left"><code>E9AB</code></td>
+<td align="left">toilet</td>
+</tr>
+<tr>
+<td align="left"><span class="mdi-icon" style="mask:url(../../assets/svgs/materialdesign/svg/thermometer.svg);-webkit-mask-box-image:url(../../assets/svgs/materialdesign/svg/thermometer.svg)"></span></td>
+<td align="left"><code>E50F</code></td>
+<td align="left">thermometer</td>
+<td align="left"><span class="mdi-icon" style="mask:url(../../assets/svgs/materialdesign/svg/account.svg);-webkit-mask-box-image:url(../../assets/svgs/materialdesign/svg/account.svg)"></span></td>
+<td align="left"><code>E004</code></td>
+<td align="left">account</td>
+</tr>
+<tr>
+<td align="left"><span class="mdi-icon" style="mask:url(../../assets/svgs/materialdesign/svg/water.svg);-webkit-mask-box-image:url(../../assets/svgs/materialdesign/svg/water.svg)"></span></td>
+<td align="left"><code>E58C</code></td>
+<td align="left">water</td>
+<td align="left"><span class="mdi-icon" style="mask:url(../../assets/svgs/materialdesign/svg/human-greeting.svg);-webkit-mask-box-image:url(../../assets/svgs/materialdesign/svg/human-greeting.svg)"></span></td>
+<td align="left"><code>E64A</code></td>
+<td align="left">human-greeting</td>
+</tr>
+<tr>
+<td align="left"><span class="mdi-icon" style="mask:url(../../assets/svgs/materialdesign/svg/water-percent.svg);-webkit-mask-box-image:url(../../assets/svgs/materialdesign/svg/water-percent.svg)"></span></td>
+<td align="left"><code>E58E</code></td>
+<td align="left">water-percent</td>
+<td align="left"><span class="mdi-icon" style="mask:url(../../assets/svgs/materialdesign/svg/run.svg);-webkit-mask-box-image:url(../../assets/svgs/materialdesign/svg/run.svg)"></span></td>
+<td align="left"><code>E70E</code></td>
+<td align="left">run</td>
+</tr>
+<tr>
+<td align="left"><span class="mdi-icon" style="mask:url(../../assets/svgs/materialdesign/svg/weather-night.svg);-webkit-mask-box-image:url(../../assets/svgs/materialdesign/svg/weather-night.svg)"></span></td>
+<td align="left"><code>E594</code></td>
+<td align="left">weather-night</td>
+<td align="left"><span class="mdi-icon" style="mask:url(../../assets/svgs/materialdesign/svg/alert.svg);-webkit-mask-box-image:url(../../assets/svgs/materialdesign/svg/alert.svg)"></span></td>
+<td align="left"><code>E026</code></td>
+<td align="left">alert</td>
+</tr>
+<tr>
+<td align="left"><span class="mdi-icon" style="mask:url(../../assets/svgs/materialdesign/svg/weather-sunny.svg);-webkit-mask-box-image:url(../../assets/svgs/materialdesign/svg/weather-sunny.svg)"></span></td>
+<td align="left"><code>E599</code></td>
+<td align="left">weather-sunny</td>
+<td align="left"><span class="mdi-icon" style="mask:url(../../assets/svgs/materialdesign/svg/cctv.svg);-webkit-mask-box-image:url(../../assets/svgs/materialdesign/svg/cctv.svg)"></span></td>
+<td align="left"><code>E7AE</code></td>
+<td align="left">cctv</td>
+</tr>
+<tr>
+<td align="left"><span class="mdi-icon" style="mask:url(../../assets/svgs/materialdesign/svg/white-balance-sunny.svg);-webkit-mask-box-image:url(../../assets/svgs/materialdesign/svg/white-balance-sunny.svg)"></span></td>
+<td align="left"><code>E5A8</code></td>
+<td align="left">white-balance-sunny</td>
+<td align="left"><span class="mdi-icon" style="mask:url(../../assets/svgs/materialdesign/svg/door-closed.svg);-webkit-mask-box-image:url(../../assets/svgs/materialdesign/svg/door-closed.svg)"></span></td>
+<td align="left"><code>E81B</code></td>
+<td align="left">door-closed</td>
+</tr>
+<tr>
+<td align="left"><span class="mdi-icon" style="mask:url(../../assets/svgs/materialdesign/svg/blinds.svg);-webkit-mask-box-image:url(../../assets/svgs/materialdesign/svg/blinds.svg)"></span></td>
+<td align="left"><code>E0AC</code></td>
+<td align="left">blinds</td>
+<td align="left"><span class="mdi-icon" style="mask:url(../../assets/svgs/materialdesign/svg/door-closed-lock.svg);-webkit-mask-box-image:url(../../assets/svgs/materialdesign/svg/door-closed-lock.svg)"></span></td>
+<td align="left"><code>F0AF</code></td>
+<td align="left">door-closed-lock</td>
+</tr>
+<tr>
+<td align="left"><span class="mdi-icon" style="mask:url(../../assets/svgs/materialdesign/svg/blinds-open.svg);-webkit-mask-box-image:url(../../assets/svgs/materialdesign/svg/blinds-open.svg)"></span></td>
+<td align="left"><code>F011</code></td>
+<td align="left">blinds-open</td>
+<td align="left"><span class="mdi-icon" style="mask:url(../../assets/svgs/materialdesign/svg/door-open.svg);-webkit-mask-box-image:url(../../assets/svgs/materialdesign/svg/door-open.svg)"></span></td>
+<td align="left"><code>E81C</code></td>
+<td align="left">door-open</td>
+</tr>
+<tr>
+<td align="left"><span class="mdi-icon" style="mask:url(../../assets/svgs/materialdesign/svg/garage-open-variant.svg);-webkit-mask-box-image:url(../../assets/svgs/materialdesign/svg/garage-open-variant.svg)"></span></td>
+<td align="left"><code>F2D4</code></td>
+<td align="left">garage-open-variant</td>
+<td align="left"><span class="mdi-icon" style="mask:url(../../assets/svgs/materialdesign/svg/key-variant.svg);-webkit-mask-box-image:url(../../assets/svgs/materialdesign/svg/key-variant.svg)"></span></td>
+<td align="left"><code>E30B</code></td>
+<td align="left">key-variant</td>
+</tr>
+<tr>
+<td align="left"><span class="mdi-icon" style="mask:url(../../assets/svgs/materialdesign/svg/garage-variant.svg);-webkit-mask-box-image:url(../../assets/svgs/materialdesign/svg/garage-variant.svg)"></span></td>
+<td align="left"><code>F2D3</code></td>
+<td align="left">garage-variant</td>
+<td align="left"><span class="mdi-icon" style="mask:url(../../assets/svgs/materialdesign/svg/lock.svg);-webkit-mask-box-image:url(../../assets/svgs/materialdesign/svg/lock.svg)"></span></td>
+<td align="left"><code>E33E</code></td>
+<td align="left">lock</td>
+</tr>
+<tr>
+<td align="left"><span class="mdi-icon" style="mask:url(../../assets/svgs/materialdesign/svg/window-shutter.svg);-webkit-mask-box-image:url(../../assets/svgs/materialdesign/svg/window-shutter.svg)"></span></td>
+<td align="left"><code>F11C</code></td>
+<td align="left">window-shutter</td>
+<td align="left"><span class="mdi-icon" style="mask:url(../../assets/svgs/materialdesign/svg/lock-open-variant.svg);-webkit-mask-box-image:url(../../assets/svgs/materialdesign/svg/lock-open-variant.svg)"></span></td>
+<td align="left"><code>EFC6</code></td>
+<td align="left">lock-open-variant</td>
+</tr>
+<tr>
+<td align="left"><span class="mdi-icon" style="mask:url(../../assets/svgs/materialdesign/svg/window-shutter-alert.svg);-webkit-mask-box-image:url(../../assets/svgs/materialdesign/svg/window-shutter-alert.svg)"></span></td>
+<td align="left"><code>F11D</code></td>
+<td align="left">window-shutter-alert</td>
+<td align="left"><span class="mdi-icon" style="mask:url(../../assets/svgs/materialdesign/svg/shield-check.svg);-webkit-mask-box-image:url(../../assets/svgs/materialdesign/svg/shield-check.svg)"></span></td>
+<td align="left"><code>E565</code></td>
+<td align="left">shield-check</td>
+</tr>
+<tr>
+<td align="left"><span class="mdi-icon" style="mask:url(../../assets/svgs/materialdesign/svg/window-shutter-open.svg);-webkit-mask-box-image:url(../../assets/svgs/materialdesign/svg/window-shutter-open.svg)"></span></td>
+<td align="left"><code>F11E</code></td>
+<td align="left">window-shutter-open</td>
+<td align="left"><span class="mdi-icon" style="mask:url(../../assets/svgs/materialdesign/svg/shield-home.svg);-webkit-mask-box-image:url(../../assets/svgs/materialdesign/svg/shield-home.svg)"></span></td>
+<td align="left"><code>E68A</code></td>
+<td align="left">shield-home</td>
+</tr>
+<tr>
+<td align="left"><span class="mdi-icon" style="mask:url(../../assets/svgs/materialdesign/svg/bell.svg);-webkit-mask-box-image:url(../../assets/svgs/materialdesign/svg/bell.svg)"></span></td>
+<td align="left"><code>E09A</code></td>
+<td align="left">bell</td>
+<td align="left"><span class="mdi-icon" style="mask:url(../../assets/svgs/materialdesign/svg/shield-lock.svg);-webkit-mask-box-image:url(../../assets/svgs/materialdesign/svg/shield-lock.svg)"></span></td>
+<td align="left"><code>E99D</code></td>
+<td align="left">shield-lock</td>
+</tr>
+<tr>
+<td align="left"><span class="mdi-icon" style="mask:url(../../assets/svgs/materialdesign/svg/cellphone.svg);-webkit-mask-box-image:url(../../assets/svgs/materialdesign/svg/cellphone.svg)"></span></td>
+<td align="left"><code>E11C</code></td>
+<td align="left">cellphone</td>
+<td align="left"><span class="mdi-icon" style="mask:url(../../assets/svgs/materialdesign/svg/window-closed-variant.svg);-webkit-mask-box-image:url(../../assets/svgs/materialdesign/svg/window-closed-variant.svg)"></span></td>
+<td align="left"><code>F1DB</code></td>
+<td align="left">window-closed-variant</td>
+</tr>
+<tr>
+<td align="left"><span class="mdi-icon" style="mask:url(../../assets/svgs/materialdesign/svg/dishwasher.svg);-webkit-mask-box-image:url(../../assets/svgs/materialdesign/svg/dishwasher.svg)"></span></td>
+<td align="left"><code>EAAC</code></td>
+<td align="left">dishwasher</td>
+<td align="left"><span class="mdi-icon" style="mask:url(../../assets/svgs/materialdesign/svg/monitor-speaker.svg);-webkit-mask-box-image:url(../../assets/svgs/materialdesign/svg/monitor-speaker.svg)"></span></td>
+<td align="left"><code>EF5F</code></td>
+<td align="left">monitor-speaker</td>
+</tr>
+<tr>
+<td align="left"><span class="mdi-icon" style="mask:url(../../assets/svgs/materialdesign/svg/engine.svg);-webkit-mask-box-image:url(../../assets/svgs/materialdesign/svg/engine.svg)"></span></td>
+<td align="left"><code>E1FA</code></td>
+<td align="left">engine</td>
+<td align="left"><span class="mdi-icon" style="mask:url(../../assets/svgs/materialdesign/svg/music.svg);-webkit-mask-box-image:url(../../assets/svgs/materialdesign/svg/music.svg)"></span></td>
+<td align="left"><code>E75A</code></td>
+<td align="left">music</td>
+</tr>
+<tr>
+<td align="left"><span class="mdi-icon" style="mask:url(../../assets/svgs/materialdesign/svg/fan.svg);-webkit-mask-box-image:url(../../assets/svgs/materialdesign/svg/fan.svg)"></span></td>
+<td align="left"><code>E210</code></td>
+<td align="left">fan</td>
+<td align="left"><span class="mdi-icon" style="mask:url(../../assets/svgs/materialdesign/svg/pause.svg);-webkit-mask-box-image:url(../../assets/svgs/materialdesign/svg/pause.svg)"></span></td>
+<td align="left"><code>E3E4</code></td>
+<td align="left">pause</td>
+</tr>
+<tr>
+<td align="left"><span class="mdi-icon" style="mask:url(../../assets/svgs/materialdesign/svg/fountain.svg);-webkit-mask-box-image:url(../../assets/svgs/materialdesign/svg/fountain.svg)"></span></td>
+<td align="left"><code>E96B</code></td>
+<td align="left">fountain</td>
+<td align="left"><span class="mdi-icon" style="mask:url(../../assets/svgs/materialdesign/svg/play.svg);-webkit-mask-box-image:url(../../assets/svgs/materialdesign/svg/play.svg)"></span></td>
+<td align="left"><code>E40A</code></td>
+<td align="left">play</td>
+</tr>
+<tr>
+<td align="left"><span class="mdi-icon" style="mask:url(../../assets/svgs/materialdesign/svg/fridge-outline.svg);-webkit-mask-box-image:url(../../assets/svgs/materialdesign/svg/fridge-outline.svg)"></span></td>
+<td align="left"><code>E28F</code></td>
+<td align="left">fridge-outline</td>
+<td align="left"><span class="mdi-icon" style="mask:url(../../assets/svgs/materialdesign/svg/repeat.svg);-webkit-mask-box-image:url(../../assets/svgs/materialdesign/svg/repeat.svg)"></span></td>
+<td align="left"><code>E456</code></td>
+<td align="left">repeat</td>
+</tr>
+<tr>
+<td align="left"><span class="mdi-icon" style="mask:url(../../assets/svgs/materialdesign/svg/kettle.svg);-webkit-mask-box-image:url(../../assets/svgs/materialdesign/svg/kettle.svg)"></span></td>
+<td align="left"><code>E5FA</code></td>
+<td align="left">kettle</td>
+<td align="left"><span class="mdi-icon" style="mask:url(../../assets/svgs/materialdesign/svg/repeat-off.svg);-webkit-mask-box-image:url(../../assets/svgs/materialdesign/svg/repeat-off.svg)"></span></td>
+<td align="left"><code>E457</code></td>
+<td align="left">repeat-off</td>
+</tr>
+<tr>
+<td align="left"><span class="mdi-icon" style="mask:url(../../assets/svgs/materialdesign/svg/laptop.svg);-webkit-mask-box-image:url(../../assets/svgs/materialdesign/svg/laptop.svg)"></span></td>
+<td align="left"><code>E322</code></td>
+<td align="left">laptop</td>
+<td align="left"><span class="mdi-icon" style="mask:url(../../assets/svgs/materialdesign/svg/repeat-once.svg);-webkit-mask-box-image:url(../../assets/svgs/materialdesign/svg/repeat-once.svg)"></span></td>
+<td align="left"><code>E458</code></td>
+<td align="left">repeat-once</td>
+</tr>
+<tr>
+<td align="left"><span class="mdi-icon" style="mask:url(../../assets/svgs/materialdesign/svg/microwave.svg);-webkit-mask-box-image:url(../../assets/svgs/materialdesign/svg/microwave.svg)"></span></td>
+<td align="left"><code>EC99</code></td>
+<td align="left">microwave</td>
+<td align="left"><span class="mdi-icon" style="mask:url(../../assets/svgs/materialdesign/svg/shuffle.svg);-webkit-mask-box-image:url(../../assets/svgs/materialdesign/svg/shuffle.svg)"></span></td>
+<td align="left"><code>E49D</code></td>
+<td align="left">shuffle</td>
+</tr>
+<tr>
+<td align="left"><span class="mdi-icon" style="mask:url(../../assets/svgs/materialdesign/svg/robot-mower-outline.svg);-webkit-mask-box-image:url(../../assets/svgs/materialdesign/svg/robot-mower-outline.svg)"></span></td>
+<td align="left"><code>F1F3</code></td>
+<td align="left">robot-mower-outline</td>
+<td align="left"><span class="mdi-icon" style="mask:url(../../assets/svgs/materialdesign/svg/shuffle-disabled.svg);-webkit-mask-box-image:url(../../assets/svgs/materialdesign/svg/shuffle-disabled.svg)"></span></td>
+<td align="left"><code>E49E</code></td>
+<td align="left">shuffle-disabled</td>
+</tr>
+<tr>
+<td align="left"><span class="mdi-icon" style="mask:url(../../assets/svgs/materialdesign/svg/robot-vacuum.svg);-webkit-mask-box-image:url(../../assets/svgs/materialdesign/svg/robot-vacuum.svg)"></span></td>
+<td align="left"><code>E70D</code></td>
+<td align="left">robot-vacuum</td>
+<td align="left"><span class="mdi-icon" style="mask:url(../../assets/svgs/materialdesign/svg/skip-next.svg);-webkit-mask-box-image:url(../../assets/svgs/materialdesign/svg/skip-next.svg)"></span></td>
+<td align="left"><code>E4AD</code></td>
+<td align="left">skip-next</td>
+</tr>
+<tr>
+<td align="left"><span class="mdi-icon" style="mask:url(../../assets/svgs/materialdesign/svg/stove.svg);-webkit-mask-box-image:url(../../assets/svgs/materialdesign/svg/stove.svg)"></span></td>
+<td align="left"><code>E4DE</code></td>
+<td align="left">stove</td>
+<td align="left"><span class="mdi-icon" style="mask:url(../../assets/svgs/materialdesign/svg/skip-previous.svg);-webkit-mask-box-image:url(../../assets/svgs/materialdesign/svg/skip-previous.svg)"></span></td>
+<td align="left"><code>E4AE</code></td>
+<td align="left">skip-previous</td>
+</tr>
+<tr>
+<td align="left"><span class="mdi-icon" style="mask:url(../../assets/svgs/materialdesign/svg/television.svg);-webkit-mask-box-image:url(../../assets/svgs/materialdesign/svg/television.svg)"></span></td>
+<td align="left"><code>E502</code></td>
+<td align="left">television</td>
+<td align="left"><span class="mdi-icon" style="mask:url(../../assets/svgs/materialdesign/svg/speaker.svg);-webkit-mask-box-image:url(../../assets/svgs/materialdesign/svg/speaker.svg)"></span></td>
+<td align="left"><code>E4C3</code></td>
+<td align="left">speaker</td>
+</tr>
+<tr>
+<td align="left"><span class="mdi-icon" style="mask:url(../../assets/svgs/materialdesign/svg/trash-can-outline.svg);-webkit-mask-box-image:url(../../assets/svgs/materialdesign/svg/trash-can-outline.svg)"></span></td>
+<td align="left"><code>EA7A</code></td>
+<td align="left">trash-can-outline</td>
+<td align="left"><span class="mdi-icon" style="mask:url(../../assets/svgs/materialdesign/svg/stop.svg);-webkit-mask-box-image:url(../../assets/svgs/materialdesign/svg/stop.svg)"></span></td>
+<td align="left"><code>E4DB</code></td>
+<td align="left">stop</td>
+</tr>
+<tr>
+<td align="left"><span class="mdi-icon" style="mask:url(../../assets/svgs/materialdesign/svg/tumble-dryer.svg);-webkit-mask-box-image:url(../../assets/svgs/materialdesign/svg/tumble-dryer.svg)"></span></td>
+<td align="left"><code>E917</code></td>
+<td align="left">tumble-dryer</td>
+<td align="left"><span class="mdi-icon" style="mask:url(../../assets/svgs/materialdesign/svg/volume-high.svg);-webkit-mask-box-image:url(../../assets/svgs/materialdesign/svg/volume-high.svg)"></span></td>
+<td align="left"><code>E57E</code></td>
+<td align="left">volume-high</td>
+</tr>
+<tr>
+<td align="left"><span class="mdi-icon" style="mask:url(../../assets/svgs/materialdesign/svg/washing-machine.svg);-webkit-mask-box-image:url(../../assets/svgs/materialdesign/svg/washing-machine.svg)"></span></td>
+<td align="left"><code>E72A</code></td>
+<td align="left">washing-machine</td>
+<td align="left"><span class="mdi-icon" style="mask:url(../../assets/svgs/materialdesign/svg/volume-medium.svg);-webkit-mask-box-image:url(../../assets/svgs/materialdesign/svg/volume-medium.svg)"></span></td>
+<td align="left"><code>E580</code></td>
+<td align="left">volume-medium</td>
+</tr>
+<tr>
+<td align="left"><span class="mdi-icon" style="mask:url(../../assets/svgs/materialdesign/svg/water-pump.svg);-webkit-mask-box-image:url(../../assets/svgs/materialdesign/svg/water-pump.svg)"></span></td>
+<td align="left"><code>E58F</code></td>
+<td align="left">water-pump</td>
+<td align="left"><span class="mdi-icon" style="mask:url(../../assets/svgs/materialdesign/svg/volume-mute.svg);-webkit-mask-box-image:url(../../assets/svgs/materialdesign/svg/volume-mute.svg)"></span></td>
+<td align="left"><code>E75F</code></td>
+<td align="left">volume-mute</td>
+</tr>
+<tr>
+<td align="left"><span class="mdi-icon" style="mask:url(../../assets/svgs/materialdesign/svg/battery-high.svg);-webkit-mask-box-image:url(../../assets/svgs/materialdesign/svg/battery-high.svg)"></span></td>
+<td align="left"><code>F2A3</code></td>
+<td align="left">battery-high</td>
+<td align="left"><span class="mdi-icon" style="mask:url(../../assets/svgs/materialdesign/svg/calendar.svg);-webkit-mask-box-image:url(../../assets/svgs/materialdesign/svg/calendar.svg)"></span></td>
+<td align="left"><code>E0ED</code></td>
+<td align="left">calendar</td>
+</tr>
+<tr>
+<td align="left"><span class="mdi-icon" style="mask:url(../../assets/svgs/materialdesign/svg/battery-low.svg);-webkit-mask-box-image:url(../../assets/svgs/materialdesign/svg/battery-low.svg)"></span></td>
+<td align="left"><code>F2A1</code></td>
+<td align="left">battery-low</td>
+<td align="left"><span class="mdi-icon" style="mask:url(../../assets/svgs/materialdesign/svg/clock-outline.svg);-webkit-mask-box-image:url(../../assets/svgs/materialdesign/svg/clock-outline.svg)"></span></td>
+<td align="left"><code>E150</code></td>
+<td align="left">clock-outline</td>
+</tr>
+<tr>
+<td align="left"><span class="mdi-icon" style="mask:url(../../assets/svgs/materialdesign/svg/battery-medium.svg);-webkit-mask-box-image:url(../../assets/svgs/materialdesign/svg/battery-medium.svg)"></span></td>
+<td align="left"><code>F2A2</code></td>
+<td align="left">battery-medium</td>
+<td align="left"><span class="mdi-icon" style="mask:url(../../assets/svgs/materialdesign/svg/history.svg);-webkit-mask-box-image:url(../../assets/svgs/materialdesign/svg/history.svg)"></span></td>
+<td align="left"><code>E2DA</code></td>
+<td align="left">history</td>
+</tr>
+<tr>
+<td align="left"><span class="mdi-icon" style="mask:url(../../assets/svgs/materialdesign/svg/battery-outline.svg);-webkit-mask-box-image:url(../../assets/svgs/materialdesign/svg/battery-outline.svg)"></span></td>
+<td align="left"><code>E08E</code></td>
+<td align="left">battery-outline</td>
+<td align="left"><span class="mdi-icon" style="mask:url(../../assets/svgs/materialdesign/svg/timer-outline.svg);-webkit-mask-box-image:url(../../assets/svgs/materialdesign/svg/timer-outline.svg)"></span></td>
+<td align="left"><code>E51B</code></td>
+<td align="left">timer-outline</td>
+</tr>
+<tr>
+<td align="left"><span class="mdi-icon" style="mask:url(../../assets/svgs/materialdesign/svg/ev-station.svg);-webkit-mask-box-image:url(../../assets/svgs/materialdesign/svg/ev-station.svg)"></span></td>
+<td align="left"><code>E5F1</code></td>
+<td align="left">ev-station</td>
+<td align="left"><span class="mdi-icon" style="mask:url(../../assets/svgs/materialdesign/svg/bluetooth.svg);-webkit-mask-box-image:url(../../assets/svgs/materialdesign/svg/bluetooth.svg)"></span></td>
+<td align="left"><code>E0AF</code></td>
+<td align="left">bluetooth</td>
+</tr>
+<tr>
+<td align="left"><span class="mdi-icon" style="mask:url(../../assets/svgs/materialdesign/svg/leaf.svg);-webkit-mask-box-image:url(../../assets/svgs/materialdesign/svg/leaf.svg)"></span></td>
+<td align="left"><code>E32A</code></td>
+<td align="left">leaf</td>
+<td align="left"><span class="mdi-icon" style="mask:url(../../assets/svgs/materialdesign/svg/wifi.svg);-webkit-mask-box-image:url(../../assets/svgs/materialdesign/svg/wifi.svg)"></span></td>
+<td align="left"><code>E5A9</code></td>
+<td align="left">wifi</td>
+</tr>
+</tbody>
+</table>
+<p>To use an icon in a text you need to prefix the UTF-8 character code with <code>\u</code>.
+<strong>To ensure proper decoding the payload should be used with a <code>json</code> or <code>jsonl</code> command.</strong></p>
+<p><code>jsonl</code> example:
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;page&quot;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="nt">&quot;obj&quot;</span><span class="p">:</span><span class="s2">&quot;label&quot;</span><span class="p">,</span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="mi">10</span><span class="p">,</span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="mi">50</span><span class="p">,</span><span class="nt">&quot;w&quot;</span><span class="p">:</span><span class="mi">150</span><span class="p">,</span><span class="nt">&quot;h&quot;</span><span class="p">:</span><span class="mi">50</span><span class="p">,</span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="s2">&quot;\uE64A Hello world!&quot;</span><span class="p">,</span><span class="nt">&quot;text_font&quot;</span><span class="p">:</span><span class="mi">24</span><span class="p">}</span>
+</code></pre></div>
+</td></tr></table></p>
+<p><code>json</code> example:
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">[</span><span class="s2">&quot;p2b1.text=\uE64A Hello world!&quot;</span><span class="p">]</span>
+</code></pre></div>
+</td></tr></table></p>
+<h2 id="external-fonts">External Fonts<a class="headerlink" href="#external-fonts" title="Permanent link">~</a></h2>
+<p>You can also add a custom <code>.zi</code> font by uploading it to the internal flash.
+Apply it as the default font on the Configuration &gt; HASP Settings page.
+To use it, set the pointsize parameter of the property to <code>0</code>.</p>
+                
+                  
+                    
+
+<hr>
+<div class="md-source-date">
+  <small>
+    
+      Last update: 2021-06-01
+    
+  </small>
+</div>
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+        
+        <a href="../objects/" class="md-footer__link md-footer__link--prev" rel="prev">
+            <div class="md-footer__button md-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer__title">
+                <div class="md-ellipsis">
+                    <span class="md-footer__direction">
+                  Previous
+                </span> Objects
+                </div>
+            </div>
+        </a>
+         
+        <a href="../styling/" class="md-footer__link md-footer__link--next" rel="next">
+            <div class="md-footer__title">
+                <div class="md-ellipsis">
+                    <span class="md-footer__direction">
+                  Next
+                </span> Styling Properties
+                </div>
+            </div>
+            <div class="md-footer__button md-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+        </a>
+        
+    </nav>
+    
+
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tracking", "search.suggest", "search.highlight"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../../assets/javascripts/workers/search.d351de03.min.js", "version": {"default": 0.5, "provider": "mike"}}</script>
+    
+     
+      <script src="../../assets/javascripts/bundle.34eae1b6.min.js"></script>
+      
+    
+<script src="../../js/ekko-lightbox.min.js"></script>
+<script>
+    $(document).on('click', '[data-toggle="lightbox"]', function(event) {
+        event.preventDefault();
+        $(this).ekkoLightbox();
+    });
+</script>
+
+  </body>
+</html>
