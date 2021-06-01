@@ -327,7 +327,7 @@ relevant **openHASP-custom-component config:**
 
 *  *  *  *  *
 
-## Cover like in Lovelace
+## Covers like in Lovelace
 
 ![screenshot](../../assets/images/screenshots/cc_sampl_cover_lovelacee.png)  
 
@@ -336,18 +336,23 @@ The icon behaves like in Lovelace. UI theme set to `Hasp Light` in plate's web i
 relevant **openHASP config:** (screen size 240x320, UI Theme: Hasp Light) 
 
 ```json
-{"page":5,"id":2,"obj":"label","x":8,"y":33,"w":35,"h":35,"text":"\uF11D","align":1,"text_font":32,"text_color":"#164f6e"}
-{"page":5,"id":3,"obj":"label","x":48,"y":43,"w":80,"h":30,"text":"Cover 1","align":0,"text_font":16,"text_color":"#164f6e"}
-{"page":5,"id":4,"obj":"btn","x":125,"y":37,"w":30,"h":30,"toggle":false,"text":"\uE05D","text_font":32,"bg_opa":0,"border_opa":0,"text_color":"#164f6e"}
-{"page":5,"id":5,"obj":"btn","x":165,"y":37,"w":30,"h":30,"toggle":false,"text":"\uE4DB","text_font":32,"bg_opa":0,"border_opa":0,"text_color":"#164f6e"}
-{"page":5,"id":6,"obj":"btn","x":205,"y":37,"w":30,"h":30,"toggle":false,"text":"\uE045","text_font":32,"bg_opa":0,"border_opa":0,"text_color":"#164f6e"}
+{"page":5,"id":12,"obj":"label","x":8,"y":33,"w":35,"h":35,"text":"\uF11D","align":1,"text_font":32,"text_color":"#053248"}
+{"page":5,"id":13,"obj":"label","x":48,"y":43,"w":80,"h":30,"text":"Cover 1","align":0,"text_font":16,"text_color":"#053248"}
+{"page":5,"id":14,"obj":"btn","x":125,"y":37,"w":30,"h":30,"toggle":false,"text":"\uE05D","text_font":32,"bg_opa":0,"border_opa":0,"text_color":"#053248"}
+{"page":5,"id":15,"obj":"btn","x":165,"y":37,"w":30,"h":30,"toggle":false,"text":"\uE4DB","text_font":32,"bg_opa":0,"border_opa":0,"text_color":"#053248"}
+{"page":5,"id":16,"obj":"btn","x":205,"y":37,"w":30,"h":30,"toggle":false,"text":"\uE045","text_font":32,"bg_opa":0,"border_opa":0,"text_color":"#053248"}
 
+{"page":5,"id":22,"obj":"label","x":8,"y":69,"w":35,"h":35,"text":"\uF11D","align":1,"text_font":32,"text_color":"#053248"}
+{"page":5,"id":23,"obj":"label","x":48,"y":79,"w":80,"h":30,"text":"Cover 2","align":0,"text_font":16,"text_color":"#053248"}
+{"page":5,"id":24,"obj":"btn","x":125,"y":73,"w":30,"h":30,"toggle":false,"text":"\uE05D","text_font":32,"bg_opa":0,"border_opa":0,"text_color":"#053248"}
+{"page":5,"id":25,"obj":"btn","x":165,"y":73,"w":30,"h":30,"toggle":false,"text":"\uE4DB","text_font":32,"bg_opa":0,"border_opa":0,"text_color":"#053248"}
+{"page":5,"id":26,"obj":"btn","x":205,"y":73,"w":30,"h":30,"toggle":false,"text":"\uE045","text_font":32,"bg_opa":0,"border_opa":0,"text_color":"#053248"}
 ```
 
 relevant **openHASP-custom-component config:**
 
 ```yaml
-      - obj: "p5b2"
+      - obj: "p5b12"
         properties:
           "text": >
             {% if is_state('cover.my_cover', 'closing') %}
@@ -359,19 +364,19 @@ relevant **openHASP-custom-component config:**
             {%-elif is_state('cover.my_cover', 'open') %}
             {{ "\uF11E" | e }}
             {% endif %}
-      - obj: "p5b4"
+      - obj: "p5b14"
         event:
           "down":
             - service: cover.open_cover
               target:
                 entity_id: "cover.my_cover"
-      - obj: "p5b5"
+      - obj: "p5b15"
         event:
           "down":
             - service: cover.stop_cover
               target:
                 entity_id: "cover.my_cover"
-      - obj: "p5b6"
+      - obj: "p5b16"
         event:
           "down":
             - service: cover.close_cover
@@ -383,6 +388,7 @@ relevant **openHASP-custom-component config:**
 Your browser does not support the video tag.
 </video>
 
+Check out the [Lovelace-like entities](../examples/example-lovelace.md) for similar placement.  
 
 *  *  *  *  *
 
