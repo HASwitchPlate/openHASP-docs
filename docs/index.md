@@ -25,12 +25,12 @@ This project also adds ESP32 and STM32F4 support to take advantage of the additi
 | Parallel display        | :x: no | :white_check_mark: yes | :white_check_mark: yes
 | PWM Screen dimming      | :white_check_mark: yes | :white_check_mark: yes | :white_check_mark: yes
 | Maximum Page Count      | 4       | 12 | 12
-| Object Types / Widgets  | 14      | 15 | 15
+| [Object Types / Widgets][7]| 20      | 20 | 20
 | Dynamic Objects         | :white_check_mark: yes | :white_check_mark: yes | :white_check_mark: yes
 | Theme Support           | yes     | yes     | yes
 | [Custom .zi V5 font][4] | :white_check_mark: yes (latin1) | :white_check_mark: yes (latin1) | no
 | MDI Icons               | :white_check_mark: yes | :white_check_mark: yes | no
-| PNG images              | :x: no | :white_check_mark: yes | :white_check_mark: yes
+| [PNG images][8]         | :x: no | :white_check_mark: yes | :white_check_mark: yes
 | Network                 | :white_check_mark: Wi-Fi | :white_check_mark: Wi-Fi | :white_check_mark: Ethernet
 
 ### Support
@@ -48,3 +48,5 @@ For support using openHASP please find us on Github, Discord or Home Assistant:
 [4]: https://github.com/fvanroie/HMI-Font-Pack/releases
 [5]: https://discord.gg/VCWyuhF
 [6]: https://community.home-assistant.io/t/openhasp-an-mqtt-driven-touchscreen-scene-controller/300853
+[7]: design/objects/#cheatsheet
+[8]: design/objects/#image
