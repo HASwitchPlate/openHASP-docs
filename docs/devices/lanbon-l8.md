@@ -96,7 +96,7 @@ Once the serial connections are made, flash the [Lanbon-L8 ESP32 binary](../inst
 
 Pin| Mode   | L8-HS      | Group | Default
 ---|--------|------------|-------|----
-12 | Output | Relay (K3)   | 1 | Low (Normal)
+12 | Output | Relay (K3) | 1 | Low (Normal)
 14 | Output | Relay      | 2 | Low (Normal)
 26 | Output | Mood Red   | 4 | Low (Normal)
 27 | Output | Relay      | 3 | Low (Normal)
