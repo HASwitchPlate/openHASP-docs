@@ -52,19 +52,19 @@ jobs:
         run: |
           mike set-default "latest"
 
-      - name: Deploy docs (Latest)
+      - name: Deploy docs 0.5
         if: github.ref == 'refs/heads/0.5'
         run: |
           mike deploy "0.5" --title="0.5.2" --config-file "${GITHUB_WORKSPACE}/mkdocs.yml" --push --rebase
         # env:
         #   CUSTOM_DOMAIN: docs.haswitchplate.com
 
-      - name: Deploy docs (Dev)
+      - name: Deploy docs 0.6
         if: github.ref == 'refs/heads/0.6'
         run: |
           mike deploy --update-aliases "0.6" latest --title="0.6.0" --config-file "${GITHUB_WORKSPACE}/mkdocs.yml" --push --rebase
 
-      - name: Deploy docs (Dev)
+      - name: Deploy docs 0.6-dev
         if: github.ref == 'refs/heads/0.6-dev'
         run: |
           mike deploy --update-aliases "0.6-dev" dev --title="dev" --config-file "${GITHUB_WORKSPACE}/mkdocs.yml" --push --rebase
