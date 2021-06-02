@@ -1796,7 +1796,7 @@ but only the <code>id</code> and <code>obj</code> properties are required to cre
 </tbody>
 </table>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
+<p class="admonition-title">Tip</p>
 <p>Further customizable properties can be found in <a href="../styling">styling</a>.</p>
 </div>
 <p>Ids start from 1 on <em>each page</em>.
@@ -2141,11 +2141,15 @@ based on the font and text.</p>
 <td>start_value</td>
 <td>int16</td>
 <td>0</td>
-<td>optional start value of the indicator</td>
+<td>optional minimal allowed value of the indicator</td>
 </tr>
 </tbody>
 </table>
 <p>Vertical bars can be created if the width of the object is smaller than its height.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code>min</code>, <code>max</code>, <code>val</code> and <code>start_value</code> support also negative values.</p>
+</div>
 <h2 id="slider">Slider<a class="headerlink" href="#slider" title="Permanent link">~</a></h2>
 <p><strong>obj:<code>slider</code></strong></p>
 <p><img align="center" alt="lv_slider" src="../../assets/images/objects/lv_ex_slider_1.png" /></p>
@@ -2181,11 +2185,15 @@ based on the font and text.</p>
 <td>start_value</td>
 <td>int16</td>
 <td>0</td>
-<td>optional start value of the indicator</td>
+<td>optional minimal allowed value of the indicator</td>
 </tr>
 </tbody>
 </table>
 <p>Vertical sliders can be created if the width of the object is smaller than its height.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code>min</code>, <code>max</code>, <code>val</code> and <code>start_value</code> support also negative values.</p>
+</div>
 <details class="example"><summary>Example <code>jsonl</code></summary><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;page&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">6</span><span class="p">,</span><span class="nt">&quot;obj&quot;</span><span class="p">:</span><span class="s2">&quot;slider&quot;</span><span class="p">,</span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="mi">20</span><span class="p">,</span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="mi">250</span><span class="p">,</span><span class="nt">&quot;w&quot;</span><span class="p">:</span><span class="mi">200</span><span class="p">,</span><span class="nt">&quot;h&quot;</span><span class="p">:</span><span class="mi">20</span><span class="p">,</span><span class="nt">&quot;min&quot;</span><span class="p">:</span><span class="mi">15</span><span class="p">,</span><span class="nt">&quot;max&quot;</span><span class="p">:</span><span class="mi">35</span><span class="p">}</span>
 </code></pre></div>
 </td></tr></table>
@@ -2294,10 +2302,11 @@ based on the font and text.</p>
 </table>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Zero degree is at the middle right (3 o'clock) of the object and the degrees are increasing in a clockwise direction. The angles should be in the [0-360] range.</p>
+<p>Zero degree is at the middle right (3 o'clock) of the object and the degrees are increasing in a clockwise direction. The angles should be in the [0-360] range.   <br />
+<code>min</code>, <code>max</code> and <code>val</code> support also negative values.</p>
 </div>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
+<p class="admonition-title">Tip</p>
 <p>Check out <a href="../styling#value">value styling</a> to display a textual value in the middle of the arc.</p>
 </div>
 <details class="example"><summary>Example <code>jsonl</code></summary><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;page&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">9</span><span class="p">,</span><span class="nt">&quot;obj&quot;</span><span class="p">:</span><span class="s2">&quot;arc&quot;</span><span class="p">,</span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="mi">20</span><span class="p">,</span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="mi">75</span><span class="p">,</span><span class="nt">&quot;w&quot;</span><span class="p">:</span><span class="mi">200</span><span class="p">,</span><span class="nt">&quot;h&quot;</span><span class="p">:</span><span class="mi">200</span><span class="p">,</span><span class="nt">&quot;min&quot;</span><span class="p">:</span><span class="mi">15</span><span class="p">,</span><span class="nt">&quot;max&quot;</span><span class="p">:</span><span class="mi">35</span><span class="p">,</span><span class="nt">&quot;border_side&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="nt">&quot;rotation&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="nt">&quot;start_angle&quot;</span><span class="p">:</span><span class="mi">135</span><span class="p">,</span><span class="nt">&quot;end_angle&quot;</span><span class="p">:</span><span class="mi">45</span><span class="p">,</span><span class="nt">&quot;start_angle1&quot;</span><span class="p">:</span><span class="mi">135</span><span class="p">,</span><span class="nt">&quot;end_angle1&quot;</span><span class="p">:</span><span class="mi">45</span><span class="p">,</span><span class="nt">&quot;adjustable&quot;</span><span class="p">:</span><span class="kc">true</span><span class="p">}</span>
@@ -2515,6 +2524,10 @@ To change the items in the list, use the <code>options</code> attribute.</p>
 </tbody>
 </table>
 <p>Use <a href="../styling#line">line</a> and <a href="../styling#scale">scale</a> properties to customize.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code>min</code>, <code>max</code> and <code>val</code> support also negative values.</p>
+</div>
 <details class="example"><summary>Example <code>jsonl</code></summary><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;page&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">12</span><span class="p">,</span><span class="nt">&quot;obj&quot;</span><span class="p">:</span><span class="s2">&quot;linemeter&quot;</span><span class="p">,</span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="mi">20</span><span class="p">,</span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="mi">70</span><span class="p">,</span><span class="nt">&quot;w&quot;</span><span class="p">:</span><span class="mi">200</span><span class="p">,</span><span class="nt">&quot;h&quot;</span><span class="p">:</span><span class="mi">200</span><span class="p">,</span><span class="nt">&quot;value_str&quot;</span><span class="p">:</span><span class="s2">&quot;Temp&quot;</span><span class="p">,</span><span class="nt">&quot;val&quot;</span><span class="p">:</span><span class="mi">75</span><span class="p">,</span><span class="nt">&quot;line_count&quot;</span><span class="p">:</span><span class="mi">35</span><span class="p">,</span><span class="nt">&quot;line_rounded&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">}</span>
 </code></pre></div>
 </td></tr></table>
@@ -2597,6 +2610,10 @@ To change the items in the list, use the <code>options</code> attribute.</p>
 <li><code>4</code> : strip 4 zeros, i.e. divide tick value by 10000 before printing the major tick label</li>
 </ul>
 <p>Only these values are allowed, arbitrary numbers are not supported.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code>min</code>, <code>max</code> and <code>val</code> support also negative values.</p>
+</div>
 <details class="example"><summary>Example <code>jsonl</code></summary><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;page&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">13</span><span class="p">,</span><span class="nt">&quot;obj&quot;</span><span class="p">:</span><span class="s2">&quot;gauge&quot;</span><span class="p">,</span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="mi">20</span><span class="p">,</span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="mi">70</span><span class="p">,</span><span class="nt">&quot;w&quot;</span><span class="p">:</span><span class="mi">200</span><span class="p">,</span><span class="nt">&quot;h&quot;</span><span class="p">:</span><span class="mi">200</span><span class="p">}</span>
 </code></pre></div>
 </td></tr></table>
