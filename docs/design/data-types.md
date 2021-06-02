@@ -15,8 +15,10 @@ Numeric properties have integer values with a variable minimum and maximum input
 Certain object properties also support negative values.
 
 !!! note "Details"
-    `int8` (signed) supports values ranging from -128 to 127, `uint8` (unsigned) supports values ranging from 0 to 255.    
-    `int16` (signed) supports values ranging from -32768 to 32767, `uint16` (unsigned) supports values ranging from 0 to 65535.
+    `int8` (signed) supports values ranging from -128 to 127.    
+    `uint8` (unsigned) supports values ranging from 0 to 255.    
+    `int16` (signed) supports values ranging from -32768 to 32767.     
+    `uint16` (unsigned) supports values ranging from 0 to 65535.
 
 
 ## String
