@@ -1262,9 +1262,15 @@
 </ul>
 <p>The return value will be either <code>1</code>/<code>0</code> or <code>on</code>/<code>off</code> depending on the context.</p>
 <h2 id="integer">Integer<a class="headerlink" href="#integer" title="Permanent link">~</a></h2>
-<p>Numeric properties have integer values with a variable minimum and maximum input value.</p>
+<p>Numeric properties have integer values with a variable minimum and maximum input value.   <br />
+Certain object properties also support negative values.</p>
+<div class="admonition note">
+<p class="admonition-title">Details</p>
+<p><code>int8</code> (signed) supports values ranging from -128 to 127, <code>uint8</code> (unsigned) supports values ranging from 0 to 255.  <br />
+<code>int16</code> (signed) supports values ranging from -32768 to 32767, <code>uint16</code> (unsigned) supports values ranging from 0 to 65535.</p>
+</div>
 <h2 id="string">String<a class="headerlink" href="#string" title="Permanent link">~</a></h2>
-<p>Properties that accept textual input. When sending raw text in the MQTT payload or as command parameter no quotes are needed.
+<p>Properties that accept textual input. When sending raw text in the MQTT payload or as command parameter no quotes are needed.  <br />
 Only when a text value is included in a <code>jsonl</code> or <code>json</code> command, it needs to be quoted accoring to JSON rules.</p>
 <h2 id="json-object">JSON Object<a class="headerlink" href="#json-object" title="Permanent link">~</a></h2>
 <p>Some properties can be set or retrieved in JSON format too. The JSON object has several keys that have a boolean, integer or string data type.</p>
