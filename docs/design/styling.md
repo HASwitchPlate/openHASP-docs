@@ -109,7 +109,7 @@ Properties for [line meter](../objects#line-meter) objects.
 | :---              |  :---:   | :---
 | line_color        |[color][1]| Color of the line
 | line_opa          | byte     | Opacity level of the line [0-255]
-| line_width        | int16    | Width of the line
+| line_width        | int16    | Width of a scale line in the active region (also see `scale_end_line_width` below)
 | line_dash_width   | int16    | Width of dash. Dashing is drawn only for horizontal or vertical lines. `0` = disable dash (= default)
 | line_dash_gap     | int16    | Gap between two dash line. Dashing is drawn only for horizontal or vertical lines. `0` = disable dash (= default)
 | line_rounded      | [bool][2]| `true` = draw rounded line endings. Default = `false`
@@ -125,7 +125,7 @@ The properties for styling the scale of [line meter](../objects#line-meter) or [
 | scale_width            | int16    | Width of the scale
 | scale_border_width     | int16    | Width of a border drawn on the outer side of the scale in the normal region
 | scale_end_border_width | int16    | Width of a border drawn on the outer side of the scale in the end region
-| scale_end_line_width   | int16    | Width of a scale lines in the end region
+| scale_end_line_width   | int16    | Width of a scale line in the end region
 
 ## Image
 
