@@ -1393,7 +1393,7 @@ The <code>color</code> property gets updated from the <code>rgb_color</code> att
 <hr />
 <h2 id="generic-thermostatclimate">Generic thermostat/climate<a class="headerlink" href="#generic-thermostatclimate" title="Permanent link">~</a></h2>
 <p><img alt="screenshot" src="../../../assets/images/screenshots/cc_sampl_climate.png" />  </p>
-<p>Arc can be dragged by the handle, precise set possible from the +/-buttons. Note that the <code>min</code>, <code>max</code> and <code>val</code> values of the arc are multiplied and divided by 10 when set and read, because <a href="https://github.com/HASwitchPlate/openHASP/issues/81">LVGL only suppports integers</a> for object values. By multiplying and dividing by 10, it becomes possible to set decimal values for climate temperature.</p>
+<p>Arc can be dragged by the handle, precise set possible from the +/-buttons. Note that the <code>min</code>, <code>max</code> and <code>val</code> values of the arc are multiplied and divided by 10 when set and read, because <a href="../../design/data-types/#integer">LVGL only suppports integers</a> for object values. By multiplying and dividing by 10, it becomes possible to set decimal values for climate temperature.</p>
 <p>The objects self-populate with the supported attributes of the climate in Home Assistant:
 - the arc min and max get the min and max temperatures 
 - the dropdown gets the available heating modes, and changes accordingly during operation
@@ -2164,7 +2164,7 @@ UI theme set to <code>Hasp Light</code> in plate's web interface.</p>
                 <span class="nt">entity_id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">media_player.sound_my_room</span>
 </code></pre></div>
 </td></tr></table>
-Note that the <code>val</code> value of the slider is multiplied and divided by 100 when read and set, because <a href="https://github.com/HASwitchPlate/openHASP/issues/81">LVGL only suppports integers</a> for object values. By multiplying and dividing by 100, it becomes possible to set volume between 0 and 1 as required by Home Assistant.</p>
+Note that the <code>val</code> value of the slider is multiplied and divided by 100 when read and set, because <a href="../../design/data-types/#integer">LVGL only suppports integers</a> for object values. By multiplying and dividing by 100, it becomes possible to set volume between 0 and 1 as required by Home Assistant.</p>
 <hr />
 <h2 id="color-coded-icons">Color coded icons<a class="headerlink" href="#color-coded-icons" title="Permanent link">~</a></h2>
 <p><img alt="icons" src="https://user-images.githubusercontent.com/1550668/120081781-9372e880-c0bf-11eb-8c9a-62d2a16c24c5.png" /></p>
