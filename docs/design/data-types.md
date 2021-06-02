@@ -14,8 +14,9 @@ The return value will be either `1`/`0` or `on`/`off` depending on the context.
 Numeric properties have integer values with a variable minimum and maximum input value.     
 Certain object properties also support negative values.
 
-!!! note "Tip"
-    `int` (signed) types support both positives and negatives, `uint` (unsigned) types support only positives.
+!!! note "Details"
+    `int8` (signed) supports values ranging from -128 to 127, `uint8` (unsigned) supports values ranging from 0 to 255.    
+    `int16` (signed) supports values ranging from -32768 to 32767, `uint16` (unsigned) supports values ranging from 0 to 65535.
 
 
 ## String
