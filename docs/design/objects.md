@@ -166,7 +166,7 @@ Besides the common properties listed above, each object type can have specific p
 |----------|------------|------------|--------------
 | text     | [string][10]     | "Text"     | The text of the label, `\n` for line break.
 | mode     | [string][10]     | `crop`     | The wrapping mode of long text labels:<br>`expand` Expand the object size to the text size<br>`break` Keep the object width, break the too long lines and expand the object height<br>`dots` Keep the size and write dots at the end if the text is too long<br>`scroll` Keep the size and roll the text back and forth<br>`loop` Keep the size and roll the text circularly<br>`crop` Keep the size and crop the text out of it
-| align    | 0..2       | 0       | Text alignment: `0` = left, `1` = center, `2` = right
+| align    | [string][10]       | `left`       | Text alignment: `left`, `center`, `right` 
 
 ??? example "Example `jsonl`"
     ```json
@@ -184,13 +184,13 @@ Besides the common properties listed above, each object type can have specific p
 | val      | [int16][9]      | 0       | The value: `0` = untoggled, `1` = toggled
 | text     | [string][10]     | ""      | The text of the label
 | mode     | [string][10]     | `expand`| The wrapping mode of long text labels.<br>`expand` Expand the object size to the text size<br>`break` Keep the object width, break the too long lines and expand the object height<br>`dots` Keep the size and write dots at the end if the text is too long<br>`scroll` Keep the size and roll the text back and forth<br>`loop` Keep the size and roll the text circularly<br>`crop` Keep the size and crop the text out of it
-| align    | 0..2       | 0       | Text alignment: `0` = left, `1` = center, `2` = right
+| align    | [string][10]       | `left`       | Text alignment: `left`, `center`, `right` 
 
 
 ??? example "Example `jsonl`"
     ```json
-    {"page":1,"id":2,"obj":"btn","x":10,"y":40,"w":105,"h":90,"toggle":false,"text":"Normal Button","mode":"break","align":1}
-    {"page":1,"id":3,"obj":"btn","x":125,"y":40,"w":105,"h":90,"toggle":true,"text":"Toggle Button","mode":"break","align":1}
+    {"page":1,"id":2,"obj":"btn","x":10,"y":40,"w":105,"h":90,"toggle":false,"text":"Normal Button","mode":"break","align":"center"}
+    {"page":1,"id":3,"obj":"btn","x":125,"y":40,"w":105,"h":90,"toggle":true,"text":"Toggle Button","mode":"break","align":"center"}
     ```
 
 **Normal** buttons (`toggle=false`) send touch events while they occur: 
@@ -410,7 +410,7 @@ When the item is changed both `val` and `text` of the newly selected item are se
 | text     | [string][10]     | ""      | *Read-only* The text of the selected item
 | rows     | [int8][9]       | 3       | The number of rows that are visible<BR>Use this property instead of `h` to set object height
 | mode     | 0..1       | 0       | Roller mode: `0` = normal (finite), `1` = infinite
-| align    | 0..2       | 1       | Text alignment: `0` = left, `1` = center, `2` = right
+| align    | [string][10]       | `center`       | Text alignment: `left`, `center`, `right` 
 
 To change the currently selected item, use the `val` attribute.    
 To change the items in the list, use the `options` attribute.
@@ -595,7 +595,7 @@ While pressing and dragging the `cpicker` object the following events are sent: 
 | Property | Value      | Default    | Description
 |----------|------------|------------|--------------
 | options  | [json array][11] | "Text"     | Json array of [string][10]s where each element is the label of a button. Use `"\n"` for a new line of buttons
-| align    | 0..2       | 1          | Text alignment: `0` = left, `1` = center, `2` = right
+| align    | [string][10]       | `center`          | Text alignment: `left`, `center`, `right` 
 | toggle   | [bool][2]  | false      | All buttons behave as toggle buttons or normal buttons
 | one_check| [bool][2]  | false      | Allow only one button to be checked (toggled) at once
 
