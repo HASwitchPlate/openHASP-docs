@@ -20,7 +20,7 @@ You have the option to install the custom component using HACS or via manual dow
     7. Reboot Home-Assistant
 
 === "Manual Install"
-    Alternatively, you can also install it manually ([download][2] and follow these steps): 
+    Alternatively, you can also install it manually: 
 
     [:material-file-download-outline: Download ZIP][2]{ .md-button .md-button--primary }
 
@@ -31,6 +31,9 @@ You have the option to install the custom component using HACS or via manual dow
     5. Place the files you downloaded in the new directory you created.
     6. Edit your `configuration.yaml` file add an entry similar to the example below.
     7. Restart Home Assistant
+
+    !!! note "Note"
+        The [download][2] link points to the actual _development code_ in the _master_ branch.
 
 !!! warning "Warning"
     You have to use component version consistently with the firmware version on your plates. For example, if your plates are at firmware version 0.6.x, you also need to use component version 0.6.x to ensure interoperability. Home Assistant will show a warning if it finds a version mismatch. Note that you can only have one version of the component installed at a time so a mix of plate versions cannot be deployed.
