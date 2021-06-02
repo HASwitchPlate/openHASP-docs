@@ -11,10 +11,15 @@ Properties with a boolean data type accept these values and are case insensitive
 The return value will be either `1`/`0` or `on`/`off` depending on the context.
 
 ## Integer
-Numeric properties have integer values with a variable minimum and maximum input value. Certain object properties also support negative values.
+Numeric properties have integer values with a variable minimum and maximum input value.     
+Certain object properties also support negative values.
+
+!!! note "Tip"
+    `int` (signed) types support both positives and negatives, `uint` (unsigned) types support only positives.
+
 
 ## String
-Properties that accept textual input. When sending raw text in the MQTT payload or as command parameter no quotes are needed.
+Properties that accept textual input. When sending raw text in the MQTT payload or as command parameter no quotes are needed.    
 Only when a text value is included in a `jsonl` or `json` command, it needs to be quoted accoring to JSON rules.
 
 ## JSON Object
