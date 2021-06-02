@@ -11,7 +11,7 @@ Properties with a boolean data type accept these values and are case insensitive
 The return value will be either `1`/`0` or `on`/`off` depending on the context.
 
 ## Integer
-Numeric properties have integer values with a variable minimum and maximum input value.
+Numeric properties have integer values with a variable minimum and maximum input value. Certain object properties also support negative values.
 
 ## String
 Properties that accept textual input. When sending raw text in the MQTT payload or as command parameter no quotes are needed.
