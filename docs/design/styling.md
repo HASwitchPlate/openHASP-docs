@@ -73,7 +73,7 @@ The shadow is a blurred area under the object.
 
 ## Text
 
-Properties for textual objects only.
+Properties applied to the textual elements of the objects.
 
 | Property          |  Type    | Description
 | :---              |  :---:   | :---
@@ -87,7 +87,7 @@ Properties for textual objects only.
 
 ## Value
 
-Value is an arbitrary text drawn on top of an object. It can be a lightweight replacement for creating label objects.
+Value is an arbitrary text label drawn on top of an object. It can be a lightweight replacement for creating standalone label objects.
 
 | Property           |  Type    | Description
 | :---               |  :---:   | :---
