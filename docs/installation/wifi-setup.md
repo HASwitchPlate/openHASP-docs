@@ -6,7 +6,7 @@ If the touchscreen is properly connected it will display a QR code, along with a
 ![](../assets/images/hasp/oobe_setup.png)
 ![](../assets/images/hasp/wifi_setup.png)
 
-!!! note ""
+!!! note "Tip"
     To skip this step, Wi-Fi credentials can be saved into the .bin file when you compile the firmware yourself using [customization](../compiling/customize.md). 
 
 Either use the touchscreen interface or connect via a web browser to setup the credentials for your local Wi-Fi access point:
