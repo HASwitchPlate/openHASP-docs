@@ -1,4 +1,4 @@
-The [openHASP Custom Component][1] simplifies synchronization of objects on one or more openHASP plates with Home Assistant entities.
+The [openHASP Custom Component][1] simplifies synchronization of objects on one or more openHASP plates with Home Assistant entities. You can map any service supported by any entity in Home Assistant to any object event in openHASP, moreover, you can set any property of any object in openHASP to any value from Home Assistant. This powerful concept gives you full freedom to create a completely customized, hardware-based control user interface for your home automation.
 
 We call _plate_ any device running openHASP in your system.
 
