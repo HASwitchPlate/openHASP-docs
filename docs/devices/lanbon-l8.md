@@ -24,8 +24,11 @@
 - Input voltage 110-250V ~ 50-60Hz AC
 - ESP32-WROVER-B
 - Capacitive touch screen
-- Analog temperature sensor
 - Energy counter
+
+!!! note
+    An earlier revision V1.14 (20191203) of the PCB had an analog temperature sensor onboard.
+    It was removed from V1.15 (20200521) of the PCB. You are likely *not* to get it when buying a recent switch.
 
 ## Contents
 
