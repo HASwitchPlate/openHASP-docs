@@ -508,7 +508,7 @@ To change the currently visible tab, use the `val` attribute after all tabs have
 
 ??? example "Example `jsonl`"
     ```json
-    {"page":1,"id":10,"obj":"tabview","btn_pos":1}
+    {"page":1,"id":14,"obj":"tabview","btn_pos":1}
     ```
 
 
@@ -524,9 +524,9 @@ Set the parent object by referencing the `parentid` in the tab. It must be a `ta
 
 ??? example "Example `jsonl`"
     ```json
-    {"page":1,"id":50,"obj":"tab","parentid":10,"text":"Tab 1"}
-    {"page":1,"id":51,"obj":"tab","parentid":10,"text":"Tab 2"}
-    {"page":1,"id":52,"obj":"tab","parentid":10,"text":"Tab 3"}
+    {"page":1,"id":50,"obj":"tab","parentid":14,"text":"Tab 1"}
+    {"page":1,"id":51,"obj":"tab","parentid":14,"text":"Tab 2"}
+    {"page":1,"id":52,"obj":"tab","parentid":14,"text":"Tab 3"}
     ```
 
 To add other objects to these tabs, also use the `parentid` when creating those objects.
@@ -587,6 +587,11 @@ While pressing and dragging the `cpicker` object the following events are sent: 
 
 !!! note "Note"
     Placing objects over/under the spinner will increase the CPU load because all objects need to be redrawn constantly.
+
+??? example "Example `jsonl`"
+    ```json
+    {"page":1,"id":15,"obj":"spinner","x":180,"y":50,"w":36,"h":36,"bg_opa":0,"border_width":0,"line_width":6,"line_width1":6,"angle":80,"line_color":"white","line_color1":"green"}
+    ```
 
 ## LED Indicator
 **obj:`led`**
