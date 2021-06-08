@@ -7,8 +7,8 @@ You can attach external devices like buttons, switches, relays, lights or LEDs u
 When integrated with [Home Assistant](../integrations/home-assistant/howto.md), the configured GPIOs will be added automatically during discovery as appropriate entities in the system.
 
 <div class="row justify-content-center">
-            <a href="../../assets/images/settings/gpio_addpin.png" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-8" data-title="GPIO Overview" data-footer="">
-                <img src="../../assets/images/settings/gpio_addpin-thumbnail.png" class="img-fluid img-thumbnail">
+            <a href="../assets/images/settings/gpio_addpin.png" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-8" data-title="GPIO Overview" data-footer="">
+                <img src="../assets/images/settings/gpio_addpin-thumbnail.png" class="img-fluid img-thumbnail">
             </a>
 </div>
 
@@ -17,8 +17,8 @@ When integrated with [Home Assistant](../integrations/home-assistant/howto.md), 
 ## Input Pin
 
 <div class="row justify-content-center">
-            <a href="../../assets/images/settings/gpio_input.png" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-8" data-title="GPIO Input" data-footer="">
-                <img src="../../assets/images/settings/gpio_input-thumbnail.png" class="img-fluid img-thumbnail">
+            <a href="../assets/images/settings/gpio_input.png" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-8" data-title="GPIO Input" data-footer="">
+                <img src="../assets/images/settings/gpio_input-thumbnail.png" class="img-fluid img-thumbnail">
             </a>
 </div>
 
