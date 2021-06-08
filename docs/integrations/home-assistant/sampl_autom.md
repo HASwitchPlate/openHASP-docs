@@ -267,7 +267,7 @@ The third automation simply runs the first automation at 3 different times every
 <h3>Clear pixels when backlight off</h3>
 
 Another way to reduce the chance of burn-in is to clear the contents of the screen while the backlight is turned off, as nobody sees the pixels anyway.
-Just add these actions to the [first automation example](#turn-on-moodlight-when-backlight-off-and-vice-versa) which draw an overlay with a black base object on page 0 when display is off, and deletes it when comes back on:
+Just add these actions to the [first automation example](#turn-on-moodlight-when-backlight-goes-off-and-back) which draw an overlay with a black base object on page 0 when display is off, and deletes it when comes back on:
 
 for automation `openhasp-moodlight-on`, add to actions:
 
