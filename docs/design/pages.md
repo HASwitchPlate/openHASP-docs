@@ -5,7 +5,7 @@ The layout of the pages can be defined in several ways:
 - by creating a special file on the flash file system, which will be loaded and the layout with the objects displayed each time HASP starts up.
 - by issuing commands through MQTT to draw/change the objects immediately
 
-You can create the file wity your favourite text editor and upload it *(and other resource assets like fonts)* using the web interface [HASP Design](../../configuration/hasp) menu.
+You can create the file wity your favourite text editor and upload it *(and other resource assets like fonts)* using the web interface [HASP Design](../../configuration/hasp/) menu.
 
 ## pages.jsonl
 
@@ -26,7 +26,7 @@ Blank lines are allowed for readability and are ignored.
     The file extension is `.jsonl` and not `.json`.
 
 !!! note "Note"
-    The maximum number of pages and objects is limited by the memory available in the MCU, it depends on the [microcontroller type](../index.md#features) you use.
+    The maximum number of pages and objects is limited by the memory available in the MCU, it depends on the [microcontroller type](../../#features) you use.
 
     
 ### File comments
@@ -60,10 +60,10 @@ Example 3: Insert a comment for an object.
 
 ## jsonl command
 
-See [commands documentation](../commands#jsonl) for the `jsonl` command. The payload of the command corresponds to what's exactly in one line of the `pages.jsonl` file above, with a minor exception: page numbers are not kept between the commands - you need to specfiy the page with each!
+See [commands documentation](../../commands/#jsonl) for the `jsonl` command. The payload of the command corresponds to what's exactly in one line of the `pages.jsonl` file above, with a minor exception: page numbers are not kept between the commands - you need to specfiy the page with each!
 
 !!! warning "Warning"
-    Some integrations like the [custom component for Home Assistant](../integrations/home-assistant/howto.md) can store the `pages.jsonl` centrally for your plates, in such cases you have the to specify the page number for each object, as those files are actually parsed line by line using the `jsonl` command.
+    Some integrations like the [custom component for Home Assistant](../../integrations/home-assistant/howto/) can store the `pages.jsonl` centrally for your plates, in such cases you have the to specify the page number for each object, as those files are actually parsed line by line using the `jsonl` command.
 
 
 ## Objects
@@ -93,7 +93,7 @@ An id of `0` refers to the page itself instead of an object.
 !!! note "Tip"
     If you add the objects on the page `0` last, you ensure that they will be always be visible on top of all other pages.
 
-See [objects documentation](../objects) for details.
+See [objects documentation](../objects/) for details.
 
 ## Page attributes
 
