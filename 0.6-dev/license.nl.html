@@ -18,7 +18,7 @@
     
     
       
-        <title>openHASP</title>
+        <title>License.nl - openHASP</title>
       
     
      
@@ -92,7 +92,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#demo-screens" class="md-skip">
+        <a href="#mit-license" class="md-skip">
           Skip to content
         </a>
       
@@ -127,7 +127,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Home
+              License.nl
             
           </span>
         </div>
@@ -246,61 +246,11 @@
 
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Home
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="index.html" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
         Home
       </a>
-      
-        
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#demo-screens" class="md-nav__link">
-    Demo Screens
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#features" class="md-nav__link">
-    Features
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#support" class="md-nav__link">
-    Support
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
     
@@ -1139,23 +1089,57 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#demo-screens" class="md-nav__link">
-    Demo Screens
+  <a href="#mit-license" class="md-nav__link">
+    MIT License
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#features" class="md-nav__link">
-    Features
+  <a href="#components" class="md-nav__link">
+    Components
+  </a>
+  
+    <nav class="md-nav" aria-label="Components">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#core" class="md-nav__link">
+    Core
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#support" class="md-nav__link">
-    Support
+        
+          <li class="md-nav__item">
+  <a href="#mcu" class="md-nav__link">
+    MCU
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#native-application" class="md-nav__link">
+    Native Application
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#native-windows-application" class="md-nav__link">
+    Native Windows Application
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#assets" class="md-nav__link">
+    Assets
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1171,110 +1155,137 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/HASwitchPlate/openHASP-docs/edit/0.6/docs/index.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/HASwitchPlate/openHASP-docs/edit/0.6/docs/license.nl.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                  <h1>Home</h1>
-                
-                <p><img src="assets/images/logo.png" style="width:10rem"></img>
-<span style="font-family: 'Lato', 'Arial', helvetica;  font-size: 400%; font-weight: bold">openHASP 0.6<span></p>
-<p>Control your home-automation devices from a customizable touchscreen UI connected via MQTT.</p>
-<p>openHASP is a re-implementation of the popular HASwitchPlate sketch created by aderusha.
-The <a href="https://github.com/HASwitchPlate/HASPone">HASPone</a> project uses a Wemos D1 mini and requires a Nextion/TJC HMI display.
-This rewrite removes the Nextion/TJC requirement by using the <a href="https://github.com/lvgl/lvgl">Light and Versatile Graphics Library</a>
-on the MCU to drive a commodity display.</p>
-<p>This project also adds ESP32 and STM32F4 support to take advantage of the additional hardware capabilities.</p>
-<h3 id="demo-screens">Demo Screens<a class="headerlink" href="#demo-screens" title="Permanent link">~</a></h3>
-<p><a href="integrations/home-assistant/sampl_conf#some-basic-controls"><img alt="screenshot" src="assets/images/screenshots/demo_switches_covers.png" /></a> &nbsp; 
-<a href="integrations/home-assistant/sampl_conf#media-player"><img alt="screenshot" src="assets/images/screenshots/demo_mediaplayer.png" /></a> &nbsp;   <br />
-<a href="integrations/examples/example-dashui.html"><img alt="Screenshot" src="assets/images/screenshots/dashui-060.png" /></a> &nbsp;
-<a href="integrations/openhab/integration_openhab.html"><img alt="Screenshot" src="assets/images/screenshots/demo_jaffa1.png" /></a> &nbsp; </p>
-<h3 id="features">Features<a class="headerlink" href="#features" title="Permanent link">~</a></h3>
-<table>
-<thead>
-<tr>
-<th>Feature</th>
-<th>ESP8266</th>
-<th>ESP32</th>
-<th>STM32F4</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>SPI display</td>
-<td><img alt="✅" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/2705.svg" title=":white_check_mark:" /> yes</td>
-<td><img alt="✅" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/2705.svg" title=":white_check_mark:" /> yes</td>
-<td><img alt="✅" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/2705.svg" title=":white_check_mark:" /> yes</td>
-</tr>
-<tr>
-<td>Parallel display</td>
-<td><img alt="❌" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/274c.svg" title=":x:" /> no</td>
-<td><img alt="✅" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/2705.svg" title=":white_check_mark:" /> yes</td>
-<td><img alt="✅" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/2705.svg" title=":white_check_mark:" /> yes</td>
-</tr>
-<tr>
-<td>PWM Screen dimming</td>
-<td><img alt="✅" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/2705.svg" title=":white_check_mark:" /> yes</td>
-<td><img alt="✅" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/2705.svg" title=":white_check_mark:" /> yes</td>
-<td><img alt="✅" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/2705.svg" title=":white_check_mark:" /> yes</td>
-</tr>
-<tr>
-<td>Maximum Page Count</td>
-<td>4</td>
-<td>12</td>
-<td>12</td>
-</tr>
-<tr>
-<td>Object Types / Widgets</td>
-<td>14</td>
-<td>15</td>
-<td>15</td>
-</tr>
-<tr>
-<td>Dynamic Objects</td>
-<td><img alt="✅" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/2705.svg" title=":white_check_mark:" /> yes</td>
-<td><img alt="✅" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/2705.svg" title=":white_check_mark:" /> yes</td>
-<td><img alt="✅" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/2705.svg" title=":white_check_mark:" /> yes</td>
-</tr>
-<tr>
-<td>Theme Support</td>
-<td>yes</td>
-<td>yes</td>
-<td>yes</td>
-</tr>
-<tr>
-<td><a href="https://github.com/fvanroie/HMI-Font-Pack/releases">Custom .zi V5 font</a></td>
-<td><img alt="✅" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/2705.svg" title=":white_check_mark:" /> yes (latin1)</td>
-<td><img alt="✅" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/2705.svg" title=":white_check_mark:" /> yes (latin1)</td>
-<td>no</td>
-</tr>
-<tr>
-<td>MDI Icons</td>
-<td><img alt="✅" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/2705.svg" title=":white_check_mark:" /> yes</td>
-<td><img alt="✅" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/2705.svg" title=":white_check_mark:" /> yes</td>
-<td>no</td>
-</tr>
-<tr>
-<td>PNG images</td>
-<td><img alt="❌" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/274c.svg" title=":x:" /> no</td>
-<td><img alt="✅" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/2705.svg" title=":white_check_mark:" /> yes</td>
-<td><img alt="✅" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/2705.svg" title=":white_check_mark:" /> yes</td>
-</tr>
-<tr>
-<td>Network</td>
-<td><img alt="✅" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/2705.svg" title=":white_check_mark:" /> Wi-Fi</td>
-<td><img alt="✅" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/2705.svg" title=":white_check_mark:" /> Wi-Fi</td>
-<td><img alt="✅" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/2705.svg" title=":white_check_mark:" /> Ethernet</td>
-</tr>
-</tbody>
-</table>
-<h3 id="support">Support<a class="headerlink" href="#support" title="Permanent link">~</a></h3>
-<p>For support using openHASP please find us on Github, Discord or Home Assistant:</p>
-<p><a class="md-button md-button--primary" href="https://github.com/HASwitchPlate/openHASP/discussions"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/></svg></span> Github Discussions</a>
-<a class="md-button md-button--primary" href="https://discord.gg/VCWyuhF"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m22 24-5.25-5 .63 2H4.5A2.5 2.5 0 0 1 2 18.5v-15A2.5 2.5 0 0 1 4.5 1h15A2.5 2.5 0 0 1 22 3.5V24M12 6.8c-2.68 0-4.56 1.15-4.56 1.15 1.03-.92 2.83-1.45 2.83-1.45l-.17-.17c-1.69.03-3.22 1.2-3.22 1.2-1.72 3.59-1.61 6.69-1.61 6.69 1.4 1.81 3.48 1.68 3.48 1.68l.71-.9c-1.25-.27-2.04-1.38-2.04-1.38S9.3 14.9 12 14.9s4.58-1.28 4.58-1.28-.79 1.11-2.04 1.38l.71.9s2.08.13 3.48-1.68c0 0 .11-3.1-1.61-6.69 0 0-1.53-1.17-3.22-1.2l-.17.17s1.8.53 2.83 1.45c0 0-1.88-1.15-4.56-1.15m-2.07 3.79c.65 0 1.18.57 1.17 1.27 0 .69-.52 1.27-1.17 1.27-.64 0-1.16-.58-1.16-1.27 0-.7.51-1.27 1.16-1.27m4.17 0c.65 0 1.17.57 1.17 1.27 0 .69-.52 1.27-1.17 1.27-.64 0-1.16-.58-1.16-1.27 0-.7.51-1.27 1.16-1.27z"/></svg></span> Discord Chat</a>
-<a class="md-button md-button--primary" href="https://community.home-assistant.io/t/openhasp-an-mqtt-driven-touchscreen-scene-controller/300853"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.8 13H20v8h-7v-3.33l2.79-2.79.71.12a2.1 2.1 0 1 0 0-4.2 2.1 2.1 0 0 0-2.1 2.1l.1.71-1.5 1.52V9.65c.66-.36 1.1-1.05 1.1-1.85A2.1 2.1 0 0 0 12 5.7a2.1 2.1 0 0 0-2.1 2.1c0 .8.44 1.49 1.1 1.85v5.48l-1.5-1.52.1-.71a2.1 2.1 0 0 0-2.1-2.1 2.1 2.1 0 0 0-2.1 2.1A2.1 2.1 0 0 0 7.5 15l.71-.12L11 17.67V21H4v-8H2.25c-.42 0-.83 0-.83-.21.01-.22.43-.64.86-1.07L11 3c.33-.33.67-.67 1-.67.33 0 .67.34 1 .67l4 4V6h2v3l2.78 2.78c.4.4.81.81.82 1.02 0 .2-.4.2-.8.2M7.5 12a.9.9 0 0 1 .9.9.9.9 0 0 1-.9.9.9.9 0 0 1-.9-.9.9.9 0 0 1 .9-.9m9 0c.5 0 .9.4.9.9s-.4.9-.9.9a.9.9 0 0 1-.9-.9.9.9 0 0 1 .9-.9M12 6.9c.5 0 .9.4.9.9s-.4.9-.9.9-.9-.4-.9-.9.4-.9.9-.9z"/></svg></span> Home Assistant Forum</a></p>
+                <h1>Licentie</h1>
+
+<h2 id="mit-license">MIT License<a class="headerlink" href="#mit-license" title="Permanent link">~</a></h2>
+<p>openHASP is Copyright© 2019-2021 fvanroie, netwize.be and contributors</p>
+<p>Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:</p>
+<p>The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.</p>
+<p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.</p>
+<hr />
+<h2 id="components">Components<a class="headerlink" href="#components" title="Permanent link">~</a></h2>
+<h3 id="core">Core<a class="headerlink" href="#core" title="Permanent link">~</a></h3>
+<p>openHASP is based on the existing work of the following open source developers:</p>
+<ul>
+<li>
+<p><a href="https://github.com/HASwitchPlate/HASPone">HASwitchPlate</a>, the original Arduino project,
+  Copyright© 2019 Allen Derusha.
+  HASwitchPlate is distributed under the terms of the <a href="http://opensource.org/licenses/MIT">MIT License</a>.</p>
+</li>
+<li>
+<p><a href="https://lvgl.io/">LVGL</a> graphics library,
+  Copyright© 2016 Gábor Kiss-Vámosi and
+  Copyright© 2020 LVGL LLC.
+  LVGL is distributed under the terms of the <a href="http://opensource.org/licenses/MIT">MIT License</a>.</p>
+</li>
+<li>
+<p><a href="https://arduinojson.org/">ArduinoJson</a>
+  Copyright© 2014-2020 Benoit BLANCHON
+  <a href="http://opensource.org/licenses/MIT">MIT License</a>.</p>
+</li>
+</ul>
+<h3 id="mcu">MCU<a class="headerlink" href="#mcu" title="Permanent link">~</a></h3>
+<ul>
+<li>
+<p><a href="https://github.com/Bodmer/TFT_eSPI">TFT_eSPI</a> display library,
+  Copyright© 2020 Bodmer (https://github.com/Bodmer) All rights reserved.
+  TFT_eSPI is distributed under the terms of the <a href="https://opensource.org/licenses/BSD-2-Clause">FreeBSD License</a>
+  and includes parts from the <a href="https://github.com/adafruit/Adafruit-GFX-Library">Adafruit_GFX library</a>,
+  Copyright© 2012 Adafruit Industries. All rights reserved.
+  Adafruit_GFX is distributed under the terms of the <a href="https://opensource.org/licenses/BSD-2-Clause">BSD License</a></p>
+</li>
+<li>
+<p>zi Font Engine
+  Copyright© 2020 fvanroie, netwize.be
+  <a href="http://opensource.org/licenses/MIT">MIT License</a>.</p>
+</li>
+<li>
+<p><a href="https://github.com/knolleary/pubsubclient">PubSubClient</a>
+  Copyright© 2008-2015 Nicholas O'Leary
+  <a href="http://opensource.org/licenses/MIT">MIT License</a>.</p>
+</li>
+<li>
+<p>Logging engine is based on <a href="https://github.com/thijse/Arduino-Log">ArduinoLog</a>,
+  Copyright© 2017,2018 Thijs Elenbaas, MrRobot62, rahuldeo2047, NOX73, dhylands, Josha blemasle, mfalkvidd
+  with modifications by fvanroie, netwize.be.
+  ArduinoLog is distributed under the terms of the <a href="http://opensource.org/licenses/MIT">MIT License</a>.</p>
+</li>
+<li>
+<p><a href="https://github.com/nayuki/QR-Code-generator">QR Code generator</a>
+  Copyright© Project Nayuki
+  <a href="http://opensource.org/licenses/MIT">MIT License</a>.</p>
+</li>
+<li>
+<p><a href="https://github.com/bxparks/AceButton">AceButton</a>
+  Copyright© 2018 Brian T. Park
+  <a href="http://opensource.org/licenses/MIT">MIT License</a>.</p>
+</li>
+<li>
+<p><a href="https://github.com/bblanchon/ArduinoStreamUtils">ArduinoStreamUtils</a>
+  Copyright© 2019 Benoit BLANCHON
+  <a href="http://opensource.org/licenses/MIT">MIT License</a>.</p>
+</li>
+</ul>
+<h3 id="native-application">Native Application<a class="headerlink" href="#native-application" title="Permanent link">~</a></h3>
+<ul>
+<li>
+<p>paho.mqtt.c client library
+  Copyright© Eclipse Foundation
+  Paho is distributed under the terms of the <a href="https://www.eclipse.org/legal/epl-2.0/">Eclipse Public License v2.0</a></p>
+</li>
+<li>
+<p>Simple DirectMedia Layer library
+  Copyright© 1997-2021 Sam Lantinga <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#115;&#108;&#111;&#117;&#107;&#101;&#110;&#64;&#108;&#105;&#98;&#115;&#100;&#108;&#46;&#111;&#114;&#103;">&#115;&#108;&#111;&#117;&#107;&#101;&#110;&#64;&#108;&#105;&#98;&#115;&#100;&#108;&#46;&#111;&#114;&#103;</a>
+  SDL 2.0 and newer are available under the <a href="https://www.zlib.net/zlib_license.html">zlib license</a></p>
+</li>
+</ul>
+<h3 id="native-windows-application">Native Windows Application<a class="headerlink" href="#native-windows-application" title="Permanent link">~</a></h3>
+<ul>
+<li>mingw-w64 GCC for Windows 64 &amp; 32 bits
+  Copyright© 2009 - 2013 by the mingw-w64 project
+  Mingw-w64 is free software and permissively-licensed. The details are located in the sources themselves. </li>
+</ul>
+<h3 id="assets">Assets<a class="headerlink" href="#assets" title="Permanent link">~</a></h3>
+<ul>
+<li>
+<p>Built-in font unscii (8pt)
+  Copyright© viznut.
+  A public domain bitmapped Unicode font </p>
+</li>
+<li>
+<p>Built-in font Roboto Consensed
+  Copyright© 2011 Google Inc. All Rights Reserved.
+  Ubuntu Consensed is licensed under the <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>.</p>
+</li>
+<li>
+<p>Custom zi fonts and built-in fonts incorporate <a href="http://fontawesome.io/">Font Awesome</a>,
+  Copyright© 2017 Dave Gandy.
+  Font Awesome is distributed under the terms of the <a href="http://scripts.sil.org/OFL">SIL OFL 1.1</a> 
+  and <a href="http://opensource.org/licenses/MIT">MIT License</a>.</p>
+</li>
+<li>
+<p>The bootscreen uses the <a href="https://materialdesignicons.com/">MaterialDesign Icons</a> font,
+  Copyright© 2014, Austin Andrews.
+  MaterialDesign Icons font is licensed under the SIL Open Font License, Version 1.1.</p>
+</li>
+</ul>
                 
                   
                     
@@ -1305,13 +1316,26 @@ on the MCU to drive a commodity display.</p>
 <footer class="md-footer">
     
     <nav class="md-footer__inner md-grid" aria-label="Footer">
+        
+        <a href="license.html" class="md-footer__link md-footer__link--prev" rel="prev">
+            <div class="md-footer__button md-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer__title">
+                <div class="md-ellipsis">
+                    <span class="md-footer__direction">
+                  Previous
+                </span> License
+                </div>
+            </div>
+        </a>
          
-        <a href="getting-started.html" class="md-footer__link md-footer__link--next" rel="next">
+        <a href="assets/videos/videos.html" class="md-footer__link md-footer__link--next" rel="next">
             <div class="md-footer__title">
                 <div class="md-ellipsis">
                     <span class="md-footer__direction">
                   Next
-                </span> Getting started
+                </span> Videos
                 </div>
             </div>
             <div class="md-footer__button md-icon">

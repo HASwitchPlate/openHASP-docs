@@ -18,7 +18,7 @@
     
     
       
-        <title>openHASP</title>
+        <title>Getting started.nl - openHASP</title>
       
     
      
@@ -92,7 +92,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#demo-screens" class="md-skip">
+        <a href="#recommended-boards" class="md-skip">
           Skip to content
         </a>
       
@@ -127,7 +127,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Home
+              Getting started.nl
             
           </span>
         </div>
@@ -246,61 +246,11 @@
 
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Home
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="index.html" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
         Home
       </a>
-      
-        
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#demo-screens" class="md-nav__link">
-    Demo Screens
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#features" class="md-nav__link">
-    Features
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#support" class="md-nav__link">
-    Support
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
     
@@ -1139,22 +1089,49 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#demo-screens" class="md-nav__link">
-    Demo Screens
+  <a href="#recommended-boards" class="md-nav__link">
+    Recommended Boards
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#features" class="md-nav__link">
-    Features
+  <a href="#recommended-display" class="md-nav__link">
+    Recommended Display
+  </a>
+  
+    <nav class="md-nav" aria-label="Recommended Display">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lolin-tft-24" class="md-nav__link">
+    Lolin TFT 2.4"
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#compatible-esp-boards" class="md-nav__link">
+    Compatible ESP boards
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#alternative-spi-display" class="md-nav__link">
+    Alternative SPI Display
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#support" class="md-nav__link">
-    Support
+  <a href="#ready-made-devices" class="md-nav__link">
+    Ready-made devices
   </a>
   
 </li>
@@ -1171,110 +1148,174 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/HASwitchPlate/openHASP-docs/edit/0.6/docs/index.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/HASwitchPlate/openHASP-docs/edit/0.6/docs/getting-started.nl.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                  <h1>Home</h1>
-                
-                <p><img src="assets/images/logo.png" style="width:10rem"></img>
-<span style="font-family: 'Lato', 'Arial', helvetica;  font-size: 400%; font-weight: bold">openHASP 0.6<span></p>
-<p>Control your home-automation devices from a customizable touchscreen UI connected via MQTT.</p>
-<p>openHASP is a re-implementation of the popular HASwitchPlate sketch created by aderusha.
-The <a href="https://github.com/HASwitchPlate/HASPone">HASPone</a> project uses a Wemos D1 mini and requires a Nextion/TJC HMI display.
-This rewrite removes the Nextion/TJC requirement by using the <a href="https://github.com/lvgl/lvgl">Light and Versatile Graphics Library</a>
-on the MCU to drive a commodity display.</p>
-<p>This project also adds ESP32 and STM32F4 support to take advantage of the additional hardware capabilities.</p>
-<h3 id="demo-screens">Demo Screens<a class="headerlink" href="#demo-screens" title="Permanent link">~</a></h3>
-<p><a href="integrations/home-assistant/sampl_conf#some-basic-controls"><img alt="screenshot" src="assets/images/screenshots/demo_switches_covers.png" /></a> &nbsp; 
-<a href="integrations/home-assistant/sampl_conf#media-player"><img alt="screenshot" src="assets/images/screenshots/demo_mediaplayer.png" /></a> &nbsp;   <br />
-<a href="integrations/examples/example-dashui.html"><img alt="Screenshot" src="assets/images/screenshots/dashui-060.png" /></a> &nbsp;
-<a href="integrations/openhab/integration_openhab.html"><img alt="Screenshot" src="assets/images/screenshots/demo_jaffa1.png" /></a> &nbsp; </p>
-<h3 id="features">Features<a class="headerlink" href="#features" title="Permanent link">~</a></h3>
+                <h1>Starten met openHASP</h1>
+
+<p>openHASP supports the ESP32, ESP8266 and STM32F4 families of microcontrollers.
+It needs a compatible micro-controller with drivers supporting the attached display, touch controller, storage and network.</p>
+<p>Below is a list of recommended development boards and a TFT touchscreen to get you up-and-running in no time.</p>
+<p><img alt="Plug-and-play" src="assets/images/lolin-esp.png" title="ESP with Lolin 2.4&quot;" /></p>
+<h2 id="recommended-boards">Recommended Boards<a class="headerlink" href="#recommended-boards" title="Permanent link">~</a></h2>
+<style>
+table th:first-of-type {
+    width: 12%;
+}
+table th:nth-of-type(2) {
+    width: 22%;
+}
+table th:nth-of-type(3) {
+    width: 22%;
+}
+table th:nth-of-type(4) {
+    width: 22%;
+}
+table th:last-of-type {
+    width: 22%;
+}
+</style>
 <table>
 <thead>
 <tr>
-<th>Feature</th>
-<th>ESP8266</th>
-<th>ESP32</th>
-<th>STM32F4</th>
+<th align="left">&nbsp;</th>
+<th align="center">Minimal</th>
+<th align="center">Basic</th>
+<th align="center">Standard</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>SPI display</td>
-<td><img alt="✅" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/2705.svg" title=":white_check_mark:" /> yes</td>
-<td><img alt="✅" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/2705.svg" title=":white_check_mark:" /> yes</td>
-<td><img alt="✅" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/2705.svg" title=":white_check_mark:" /> yes</td>
+<td align="left">MCU</td>
+<td align="center">ESP8266</td>
+<td align="center">ESP32-WROOM</td>
+<td align="center">ESP32-WROVER</td>
 </tr>
 <tr>
-<td>Parallel display</td>
-<td><img alt="❌" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/274c.svg" title=":x:" /> no</td>
-<td><img alt="✅" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/2705.svg" title=":white_check_mark:" /> yes</td>
-<td><img alt="✅" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/2705.svg" title=":white_check_mark:" /> yes</td>
+<td align="left">CPU Freq.</td>
+<td align="center">80Mhz</td>
+<td align="center">240Mhz</td>
+<td align="center">240Mhz</td>
 </tr>
 <tr>
-<td>PWM Screen dimming</td>
-<td><img alt="✅" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/2705.svg" title=":white_check_mark:" /> yes</td>
-<td><img alt="✅" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/2705.svg" title=":white_check_mark:" /> yes</td>
-<td><img alt="✅" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/2705.svg" title=":white_check_mark:" /> yes</td>
+<td align="left">Ram</td>
+<td align="center">80Kb</td>
+<td align="center">520Kb</td>
+<td align="center">520Kb</td>
 </tr>
 <tr>
-<td>Maximum Page Count</td>
-<td>4</td>
-<td>12</td>
-<td>12</td>
+<td align="left">PSRam</td>
+<td align="center">no</td>
+<td align="center">no</td>
+<td align="center">yes</td>
 </tr>
 <tr>
-<td>Object Types / Widgets</td>
-<td>14</td>
-<td>15</td>
-<td>15</td>
+<td align="left">Minimal Flash</td>
+<td align="center">4MB</td>
+<td align="center">4MB</td>
+<td align="center">4MB</td>
 </tr>
 <tr>
-<td>Dynamic Objects</td>
-<td><img alt="✅" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/2705.svg" title=":white_check_mark:" /> yes</td>
-<td><img alt="✅" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/2705.svg" title=":white_check_mark:" /> yes</td>
-<td><img alt="✅" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/2705.svg" title=":white_check_mark:" /> yes</td>
+<td align="left">Display</td>
+<td align="center">ILI9341 SPI</td>
+<td align="center">ILI9341 SPI</td>
+<td align="center">ILI9341 SPI</td>
 </tr>
 <tr>
-<td>Theme Support</td>
-<td>yes</td>
-<td>yes</td>
-<td>yes</td>
+<td align="left">Touch</td>
+<td align="center">XPT2046 SPI</td>
+<td align="center">XPT2046 SPI</td>
+<td align="center">XPT2046 SPI</td>
 </tr>
 <tr>
-<td><a href="https://github.com/fvanroie/HMI-Font-Pack/releases">Custom .zi V5 font</a></td>
-<td><img alt="✅" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/2705.svg" title=":white_check_mark:" /> yes (latin1)</td>
-<td><img alt="✅" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/2705.svg" title=":white_check_mark:" /> yes (latin1)</td>
-<td>no</td>
+<td align="left">Network</td>
+<td align="center">Wi-Fi</td>
+<td align="center">Wi-Fi</td>
+<td align="center">Wi-Fi</td>
 </tr>
 <tr>
-<td>MDI Icons</td>
-<td><img alt="✅" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/2705.svg" title=":white_check_mark:" /> yes</td>
-<td><img alt="✅" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/2705.svg" title=":white_check_mark:" /> yes</td>
-<td>no</td>
+<td align="left">Dev. Board*</td>
+<td align="center"><a href="https://www.aliexpress.com/item/32643142716.html">D1 mini ESP8266</a></td>
+<td align="center"><a href="https://www.aliexpress.com/item/32815530502.html">D1 mini ESP32</a></td>
+<td align="center"><a href="https://www.aliexpress.com/item/32977375539.html">TTGO T7 v1.5 Mini32</a></td>
 </tr>
 <tr>
-<td>PNG images</td>
-<td><img alt="❌" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/274c.svg" title=":x:" /> no</td>
-<td><img alt="✅" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/2705.svg" title=":white_check_mark:" /> yes</td>
-<td><img alt="✅" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/2705.svg" title=":white_check_mark:" /> yes</td>
-</tr>
-<tr>
-<td>Network</td>
-<td><img alt="✅" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/2705.svg" title=":white_check_mark:" /> Wi-Fi</td>
-<td><img alt="✅" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/2705.svg" title=":white_check_mark:" /> Wi-Fi</td>
-<td><img alt="✅" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/2705.svg" title=":white_check_mark:" /> Ethernet</td>
+<td align="left">Firmware</td>
+<td align="center"><a href="https://github.com/HASwitchPlate/openHASP/releases">Download</a></td>
+<td align="center"><a href="https://github.com/HASwitchPlate/openHASP/releases">Download</a></td>
+<td align="center"><a href="https://github.com/HASwitchPlate/openHASP/releases">Download</a></td>
 </tr>
 </tbody>
 </table>
-<h3 id="support">Support<a class="headerlink" href="#support" title="Permanent link">~</a></h3>
-<p>For support using openHASP please find us on Github, Discord or Home Assistant:</p>
-<p><a class="md-button md-button--primary" href="https://github.com/HASwitchPlate/openHASP/discussions"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/></svg></span> Github Discussions</a>
-<a class="md-button md-button--primary" href="https://discord.gg/VCWyuhF"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m22 24-5.25-5 .63 2H4.5A2.5 2.5 0 0 1 2 18.5v-15A2.5 2.5 0 0 1 4.5 1h15A2.5 2.5 0 0 1 22 3.5V24M12 6.8c-2.68 0-4.56 1.15-4.56 1.15 1.03-.92 2.83-1.45 2.83-1.45l-.17-.17c-1.69.03-3.22 1.2-3.22 1.2-1.72 3.59-1.61 6.69-1.61 6.69 1.4 1.81 3.48 1.68 3.48 1.68l.71-.9c-1.25-.27-2.04-1.38-2.04-1.38S9.3 14.9 12 14.9s4.58-1.28 4.58-1.28-.79 1.11-2.04 1.38l.71.9s2.08.13 3.48-1.68c0 0 .11-3.1-1.61-6.69 0 0-1.53-1.17-3.22-1.2l-.17.17s1.8.53 2.83 1.45c0 0-1.88-1.15-4.56-1.15m-2.07 3.79c.65 0 1.18.57 1.17 1.27 0 .69-.52 1.27-1.17 1.27-.64 0-1.16-.58-1.16-1.27 0-.7.51-1.27 1.16-1.27m4.17 0c.65 0 1.17.57 1.17 1.27 0 .69-.52 1.27-1.17 1.27-.64 0-1.16-.58-1.16-1.27 0-.7.51-1.27 1.16-1.27z"/></svg></span> Discord Chat</a>
-<a class="md-button md-button--primary" href="https://community.home-assistant.io/t/openhasp-an-mqtt-driven-touchscreen-scene-controller/300853"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.8 13H20v8h-7v-3.33l2.79-2.79.71.12a2.1 2.1 0 1 0 0-4.2 2.1 2.1 0 0 0-2.1 2.1l.1.71-1.5 1.52V9.65c.66-.36 1.1-1.05 1.1-1.85A2.1 2.1 0 0 0 12 5.7a2.1 2.1 0 0 0-2.1 2.1c0 .8.44 1.49 1.1 1.85v5.48l-1.5-1.52.1-.71a2.1 2.1 0 0 0-2.1-2.1 2.1 2.1 0 0 0-2.1 2.1A2.1 2.1 0 0 0 7.5 15l.71-.12L11 17.67V21H4v-8H2.25c-.42 0-.83 0-.83-.21.01-.22.43-.64.86-1.07L11 3c.33-.33.67-.67 1-.67.33 0 .67.34 1 .67l4 4V6h2v3l2.78 2.78c.4.4.81.81.82 1.02 0 .2-.4.2-.8.2M7.5 12a.9.9 0 0 1 .9.9.9.9 0 0 1-.9.9.9.9 0 0 1-.9-.9.9.9 0 0 1 .9-.9m9 0c.5 0 .9.4.9.9s-.4.9-.9.9a.9.9 0 0 1-.9-.9.9.9 0 0 1 .9-.9M12 6.9c.5 0 .9.4.9.9s-.4.9-.9.9-.9-.4-.9-.9.4-.9.9-.9z"/></svg></span> Home Assistant Forum</a></p>
+<div class="admonition note">
+<p class="admonition-title"> </p>
+<p><em>Due to the large number of possible hardware options a selection of 3 popular ESP development boards has been made for the precompiled binaries.</em></p>
+</div>
+<p>For new projects we recommend ESP32-WROVER boards with PSram.</p>
+<p>The performance of the ESP8266 will be slow due to its low memory and CPU frequency.
+It is okay for getting started, for small project where speed is not needed or when you have one at hand.</p>
+<div class="admonition warning">
+<p class="admonition-title">Tip</p>
+<p>Advanced users can build and compile custom configurations using PlatformIO <a href="compiling/local.html">locally</a> or <a href="compiling/gitpod.html">online with Gitpod</a>, however this is not currently supported.</p>
+</div>
+<h2 id="recommended-display">Recommended Display<a class="headerlink" href="#recommended-display" title="Permanent link">~</a></h2>
+<h3 id="lolin-tft-24">Lolin TFT 2.4"<a class="headerlink" href="#lolin-tft-24" title="Permanent link">~</a></h3>
+<p><img alt="TFT-LED PWM dimming" src="assets/images/lolin24tft.png" /></p>
+<p>ILI9341 SPI touchscreens with backlight dimming via PWM are quite cheap to get.
+An ILI9341 TFT display with SPI is required when using a pre-built binary.
+The touch controller needs to be the XPT2046 Resistive Touch driver.</p>
+<p>The Lolin TFT 2.4" is <strong>plug-and-play</strong> with the 3 recommended ESP development boards.
+If you have another ESP or MCU, you can still use this display using jumper cables.
+You can also solder a row of headers at the bottom of the display to plug it into a breadboard.
+Therefor the Lolin TFT 2.4 Touch Shield is used as the development display of choice.</p>
+<h5 id="backlight-control">Backlight Control<a class="headerlink" href="#backlight-control" title="Permanent link">~</a></h5>
+<p>To use PWM dimming on the Lolin TFT 2.4" you must connect the TFT-LED pin to either D1, D2 or D4.
+<strong>D1 is recommended</strong> for backlight control and configured by default.</p>
+<p><img alt="TFT-LED PWM dimming" src="assets/images/tft-led-pwm.png" /></p>
+<div class="admonition danger">
+<p class="admonition-title"><i class="fa fa-exclamation-triangle"></i> Do <em>not</em> use D3 for backlight control because it is already in use for touch!</p>
+</div>
+<div class="admonition warning">
+<p>It is <em>not</em> recommended to use D4 for backlight control because it is already in use for PSram on the ESP32-Wrover.
+The D1-mini has D4 connected to on-board LED and boot fails if pulled LOW</p>
+</div>
+<h3 id="compatible-esp-boards">Compatible ESP boards<a class="headerlink" href="#compatible-esp-boards" title="Permanent link">~</a></h3>
+<p><img alt="TFT-LED PWM dimming" src="assets/images/esp_boards.png" /></p>
+<p>The Lolin TFT 2.4" header is <strong>plug-and-play</strong> compatible with these development boards,
+no need to use any jumper cables:</p>
+<p><strong>ESP32:</strong></p>
+<ul>
+<li>Wemos D1 Mini ESP32 <em>(</em><em>only</em><em> solder the inner row of pin headers)</em></li>
+<li>TTGO T7 V1.5 MINI32 ESP32 <em>(</em><em>only</em><em> solder the inner row of pin headers)</em></li>
+<li>LOLIN D32 Pro V2.0.0 <em>using an </em><em>additional</em><em> TFT cable</em></li>
+</ul>
+<p><strong>ESP8266:</strong></p>
+<ul>
+<li>Wemos D1 Mini ESP8266</li>
+<li>Lolin D1 Mini Pro ESP8266 V2.0.0</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you have a Lolin TFT 2.4" Display and a compatible ESP development board, you have all the hardware that is needed.
+In that case you can skip ahead to the <a href="../installation/esp32">Firmware Installation</a>.</p>
+</div>
+<h2 id="alternative-spi-display">Alternative SPI Display<a class="headerlink" href="#alternative-spi-display" title="Permanent link">~</a></h2>
+<p>Any common ILI9341 320x240 4-wire SPI touchscreen with XPT2046 Resistive Touch driver can be used, like:</p>
+<ul>
+<li>2.4" SKU: <a href="http://www.lcdwiki.com/2.4inch_SPI_Module_ILI9341_SKU:MSP2402">MSP2402</a></li>
+<li>2.8" SKU: <a href="http://www.lcdwiki.com/2.8inch_SPI_Module_ILI9341_SKU:MSP2807">MSP2807</a></li>
+<li>3.2" SKU: <a href="http://www.lcdwiki.com/3.2inch_SPI_Module_ILI9341_SKU:MSP3218">MSP3218</a></li>
+</ul>
+<p>You will need to connect <a href="../displays/MSPxxxx">the GPIO pins</a> using jumper wires.</p>
+<h2 id="ready-made-devices">Ready-made devices<a class="headerlink" href="#ready-made-devices" title="Permanent link">~</a></h2>
+<p>Some manufacturers offer IoT devices which are ready to go with openHASP:</p>
+<ul>
+<li><a href="../devices/freetouchdeck">FreeTouchDeck</a></li>
+<li><a href="../devices/lanbon-l8">Lanbon L8</a></li>
+<li><a href="../devices/esp32-touchdown">ESP32-Touchdown</a></li>
+</ul>
                 
                   
                     
@@ -1305,13 +1346,26 @@ on the MCU to drive a commodity display.</p>
 <footer class="md-footer">
     
     <nav class="md-footer__inner md-grid" aria-label="Footer">
+        
+        <a href="getting-started.html" class="md-footer__link md-footer__link--prev" rel="prev">
+            <div class="md-footer__button md-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer__title">
+                <div class="md-ellipsis">
+                    <span class="md-footer__direction">
+                  Previous
+                </span> Getting started
+                </div>
+            </div>
+        </a>
          
-        <a href="getting-started.html" class="md-footer__link md-footer__link--next" rel="next">
+        <a href="index.nl.html" class="md-footer__link md-footer__link--next" rel="next">
             <div class="md-footer__title">
                 <div class="md-ellipsis">
                     <span class="md-footer__direction">
                   Next
-                </span> Getting started
+                </span> Index.nl
                 </div>
             </div>
             <div class="md-footer__button md-icon">
