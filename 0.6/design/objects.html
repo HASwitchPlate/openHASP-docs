@@ -1658,7 +1658,7 @@ but only the <code>id</code> and <code>obj</code> properties are required to cre
 <tr>
 <td align="left">obj</td>
 <td></td>
-<td align="center"><a href="../data-types#string">string</a></td>
+<td align="center"><a href="data-types#string">string</a></td>
 <td align="center">yes</td>
 <td align="center">n/a</td>
 <td align="left">Name of the object type <em>(see below)</em></td>
@@ -1677,12 +1677,12 @@ but only the <code>id</code> and <code>obj</code> properties are required to cre
 <td align="center">0..15</td>
 <td align="center">no</td>
 <td align="center">0 (none)</td>
-<td align="left">ID of the <a href="../../configuration/gpio#groupid">GPIO group</a> the object belongs to</td>
+<td align="left">ID of the <a href="../configuration/gpio#groupid">GPIO group</a> the object belongs to</td>
 </tr>
 <tr>
 <td align="left">x</td>
 <td></td>
-<td align="center"><a href="../data-types#integer">int16</a></td>
+<td align="center"><a href="data-types#integer">int16</a></td>
 <td align="center">no</td>
 <td align="center">0</td>
 <td align="left">horizontal position on the page</td>
@@ -1690,7 +1690,7 @@ but only the <code>id</code> and <code>obj</code> properties are required to cre
 <tr>
 <td align="left">y</td>
 <td></td>
-<td align="center"><a href="../data-types#integer">int16</a></td>
+<td align="center"><a href="data-types#integer">int16</a></td>
 <td align="center">no</td>
 <td align="center">0</td>
 <td align="left">vertical position on the page</td>
@@ -1698,7 +1698,7 @@ but only the <code>id</code> and <code>obj</code> properties are required to cre
 <tr>
 <td align="left">w</td>
 <td></td>
-<td align="center"><a href="../data-types#integer">int16</a></td>
+<td align="center"><a href="data-types#integer">int16</a></td>
 <td align="center">no</td>
 <td align="center">0</td>
 <td align="left">width of the object</td>
@@ -1706,7 +1706,7 @@ but only the <code>id</code> and <code>obj</code> properties are required to cre
 <tr>
 <td align="left">h</td>
 <td></td>
-<td align="center"><a href="../data-types#integer">int16</a></td>
+<td align="center"><a href="data-types#integer">int16</a></td>
 <td align="center">no</td>
 <td align="center">0</td>
 <td align="left">height of the object</td>
@@ -1714,7 +1714,7 @@ but only the <code>id</code> and <code>obj</code> properties are required to cre
 <tr>
 <td align="left">hidden</td>
 <td></td>
-<td align="center"><a href="../data-types#boolean">bool</a></td>
+<td align="center"><a href="data-types#boolean">bool</a></td>
 <td align="center">no</td>
 <td align="center">false</td>
 <td align="left">object is hidden</td>
@@ -1730,7 +1730,7 @@ but only the <code>id</code> and <code>obj</code> properties are required to cre
 <tr>
 <td align="left">radius</td>
 <td></td>
-<td align="center"><a href="../data-types#integer">uint16</a></td>
+<td align="center"><a href="data-types#integer">uint16</a></td>
 <td align="center">no</td>
 <td align="center">depends<BR>on theme</td>
 <td align="left">the radius of the rounded corners of the object:<BR><code>0</code> square corners<BR><code>100</code> pill shaped object (true circle if object has same width and height)</td>
@@ -1738,7 +1738,7 @@ but only the <code>id</code> and <code>obj</code> properties are required to cre
 <tr>
 <td align="left">action</td>
 <td></td>
-<td align="center"><a href="../data-types#string">string</a></td>
+<td align="center"><a href="data-types#string">string</a></td>
 <td align="center">no</td>
 <td align="center">0</td>
 <td align="left">command handled locally <em>(see below)</em></td>
@@ -1746,7 +1746,7 @@ but only the <code>id</code> and <code>obj</code> properties are required to cre
 <tr>
 <td align="left">swipe</td>
 <td></td>
-<td align="center"><a href="../data-types#boolean">bool</a></td>
+<td align="center"><a href="data-types#boolean">bool</a></td>
 <td align="center">no</td>
 <td align="center">false</td>
 <td align="left">page navigation using swipe gestures <em>(see below)</em></td>
@@ -1754,10 +1754,10 @@ but only the <code>id</code> and <code>obj</code> properties are required to cre
 <tr>
 <td align="left">click</td>
 <td></td>
-<td align="center"><a href="../data-types#boolean">bool</a></td>
+<td align="center"><a href="data-types#boolean">bool</a></td>
 <td align="center">no</td>
 <td align="center">true</td>
-<td align="left">object is touch/clickable <em>(also see <a href="../styling#general">enabled</a>)</em></td>
+<td align="left">object is touch/clickable <em>(also see <a href="styling#general">enabled</a>)</em></td>
 </tr>
 <tr>
 <td align="left">ext_click_h</td>
@@ -1902,19 +1902,19 @@ Besides the common properties listed above, each object type can have specific p
 <tbody>
 <tr>
 <td>text</td>
-<td><a href="../data-types#string">string</a></td>
+<td><a href="data-types#string">string</a></td>
 <td>"Text"</td>
 <td>The text of the label, <code>\n</code> for line break.</td>
 </tr>
 <tr>
 <td>mode</td>
-<td><a href="../data-types#string">string</a></td>
+<td><a href="data-types#string">string</a></td>
 <td><code>crop</code></td>
 <td>The wrapping mode of long text labels:<br><code>expand</code> Expand the object size to the text size<br><code>break</code> Keep the object width, break the too long lines and expand the object height<br><code>dots</code> Keep the size and write dots at the end if the text is too long<br><code>scroll</code> Keep the size and roll the text back and forth<br><code>loop</code> Keep the size and roll the text circularly<br><code>crop</code> Keep the size and crop the text out of it</td>
 </tr>
 <tr>
 <td>align</td>
-<td><a href="../data-types#string">string</a></td>
+<td><a href="data-types#string">string</a></td>
 <td><code>left</code></td>
 <td>Text alignment: <code>left</code>, <code>center</code>, <code>right</code></td>
 </tr>
@@ -1939,31 +1939,31 @@ Besides the common properties listed above, each object type can have specific p
 <tbody>
 <tr>
 <td>toggle</td>
-<td><a href="../data-types#boolean">bool</a></td>
+<td><a href="data-types#boolean">bool</a></td>
 <td>false</td>
 <td>When enabled, creates a toggle-on/toggle-off button. If false, creates a normal button</td>
 </tr>
 <tr>
 <td>val</td>
-<td><a href="../data-types#integer">int16</a></td>
+<td><a href="data-types#integer">int16</a></td>
 <td>0</td>
 <td>The value: <code>0</code> = untoggled, <code>1</code> = toggled</td>
 </tr>
 <tr>
 <td>text</td>
-<td><a href="../data-types#string">string</a></td>
+<td><a href="data-types#string">string</a></td>
 <td>""</td>
 <td>The text of the label</td>
 </tr>
 <tr>
 <td>mode</td>
-<td><a href="../data-types#string">string</a></td>
+<td><a href="data-types#string">string</a></td>
 <td><code>expand</code></td>
 <td>The wrapping mode of long text labels.<br><code>expand</code> Expand the object size to the text size<br><code>break</code> Keep the object width, break the too long lines and expand the object height<br><code>dots</code> Keep the size and write dots at the end if the text is too long<br><code>scroll</code> Keep the size and roll the text back and forth<br><code>loop</code> Keep the size and roll the text circularly<br><code>crop</code> Keep the size and crop the text out of it</td>
 </tr>
 <tr>
 <td>align</td>
-<td><a href="../data-types#string">string</a></td>
+<td><a href="data-types#string">string</a></td>
 <td><code>left</code></td>
 <td>Text alignment: <code>left</code>, <code>center</code>, <code>right</code></td>
 </tr>
@@ -2022,25 +2022,25 @@ Besides the common properties listed above, each object type can have specific p
 <tbody>
 <tr>
 <td>val</td>
-<td><a href="../data-types#boolean">bool</a></td>
+<td><a href="data-types#boolean">bool</a></td>
 <td>0</td>
 <td><code>1</code> = on, <code>0</code> = off</td>
 </tr>
 <tr>
 <td>bg_color1</td>
-<td><a href="../data-types#colors">color</a></td>
+<td><a href="data-types#colors">color</a></td>
 <td>0</td>
 <td>changes indicator color</td>
 </tr>
 <tr>
 <td>bg_color2</td>
-<td><a href="../data-types#colors">color</a></td>
+<td><a href="data-types#colors">color</a></td>
 <td>0</td>
 <td>changes knob color</td>
 </tr>
 <tr>
 <td>radius2</td>
-<td><a href="../data-types#integer">int16</a></td>
+<td><a href="data-types#integer">int16</a></td>
 <td>depends<BR>on theme</td>
 <td>changes knob corner radius (also see <a href="#common-properties">radius</a>)</td>
 </tr>
@@ -2066,13 +2066,13 @@ Besides the common properties listed above, each object type can have specific p
 <tbody>
 <tr>
 <td>val</td>
-<td><a href="../data-types#integer">int16</a></td>
+<td><a href="data-types#integer">int16</a></td>
 <td>0</td>
 <td><code>1</code> = checked<br><code>0</code> = unchecked</td>
 </tr>
 <tr>
 <td>text</td>
-<td><a href="../data-types#string">string</a></td>
+<td><a href="data-types#string">string</a></td>
 <td>"Checkbox"</td>
 <td>The label of the checkbox</td>
 </tr>
@@ -2103,25 +2103,25 @@ based on the font and text.</p>
 <tbody>
 <tr>
 <td>min</td>
-<td><a href="../data-types#integer">int16</a></td>
+<td><a href="data-types#integer">int16</a></td>
 <td>0</td>
 <td>minimum value of the indicator</td>
 </tr>
 <tr>
 <td>max</td>
-<td><a href="../data-types#integer">int16</a></td>
+<td><a href="data-types#integer">int16</a></td>
 <td>100</td>
 <td>maximum value of the indicator</td>
 </tr>
 <tr>
 <td>val</td>
-<td><a href="../data-types#integer">int16</a></td>
+<td><a href="data-types#integer">int16</a></td>
 <td>0</td>
 <td>current value of the indicator</td>
 </tr>
 <tr>
 <td>start_value</td>
-<td><a href="../data-types#integer">int16</a></td>
+<td><a href="data-types#integer">int16</a></td>
 <td>0</td>
 <td>optional minimal allowed value of the indicator</td>
 </tr>
@@ -2147,25 +2147,25 @@ based on the font and text.</p>
 <tbody>
 <tr>
 <td>min</td>
-<td><a href="../data-types#integer">int16</a></td>
+<td><a href="data-types#integer">int16</a></td>
 <td>0</td>
 <td>minimum value of the indicator</td>
 </tr>
 <tr>
 <td>max</td>
-<td><a href="../data-types#integer">int16</a></td>
+<td><a href="data-types#integer">int16</a></td>
 <td>100</td>
 <td>maximum value of the indicator</td>
 </tr>
 <tr>
 <td>val</td>
-<td><a href="../data-types#integer">int16</a></td>
+<td><a href="data-types#integer">int16</a></td>
 <td>0</td>
 <td>current value of the indicator</td>
 </tr>
 <tr>
 <td>start_value</td>
-<td><a href="../data-types#integer">int16</a></td>
+<td><a href="data-types#integer">int16</a></td>
 <td>0</td>
 <td>optional minimal allowed value of the indicator</td>
 </tr>
@@ -2222,25 +2222,25 @@ based on the font and text.</p>
 <tbody>
 <tr>
 <td>min</td>
-<td><a href="../data-types#integer">int16</a></td>
+<td><a href="data-types#integer">int16</a></td>
 <td>0</td>
 <td>minimum value of the indicator</td>
 </tr>
 <tr>
 <td>max</td>
-<td><a href="../data-types#integer">int16</a></td>
+<td><a href="data-types#integer">int16</a></td>
 <td>100</td>
 <td>maximum value of the indicator</td>
 </tr>
 <tr>
 <td>val</td>
-<td><a href="../data-types#integer">int16</a></td>
+<td><a href="data-types#integer">int16</a></td>
 <td>0</td>
 <td>current value of the indicator</td>
 </tr>
 <tr>
 <td>rotation</td>
-<td><a href="../data-types#integer">int16</a></td>
+<td><a href="data-types#integer">int16</a></td>
 <td>0</td>
 <td>offset to the 0 degree position</td>
 </tr>
@@ -2252,7 +2252,7 @@ based on the font and text.</p>
 </tr>
 <tr>
 <td>adjustable</td>
-<td><a href="../data-types#boolean">bool</a></td>
+<td><a href="data-types#boolean">bool</a></td>
 <td>false</td>
 <td>Add knob that the user can operate to change the value</td>
 </tr>
@@ -2270,13 +2270,13 @@ based on the font and text.</p>
 </tr>
 <tr>
 <td>line_width</td>
-<td><a href="../data-types#integer">int16</a></td>
+<td><a href="data-types#integer">int16</a></td>
 <td>20</td>
 <td>width of the arc background</td>
 </tr>
 <tr>
 <td>line_color</td>
-<td><a href="../data-types#colors">color</a></td>
+<td><a href="data-types#colors">color</a></td>
 <td>depends<BR>on theme</td>
 <td>color of the arc background</td>
 </tr>
@@ -2294,13 +2294,13 @@ based on the font and text.</p>
 </tr>
 <tr>
 <td>line_width1</td>
-<td><a href="../data-types#integer">int16</a></td>
+<td><a href="data-types#integer">int16</a></td>
 <td>20</td>
 <td>width  of the arc indicator</td>
 </tr>
 <tr>
 <td>line_color1</td>
-<td><a href="../data-types#colors">color</a></td>
+<td><a href="data-types#colors">color</a></td>
 <td>depends<BR>on theme</td>
 <td>color of the arc indicator</td>
 </tr>
@@ -2313,7 +2313,7 @@ based on the font and text.</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Tip</p>
-<p>Check out <a href="../styling#value">value styling</a> to display a textual value in the middle of the arc.</p>
+<p>Check out <a href="styling#value">value styling</a> to display a textual value in the middle of the arc.</p>
 </div>
 <details class="example"><summary>Example <code>jsonl</code></summary><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;page&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">9</span><span class="p">,</span><span class="nt">&quot;obj&quot;</span><span class="p">:</span><span class="s2">&quot;arc&quot;</span><span class="p">,</span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="mi">20</span><span class="p">,</span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="mi">75</span><span class="p">,</span><span class="nt">&quot;w&quot;</span><span class="p">:</span><span class="mi">200</span><span class="p">,</span><span class="nt">&quot;h&quot;</span><span class="p">:</span><span class="mi">200</span><span class="p">,</span><span class="nt">&quot;min&quot;</span><span class="p">:</span><span class="mi">15</span><span class="p">,</span><span class="nt">&quot;max&quot;</span><span class="p">:</span><span class="mi">35</span><span class="p">,</span><span class="nt">&quot;border_side&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="nt">&quot;rotation&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="nt">&quot;start_angle&quot;</span><span class="p">:</span><span class="mi">135</span><span class="p">,</span><span class="nt">&quot;end_angle&quot;</span><span class="p">:</span><span class="mi">45</span><span class="p">,</span><span class="nt">&quot;start_angle1&quot;</span><span class="p">:</span><span class="mi">135</span><span class="p">,</span><span class="nt">&quot;end_angle1&quot;</span><span class="p">:</span><span class="mi">45</span><span class="p">,</span><span class="nt">&quot;adjustable&quot;</span><span class="p">:</span><span class="kc">true</span><span class="p">}</span>
 </code></pre></div>
@@ -2350,19 +2350,19 @@ based on the font and text.</p>
 <tbody>
 <tr>
 <td>options</td>
-<td><a href="../data-types#string">string</a></td>
+<td><a href="data-types#string">string</a></td>
 <td>""</td>
 <td>List of items separated by <code>\n</code></td>
 </tr>
 <tr>
 <td>val</td>
-<td><a href="../data-types#integer">int16</a></td>
+<td><a href="data-types#integer">int16</a></td>
 <td>0</td>
 <td>The number of the selected item</td>
 </tr>
 <tr>
 <td>text</td>
-<td><a href="../data-types#string">string</a></td>
+<td><a href="data-types#string">string</a></td>
 <td>""</td>
 <td><em>Read-only</em> The text of the selected item</td>
 </tr>
@@ -2374,13 +2374,13 @@ based on the font and text.</p>
 </tr>
 <tr>
 <td>show_selected</td>
-<td><a href="../data-types#boolean">bool</a></td>
+<td><a href="data-types#boolean">bool</a></td>
 <td>true</td>
 <td>Show the selected option or a static text</td>
 </tr>
 <tr>
 <td>max_height</td>
-<td><a href="../data-types#integer">int16</a></td>
+<td><a href="data-types#integer">int16</a></td>
 <td>3/4 of screen height</td>
 <td>The maximum height of the open drop-down list</td>
 </tr>
@@ -2429,25 +2429,25 @@ To change the items in the list, use the <code>options</code> attribute.</p>
 <tbody>
 <tr>
 <td>options</td>
-<td><a href="../data-types#string">string</a></td>
+<td><a href="data-types#string">string</a></td>
 <td>""</td>
 <td>List of items separated by <code>\n</code></td>
 </tr>
 <tr>
 <td>val</td>
-<td><a href="../data-types#integer">int16</a></td>
+<td><a href="data-types#integer">int16</a></td>
 <td>0</td>
 <td>The number of the selected item</td>
 </tr>
 <tr>
 <td>text</td>
-<td><a href="../data-types#string">string</a></td>
+<td><a href="data-types#string">string</a></td>
 <td>""</td>
 <td><em>Read-only</em> The text of the selected item</td>
 </tr>
 <tr>
 <td>rows</td>
-<td><a href="../data-types#integer">int8</a></td>
+<td><a href="data-types#integer">int8</a></td>
 <td>3</td>
 <td>The number of rows that are visible<BR>Use this property instead of <code>h</code> to set object height</td>
 </tr>
@@ -2459,7 +2459,7 @@ To change the items in the list, use the <code>options</code> attribute.</p>
 </tr>
 <tr>
 <td>align</td>
-<td><a href="../data-types#string">string</a></td>
+<td><a href="data-types#string">string</a></td>
 <td><code>center</code></td>
 <td>Text alignment: <code>left</code>, <code>center</code>, <code>right</code></td>
 </tr>
@@ -2487,19 +2487,19 @@ To change the items in the list, use the <code>options</code> attribute.</p>
 <tbody>
 <tr>
 <td>min</td>
-<td><a href="../data-types#integer">int16</a></td>
+<td><a href="data-types#integer">int16</a></td>
 <td>0</td>
 <td>minimum value of the indicator</td>
 </tr>
 <tr>
 <td>max</td>
-<td><a href="../data-types#integer">int16</a></td>
+<td><a href="data-types#integer">int16</a></td>
 <td>100</td>
 <td>maximum value of the indicator</td>
 </tr>
 <tr>
 <td>val</td>
-<td><a href="../data-types#integer">int16</a></td>
+<td><a href="data-types#integer">int16</a></td>
 <td>0</td>
 <td>current value of the indicator</td>
 </tr>
@@ -2511,7 +2511,7 @@ To change the items in the list, use the <code>options</code> attribute.</p>
 </tr>
 <tr>
 <td>line_count</td>
-<td><a href="../data-types#integer">uint16</a></td>
+<td><a href="data-types#integer">uint16</a></td>
 <td>31</td>
 <td>tick count of the scale</td>
 </tr>
@@ -2529,7 +2529,7 @@ To change the items in the list, use the <code>options</code> attribute.</p>
 </tr>
 </tbody>
 </table>
-<p>Use <a href="../styling#line">line</a> and <a href="../styling#scale">scale</a> properties to customize.</p>
+<p>Use <a href="styling#line">line</a> and <a href="styling#scale">scale</a> properties to customize.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p><code>min</code>, <code>max</code> and <code>val</code> support also negative values.</p>
@@ -2553,25 +2553,25 @@ To change the items in the list, use the <code>options</code> attribute.</p>
 <tbody>
 <tr>
 <td>min</td>
-<td><a href="../data-types#integer">int16</a></td>
+<td><a href="data-types#integer">int16</a></td>
 <td>0</td>
 <td>minimum value of the indicator</td>
 </tr>
 <tr>
 <td>max</td>
-<td><a href="../data-types#integer">int16</a></td>
+<td><a href="data-types#integer">int16</a></td>
 <td>100</td>
 <td>maximum value of the indicator</td>
 </tr>
 <tr>
 <td>val</td>
-<td><a href="../data-types#integer">int16</a></td>
+<td><a href="data-types#integer">int16</a></td>
 <td>0</td>
 <td>current value of the indicator</td>
 </tr>
 <tr>
 <td>critical_value</td>
-<td><a href="../data-types#integer">int16</a></td>
+<td><a href="data-types#integer">int16</a></td>
 <td>80</td>
 <td>scale color will be changed to scale_end_color after this value</td>
 </tr>
@@ -2583,13 +2583,13 @@ To change the items in the list, use the <code>options</code> attribute.</p>
 </tr>
 <tr>
 <td>label_count</td>
-<td><a href="../data-types#integer">uint8</a></td>
+<td><a href="data-types#integer">uint8</a></td>
 <td></td>
 <td>number of labels (and major ticks) of the scale</td>
 </tr>
 <tr>
 <td>line_count</td>
-<td><a href="../data-types#integer">uint16</a></td>
+<td><a href="data-types#integer">uint16</a></td>
 <td>31</td>
 <td>number of minor ticks of the entire scale</td>
 </tr>
@@ -2601,7 +2601,7 @@ To change the items in the list, use the <code>options</code> attribute.</p>
 </tr>
 <tr>
 <td>format</td>
-<td><a href="../data-types#integer">uint16</a></td>
+<td><a href="data-types#integer">uint16</a></td>
 <td>0</td>
 <td>divider for major tick values</td>
 </tr>
@@ -2624,7 +2624,7 @@ To change the items in the list, use the <code>options</code> attribute.</p>
 </code></pre></div>
 </td></tr></table>
 </details>
-<p>Use <a href="../styling#scale">scale</a> properties to customize.</p>
+<p>Use <a href="styling#scale">scale</a> properties to customize.</p>
 <h2 id="tabview">Tabview  <span class="twemoji tag-medium"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 4c1.11 0 2 .89 2 2v12c0 1.11-.89 2-2 2H4c-1.11 0-2-.89-2-2V6c0-1.11.89-2 2-2h16M8.5 15V9H7.25v3.5L4.75 9H3.5v6h1.25v-3.5L7.3 15h1.2m5-4.74V9h-4v6h4v-1.25H11v-1.11h2.5v-1.26H11v-1.12h2.5m7 3.74V9h-1.25v4.5h-1.12V10h-1.25v3.5h-1.13V9H14.5v5a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1z"/></svg></span><a class="headerlink" href="#tabview" title="Permanent link">~</a></h2>
 <p><strong>obj:<code>tabview</code></strong></p>
 <p><img alt="lv_tabview" src="../assets/images/objects/lv_ex_tabview_1.png" /></p>
@@ -2642,13 +2642,13 @@ You first create the <code>tabview</code> object and then add <code>tab</code> o
 <tbody>
 <tr>
 <td>val</td>
-<td><a href="../data-types#integer">int8</a></td>
+<td><a href="data-types#integer">int8</a></td>
 <td>0</td>
 <td>The number of the active tab, starting at 0</td>
 </tr>
 <tr>
 <td>text</td>
-<td><a href="../data-types#string">string</a></td>
+<td><a href="data-types#string">string</a></td>
 <td>""</td>
 <td>The name of the active tab</td>
 </tr>
@@ -2660,7 +2660,7 @@ You first create the <code>tabview</code> object and then add <code>tab</code> o
 </tr>
 <tr>
 <td>count</td>
-<td><a href="../data-types#integer">uint16</a></td>
+<td><a href="data-types#integer">uint16</a></td>
 <td>0</td>
 <td><em>Read-only</em> The number of tabs of the tabview</td>
 </tr>
@@ -2685,13 +2685,13 @@ You first create the <code>tabview</code> object and then add <code>tab</code> o
 <tbody>
 <tr>
 <td>parentid</td>
-<td><a href="../data-types#integer">int8</a></td>
+<td><a href="data-types#integer">int8</a></td>
 <td>0</td>
 <td>The <code>id</code> of the tabview object to which this tab is added</td>
 </tr>
 <tr>
 <td>text</td>
-<td><a href="../data-types#string">string</a></td>
+<td><a href="data-types#string">string</a></td>
 <td>"Tab"</td>
 <td>The name of tab</td>
 </tr>
@@ -2722,19 +2722,19 @@ You first create the <code>tabview</code> object and then add <code>tab</code> o
 <tbody>
 <tr>
 <td>color</td>
-<td><a href="../data-types#colors">color</a></td>
+<td><a href="data-types#colors">color</a></td>
 <td>0</td>
 <td>The selected color in html format #rrggbb</td>
 </tr>
 <tr>
 <td>scale_width</td>
-<td><a href="../data-types#integer">uint16</a></td>
+<td><a href="data-types#integer">uint16</a></td>
 <td>25</td>
 <td>The width of the color gradient of the circle</td>
 </tr>
 <tr>
 <td>pad_inner</td>
-<td><a href="../data-types#integer">int16</a></td>
+<td><a href="data-types#integer">int16</a></td>
 <td>10</td>
 <td>The padding between the circle and the inner preview circle</td>
 </tr>
@@ -2777,13 +2777,13 @@ You first create the <code>tabview</code> object and then add <code>tab</code> o
 <tbody>
 <tr>
 <td>speed</td>
-<td><a href="../data-types#integer">int16</a></td>
+<td><a href="data-types#integer">int16</a></td>
 <td>1000</td>
 <td>The time for 1 turn in ms</td>
 </tr>
 <tr>
 <td>direction</td>
-<td><a href="../data-types#integer">int16</a></td>
+<td><a href="data-types#integer">int16</a></td>
 <td>0</td>
 <td><code>0</code> = clockwise, <code>1</code> = counter-clockwise</td>
 </tr>
@@ -2795,25 +2795,25 @@ You first create the <code>tabview</code> object and then add <code>tab</code> o
 </tr>
 <tr>
 <td>line_width</td>
-<td><a href="../data-types#integer">int16</a></td>
+<td><a href="data-types#integer">int16</a></td>
 <td>20</td>
 <td>The width of the background circle</td>
 </tr>
 <tr>
 <td>line_width1</td>
-<td><a href="../data-types#integer">int16</a></td>
+<td><a href="data-types#integer">int16</a></td>
 <td>20</td>
 <td>The width of the spinning segment</td>
 </tr>
 <tr>
 <td>line_color</td>
-<td><a href="../data-types#colors">color</a></td>
+<td><a href="data-types#colors">color</a></td>
 <td>depends<BR>on theme</td>
 <td>color of the background circle</td>
 </tr>
 <tr>
 <td>line_color1</td>
-<td><a href="../data-types#colors">color</a></td>
+<td><a href="data-types#colors">color</a></td>
 <td>depends<BR>on theme</td>
 <td>color of the spinning segment</td>
 </tr>
@@ -2821,7 +2821,7 @@ You first create the <code>tabview</code> object and then add <code>tab</code> o
 </table>
 <div class="admonition note">
 <p class="admonition-title">Tip</p>
-<p>Check out background, border, and line <a href="../styling">styling</a> to adjust other aspects of the appearance.</p>
+<p>Check out background, border, and line <a href="styling.html">styling</a> to adjust other aspects of the appearance.</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -2867,25 +2867,25 @@ You first create the <code>tabview</code> object and then add <code>tab</code> o
 <tbody>
 <tr>
 <td>options</td>
-<td><a href="../data-types#json-object">json array</a></td>
+<td><a href="data-types#json-object">json array</a></td>
 <td>"Text"</td>
-<td>Json array of <a href="../data-types#string">string</a>s where each element is the label of a button. Use <code>"\n"</code> for a new line of buttons</td>
+<td>Json array of <a href="data-types#string">string</a>s where each element is the label of a button. Use <code>"\n"</code> for a new line of buttons</td>
 </tr>
 <tr>
 <td>align</td>
-<td><a href="../data-types#string">string</a></td>
+<td><a href="data-types#string">string</a></td>
 <td><code>center</code></td>
 <td>Text alignment: <code>left</code>, <code>center</code>, <code>right</code></td>
 </tr>
 <tr>
 <td>toggle</td>
-<td><a href="../data-types#boolean">bool</a></td>
+<td><a href="data-types#boolean">bool</a></td>
 <td>false</td>
 <td>All buttons behave as toggle buttons or normal buttons</td>
 </tr>
 <tr>
 <td>one_check</td>
-<td><a href="../data-types#boolean">bool</a></td>
+<td><a href="data-types#boolean">bool</a></td>
 <td>false</td>
 <td>Allow only one button to be checked (toggled) at once</td>
 </tr>
@@ -2912,25 +2912,25 @@ To change the color of a single label you can prefix the text with a <code>#RRGG
 <tbody>
 <tr>
 <td>text</td>
-<td><a href="../data-types#string">string</a></td>
+<td><a href="data-types#string">string</a></td>
 <td>""</td>
 <td>The text of the message to be displayed</td>
 </tr>
 <tr>
 <td>options</td>
-<td><a href="../data-types#json-object">json array</a></td>
+<td><a href="data-types#json-object">json array</a></td>
 <td>["OK"]</td>
-<td>Json array of <a href="../data-types#string">string</a>s where each element is the label of a button</td>
+<td>Json array of <a href="data-types#string">string</a>s where each element is the label of a button</td>
 </tr>
 <tr>
 <td><del>modal</del></td>
-<td><a href="../data-types#boolean">bool</a></td>
+<td><a href="data-types#boolean">bool</a></td>
 <td>false</td>
 <td>Make the messagebox a modal dialog requiring user input</td>
 </tr>
 <tr>
 <td>auto_close</td>
-<td><a href="../data-types#integer">int16</a></td>
+<td><a href="data-types#integer">int16</a></td>
 <td>0</td>
 <td>Close the pop-up message automatically after this number of milliseconds have passed</td>
 </tr>
@@ -2961,32 +2961,32 @@ The pop-up is centered on the screen.</p>
 <tbody>
 <tr>
 <td>src</td>
-<td><a href="../data-types#string">string</a></td>
+<td><a href="data-types#string">string</a></td>
 <td>""</td>
 <td>The name of the image file</td>
 </tr>
 <tr>
 <td>auto_size</td>
-<td><a href="../data-types#boolean">bool</a></td>
+<td><a href="data-types#boolean">bool</a></td>
 <td>true</td>
 <td>Automatically set the size of the image object to the image source</td>
 </tr>
 <tr>
 <td>offset_x</td>
-<td><a href="../data-types#integer">int16</a></td>
+<td><a href="data-types#integer">int16</a></td>
 <td>0</td>
 <td>Shift the picture horizontally relative to the image object</td>
 </tr>
 <tr>
 <td>offset_y</td>
-<td><a href="../data-types#integer">int16</a></td>
+<td><a href="data-types#integer">int16</a></td>
 <td>0</td>
 <td>Shift the picture vertically relative to the image object</td>
 </tr>
 </tbody>
 </table>
 <p>Only PNG image files are supported, from flash. </p>
-<p>You can use image_recolor and image_recolor_opa from the <a href="../styling#image">image styling</a> properties to apply a color overlay mask.</p>
+<p>You can use image_recolor and image_recolor_opa from the <a href="styling#image">image styling</a> properties to apply a color overlay mask.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The decoding of the images is done in memory, thus you'll be able to display full-screen images only if your microcontroller <a href="../../getting-started/#recommended-boards">has installed PSram memory</a>, else you will be limited to small icons.</p>
