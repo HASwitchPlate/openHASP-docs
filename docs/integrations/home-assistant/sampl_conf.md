@@ -384,7 +384,7 @@ relevant **openHASP-custom-component config:**
                 entity_id: "cover.my_cover"
 ```
 <video width="360" height="640" controls>
-  <source src="../../../assets/videos/cc_sampl_cover_lovelace.mp4" type="video/mp4">
+  <source src="../../assets/videos/cc_sampl_cover_lovelace.mp4" type="video/mp4">
 Your browser does not support the video tag.
 </video>
 
