@@ -151,8 +151,8 @@ n/a
 
 -->
 
-[1]: ../data-types#colors
-[2]: ../data-types#boolean
-[3]: ../data-types#integer
-[4]: ../data-types#string
-[5]: ../data-types#json-object
+[1]: data-types#colors
+[2]: data-types#boolean
+[3]: data-types#integer
+[4]: data-types#string
+[5]: data-types#json-object

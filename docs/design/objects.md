@@ -333,16 +333,20 @@ While pressing and dragging the `slider` object the following events are sent: `
 
 | Property  | Value      | Default | Description
 |-----------|------------|---------|--------------
-| min       | [int16][9]      | 0       | minimum value of the indicator
-| max       | [int16][9]      | 100     | maximum value of the indicator
-| val       | [int16][9]      | 0       | current value of the indicator
-| rotation  | [int16][9]      | 0       | offset to the 0 degree position
+| min       | [int16][9] | 0       | minimum value of the indicator
+| max       | [int16][9] | 100     | maximum value of the indicator
+| val       | [int16][9] | 0       | current value of the indicator
+| rotation  | [int16][9] | 0       | offset to the 0 degree position
 | type      | 0-2        | 0       | `0` = normal, `1` = symmetrical, `2` = reverse
 | adjustable| [bool][2]  | false   | Add knob that the user can operate to change the value
 |start_angle| 0-360      |         | start angle of the arc background (see note)
 | end_angle | 0-360      |         | end angle of the arc background (see note)
+| line_width  | [int16][9] | 20       | width of the arc background
+| line_color  | [color][1] | depends<BR>on theme | color of the arc background
 |start_angle1| 0-360     |         | start angle of the arc indicator (see note)
 | end_angle1 | 0-360     |         | end angle of the arc indicator (see note)
+| line_width1 | [int16][9] | 20       | width  of the arc indicator
+| line_color1 | [color][1] | depends<BR>on theme | color of the arc indicator
 
 !!! note
     Zero degree is at the middle right (3 o'clock) of the object and the degrees are increasing in a clockwise direction. The angles should be in the [0-360] range.     
@@ -504,7 +508,7 @@ To change the currently visible tab, use the `val` attribute after all tabs have
 
 ??? example "Example `jsonl`"
     ```json
-    {"page":1,"id":10,"obj":"tabview","btn_pos":1}
+    {"page":1,"id":14,"obj":"tabview","btn_pos":1}
     ```
 
 
@@ -520,9 +524,9 @@ Set the parent object by referencing the `parentid` in the tab. It must be a `ta
 
 ??? example "Example `jsonl`"
     ```json
-    {"page":1,"id":50,"obj":"tab","parentid":10,"text":"Tab 1"}
-    {"page":1,"id":51,"obj":"tab","parentid":10,"text":"Tab 2"}
-    {"page":1,"id":52,"obj":"tab","parentid":10,"text":"Tab 3"}
+    {"page":1,"id":50,"obj":"tab","parentid":14,"text":"Tab 1"}
+    {"page":1,"id":51,"obj":"tab","parentid":14,"text":"Tab 2"}
+    {"page":1,"id":52,"obj":"tab","parentid":14,"text":"Tab 3"}
     ```
 
 To add other objects to these tabs, also use the `parentid` when creating those objects.
@@ -570,12 +574,24 @@ While pressing and dragging the `cpicker` object the following events are sent: 
 
 | Property  | Value      | Default | Description
 |-----------|------------|---------|--------------
-| speed     | [int16][9]      | 1000    | The time for 1 turn in ms
-| direction | [int16][9]      | 0       | `0` = clockwise, `1` = counter-clockwise
-| angle     | 0-360      | 60      | The length of the arc in degrees
+| speed     | [int16][9] | 1000    | The time for 1 turn in ms
+| direction | [int16][9] | 0       | `0` = clockwise, `1` = counter-clockwise
+| angle     | 0-360      | 60      | The length of the spinning segment in degrees
+| line_width  | [int16][9] | 20    | The width of the background circle
+| line_width1 | [int16][9] | 20    | The width of the spinning segment
+| line_color  | [color][1] | depends<BR>on theme | color of the background circle
+| line_color1 | [color][1] | depends<BR>on theme | color of the spinning segment
+
+!!! note "Tip"
+    Check out background, border, and line [styling][12] to adjust other aspects of the appearance.
 
 !!! note "Note"
     Placing objects over/under the spinner will increase the CPU load because all objects need to be redrawn constantly.
+
+??? example "Example `jsonl`"
+    ```json
+    {"page":1,"id":15,"obj":"spinner","x":180,"y":50,"w":36,"h":36,"bg_opa":0,"border_width":0,"line_width":6,"line_width1":6,"angle":80,"line_color":"white","line_color1":"green"}
+    ```
 
 ## LED Indicator
 **obj:`led`**
@@ -667,14 +683,15 @@ The Base Object can be directly used as a simple, empty widget. It is nothing mo
 
 You can use it as a background shape for other objects by putting its jsonl line before the object. It catches touches!
 
-[1]: ../data-types#colors
-[2]: ../data-types#boolean
-[3]: ../../configuration/gpio#groupid
-[4]: ../styling#general
-[5]: ../styling#image
-[6]: ../styling#value
-[7]: ../styling#line
-[8]: ../styling#scale
-[9]: ../data-types#integer
-[10]: ../data-types#string
-[11]: ../data-types#json-object
+[1]: data-types#colors
+[2]: data-types#boolean
+[3]: ../configuration/gpio#groupid
+[4]: styling#general
+[5]: styling#image
+[6]: styling#value
+[7]: styling#line
+[8]: styling#scale
+[9]: data-types#integer
+[10]: data-types#string
+[11]: data-types#json-object
+[12]: styling.md
