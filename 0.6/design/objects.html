@@ -2275,6 +2275,12 @@ based on the font and text.</p>
 <td>width of the arc background</td>
 </tr>
 <tr>
+<td>line_color</td>
+<td><a href="../data-types#colors">color</a></td>
+<td>depends<BR>on theme</td>
+<td>color of the arc background</td>
+</tr>
+<tr>
 <td>start_angle1</td>
 <td>0-360</td>
 <td></td>
@@ -2291,6 +2297,12 @@ based on the font and text.</p>
 <td><a href="../data-types#integer">int16</a></td>
 <td>20</td>
 <td>width  of the arc indicator</td>
+</tr>
+<tr>
+<td>line_color1</td>
+<td><a href="../data-types#colors">color</a></td>
+<td>depends<BR>on theme</td>
+<td>color of the arc indicator</td>
 </tr>
 </tbody>
 </table>
@@ -2655,7 +2667,7 @@ You first create the <code>tabview</code> object and then add <code>tab</code> o
 </tbody>
 </table>
 <p>To change the currently visible tab, use the <code>val</code> attribute after all tabs have been added.</p>
-<details class="example"><summary>Example <code>jsonl</code></summary><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;page&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">10</span><span class="p">,</span><span class="nt">&quot;obj&quot;</span><span class="p">:</span><span class="s2">&quot;tabview&quot;</span><span class="p">,</span><span class="nt">&quot;btn_pos&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">}</span>
+<details class="example"><summary>Example <code>jsonl</code></summary><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;page&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">14</span><span class="p">,</span><span class="nt">&quot;obj&quot;</span><span class="p">:</span><span class="s2">&quot;tabview&quot;</span><span class="p">,</span><span class="nt">&quot;btn_pos&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">}</span>
 </code></pre></div>
 </td></tr></table>
 </details>
@@ -2688,9 +2700,9 @@ You first create the <code>tabview</code> object and then add <code>tab</code> o
 <p>Set the parent object by referencing the <code>parentid</code> in the tab. It must be a <code>tabview</code> object.</p>
 <details class="example"><summary>Example <code>jsonl</code></summary><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;page&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">50</span><span class="p">,</span><span class="nt">&quot;obj&quot;</span><span class="p">:</span><span class="s2">&quot;tab&quot;</span><span class="p">,</span><span class="nt">&quot;parentid&quot;</span><span class="p">:</span><span class="mi">10</span><span class="p">,</span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="s2">&quot;Tab 1&quot;</span><span class="p">}</span>
-<span class="p">{</span><span class="nt">&quot;page&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">51</span><span class="p">,</span><span class="nt">&quot;obj&quot;</span><span class="p">:</span><span class="s2">&quot;tab&quot;</span><span class="p">,</span><span class="nt">&quot;parentid&quot;</span><span class="p">:</span><span class="mi">10</span><span class="p">,</span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="s2">&quot;Tab 2&quot;</span><span class="p">}</span>
-<span class="p">{</span><span class="nt">&quot;page&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">52</span><span class="p">,</span><span class="nt">&quot;obj&quot;</span><span class="p">:</span><span class="s2">&quot;tab&quot;</span><span class="p">,</span><span class="nt">&quot;parentid&quot;</span><span class="p">:</span><span class="mi">10</span><span class="p">,</span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="s2">&quot;Tab 3&quot;</span><span class="p">}</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;page&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">50</span><span class="p">,</span><span class="nt">&quot;obj&quot;</span><span class="p">:</span><span class="s2">&quot;tab&quot;</span><span class="p">,</span><span class="nt">&quot;parentid&quot;</span><span class="p">:</span><span class="mi">14</span><span class="p">,</span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="s2">&quot;Tab 1&quot;</span><span class="p">}</span>
+<span class="p">{</span><span class="nt">&quot;page&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">51</span><span class="p">,</span><span class="nt">&quot;obj&quot;</span><span class="p">:</span><span class="s2">&quot;tab&quot;</span><span class="p">,</span><span class="nt">&quot;parentid&quot;</span><span class="p">:</span><span class="mi">14</span><span class="p">,</span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="s2">&quot;Tab 2&quot;</span><span class="p">}</span>
+<span class="p">{</span><span class="nt">&quot;page&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">52</span><span class="p">,</span><span class="nt">&quot;obj&quot;</span><span class="p">:</span><span class="s2">&quot;tab&quot;</span><span class="p">,</span><span class="nt">&quot;parentid&quot;</span><span class="p">:</span><span class="mi">14</span><span class="p">,</span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="s2">&quot;Tab 3&quot;</span><span class="p">}</span>
 </code></pre></div>
 </td></tr></table>
 </details>
@@ -2793,6 +2805,18 @@ You first create the <code>tabview</code> object and then add <code>tab</code> o
 <td>20</td>
 <td>The width of the spinning segment</td>
 </tr>
+<tr>
+<td>line_color</td>
+<td><a href="../data-types#colors">color</a></td>
+<td>depends<BR>on theme</td>
+<td>color of the background circle</td>
+</tr>
+<tr>
+<td>line_color1</td>
+<td><a href="../data-types#colors">color</a></td>
+<td>depends<BR>on theme</td>
+<td>color of the spinning segment</td>
+</tr>
 </tbody>
 </table>
 <div class="admonition note">
@@ -2803,6 +2827,10 @@ You first create the <code>tabview</code> object and then add <code>tab</code> o
 <p class="admonition-title">Note</p>
 <p>Placing objects over/under the spinner will increase the CPU load because all objects need to be redrawn constantly.</p>
 </div>
+<details class="example"><summary>Example <code>jsonl</code></summary><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;page&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">15</span><span class="p">,</span><span class="nt">&quot;obj&quot;</span><span class="p">:</span><span class="s2">&quot;spinner&quot;</span><span class="p">,</span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="mi">180</span><span class="p">,</span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="mi">50</span><span class="p">,</span><span class="nt">&quot;w&quot;</span><span class="p">:</span><span class="mi">36</span><span class="p">,</span><span class="nt">&quot;h&quot;</span><span class="p">:</span><span class="mi">36</span><span class="p">,</span><span class="nt">&quot;bg_opa&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="nt">&quot;border_width&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="nt">&quot;line_width&quot;</span><span class="p">:</span><span class="mi">6</span><span class="p">,</span><span class="nt">&quot;line_width1&quot;</span><span class="p">:</span><span class="mi">6</span><span class="p">,</span><span class="nt">&quot;angle&quot;</span><span class="p">:</span><span class="mi">80</span><span class="p">,</span><span class="nt">&quot;line_color&quot;</span><span class="p">:</span><span class="s2">&quot;white&quot;</span><span class="p">,</span><span class="nt">&quot;line_color1&quot;</span><span class="p">:</span><span class="s2">&quot;green&quot;</span><span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+</details>
 <h2 id="led-indicator">LED Indicator<a class="headerlink" href="#led-indicator" title="Permanent link">~</a></h2>
 <p><strong>obj:<code>led</code></strong></p>
 <p><img align="center" alt="lv_led" src="../assets/images/objects/lv_ex_led_1.png" /></p>
