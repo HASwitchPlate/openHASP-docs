@@ -44,7 +44,7 @@ The border is drawn on top of the background. It has radius rounding.
 
 Padding sets the space on the inner sides of the edges. It means "I don't want my children too close to my sides, so keep this space". Padding inner sets the "gap" between the children. Margin sets the space on the outer side of the edges. It means "I want this space around me".
 
-Objects use them to set spacing. See the documentation of the [objects](../objects) for the details.
+Objects use them to set spacing. See the documentation of the [objects](../objects/) for the details.
 
 | Property      | Type  | Description
 | :---          | :---: | :---
@@ -79,7 +79,7 @@ Properties applied to the textual elements of the objects.
 | :---              |  :---:   | :---
 | text_color        |[color][1]| Color of the text
 | text_opa          | [uint8][3]     | Opacity level of the text [0-255]
-| text_font         | [uint8][3]     | The [Font ID](../fonts)
+| text_font         | [uint8][3]     | The [Font ID][6]
 | text_letter_space | [int16][3]    | Distance between letters of the text, can be a negative number
 | text_line_space   | [int16][3]    | Distance between lines of the text, can be a negative number 
 | text_decor        | [uint8][3]     | Add text decoration.<br>0 = none *(=default)*<br>1 = underline<br>2 = strikethrough<br>3 = underline and strikethrough
@@ -94,7 +94,7 @@ Value is an arbitrary text label drawn on top of an object. It can be a lightwei
 | value_str          | [string][4]   | Text to display
 | value_color        |[color][1]| Color of the text
 | value_opa          | [uint8][3]     | Opacity level of the text [0-255]
-| value_font         | [uint8][3]     | The [Font ID](../fonts)
+| value_font         | [uint8][3]     | The [Font ID][6]
 | value_letter_space | [int16][3]    | Distance between letters of the text, can be a negative number
 | value_line_space   | [int16][3]    | Distance between lines of the text, can be a negative number
 | value_align        | align    | Alignment of the text. Can be: none, left, right, top, bottom, full or center *(=default)*
@@ -151,8 +151,9 @@ n/a
 
 -->
 
-[1]: data-types#colors
-[2]: data-types#boolean
-[3]: data-types#integer
-[4]: data-types#string
-[5]: data-types#json-object
+[1]: ../data-types/#colors
+[2]: ../data-types/#boolean
+[3]: ../data-types/#integer
+[4]: ../data-types/#string
+[5]: ../data-types/#json-object
+[6]: ../fonts/
