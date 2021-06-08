@@ -103,7 +103,7 @@ Value is an arbitrary text label drawn on top of an object. It can be a lightwei
 
 ## Line
 
-Properties for [line meter](../objects#line-meter) objects.
+Properties for [line meter](../objects/#line-meter) objects.
 
 | Property          |  Type    | Description
 | :---              |  :---:   | :---
@@ -116,7 +116,7 @@ Properties for [line meter](../objects#line-meter) objects.
 
 ## Scale
 
-The properties for styling the scale of [line meter](../objects#line-meter) or [gauge](../objects#gauge) objects.
+The properties for styling the scale of [line meter](../objects/#line-meter) or [gauge](../objects/#gauge) objects.
 
 | Property               |  Type    | Description
 | :---                   |  :---:   | :---

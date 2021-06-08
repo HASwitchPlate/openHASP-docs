@@ -46,5 +46,5 @@ To add an openHASP plate to your installation with a sample design looking a bit
 ```
 
 Check out the [pagination example](../example-pagination) to learn how to implement the bottom bar.  
-Check out the [clock and temperature example](../../home-assistant/sampl_conf#display-clock-and-temperature) to learn how to implement values to the top.  
-Check out the [Lovelace cover example](../../home-assistant/sampl_conf#covers-like-in-lovelace) to learn how to bring life to the objects.  
+Check out the [clock and temperature example](../../home-assistant/sampl_conf/#display-clock-and-temperature) to learn how to implement values to the top.  
+Check out the [Lovelace cover example](../../home-assistant/sampl_conf/#covers-like-in-lovelace) to learn how to bring life to the objects.  

@@ -12,8 +12,8 @@ This project also adds ESP32 and STM32F4 support to take advantage of the additi
 
 ### Demo Screens
 
-[![screenshot](assets/images/screenshots/demo_switches_covers.png)](integrations/home-assistant/sampl_conf#some-basic-controls) &nbsp; 
-[![screenshot](assets/images/screenshots/demo_mediaplayer.png)](integrations/home-assistant/sampl_conf#media-player) &nbsp;     
+[![screenshot](assets/images/screenshots/demo_switches_covers.png)](integrations/home-assistant/sampl_conf/#some-basic-controls) &nbsp; 
+[![screenshot](assets/images/screenshots/demo_mediaplayer.png)](integrations/home-assistant/sampl_conf/#media-player) &nbsp;     
 [![Screenshot](assets/images/screenshots/dashui-060.png)](integrations/examples/example-dashui.md) &nbsp;
 [![Screenshot](assets/images/screenshots/demo_jaffa1.png)](integrations/openhab/integration_openhab.md) &nbsp; 
 
@@ -48,5 +48,5 @@ For support using openHASP please find us on Github, Discord or Home Assistant:
 [4]: https://github.com/fvanroie/HMI-Font-Pack/releases
 [5]: https://discord.gg/VCWyuhF
 [6]: https://community.home-assistant.io/t/openhasp-an-mqtt-driven-touchscreen-scene-controller/300853
-[7]: design/objects#cheatsheet
-[8]: design/objects#image
+[7]: design/objects/#cheatsheet
+[8]: design/objects/#image

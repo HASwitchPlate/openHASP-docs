@@ -113,7 +113,7 @@ Any common ILI9341 320x240 4-wire SPI touchscreen with XPT2046 Resistive Touch d
 - 2.8" SKU: [MSP2807](http://www.lcdwiki.com/2.8inch_SPI_Module_ILI9341_SKU:MSP2807)
 - 3.2" SKU: [MSP3218](http://www.lcdwiki.com/3.2inch_SPI_Module_ILI9341_SKU:MSP3218)
 
-You will need to connect [the GPIO pins](../displays/MSPxxxx) using jumper wires.
+You will need to connect [the GPIO pins](displays/MSPxxxx.md) using jumper wires.
 
 ## Ready-made devices
 
