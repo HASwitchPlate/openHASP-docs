@@ -572,10 +572,11 @@ While pressing and dragging the `cpicker` object the following events are sent: 
 
 | Property  | Value      | Default | Description
 |-----------|------------|---------|--------------
-| speed     | [int16][9]      | 1000    | The time for 1 turn in ms
-| direction | [int16][9]      | 0       | `0` = clockwise, `1` = counter-clockwise
-| angle     | 0-360      | 60      | The length of the arc in degrees
-| line_width1     | [int16][9]      | 20    | The width of the spinning segment
+| speed     | [int16][9] | 1000    | The time for 1 turn in ms
+| direction | [int16][9] | 0       | `0` = clockwise, `1` = counter-clockwise
+| angle     | 0-360      | 60      | The length of the spinning segment in degrees
+| line_width  | [int16][9] | 20    | The width of the background circle
+| line_width1 | [int16][9] | 20    | The width of the spinning segment
 
 !!! note "Tip"
     Check out background, border, and line [styling][12] to adjust other aspects of the appearance.
