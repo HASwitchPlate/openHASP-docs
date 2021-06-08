@@ -48,5 +48,5 @@ For support using openHASP please find us on Github, Discord or Home Assistant:
 [4]: https://github.com/fvanroie/HMI-Font-Pack/releases
 [5]: https://discord.gg/VCWyuhF
 [6]: https://community.home-assistant.io/t/openhasp-an-mqtt-driven-touchscreen-scene-controller/300853
-[7]: design/objects/#cheatsheet
-[8]: design/objects/#image
+[7]: design/objects#cheatsheet
+[8]: design/objects#image

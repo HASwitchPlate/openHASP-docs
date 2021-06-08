@@ -135,7 +135,7 @@ Whenever somebody changes the color of the `cpicker` object on the plate, the li
 
 ![screenshot](../../assets/images/screenshots/cc_sampl_climate.png)  
 
-Arc can be dragged by the handle, precise set possible from the +/-buttons. Note that the `min`, `max` and `val` values of the arc are multiplied and divided by 10 when set and read, because [LVGL only suppports integers](../../../design/data-types/#integer) for object values. By multiplying and dividing by 10, it becomes possible to set decimal values for climate temperature.
+Arc can be dragged by the handle, precise set possible from the +/-buttons. Note that the `min`, `max` and `val` values of the arc are multiplied and divided by 10 when set and read, because [LVGL only suppports integers](../../design/data-types#integer) for object values. By multiplying and dividing by 10, it becomes possible to set decimal values for climate temperature.
 
 The objects self-populate with the supported attributes of the climate in Home Assistant:
 - the arc min and max get the min and max temperatures 
@@ -594,7 +594,7 @@ relevant **openHASP-custom-component config:**
                 entity_id: media_player.sound_my_room
 
 ```
-Note that the `val` value of the slider is multiplied and divided by 100 when read and set, because [LVGL only suppports integers](../../../design/data-types/#integer) for object values. By multiplying and dividing by 100, it becomes possible to set volume between 0 and 1 as required by Home Assistant.
+Note that the `val` value of the slider is multiplied and divided by 100 when read and set, because [LVGL only suppports integers](../../design/data-types#integer) for object values. By multiplying and dividing by 100, it becomes possible to set volume between 0 and 1 as required by Home Assistant.
 
 *  *  *  *  *
 
