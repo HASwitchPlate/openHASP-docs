@@ -573,6 +573,10 @@ While pressing and dragging the `cpicker` object the following events are sent: 
 | speed     | [int16][9]      | 1000    | The time for 1 turn in ms
 | direction | [int16][9]      | 0       | `0` = clockwise, `1` = counter-clockwise
 | angle     | 0-360      | 60      | The length of the arc in degrees
+| line_width1     | [int16][9]      | 20    | The width of the spinning segment
+
+!!! note "Tip"
+    Check out background, border, and line [styling][12] to adjust other aspects of the appearance.
 
 !!! note "Note"
     Placing objects over/under the spinner will increase the CPU load because all objects need to be redrawn constantly.
@@ -678,3 +682,4 @@ You can use it as a background shape for other objects by putting its jsonl line
 [9]: ../data-types#integer
 [10]: ../data-types#string
 [11]: ../data-types#json-object
+[12]: ../styling
