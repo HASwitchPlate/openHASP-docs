@@ -233,6 +233,13 @@ relevant **openHASP-custom-component config:**
 
 The icon behaves like in Lovelace. UI theme set to `Hasp Light` in plate's web interface.
 
+<video width="360" height="640" controls>
+  <source src="../../../assets/videos/cc_sampl_cover_lovelace.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video>
+
+Check out the [Lovelace-like entities](../examples/example-lovelace.md) for similar placement.  
+
 relevant **openHASP config:** (screen size 240x320, UI Theme: Hasp Light) 
 
 ```json
@@ -283,12 +290,6 @@ relevant **openHASP-custom-component config:**
               target:
                 entity_id: "cover.my_cover"
 ```
-<video width="360" height="640" controls>
-  <source src="../../../assets/videos/cc_sampl_cover_lovelace.mp4" type="video/mp4">
-Your browser does not support the video tag.
-</video>
-
-Check out the [Lovelace-like entities](../examples/example-lovelace.md) for similar placement.  
 
 *  *  *  *  *
 
@@ -508,7 +509,13 @@ The target temperature can be set by dragging the arc handle, more precise +/- s
 
 The number of the ticks on the gauge is determined from the `min`, `max` attributes of the configured climate, likewise the `hvac_modes` and `fan_modes` dropdowns. You can localise these using the `if-else` statements of the template in the configuration of the custom component.
 
-The active area of the arc changes color based on the current hvac mode of the entity.
+The active area of the arc changes color based on the current hvac mode of the entity.    
+UI theme set to `Hasp Light` in plate's web interface.
+
+<video width="360" height="640" controls>
+  <source src="../../../assets/videos/cc_sampl_climate_control.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video>
 
 relevant **openHASP config:** (screen size 240x320) 
 
@@ -698,11 +705,6 @@ relevant **openHASP-custom-component config:**
                   turbo
                   {% endif -%}
 ```
-
-<video width="360" height="640" controls>
-  <source src="../../../assets/videos/cc_sampl_climate_control.mp4" type="video/mp4">
-Your browser does not support the video tag.
-</video>
 
 *  *  *  *  *
 
