@@ -1533,6 +1533,12 @@ The <code>color</code> property gets updated from the <code>rgb_color</code> att
 <h2 id="covers-like-in-lovelace">Covers like in Lovelace<a class="headerlink" href="#covers-like-in-lovelace" title="Permanent link">~</a></h2>
 <p><img alt="screenshot" src="../../../assets/images/screenshots/cc_sampl_cover_lovelacee.png" />  </p>
 <p>The icon behaves like in Lovelace. UI theme set to <code>Hasp Light</code> in plate's web interface.</p>
+<video width="360" height="640" controls>
+  <source src="../../../assets/videos/cc_sampl_cover_lovelace.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video>
+
+<p>Check out the <a href="../../examples/example-lovelace/">Lovelace-like entities</a> for similar placement.  </p>
 <p>relevant <strong>openHASP config:</strong> (screen size 240x320, UI Theme: Hasp Light) </p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
@@ -1619,12 +1625,6 @@ The <code>color</code> property gets updated from the <code>rgb_color</code> att
                 <span class="nt">entity_id</span><span class="p">:</span> <span class="s">&quot;cover.my_cover&quot;</span>
 </code></pre></div>
 </td></tr></table>
-<video width="360" height="640" controls>
-  <source src="../../../assets/videos/cc_sampl_cover_lovelace.mp4" type="video/mp4">
-Your browser does not support the video tag.
-</video>
-
-<p>Check out the <a href="../../examples/example-lovelace/">Lovelace-like entities</a> for similar placement.  </p>
 <hr />
 <h2 id="media-player">Media player<a class="headerlink" href="#media-player" title="Permanent link">~</a></h2>
 <p><img alt="screenshot" src="../../../assets/images/screenshots/cc_sampl_mediaplayer.png" />  </p>
@@ -2010,7 +2010,13 @@ Note that the <code>val</code> value of the slider is multiplied and divided by 
 <p>This example is a bit more complex in the aspect that it uses several objects put on top of each other, and grouped toghether using the <code>parentid</code> parameter.  Special attention goes to an invisible tabview (exteding over the label dispaying the target temperarture) which allows for swiping between an on/off switch and dropdowns for setting the hvac and fan modes.</p>
 <p>The target temperature can be set by dragging the arc handle, more precise +/- setting possible by short/long pressing the middle circle containing the current temperature (increasing/decreasing the value by the <em>temperature step</em> defined by the climate entity). Note that the <code>min</code>, <code>max</code> and <code>val</code> values of the arc and gauge are multiplied and divided by 10 when set and read, because <a href="../../../design/data-types#integer">LVGL only suppports integers</a> for object values. By multiplying and dividing by 10, it becomes possible to set decimal values for climate temperature. </p>
 <p>The number of the ticks on the gauge is determined from the <code>min</code>, <code>max</code> attributes of the configured climate, likewise the <code>hvac_modes</code> and <code>fan_modes</code> dropdowns. You can localise these using the <code>if-else</code> statements of the template in the configuration of the custom component.</p>
-<p>The active area of the arc changes color based on the current hvac mode of the entity.</p>
+<p>The active area of the arc changes color based on the current hvac mode of the entity.  <br />
+UI theme set to <code>Hasp Light</code> in plate's web interface.</p>
+<video width="360" height="640" controls>
+  <source src="../../../assets/videos/cc_sampl_climate_control.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video>
+
 <p>relevant <strong>openHASP config:</strong> (screen size 240x320) </p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
@@ -2373,11 +2379,6 @@ Note that the <code>val</code> value of the slider is multiplied and divided by 
                   <span class="no">{% endif -%}</span>
 </code></pre></div>
 </td></tr></table>
-<video width="360" height="640" controls>
-  <source src="../../../assets/videos/cc_sampl_climate_control.mp4" type="video/mp4">
-Your browser does not support the video tag.
-</video>
-
 <hr />
 <h2 id="color-coded-icons">Color coded icons<a class="headerlink" href="#color-coded-icons" title="Permanent link">~</a></h2>
 <p><img alt="icons" src="https://user-images.githubusercontent.com/1550668/120081781-9372e880-c0bf-11eb-8c9a-62d2a16c24c5.png" /></p>
