@@ -2214,19 +2214,11 @@ Your browser does not support the video tag.
 <span class="normal">160</span>
 <span class="normal">161</span>
 <span class="normal">162</span>
-<span class="normal">163</span>
-<span class="normal">164</span>
-<span class="normal">165</span>
-<span class="normal">166</span>
-<span class="normal">167</span>
-<span class="normal">168</span>
-<span class="normal">169</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>      <span class="p p-Indicator">-</span> <span class="nt">obj</span><span class="p">:</span> <span class="s">&quot;p3b20&quot;</span>  <span class="c1"># arc slider</span>
+<span class="normal">163</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>      <span class="p p-Indicator">-</span> <span class="nt">obj</span><span class="p">:</span> <span class="s">&quot;p3b20&quot;</span>  <span class="c1"># arc slider</span>
         <span class="nt">properties</span><span class="p">:</span>
           <span class="s">&quot;val&quot;</span><span class="p p-Indicator">:</span> <span class="s">&quot;{{</span><span class="nv"> </span><span class="s">state_attr(&#39;climate.thermostat_1&#39;,&#39;temperature&#39;)</span><span class="nv"> </span><span class="s">*</span><span class="nv"> </span><span class="s">10</span><span class="nv"> </span><span class="s">|</span><span class="nv"> </span><span class="s">int</span><span class="nv"> </span><span class="s">if</span><span class="nv"> </span><span class="s">not</span><span class="nv"> </span><span class="s">(is_state(&#39;climate.thermostat_1&#39;,&#39;unavailable&#39;))</span><span class="nv"> </span><span class="s">}}&quot;</span>
           <span class="s">&quot;min&quot;</span><span class="p p-Indicator">:</span> <span class="s">&quot;{{</span><span class="nv"> </span><span class="s">state_attr(&#39;climate.thermostat_1&#39;,&#39;min_temp&#39;)</span><span class="nv"> </span><span class="s">*</span><span class="nv"> </span><span class="s">10</span><span class="nv"> </span><span class="s">|</span><span class="nv"> </span><span class="s">int</span><span class="nv"> </span><span class="s">if</span><span class="nv"> </span><span class="s">not</span><span class="nv"> </span><span class="s">(is_state(&#39;climate.thermostat_1&#39;,&#39;unavailable&#39;))</span><span class="nv"> </span><span class="s">}}&quot;</span>
           <span class="s">&quot;max&quot;</span><span class="p p-Indicator">:</span> <span class="s">&quot;{{</span><span class="nv"> </span><span class="s">state_attr(&#39;climate.thermostat_1&#39;,&#39;max_temp&#39;)</span><span class="nv"> </span><span class="s">*</span><span class="nv"> </span><span class="s">10</span><span class="nv"> </span><span class="s">|</span><span class="nv"> </span><span class="s">int</span><span class="nv"> </span><span class="s">if</span><span class="nv"> </span><span class="s">not</span><span class="nv"> </span><span class="s">(is_state(&#39;climate.thermostat_1&#39;,&#39;unavailable&#39;))</span><span class="nv"> </span><span class="s">}}&quot;</span>
-          <span class="s">&quot;opacity&quot;</span><span class="p p-Indicator">:</span> <span class="s">&quot;{{</span><span class="nv"> </span><span class="s">60</span><span class="nv"> </span><span class="s">if</span><span class="nv"> </span><span class="s">(is_state(&#39;climate.thermostat_1&#39;,&#39;unavailable&#39;)</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">is_state(&#39;climate.thermostat_1&#39;,&#39;unavailable&#39;))</span><span class="nv"> </span><span class="s">else</span><span class="nv"> </span><span class="s">255</span><span class="nv"> </span><span class="s">}}&quot;</span>
-          <span class="s">&quot;click&quot;</span><span class="p p-Indicator">:</span> <span class="s">&quot;{{</span><span class="nv"> </span><span class="s">&#39;false&#39;</span><span class="nv"> </span><span class="s">if</span><span class="nv"> </span><span class="s">(is_state(&#39;climate.thermostat_1&#39;,&#39;unavailable&#39;)</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">is_state(&#39;climate.thermostat_1&#39;,&#39;unavailable&#39;))</span><span class="nv"> </span><span class="s">else</span><span class="nv"> </span><span class="s">&#39;true&#39;</span><span class="nv"> </span><span class="s">}}&quot;</span>
           <span class="s">&quot;line_color1&quot;</span><span class="p p-Indicator">:</span> <span class="p p-Indicator">&gt;</span>
             <span class="no">{% if is_state(&#39;climate.thermostat_1&#39;, &#39;cool&#39;) %}</span>
             <span class="no">{{ &quot;#346beb&quot; }}</span>
@@ -2267,7 +2259,6 @@ Your browser does not support the video tag.
       <span class="p p-Indicator">-</span> <span class="nt">obj</span><span class="p">:</span> <span class="s">&quot;p3b23&quot;</span>  <span class="c1"># label current temp (and +/- with short/long touch)</span>
         <span class="nt">properties</span><span class="p">:</span>
           <span class="s">&quot;text&quot;</span><span class="p p-Indicator">:</span> <span class="s">&quot;{{</span><span class="nv"> </span><span class="s">state_attr(&#39;climate.thermostat_1&#39;,&#39;current_temperature&#39;)</span><span class="nv"> </span><span class="s">if</span><span class="nv"> </span><span class="s">not</span><span class="nv"> </span><span class="s">(is_state(&#39;climate.thermostat_1&#39;,&#39;unavailable&#39;))</span><span class="nv"> </span><span class="s">}}&quot;</span>
-          <span class="s">&quot;click&quot;</span><span class="p p-Indicator">:</span> <span class="s">&quot;{{</span><span class="nv"> </span><span class="s">&#39;false&#39;</span><span class="nv"> </span><span class="s">if</span><span class="nv"> </span><span class="s">(is_state(&#39;climate.thermostat_1&#39;,&#39;unavailable&#39;)</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">is_state(&#39;climate.thermostat_1&#39;,&#39;unavailable&#39;))</span><span class="nv"> </span><span class="s">else</span><span class="nv"> </span><span class="s">&#39;true&#39;</span><span class="nv"> </span><span class="s">}}&quot;</span>
         <span class="nt">event</span><span class="p">:</span>
           <span class="s">&quot;up&quot;</span><span class="p p-Indicator">:</span>
             <span class="p p-Indicator">-</span> <span class="nt">service</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">climate.set_temperature</span>
@@ -2291,7 +2282,6 @@ Your browser does not support the video tag.
       <span class="p p-Indicator">-</span> <span class="nt">obj</span><span class="p">:</span> <span class="s">&quot;p3b41&quot;</span>  <span class="c1"># on/off switch</span>
         <span class="nt">properties</span><span class="p">:</span>
           <span class="s">&quot;val&quot;</span><span class="p p-Indicator">:</span> <span class="s">&quot;{{</span><span class="nv"> </span><span class="s">0</span><span class="nv"> </span><span class="s">if</span><span class="nv"> </span><span class="s">(is_state(&#39;climate.thermostat_1&#39;,</span><span class="nv"> </span><span class="s">&#39;off&#39;)</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">is_state(&#39;climate.thermostat_1&#39;,</span><span class="nv"> </span><span class="s">&#39;unavailable&#39;))</span><span class="nv"> </span><span class="s">else</span><span class="nv"> </span><span class="s">1</span><span class="nv"> </span><span class="s">}}&quot;</span>
-          <span class="s">&quot;click&quot;</span><span class="p p-Indicator">:</span> <span class="s">&quot;{{</span><span class="nv"> </span><span class="s">&#39;false&#39;</span><span class="nv"> </span><span class="s">if</span><span class="nv"> </span><span class="s">(is_state(&#39;climate.thermostat_1&#39;,&#39;unavailable&#39;)</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">is_state(&#39;climate.thermostat_1&#39;,&#39;unavailable&#39;))</span><span class="nv"> </span><span class="s">else</span><span class="nv"> </span><span class="s">&#39;true&#39;</span><span class="nv"> </span><span class="s">}}&quot;</span>
         <span class="nt">event</span><span class="p">:</span>
           <span class="s">&quot;down&quot;</span><span class="p p-Indicator">:</span>
             <span class="p p-Indicator">-</span> <span class="nt">service_template</span><span class="p">:</span> <span class="p p-Indicator">&gt;</span>
@@ -2323,7 +2313,6 @@ Your browser does not support the video tag.
             <span class="no">On{{&quot;\n&quot;|e}}</span>
             <span class="no">{%- endif -%}</span>
             <span class="no">{%-if not loop.last%}{%-endif%}{%-endfor%}{% endif %}</span>
-          <span class="s">&quot;click&quot;</span><span class="p p-Indicator">:</span> <span class="s">&quot;{{</span><span class="nv"> </span><span class="s">&#39;false&#39;</span><span class="nv"> </span><span class="s">if</span><span class="nv"> </span><span class="s">(is_state(&#39;climate.thermostat_1&#39;,&#39;unavailable&#39;)</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">is_state(&#39;climate.thermostat_1&#39;,&#39;unavailable&#39;))</span><span class="nv"> </span><span class="s">else</span><span class="nv"> </span><span class="s">&#39;true&#39;</span><span class="nv"> </span><span class="s">}}&quot;</span>
           <span class="s">&quot;val&quot;</span><span class="p p-Indicator">:</span> <span class="p p-Indicator">&gt;</span>
             <span class="no">{% if not (is_state(&#39;climate.thermostat_1&#39;,&#39;unavailable&#39;)) %}{%for mode in state_attr(&#39;climate.thermostat_1&#39;,&#39;hvac_modes&#39;)%}</span>
             <span class="no">{{loop.index -1 if mode == states(&#39;climate.thermostat_1&#39;) }}</span>
@@ -2349,6 +2338,7 @@ Your browser does not support the video tag.
                   <span class="no">fan_only</span>
                   <span class="no">{% endif -%}</span>
 
+
       <span class="p p-Indicator">-</span> <span class="nt">obj</span><span class="p">:</span> <span class="s">&quot;p3b43&quot;</span>  <span class="c1"># dropdown with fan_modes</span>
         <span class="nt">properties</span><span class="p">:</span>
           <span class="s">&quot;options&quot;</span><span class="p p-Indicator">:</span> <span class="p p-Indicator">&gt;</span>
@@ -2365,8 +2355,6 @@ Your browser does not support the video tag.
             <span class="no">Turbo{{&quot;\n&quot;|e}}</span>
             <span class="no">{%- endif -%}</span>
             <span class="no">{%-if not loop.last%}{%-endif%}{%-endfor%}{% endif %}</span>
-
-          <span class="s">&quot;click&quot;</span><span class="p p-Indicator">:</span> <span class="s">&quot;{{</span><span class="nv"> </span><span class="s">&#39;false&#39;</span><span class="nv"> </span><span class="s">if</span><span class="nv"> </span><span class="s">(is_state(&#39;climate.thermostat_1&#39;,&#39;unavailable&#39;)</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">is_state(&#39;climate.thermostat_1&#39;,&#39;unavailable&#39;))</span><span class="nv"> </span><span class="s">else</span><span class="nv"> </span><span class="s">&#39;true&#39;</span><span class="nv"> </span><span class="s">}}&quot;</span>
           <span class="s">&quot;val&quot;</span><span class="p p-Indicator">:</span> <span class="p p-Indicator">&gt;</span>
             <span class="no">{% if not (is_state(&#39;climate.thermostat_1&#39;,&#39;unavailable&#39;)) %}{%for mode in state_attr(&#39;climate.thermostat_1&#39;,&#39;fan_modes&#39;)%}</span>
             <span class="no">{{loop.index -1 if mode == state_attr(&#39;climate.thermostat_1&#39;,&#39;fan_mode&#39;) }}</span>
