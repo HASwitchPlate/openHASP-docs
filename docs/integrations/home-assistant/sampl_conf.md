@@ -565,13 +565,15 @@ relevant **openHASP-custom-component config:**
         event:
           "changed":
             - service: climate.set_temperature
-              data:
+              target:
                 entity_id: climate.thermostat_1
+              data:
                 temperature: "{{ val | int / 10 }}"
           "up":
             - service: climate.set_temperature
-              data:
+              target:
                 entity_id: climate.thermostat_1
+              data:
                 temperature: "{{ val | int / 10 }}"
 
       - obj: "p3b21"  # gauge current temp
@@ -590,13 +592,15 @@ relevant **openHASP-custom-component config:**
         event:
           "up":
             - service: climate.set_temperature
-              data:
+              target:
                 entity_id: climate.thermostat_1
+              data:
                 temperature: "{{ state_attr('climate.thermostat_1','temperature') + state_attr('climate.thermostat_1','target_temp_step') | float}}" 
           "long":
             - service: climate.set_temperature
-              data:
+              target:
                 entity_id: climate.thermostat_1
+              data:
                 temperature: "{{ state_attr('climate.thermostat_1','temperature') - state_attr('climate.thermostat_1','target_temp_step') | float}}" 
 
 
