@@ -527,6 +527,8 @@ relevant **openHASP config:** (screen size 240x320)
 {"page":3,"id":23,"obj":"label","x":0,"y":95,"w":220,"h":30,"parentid":20,"text":"22.4","text_font":24,"align":"center"}
 {"page":3,"id":24,"obj":"obj","x":145,"y":245,"w":60,"h":30,"click":0}
 {"page":3,"id":25,"obj":"label","x":145,"y":245,"w":60,"h":30,"text":"00.0","text_font":24,"align":"center"}
+{"page":3,"id":26,"obj":"label","x":7,"y":250,"w":10,"h":30,"text":"\uE141","text_font":16,"align":"center","text_color":"grey"}
+{"page":3,"id":27,"obj":"label","x":223,"y":250,"w":10,"h":30,"text":"\uE142","text_font":16,"align":"center","text_color":"grey"}
 {"page":3,"id":30,"obj":"tabview","x":0,"y":235,"w":240,"h":80,"btn_pos":0,"bg_opa":0,"border_width":0,"radius":0}
 {"page":3,"id":31,"obj":"tab","parentid":30}
 {"page":3,"id":32,"obj":"tab","parentid":30}
