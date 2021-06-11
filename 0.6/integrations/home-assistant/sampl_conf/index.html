@@ -677,7 +677,7 @@
       
         <li class="md-nav__item">
   <a href="#media-player" class="md-nav__link">
-    Media Player
+    Media player
   </a>
   
 </li>
@@ -1212,7 +1212,7 @@
       
         <li class="md-nav__item">
   <a href="#media-player" class="md-nav__link">
-    Media Player
+    Media player
   </a>
   
 </li>
@@ -1626,7 +1626,7 @@ Your browser does not support the video tag.
 
 <p>Check out the <a href="../../examples/example-lovelace/">Lovelace-like entities</a> for similar placement.  </p>
 <hr />
-<h2 id="media-player">Media Player<a class="headerlink" href="#media-player" title="Permanent link">~</a></h2>
+<h2 id="media-player">Media player<a class="headerlink" href="#media-player" title="Permanent link">~</a></h2>
 <p><img alt="screenshot" src="../../../assets/images/screenshots/cc_sampl_mediaplayer.png" />  </p>
 <p>The labels with artist and title are scrolling, the progressbar fills if the media player provides duration and playback position. The dropdown lists containing the available sources and sound modes of the player get populated automatically by the values existing on the player in Home Assistant, also the actually selected value is in sync with the values selected in Home Assistant.<br />
 Player availability is shown by the opacity of the buttons. Player state (play/pause) is shown by the middle button. Power state shown by color, repeat, shuffle and muted state shown by appropriate icons on the buttons.
@@ -2008,7 +2008,7 @@ Note that the <code>val</code> value of the slider is multiplied and divided by 
 <h2 id="generic-thermostatclimate">Generic thermostat/climate<a class="headerlink" href="#generic-thermostatclimate" title="Permanent link">~</a></h2>
 <p><img alt="screenshot" src="../../../assets/images/screenshots/cc_sampl_climate.png" />  </p>
 <p>This example is a bit more complex in the aspect that it uses several objects put on top of each other, and grouped toghether using the <code>parentid</code> parameter.  Special attention goes to an invisible tabview (exteding over the label dispaying the target temperarture) which allows for swiping between an on/off switch and dropdowns for setting the hvac and fan modes.</p>
-<p>The target temperature can be set by dragging the arc handle, more precise +/- setting possible by short/long pressing the middle circle containing the current temperature (increasing/decreasing the value by the <em>temperature step</em> defined by the climate entity). Note that the <code>min</code>, <code>max</code> and <code>val</code> values of the arc and gauge are multiplied and divided by 10 when set and read, because <a href="../../design/data-types#integer">LVGL only suppports integers</a> for object values. By multiplying and dividing by 10, it becomes possible to set decimal values for climate temperature. </p>
+<p>The target temperature can be set by dragging the arc handle, more precise +/- setting possible by short/long pressing the middle circle containing the current temperature (increasing/decreasing the value by the <em>temperature step</em> defined by the climate entity). Note that the <code>min</code>, <code>max</code> and <code>val</code> values of the arc and gauge are multiplied and divided by 10 when set and read, because <a href="../../../design/data-types#integer">LVGL only suppports integers</a> for object values. By multiplying and dividing by 10, it becomes possible to set decimal values for climate temperature. </p>
 <p>The number of the ticks on the gauge is determined from the <code>min</code>, <code>max</code> attributes of the configured climate, likewise the <code>hvac_modes</code> and <code>fan_modes</code> dropdowns. You can localise these using the <code>if-else</code> statements of the template in the configuration of the custom component.</p>
 <p>The active area of the arc changes color based on the current hvac mode of the entity.</p>
 <p>relevant <strong>openHASP config:</strong> (screen size 240x320) </p>
