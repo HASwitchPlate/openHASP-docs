@@ -546,8 +546,6 @@ relevant **openHASP-custom-component config:**
           "val": "{{ state_attr('climate.thermostat_1','temperature') * 10 | int if not (is_state('climate.thermostat_1','unavailable')) }}"
           "min": "{{ state_attr('climate.thermostat_1','min_temp') * 10 | int if not (is_state('climate.thermostat_1','unavailable')) }}"
           "max": "{{ state_attr('climate.thermostat_1','max_temp') * 10 | int if not (is_state('climate.thermostat_1','unavailable')) }}"
-          "opacity": "{{ 60 if (is_state('climate.thermostat_1','unavailable') or is_state('climate.thermostat_1','unavailable')) else 255 }}"
-          "click": "{{ 'false' if (is_state('climate.thermostat_1','unavailable') or is_state('climate.thermostat_1','unavailable')) else 'true' }}"
           "line_color1": >
             {% if is_state('climate.thermostat_1', 'cool') %}
             {{ "#346beb" }}
@@ -588,7 +586,6 @@ relevant **openHASP-custom-component config:**
       - obj: "p3b23"  # label current temp (and +/- with short/long touch)
         properties:
           "text": "{{ state_attr('climate.thermostat_1','current_temperature') if not (is_state('climate.thermostat_1','unavailable')) }}"
-          "click": "{{ 'false' if (is_state('climate.thermostat_1','unavailable') or is_state('climate.thermostat_1','unavailable')) else 'true' }}"
         event:
           "up":
             - service: climate.set_temperature
@@ -612,7 +609,6 @@ relevant **openHASP-custom-component config:**
       - obj: "p3b41"  # on/off switch
         properties:
           "val": "{{ 0 if (is_state('climate.thermostat_1', 'off') or is_state('climate.thermostat_1', 'unavailable')) else 1 }}"
-          "click": "{{ 'false' if (is_state('climate.thermostat_1','unavailable') or is_state('climate.thermostat_1','unavailable')) else 'true' }}"
         event:
           "down":
             - service_template: >
@@ -644,7 +640,6 @@ relevant **openHASP-custom-component config:**
             On{{"\n"|e}}
             {%- endif -%}
             {%-if not loop.last%}{%-endif%}{%-endfor%}{% endif %}
-          "click": "{{ 'false' if (is_state('climate.thermostat_1','unavailable') or is_state('climate.thermostat_1','unavailable')) else 'true' }}"
           "val": >
             {% if not (is_state('climate.thermostat_1','unavailable')) %}{%for mode in state_attr('climate.thermostat_1','hvac_modes')%}
             {{loop.index -1 if mode == states('climate.thermostat_1') }}
@@ -670,6 +665,7 @@ relevant **openHASP-custom-component config:**
                   fan_only
                   {% endif -%}
 
+
       - obj: "p3b43"  # dropdown with fan_modes
         properties:
           "options": >
@@ -686,8 +682,6 @@ relevant **openHASP-custom-component config:**
             Turbo{{"\n"|e}}
             {%- endif -%}
             {%-if not loop.last%}{%-endif%}{%-endfor%}{% endif %}
-
-          "click": "{{ 'false' if (is_state('climate.thermostat_1','unavailable') or is_state('climate.thermostat_1','unavailable')) else 'true' }}"
           "val": >
             {% if not (is_state('climate.thermostat_1','unavailable')) %}{%for mode in state_attr('climate.thermostat_1','fan_modes')%}
             {{loop.index -1 if mode == state_attr('climate.thermostat_1','fan_mode') }}
