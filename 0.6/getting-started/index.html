@@ -1319,7 +1319,7 @@ table th:last-of-type {
 <p>For new projects we recommend ESP32-WROVER boards with PSram.</p>
 <p>The performance of the ESP8266 will be slow due to its low memory and CPU frequency.
 It is okay for getting started, for small project where speed is not needed or when you have one at hand.</p>
-<div class="admonition warning">
+<div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>Advanced users can build and compile custom configurations using PlatformIO <a href="../compiling/local/">locally</a> or <a href="../compiling/gitpod/">online with Gitpod</a>, however this is not currently supported.</p>
 </div>
@@ -1337,8 +1337,8 @@ Therefor the Lolin TFT 2.4 Touch Shield is used as the development display of ch
 <p>To use PWM dimming on the Lolin TFT 2.4" you must connect the TFT-LED pin to either D1, D2 or D4.
 <strong>D1 is recommended</strong> for backlight control and configured by default.</p>
 <p><img alt="TFT-LED PWM dimming" src="../assets/images/tft-led-pwm.png" /></p>
-<div class="admonition danger">
-<p class="admonition-title"><i class="fa fa-exclamation-triangle"></i> Do <em>not</em> use D3 for backlight control because it is already in use for touch!</p>
+<div class="admonition warning">
+<p class="admonition-title">Do <em>not</em> use D3 for backlight control because it is already in use for touch!</p>
 </div>
 <div class="admonition warning">
 <p>It is <em>not</em> recommended to use D4 for backlight control because it is already in use for PSram on the ESP32-Wrover.
