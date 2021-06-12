@@ -13,11 +13,10 @@ You have the option to install the custom component using HACS or via manual dow
 
     1. Goto _Home Assistant > HACS > Integrations_.
     2. Click the _Explore & Add Repositories_ button.
-    3. Search for `openHASP` and click on the openHasp logo
-    4. Click _Install this repository in HACS_
-    5. **Important:** Select the _Main_ version for 0.6 !
-    6. Click Install
-    7. Reboot Home-Assistant
+    3. Search for `openHASP` and click on the openHasp logo.
+    4. Click _Install this repository in HACS_. **Note:** To install the current unstable development version select the _Main_.
+    5. Click Install
+    6. Reboot Home-Assistant
 
 === "Manual Install"
     Alternatively, you can also install it manually: 

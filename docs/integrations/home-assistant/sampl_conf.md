@@ -131,106 +131,6 @@ Whenever somebody changes the color of the `cpicker` object on the plate, the li
 
 *  *  *  *  *
 
-## Generic thermostat/climate
-
-![screenshot](../../assets/images/screenshots/cc_sampl_climate.png)  
-
-Arc can be dragged by the handle, precise set possible from the +/-buttons. Note that the `min`, `max` and `val` values of the arc are multiplied and divided by 10 when set and read, because [LVGL only suppports integers](../../design/data-types#integer) for object values. By multiplying and dividing by 10, it becomes possible to set decimal values for climate temperature.
-
-The objects self-populate with the supported attributes of the climate in Home Assistant:
-- the arc min and max get the min and max temperatures 
-- the dropdown gets the available heating modes, and changes accordingly during operation
-- the plus and minus buttons increase and decrease the temperature by the temperature step defined by the climate
-
-The circle in the middle changes color if it's heating, but also serves as a touch-catcher to minimize false arc-touch detections while manipulating with plus and minus buttons. Controls get disabled when entity is unavailable in HA.
-
-relevant **openHASP config:** (screen size 240x320) 
-
-```json
-{"page":2,"id":2,"obj":"arc","x":10,"y":70,"w":220,"h":220,"min":180,"max":250,"border_side":0,"type":0,"rotation":0,"start_angle":135,"end_angle":45,"start_angle1":135,"end_angle1":45,"value_font":32,"value_color":"#2C3E50","adjustable":"true"}
-{"page":2,"id":3,"obj":"obj","x":40,"y":100,"w":160,"h":160,"radius":100,"opacity":100,"border_opa":160,"border_width":4,"comment":"touch-catcher"}
-{"page":2,"id":4,"obj":"label","x":10,"y":40,"w":220,"h":30,"text":"Kívánt hőmérséklet:","align":1,"padh":50}
-{"page":2,"id":5,"obj":"dropdown","x":75,"y":235,"w":90,"h":30,"options":""}
-{"page":2,"id":6,"obj":"btn","x":50,"y":160,"w":40,"h":40,"toggle":false,"text":"\uE374","text_font":32,"align":1}
-{"page":2,"id":7,"obj":"btn","x":150,"y":160,"w":40,"h":40,"toggle":false,"text":"\uE415","text_font":32,"align":1}
-{"page":2,"id":8,"obj":"label","x":60,"y":115,"w":120,"h":30,"text":"Status","align":1,"padh":50}
-```
-
-relevant **openHASP-custom-component config:**
-
-```yaml
-      - obj: "p2b2"  # arc
-        properties:
-          "val": "{{ state_attr('climate.thermostat_1','temperature') * 10 | int if not (is_state('climate.thermostat_1','unavailable')) }}"
-          "value_str": "{{ state_attr('climate.thermostat_1','temperature') if not (is_state('climate.thermostat_1','unavailable')) }}"
-          "min": "{{ state_attr('climate.thermostat_1','min_temp') * 10 | int if not (is_state('climate.thermostat_1','unavailable')) }}"
-          "max": "{{ state_attr('climate.thermostat_1','max_temp') * 10 | int if not (is_state('climate.thermostat_1','unavailable')) }}"
-          "opacity": "{{ 60 if (is_state('climate.thermostat_1','unavailable') or is_state('climate.thermostat_1','unknown')) else 255 }}"
-          "click": "{{ 'false' if (is_state('climate.thermostat_1','unavailable') or is_state('climate.thermostat_1','unknown')) else 'true' }}"
-        event:
-          "changed":
-            - service: climate.set_temperature
-              data:
-                entity_id: climate.thermostat_1
-                temperature: "{{ val | int / 10 }}"
-          "up":
-            - service: climate.set_temperature
-              data:
-                entity_id: climate.thermostat_1
-                temperature: "{{ val | int / 10 }}"
-
-      - obj: "p2b5"  # dropdown with modes
-        properties:
-          "options": >
-            {% if not (is_state('climate.thermostat_1','unavailable')) %}{%for mode in state_attr('climate.thermostat_1','hvac_modes')%}{{mode+"\n"|e}}{%-if not loop.last%}{%-endif%}{%-endfor%}{% endif %}
-          "val": >
-            {% if not (is_state('climate.thermostat_1','unavailable')) %}{%for mode in state_attr('climate.thermostat_1','hvac_modes')%}
-            {{loop.index -1 if mode == states('climate.thermostat_1') }}
-            {%-endfor%}{% endif %}
-        event:
-          "changed":
-            - service: climate.set_hvac_mode
-              data:
-                entity_id: climate.thermostat_1
-                hvac_mode: "{{ text }}"
-
-      - obj: "p2b6"  # plus
-        properties:
-          "opacity": "{{ 60 if (is_state('climate.thermostat_1','unavailable') or is_state('climate.thermostat_1','unknown')) else 255 }}"
-          "click": "{{ 'false' if (is_state('climate.thermostat_1','unavailable') or is_state('climate.thermostat_1','unknown')) else 'true' }}"
-        event:
-          "down":
-            - service: climate.set_temperature
-              data:
-                entity_id: climate.thermostat_1
-                temperature: "{{ state_attr('climate.thermostat_1','temperature') - state_attr('climate.thermostat_1','target_temp_step') | float}}" 
-
-      - obj: "p2b7"  # minus
-        properties:
-          "opacity": "{{ 60 if (is_state('climate.thermostat_1','unavailable') or is_state('climate.thermostat_1','unknown')) else 255 }}"
-          "click": "{{ 'false' if (is_state('climate.thermostat_1','unavailable') or is_state('climate.thermostat_1','unknown')) else 'true' }}"
-        event:
-          "down":
-            - service: climate.set_temperature
-              data:
-                entity_id: climate.thermostat_1
-                temperature: "{{ state_attr('climate.thermostat_1','temperature') + state_attr('climate.thermostat_1','target_temp_step') | float}}" 
-
-      - obj: "p2b8"  # status label
-        properties:
-          "text": "{{ state_attr('climate.thermostat_1','hvac_action') }}"
-
-      - obj: "p2b3"  # color circle touch-catcher
-        properties:
-          "border_color": "{{ 'Blush' if is_state_attr('climate.thermostat_1', 'hvac_action', 'heating') else 'Silver' }}"
-
-      - obj: "p2b4"  # top label
-        properties:
-          "text": "Desired temperature: {{ state_attr('climate.thermostat_1','temperature') if not (is_state('climate.thermostat_1','unavailable')) }}°C"
-```
-
-*  *  *  *  *
-
 ## Cover with state feedback
 
 ![screenshot](../../assets/images/screenshots/cc_sampl_cover.png)  
@@ -333,6 +233,13 @@ relevant **openHASP-custom-component config:**
 
 The icon behaves like in Lovelace. UI theme set to `Hasp Light` in plate's web interface.
 
+<video width="360" height="640" controls>
+  <source src="../../../assets/videos/cc_sampl_cover_lovelace.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video>
+
+Check out the [Lovelace-like entities](../examples/example-lovelace.md) for similar placement.  
+
 relevant **openHASP config:** (screen size 240x320, UI Theme: Hasp Light) 
 
 ```json
@@ -383,16 +290,10 @@ relevant **openHASP-custom-component config:**
               target:
                 entity_id: "cover.my_cover"
 ```
-<video width="360" height="640" controls>
-  <source src="../../../assets/videos/cc_sampl_cover_lovelace.mp4" type="video/mp4">
-Your browser does not support the video tag.
-</video>
-
-Check out the [Lovelace-like entities](../examples/example-lovelace.md) for similar placement.  
 
 *  *  *  *  *
 
-## Media Player
+## Media player
 
 ![screenshot](../../assets/images/screenshots/cc_sampl_mediaplayer.png)  
 
@@ -595,6 +496,213 @@ relevant **openHASP-custom-component config:**
 
 ```
 Note that the `val` value of the slider is multiplied and divided by 100 when read and set, because [LVGL only suppports integers](../../design/data-types#integer) for object values. By multiplying and dividing by 100, it becomes possible to set volume between 0 and 1 as required by Home Assistant.
+
+*  *  *  *  *
+
+## Generic thermostat/climate
+
+![screenshot](../../assets/images/screenshots/cc_sampl_climate.png)  
+
+This example is a bit more complex in the aspect that it uses several objects put on top of each other, and grouped toghether using the `parentid` parameter.  Special attention goes to an invisible tabview (exteding over the label dispaying the target temperarture) which allows for swiping between an on/off switch and dropdowns for setting the hvac and fan modes.
+
+The target temperature can be set by dragging the arc handle, more precise +/- setting possible by short/long pressing the middle circle containing the current temperature (increasing/decreasing the value by the _temperature step_ defined by the climate entity). Note that the `min`, `max` and `val` values of the arc and gauge are multiplied and divided by 10 when set and read, because [LVGL only suppports integers](../../../design/data-types#integer) for object values. By multiplying and dividing by 10, it becomes possible to set decimal values for climate temperature. 
+
+The number of the ticks on the gauge is determined from the `min`, `max` attributes of the configured climate, likewise the `hvac_modes` and `fan_modes` dropdowns. You can localise these using the `if-else` statements of the template in the configuration of the custom component.
+
+The active area of the arc changes color based on the current hvac mode of the entity.    
+UI theme set to `Hasp Light` in plate's web interface.
+
+<video width="360" height="640" controls>
+  <source src="../../../assets/videos/cc_sampl_climate_control.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video>
+
+relevant **openHASP config:** (screen size 240x320) 
+
+```json
+{"page":3,"id":10,"obj":"obj","x":5,"y":35,"w":230,"h":250,"click":0}
+{"page":3,"id":20,"obj":"arc","x":10,"y":42,"w":220,"h":220,"min":170,"max":300,"val":224,"border_side":0,"type":0,"rotation":0,"start_angle":135,"end_angle":45,"start_angle1":135,"end_angle1":45,"adjustable":"true","line_width":21,"line_width1":21,"line_color1":"#9f96b0","bg_opa":0}
+{"page":3,"id":21,"obj":"gauge","x":22,"y":22,"w":176,"h":176,"parentid":20,"min":170,"max":300,"val":224,"format":1,"critical_value":301,"label_count":14,"line_count":27,"border_width":0,"pad_top":2,"pad_bottom":2,"pad_left":2,"pad_right":2,"value_str":"°C","value_ofs_y":45,"value_font":16,"bg_opa":0}
+{"page":3,"id":22,"obj":"obj","x":80,"y":80,"w":60,"h":60,"parentid":20,"click":0,"radius":30,"border_width":2,"border_opa":200}
+{"page":3,"id":23,"obj":"label","x":0,"y":95,"w":220,"h":30,"parentid":20,"text":"22.4","text_font":24,"align":"center"}
+{"page":3,"id":24,"obj":"obj","x":145,"y":245,"w":60,"h":30,"click":0}
+{"page":3,"id":25,"obj":"label","x":145,"y":245,"w":60,"h":30,"text":"00.0","text_font":24,"align":"center"}
+{"page":3,"id":30,"obj":"tabview","x":0,"y":235,"w":240,"h":80,"btn_pos":0,"bg_opa":0,"border_width":0,"radius":0}
+{"page":3,"id":31,"obj":"tab","parentid":30}
+{"page":3,"id":32,"obj":"tab","parentid":30}
+{"page":3,"id":33,"obj":"tab","parentid":30}
+{"page":3,"id":41,"obj":"switch","x":35,"y":10,"w":60,"h":30,"parentid":31,"radius":25,"radius2":25}
+{"page":3,"id":42,"obj":"dropdown","x":15,"y":10,"w":110,"h":30,"parentid":32,"options":"hvac_modes","direction":"1"}
+{"page":3,"id":43,"obj":"dropdown","x":15,"y":10,"w":110,"h":30,"parentid":33,"options":"fan_modes","direction":"1"}
+```
+
+relevant **openHASP-custom-component config:**
+
+```yaml
+      - obj: "p3b20"  # arc slider
+        properties:
+          "val": "{{ state_attr('climate.thermostat_1','temperature') * 10 | int if not (is_state('climate.thermostat_1','unavailable')) }}"
+          "min": "{{ state_attr('climate.thermostat_1','min_temp') * 10 | int if not (is_state('climate.thermostat_1','unavailable')) }}"
+          "max": "{{ state_attr('climate.thermostat_1','max_temp') * 10 | int if not (is_state('climate.thermostat_1','unavailable')) }}"
+          "line_color1": >
+            {% if is_state('climate.thermostat_1', 'cool') %}
+            {{ "#346beb" }}
+            {%-elif is_state('climate.thermostat_1', 'heat_cool') %}
+            {{ "#34bdeb" }}
+            {%-elif is_state('climate.thermostat_1', 'heat') %}
+            {{ "#eb3434" }}
+            {%-elif is_state('climate.thermostat_1', 'dry') %}
+            {{ "#ebeb34" }}
+            {%-elif is_state('climate.thermostat_1', 'fan_only') %}
+            {{ "#34eb77" }}
+            {%-else %}
+            {{ "#9f96b0" }}
+            {% endif %}
+        event:
+          "changed":
+            - service: climate.set_temperature
+              target:
+                entity_id: climate.thermostat_1
+              data:
+                temperature: "{{ val | int / 10 }}"
+          "up":
+            - service: climate.set_temperature
+              target:
+                entity_id: climate.thermostat_1
+              data:
+                temperature: "{{ val | int / 10 }}"
+
+      - obj: "p3b21"  # gauge current temp
+        properties:
+          "val": "{{ state_attr('climate.thermostat_1','current_temperature') * 10 | int if not (is_state('climate.thermostat_1','unavailable')) }}"
+          "min": "{{ state_attr('climate.thermostat_1','min_temp') * 10 | int if not (is_state('climate.thermostat_1','unavailable')) }}"
+          "max": "{{ state_attr('climate.thermostat_1','max_temp') * 10 | int if not (is_state('climate.thermostat_1','unavailable')) }}"
+          "critical_value": "{{ (state_attr('climate.thermostat_1','max_temp') * 10 | int + 1) if not (is_state('climate.thermostat_1','unavailable')) }}"
+          "label_count": "{{ (state_attr('climate.thermostat_1','max_temp') | int - state_attr('climate.thermostat_1','min_temp') | int + 1) if not (is_state('climate.thermostat_1','unavailable')) }}"
+          "line_count": "{{ ((state_attr('climate.thermostat_1','max_temp') | int - state_attr('climate.thermostat_1','min_temp') | int) * 2 + 1) if not (is_state('climate.thermostat_1','unavailable')) }}"
+
+      - obj: "p3b23"  # label current temp (and +/- with short/long touch)
+        properties:
+          "text": "{{ state_attr('climate.thermostat_1','current_temperature') if not (is_state('climate.thermostat_1','unavailable')) }}"
+        event:
+          "up":
+            - service: climate.set_temperature
+              target:
+                entity_id: climate.thermostat_1
+              data:
+                temperature: "{{ state_attr('climate.thermostat_1','temperature') + state_attr('climate.thermostat_1','target_temp_step') | float}}" 
+          "long":
+            - service: climate.set_temperature
+              target:
+                entity_id: climate.thermostat_1
+              data:
+                temperature: "{{ state_attr('climate.thermostat_1','temperature') - state_attr('climate.thermostat_1','target_temp_step') | float}}" 
+
+
+      - obj: "p3b25"  # label target temp
+        properties:
+          "text": "{{ state_attr('climate.thermostat_1','temperature') if not (is_state('climate.thermostat_1','unavailable')) }}"
+
+
+      - obj: "p3b41"  # on/off switch
+        properties:
+          "val": "{{ 0 if (is_state('climate.thermostat_1', 'off') or is_state('climate.thermostat_1', 'unavailable')) else 1 }}"
+        event:
+          "down":
+            - service_template: >
+                {% if val == 0 -%}
+                climate.turn_on
+                {% else -%}
+                climate.turn_off
+                {% endif -%}
+              entity_id: "climate.thermostat_1"
+
+
+      - obj: "p3b42"  # dropdown with hvac_modes
+        properties:
+          "options": >
+            {% if not (is_state('climate.thermostat_1','unavailable')) %}{%for mode in state_attr('climate.thermostat_1','hvac_modes')%}
+            {%- if mode == 'off' -%}
+            Off{{"\n"|e}}
+            {%- elif mode == 'heat' -%}
+            Heating{{"\n"|e}}
+            {%- elif mode == 'cool' -%}
+            Cooling{{"\n"|e}}
+            {%- elif mode == 'heat_cool' -%}
+            Heat/Cool{{"\n"|e}}
+            {%- elif mode == 'dry' -%}
+            Drying{{"\n"|e}}
+            {%- elif mode == 'fan_only' -%}
+            Fan only{{"\n"|e}}
+            {%- else -%}
+            On{{"\n"|e}}
+            {%- endif -%}
+            {%-if not loop.last%}{%-endif%}{%-endfor%}{% endif %}
+          "val": >
+            {% if not (is_state('climate.thermostat_1','unavailable')) %}{%for mode in state_attr('climate.thermostat_1','hvac_modes')%}
+            {{loop.index -1 if mode == states('climate.thermostat_1') }}
+            {%-endfor%}{% endif %}
+        event:
+          "changed":
+            - service: climate.set_hvac_mode
+              target:
+                entity_id: climate.thermostat_1
+              data:
+                hvac_mode: >
+                  {% if text == "Off" -%}
+                  off
+                  {% elif text == 'Heating' -%}
+                  heat
+                  {% elif text == 'Cooling' -%}
+                  cool
+                  {% elif text == 'Heat/Cool' -%}
+                  heat_cool
+                  {% elif text == 'Drying' -%}
+                  dry
+                  {% elif text == 'Fan only' -%}
+                  fan_only
+                  {% endif -%}
+
+
+      - obj: "p3b43"  # dropdown with fan_modes
+        properties:
+          "options": >
+            {% if not (is_state('climate.thermostat_1','unavailable')) %}{%for mode in state_attr('climate.thermostat_1','fan_modes')%}
+            {%- if mode == 'auto' -%}
+            Automatic{{"\n"|e}}
+            {%- elif mode == 'low' -%}
+            Low{{"\n"|e}}
+            {%- elif mode == 'medium' -%}
+            Medium{{"\n"|e}}
+            {%- elif mode == 'high' -%}
+            High{{"\n"|e}}
+            {%- elif mode == 'turbo' -%}
+            Turbo{{"\n"|e}}
+            {%- endif -%}
+            {%-if not loop.last%}{%-endif%}{%-endfor%}{% endif %}
+          "val": >
+            {% if not (is_state('climate.thermostat_1','unavailable')) %}{%for mode in state_attr('climate.thermostat_1','fan_modes')%}
+            {{loop.index -1 if mode == state_attr('climate.thermostat_1','fan_mode') }}
+            {%-endfor%}{% endif %}
+        event:
+          "changed":
+            - service: climate.set_fan_mode
+              target:
+                entity_id: climate.thermostat_1
+              data:
+                fan_mode: >
+                  {% if text == "Automatic" -%}
+                  auto
+                  {% elif text == 'Low' -%}
+                  low
+                  {% elif text == 'Medium' -%}
+                  medium
+                  {% elif text == 'High' -%}
+                  high
+                  {% elif text == 'Turbo' -%}
+                  turbo
+                  {% endif -%}
+```
 
 *  *  *  *  *
 
