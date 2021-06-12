@@ -101,7 +101,7 @@ no need to use any jumper cables:
 - Wemos D1 Mini ESP8266
 - Lolin D1 Mini Pro ESP8266 V2.0.0
 
-!!! note "Note"
+!!! note
     If you have a Lolin TFT 2.4" Display and a compatible ESP development board, you have all the hardware that is needed.
     In that case you can skip ahead to the [Firmware Installation](../installation/esp32).
 

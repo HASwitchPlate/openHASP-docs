@@ -44,7 +44,7 @@ table th:last-of-type {
 [4]: https://www.aliexpress.com/item/32815530502.html
 [5]: https://www.aliexpress.com/item/32977375539.html
 
-!!! note "Note"
+!!! note
     *Due to the large number of possible hardware options a selection of 3 popular ESP development boards has been made for the precompiled binaries.*
 
 For new projects we recommend ESP32-WROVER boards with PSram.
@@ -52,7 +52,7 @@ For new projects we recommend ESP32-WROVER boards with PSram.
 The performance of the ESP8266 will be slow due to its low memory and CPU frequency.
 It is okay for getting started, for small project where speed is not needed or when you have one at hand.
 
-!!! warning "Tip"
+!!! tip
     Advanced users can build and compile custom configurations using PlatformIO [locally](compiling/local.md) or [online with Gitpod](compiling/gitpod.md), however this is not currently supported.
 
 
@@ -77,7 +77,7 @@ To use PWM dimming on the Lolin TFT 2.4" you must connect the TFT-LED pin to eit
 
 ![TFT-LED PWM dimming](assets/images/tft-led-pwm.png)
 
-!!! danger "<i class="fa fa-exclamation-triangle"></i> Do *not* use D3 for backlight control because it is already in use for touch!"
+!!! warning "Do *not* use D3 for backlight control because it is already in use for touch!"
 
 !!! warning ""
     It is *not* recommended to use D4 for backlight control because it is already in use for PSram on the ESP32-Wrover.
@@ -101,7 +101,7 @@ no need to use any jumper cables:
 - Wemos D1 Mini ESP8266
 - Lolin D1 Mini Pro ESP8266 V2.0.0
 
-!!! note "Note"
+!!! note
     If you have a Lolin TFT 2.4" Display and a compatible ESP development board, you have all the hardware that is needed.
     In that case you can skip ahead to the [Firmware Installation](installation/esp32.md).
 

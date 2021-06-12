@@ -20,12 +20,12 @@ If you are missing objects, check the logs to see which line was processed last.
 You probably have a typo in the following line which blocks parsing the rest of the file.  
 Blank lines are allowed for readability and are ignored.
 
-!!! note "Note"
+!!! note
     The complete file in its entirety is *not* a valid json file.
     Each individual line however must be a valid json object.
     The file extension is `.jsonl` and not `.json`.
 
-!!! note "Note"
+!!! note
     The maximum number of pages and objects is limited by the memory available in the MCU, it depends on the [microcontroller type](../../#features) you use.
 
     
@@ -62,7 +62,7 @@ Example 3: Insert a comment for an object.
 
 See [commands documentation](../../commands/#jsonl) for the `jsonl` command. The payload of the command corresponds to what's exactly in one line of the `pages.jsonl` file above, with a minor exception: page numbers are not kept between the commands - you need to specfiy the page with each!
 
-!!! warning "Warning"
+!!! warning
     Some integrations like the [custom component for Home Assistant](../../integrations/home-assistant/howto/) can store the `pages.jsonl` centrally for your plates, in such cases you have the to specify the page number for each object, as those files are actually parsed line by line using the `jsonl` command.
 
 
@@ -90,7 +90,7 @@ You can have a maximum of 254 ids on each page. You don't have to use them in as
 Page number `0` refers to an object visible on all pages.   
 An id of `0` refers to the page itself instead of an object.   
 
-!!! note "Tip"
+!!! tip
     If you add the objects on the page `0` last, you ensure that they will be always be visible on top of all other pages.
 
 See [objects documentation](../objects/) for details.
@@ -120,7 +120,7 @@ on page 1, `page prev` action will go to page 5 (instead of default page 12 on a
 ```
 The corresponding command is `p1b0.prev=5`.
 
-!!! note "Tip"
+!!! tip
     Page id `p0b0` (as all pages) is not valid to set this attribute for. It has to be set individually on each real page starting from 1. 
 
 `back` acts like a _level up_ action, so you can jump back to the home or menu page where you came from using `page back`. You can create a hierarchy of pages and menus this way.

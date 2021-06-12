@@ -106,7 +106,7 @@ Pin| Mode   | L8-HS      | Group | Default
 32 | Output | Mood Green | 5 | Low (Normal)
 33 | Output | Mood Blue  | 6 | Low (Normal)
 
-!!! note "Tip"
+!!! tip
     To configure the GPIOs _as light switches_ at once for L8-HS send to topic `hasp/<nodename>/config/gpio` a message with payload:  
     ```json
     {"config":[197658,263456,329249,655628,655886,656155,0,0]}
@@ -138,7 +138,7 @@ Pin| Mode   | L8-HD      | Group | Default
 32 | Output | Mood Green | 5 | Low (Normal)
 33 | Output | Mood Blue  | 6 | Low (Normal)
 
-!!! note "Tip"
+!!! tip
     To configure the GPIOs at once for L8-HD send to topic `hasp/<nodename>/config` a message with payload:  
     ```json
     {"gpio":{"config":[3214348,197658,263456,329249,94699520,0,0,0]}}

@@ -40,7 +40,7 @@ This allows for simple action-reaction scenarios without relying on a home autom
 
 The state of a digital input can only be `on` or `off` and will set all group members to either 100% or 0% of their maximum value.
 
-!!! note "Note"
+!!! note
     The grouping of multiple gpios and objects together is intended for simple actions only.
     More complex actions should be performed by a home automation system, without linking groupids together.
 
