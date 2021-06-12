@@ -141,7 +141,7 @@ Pin| Mode   | L8-HD      | Group | Default
 !!! tip
     To configure the GPIOs at once for L8-HD send to topic `hasp/<nodename>/config` a message with payload:  
     ```json
-    {"gpio":{"config":[3214348,197658,263456,329249,94699520,0,0,0]}}
+    {"gpio":{"config":[3211532,197658,263456,329249,0,0,0,0]}}
     ```
 
 !!! note
