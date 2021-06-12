@@ -153,7 +153,7 @@ Pin| Mode   | L8-HB      | Group | Default
 33 | Output | Mood Blue  | 6 | Low (Normal)
 
 !!! tip
-    To configure the GPIOs at once for L8-HD send to topic `hasp/<nodename>/config` a message with payload:  
+    To configure the GPIOs at once for L8-HB send to topic `hasp/<nodename>/config` a message with payload:  
     ```json
     {"gpio":{"config":[197658,263456,329249,721179,14,27,0,0]}}
     ```
