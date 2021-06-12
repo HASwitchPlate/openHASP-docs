@@ -1536,17 +1536,13 @@ The difference is only the device class you want them to be autodetected as in H
 </code></pre></div>
 </td></tr></table></p>
 </div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>You can <a href="../../compiling/customize/">build your own firmware</a> with GPIOs and many other parameters pre-configured in <code>user_config_override.h</code> as factory defaults for Lanbon L8.</p>
-</div>
 <h3 id="boiler-version-l8-hb">Boiler version L8-HB<a class="headerlink" href="#boiler-version-l8-hb" title="Permanent link">~</a></h3>
 <table>
 <thead>
 <tr>
 <th>Pin</th>
 <th>Mode</th>
-<th>L8-HD</th>
+<th>L8-HB</th>
 <th>Group</th>
 <th>Default</th>
 </tr>
@@ -1562,7 +1558,7 @@ The difference is only the device class you want them to be autodetected as in H
 <tr>
 <td>27</td>
 <td>Output</td>
-<td>16A Relay (K1)</td>
+<td>Relay 16A (K1)</td>
 <td>1</td>
 <td>Low (Normal)</td>
 </tr>
@@ -1582,6 +1578,17 @@ The difference is only the device class you want them to be autodetected as in H
 </tr>
 </tbody>
 </table>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>To configure the GPIOs at once for L8-HD send to topic <code>hasp/&lt;nodename&gt;/config</code> a message with payload:<br />
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;gpio&quot;</span><span class="p">:{</span><span class="nt">&quot;config&quot;</span><span class="p">:[</span><span class="mi">197658</span><span class="p">,</span><span class="mi">263456</span><span class="p">,</span><span class="mi">329249</span><span class="p">,</span><span class="mi">721179</span><span class="p">,</span><span class="mi">14</span><span class="p">,</span><span class="mi">27</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]}}</span>
+</code></pre></div>
+</td></tr></table></p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You can <a href="../../compiling/customize/">build your own firmware</a> with GPIOs and many other parameters pre-configured in <code>user_config_override.h</code> as factory defaults for Lanbon L8.</p>
+</div>
 <h2 id="wiring-diagrams">Wiring Diagrams<a class="headerlink" href="#wiring-diagrams" title="Permanent link">~</a></h2>
 <p>The switch supports several wiring configurations:</p>
 <p><img alt="Display image" src="../../assets/images/devices/lanbon-l8-wiring.png" /></p>
