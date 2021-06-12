@@ -128,7 +128,6 @@ Pin| Mode   | L8-HS      | Group | Default
     ![lanbon-3-switch-display](../assets/images/screenshots/lanbon-3-switch-display.png)
 
 
-
 ### Dimmer version L8-HD
 
 Pin| Mode   | L8-HD      | Group | Default
@@ -144,18 +143,23 @@ Pin| Mode   | L8-HD      | Group | Default
     {"gpio":{"config":[3211532,197658,263456,329249,0,0,0,0]}}
     ```
 
-!!! note
-    You can [build your own firmware](../compiling/customize.md) with GPIOs and many other parameters pre-configured in `user_config_override.h` as factory defaults for Lanbon L8.
-
-
 ### Boiler version L8-HB
 
-Pin| Mode   | L8-HD      | Group | Default
+Pin| Mode   | L8-HB      | Group | Default
 ---|--------|------------|---|----
 26 | Output | Mood Red   | 4 | Low (Normal)
-27 | Output | 16A Relay (K1) | 1 | Low (Normal)
+27 | Output | Relay 16A (K1) | 1 | Low (Normal)
 32 | Output | Mood Green | 5 | Low (Normal)
 33 | Output | Mood Blue  | 6 | Low (Normal)
+
+!!! tip
+    To configure the GPIOs at once for L8-HD send to topic `hasp/<nodename>/config` a message with payload:  
+    ```json
+    {"gpio":{"config":[197658,263456,329249,721179,14,27,0,0]}}
+    ```
+
+!!! note
+    You can [build your own firmware](../compiling/customize.md) with GPIOs and many other parameters pre-configured in `user_config_override.h` as factory defaults for Lanbon L8.
 
 
 ## Wiring Diagrams
