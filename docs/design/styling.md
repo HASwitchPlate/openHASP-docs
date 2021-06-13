@@ -8,9 +8,10 @@ Some objects allow for more complex syling, effectively changing its appearance 
 
 General styling options.
 
-| Property | Value     | Default | Description
-|:---------|:---------:|:-------:|:----
-| enabled  | [bool][2] | true    | object is touchable<br>if `false` a _disabled_ style is applied
+| Property     | Value     | Default | Description
+|:-------------|:---------:|:-------:|:-----------
+| enabled      | [bool][2] | true    | object is touchable, if `false`, a _disabled_ style is applied
+| clip_corner  | [bool][2] | false   | enable to clip off the overflowed content on the rounded (`radius` > `0`) corners of the object
 
 
 ## Background
