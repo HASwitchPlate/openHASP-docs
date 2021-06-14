@@ -87,6 +87,11 @@ Jsonl and Home Assistant configuration:
           "changed":
             - service: input_select.select_option
               data:
+                option: '{{ text }}'
+              target:
+                entity_id: input_select.my_dropdown_selections
+            - service: input_select.select_option
+              data:
                 entity_id: input_select.my_dropdown_selections
                 option: "{{ text }}"
 ```
