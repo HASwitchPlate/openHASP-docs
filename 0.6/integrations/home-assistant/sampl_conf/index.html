@@ -1343,8 +1343,7 @@
 <span class="normal">15</span>
 <span class="normal">16</span>
 <span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>      <span class="p p-Indicator">-</span> <span class="nt">obj</span><span class="p">:</span> <span class="s">&quot;p1b3&quot;</span> <span class="c1"># dropdown</span>
+<span class="normal">18</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>      <span class="p p-Indicator">-</span> <span class="nt">obj</span><span class="p">:</span> <span class="s">&quot;p1b3&quot;</span> <span class="c1"># dropdown</span>
         <span class="nt">properties</span><span class="p">:</span>
           <span class="s">&quot;options&quot;</span><span class="p p-Indicator">:</span> <span class="p p-Indicator">&gt;</span>
             <span class="no">{% if not (is_state(&#39;input_select.my_dropdown_selections&#39;,&#39;unavailable&#39;)) %}{%for item in state_attr(&#39;input_select.my_dropdown_selections&#39;,&#39;options&#39;)%}{{item+&quot;\n&quot;|e}}{%-if not loop.last%}{%-endif%}{%-endfor%}{% endif %}</span>
@@ -1359,10 +1358,9 @@
                 <span class="nt">option</span><span class="p">:</span> <span class="s">&#39;{{</span><span class="nv"> </span><span class="s">text</span><span class="nv"> </span><span class="s">}}&#39;</span>
               <span class="nt">target</span><span class="p">:</span>
                 <span class="nt">entity_id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">input_select.my_dropdown_selections</span>
-            <span class="p p-Indicator">-</span> <span class="nt">service</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">input_select.select_option</span>
+            <span class="p p-Indicator">-</span> <span class="nt">service</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">persistent_notification.create</span>
               <span class="nt">data</span><span class="p">:</span>
-                <span class="nt">entity_id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">input_select.my_dropdown_selections</span>
-                <span class="nt">option</span><span class="p">:</span> <span class="s">&quot;{{</span><span class="nv"> </span><span class="s">text</span><span class="nv"> </span><span class="s">}}&quot;</span>
+                <span class="nt">message</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Selected {{ text }}</span>
 </code></pre></div>
 </td></tr></table>
 <p>See the other examples for pairing different kinds of objects to different kinds of Home Assistant entities.</p>
