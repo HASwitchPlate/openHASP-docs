@@ -90,10 +90,9 @@ Jsonl and Home Assistant configuration:
                 option: '{{ text }}'
               target:
                 entity_id: input_select.my_dropdown_selections
-            - service: input_select.select_option
+            - service: persistent_notification.create
               data:
-                entity_id: input_select.my_dropdown_selections
-                option: "{{ text }}"
+                message: Selected {{ text }}
 ```
 
 See the other examples for pairing different kinds of objects to different kinds of Home Assistant entities.
