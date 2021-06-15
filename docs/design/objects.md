@@ -113,7 +113,9 @@ You can change the target pages using `prev`, `back` and `next` [page attributes
 
 #### Swipe <a name="swipe"></a>
 Objects and page area (`p0bY`) support `swipe` property. Enabling this will process `left`, `right` and `down` swipes on the object as `next`, `prev` and `back` page changes, respectively. The start of the swipe needs to be on the element which has this property enabled for the feature to activate.  
-_Note:_ Page id `p0b0` is not valid to set this property as it has to be set on real elements. 
+
+!!! Note
+    Page id `p0b0` is not valid to set this property as it has to be set on real elements. 
 
 ### Events
 
@@ -612,12 +614,13 @@ While pressing and dragging the `cpicker` object the following events are sent: 
 
 ![lv_btnmatrix](../assets/images/objects/lv_ex_btnmatrix_1.png)
 
-| Property | Value      | Default    | Description
-|----------|------------|------------|--------------
-| options  | [json array][11] | "Text"     | Json array of [string][10]s where each element is the label of a button. Use `"\n"` for a new line of buttons
-| align    | [string][10]       | `center`          | Text alignment: `left`, `center`, `right` 
-| toggle   | [bool][2]  | false      | All buttons behave as toggle buttons or normal buttons
-| one_check| [bool][2]  | false      | Allow only one button to be checked (toggled) at once
+| Property | Value            | Default  | Description
+|----------|------------------|----------|--------------
+| options  | [json array][11] | "Text"   | Json array of [strings][10] where each element is the label of a button. Use `"\n"` for a new line of buttons
+| val      | [int8][9]        | 0        | The number of the active button, starting at 0
+| align    | [string][10]     | `center` | Text alignment: `left`, `center`, `right` 
+| toggle   | [bool][2]        | false    | All buttons behave as toggle buttons or normal buttons
+| one_check| [bool][2]        | false    | Allow only one button to be checked (toggled) at once
 
 The [styling properties][12] apply to *all* buttons in the matrix.
 To change the color of a single label you can prefix the text with a `#RRGGBB` hexadecimal color code and close with a single hash `#` tag.
@@ -633,12 +636,12 @@ To change the color of a single label you can prefix the text with a `#RRGGBB` h
 
 ![lv_msgbox](../assets/images/objects/lv_ex_msgbox_1.png)
 
-| Property | Value      | Default | Description
-|----------|------------|---------|--------------------------
-| text     | [string][10]     | ""      | The text of the message to be displayed
-| options  | [json array][11] | ["OK"]  | Json array of [string][10]s where each element is the label of a button
-| ~~modal~~    | [bool][2]  | false   | Make the messagebox a modal dialog requiring user input
-| auto_close | [int16][9]    | 0       | Close the pop-up message automatically after this number of milliseconds have passed
+| Property   | Value           | Default | Description
+|------------|-----------------|---------|--------------------------
+| text       | [string][10]    | ""      | The text of the message to be displayed
+| options    | [json array][11]| ["OK"]  | Json array of [string][10]s where each element is the label of a button
+| ~~modal~~  | [bool][2]       | false   | Make the messagebox a modal dialog requiring user input
+| auto_close | [int16][9]      | 0       | Close the pop-up message automatically after this number of milliseconds have passed
 
 The Message boxes act as a pop-up. The default width is the horizontal screen size, the height adjusts according to the contents of the message.
 The pop-up is centered on the screen.
@@ -657,12 +660,12 @@ The pop-up is centered on the screen.
 
 ![lv_img](../assets/images/objects/lv_ex_img_1.png)
 
-| Property | Value      | Default | Description
-|----------|------------|---------|--------------------------
-| src      | [string][10]     | ""      | The name of the image file
-| auto_size| [bool][2]       | true    | Automatically set the size of the image object to the image source
-| offset_x | [int16][9]        | 0       | Shift the picture horizontally relative to the image object
-| offset_y | [int16][9]        | 0       | Shift the picture vertically relative to the image object
+| Property | Value        | Default | Description
+|----------|--------------|---------|--------------------------
+| src      | [string][10] | ""      | The name of the image file
+| auto_size| [bool][2]    | true    | Automatically set the size of the image object to the image source
+| offset_x | [int16][9]   | 0       | Shift the picture horizontally relative to the image object
+| offset_y | [int16][9]   | 0       | Shift the picture vertically relative to the image object
 
 Only PNG image files are supported, from flash. 
    
@@ -687,6 +690,11 @@ The Base Object can be directly used as a simple, empty widget. It is nothing mo
 
 You can use it as a background shape for other objects by putting its jsonl line before the object. It catches touches!
 
+??? example "Example `jsonl`"
+    ```json
+    {"page":1,"id":50,"obj":"obj","x":5,"y":35,"w":230,"h":250,"click":0}
+    ```
+   
 [1]: ../data-types/#colors
 [2]: ../data-types/#boolean
 [3]: ../../configuration/gpio/#groupid
