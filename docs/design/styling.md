@@ -97,11 +97,11 @@ Value is an arbitrary text label drawn on top of an object. It can be a lightwei
 | value_color        |[color][1]| Color of the text
 | value_opa          | [uint8][3]     | Opacity level of the text [0-255]
 | value_font         | [uint8][3]     | The [Font ID][6]
-| value_letter_space | [int16][3]    | Distance between letters of the text, can be a negative number
-| value_line_space   | [int16][3]    | Distance between lines of the text, can be a negative number
-| value_align        | align    | Alignment of the text. Can be: none, left, right, top, bottom, full or center *(=default)*
-| value_ofs_x        | [int16][3]    | X offset from the original position of the alignment
-| value_ofs_y        | [int16][3]    | Y offset from the original position of the alignment
+| value_letter_space | [int16][3]    | Distance between letters of the text, can be negative
+| value_line_space   | [int16][3]    | Distance between lines of the text, can be negative
+| value_align        | align    | Alignment of the text. Can be: <br>none <br>left <br>right <br>top <br>bottom <br>full <br>center *(=default)*
+| value_ofs_x        | [int16][3]    | X offset from the default position of the alignment
+| value_ofs_y        | [int16][3]    | Y offset from the default position of the alignment
 
 ## Line
 
