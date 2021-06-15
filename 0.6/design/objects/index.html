@@ -1802,8 +1802,11 @@ You can still hide the object on select pages if needed. Objects on page 0 appea
 <p>Check out the <a href="../../integrations/examples/example-pagination/">example</a> for how to implement actions.<br />
 You can change the target pages using <code>prev</code>, <code>back</code> and <code>next</code> <a href="../pages/#page-attributes">page attributes</a> operation on the page object<code>pXb0</code>.  </p>
 <h4 id="swipe">Swipe <a name="swipe"></a><a class="headerlink" href="#swipe" title="Permanent link">~</a></h4>
-<p>Objects and page area (<code>p0bY</code>) support <code>swipe</code> property. Enabling this will process <code>left</code>, <code>right</code> and <code>down</code> swipes on the object as <code>next</code>, <code>prev</code> and <code>back</code> page changes, respectively. The start of the swipe needs to be on the element which has this property enabled for the feature to activate.<br />
-<em>Note:</em> Page id <code>p0b0</code> is not valid to set this property as it has to be set on real elements. </p>
+<p>Objects and page area (<code>p0bY</code>) support <code>swipe</code> property. Enabling this will process <code>left</code>, <code>right</code> and <code>down</code> swipes on the object as <code>next</code>, <code>prev</code> and <code>back</code> page changes, respectively. The start of the swipe needs to be on the element which has this property enabled for the feature to activate.  </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Page id <code>p0b0</code> is not valid to set this property as it has to be set on real elements. </p>
+</div>
 <h3 id="events">Events<a class="headerlink" href="#events" title="Permanent link">~</a></h3>
 <p>All objects are touchable by default and respond to touch events. To disable touch events for an object set its <code>enabled</code> property to <code>false</code>. In this case the touch event "goes through" to the object on the layer below or to the page itself.</p>
 <p>Events (and values) are published in a state topic corresponding to the object, eg. <code>hasp/&lt;nodename&gt;/state/p1b2</code> with payload in json format eg. <code>{"event":"up","val":1}</code>.<br />
@@ -2877,7 +2880,13 @@ You first create the <code>tabview</code> object and then add <code>tab</code> o
 <td>options</td>
 <td><a href="../data-types/#json-object">json array</a></td>
 <td>"Text"</td>
-<td>Json array of <a href="../data-types/#string">string</a>s where each element is the label of a button. Use <code>"\n"</code> for a new line of buttons</td>
+<td>Json array of <a href="../data-types/#string">strings</a> where each element is the label of a button. Use <code>"\n"</code> for a new line of buttons</td>
+</tr>
+<tr>
+<td>val</td>
+<td><a href="../data-types/#integer">int8</a></td>
+<td>0</td>
+<td>The number of the active button, starting at 0</td>
 </tr>
 <tr>
 <td>align</td>
@@ -3008,6 +3017,10 @@ The pop-up is centered on the screen.</p>
 <p><img alt="lv_base_object" src="../../assets/images/objects/lv_ex_base_object_1.png" /></p>
 <p>The Base Object can be directly used as a simple, empty widget. It is nothing more then a (rounded) rectangle.</p>
 <p>You can use it as a background shape for other objects by putting its jsonl line before the object. It catches touches!</p>
+<details class="example"><summary>Example <code>jsonl</code></summary><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;page&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">50</span><span class="p">,</span><span class="nt">&quot;obj&quot;</span><span class="p">:</span><span class="s2">&quot;obj&quot;</span><span class="p">,</span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="mi">35</span><span class="p">,</span><span class="nt">&quot;w&quot;</span><span class="p">:</span><span class="mi">230</span><span class="p">,</span><span class="nt">&quot;h&quot;</span><span class="p">:</span><span class="mi">250</span><span class="p">,</span><span class="nt">&quot;click&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+</details>
                 
                   
                     
@@ -3016,7 +3029,7 @@ The pop-up is centered on the screen.</p>
 <div class="md-source-date">
   <small>
     
-      Last update: 2021-06-14
+      Last update: 2021-06-15
     
   </small>
 </div>
