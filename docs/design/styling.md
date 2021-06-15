@@ -11,7 +11,7 @@ General styling options.
 | Property     | Value      | Default | Description
 |:-------------|:----------:|:-------:|:-----------
 | enabled      | [bool][2]  | true    | Dbject is touchable, if `false`, a _disabled_ style is applied
-| radius       | [uint16][3]| depends<BR>on theme | The radius of the rounded corners of the object:<BR>`0` square corners<BR>`100` pill shaped object (true circle if object has same width and height)
+| radius       | [uint16][3]| depends<BR>on theme | The radius of the rounded corners of the object:<BR>0 = square corners<BR>100 = pill shaped object (true circle if object has same width and height)
 | clip_corner  | [bool][2] | false   | Enable to clip off the overflowed content on the rounded (`radius` > `0`) corners of the object
 
 
