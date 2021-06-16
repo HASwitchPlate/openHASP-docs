@@ -172,9 +172,14 @@ The switch supports several wiring configurations:
     Always follow the instructions from the installation guide and local safety regulations.
     Consult a licensed electrician when changing your electrical wiring.</br>
 
-## Video
+## Videos
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Rce5yp4mhXI?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<video width="360" height="640" controls>
+  <source src="../../assets/videos/cc_sampl_climate_control.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video>
 
 ## LCD Configuration
 
