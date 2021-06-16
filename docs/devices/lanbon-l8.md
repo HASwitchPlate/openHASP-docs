@@ -174,7 +174,7 @@ The switch supports several wiring configurations:
 
 ## Video
 
-![YOUTUBE](Rce5yp4mhXI)
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Rce5yp4mhXI?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## LCD Configuration
 
