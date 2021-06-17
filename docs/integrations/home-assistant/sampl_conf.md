@@ -87,8 +87,12 @@ Jsonl and Home Assistant configuration:
           "changed":
             - service: input_select.select_option
               data:
+                option: '{{ text }}'
+              target:
                 entity_id: input_select.my_dropdown_selections
-                option: "{{ text }}"
+            - service: persistent_notification.create
+              data:
+                message: Selected {{ text }}
 ```
 
 See the other examples for pairing different kinds of objects to different kinds of Home Assistant entities.
@@ -307,7 +311,7 @@ relevant **openHASP config:** (screen size 240x320)
 {"page":6,"id":1,"obj":"obj","x":5,"y":35,"w":200,"h":84,"click":0}
 {"page":6,"id":2,"obj":"label","x":7,"y":45,"w":196,"h":30,"text":"-","mode":"scroll","align":1}
 {"page":6,"id":3,"obj":"label","x":7,"y":80,"w":196,"h":30,"text":"-","mode":"scroll","align":1}
-{"page":6,"id":4,"obj":"bar","x":5,"y":108,"w":200,"h":11,"min":0,"max":100}
+{"page":6,"id":4,"obj":"bar","x":5,"y":114,"w":200,"h":5,"min":0,"max":100,"border_opa":0,"pad_top":0,"pad_bottom":0,"pad_left":0,"pad_right":0}
 {"page":6,"id":5,"obj":"dropdown","x":5,"y":128,"w":120,"h":30,"options":"Source1\nSource2\nSource3","direction":3,"max_height":300}
 {"page":6,"id":6,"obj":"dropdown","x":130,"y":128,"w":75,"h":30,"options":"Jazz\nPop\nRock","direction":2}
 {"page":6,"id":7,"obj":"btn","x":5,"y":170,"w":50,"h":60,"toggle":false,"text":"\uE4AE","text_font":32}
