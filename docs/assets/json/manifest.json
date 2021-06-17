@@ -1,0 +1,10 @@
+{
+    "name": "openHASP",
+    "builds": [{
+        "chipFamily": "ESP32",
+        "improv": false,
+        "parts": [
+            { "path": "https://github.com/HASwitchPlate/openHASP/releases/download/v0.6.0/d1-mini-esp32_ili9341_full_4MB_v0.6.0.bin", "offset": 0 }
+        ]
+    }]
+}
