@@ -83,7 +83,9 @@ Make sure your USB cable supports data transfer.<br><br>
 }
 
 function installerLoaded() {
-    const espWebInstallButton = document.querySelector("esp-web-install-button");
-    espWebInstallButton.addEventListener("state-changed", handleStateEvent);
+    const espWebInstallButtonList = document.querySelectorAll("esp-web-install-button");
+    espWebInstallButtonList.forEach(function(espWebInstallButton) {
+        espWebInstallButton.addEventListener("state-changed", handleStateEvent);
+    });
     checkSupported();
 }
