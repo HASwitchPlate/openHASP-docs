@@ -76,7 +76,7 @@ but only the `id` and `obj` properties are required to create an object:
 | page     || 0..12     | no       | n/a     | ID of the page the object appears on _(see below)_
 | groupid  || 0..15     | no       | 0 (none)| ID of the [GPIO group][3] the object belongs to
 | x        || [int16][9]     | no       | 0       | Horizontal position on the page
-| y        || [int16][9]     | no       | 0       | Hertical position on the page
+| y        || [int16][9]     | no       | 0       | Vertical position on the page
 | w        || [int16][9]     | no       | 0       | Width of the object
 | h        || [int16][9]     | no       | 0       | Height of the object
 | hidden   || [bool][2] | no       | false   | Object is hidden
