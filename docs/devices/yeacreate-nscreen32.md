@@ -1,16 +1,16 @@
 # YeaCreate Nscreen32
 
 <div class="row justify-content-center">
-    <a href="../../assets/images/devices/nscreen-1.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4" data-title="Nscreen32 Front" data-footer="Copyright &copy; 2017-2021 YeaCreate - All Rights Reserved.">
-        <img src="../../assets/images/devices/nscreen-1.jpg" class="img-fluid">
+    <a href="../../assets/images/devices/nscreen32-1.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4" data-title="Nscreen32 Front" data-footer="Copyright &copy; 2017-2021 YeaCreate - All Rights Reserved.">
+        <img src="../../assets/images/devices/nscreen32-1.jpg" class="img-fluid">
     </a>
 
-    <a href="../../assets/images/devices/nscreen-2.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4" data-title="Nscreen32 Back" data-footer="Copyright &copy; 2017-2021 YeaCreate - All Rights Reserved.">
-        <img src="../../assets/images/devices/nscreen-2.jpg" class="img-fluid">
+    <a href="../../assets/images/devices/nscreen32-2.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4" data-title="Nscreen32 Back" data-footer="Copyright &copy; 2017-2021 YeaCreate - All Rights Reserved.">
+        <img src="../../assets/images/devices/nscreen32-2.jpg" class="img-fluid">
     </a>
 
-    <a href="../../assets/images/devices/nscreen-3.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4" data-title="Nscreen32 Front" data-footer="Copyright &copy; 2017-2021 YeaCreate - All Rights Reserved.">
-        <img src="../../assets/images/devices/nscreen-3.jpg" class="img-fluid">
+    <a href="../../assets/images/devices/nscreen32-3.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4" data-title="Nscreen32 Front" data-footer="Copyright &copy; 2017-2021 YeaCreate - All Rights Reserved.">
+        <img src="../../assets/images/devices/nscreen32-3.jpg" class="img-fluid">
     </a>
 </div>
 
