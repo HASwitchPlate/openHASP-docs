@@ -888,6 +888,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#hasp-build_flags" class="md-nav__link">
+    HASP build_flags
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1139,6 +1146,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#hasp-build_flags" class="md-nav__link">
+    HASP build_flags
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1176,7 +1190,7 @@ The display is connected via an 8-bit parallel bus resulting in a fast performan
 openHASP can take advantage of the 320x480 resolution to show a large custom user-interface.</p>
 <p>On the back there is an expansion port with 12 GPIOs so you can expand the capabilities as needed.
 However, there is no support for backlight control. The display is always-on.</p>
-<p>The development board is powered via micro USB.</p>
+<p>The development board can be powered via micro USB or the 5V-in JST connector.</p>
 <table>
 <thead>
 <tr>
@@ -1212,6 +1226,87 @@ However, there is no support for backlight control. The display is always-on.</p
 <h2 id="video">Video<a class="headerlink" href="#video" title="Permanent link">~</a></h2>
 <p>Nscreen32 is the first device to receive the LVGL Certified Board label:</p>
 <p><img alt="YOUTUBE" src="9lDxJRI9BwM" /></p>
+<h2 id="hasp-build_flags">HASP build_flags<a class="headerlink" href="#hasp-build_flags" title="Permanent link">~</a></h2>
+<p>Specify the LCD Configuration to use and define the GPIOs in the environment build flags:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="na">build_flags</span> <span class="o">=</span>
+    <span class="na">${env.build_flags}</span>
+    <span class="na">${esp32.build_flags}</span>
+    <span class="na">${esp32.hspi}        ; Use VSPI hardware SPI bus</span>
+    <span class="na">-D HASP_MODEL</span><span class="o">=</span><span class="s">&quot;YeaCreate Nscreen32&quot;</span>
+
+<span class="c1">;region -- TFT_eSPI build options ------------------------</span>
+    <span class="na">-D USER_SETUP_LOADED</span><span class="o">=</span><span class="s">1</span>
+    <span class="na">-D ST7796_DRIVER</span><span class="o">=</span><span class="s">1</span>
+    <span class="na">-D ESP32_PARALLEL</span><span class="o">=</span><span class="s">1</span>
+    <span class="na">-D TFT_ROTATION</span><span class="o">=</span><span class="s">0 ; 0=0, 1=90, 2=180 or 3=270 degree</span>
+    <span class="na">-D TFT_WIDTH</span><span class="o">=</span><span class="s">320</span>
+    <span class="na">-D TFT_HEIGHT</span><span class="o">=</span><span class="s">480</span>
+    <span class="c1">; ESP32 pins used for the parallel interface TFT</span>
+    <span class="na">-D TFT_CS</span><span class="o">=</span><span class="s">33    ; Chip select control pin</span>
+    <span class="na">-D TFT_DC</span><span class="o">=</span><span class="s">15    ; Data Command control pin - must use a pin in the range 0-31 also named RS</span>
+    <span class="na">-D TFT_WR</span><span class="o">=</span><span class="s">4     ; Write strobe control pin - must use a pin in the range 0-31</span>
+    <span class="na">-D TFT_RD</span><span class="o">=</span><span class="s">2</span>
+    <span class="na">-D TFT_D0</span><span class="o">=</span><span class="s">12    ; Must use pins in the range 0-31 for the data bus</span>
+    <span class="na">-D TFT_D1</span><span class="o">=</span><span class="s">13    ; so a single register write sets/clears all bits</span>
+    <span class="na">-D TFT_D2</span><span class="o">=</span><span class="s">26</span>
+    <span class="na">-D TFT_D3</span><span class="o">=</span><span class="s">25</span>
+    <span class="na">-D TFT_D4</span><span class="o">=</span><span class="s">19</span>
+    <span class="na">-D TFT_D5</span><span class="o">=</span><span class="s">18</span>
+    <span class="na">-D TFT_D6</span><span class="o">=</span><span class="s">27</span>
+    <span class="na">-D TFT_D7</span><span class="o">=</span><span class="s">14</span>
+    <span class="na">-D TFT_RST</span><span class="o">=</span><span class="s">32   ; Reset pin</span>
+    <span class="c1">;-D TFT_BCKL=32  ;None, configurable via web UI (e.g. 2 for D4)</span>
+    <span class="na">-D SUPPORT_TRANSACTIONS</span>
+    <span class="na">-D TOUCH_DRIVER</span><span class="o">=</span><span class="s">911  ; GT911 Capacitive touch panel driver </span>
+    <span class="na">-D TOUCH_SDA</span><span class="o">=</span><span class="s">21</span>
+    <span class="na">-D TOUCH_SCL</span><span class="o">=</span><span class="s">22</span>
+    <span class="na">-D TOUCH_IRQ</span><span class="o">=</span><span class="s">5</span>
+    <span class="na">-D TOUCH_RST</span><span class="o">=</span><span class="s">23</span>
+    <span class="c1">;-D TOUCH_FREQUENCY=400000</span>
+    <span class="na">-D I2C_TOUCH_FREQUENCY</span><span class="o">=</span><span class="s">400000</span>
+    <span class="na">-D SPI_FREQUENCY</span><span class="o">=</span><span class="s">40000000</span>
+    <span class="na">-D SPI_READ_FREQUENCY</span><span class="o">=</span><span class="s">20000000</span>
+<span class="c1">;endregion</span>
+</code></pre></div>
+</td></tr></table>
                 
                   
                     
