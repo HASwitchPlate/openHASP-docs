@@ -2448,14 +2448,19 @@ Your browser does not support the video tag.
 <p><img alt="screenshot" src="../../../assets/images/screenshots/cc-sampl-weather-hours.png" /> 
 <img alt="screenshot" src="../../../assets/images/screenshots/cc-sampl-weather-days.png" />   </p>
 <p>This example implements two weather forecast screens which located on the same page, can be swiped left and right. On the top area the current weather is shown, on the bottom area the user can choose by swiping between forecast for the next hours and forecast for the next days. This is achieved by a <a href="../../../design/objects#tabview">tabview</a> object with invisible tabs. </p>
-<p>Since there's no weather integration in Home Assistant which can offer so much information at once, this can be achieved by installing multiple weather components. In our example we use two:
-- <a href="https://www.home-assistant.io/integrations/met/">Met.no</a> (the one coming by default pre-installed) for daily forecast
-- <a href="https://www.home-assistant.io/integrations/openweathermap/">OpenWeatherMap</a> (available as standard integration to be activated) for hourly forecasts. _You need to set the forecast mode to <strong>onecall_hourly</strong> to get forecasts for the day's next hours.</p>
-<p>The openHASP configuration grabs information from both weather sources and updates them on every change.</p>
-<p>Weather condition icons are displayed from the internal flash space of the plate. For this, you need to upload all the icons to the plate. Download them:
-- <a href="../../../assets/users/openhasp-weathericons-day.zip">light theme</a>
-- <a href="../../../assets/users/openhasp-weathericons-nigh.zip">dark theme</a>  <br />
-Icons are copyright from <a href="https://github.com/manifestinteractive/weather-underground-icons">manifestinteractive</a> and <a href="https://www.deviantart.com/merlinthered/art/plain-weather-icons-157162192">merlinthered</a>.</p>
+<p>Since there's no weather integration in Home Assistant which can offer so much information at once, this can be achieved by installing multiple weather components. In our example we use two:</p>
+<ul>
+<li><a href="https://www.home-assistant.io/integrations/met/">Met.no</a> (the one coming by default pre-installed) for daily forecast</li>
+<li><a href="https://www.home-assistant.io/integrations/openweathermap/">OpenWeatherMap</a> (available as standard integration to be activated) for hourly forecasts. <em>You need to set the forecast mode to <strong>onecall_hourly</strong> to get forecasts for the day's next hours.</em></li>
+</ul>
+<p>The openHASP configuration grabs information from both weather sources and updates them on every change. <br />
+The various strings containing to day names, day periods, weather conditions can be localized easily to any language within the configuration.</p>
+<p>Weather condition icons are displayed from the internal flash space of the plate. For this, you need to upload all the icons to the plate. Download them:</p>
+<ul>
+<li><a href="../../../assets/users/openhasp-weathericons-day.zip">light theme</a></li>
+<li><a href="../../../assets/users/openhasp-weathericons-nigh.zip">dark theme</a></li>
+</ul>
+<p>Icons are copyright from <a href="https://github.com/manifestinteractive/weather-underground-icons">manifestinteractive</a> and <a href="https://www.deviantart.com/merlinthered/art/plain-weather-icons-157162192">merlinthered</a>.</p>
 <p>Note that the tab swiping dots (<em>p5b10</em>) are also handled by the custom component. Don't forget to update the service call in the configuration if you change the page of the objects.</p>
 <p>relevant <strong>openHASP config:</strong> (screen size 240x320, UI Theme: Hasp Light) </p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
@@ -2982,7 +2987,7 @@ Icons are copyright from <a href="https://github.com/manifestinteractive/weather
           <span class="s">&quot;text&quot;</span><span class="p p-Indicator">:</span> <span class="p p-Indicator">&gt;</span>
             <span class="no">{{ as_timestamp(strptime(state_attr(&#39;weather.your_homename&#39;,&#39;forecast&#39;)[0][&#39;datetime&#39;], &#39;%Y-%m-%d %H:%M:%S&#39;)) | timestamp_custom(&quot;%d. &quot;) }}</span>
             <span class="no">{%- set day = as_timestamp(strptime(state_attr(&#39;weather.your_homename&#39;,&#39;forecast&#39;)[0][&#39;datetime&#39;], &#39;%Y-%m-%d %H:%M:%S&#39;)) | timestamp_custom(&quot;%w&quot;) %}</span>
-            <span class="no">{%- set days = [&quot;Monday&quot;, &quot;Tuesday&quot;, &quot;Wednesday&quot;, &quot;Csütörtök&quot;, &quot;Friday&quot;, &quot;Saturday&quot;, &quot;Sunday&quot;] %}</span>
+            <span class="no">{%- set days = [&quot;Monday&quot;, &quot;Tuesday&quot;, &quot;Wednesday&quot;, &quot;Thursday&quot;, &quot;Friday&quot;, &quot;Saturday&quot;, &quot;Sunday&quot;] %}</span>
             <span class="no">{%- set localday = days[ day | int -1 ] %}</span>
             <span class="no">{{- localday }}</span>
 
@@ -3004,7 +3009,7 @@ Icons are copyright from <a href="https://github.com/manifestinteractive/weather
           <span class="s">&quot;text&quot;</span><span class="p p-Indicator">:</span> <span class="p p-Indicator">&gt;</span>
             <span class="no">{{ as_timestamp(strptime(state_attr(&#39;weather.your_homename&#39;,&#39;forecast&#39;)[1][&#39;datetime&#39;], &#39;%Y-%m-%d %H:%M:%S&#39;)) | timestamp_custom(&quot;%d. &quot;) }}</span>
             <span class="no">{%- set day = as_timestamp(strptime(state_attr(&#39;weather.your_homename&#39;,&#39;forecast&#39;)[1][&#39;datetime&#39;], &#39;%Y-%m-%d %H:%M:%S&#39;)) | timestamp_custom(&quot;%w&quot;) %}</span>
-            <span class="no">{%- set days = [&quot;Monday&quot;, &quot;Tuesday&quot;, &quot;Wednesday&quot;, &quot;Csütörtök&quot;, &quot;Friday&quot;, &quot;Saturday&quot;, &quot;Sunday&quot;] %}</span>
+            <span class="no">{%- set days = [&quot;Monday&quot;, &quot;Tuesday&quot;, &quot;Wednesday&quot;, &quot;Thursday&quot;, &quot;Friday&quot;, &quot;Saturday&quot;, &quot;Sunday&quot;] %}</span>
             <span class="no">{%- set localday = days[ day | int -1 ] %}</span>
             <span class="no">{{- localday }}</span>
 
@@ -3026,7 +3031,7 @@ Icons are copyright from <a href="https://github.com/manifestinteractive/weather
           <span class="s">&quot;text&quot;</span><span class="p p-Indicator">:</span> <span class="p p-Indicator">&gt;</span>
             <span class="no">{{ as_timestamp(strptime(state_attr(&#39;weather.your_homename&#39;,&#39;forecast&#39;)[2][&#39;datetime&#39;], &#39;%Y-%m-%d %H:%M:%S&#39;)) | timestamp_custom(&quot;%d. &quot;) }}</span>
             <span class="no">{%- set day = as_timestamp(strptime(state_attr(&#39;weather.your_homename&#39;,&#39;forecast&#39;)[2][&#39;datetime&#39;], &#39;%Y-%m-%d %H:%M:%S&#39;)) | timestamp_custom(&quot;%w&quot;) %}</span>
-            <span class="no">{%- set days = [&quot;Monday&quot;, &quot;Tuesday&quot;, &quot;Wednesday&quot;, &quot;Csütörtök&quot;, &quot;Friday&quot;, &quot;Saturday&quot;, &quot;Sunday&quot;] %}</span>
+            <span class="no">{%- set days = [&quot;Monday&quot;, &quot;Tuesday&quot;, &quot;Wednesday&quot;, &quot;Thursday&quot;, &quot;Friday&quot;, &quot;Saturday&quot;, &quot;Sunday&quot;] %}</span>
             <span class="no">{%- set localday = days[ day | int -1 ] %}</span>
             <span class="no">{{- localday }}</span>
 
@@ -3048,7 +3053,7 @@ Icons are copyright from <a href="https://github.com/manifestinteractive/weather
           <span class="s">&quot;text&quot;</span><span class="p p-Indicator">:</span> <span class="p p-Indicator">&gt;</span>
             <span class="no">{{ as_timestamp(strptime(state_attr(&#39;weather.your_homename&#39;,&#39;forecast&#39;)[3][&#39;datetime&#39;], &#39;%Y-%m-%d %H:%M:%S&#39;)) | timestamp_custom(&quot;%d. &quot;) }}</span>
             <span class="no">{%- set day = as_timestamp(strptime(state_attr(&#39;weather.your_homename&#39;,&#39;forecast&#39;)[3][&#39;datetime&#39;], &#39;%Y-%m-%d %H:%M:%S&#39;)) | timestamp_custom(&quot;%w&quot;) %}</span>
-            <span class="no">{%- set days = [&quot;Monday&quot;, &quot;Tuesday&quot;, &quot;Wednesday&quot;, &quot;Csütörtök&quot;, &quot;Friday&quot;, &quot;Saturday&quot;, &quot;Sunday&quot;] %}</span>
+            <span class="no">{%- set days = [&quot;Monday&quot;, &quot;Tuesday&quot;, &quot;Wednesday&quot;, &quot;Thursday&quot;, &quot;Friday&quot;, &quot;Saturday&quot;, &quot;Sunday&quot;] %}</span>
             <span class="no">{%- set localday = days[ day | int -1 ] %}</span>
             <span class="no">{{- localday }}</span>
 
