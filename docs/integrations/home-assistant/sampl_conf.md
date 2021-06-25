@@ -757,17 +757,22 @@ relevant **openHASP-custom-component config:**
 This example implements two weather forecast screens which located on the same page, can be swiped left and right. On the top area the current weather is shown, on the bottom area the user can choose by swiping between forecast for the next hours and forecast for the next days. This is achieved by a [tabview](../../../design/objects#tabview) object with invisible tabs. 
 
 Since there's no weather integration in Home Assistant which can offer so much information at once, this can be achieved by installing multiple weather components. In our example we use two:
-- [Met.no](https://www.home-assistant.io/integrations/met/) (the one coming by default pre-installed) for daily forecast
-- [OpenWeatherMap](https://www.home-assistant.io/integrations/openweathermap/) (available as standard integration to be activated) for hourly forecasts. _You need to set the forecast mode to **onecall_hourly** to get forecasts for the day's next hours.
 
-The openHASP configuration grabs information from both weather sources and updates them on every change.
+- [Met.no](https://www.home-assistant.io/integrations/met/) (the one coming by default pre-installed) for daily forecast
+- [OpenWeatherMap](https://www.home-assistant.io/integrations/openweathermap/) (available as standard integration to be activated) for hourly forecasts. _You need to set the forecast mode to **onecall_hourly** to get forecasts for the day's next hours._
+
+The openHASP configuration grabs information from both weather sources and updates them on every change.   
+The various strings containing to day names, day periods, weather conditions can be localized easily to any language within the configuration.
 
 Weather condition icons are displayed from the internal flash space of the plate. For this, you need to upload all the icons to the plate. Download them:
+
 - [light theme](../../assets/users/openhasp-weathericons-day.zip)
-- [dark theme](../../assets/users/openhasp-weathericons-nigh.zip)    
+- [dark theme](../../assets/users/openhasp-weathericons-nigh.zip)
+
 Icons are copyright from [manifestinteractive](https://github.com/manifestinteractive/weather-underground-icons) and [merlinthered](https://www.deviantart.com/merlinthered/art/plain-weather-icons-157162192).
 
 Note that the tab swiping dots (_p5b10_) are also handled by the custom component. Don't forget to update the service call in the configuration if you change the page of the objects.
+
 
 relevant **openHASP config:** (screen size 240x320, UI Theme: Hasp Light) 
 
@@ -999,7 +1004,7 @@ relevant **openHASP-custom-component config:**
           "text": >
             {{ as_timestamp(strptime(state_attr('weather.your_homename','forecast')[0]['datetime'], '%Y-%m-%d %H:%M:%S')) | timestamp_custom("%d. ") }}
             {%- set day = as_timestamp(strptime(state_attr('weather.your_homename','forecast')[0]['datetime'], '%Y-%m-%d %H:%M:%S')) | timestamp_custom("%w") %}
-            {%- set days = ["Monday", "Tuesday", "Wednesday", "Csütörtök", "Friday", "Saturday", "Sunday"] %}
+            {%- set days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"] %}
             {%- set localday = days[ day | int -1 ] %}
             {{- localday }}
 
@@ -1021,7 +1026,7 @@ relevant **openHASP-custom-component config:**
           "text": >
             {{ as_timestamp(strptime(state_attr('weather.your_homename','forecast')[1]['datetime'], '%Y-%m-%d %H:%M:%S')) | timestamp_custom("%d. ") }}
             {%- set day = as_timestamp(strptime(state_attr('weather.your_homename','forecast')[1]['datetime'], '%Y-%m-%d %H:%M:%S')) | timestamp_custom("%w") %}
-            {%- set days = ["Monday", "Tuesday", "Wednesday", "Csütörtök", "Friday", "Saturday", "Sunday"] %}
+            {%- set days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"] %}
             {%- set localday = days[ day | int -1 ] %}
             {{- localday }}
 
@@ -1043,7 +1048,7 @@ relevant **openHASP-custom-component config:**
           "text": >
             {{ as_timestamp(strptime(state_attr('weather.your_homename','forecast')[2]['datetime'], '%Y-%m-%d %H:%M:%S')) | timestamp_custom("%d. ") }}
             {%- set day = as_timestamp(strptime(state_attr('weather.your_homename','forecast')[2]['datetime'], '%Y-%m-%d %H:%M:%S')) | timestamp_custom("%w") %}
-            {%- set days = ["Monday", "Tuesday", "Wednesday", "Csütörtök", "Friday", "Saturday", "Sunday"] %}
+            {%- set days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"] %}
             {%- set localday = days[ day | int -1 ] %}
             {{- localday }}
 
@@ -1065,7 +1070,7 @@ relevant **openHASP-custom-component config:**
           "text": >
             {{ as_timestamp(strptime(state_attr('weather.your_homename','forecast')[3]['datetime'], '%Y-%m-%d %H:%M:%S')) | timestamp_custom("%d. ") }}
             {%- set day = as_timestamp(strptime(state_attr('weather.your_homename','forecast')[3]['datetime'], '%Y-%m-%d %H:%M:%S')) | timestamp_custom("%w") %}
-            {%- set days = ["Monday", "Tuesday", "Wednesday", "Csütörtök", "Friday", "Saturday", "Sunday"] %}
+            {%- set days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"] %}
             {%- set localday = days[ day | int -1 ] %}
             {{- localday }}
 
