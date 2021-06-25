@@ -545,7 +545,7 @@ Note that the `val` value of the slider is multiplied and divided by 100 when re
 
 ![screenshot](../../assets/images/screenshots/cc_sampl_climate.png)  
 
-This example is a bit more complex in the aspect that it uses several objects put on top of each other, and grouped toghether using the `parentid` parameter.  Special attention goes to an invisible tabview (exteding over the label dispaying the target temperarture) which allows for swiping between an on/off switch and dropdowns for setting the hvac and fan modes.
+This example is a bit more complex in the aspect that it uses several objects put on top of each other, and grouped toghether using the `parentid` parameter.  Special attention goes to an invisible [tabview](../../../design/objects#tabview) (exteding over the label dispaying the target temperarture) which allows for swiping between an on/off switch and dropdowns for setting the hvac and fan modes.
 
 The target temperature can be set by dragging the arc handle, more precise +/- setting possible by short/long pressing the middle circle containing the current temperature (increasing/decreasing the value by the _temperature step_ defined by the climate entity). Note that the `min`, `max` and `val` values of the arc and gauge are multiplied and divided by 10 when set and read, because [LVGL only suppports integers](../../../design/data-types#integer) for object values. By multiplying and dividing by 10, it becomes possible to set decimal values for climate temperature. 
 
@@ -754,7 +754,7 @@ relevant **openHASP-custom-component config:**
 ![screenshot](../../assets/images/screenshots/cc-sampl-weather-hours.png) 
 ![screenshot](../../assets/images/screenshots/cc-sampl-weather-days.png)   
 
-This example implements two weather forecast screens which located on the same page, can be swiped left and right. On the top area the current weather is shown, on the bottom area the user can choose by swiping between forecast for the next hours and forecast for the next days. This is achieved by a [tabview](../../../design/objects#tabview) object with invisible tabs. 
+This example implements two weather forecast screens which located on the same page, can be swiped left and right. On the top area the current weather is shown, on the bottom area the user can choose by swiping between next hours and next days forecast. This is achieved by a [tabview](../../../design/objects#tabview) object with invisible tabs. 
 
 Since there's no weather integration in Home Assistant which can offer so much information at once, this can be achieved by installing multiple weather components. In our example we use two:
 
