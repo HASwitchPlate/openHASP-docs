@@ -652,6 +652,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#color-coded-icons" class="md-nav__link">
+    Color coded icons
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#rgb-light-color" class="md-nav__link">
     RGB light color
   </a>
@@ -694,8 +701,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#color-coded-icons" class="md-nav__link">
-    Color coded icons
+  <a href="#current-weather-and-forecasts" class="md-nav__link">
+    Current weather and forecasts
   </a>
   
 </li>
@@ -1199,6 +1206,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#color-coded-icons" class="md-nav__link">
+    Color coded icons
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#rgb-light-color" class="md-nav__link">
     RGB light color
   </a>
@@ -1241,8 +1255,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#color-coded-icons" class="md-nav__link">
-    Color coded icons
+  <a href="#current-weather-and-forecasts" class="md-nav__link">
+    Current weather and forecasts
   </a>
   
 </li>
@@ -1377,7 +1391,37 @@
                 <span class="nt">message</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Selected {{ text }}</span>
 </code></pre></div>
 </td></tr></table>
-<p>See the other examples for pairing different kinds of objects to different kinds of Home Assistant entities.</p>
+<hr />
+<h2 id="color-coded-icons">Color coded icons<a class="headerlink" href="#color-coded-icons" title="Permanent link">~</a></h2>
+<p><img alt="icons" src="https://user-images.githubusercontent.com/1550668/120081781-9372e880-c0bf-11eb-8c9a-62d2a16c24c5.png" /></p>
+<h4>Color code a WiFi icon according to RSSI reported by the plate</h4>
+
+<p><strong>openHASP config:</strong> (screen size 240x320) </p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;obj&quot;</span><span class="p">:</span><span class="s2">&quot;btn&quot;</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="mi">120</span><span class="p">,</span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="nt">&quot;w&quot;</span><span class="p">:</span><span class="mi">30</span><span class="p">,</span><span class="nt">&quot;h&quot;</span><span class="p">:</span><span class="mi">40</span><span class="p">,</span><span class="nt">&quot;text_font&quot;</span><span class="p">:</span><span class="s2">&quot;2&quot;</span><span class="p">,</span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="s2">&quot;\uE5A9&quot;</span><span class="p">,</span><span class="nt">&quot;text_color&quot;</span><span class="p">:</span><span class="s2">&quot;gray&quot;</span><span class="p">,</span><span class="nt">&quot;bg_opa&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="nt">&quot;border_width&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+<p>relevant <strong>openHASP-custom-component config:</strong></p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>    <span class="p p-Indicator">-</span> <span class="nt">obj</span><span class="p">:</span> <span class="s">&quot;p0b1&quot;</span>
+      <span class="nt">properties</span><span class="p">:</span>
+        <span class="s">&quot;text_color&quot;</span><span class="p p-Indicator">:</span> <span class="s">&quot;{%</span><span class="nv"> </span><span class="s">if</span><span class="nv"> </span><span class="s">-30</span><span class="nv"> </span><span class="s">&lt;=</span><span class="nv"> </span><span class="s">state_attr(&#39;openhasp.openhasp_plate&#39;,&#39;rssi&#39;)</span><span class="nv"> </span><span class="s">|int</span><span class="nv"> </span><span class="s">%}green{%</span><span class="nv"> </span><span class="s">elif</span><span class="nv"> </span><span class="s">-31</span><span class="nv"> </span><span class="s">&gt;</span><span class="nv"> </span><span class="s">state_attr(&#39;openhasp.openhasp_plate&#39;,&#39;rssi&#39;)</span><span class="nv"> </span><span class="s">|int</span><span class="nv"> </span><span class="s">&gt;=</span><span class="nv"> </span><span class="s">-50</span><span class="nv"> </span><span class="s">%}orange{%</span><span class="nv"> </span><span class="s">elif</span><span class="nv"> </span><span class="s">-51</span><span class="nv"> </span><span class="s">&gt;</span><span class="nv"> </span><span class="s">state_attr(&#39;openhasp.openhasp_plate&#39;,&#39;rssi&#39;)</span><span class="nv"> </span><span class="s">|int</span><span class="nv"> </span><span class="s">&gt;=</span><span class="nv"> </span><span class="s">-80</span><span class="nv"> </span><span class="s">%}tomato{%</span><span class="nv"> </span><span class="s">else</span><span class="nv"> </span><span class="s">%}red{%</span><span class="nv"> </span><span class="s">endif</span><span class="nv"> </span><span class="s">%}&quot;</span><span class="err">```</span>
+</code></pre></div>
+</td></tr></table>
+<h4>Color code a temperature icon according to sensor values</h4>
+
+<p><strong>openHASP config:</strong> (screen size 240x320) </p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;obj&quot;</span><span class="p">:</span><span class="s2">&quot;btn&quot;</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="mi">165</span><span class="p">,</span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="nt">&quot;w&quot;</span><span class="p">:</span><span class="mi">30</span><span class="p">,</span><span class="nt">&quot;h&quot;</span><span class="p">:</span><span class="mi">40</span><span class="p">,</span><span class="nt">&quot;text_font&quot;</span><span class="p">:</span><span class="s2">&quot;2&quot;</span><span class="p">,</span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="s2">&quot;\uE50F&quot;</span><span class="p">,</span><span class="nt">&quot;text_color&quot;</span><span class="p">:</span><span class="s2">&quot;gray&quot;</span><span class="p">,</span><span class="nt">&quot;bg_opa&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="nt">&quot;border_width&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+<p>relevant <strong>openHASP-custom-component config:</strong></p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>    <span class="p p-Indicator">-</span> <span class="nt">obj</span><span class="p">:</span> <span class="s">&quot;p0b3&quot;</span>
+      <span class="nt">properties</span><span class="p">:</span>
+        <span class="s">&quot;text_color&quot;</span><span class="p p-Indicator">:</span> <span class="s">&quot;{%</span><span class="nv"> </span><span class="s">if</span><span class="nv"> </span><span class="s">states(&#39;sensor.room_temperature&#39;)</span><span class="nv"> </span><span class="s">|int</span><span class="nv"> </span><span class="s">&lt;=</span><span class="nv"> </span><span class="s">21</span><span class="nv">  </span><span class="s">%}#4682B4{%</span><span class="nv"> </span><span class="s">elif</span><span class="nv"> </span><span class="s">21</span><span class="nv"> </span><span class="s">&lt;</span><span class="nv"> </span><span class="s">states(&#39;sensor.room_temperature&#39;)</span><span class="nv"> </span><span class="s">|int</span><span class="nv"> </span><span class="s">&lt;=</span><span class="nv"> </span><span class="s">26</span><span class="nv"> </span><span class="s">%}green{%</span><span class="nv"> </span><span class="s">else</span><span class="nv"> </span><span class="s">%}red{%</span><span class="nv"> </span><span class="s">endif</span><span class="nv"> </span><span class="s">%}&quot;</span>
+</code></pre></div>
+</td></tr></table>
 <hr />
 <h2 id="rgb-light-color">RGB light color<a class="headerlink" href="#rgb-light-color" title="Permanent link">~</a></h2>
 <p><img alt="screenshot" src="../../../assets/images/screenshots/cc_sampl_rgb.png" /></p>
@@ -2400,34 +2444,625 @@ Your browser does not support the video tag.
 </code></pre></div>
 </td></tr></table>
 <hr />
-<h2 id="color-coded-icons">Color coded icons<a class="headerlink" href="#color-coded-icons" title="Permanent link">~</a></h2>
-<p><img alt="icons" src="https://user-images.githubusercontent.com/1550668/120081781-9372e880-c0bf-11eb-8c9a-62d2a16c24c5.png" /></p>
-<h4>Color code a WiFi icon according to RSSI reported by the plate</h4>
+<h2 id="current-weather-and-forecasts">Current weather and forecasts<a class="headerlink" href="#current-weather-and-forecasts" title="Permanent link">~</a></h2>
+<p><img alt="screenshot" src="../../../assets/images/screenshots/cc-sampl-weather-hours.png" /> 
+<img alt="screenshot" src="../../../assets/images/screenshots/cc-sampl-weather-days.png" />   </p>
+<p>This example implements two weather forecast screens which located on the same page, can be swiped left and right. On the top area the current weather is shown, on the bottom area the user can choose by swiping between forecast for the next hours and forecast for the next days. This is achieved by a <a href="../../../design/objects#tabview">tabview</a> object with invisible tabs. </p>
+<p>Since there's no weather integration in Home Assistant which can offer so much information at once, this can be achieved by installing multiple weather components. In our example we use two:
+- <a href="https://www.home-assistant.io/integrations/met/">Met.no</a> (the one coming by default pre-installed) for daily forecast
+- <a href="https://www.home-assistant.io/integrations/openweathermap/">OpenWeatherMap</a> (available as standard integration to be activated) for hourly forecasts. _You need to set the forecast mode to <strong>onecall_hourly</strong> to get forecasts for the day's next hours.</p>
+<p>The openHASP configuration grabs information from both weather sources and updates them on every change.</p>
+<p>Weather condition icons are displayed from the internal flash space of the plate. For this, you need to upload all the icons to the plate. Download them:
+- <a href="../../../assets/users/openhasp-weathericons-day.zip">light theme</a>
+- <a href="../../../assets/users/openhasp-weathericons-nigh.zip">dark theme</a>  <br />
+Icons are copyright from <a href="https://github.com/manifestinteractive/weather-underground-icons">manifestinteractive</a> and <a href="https://www.deviantart.com/merlinthered/art/plain-weather-icons-157162192">merlinthered</a>.</p>
+<p>Note that the tab swiping dots (<em>p5b10</em>) are also handled by the custom component. Don't forget to update the service call in the configuration if you change the page of the objects.</p>
+<p>relevant <strong>openHASP config:</strong> (screen size 240x320, UI Theme: Hasp Light) </p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;page&quot;</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="nt">&quot;obj&quot;</span><span class="p">:</span><span class="s2">&quot;btn&quot;</span><span class="p">,</span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="nt">&quot;w&quot;</span><span class="p">:</span><span class="mi">240</span><span class="p">,</span><span class="nt">&quot;h&quot;</span><span class="p">:</span><span class="mi">30</span><span class="p">,</span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="s2">&quot;WEATHER&quot;</span><span class="p">,</span><span class="nt">&quot;text_font&quot;</span><span class="p">:</span><span class="mi">16</span><span class="p">,</span><span class="nt">&quot;bg_color&quot;</span><span class="p">:</span><span class="s2">&quot;#2C3E50&quot;</span><span class="p">,</span><span class="nt">&quot;text_color&quot;</span><span class="p">:</span><span class="s2">&quot;#FFFFFF&quot;</span><span class="p">,</span><span class="nt">&quot;radius&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="nt">&quot;border_side&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="nt">&quot;click&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">}</span>
+<span class="p">{</span><span class="nt">&quot;page&quot;</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="nt">&quot;obj&quot;</span><span class="p">:</span><span class="s2">&quot;obj&quot;</span><span class="p">,</span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="mi">35</span><span class="p">,</span><span class="nt">&quot;w&quot;</span><span class="p">:</span><span class="mi">230</span><span class="p">,</span><span class="nt">&quot;h&quot;</span><span class="p">:</span><span class="mi">250</span><span class="p">,</span><span class="nt">&quot;click&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">}</span>
 
-<p><strong>openHASP config:</strong> (screen size 240x320) </p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;obj&quot;</span><span class="p">:</span><span class="s2">&quot;btn&quot;</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="mi">120</span><span class="p">,</span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="nt">&quot;w&quot;</span><span class="p">:</span><span class="mi">30</span><span class="p">,</span><span class="nt">&quot;h&quot;</span><span class="p">:</span><span class="mi">40</span><span class="p">,</span><span class="nt">&quot;text_font&quot;</span><span class="p">:</span><span class="s2">&quot;2&quot;</span><span class="p">,</span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="s2">&quot;\uE5A9&quot;</span><span class="p">,</span><span class="nt">&quot;text_color&quot;</span><span class="p">:</span><span class="s2">&quot;gray&quot;</span><span class="p">,</span><span class="nt">&quot;bg_opa&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="nt">&quot;border_width&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">}</span>
+<span class="p">{</span><span class="nt">&quot;page&quot;</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">14</span><span class="p">,</span><span class="nt">&quot;obj&quot;</span><span class="p">:</span><span class="s2">&quot;img&quot;</span><span class="p">,</span><span class="nt">&quot;src&quot;</span><span class="p">:</span><span class="s2">&quot;/littlefs/openhasp_dummy_img.png&quot;</span><span class="p">,</span><span class="nt">&quot;parentid&quot;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="nt">&quot;auto_size&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="nt">&quot;w&quot;</span><span class="p">:</span><span class="mi">128</span><span class="p">,</span><span class="nt">&quot;offset_x&quot;</span><span class="p">:</span><span class="mi">-6</span><span class="p">,</span><span class="nt">&quot;offset_y&quot;</span><span class="p">:</span><span class="mi">-10</span><span class="p">}</span>
+
+<span class="p">{</span><span class="nt">&quot;page&quot;</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">15</span><span class="p">,</span><span class="nt">&quot;obj&quot;</span><span class="p">:</span><span class="s2">&quot;label&quot;</span><span class="p">,</span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="mi">100</span><span class="p">,</span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="mi">10</span><span class="p">,</span><span class="nt">&quot;w&quot;</span><span class="p">:</span><span class="mi">130</span><span class="p">,</span><span class="nt">&quot;h&quot;</span><span class="p">:</span><span class="mi">25</span><span class="p">,</span><span class="nt">&quot;align&quot;</span><span class="p">:</span><span class="s2">&quot;center&quot;</span><span class="p">,</span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="s2">&quot;date current&quot;</span><span class="p">,</span><span class="nt">&quot;parentid&quot;</span><span class="p">:</span><span class="mi">2</span><span class="p">}</span>
+<span class="p">{</span><span class="nt">&quot;page&quot;</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">16</span><span class="p">,</span><span class="nt">&quot;obj&quot;</span><span class="p">:</span><span class="s2">&quot;label&quot;</span><span class="p">,</span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="mi">125</span><span class="p">,</span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="mi">34</span><span class="p">,</span><span class="nt">&quot;w&quot;</span><span class="p">:</span><span class="mi">95</span><span class="p">,</span><span class="nt">&quot;h&quot;</span><span class="p">:</span><span class="mi">40</span><span class="p">,</span><span class="nt">&quot;align&quot;</span><span class="p">:</span><span class="s2">&quot;center&quot;</span><span class="p">,</span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="s2">&quot;00.0°C&quot;</span><span class="p">,</span><span class="nt">&quot;parentid&quot;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="nt">&quot;text_font&quot;</span><span class="p">:</span><span class="mi">32</span><span class="p">}</span>
+<span class="p">{</span><span class="nt">&quot;page&quot;</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">17</span><span class="p">,</span><span class="nt">&quot;obj&quot;</span><span class="p">:</span><span class="s2">&quot;label&quot;</span><span class="p">,</span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="mi">110</span><span class="p">,</span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="mi">78</span><span class="p">,</span><span class="nt">&quot;w&quot;</span><span class="p">:</span><span class="mi">120</span><span class="p">,</span><span class="nt">&quot;h&quot;</span><span class="p">:</span><span class="mi">25</span><span class="p">,</span><span class="nt">&quot;align&quot;</span><span class="p">:</span><span class="s2">&quot;center&quot;</span><span class="p">,</span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="s2">&quot;condition&quot;</span><span class="p">,</span><span class="nt">&quot;parentid&quot;</span><span class="p">:</span><span class="mi">2</span><span class="p">}</span>
+<span class="p">{</span><span class="nt">&quot;page&quot;</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">19</span><span class="p">,</span><span class="nt">&quot;obj&quot;</span><span class="p">:</span><span class="s2">&quot;label&quot;</span><span class="p">,</span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="mi">90</span><span class="p">,</span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="mi">95</span><span class="p">,</span><span class="nt">&quot;w&quot;</span><span class="p">:</span><span class="mi">60</span><span class="p">,</span><span class="nt">&quot;h&quot;</span><span class="p">:</span><span class="mi">30</span><span class="p">,</span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="s2">&quot;#000000 \u2022# #909090 \u2022#&quot;</span><span class="p">,</span><span class="nt">&quot;parentid&quot;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="nt">&quot;text_font&quot;</span><span class="p">:</span><span class="mi">24</span><span class="p">,</span><span class="nt">&quot;align&quot;</span><span class="p">:</span><span class="s2">&quot;center&quot;</span><span class="p">,</span><span class="nt">&quot;text_color&quot;</span><span class="p">:</span><span class="s2">&quot;grey&quot;</span><span class="p">}</span>
+
+<span class="p">{</span><span class="nt">&quot;page&quot;</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">10</span><span class="p">,</span><span class="nt">&quot;obj&quot;</span><span class="p">:</span><span class="s2">&quot;tabview&quot;</span><span class="p">,</span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="nt">&quot;w&quot;</span><span class="p">:</span><span class="mi">240</span><span class="p">,</span><span class="nt">&quot;h&quot;</span><span class="p">:</span><span class="mi">260</span><span class="p">,</span><span class="nt">&quot;parentid&quot;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="nt">&quot;btn_pos&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="nt">&quot;bg_opa&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="nt">&quot;border_width&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">}</span>
+<span class="p">{</span><span class="nt">&quot;page&quot;</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">11</span><span class="p">,</span><span class="nt">&quot;obj&quot;</span><span class="p">:</span><span class="s2">&quot;tab&quot;</span><span class="p">,</span><span class="nt">&quot;parentid&quot;</span><span class="p">:</span><span class="mi">10</span><span class="p">}</span>
+<span class="p">{</span><span class="nt">&quot;page&quot;</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">12</span><span class="p">,</span><span class="nt">&quot;obj&quot;</span><span class="p">:</span><span class="s2">&quot;tab&quot;</span><span class="p">,</span><span class="nt">&quot;parentid&quot;</span><span class="p">:</span><span class="mi">10</span><span class="p">}</span>
+
+<span class="p">{</span><span class="nt">&quot;page&quot;</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">21</span><span class="p">,</span><span class="nt">&quot;obj&quot;</span><span class="p">:</span><span class="s2">&quot;label&quot;</span><span class="p">,</span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="mi">8</span><span class="p">,</span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="mi">123</span><span class="p">,</span><span class="nt">&quot;w&quot;</span><span class="p">:</span><span class="mi">130</span><span class="p">,</span><span class="nt">&quot;h&quot;</span><span class="p">:</span><span class="mi">22</span><span class="p">,</span><span class="nt">&quot;align&quot;</span><span class="p">:</span><span class="s2">&quot;left&quot;</span><span class="p">,</span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="s2">&quot;hour+2&quot;</span><span class="p">,</span><span class="nt">&quot;parentid&quot;</span><span class="p">:</span><span class="mi">11</span><span class="p">,</span><span class="nt">&quot;pad_top&quot;</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span><span class="nt">&quot;click&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">}</span>
+<span class="p">{</span><span class="nt">&quot;page&quot;</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">22</span><span class="p">,</span><span class="nt">&quot;obj&quot;</span><span class="p">:</span><span class="s2">&quot;label&quot;</span><span class="p">,</span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="mi">124</span><span class="p">,</span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="mi">123</span><span class="p">,</span><span class="nt">&quot;w&quot;</span><span class="p">:</span><span class="mi">50</span><span class="p">,</span><span class="nt">&quot;h&quot;</span><span class="p">:</span><span class="mi">22</span><span class="p">,</span><span class="nt">&quot;align&quot;</span><span class="p">:</span><span class="s2">&quot;center&quot;</span><span class="p">,</span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="s2">&quot;00.0&quot;</span><span class="p">,</span><span class="nt">&quot;parentid&quot;</span><span class="p">:</span><span class="mi">11</span><span class="p">,</span><span class="nt">&quot;pad_top&quot;</span><span class="p">:</span><span class="mi">-2</span><span class="p">,</span><span class="nt">&quot;text_font&quot;</span><span class="p">:</span><span class="mi">24</span><span class="p">,</span><span class="nt">&quot;click&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">}</span>
+<span class="p">{</span><span class="nt">&quot;page&quot;</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">23</span><span class="p">,</span><span class="nt">&quot;obj&quot;</span><span class="p">:</span><span class="s2">&quot;img&quot;</span><span class="p">,</span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="mi">182</span><span class="p">,</span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="mi">118</span><span class="p">,</span><span class="nt">&quot;w&quot;</span><span class="p">:</span><span class="mi">32</span><span class="p">,</span><span class="nt">&quot;h&quot;</span><span class="p">:</span><span class="mi">32</span><span class="p">,</span><span class="nt">&quot;src&quot;</span><span class="p">:</span><span class="s2">&quot;/littlefs/openhasp_dummy_img.png&quot;</span><span class="p">,</span><span class="nt">&quot;parentid&quot;</span><span class="p">:</span><span class="mi">11</span><span class="p">,</span><span class="nt">&quot;click&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">}</span>
+
+<span class="p">{</span><span class="nt">&quot;page&quot;</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">31</span><span class="p">,</span><span class="nt">&quot;obj&quot;</span><span class="p">:</span><span class="s2">&quot;label&quot;</span><span class="p">,</span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="mi">8</span><span class="p">,</span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="mi">154</span><span class="p">,</span><span class="nt">&quot;w&quot;</span><span class="p">:</span><span class="mi">130</span><span class="p">,</span><span class="nt">&quot;h&quot;</span><span class="p">:</span><span class="mi">22</span><span class="p">,</span><span class="nt">&quot;align&quot;</span><span class="p">:</span><span class="s2">&quot;left&quot;</span><span class="p">,</span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="s2">&quot;hour+3&quot;</span><span class="p">,</span><span class="nt">&quot;parentid&quot;</span><span class="p">:</span><span class="mi">11</span><span class="p">,</span><span class="nt">&quot;pad_top&quot;</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span><span class="nt">&quot;click&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">}</span>
+<span class="p">{</span><span class="nt">&quot;page&quot;</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">32</span><span class="p">,</span><span class="nt">&quot;obj&quot;</span><span class="p">:</span><span class="s2">&quot;label&quot;</span><span class="p">,</span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="mi">124</span><span class="p">,</span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="mi">154</span><span class="p">,</span><span class="nt">&quot;w&quot;</span><span class="p">:</span><span class="mi">50</span><span class="p">,</span><span class="nt">&quot;h&quot;</span><span class="p">:</span><span class="mi">22</span><span class="p">,</span><span class="nt">&quot;align&quot;</span><span class="p">:</span><span class="s2">&quot;center&quot;</span><span class="p">,</span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="s2">&quot;00.0&quot;</span><span class="p">,</span><span class="nt">&quot;parentid&quot;</span><span class="p">:</span><span class="mi">11</span><span class="p">,</span><span class="nt">&quot;pad_top&quot;</span><span class="p">:</span><span class="mi">-2</span><span class="p">,</span><span class="nt">&quot;text_font&quot;</span><span class="p">:</span><span class="mi">24</span><span class="p">,</span><span class="nt">&quot;click&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">}</span>
+<span class="p">{</span><span class="nt">&quot;page&quot;</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">33</span><span class="p">,</span><span class="nt">&quot;obj&quot;</span><span class="p">:</span><span class="s2">&quot;img&quot;</span><span class="p">,</span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="mi">182</span><span class="p">,</span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="mi">150</span><span class="p">,</span><span class="nt">&quot;w&quot;</span><span class="p">:</span><span class="mi">32</span><span class="p">,</span><span class="nt">&quot;h&quot;</span><span class="p">:</span><span class="mi">32</span><span class="p">,</span><span class="nt">&quot;src&quot;</span><span class="p">:</span><span class="s2">&quot;/littlefs/openhasp_dummy_img.png&quot;</span><span class="p">,</span><span class="nt">&quot;parentid&quot;</span><span class="p">:</span><span class="mi">11</span><span class="p">,</span><span class="nt">&quot;click&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">}</span>
+
+<span class="p">{</span><span class="nt">&quot;page&quot;</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">41</span><span class="p">,</span><span class="nt">&quot;obj&quot;</span><span class="p">:</span><span class="s2">&quot;label&quot;</span><span class="p">,</span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="mi">8</span><span class="p">,</span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="mi">186</span><span class="p">,</span><span class="nt">&quot;w&quot;</span><span class="p">:</span><span class="mi">130</span><span class="p">,</span><span class="nt">&quot;h&quot;</span><span class="p">:</span><span class="mi">22</span><span class="p">,</span><span class="nt">&quot;align&quot;</span><span class="p">:</span><span class="s2">&quot;left&quot;</span><span class="p">,</span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="s2">&quot;hour+4&quot;</span><span class="p">,</span><span class="nt">&quot;parentid&quot;</span><span class="p">:</span><span class="mi">11</span><span class="p">,</span><span class="nt">&quot;pad_top&quot;</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span><span class="nt">&quot;click&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">}</span>
+<span class="p">{</span><span class="nt">&quot;page&quot;</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">42</span><span class="p">,</span><span class="nt">&quot;obj&quot;</span><span class="p">:</span><span class="s2">&quot;label&quot;</span><span class="p">,</span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="mi">124</span><span class="p">,</span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="mi">186</span><span class="p">,</span><span class="nt">&quot;w&quot;</span><span class="p">:</span><span class="mi">50</span><span class="p">,</span><span class="nt">&quot;h&quot;</span><span class="p">:</span><span class="mi">22</span><span class="p">,</span><span class="nt">&quot;align&quot;</span><span class="p">:</span><span class="s2">&quot;center&quot;</span><span class="p">,</span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="s2">&quot;00.0&quot;</span><span class="p">,</span><span class="nt">&quot;parentid&quot;</span><span class="p">:</span><span class="mi">11</span><span class="p">,</span><span class="nt">&quot;pad_top&quot;</span><span class="p">:</span><span class="mi">-2</span><span class="p">,</span><span class="nt">&quot;text_font&quot;</span><span class="p">:</span><span class="mi">24</span><span class="p">,</span><span class="nt">&quot;click&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">}</span>
+<span class="p">{</span><span class="nt">&quot;page&quot;</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">43</span><span class="p">,</span><span class="nt">&quot;obj&quot;</span><span class="p">:</span><span class="s2">&quot;img&quot;</span><span class="p">,</span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="mi">182</span><span class="p">,</span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="mi">182</span><span class="p">,</span><span class="nt">&quot;w&quot;</span><span class="p">:</span><span class="mi">32</span><span class="p">,</span><span class="nt">&quot;h&quot;</span><span class="p">:</span><span class="mi">32</span><span class="p">,</span><span class="nt">&quot;src&quot;</span><span class="p">:</span><span class="s2">&quot;/littlefs/openhasp_dummy_img.png&quot;</span><span class="p">,</span><span class="nt">&quot;parentid&quot;</span><span class="p">:</span><span class="mi">11</span><span class="p">,</span><span class="nt">&quot;click&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">}</span>
+
+<span class="p">{</span><span class="nt">&quot;page&quot;</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">51</span><span class="p">,</span><span class="nt">&quot;obj&quot;</span><span class="p">:</span><span class="s2">&quot;label&quot;</span><span class="p">,</span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="mi">8</span><span class="p">,</span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="mi">218</span><span class="p">,</span><span class="nt">&quot;w&quot;</span><span class="p">:</span><span class="mi">130</span><span class="p">,</span><span class="nt">&quot;h&quot;</span><span class="p">:</span><span class="mi">22</span><span class="p">,</span><span class="nt">&quot;align&quot;</span><span class="p">:</span><span class="s2">&quot;left&quot;</span><span class="p">,</span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="s2">&quot;hour+5&quot;</span><span class="p">,</span><span class="nt">&quot;parentid&quot;</span><span class="p">:</span><span class="mi">11</span><span class="p">,</span><span class="nt">&quot;pad_top&quot;</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span><span class="nt">&quot;click&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">}</span>
+<span class="p">{</span><span class="nt">&quot;page&quot;</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">52</span><span class="p">,</span><span class="nt">&quot;obj&quot;</span><span class="p">:</span><span class="s2">&quot;label&quot;</span><span class="p">,</span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="mi">124</span><span class="p">,</span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="mi">218</span><span class="p">,</span><span class="nt">&quot;w&quot;</span><span class="p">:</span><span class="mi">50</span><span class="p">,</span><span class="nt">&quot;h&quot;</span><span class="p">:</span><span class="mi">22</span><span class="p">,</span><span class="nt">&quot;align&quot;</span><span class="p">:</span><span class="s2">&quot;center&quot;</span><span class="p">,</span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="s2">&quot;00.0&quot;</span><span class="p">,</span><span class="nt">&quot;parentid&quot;</span><span class="p">:</span><span class="mi">11</span><span class="p">,</span><span class="nt">&quot;pad_top&quot;</span><span class="p">:</span><span class="mi">-2</span><span class="p">,</span><span class="nt">&quot;text_font&quot;</span><span class="p">:</span><span class="mi">24</span><span class="p">,</span><span class="nt">&quot;click&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">}</span>
+<span class="p">{</span><span class="nt">&quot;page&quot;</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">53</span><span class="p">,</span><span class="nt">&quot;obj&quot;</span><span class="p">:</span><span class="s2">&quot;img&quot;</span><span class="p">,</span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="mi">182</span><span class="p">,</span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="mi">214</span><span class="p">,</span><span class="nt">&quot;w&quot;</span><span class="p">:</span><span class="mi">32</span><span class="p">,</span><span class="nt">&quot;h&quot;</span><span class="p">:</span><span class="mi">32</span><span class="p">,</span><span class="nt">&quot;src&quot;</span><span class="p">:</span><span class="s2">&quot;/littlefs/openhasp_dummy_img.png&quot;</span><span class="p">,</span><span class="nt">&quot;parentid&quot;</span><span class="p">:</span><span class="mi">11</span><span class="p">,</span><span class="nt">&quot;click&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">}</span>
+
+<span class="p">{</span><span class="nt">&quot;page&quot;</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">61</span><span class="p">,</span><span class="nt">&quot;obj&quot;</span><span class="p">:</span><span class="s2">&quot;label&quot;</span><span class="p">,</span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="mi">6</span><span class="p">,</span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="mi">123</span><span class="p">,</span><span class="nt">&quot;w&quot;</span><span class="p">:</span><span class="mi">100</span><span class="p">,</span><span class="nt">&quot;h&quot;</span><span class="p">:</span><span class="mi">22</span><span class="p">,</span><span class="nt">&quot;align&quot;</span><span class="p">:</span><span class="s2">&quot;left&quot;</span><span class="p">,</span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="s2">&quot;date+1&quot;</span><span class="p">,</span><span class="nt">&quot;parentid&quot;</span><span class="p">:</span><span class="mi">12</span><span class="p">,</span><span class="nt">&quot;pad_top&quot;</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span><span class="nt">&quot;click&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">}</span>
+<span class="p">{</span><span class="nt">&quot;page&quot;</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">62</span><span class="p">,</span><span class="nt">&quot;obj&quot;</span><span class="p">:</span><span class="s2">&quot;label&quot;</span><span class="p">,</span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="mi">102</span><span class="p">,</span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="mi">123</span><span class="p">,</span><span class="nt">&quot;w&quot;</span><span class="p">:</span><span class="mi">40</span><span class="p">,</span><span class="nt">&quot;h&quot;</span><span class="p">:</span><span class="mi">22</span><span class="p">,</span><span class="nt">&quot;align&quot;</span><span class="p">:</span><span class="s2">&quot;center&quot;</span><span class="p">,</span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="s2">&quot;00.0&quot;</span><span class="p">,</span><span class="nt">&quot;parentid&quot;</span><span class="p">:</span><span class="mi">12</span><span class="p">,</span><span class="nt">&quot;pad_top&quot;</span><span class="p">:</span><span class="mi">-2</span><span class="p">,</span><span class="nt">&quot;text_font&quot;</span><span class="p">:</span><span class="mi">24</span><span class="p">,</span><span class="nt">&quot;text_color&quot;</span><span class="p">:</span><span class="s2">&quot;Navy&quot;</span><span class="p">,</span><span class="nt">&quot;click&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">}</span>
+<span class="p">{</span><span class="nt">&quot;page&quot;</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">63</span><span class="p">,</span><span class="nt">&quot;obj&quot;</span><span class="p">:</span><span class="s2">&quot;label&quot;</span><span class="p">,</span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="mi">150</span><span class="p">,</span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="mi">123</span><span class="p">,</span><span class="nt">&quot;w&quot;</span><span class="p">:</span><span class="mi">40</span><span class="p">,</span><span class="nt">&quot;h&quot;</span><span class="p">:</span><span class="mi">22</span><span class="p">,</span><span class="nt">&quot;align&quot;</span><span class="p">:</span><span class="s2">&quot;center&quot;</span><span class="p">,</span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="s2">&quot;00.0&quot;</span><span class="p">,</span><span class="nt">&quot;parentid&quot;</span><span class="p">:</span><span class="mi">12</span><span class="p">,</span><span class="nt">&quot;pad_top&quot;</span><span class="p">:</span><span class="mi">-2</span><span class="p">,</span><span class="nt">&quot;text_font&quot;</span><span class="p">:</span><span class="mi">24</span><span class="p">,</span><span class="nt">&quot;text_color&quot;</span><span class="p">:</span><span class="s2">&quot;Blush&quot;</span><span class="p">,</span><span class="nt">&quot;click&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">}</span>
+<span class="p">{</span><span class="nt">&quot;page&quot;</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">64</span><span class="p">,</span><span class="nt">&quot;obj&quot;</span><span class="p">:</span><span class="s2">&quot;img&quot;</span><span class="p">,</span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="mi">194</span><span class="p">,</span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="mi">118</span><span class="p">,</span><span class="nt">&quot;w&quot;</span><span class="p">:</span><span class="mi">32</span><span class="p">,</span><span class="nt">&quot;h&quot;</span><span class="p">:</span><span class="mi">32</span><span class="p">,</span><span class="nt">&quot;src&quot;</span><span class="p">:</span><span class="s2">&quot;/littlefs/openhasp_dummy_img.png&quot;</span><span class="p">,</span><span class="nt">&quot;parentid&quot;</span><span class="p">:</span><span class="mi">12</span><span class="p">,</span><span class="nt">&quot;click&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">}</span>
+
+<span class="p">{</span><span class="nt">&quot;page&quot;</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">71</span><span class="p">,</span><span class="nt">&quot;obj&quot;</span><span class="p">:</span><span class="s2">&quot;label&quot;</span><span class="p">,</span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="mi">6</span><span class="p">,</span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="mi">154</span><span class="p">,</span><span class="nt">&quot;w&quot;</span><span class="p">:</span><span class="mi">100</span><span class="p">,</span><span class="nt">&quot;h&quot;</span><span class="p">:</span><span class="mi">22</span><span class="p">,</span><span class="nt">&quot;align&quot;</span><span class="p">:</span><span class="s2">&quot;left&quot;</span><span class="p">,</span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="s2">&quot;date+2&quot;</span><span class="p">,</span><span class="nt">&quot;parentid&quot;</span><span class="p">:</span><span class="mi">12</span><span class="p">,</span><span class="nt">&quot;pad_top&quot;</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span><span class="nt">&quot;click&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">}</span>
+<span class="p">{</span><span class="nt">&quot;page&quot;</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">72</span><span class="p">,</span><span class="nt">&quot;obj&quot;</span><span class="p">:</span><span class="s2">&quot;label&quot;</span><span class="p">,</span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="mi">102</span><span class="p">,</span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="mi">154</span><span class="p">,</span><span class="nt">&quot;w&quot;</span><span class="p">:</span><span class="mi">40</span><span class="p">,</span><span class="nt">&quot;h&quot;</span><span class="p">:</span><span class="mi">22</span><span class="p">,</span><span class="nt">&quot;align&quot;</span><span class="p">:</span><span class="s2">&quot;center&quot;</span><span class="p">,</span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="s2">&quot;00.0&quot;</span><span class="p">,</span><span class="nt">&quot;parentid&quot;</span><span class="p">:</span><span class="mi">12</span><span class="p">,</span><span class="nt">&quot;pad_top&quot;</span><span class="p">:</span><span class="mi">-2</span><span class="p">,</span><span class="nt">&quot;text_font&quot;</span><span class="p">:</span><span class="mi">24</span><span class="p">,</span><span class="nt">&quot;text_color&quot;</span><span class="p">:</span><span class="s2">&quot;Navy&quot;</span><span class="p">,</span><span class="nt">&quot;click&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">}</span>
+<span class="p">{</span><span class="nt">&quot;page&quot;</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">73</span><span class="p">,</span><span class="nt">&quot;obj&quot;</span><span class="p">:</span><span class="s2">&quot;label&quot;</span><span class="p">,</span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="mi">150</span><span class="p">,</span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="mi">154</span><span class="p">,</span><span class="nt">&quot;w&quot;</span><span class="p">:</span><span class="mi">40</span><span class="p">,</span><span class="nt">&quot;h&quot;</span><span class="p">:</span><span class="mi">22</span><span class="p">,</span><span class="nt">&quot;align&quot;</span><span class="p">:</span><span class="s2">&quot;center&quot;</span><span class="p">,</span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="s2">&quot;00.0&quot;</span><span class="p">,</span><span class="nt">&quot;parentid&quot;</span><span class="p">:</span><span class="mi">12</span><span class="p">,</span><span class="nt">&quot;pad_top&quot;</span><span class="p">:</span><span class="mi">-2</span><span class="p">,</span><span class="nt">&quot;text_font&quot;</span><span class="p">:</span><span class="mi">24</span><span class="p">,</span><span class="nt">&quot;text_color&quot;</span><span class="p">:</span><span class="s2">&quot;Blush&quot;</span><span class="p">,</span><span class="nt">&quot;click&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">}</span>
+<span class="p">{</span><span class="nt">&quot;page&quot;</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">74</span><span class="p">,</span><span class="nt">&quot;obj&quot;</span><span class="p">:</span><span class="s2">&quot;img&quot;</span><span class="p">,</span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="mi">194</span><span class="p">,</span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="mi">150</span><span class="p">,</span><span class="nt">&quot;w&quot;</span><span class="p">:</span><span class="mi">32</span><span class="p">,</span><span class="nt">&quot;h&quot;</span><span class="p">:</span><span class="mi">32</span><span class="p">,</span><span class="nt">&quot;src&quot;</span><span class="p">:</span><span class="s2">&quot;/littlefs/openhasp_dummy_img.png&quot;</span><span class="p">,</span><span class="nt">&quot;parentid&quot;</span><span class="p">:</span><span class="mi">12</span><span class="p">,</span><span class="nt">&quot;click&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">}</span>
+
+<span class="p">{</span><span class="nt">&quot;page&quot;</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">81</span><span class="p">,</span><span class="nt">&quot;obj&quot;</span><span class="p">:</span><span class="s2">&quot;label&quot;</span><span class="p">,</span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="mi">6</span><span class="p">,</span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="mi">186</span><span class="p">,</span><span class="nt">&quot;w&quot;</span><span class="p">:</span><span class="mi">100</span><span class="p">,</span><span class="nt">&quot;h&quot;</span><span class="p">:</span><span class="mi">22</span><span class="p">,</span><span class="nt">&quot;align&quot;</span><span class="p">:</span><span class="s2">&quot;left&quot;</span><span class="p">,</span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="s2">&quot;date+3&quot;</span><span class="p">,</span><span class="nt">&quot;parentid&quot;</span><span class="p">:</span><span class="mi">12</span><span class="p">,</span><span class="nt">&quot;pad_top&quot;</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span><span class="nt">&quot;click&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">}</span>
+<span class="p">{</span><span class="nt">&quot;page&quot;</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">82</span><span class="p">,</span><span class="nt">&quot;obj&quot;</span><span class="p">:</span><span class="s2">&quot;label&quot;</span><span class="p">,</span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="mi">102</span><span class="p">,</span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="mi">186</span><span class="p">,</span><span class="nt">&quot;w&quot;</span><span class="p">:</span><span class="mi">40</span><span class="p">,</span><span class="nt">&quot;h&quot;</span><span class="p">:</span><span class="mi">22</span><span class="p">,</span><span class="nt">&quot;align&quot;</span><span class="p">:</span><span class="s2">&quot;center&quot;</span><span class="p">,</span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="s2">&quot;00.0&quot;</span><span class="p">,</span><span class="nt">&quot;parentid&quot;</span><span class="p">:</span><span class="mi">12</span><span class="p">,</span><span class="nt">&quot;pad_top&quot;</span><span class="p">:</span><span class="mi">-2</span><span class="p">,</span><span class="nt">&quot;text_font&quot;</span><span class="p">:</span><span class="mi">24</span><span class="p">,</span><span class="nt">&quot;text_color&quot;</span><span class="p">:</span><span class="s2">&quot;Navy&quot;</span><span class="p">,</span><span class="nt">&quot;click&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">}</span>
+<span class="p">{</span><span class="nt">&quot;page&quot;</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">83</span><span class="p">,</span><span class="nt">&quot;obj&quot;</span><span class="p">:</span><span class="s2">&quot;label&quot;</span><span class="p">,</span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="mi">150</span><span class="p">,</span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="mi">186</span><span class="p">,</span><span class="nt">&quot;w&quot;</span><span class="p">:</span><span class="mi">40</span><span class="p">,</span><span class="nt">&quot;h&quot;</span><span class="p">:</span><span class="mi">22</span><span class="p">,</span><span class="nt">&quot;align&quot;</span><span class="p">:</span><span class="s2">&quot;center&quot;</span><span class="p">,</span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="s2">&quot;00.0&quot;</span><span class="p">,</span><span class="nt">&quot;parentid&quot;</span><span class="p">:</span><span class="mi">12</span><span class="p">,</span><span class="nt">&quot;pad_top&quot;</span><span class="p">:</span><span class="mi">-2</span><span class="p">,</span><span class="nt">&quot;text_font&quot;</span><span class="p">:</span><span class="mi">24</span><span class="p">,</span><span class="nt">&quot;text_color&quot;</span><span class="p">:</span><span class="s2">&quot;Blush&quot;</span><span class="p">,</span><span class="nt">&quot;click&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">}</span>
+<span class="p">{</span><span class="nt">&quot;page&quot;</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">84</span><span class="p">,</span><span class="nt">&quot;obj&quot;</span><span class="p">:</span><span class="s2">&quot;img&quot;</span><span class="p">,</span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="mi">194</span><span class="p">,</span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="mi">182</span><span class="p">,</span><span class="nt">&quot;w&quot;</span><span class="p">:</span><span class="mi">32</span><span class="p">,</span><span class="nt">&quot;h&quot;</span><span class="p">:</span><span class="mi">32</span><span class="p">,</span><span class="nt">&quot;src&quot;</span><span class="p">:</span><span class="s2">&quot;/littlefs/openhasp_dummy_img.png&quot;</span><span class="p">,</span><span class="nt">&quot;parentid&quot;</span><span class="p">:</span><span class="mi">12</span><span class="p">,</span><span class="nt">&quot;click&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">}</span>
+
+<span class="p">{</span><span class="nt">&quot;page&quot;</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">91</span><span class="p">,</span><span class="nt">&quot;obj&quot;</span><span class="p">:</span><span class="s2">&quot;label&quot;</span><span class="p">,</span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="mi">6</span><span class="p">,</span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="mi">218</span><span class="p">,</span><span class="nt">&quot;w&quot;</span><span class="p">:</span><span class="mi">100</span><span class="p">,</span><span class="nt">&quot;h&quot;</span><span class="p">:</span><span class="mi">22</span><span class="p">,</span><span class="nt">&quot;align&quot;</span><span class="p">:</span><span class="s2">&quot;left&quot;</span><span class="p">,</span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="s2">&quot;date+4&quot;</span><span class="p">,</span><span class="nt">&quot;parentid&quot;</span><span class="p">:</span><span class="mi">12</span><span class="p">,</span><span class="nt">&quot;pad_top&quot;</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span><span class="nt">&quot;click&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">}</span>
+<span class="p">{</span><span class="nt">&quot;page&quot;</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">92</span><span class="p">,</span><span class="nt">&quot;obj&quot;</span><span class="p">:</span><span class="s2">&quot;label&quot;</span><span class="p">,</span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="mi">102</span><span class="p">,</span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="mi">218</span><span class="p">,</span><span class="nt">&quot;w&quot;</span><span class="p">:</span><span class="mi">40</span><span class="p">,</span><span class="nt">&quot;h&quot;</span><span class="p">:</span><span class="mi">22</span><span class="p">,</span><span class="nt">&quot;align&quot;</span><span class="p">:</span><span class="s2">&quot;center&quot;</span><span class="p">,</span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="s2">&quot;00.0&quot;</span><span class="p">,</span><span class="nt">&quot;parentid&quot;</span><span class="p">:</span><span class="mi">12</span><span class="p">,</span><span class="nt">&quot;pad_top&quot;</span><span class="p">:</span><span class="mi">-2</span><span class="p">,</span><span class="nt">&quot;text_font&quot;</span><span class="p">:</span><span class="mi">24</span><span class="p">,</span><span class="nt">&quot;text_color&quot;</span><span class="p">:</span><span class="s2">&quot;Navy&quot;</span><span class="p">,</span><span class="nt">&quot;click&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">}</span>
+<span class="p">{</span><span class="nt">&quot;page&quot;</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">93</span><span class="p">,</span><span class="nt">&quot;obj&quot;</span><span class="p">:</span><span class="s2">&quot;label&quot;</span><span class="p">,</span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="mi">150</span><span class="p">,</span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="mi">218</span><span class="p">,</span><span class="nt">&quot;w&quot;</span><span class="p">:</span><span class="mi">40</span><span class="p">,</span><span class="nt">&quot;h&quot;</span><span class="p">:</span><span class="mi">22</span><span class="p">,</span><span class="nt">&quot;align&quot;</span><span class="p">:</span><span class="s2">&quot;center&quot;</span><span class="p">,</span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="s2">&quot;00.0&quot;</span><span class="p">,</span><span class="nt">&quot;parentid&quot;</span><span class="p">:</span><span class="mi">12</span><span class="p">,</span><span class="nt">&quot;pad_top&quot;</span><span class="p">:</span><span class="mi">-2</span><span class="p">,</span><span class="nt">&quot;text_font&quot;</span><span class="p">:</span><span class="mi">24</span><span class="p">,</span><span class="nt">&quot;text_color&quot;</span><span class="p">:</span><span class="s2">&quot;Blush&quot;</span><span class="p">,</span><span class="nt">&quot;click&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">}</span>
+<span class="p">{</span><span class="nt">&quot;page&quot;</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">94</span><span class="p">,</span><span class="nt">&quot;obj&quot;</span><span class="p">:</span><span class="s2">&quot;img&quot;</span><span class="p">,</span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="mi">194</span><span class="p">,</span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="mi">214</span><span class="p">,</span><span class="nt">&quot;w&quot;</span><span class="p">:</span><span class="mi">32</span><span class="p">,</span><span class="nt">&quot;h&quot;</span><span class="p">:</span><span class="mi">32</span><span class="p">,</span><span class="nt">&quot;src&quot;</span><span class="p">:</span><span class="s2">&quot;/littlefs/openhasp_dummy_img.png&quot;</span><span class="p">,</span><span class="nt">&quot;parentid&quot;</span><span class="p">:</span><span class="mi">12</span><span class="p">,</span><span class="nt">&quot;click&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">}</span>
 </code></pre></div>
 </td></tr></table>
 <p>relevant <strong>openHASP-custom-component config:</strong></p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>    <span class="p p-Indicator">-</span> <span class="nt">obj</span><span class="p">:</span> <span class="s">&quot;p0b1&quot;</span>
-      <span class="nt">properties</span><span class="p">:</span>
-        <span class="s">&quot;text_color&quot;</span><span class="p p-Indicator">:</span> <span class="s">&quot;{%</span><span class="nv"> </span><span class="s">if</span><span class="nv"> </span><span class="s">-30</span><span class="nv"> </span><span class="s">&lt;=</span><span class="nv"> </span><span class="s">state_attr(&#39;openhasp.openhasp_plate&#39;,&#39;rssi&#39;)</span><span class="nv"> </span><span class="s">|int</span><span class="nv"> </span><span class="s">%}green{%</span><span class="nv"> </span><span class="s">elif</span><span class="nv"> </span><span class="s">-31</span><span class="nv"> </span><span class="s">&gt;</span><span class="nv"> </span><span class="s">state_attr(&#39;openhasp.openhasp_plate&#39;,&#39;rssi&#39;)</span><span class="nv"> </span><span class="s">|int</span><span class="nv"> </span><span class="s">&gt;=</span><span class="nv"> </span><span class="s">-50</span><span class="nv"> </span><span class="s">%}orange{%</span><span class="nv"> </span><span class="s">elif</span><span class="nv"> </span><span class="s">-51</span><span class="nv"> </span><span class="s">&gt;</span><span class="nv"> </span><span class="s">state_attr(&#39;openhasp.openhasp_plate&#39;,&#39;rssi&#39;)</span><span class="nv"> </span><span class="s">|int</span><span class="nv"> </span><span class="s">&gt;=</span><span class="nv"> </span><span class="s">-80</span><span class="nv"> </span><span class="s">%}tomato{%</span><span class="nv"> </span><span class="s">else</span><span class="nv"> </span><span class="s">%}red{%</span><span class="nv"> </span><span class="s">endif</span><span class="nv"> </span><span class="s">%}&quot;</span><span class="err">```</span>
-</code></pre></div>
-</td></tr></table>
-<h4>Color code a temperature icon according to sensor values</h4>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">  1</span>
+<span class="normal">  2</span>
+<span class="normal">  3</span>
+<span class="normal">  4</span>
+<span class="normal">  5</span>
+<span class="normal">  6</span>
+<span class="normal">  7</span>
+<span class="normal">  8</span>
+<span class="normal">  9</span>
+<span class="normal"> 10</span>
+<span class="normal"> 11</span>
+<span class="normal"> 12</span>
+<span class="normal"> 13</span>
+<span class="normal"> 14</span>
+<span class="normal"> 15</span>
+<span class="normal"> 16</span>
+<span class="normal"> 17</span>
+<span class="normal"> 18</span>
+<span class="normal"> 19</span>
+<span class="normal"> 20</span>
+<span class="normal"> 21</span>
+<span class="normal"> 22</span>
+<span class="normal"> 23</span>
+<span class="normal"> 24</span>
+<span class="normal"> 25</span>
+<span class="normal"> 26</span>
+<span class="normal"> 27</span>
+<span class="normal"> 28</span>
+<span class="normal"> 29</span>
+<span class="normal"> 30</span>
+<span class="normal"> 31</span>
+<span class="normal"> 32</span>
+<span class="normal"> 33</span>
+<span class="normal"> 34</span>
+<span class="normal"> 35</span>
+<span class="normal"> 36</span>
+<span class="normal"> 37</span>
+<span class="normal"> 38</span>
+<span class="normal"> 39</span>
+<span class="normal"> 40</span>
+<span class="normal"> 41</span>
+<span class="normal"> 42</span>
+<span class="normal"> 43</span>
+<span class="normal"> 44</span>
+<span class="normal"> 45</span>
+<span class="normal"> 46</span>
+<span class="normal"> 47</span>
+<span class="normal"> 48</span>
+<span class="normal"> 49</span>
+<span class="normal"> 50</span>
+<span class="normal"> 51</span>
+<span class="normal"> 52</span>
+<span class="normal"> 53</span>
+<span class="normal"> 54</span>
+<span class="normal"> 55</span>
+<span class="normal"> 56</span>
+<span class="normal"> 57</span>
+<span class="normal"> 58</span>
+<span class="normal"> 59</span>
+<span class="normal"> 60</span>
+<span class="normal"> 61</span>
+<span class="normal"> 62</span>
+<span class="normal"> 63</span>
+<span class="normal"> 64</span>
+<span class="normal"> 65</span>
+<span class="normal"> 66</span>
+<span class="normal"> 67</span>
+<span class="normal"> 68</span>
+<span class="normal"> 69</span>
+<span class="normal"> 70</span>
+<span class="normal"> 71</span>
+<span class="normal"> 72</span>
+<span class="normal"> 73</span>
+<span class="normal"> 74</span>
+<span class="normal"> 75</span>
+<span class="normal"> 76</span>
+<span class="normal"> 77</span>
+<span class="normal"> 78</span>
+<span class="normal"> 79</span>
+<span class="normal"> 80</span>
+<span class="normal"> 81</span>
+<span class="normal"> 82</span>
+<span class="normal"> 83</span>
+<span class="normal"> 84</span>
+<span class="normal"> 85</span>
+<span class="normal"> 86</span>
+<span class="normal"> 87</span>
+<span class="normal"> 88</span>
+<span class="normal"> 89</span>
+<span class="normal"> 90</span>
+<span class="normal"> 91</span>
+<span class="normal"> 92</span>
+<span class="normal"> 93</span>
+<span class="normal"> 94</span>
+<span class="normal"> 95</span>
+<span class="normal"> 96</span>
+<span class="normal"> 97</span>
+<span class="normal"> 98</span>
+<span class="normal"> 99</span>
+<span class="normal">100</span>
+<span class="normal">101</span>
+<span class="normal">102</span>
+<span class="normal">103</span>
+<span class="normal">104</span>
+<span class="normal">105</span>
+<span class="normal">106</span>
+<span class="normal">107</span>
+<span class="normal">108</span>
+<span class="normal">109</span>
+<span class="normal">110</span>
+<span class="normal">111</span>
+<span class="normal">112</span>
+<span class="normal">113</span>
+<span class="normal">114</span>
+<span class="normal">115</span>
+<span class="normal">116</span>
+<span class="normal">117</span>
+<span class="normal">118</span>
+<span class="normal">119</span>
+<span class="normal">120</span>
+<span class="normal">121</span>
+<span class="normal">122</span>
+<span class="normal">123</span>
+<span class="normal">124</span>
+<span class="normal">125</span>
+<span class="normal">126</span>
+<span class="normal">127</span>
+<span class="normal">128</span>
+<span class="normal">129</span>
+<span class="normal">130</span>
+<span class="normal">131</span>
+<span class="normal">132</span>
+<span class="normal">133</span>
+<span class="normal">134</span>
+<span class="normal">135</span>
+<span class="normal">136</span>
+<span class="normal">137</span>
+<span class="normal">138</span>
+<span class="normal">139</span>
+<span class="normal">140</span>
+<span class="normal">141</span>
+<span class="normal">142</span>
+<span class="normal">143</span>
+<span class="normal">144</span>
+<span class="normal">145</span>
+<span class="normal">146</span>
+<span class="normal">147</span>
+<span class="normal">148</span>
+<span class="normal">149</span>
+<span class="normal">150</span>
+<span class="normal">151</span>
+<span class="normal">152</span>
+<span class="normal">153</span>
+<span class="normal">154</span>
+<span class="normal">155</span>
+<span class="normal">156</span>
+<span class="normal">157</span>
+<span class="normal">158</span>
+<span class="normal">159</span>
+<span class="normal">160</span>
+<span class="normal">161</span>
+<span class="normal">162</span>
+<span class="normal">163</span>
+<span class="normal">164</span>
+<span class="normal">165</span>
+<span class="normal">166</span>
+<span class="normal">167</span>
+<span class="normal">168</span>
+<span class="normal">169</span>
+<span class="normal">170</span>
+<span class="normal">171</span>
+<span class="normal">172</span>
+<span class="normal">173</span>
+<span class="normal">174</span>
+<span class="normal">175</span>
+<span class="normal">176</span>
+<span class="normal">177</span>
+<span class="normal">178</span>
+<span class="normal">179</span>
+<span class="normal">180</span>
+<span class="normal">181</span>
+<span class="normal">182</span>
+<span class="normal">183</span>
+<span class="normal">184</span>
+<span class="normal">185</span>
+<span class="normal">186</span>
+<span class="normal">187</span>
+<span class="normal">188</span>
+<span class="normal">189</span>
+<span class="normal">190</span>
+<span class="normal">191</span>
+<span class="normal">192</span>
+<span class="normal">193</span>
+<span class="normal">194</span>
+<span class="normal">195</span>
+<span class="normal">196</span>
+<span class="normal">197</span>
+<span class="normal">198</span>
+<span class="normal">199</span>
+<span class="normal">200</span>
+<span class="normal">201</span>
+<span class="normal">202</span>
+<span class="normal">203</span>
+<span class="normal">204</span>
+<span class="normal">205</span>
+<span class="normal">206</span>
+<span class="normal">207</span>
+<span class="normal">208</span>
+<span class="normal">209</span>
+<span class="normal">210</span>
+<span class="normal">211</span>
+<span class="normal">212</span>
+<span class="normal">213</span>
+<span class="normal">214</span>
+<span class="normal">215</span>
+<span class="normal">216</span>
+<span class="normal">217</span>
+<span class="normal">218</span>
+<span class="normal">219</span>
+<span class="normal">220</span>
+<span class="normal">221</span>
+<span class="normal">222</span>
+<span class="normal">223</span>
+<span class="normal">224</span>
+<span class="normal">225</span>
+<span class="normal">226</span>
+<span class="normal">227</span>
+<span class="normal">228</span>
+<span class="normal">229</span>
+<span class="normal">230</span>
+<span class="normal">231</span>
+<span class="normal">232</span>
+<span class="normal">233</span>
+<span class="normal">234</span>
+<span class="normal">235</span>
+<span class="normal">236</span>
+<span class="normal">237</span>
+<span class="normal">238</span>
+<span class="normal">239</span>
+<span class="normal">240</span>
+<span class="normal">241</span>
+<span class="normal">242</span>
+<span class="normal">243</span>
+<span class="normal">244</span>
+<span class="normal">245</span>
+<span class="normal">246</span>
+<span class="normal">247</span>
+<span class="normal">248</span>
+<span class="normal">249</span>
+<span class="normal">250</span>
+<span class="normal">251</span>
+<span class="normal">252</span>
+<span class="normal">253</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>      <span class="p p-Indicator">-</span> <span class="nt">obj</span><span class="p">:</span> <span class="s">&quot;p5b14&quot;</span> <span class="c1"># Icon</span>
+        <span class="nt">properties</span><span class="p">:</span>
+          <span class="s">&quot;src&quot;</span><span class="p p-Indicator">:</span> <span class="s">&quot;{{</span><span class="nv"> </span><span class="s">&#39;/littlefs/w-128-&#39;</span><span class="nv"> </span><span class="s">+</span><span class="nv"> </span><span class="s">states(&#39;weather.openweathermap&#39;)</span><span class="nv"> </span><span class="s">+</span><span class="nv"> </span><span class="s">&#39;.png&#39;</span><span class="nv"> </span><span class="s">if</span><span class="nv"> </span><span class="s">not</span><span class="nv"> </span><span class="s">is_state(&#39;weather.openweathermap&#39;,&#39;unavailable&#39;)</span><span class="nv"> </span><span class="s">}}&quot;</span>
 
-<p><strong>openHASP config:</strong> (screen size 240x320) </p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;obj&quot;</span><span class="p">:</span><span class="s2">&quot;btn&quot;</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="mi">165</span><span class="p">,</span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="nt">&quot;w&quot;</span><span class="p">:</span><span class="mi">30</span><span class="p">,</span><span class="nt">&quot;h&quot;</span><span class="p">:</span><span class="mi">40</span><span class="p">,</span><span class="nt">&quot;text_font&quot;</span><span class="p">:</span><span class="s2">&quot;2&quot;</span><span class="p">,</span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="s2">&quot;\uE50F&quot;</span><span class="p">,</span><span class="nt">&quot;text_color&quot;</span><span class="p">:</span><span class="s2">&quot;gray&quot;</span><span class="p">,</span><span class="nt">&quot;bg_opa&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="nt">&quot;border_width&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">}</span>
-</code></pre></div>
-</td></tr></table>
-<p>relevant <strong>openHASP-custom-component config:</strong></p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>    <span class="p p-Indicator">-</span> <span class="nt">obj</span><span class="p">:</span> <span class="s">&quot;p0b3&quot;</span>
-      <span class="nt">properties</span><span class="p">:</span>
-        <span class="s">&quot;text_color&quot;</span><span class="p p-Indicator">:</span> <span class="s">&quot;{%</span><span class="nv"> </span><span class="s">if</span><span class="nv"> </span><span class="s">states(&#39;sensor.room_temperature&#39;)</span><span class="nv"> </span><span class="s">|int</span><span class="nv"> </span><span class="s">&lt;=</span><span class="nv"> </span><span class="s">21</span><span class="nv">  </span><span class="s">%}#4682B4{%</span><span class="nv"> </span><span class="s">elif</span><span class="nv"> </span><span class="s">21</span><span class="nv"> </span><span class="s">&lt;</span><span class="nv"> </span><span class="s">states(&#39;sensor.room_temperature&#39;)</span><span class="nv"> </span><span class="s">|int</span><span class="nv"> </span><span class="s">&lt;=</span><span class="nv"> </span><span class="s">26</span><span class="nv"> </span><span class="s">%}green{%</span><span class="nv"> </span><span class="s">else</span><span class="nv"> </span><span class="s">%}red{%</span><span class="nv"> </span><span class="s">endif</span><span class="nv"> </span><span class="s">%}&quot;</span>
+      <span class="p p-Indicator">-</span> <span class="nt">obj</span><span class="p">:</span> <span class="s">&quot;p5b15&quot;</span> <span class="c1"># Date</span>
+        <span class="nt">properties</span><span class="p">:</span>
+          <span class="s">&quot;text&quot;</span><span class="p p-Indicator">:</span> <span class="p p-Indicator">&gt;</span>
+            <span class="no">{{ (states.weather.openweathermap.last_changed).strftime(&#39;%m. %d. &#39;) }}</span>
+            <span class="no">{%- set day = (states.weather.openweathermap.last_changed).strftime(&#39;%w&#39;) %}</span>
+            <span class="no">{%- set days = [&quot;Monday&quot;, &quot;Tuesday&quot;, &quot;Wednesday&quot;, &quot;Thursday&quot;, &quot;Friday&quot;, &quot;Saturday&quot;, &quot;Sunday&quot;] %}</span>
+            <span class="no">{%- set localday = days[ day | int -1 ] %}</span>
+            <span class="no">{{- localday }}</span>
+
+      <span class="p p-Indicator">-</span> <span class="nt">obj</span><span class="p">:</span> <span class="s">&quot;p5b16&quot;</span> <span class="c1"># Current temp (you can use your own outdoor temp sensor if you have one)</span>
+        <span class="nt">properties</span><span class="p">:</span>
+          <span class="s">&quot;text&quot;</span><span class="p p-Indicator">:</span> <span class="s">&quot;{{</span><span class="nv"> </span><span class="s">state_attr(&#39;weather.openweathermap&#39;,&#39;temperature&#39;)</span><span class="nv"> </span><span class="s">|string</span><span class="nv"> </span><span class="s">+</span><span class="nv"> </span><span class="s">&#39;°C&#39;</span><span class="nv"> </span><span class="s">if</span><span class="nv"> </span><span class="s">not</span><span class="nv"> </span><span class="s">is_state(&#39;weather.openweathermap&#39;,&#39;unavailable&#39;)</span><span class="nv"> </span><span class="s">}}&quot;</span>
+<span class="c1">#          &quot;text&quot;: &quot;{{ states(&#39;sensor.your_own_temp_sensor&#39;) }}°C&quot;</span>
+
+      <span class="p p-Indicator">-</span> <span class="nt">obj</span><span class="p">:</span> <span class="s">&quot;p5b17&quot;</span> <span class="c1"># Current weather condition</span>
+        <span class="nt">properties</span><span class="p">:</span>
+          <span class="s">&quot;text&quot;</span><span class="p p-Indicator">:</span> <span class="p p-Indicator">&gt;</span>
+             <span class="no">{% if states(&#39;weather.openweathermap&#39;) == &quot;clear-night&quot; -%}</span>
+             <span class="no">Clear night</span>
+             <span class="no">{% elif states(&#39;weather.openweathermap&#39;) == &#39;cloudy&#39; -%}</span>
+             <span class="no">Cloudy</span>
+             <span class="no">{% elif states(&#39;weather.openweathermap&#39;) == &#39;fog&#39; -%}</span>
+             <span class="no">Fog</span>
+             <span class="no">{% elif states(&#39;weather.openweathermap&#39;) == &#39;hail&#39; -%}</span>
+             <span class="no">Hail</span>
+             <span class="no">{% elif states(&#39;weather.openweathermap&#39;) == &#39;lightning&#39; -%}</span>
+             <span class="no">Lightning</span>
+             <span class="no">{% elif states(&#39;weather.openweathermap&#39;) == &#39;lightning-rainy&#39; -%}</span>
+             <span class="no">Thunderstorms</span>
+             <span class="no">{% elif states(&#39;weather.openweathermap&#39;) == &#39;partlycloudy&#39; -%}</span>
+             <span class="no">Partly cloudy</span>
+             <span class="no">{% elif states(&#39;weather.openweathermap&#39;) == &#39;pouring&#39; -%}</span>
+             <span class="no">Pouring rain</span>
+             <span class="no">{% elif states(&#39;weather.openweathermap&#39;) == &#39;rainy&#39; -%}</span>
+             <span class="no">Rainy</span>
+             <span class="no">{% elif states(&#39;weather.openweathermap&#39;) == &#39;snowy&#39; -%}</span>
+             <span class="no">Snowy</span>
+             <span class="no">{% elif states(&#39;weather.openweathermap&#39;) == &#39;snowy-rainy&#39; -%}</span>
+             <span class="no">Snowy-rainy</span>
+             <span class="no">{% elif states(&#39;weather.openweathermap&#39;) == &#39;sunny&#39; -%}</span>
+             <span class="no">Sunny</span>
+             <span class="no">{% elif states(&#39;weather.openweathermap&#39;) == &#39;windy&#39; -%}</span>
+             <span class="no">Windy</span>
+             <span class="no">{% elif states(&#39;weather.openweathermap&#39;) == &#39;windy-variant&#39; -%}</span>
+             <span class="no">Windy</span>
+             <span class="no">{% elif states(&#39;weather.openweathermap&#39;) == &#39;exceptional&#39; -%}</span>
+             <span class="no">Exceptional</span>
+             <span class="no">{% elif states(&#39;weather.openweathermap&#39;) == &#39;unavailable&#39; -%}</span>
+             <span class="no">(not available)</span>
+             <span class="no">{% endif -%}</span>
+
+      <span class="p p-Indicator">-</span> <span class="nt">obj</span><span class="p">:</span> <span class="s">&quot;p5b10&quot;</span>  <span class="c1"># tab dots</span>
+        <span class="nt">event</span><span class="p">:</span>
+          <span class="s">&quot;changed&quot;</span><span class="p p-Indicator">:</span>
+            <span class="p p-Indicator">-</span> <span class="nt">service</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">openhasp.command</span>
+              <span class="nt">target</span><span class="p">:</span>
+                <span class="nt">entity_id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">openhasp.plate_4</span>
+              <span class="nt">data</span><span class="p">:</span>
+                <span class="nt">keyword</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">p5b19.text</span>
+                <span class="nt">parameters</span><span class="p">:</span> <span class="p p-Indicator">&gt;</span>
+                  <span class="no">{% if val == 0 %}</span>
+                  <span class="no">{{ &quot;#000000 \u2022# #909090 \u2022#&quot; | e }}</span>
+                  <span class="no">{%-elif val == 1 %}</span>
+                  <span class="no">{{ &quot;#909090 \u2022# #000000 \u2022#&quot; | e }}</span>
+                  <span class="no">{% endif %}</span>
+
+      <span class="p p-Indicator">-</span> <span class="nt">obj</span><span class="p">:</span> <span class="s">&quot;p5b21&quot;</span> <span class="c1"># Forecast time +1h</span>
+        <span class="nt">properties</span><span class="p">:</span>
+          <span class="s">&quot;text&quot;</span><span class="p p-Indicator">:</span> <span class="p p-Indicator">&gt;</span>
+            <span class="no">{%- set update = states(&#39;sensor.date&#39;) %}</span>
+            <span class="no">{%- set midnight = now().replace(hour=0, minute=0, second=0, microsecond=0).timestamp() %}</span>
+            <span class="no">{%- set event = as_timestamp(strptime(state_attr(&#39;weather.openweathermap&#39;,&#39;forecast&#39;)[1][&#39;datetime&#39;], &#39;%Y-%m-%d %H:%M:%S&#39;)) %}</span>
+            <span class="no">{%- set delta = ((event - midnight) // 86400) | int %}</span>
+            <span class="no">{%- if delta == 0 %}</span>
+            <span class="no">Today</span>
+            <span class="no">{%- elif delta == 1 %}</span>
+            <span class="no">Tomorrow</span>
+            <span class="no">{%- endif %}</span>
+            <span class="no">{{- as_timestamp(strptime(state_attr(&#39;weather.openweathermap&#39;,&#39;forecast&#39;)[1][&#39;datetime&#39;], &#39;%Y-%m-%d %H:%M:%S&#39;)) | timestamp_custom(&quot; %-I %p&quot;) }}</span>
+      <span class="p p-Indicator">-</span> <span class="nt">obj</span><span class="p">:</span> <span class="s">&quot;p5b22&quot;</span> <span class="c1"># Forecast temp +1h</span>
+        <span class="nt">properties</span><span class="p">:</span>
+          <span class="s">&quot;text&quot;</span><span class="p p-Indicator">:</span> <span class="s">&quot;{{</span><span class="nv"> </span><span class="s">state_attr(&#39;weather.openweathermap&#39;,&#39;forecast&#39;)[1][&#39;temperature&#39;]</span><span class="nv"> </span><span class="s">}}&quot;</span>
+
+      <span class="p p-Indicator">-</span> <span class="nt">obj</span><span class="p">:</span> <span class="s">&quot;p5b23&quot;</span> <span class="c1"># Forecast condition +1h</span>
+        <span class="nt">properties</span><span class="p">:</span>
+          <span class="s">&quot;src&quot;</span><span class="p p-Indicator">:</span> <span class="s">&quot;/littlefs/w-32-{{</span><span class="nv"> </span><span class="s">state_attr(&#39;weather.openweathermap&#39;,&#39;forecast&#39;)[1][&#39;condition&#39;]</span><span class="nv"> </span><span class="s">}}.png&quot;</span>
+
+
+      <span class="p p-Indicator">-</span> <span class="nt">obj</span><span class="p">:</span> <span class="s">&quot;p5b31&quot;</span> <span class="c1"># Forecast time +2h (using Dawn/Morn etc instead of Today/Tomorrow)</span>
+        <span class="nt">properties</span><span class="p">:</span>
+          <span class="s">&quot;text&quot;</span><span class="p p-Indicator">:</span> <span class="p p-Indicator">&gt;</span>
+            <span class="no">{%- set hour = as_timestamp(strptime(state_attr(&#39;weather.openweathermap&#39;,&#39;forecast&#39;)[3][&#39;datetime&#39;], &#39;%Y-%m-%d %H:%M:%S&#39;)) | timestamp_custom(&quot;%-H&quot;) | int %}</span>
+            <span class="no">{%- if 4 &lt;= hour &lt; 6 %}</span>
+            <span class="no">Dawning</span>
+            <span class="no">{%- elif 6 &lt;= hour &lt; 9 %}</span>
+            <span class="no">Morning</span>
+            <span class="no">{%- elif 9 &lt;= hour &lt; 12 %}</span>
+            <span class="no">Forenoon</span>
+            <span class="no">{%- elif 12 &lt;= hour &lt; 18 %}</span>
+            <span class="no">Afternoon</span>
+            <span class="no">{%- elif 18 &lt;= hour &lt; 23 %}</span>
+            <span class="no">Evening</span>
+            <span class="no">{%- elif 23 &lt;= hour or hour &lt; 4 %}</span>
+            <span class="no">Night</span>
+            <span class="no">{%- endif %}</span>
+            <span class="no">{{- as_timestamp(strptime(state_attr(&#39;weather.openweathermap&#39;,&#39;forecast&#39;)[3][&#39;datetime&#39;], &#39;%Y-%m-%d %H:%M:%S&#39;)) | timestamp_custom(&quot; %-H. óra&quot;) }}</span>
+
+      <span class="p p-Indicator">-</span> <span class="nt">obj</span><span class="p">:</span> <span class="s">&quot;p5b32&quot;</span> <span class="c1"># Forecast temp +2h</span>
+        <span class="nt">properties</span><span class="p">:</span>
+          <span class="s">&quot;text&quot;</span><span class="p p-Indicator">:</span> <span class="s">&quot;{{</span><span class="nv"> </span><span class="s">state_attr(&#39;weather.openweathermap&#39;,&#39;forecast&#39;)[3][&#39;temperature&#39;]</span><span class="nv"> </span><span class="s">}}&quot;</span>
+
+      <span class="p p-Indicator">-</span> <span class="nt">obj</span><span class="p">:</span> <span class="s">&quot;p5b33&quot;</span> <span class="c1"># Forecast condition +2h</span>
+        <span class="nt">properties</span><span class="p">:</span>
+          <span class="s">&quot;src&quot;</span><span class="p p-Indicator">:</span> <span class="s">&quot;/littlefs/w-32-{{</span><span class="nv"> </span><span class="s">state_attr(&#39;weather.openweathermap&#39;,&#39;forecast&#39;)[3][&#39;condition&#39;]</span><span class="nv"> </span><span class="s">}}.png&quot;</span>
+
+
+      <span class="p p-Indicator">-</span> <span class="nt">obj</span><span class="p">:</span> <span class="s">&quot;p5b41&quot;</span> <span class="c1"># Forecast time +4h</span>
+        <span class="nt">properties</span><span class="p">:</span>
+          <span class="s">&quot;text&quot;</span><span class="p p-Indicator">:</span> <span class="p p-Indicator">&gt;</span>
+            <span class="no">{%- set update = states(&#39;sensor.date&#39;) %}</span>
+            <span class="no">{%- set midnight = now().replace(hour=0, minute=0, second=0, microsecond=0).timestamp() %}</span>
+            <span class="no">{%- set event = as_timestamp(strptime(state_attr(&#39;weather.openweathermap&#39;,&#39;forecast&#39;)[6][&#39;datetime&#39;], &#39;%Y-%m-%d %H:%M:%S&#39;)) %}</span>
+            <span class="no">{%- set delta = ((event - midnight) // 86400) | int %}</span>
+            <span class="no">{%- if delta == 0 %}</span>
+            <span class="no">Today</span>
+            <span class="no">{%- elif delta == 1 %}</span>
+            <span class="no">Tomorrow</span>
+            <span class="no">{%- endif %}</span>
+            <span class="no">{{- as_timestamp(strptime(state_attr(&#39;weather.openweathermap&#39;,&#39;forecast&#39;)[6][&#39;datetime&#39;], &#39;%Y-%m-%d %H:%M:%S&#39;)) | timestamp_custom(&quot; %-I %p&quot;) }}</span>
+
+      <span class="p p-Indicator">-</span> <span class="nt">obj</span><span class="p">:</span> <span class="s">&quot;p5b42&quot;</span> <span class="c1"># Forecast temp +4h</span>
+        <span class="nt">properties</span><span class="p">:</span>
+          <span class="s">&quot;text&quot;</span><span class="p p-Indicator">:</span> <span class="s">&quot;{{</span><span class="nv"> </span><span class="s">state_attr(&#39;weather.openweathermap&#39;,&#39;forecast&#39;)[6][&#39;temperature&#39;]</span><span class="nv"> </span><span class="s">}}&quot;</span>
+
+      <span class="p p-Indicator">-</span> <span class="nt">obj</span><span class="p">:</span> <span class="s">&quot;p5b43&quot;</span> <span class="c1"># Forecast condition +4h</span>
+        <span class="nt">properties</span><span class="p">:</span>
+          <span class="s">&quot;src&quot;</span><span class="p p-Indicator">:</span> <span class="s">&quot;/littlefs/w-32-{{</span><span class="nv"> </span><span class="s">state_attr(&#39;weather.openweathermap&#39;,&#39;forecast&#39;)[6][&#39;condition&#39;]</span><span class="nv"> </span><span class="s">}}.png&quot;</span>
+
+
+      <span class="p p-Indicator">-</span> <span class="nt">obj</span><span class="p">:</span> <span class="s">&quot;p5b51&quot;</span> <span class="c1"># Forecast time +8h</span>
+        <span class="nt">properties</span><span class="p">:</span>
+          <span class="s">&quot;text&quot;</span><span class="p p-Indicator">:</span> <span class="p p-Indicator">&gt;</span>
+            <span class="no">{%- set update = states(&#39;sensor.date&#39;) %}</span>
+            <span class="no">{%- set midnight = now().replace(hour=0, minute=0, second=0, microsecond=0).timestamp() %}</span>
+            <span class="no">{%- set event = as_timestamp(strptime(state_attr(&#39;weather.openweathermap&#39;,&#39;forecast&#39;)[12][&#39;datetime&#39;], &#39;%Y-%m-%d %H:%M:%S&#39;)) %}</span>
+            <span class="no">{%- set delta = ((event - midnight) // 86400) | int %}</span>
+            <span class="no">{%- if delta == 0 %}</span>
+            <span class="no">Today</span>
+            <span class="no">{%- elif delta == 1 %}</span>
+            <span class="no">Tomorrow</span>
+            <span class="no">{%- endif %}</span>
+            <span class="no">{{- as_timestamp(strptime(state_attr(&#39;weather.openweathermap&#39;,&#39;forecast&#39;)[12][&#39;datetime&#39;], &#39;%Y-%m-%d %H:%M:%S&#39;)) | timestamp_custom(&quot; %-I %p&quot;) }}</span>
+
+      <span class="p p-Indicator">-</span> <span class="nt">obj</span><span class="p">:</span> <span class="s">&quot;p5b52&quot;</span> <span class="c1"># Forecast temp +8h</span>
+        <span class="nt">properties</span><span class="p">:</span>
+          <span class="s">&quot;text&quot;</span><span class="p p-Indicator">:</span> <span class="s">&quot;{{</span><span class="nv"> </span><span class="s">state_attr(&#39;weather.openweathermap&#39;,&#39;forecast&#39;)[12][&#39;temperature&#39;]</span><span class="nv"> </span><span class="s">}}&quot;</span>
+
+      <span class="p p-Indicator">-</span> <span class="nt">obj</span><span class="p">:</span> <span class="s">&quot;p5b53&quot;</span> <span class="c1"># Forecast condition +8h</span>
+        <span class="nt">properties</span><span class="p">:</span>
+          <span class="s">&quot;src&quot;</span><span class="p p-Indicator">:</span> <span class="s">&quot;/littlefs/w-32-{{</span><span class="nv"> </span><span class="s">state_attr(&#39;weather.openweathermap&#39;,&#39;forecast&#39;)[12][&#39;condition&#39;]</span><span class="nv"> </span><span class="s">}}.png&quot;</span>
+
+
+
+      <span class="p p-Indicator">-</span> <span class="nt">obj</span><span class="p">:</span> <span class="s">&quot;p5b61&quot;</span> <span class="c1"># Forecast date +1d</span>
+        <span class="nt">properties</span><span class="p">:</span>
+          <span class="s">&quot;text&quot;</span><span class="p p-Indicator">:</span> <span class="p p-Indicator">&gt;</span>
+            <span class="no">{{ as_timestamp(strptime(state_attr(&#39;weather.your_homename&#39;,&#39;forecast&#39;)[0][&#39;datetime&#39;], &#39;%Y-%m-%d %H:%M:%S&#39;)) | timestamp_custom(&quot;%d. &quot;) }}</span>
+            <span class="no">{%- set day = as_timestamp(strptime(state_attr(&#39;weather.your_homename&#39;,&#39;forecast&#39;)[0][&#39;datetime&#39;], &#39;%Y-%m-%d %H:%M:%S&#39;)) | timestamp_custom(&quot;%w&quot;) %}</span>
+            <span class="no">{%- set days = [&quot;Monday&quot;, &quot;Tuesday&quot;, &quot;Wednesday&quot;, &quot;Csütörtök&quot;, &quot;Friday&quot;, &quot;Saturday&quot;, &quot;Sunday&quot;] %}</span>
+            <span class="no">{%- set localday = days[ day | int -1 ] %}</span>
+            <span class="no">{{- localday }}</span>
+
+      <span class="p p-Indicator">-</span> <span class="nt">obj</span><span class="p">:</span> <span class="s">&quot;p5b62&quot;</span> <span class="c1"># Forecast temp min +1d</span>
+        <span class="nt">properties</span><span class="p">:</span>
+          <span class="s">&quot;text&quot;</span><span class="p p-Indicator">:</span> <span class="s">&quot;{{</span><span class="nv"> </span><span class="s">state_attr(&#39;weather.your_homename&#39;,&#39;forecast&#39;)[0][&#39;templow&#39;]</span><span class="nv"> </span><span class="s">}}&quot;</span>
+
+      <span class="p p-Indicator">-</span> <span class="nt">obj</span><span class="p">:</span> <span class="s">&quot;p5b63&quot;</span> <span class="c1"># Forecast temp max +1d</span>
+        <span class="nt">properties</span><span class="p">:</span>
+          <span class="s">&quot;text&quot;</span><span class="p p-Indicator">:</span> <span class="s">&quot;{{</span><span class="nv"> </span><span class="s">state_attr(&#39;weather.your_homename&#39;,&#39;forecast&#39;)[0][&#39;temperature&#39;]</span><span class="nv"> </span><span class="s">}}&quot;</span>
+
+      <span class="p p-Indicator">-</span> <span class="nt">obj</span><span class="p">:</span> <span class="s">&quot;p5b64&quot;</span> <span class="c1"># Forecast condition +1d</span>
+        <span class="nt">properties</span><span class="p">:</span>
+          <span class="s">&quot;src&quot;</span><span class="p p-Indicator">:</span> <span class="s">&quot;/littlefs/w-32-{{</span><span class="nv"> </span><span class="s">state_attr(&#39;weather.your_homename&#39;,&#39;forecast&#39;)[0][&#39;condition&#39;]</span><span class="nv"> </span><span class="s">}}.png&quot;</span>
+
+
+      <span class="p p-Indicator">-</span> <span class="nt">obj</span><span class="p">:</span> <span class="s">&quot;p5b71&quot;</span> <span class="c1"># Forecast date +2d</span>
+        <span class="nt">properties</span><span class="p">:</span>
+          <span class="s">&quot;text&quot;</span><span class="p p-Indicator">:</span> <span class="p p-Indicator">&gt;</span>
+            <span class="no">{{ as_timestamp(strptime(state_attr(&#39;weather.your_homename&#39;,&#39;forecast&#39;)[1][&#39;datetime&#39;], &#39;%Y-%m-%d %H:%M:%S&#39;)) | timestamp_custom(&quot;%d. &quot;) }}</span>
+            <span class="no">{%- set day = as_timestamp(strptime(state_attr(&#39;weather.your_homename&#39;,&#39;forecast&#39;)[1][&#39;datetime&#39;], &#39;%Y-%m-%d %H:%M:%S&#39;)) | timestamp_custom(&quot;%w&quot;) %}</span>
+            <span class="no">{%- set days = [&quot;Monday&quot;, &quot;Tuesday&quot;, &quot;Wednesday&quot;, &quot;Csütörtök&quot;, &quot;Friday&quot;, &quot;Saturday&quot;, &quot;Sunday&quot;] %}</span>
+            <span class="no">{%- set localday = days[ day | int -1 ] %}</span>
+            <span class="no">{{- localday }}</span>
+
+      <span class="p p-Indicator">-</span> <span class="nt">obj</span><span class="p">:</span> <span class="s">&quot;p5b72&quot;</span> <span class="c1"># Forecast temp min +2d</span>
+        <span class="nt">properties</span><span class="p">:</span>
+          <span class="s">&quot;text&quot;</span><span class="p p-Indicator">:</span> <span class="s">&quot;{{</span><span class="nv"> </span><span class="s">state_attr(&#39;weather.your_homename&#39;,&#39;forecast&#39;)[1][&#39;templow&#39;]</span><span class="nv"> </span><span class="s">}}&quot;</span>
+
+      <span class="p p-Indicator">-</span> <span class="nt">obj</span><span class="p">:</span> <span class="s">&quot;p5b73&quot;</span> <span class="c1"># Forecast temp max +2d</span>
+        <span class="nt">properties</span><span class="p">:</span>
+          <span class="s">&quot;text&quot;</span><span class="p p-Indicator">:</span> <span class="s">&quot;{{</span><span class="nv"> </span><span class="s">state_attr(&#39;weather.your_homename&#39;,&#39;forecast&#39;)[1][&#39;temperature&#39;]</span><span class="nv"> </span><span class="s">}}&quot;</span>
+
+      <span class="p p-Indicator">-</span> <span class="nt">obj</span><span class="p">:</span> <span class="s">&quot;p5b74&quot;</span> <span class="c1"># Forecast condition +2d</span>
+        <span class="nt">properties</span><span class="p">:</span>
+          <span class="s">&quot;src&quot;</span><span class="p p-Indicator">:</span> <span class="s">&quot;/littlefs/w-32-{{</span><span class="nv"> </span><span class="s">state_attr(&#39;weather.your_homename&#39;,&#39;forecast&#39;)[1][&#39;condition&#39;]</span><span class="nv"> </span><span class="s">}}.png&quot;</span>
+
+
+      <span class="p p-Indicator">-</span> <span class="nt">obj</span><span class="p">:</span> <span class="s">&quot;p5b81&quot;</span> <span class="c1"># Forecast date +3d</span>
+        <span class="nt">properties</span><span class="p">:</span>
+          <span class="s">&quot;text&quot;</span><span class="p p-Indicator">:</span> <span class="p p-Indicator">&gt;</span>
+            <span class="no">{{ as_timestamp(strptime(state_attr(&#39;weather.your_homename&#39;,&#39;forecast&#39;)[2][&#39;datetime&#39;], &#39;%Y-%m-%d %H:%M:%S&#39;)) | timestamp_custom(&quot;%d. &quot;) }}</span>
+            <span class="no">{%- set day = as_timestamp(strptime(state_attr(&#39;weather.your_homename&#39;,&#39;forecast&#39;)[2][&#39;datetime&#39;], &#39;%Y-%m-%d %H:%M:%S&#39;)) | timestamp_custom(&quot;%w&quot;) %}</span>
+            <span class="no">{%- set days = [&quot;Monday&quot;, &quot;Tuesday&quot;, &quot;Wednesday&quot;, &quot;Csütörtök&quot;, &quot;Friday&quot;, &quot;Saturday&quot;, &quot;Sunday&quot;] %}</span>
+            <span class="no">{%- set localday = days[ day | int -1 ] %}</span>
+            <span class="no">{{- localday }}</span>
+
+      <span class="p p-Indicator">-</span> <span class="nt">obj</span><span class="p">:</span> <span class="s">&quot;p5b82&quot;</span> <span class="c1"># Forecast temp min +3d</span>
+        <span class="nt">properties</span><span class="p">:</span>
+          <span class="s">&quot;text&quot;</span><span class="p p-Indicator">:</span> <span class="s">&quot;{{</span><span class="nv"> </span><span class="s">state_attr(&#39;weather.your_homename&#39;,&#39;forecast&#39;)[2][&#39;templow&#39;]</span><span class="nv"> </span><span class="s">}}&quot;</span>
+
+      <span class="p p-Indicator">-</span> <span class="nt">obj</span><span class="p">:</span> <span class="s">&quot;p5b83&quot;</span> <span class="c1"># Forecast temp max +3d</span>
+        <span class="nt">properties</span><span class="p">:</span>
+          <span class="s">&quot;text&quot;</span><span class="p p-Indicator">:</span> <span class="s">&quot;{{</span><span class="nv"> </span><span class="s">state_attr(&#39;weather.your_homename&#39;,&#39;forecast&#39;)[2][&#39;temperature&#39;]</span><span class="nv"> </span><span class="s">}}&quot;</span>
+
+      <span class="p p-Indicator">-</span> <span class="nt">obj</span><span class="p">:</span> <span class="s">&quot;p5b84&quot;</span> <span class="c1"># Forecast condition +3d</span>
+        <span class="nt">properties</span><span class="p">:</span>
+          <span class="s">&quot;src&quot;</span><span class="p p-Indicator">:</span> <span class="s">&quot;/littlefs/w-32-{{</span><span class="nv"> </span><span class="s">state_attr(&#39;weather.your_homename&#39;,&#39;forecast&#39;)[2][&#39;condition&#39;]</span><span class="nv"> </span><span class="s">}}.png&quot;</span>
+
+
+      <span class="p p-Indicator">-</span> <span class="nt">obj</span><span class="p">:</span> <span class="s">&quot;p5b91&quot;</span> <span class="c1"># Forecast date +4d</span>
+        <span class="nt">properties</span><span class="p">:</span>
+          <span class="s">&quot;text&quot;</span><span class="p p-Indicator">:</span> <span class="p p-Indicator">&gt;</span>
+            <span class="no">{{ as_timestamp(strptime(state_attr(&#39;weather.your_homename&#39;,&#39;forecast&#39;)[3][&#39;datetime&#39;], &#39;%Y-%m-%d %H:%M:%S&#39;)) | timestamp_custom(&quot;%d. &quot;) }}</span>
+            <span class="no">{%- set day = as_timestamp(strptime(state_attr(&#39;weather.your_homename&#39;,&#39;forecast&#39;)[3][&#39;datetime&#39;], &#39;%Y-%m-%d %H:%M:%S&#39;)) | timestamp_custom(&quot;%w&quot;) %}</span>
+            <span class="no">{%- set days = [&quot;Monday&quot;, &quot;Tuesday&quot;, &quot;Wednesday&quot;, &quot;Csütörtök&quot;, &quot;Friday&quot;, &quot;Saturday&quot;, &quot;Sunday&quot;] %}</span>
+            <span class="no">{%- set localday = days[ day | int -1 ] %}</span>
+            <span class="no">{{- localday }}</span>
+
+      <span class="p p-Indicator">-</span> <span class="nt">obj</span><span class="p">:</span> <span class="s">&quot;p5b92&quot;</span> <span class="c1"># Forecast temp min +4d</span>
+        <span class="nt">properties</span><span class="p">:</span>
+          <span class="s">&quot;text&quot;</span><span class="p p-Indicator">:</span> <span class="s">&quot;{{</span><span class="nv"> </span><span class="s">state_attr(&#39;weather.your_homename&#39;,&#39;forecast&#39;)[3][&#39;templow&#39;]</span><span class="nv"> </span><span class="s">}}&quot;</span>
+
+      <span class="p p-Indicator">-</span> <span class="nt">obj</span><span class="p">:</span> <span class="s">&quot;p5b93&quot;</span> <span class="c1"># Forecast temp max +4d</span>
+        <span class="nt">properties</span><span class="p">:</span>
+          <span class="s">&quot;text&quot;</span><span class="p p-Indicator">:</span> <span class="s">&quot;{{</span><span class="nv"> </span><span class="s">state_attr(&#39;weather.your_homename&#39;,&#39;forecast&#39;)[3][&#39;temperature&#39;]</span><span class="nv"> </span><span class="s">}}&quot;</span>
+
+      <span class="p p-Indicator">-</span> <span class="nt">obj</span><span class="p">:</span> <span class="s">&quot;p5b94&quot;</span> <span class="c1"># Forecast condition +4d</span>
+        <span class="nt">properties</span><span class="p">:</span>
+          <span class="s">&quot;src&quot;</span><span class="p p-Indicator">:</span> <span class="s">&quot;/littlefs/w-32-{{</span><span class="nv"> </span><span class="s">state_attr(&#39;weather.your_homename&#39;,&#39;forecast&#39;)[3][&#39;condition&#39;]</span><span class="nv"> </span><span class="s">}}.png&quot;</span>
 </code></pre></div>
 </td></tr></table>
                 
