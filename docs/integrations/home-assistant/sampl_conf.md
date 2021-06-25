@@ -95,7 +95,45 @@ Jsonl and Home Assistant configuration:
                 message: Selected {{ text }}
 ```
 
-See the other examples for pairing different kinds of objects to different kinds of Home Assistant entities.
+*  *  *  *  *
+
+## Color coded icons
+
+![icons](https://user-images.githubusercontent.com/1550668/120081781-9372e880-c0bf-11eb-8c9a-62d2a16c24c5.png)
+
+
+<h4>Color code a WiFi icon according to RSSI reported by the plate</h4>
+
+**openHASP config:** (screen size 240x320) 
+
+```json
+{"obj":"btn","id":1,"x":120,"y":1,"w":30,"h":40,"text_font":"2","text":"\uE5A9","text_color":"gray","bg_opa":0,"border_width":0}
+```
+
+relevant **openHASP-custom-component config:**
+
+```yaml
+    - obj: "p0b1"
+      properties:
+        "text_color": "{% if -30 <= state_attr('openhasp.openhasp_plate','rssi') |int %}green{% elif -31 > state_attr('openhasp.openhasp_plate','rssi') |int >= -50 %}orange{% elif -51 > state_attr('openhasp.openhasp_plate','rssi') |int >= -80 %}tomato{% else %}red{% endif %}"```
+```
+
+<h4>Color code a temperature icon according to sensor values</h4>
+
+**openHASP config:** (screen size 240x320) 
+
+```json
+{"obj":"btn","id":3,"x":165,"y":1,"w":30,"h":40,"text_font":"2","text":"\uE50F","text_color":"gray","bg_opa":0,"border_width":0}
+```
+
+relevant **openHASP-custom-component config:**
+
+```yaml
+    - obj: "p0b3"
+      properties:
+        "text_color": "{% if states('sensor.room_temperature') |int <= 21  %}#4682B4{% elif 21 < states('sensor.room_temperature') |int <= 26 %}green{% else %}red{% endif %}"
+```
+
 
 
 *  *  *  *  *
@@ -507,7 +545,7 @@ Note that the `val` value of the slider is multiplied and divided by 100 when re
 
 ![screenshot](../../assets/images/screenshots/cc_sampl_climate.png)  
 
-This example is a bit more complex in the aspect that it uses several objects put on top of each other, and grouped toghether using the `parentid` parameter.  Special attention goes to an invisible tabview (exteding over the label dispaying the target temperarture) which allows for swiping between an on/off switch and dropdowns for setting the hvac and fan modes.
+This example is a bit more complex in the aspect that it uses several objects put on top of each other, and grouped toghether using the `parentid` parameter.  Special attention goes to an invisible [tabview](../../../design/objects#tabview) (exteding over the label dispaying the target temperarture) which allows for swiping between an on/off switch and dropdowns for setting the hvac and fan modes.
 
 The target temperature can be set by dragging the arc handle, more precise +/- setting possible by short/long pressing the middle circle containing the current temperature (increasing/decreasing the value by the _temperature step_ defined by the climate entity). Note that the `min`, `max` and `val` values of the arc and gauge are multiplied and divided by 10 when set and read, because [LVGL only suppports integers](../../../design/data-types#integer) for object values. By multiplying and dividing by 10, it becomes possible to set decimal values for climate temperature. 
 
@@ -708,42 +746,345 @@ relevant **openHASP-custom-component config:**
                   {% endif -%}
 ```
 
+
 *  *  *  *  *
 
-## Color coded icons
+## Current weather and forecasts
 
-![icons](https://user-images.githubusercontent.com/1550668/120081781-9372e880-c0bf-11eb-8c9a-62d2a16c24c5.png)
+![screenshot](../../assets/images/screenshots/cc-sampl-weather-hours.png) 
+![screenshot](../../assets/images/screenshots/cc-sampl-weather-days.png)   
+
+This example implements two weather forecast screens which located on the same page, can be swiped left and right. On the top area the current weather is shown, on the bottom area the user can choose by swiping between next hours and next days forecast. This is achieved by a [tabview](../../../design/objects#tabview) object with invisible tabs. 
+
+Since there's no weather integration in Home Assistant which can offer so much information at once, this can be achieved by installing multiple weather components. In our example we use two:
+
+- [Met.no](https://www.home-assistant.io/integrations/met/) (the one coming by default pre-installed) for daily forecast
+- [OpenWeatherMap](https://www.home-assistant.io/integrations/openweathermap/) (available as standard integration to be activated) for hourly forecasts. _You need to set the forecast mode to **onecall_hourly** to get forecasts for the day's next hours._
+
+The openHASP configuration grabs information from both weather sources and updates them on every change.   
+The various strings containing to day names, day periods, weather conditions can be localized easily to any language within the configuration.
+
+Weather condition icons are displayed from the internal flash space of the plate. For this, you need to upload all the icons to the plate. Download them:
+
+- [light theme](../../assets/users/openhasp-weathericons-day.zip)
+- [dark theme](../../assets/users/openhasp-weathericons-nigh.zip)
+
+Icons are copyright from [manifestinteractive](https://github.com/manifestinteractive/weather-underground-icons) and [merlinthered](https://www.deviantart.com/merlinthered/art/plain-weather-icons-157162192).
+
+Note that the tab swiping dots (_p5b10_) are also handled by the custom component. Don't forget to update the service call in the configuration if you change the page of the objects.
 
 
-<h4>Color code a WiFi icon according to RSSI reported by the plate</h4>
-
-**openHASP config:** (screen size 240x320) 
+relevant **openHASP config:** (screen size 240x320, UI Theme: Hasp Light) 
 
 ```json
-{"obj":"btn","id":1,"x":120,"y":1,"w":30,"h":40,"text_font":"2","text":"\uE5A9","text_color":"gray","bg_opa":0,"border_width":0}
+{"page":5,"id":1,"obj":"btn","x":0,"y":0,"w":240,"h":30,"text":"WEATHER","text_font":16,"bg_color":"#2C3E50","text_color":"#FFFFFF","radius":0,"border_side":0,"click":0}
+{"page":5,"id":2,"obj":"obj","x":5,"y":35,"w":230,"h":250,"click":0}
+
+{"page":5,"id":14,"obj":"img","src":"/littlefs/openhasp_dummy_img.png","parentid":2,"auto_size":1,"w":128,"offset_x":-6,"offset_y":-10}
+
+{"page":5,"id":15,"obj":"label","x":100,"y":10,"w":130,"h":25,"align":"center","text":"date current","parentid":2}
+{"page":5,"id":16,"obj":"label","x":125,"y":34,"w":95,"h":40,"align":"center","text":"00.0°C","parentid":2,"text_font":32}
+{"page":5,"id":17,"obj":"label","x":110,"y":78,"w":120,"h":25,"align":"center","text":"condition","parentid":2}
+{"page":5,"id":19,"obj":"label","x":90,"y":95,"w":60,"h":30,"text":"#000000 \u2022# #909090 \u2022#","parentid":2,"text_font":24,"align":"center","text_color":"grey"}
+
+{"page":5,"id":10,"obj":"tabview","x":0,"y":0,"w":240,"h":260,"parentid":2,"btn_pos":0,"bg_opa":0,"border_width":0}
+{"page":5,"id":11,"obj":"tab","parentid":10}
+{"page":5,"id":12,"obj":"tab","parentid":10}
+
+{"page":5,"id":21,"obj":"label","x":8,"y":123,"w":130,"h":22,"align":"left","text":"hour+2","parentid":11,"pad_top":3,"click":0}
+{"page":5,"id":22,"obj":"label","x":124,"y":123,"w":50,"h":22,"align":"center","text":"00.0","parentid":11,"pad_top":-2,"text_font":24,"click":0}
+{"page":5,"id":23,"obj":"img","x":182,"y":118,"w":32,"h":32,"src":"/littlefs/openhasp_dummy_img.png","parentid":11,"click":0}
+
+{"page":5,"id":31,"obj":"label","x":8,"y":154,"w":130,"h":22,"align":"left","text":"hour+3","parentid":11,"pad_top":3,"click":0}
+{"page":5,"id":32,"obj":"label","x":124,"y":154,"w":50,"h":22,"align":"center","text":"00.0","parentid":11,"pad_top":-2,"text_font":24,"click":0}
+{"page":5,"id":33,"obj":"img","x":182,"y":150,"w":32,"h":32,"src":"/littlefs/openhasp_dummy_img.png","parentid":11,"click":0}
+
+{"page":5,"id":41,"obj":"label","x":8,"y":186,"w":130,"h":22,"align":"left","text":"hour+4","parentid":11,"pad_top":3,"click":0}
+{"page":5,"id":42,"obj":"label","x":124,"y":186,"w":50,"h":22,"align":"center","text":"00.0","parentid":11,"pad_top":-2,"text_font":24,"click":0}
+{"page":5,"id":43,"obj":"img","x":182,"y":182,"w":32,"h":32,"src":"/littlefs/openhasp_dummy_img.png","parentid":11,"click":0}
+
+{"page":5,"id":51,"obj":"label","x":8,"y":218,"w":130,"h":22,"align":"left","text":"hour+5","parentid":11,"pad_top":3,"click":0}
+{"page":5,"id":52,"obj":"label","x":124,"y":218,"w":50,"h":22,"align":"center","text":"00.0","parentid":11,"pad_top":-2,"text_font":24,"click":0}
+{"page":5,"id":53,"obj":"img","x":182,"y":214,"w":32,"h":32,"src":"/littlefs/openhasp_dummy_img.png","parentid":11,"click":0}
+
+{"page":5,"id":61,"obj":"label","x":6,"y":123,"w":100,"h":22,"align":"left","text":"date+1","parentid":12,"pad_top":3,"click":0}
+{"page":5,"id":62,"obj":"label","x":102,"y":123,"w":40,"h":22,"align":"center","text":"00.0","parentid":12,"pad_top":-2,"text_font":24,"text_color":"Navy","click":0}
+{"page":5,"id":63,"obj":"label","x":150,"y":123,"w":40,"h":22,"align":"center","text":"00.0","parentid":12,"pad_top":-2,"text_font":24,"text_color":"Blush","click":0}
+{"page":5,"id":64,"obj":"img","x":194,"y":118,"w":32,"h":32,"src":"/littlefs/openhasp_dummy_img.png","parentid":12,"click":0}
+
+{"page":5,"id":71,"obj":"label","x":6,"y":154,"w":100,"h":22,"align":"left","text":"date+2","parentid":12,"pad_top":3,"click":0}
+{"page":5,"id":72,"obj":"label","x":102,"y":154,"w":40,"h":22,"align":"center","text":"00.0","parentid":12,"pad_top":-2,"text_font":24,"text_color":"Navy","click":0}
+{"page":5,"id":73,"obj":"label","x":150,"y":154,"w":40,"h":22,"align":"center","text":"00.0","parentid":12,"pad_top":-2,"text_font":24,"text_color":"Blush","click":0}
+{"page":5,"id":74,"obj":"img","x":194,"y":150,"w":32,"h":32,"src":"/littlefs/openhasp_dummy_img.png","parentid":12,"click":0}
+
+{"page":5,"id":81,"obj":"label","x":6,"y":186,"w":100,"h":22,"align":"left","text":"date+3","parentid":12,"pad_top":3,"click":0}
+{"page":5,"id":82,"obj":"label","x":102,"y":186,"w":40,"h":22,"align":"center","text":"00.0","parentid":12,"pad_top":-2,"text_font":24,"text_color":"Navy","click":0}
+{"page":5,"id":83,"obj":"label","x":150,"y":186,"w":40,"h":22,"align":"center","text":"00.0","parentid":12,"pad_top":-2,"text_font":24,"text_color":"Blush","click":0}
+{"page":5,"id":84,"obj":"img","x":194,"y":182,"w":32,"h":32,"src":"/littlefs/openhasp_dummy_img.png","parentid":12,"click":0}
+
+{"page":5,"id":91,"obj":"label","x":6,"y":218,"w":100,"h":22,"align":"left","text":"date+4","parentid":12,"pad_top":3,"click":0}
+{"page":5,"id":92,"obj":"label","x":102,"y":218,"w":40,"h":22,"align":"center","text":"00.0","parentid":12,"pad_top":-2,"text_font":24,"text_color":"Navy","click":0}
+{"page":5,"id":93,"obj":"label","x":150,"y":218,"w":40,"h":22,"align":"center","text":"00.0","parentid":12,"pad_top":-2,"text_font":24,"text_color":"Blush","click":0}
+{"page":5,"id":94,"obj":"img","x":194,"y":214,"w":32,"h":32,"src":"/littlefs/openhasp_dummy_img.png","parentid":12,"click":0}
+
 ```
 
 relevant **openHASP-custom-component config:**
 
 ```yaml
-    - obj: "p0b1"
-      properties:
-        "text_color": "{% if -30 <= state_attr('openhasp.openhasp_plate','rssi') |int %}green{% elif -31 > state_attr('openhasp.openhasp_plate','rssi') |int >= -50 %}orange{% elif -51 > state_attr('openhasp.openhasp_plate','rssi') |int >= -80 %}tomato{% else %}red{% endif %}"```
-```
+      - obj: "p5b14" # Icon
+        properties:
+          "src": "{{ '/littlefs/w-128-' + states('weather.openweathermap') + '.png' if not is_state('weather.openweathermap','unavailable') }}"
 
-<h4>Color code a temperature icon according to sensor values</h4>
+      - obj: "p5b15" # Date
+        properties:
+          "text": >
+            {{ (states.weather.openweathermap.last_changed).strftime('%m. %d. ') }}
+            {%- set day = (states.weather.openweathermap.last_changed).strftime('%w') %}
+            {%- set days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"] %}
+            {%- set localday = days[ day | int -1 ] %}
+            {{- localday }}
 
-**openHASP config:** (screen size 240x320) 
+      - obj: "p5b16" # Current temp (you can use your own outdoor temp sensor if you have one)
+        properties:
+          "text": "{{ state_attr('weather.openweathermap','temperature') |string + '°C' if not is_state('weather.openweathermap','unavailable') }}"
+#          "text": "{{ states('sensor.your_own_temp_sensor') }}°C"
 
-```json
-{"obj":"btn","id":3,"x":165,"y":1,"w":30,"h":40,"text_font":"2","text":"\uE50F","text_color":"gray","bg_opa":0,"border_width":0}
-```
+      - obj: "p5b17" # Current weather condition
+        properties:
+          "text": >
+             {% if states('weather.openweathermap') == "clear-night" -%}
+             Clear night
+             {% elif states('weather.openweathermap') == 'cloudy' -%}
+             Cloudy
+             {% elif states('weather.openweathermap') == 'fog' -%}
+             Fog
+             {% elif states('weather.openweathermap') == 'hail' -%}
+             Hail
+             {% elif states('weather.openweathermap') == 'lightning' -%}
+             Lightning
+             {% elif states('weather.openweathermap') == 'lightning-rainy' -%}
+             Thunderstorms
+             {% elif states('weather.openweathermap') == 'partlycloudy' -%}
+             Partly cloudy
+             {% elif states('weather.openweathermap') == 'pouring' -%}
+             Pouring rain
+             {% elif states('weather.openweathermap') == 'rainy' -%}
+             Rainy
+             {% elif states('weather.openweathermap') == 'snowy' -%}
+             Snowy
+             {% elif states('weather.openweathermap') == 'snowy-rainy' -%}
+             Snowy-rainy
+             {% elif states('weather.openweathermap') == 'sunny' -%}
+             Sunny
+             {% elif states('weather.openweathermap') == 'windy' -%}
+             Windy
+             {% elif states('weather.openweathermap') == 'windy-variant' -%}
+             Windy
+             {% elif states('weather.openweathermap') == 'exceptional' -%}
+             Exceptional
+             {% elif states('weather.openweathermap') == 'unavailable' -%}
+             (not available)
+             {% endif -%}
 
-relevant **openHASP-custom-component config:**
+      - obj: "p5b10"  # tab dots
+        event:
+          "changed":
+            - service: openhasp.command
+              target:
+                entity_id: openhasp.plate_4
+              data:
+                keyword: p5b19.text
+                parameters: >
+                  {% if val == 0 %}
+                  {{ "#000000 \u2022# #909090 \u2022#" | e }}
+                  {%-elif val == 1 %}
+                  {{ "#909090 \u2022# #000000 \u2022#" | e }}
+                  {% endif %}
 
-```yaml
-    - obj: "p0b3"
-      properties:
-        "text_color": "{% if states('sensor.room_temperature') |int <= 21  %}#4682B4{% elif 21 < states('sensor.room_temperature') |int <= 26 %}green{% else %}red{% endif %}"
+      - obj: "p5b21" # Forecast time +1h
+        properties:
+          "text": >
+            {%- set update = states('sensor.date') %}
+            {%- set midnight = now().replace(hour=0, minute=0, second=0, microsecond=0).timestamp() %}
+            {%- set event = as_timestamp(strptime(state_attr('weather.openweathermap','forecast')[1]['datetime'], '%Y-%m-%d %H:%M:%S')) %}
+            {%- set delta = ((event - midnight) // 86400) | int %}
+            {%- if delta == 0 %}
+            Today
+            {%- elif delta == 1 %}
+            Tomorrow
+            {%- endif %}
+            {{- as_timestamp(strptime(state_attr('weather.openweathermap','forecast')[1]['datetime'], '%Y-%m-%d %H:%M:%S')) | timestamp_custom(" %-I %p") }}
+      - obj: "p5b22" # Forecast temp +1h
+        properties:
+          "text": "{{ state_attr('weather.openweathermap','forecast')[1]['temperature'] }}"
+
+      - obj: "p5b23" # Forecast condition +1h
+        properties:
+          "src": "/littlefs/w-32-{{ state_attr('weather.openweathermap','forecast')[1]['condition'] }}.png"
+
+
+      - obj: "p5b31" # Forecast time +2h (using Dawn/Morn etc instead of Today/Tomorrow)
+        properties:
+          "text": >
+            {%- set hour = as_timestamp(strptime(state_attr('weather.openweathermap','forecast')[3]['datetime'], '%Y-%m-%d %H:%M:%S')) | timestamp_custom("%-H") | int %}
+            {%- if 4 <= hour < 6 %}
+            Dawning
+            {%- elif 6 <= hour < 9 %}
+            Morning
+            {%- elif 9 <= hour < 12 %}
+            Forenoon
+            {%- elif 12 <= hour < 18 %}
+            Afternoon
+            {%- elif 18 <= hour < 23 %}
+            Evening
+            {%- elif 23 <= hour or hour < 4 %}
+            Night
+            {%- endif %}
+            {{- as_timestamp(strptime(state_attr('weather.openweathermap','forecast')[3]['datetime'], '%Y-%m-%d %H:%M:%S')) | timestamp_custom(" %-H. óra") }}
+
+      - obj: "p5b32" # Forecast temp +2h
+        properties:
+          "text": "{{ state_attr('weather.openweathermap','forecast')[3]['temperature'] }}"
+
+      - obj: "p5b33" # Forecast condition +2h
+        properties:
+          "src": "/littlefs/w-32-{{ state_attr('weather.openweathermap','forecast')[3]['condition'] }}.png"
+
+
+      - obj: "p5b41" # Forecast time +4h
+        properties:
+          "text": >
+            {%- set update = states('sensor.date') %}
+            {%- set midnight = now().replace(hour=0, minute=0, second=0, microsecond=0).timestamp() %}
+            {%- set event = as_timestamp(strptime(state_attr('weather.openweathermap','forecast')[6]['datetime'], '%Y-%m-%d %H:%M:%S')) %}
+            {%- set delta = ((event - midnight) // 86400) | int %}
+            {%- if delta == 0 %}
+            Today
+            {%- elif delta == 1 %}
+            Tomorrow
+            {%- endif %}
+            {{- as_timestamp(strptime(state_attr('weather.openweathermap','forecast')[6]['datetime'], '%Y-%m-%d %H:%M:%S')) | timestamp_custom(" %-I %p") }}
+
+      - obj: "p5b42" # Forecast temp +4h
+        properties:
+          "text": "{{ state_attr('weather.openweathermap','forecast')[6]['temperature'] }}"
+
+      - obj: "p5b43" # Forecast condition +4h
+        properties:
+          "src": "/littlefs/w-32-{{ state_attr('weather.openweathermap','forecast')[6]['condition'] }}.png"
+
+
+      - obj: "p5b51" # Forecast time +8h
+        properties:
+          "text": >
+            {%- set update = states('sensor.date') %}
+            {%- set midnight = now().replace(hour=0, minute=0, second=0, microsecond=0).timestamp() %}
+            {%- set event = as_timestamp(strptime(state_attr('weather.openweathermap','forecast')[12]['datetime'], '%Y-%m-%d %H:%M:%S')) %}
+            {%- set delta = ((event - midnight) // 86400) | int %}
+            {%- if delta == 0 %}
+            Today
+            {%- elif delta == 1 %}
+            Tomorrow
+            {%- endif %}
+            {{- as_timestamp(strptime(state_attr('weather.openweathermap','forecast')[12]['datetime'], '%Y-%m-%d %H:%M:%S')) | timestamp_custom(" %-I %p") }}
+
+      - obj: "p5b52" # Forecast temp +8h
+        properties:
+          "text": "{{ state_attr('weather.openweathermap','forecast')[12]['temperature'] }}"
+
+      - obj: "p5b53" # Forecast condition +8h
+        properties:
+          "src": "/littlefs/w-32-{{ state_attr('weather.openweathermap','forecast')[12]['condition'] }}.png"
+
+
+
+      - obj: "p5b61" # Forecast date +1d
+        properties:
+          "text": >
+            {{ as_timestamp(strptime(state_attr('weather.your_homename','forecast')[0]['datetime'], '%Y-%m-%d %H:%M:%S')) | timestamp_custom("%d. ") }}
+            {%- set day = as_timestamp(strptime(state_attr('weather.your_homename','forecast')[0]['datetime'], '%Y-%m-%d %H:%M:%S')) | timestamp_custom("%w") %}
+            {%- set days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"] %}
+            {%- set localday = days[ day | int -1 ] %}
+            {{- localday }}
+
+      - obj: "p5b62" # Forecast temp min +1d
+        properties:
+          "text": "{{ state_attr('weather.your_homename','forecast')[0]['templow'] }}"
+
+      - obj: "p5b63" # Forecast temp max +1d
+        properties:
+          "text": "{{ state_attr('weather.your_homename','forecast')[0]['temperature'] }}"
+
+      - obj: "p5b64" # Forecast condition +1d
+        properties:
+          "src": "/littlefs/w-32-{{ state_attr('weather.your_homename','forecast')[0]['condition'] }}.png"
+
+
+      - obj: "p5b71" # Forecast date +2d
+        properties:
+          "text": >
+            {{ as_timestamp(strptime(state_attr('weather.your_homename','forecast')[1]['datetime'], '%Y-%m-%d %H:%M:%S')) | timestamp_custom("%d. ") }}
+            {%- set day = as_timestamp(strptime(state_attr('weather.your_homename','forecast')[1]['datetime'], '%Y-%m-%d %H:%M:%S')) | timestamp_custom("%w") %}
+            {%- set days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"] %}
+            {%- set localday = days[ day | int -1 ] %}
+            {{- localday }}
+
+      - obj: "p5b72" # Forecast temp min +2d
+        properties:
+          "text": "{{ state_attr('weather.your_homename','forecast')[1]['templow'] }}"
+
+      - obj: "p5b73" # Forecast temp max +2d
+        properties:
+          "text": "{{ state_attr('weather.your_homename','forecast')[1]['temperature'] }}"
+
+      - obj: "p5b74" # Forecast condition +2d
+        properties:
+          "src": "/littlefs/w-32-{{ state_attr('weather.your_homename','forecast')[1]['condition'] }}.png"
+
+
+      - obj: "p5b81" # Forecast date +3d
+        properties:
+          "text": >
+            {{ as_timestamp(strptime(state_attr('weather.your_homename','forecast')[2]['datetime'], '%Y-%m-%d %H:%M:%S')) | timestamp_custom("%d. ") }}
+            {%- set day = as_timestamp(strptime(state_attr('weather.your_homename','forecast')[2]['datetime'], '%Y-%m-%d %H:%M:%S')) | timestamp_custom("%w") %}
+            {%- set days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"] %}
+            {%- set localday = days[ day | int -1 ] %}
+            {{- localday }}
+
+      - obj: "p5b82" # Forecast temp min +3d
+        properties:
+          "text": "{{ state_attr('weather.your_homename','forecast')[2]['templow'] }}"
+
+      - obj: "p5b83" # Forecast temp max +3d
+        properties:
+          "text": "{{ state_attr('weather.your_homename','forecast')[2]['temperature'] }}"
+
+      - obj: "p5b84" # Forecast condition +3d
+        properties:
+          "src": "/littlefs/w-32-{{ state_attr('weather.your_homename','forecast')[2]['condition'] }}.png"
+
+
+      - obj: "p5b91" # Forecast date +4d
+        properties:
+          "text": >
+            {{ as_timestamp(strptime(state_attr('weather.your_homename','forecast')[3]['datetime'], '%Y-%m-%d %H:%M:%S')) | timestamp_custom("%d. ") }}
+            {%- set day = as_timestamp(strptime(state_attr('weather.your_homename','forecast')[3]['datetime'], '%Y-%m-%d %H:%M:%S')) | timestamp_custom("%w") %}
+            {%- set days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"] %}
+            {%- set localday = days[ day | int -1 ] %}
+            {{- localday }}
+
+      - obj: "p5b92" # Forecast temp min +4d
+        properties:
+          "text": "{{ state_attr('weather.your_homename','forecast')[3]['templow'] }}"
+
+      - obj: "p5b93" # Forecast temp max +4d
+        properties:
+          "text": "{{ state_attr('weather.your_homename','forecast')[3]['temperature'] }}"
+
+      - obj: "p5b94" # Forecast condition +4d
+        properties:
+          "src": "/littlefs/w-32-{{ state_attr('weather.your_homename','forecast')[3]['condition'] }}.png"
+
 ```
 
