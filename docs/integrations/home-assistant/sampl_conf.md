@@ -758,18 +758,18 @@ This example implements two weather forecast screens which located on the same p
 
 Since there's no weather integration in Home Assistant which can offer so much information at once, this can be achieved by installing multiple weather components. In our example we use two:
 
-- [Met.no](https://www.home-assistant.io/integrations/met/) (the one coming by default pre-installed) for daily forecast
-- [OpenWeatherMap](https://www.home-assistant.io/integrations/openweathermap/) (available as standard integration to be activated) for hourly forecasts. _You need to set the forecast mode to **onecall_hourly** to get forecasts for the day's next hours._
+- [Met.no](https://www.home-assistant.io/integrations/met/) (the one coming by default pre-installed) for next days forecast.
+- [OpenWeatherMap](https://www.home-assistant.io/integrations/openweathermap/) (available as standard integration to be activated) for next hours forecast. _You need to set the forecast mode to **onecall_hourly** to get forecasts for the day's next hours._
 
 The openHASP configuration grabs information from both weather sources and updates them on every change.   
 The various strings containing to day names, day periods, weather conditions can be localized easily to any language within the configuration.
 
-Weather condition icons are displayed from the internal flash space of the plate. For this, you need to upload all the icons to the plate. Download them:
+Weather condition icons are displayed from the internal flash space of the plate. For this, you need to upload all the icons to the plate:
 
 - [light theme](../../assets/users/openhasp-weathericons-day.zip)
 - [dark theme](../../assets/users/openhasp-weathericons-nigh.zip)
 
-Icons are copyright from [manifestinteractive](https://github.com/manifestinteractive/weather-underground-icons) and [merlinthered](https://www.deviantart.com/merlinthered/art/plain-weather-icons-157162192).
+_Icons are copyright from [manifestinteractive](https://github.com/manifestinteractive/weather-underground-icons) and [merlinthered](https://www.deviantart.com/merlinthered/art/plain-weather-icons-157162192)._
 
 Note that the tab swiping dots (_p5b10_) are also handled by the custom component. Don't forget to update the service call in the configuration if you change the page of the objects.
 
@@ -1002,11 +1002,10 @@ relevant **openHASP-custom-component config:**
       - obj: "p5b61" # Forecast date +1d
         properties:
           "text": >
-            {{ as_timestamp(strptime(state_attr('weather.your_homename','forecast')[0]['datetime'], '%Y-%m-%d %H:%M:%S')) | timestamp_custom("%d. ") }}
-            {%- set day = as_timestamp(strptime(state_attr('weather.your_homename','forecast')[0]['datetime'], '%Y-%m-%d %H:%M:%S')) | timestamp_custom("%w") %}
+            {%- set now = as_timestamp(strptime(state_attr('weather.your_homename','forecast')[2]['datetime'], '%Y-%m-%d %H:%M:%S')) %}
+            {%- set day = now | timestamp_custom("%w") %}
             {%- set days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"] %}
-            {%- set localday = days[ day | int -1 ] %}
-            {{- localday }}
+            {{ days[ day | int -1 ] }}{{- now | timestamp_custom(" %d") }}
 
       - obj: "p5b62" # Forecast temp min +1d
         properties:
@@ -1024,11 +1023,10 @@ relevant **openHASP-custom-component config:**
       - obj: "p5b71" # Forecast date +2d
         properties:
           "text": >
-            {{ as_timestamp(strptime(state_attr('weather.your_homename','forecast')[1]['datetime'], '%Y-%m-%d %H:%M:%S')) | timestamp_custom("%d. ") }}
-            {%- set day = as_timestamp(strptime(state_attr('weather.your_homename','forecast')[1]['datetime'], '%Y-%m-%d %H:%M:%S')) | timestamp_custom("%w") %}
+            {%- set now = as_timestamp(strptime(state_attr('weather.your_homename','forecast')[2]['datetime'], '%Y-%m-%d %H:%M:%S')) %}
+            {%- set day = now | timestamp_custom("%w") %}
             {%- set days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"] %}
-            {%- set localday = days[ day | int -1 ] %}
-            {{- localday }}
+            {{ days[ day | int -1 ] }}{{- now | timestamp_custom(" %d") }}
 
       - obj: "p5b72" # Forecast temp min +2d
         properties:
@@ -1046,11 +1044,10 @@ relevant **openHASP-custom-component config:**
       - obj: "p5b81" # Forecast date +3d
         properties:
           "text": >
-            {{ as_timestamp(strptime(state_attr('weather.your_homename','forecast')[2]['datetime'], '%Y-%m-%d %H:%M:%S')) | timestamp_custom("%d. ") }}
-            {%- set day = as_timestamp(strptime(state_attr('weather.your_homename','forecast')[2]['datetime'], '%Y-%m-%d %H:%M:%S')) | timestamp_custom("%w") %}
+            {%- set now = as_timestamp(strptime(state_attr('weather.your_homename','forecast')[2]['datetime'], '%Y-%m-%d %H:%M:%S')) %}
+            {%- set day = now | timestamp_custom("%w") %}
             {%- set days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"] %}
-            {%- set localday = days[ day | int -1 ] %}
-            {{- localday }}
+            {{ days[ day | int -1 ] }}{{- now | timestamp_custom(" %d") }}
 
       - obj: "p5b82" # Forecast temp min +3d
         properties:
@@ -1068,11 +1065,10 @@ relevant **openHASP-custom-component config:**
       - obj: "p5b91" # Forecast date +4d
         properties:
           "text": >
-            {{ as_timestamp(strptime(state_attr('weather.your_homename','forecast')[3]['datetime'], '%Y-%m-%d %H:%M:%S')) | timestamp_custom("%d. ") }}
-            {%- set day = as_timestamp(strptime(state_attr('weather.your_homename','forecast')[3]['datetime'], '%Y-%m-%d %H:%M:%S')) | timestamp_custom("%w") %}
+            {%- set now = as_timestamp(strptime(state_attr('weather.your_homename','forecast')[2]['datetime'], '%Y-%m-%d %H:%M:%S')) %}
+            {%- set day = now | timestamp_custom("%w") %}
             {%- set days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"] %}
-            {%- set localday = days[ day | int -1 ] %}
-            {{- localday }}
+            {{ days[ day | int -1 ] }}{{- now | timestamp_custom(" %d") }}
 
       - obj: "p5b92" # Forecast temp min +4d
         properties:
