@@ -2981,7 +2981,7 @@ The various strings containing to day names, day periods, weather conditions can
       <span class="p p-Indicator">-</span> <span class="nt">obj</span><span class="p">:</span> <span class="s">&quot;p5b61&quot;</span> <span class="c1"># Forecast date +1d</span>
         <span class="nt">properties</span><span class="p">:</span>
           <span class="s">&quot;text&quot;</span><span class="p p-Indicator">:</span> <span class="p p-Indicator">&gt;</span>
-            <span class="no">{%- set now = as_timestamp(strptime(state_attr(&#39;weather.your_homename&#39;,&#39;forecast&#39;)[2][&#39;datetime&#39;], &#39;%Y-%m-%d %H:%M:%S&#39;)) %}</span>
+            <span class="no">{%- set now = as_timestamp(strptime(state_attr(&#39;weather.your_homename&#39;,&#39;forecast&#39;)[0][&#39;datetime&#39;], &#39;%Y-%m-%d %H:%M:%S&#39;)) %}</span>
             <span class="no">{%- set day = now | timestamp_custom(&quot;%w&quot;) %}</span>
             <span class="no">{%- set days = [&quot;Monday&quot;, &quot;Tuesday&quot;, &quot;Wednesday&quot;, &quot;Thursday&quot;, &quot;Friday&quot;, &quot;Saturday&quot;, &quot;Sunday&quot;] %}</span>
             <span class="no">{{ days[ day | int -1 ] }}{{- now | timestamp_custom(&quot; %d&quot;) }}</span>
@@ -3002,7 +3002,7 @@ The various strings containing to day names, day periods, weather conditions can
       <span class="p p-Indicator">-</span> <span class="nt">obj</span><span class="p">:</span> <span class="s">&quot;p5b71&quot;</span> <span class="c1"># Forecast date +2d</span>
         <span class="nt">properties</span><span class="p">:</span>
           <span class="s">&quot;text&quot;</span><span class="p p-Indicator">:</span> <span class="p p-Indicator">&gt;</span>
-            <span class="no">{%- set now = as_timestamp(strptime(state_attr(&#39;weather.your_homename&#39;,&#39;forecast&#39;)[2][&#39;datetime&#39;], &#39;%Y-%m-%d %H:%M:%S&#39;)) %}</span>
+            <span class="no">{%- set now = as_timestamp(strptime(state_attr(&#39;weather.your_homename&#39;,&#39;forecast&#39;)[1][&#39;datetime&#39;], &#39;%Y-%m-%d %H:%M:%S&#39;)) %}</span>
             <span class="no">{%- set day = now | timestamp_custom(&quot;%w&quot;) %}</span>
             <span class="no">{%- set days = [&quot;Monday&quot;, &quot;Tuesday&quot;, &quot;Wednesday&quot;, &quot;Thursday&quot;, &quot;Friday&quot;, &quot;Saturday&quot;, &quot;Sunday&quot;] %}</span>
             <span class="no">{{ days[ day | int -1 ] }}{{- now | timestamp_custom(&quot; %d&quot;) }}</span>
@@ -3044,7 +3044,7 @@ The various strings containing to day names, day periods, weather conditions can
       <span class="p p-Indicator">-</span> <span class="nt">obj</span><span class="p">:</span> <span class="s">&quot;p5b91&quot;</span> <span class="c1"># Forecast date +4d</span>
         <span class="nt">properties</span><span class="p">:</span>
           <span class="s">&quot;text&quot;</span><span class="p p-Indicator">:</span> <span class="p p-Indicator">&gt;</span>
-            <span class="no">{%- set now = as_timestamp(strptime(state_attr(&#39;weather.your_homename&#39;,&#39;forecast&#39;)[2][&#39;datetime&#39;], &#39;%Y-%m-%d %H:%M:%S&#39;)) %}</span>
+            <span class="no">{%- set now = as_timestamp(strptime(state_attr(&#39;weather.your_homename&#39;,&#39;forecast&#39;)[3][&#39;datetime&#39;], &#39;%Y-%m-%d %H:%M:%S&#39;)) %}</span>
             <span class="no">{%- set day = now | timestamp_custom(&quot;%w&quot;) %}</span>
             <span class="no">{%- set days = [&quot;Monday&quot;, &quot;Tuesday&quot;, &quot;Wednesday&quot;, &quot;Thursday&quot;, &quot;Friday&quot;, &quot;Saturday&quot;, &quot;Sunday&quot;] %}</span>
             <span class="no">{{ days[ day | int -1 ] }}{{- now | timestamp_custom(&quot; %d&quot;) }}</span>
