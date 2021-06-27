@@ -2810,19 +2810,17 @@ The various strings containing to day names, day periods, weather conditions can
 <span class="normal">245</span>
 <span class="normal">246</span>
 <span class="normal">247</span>
-<span class="normal">248</span>
-<span class="normal">249</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>      <span class="p p-Indicator">-</span> <span class="nt">obj</span><span class="p">:</span> <span class="s">&quot;p5b14&quot;</span> <span class="c1"># Icon</span>
+<span class="normal">248</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>      <span class="p p-Indicator">-</span> <span class="nt">obj</span><span class="p">:</span> <span class="s">&quot;p5b14&quot;</span> <span class="c1"># Icon</span>
         <span class="nt">properties</span><span class="p">:</span>
           <span class="s">&quot;src&quot;</span><span class="p p-Indicator">:</span> <span class="s">&quot;{{</span><span class="nv"> </span><span class="s">&#39;/littlefs/w-128-&#39;</span><span class="nv"> </span><span class="s">+</span><span class="nv"> </span><span class="s">states(&#39;weather.openweathermap&#39;)</span><span class="nv"> </span><span class="s">+</span><span class="nv"> </span><span class="s">&#39;.png&#39;</span><span class="nv"> </span><span class="s">if</span><span class="nv"> </span><span class="s">not</span><span class="nv"> </span><span class="s">is_state(&#39;weather.openweathermap&#39;,&#39;unavailable&#39;)</span><span class="nv"> </span><span class="s">}}&quot;</span>
 
-      <span class="p p-Indicator">-</span> <span class="nt">obj</span><span class="p">:</span> <span class="s">&quot;p5b15&quot;</span> <span class="c1"># Date</span>
+      <span class="p p-Indicator">-</span> <span class="nt">obj</span><span class="p">:</span> <span class="s">&quot;p5b15&quot;</span> <span class="c1"># Current date (adjust format to your needs)</span>
         <span class="nt">properties</span><span class="p">:</span>
           <span class="s">&quot;text&quot;</span><span class="p p-Indicator">:</span> <span class="p p-Indicator">&gt;</span>
-            <span class="no">{{ (states.weather.openweathermap.last_changed).strftime(&#39;%m. %d. &#39;) }}</span>
             <span class="no">{%- set day = (states.weather.openweathermap.last_changed).strftime(&#39;%w&#39;) %}</span>
             <span class="no">{%- set days = [&quot;Monday&quot;, &quot;Tuesday&quot;, &quot;Wednesday&quot;, &quot;Thursday&quot;, &quot;Friday&quot;, &quot;Saturday&quot;, &quot;Sunday&quot;] %}</span>
-            <span class="no">{%- set localday = days[ day | int -1 ] %}</span>
-            <span class="no">{{- localday }}</span>
+            <span class="no">{{- days[ day | int -1 ] }} {{ (states.weather.openweathermap.last_changed).strftime(&#39;%m. %d. &#39;) }}</span>
+
 
       <span class="p p-Indicator">-</span> <span class="nt">obj</span><span class="p">:</span> <span class="s">&quot;p5b16&quot;</span> <span class="c1"># Current temp (you can use your own outdoor temp sensor if you have one)</span>
         <span class="nt">properties</span><span class="p">:</span>
@@ -2893,7 +2891,8 @@ The various strings containing to day names, day periods, weather conditions can
             <span class="no">{%- elif delta == 1 %}</span>
             <span class="no">Tomorrow</span>
             <span class="no">{%- endif %}</span>
-            <span class="no">{{- as_timestamp(strptime(state_attr(&#39;weather.openweathermap&#39;,&#39;forecast&#39;)[1][&#39;datetime&#39;], &#39;%Y-%m-%d %H:%M:%S&#39;)) | timestamp_custom(&quot; %-I %p&quot;) }}</span>
+            <span class="no">{{- event | timestamp_custom(&quot; %-I %p&quot;) }}</span>
+
       <span class="p p-Indicator">-</span> <span class="nt">obj</span><span class="p">:</span> <span class="s">&quot;p5b22&quot;</span> <span class="c1"># Forecast temp +1h</span>
         <span class="nt">properties</span><span class="p">:</span>
           <span class="s">&quot;text&quot;</span><span class="p p-Indicator">:</span> <span class="s">&quot;{{</span><span class="nv"> </span><span class="s">state_attr(&#39;weather.openweathermap&#39;,&#39;forecast&#39;)[1][&#39;temperature&#39;]</span><span class="nv"> </span><span class="s">}}&quot;</span>
@@ -2920,7 +2919,7 @@ The various strings containing to day names, day periods, weather conditions can
             <span class="no">{%- elif 23 &lt;= hour or hour &lt; 4 %}</span>
             <span class="no">Night</span>
             <span class="no">{%- endif %}</span>
-            <span class="no">{{- as_timestamp(strptime(state_attr(&#39;weather.openweathermap&#39;,&#39;forecast&#39;)[3][&#39;datetime&#39;], &#39;%Y-%m-%d %H:%M:%S&#39;)) | timestamp_custom(&quot; %-H. óra&quot;) }}</span>
+            <span class="no">{{- &quot; &quot; + hour |string + &quot; o&#39;clock&quot; }}</span>
 
       <span class="p p-Indicator">-</span> <span class="nt">obj</span><span class="p">:</span> <span class="s">&quot;p5b32&quot;</span> <span class="c1"># Forecast temp +2h</span>
         <span class="nt">properties</span><span class="p">:</span>
@@ -2943,7 +2942,7 @@ The various strings containing to day names, day periods, weather conditions can
             <span class="no">{%- elif delta == 1 %}</span>
             <span class="no">Tomorrow</span>
             <span class="no">{%- endif %}</span>
-            <span class="no">{{- as_timestamp(strptime(state_attr(&#39;weather.openweathermap&#39;,&#39;forecast&#39;)[6][&#39;datetime&#39;], &#39;%Y-%m-%d %H:%M:%S&#39;)) | timestamp_custom(&quot; %-I %p&quot;) }}</span>
+            <span class="no">{{- event | timestamp_custom(&quot; %-I %p&quot;) }}</span>
 
       <span class="p p-Indicator">-</span> <span class="nt">obj</span><span class="p">:</span> <span class="s">&quot;p5b42&quot;</span> <span class="c1"># Forecast temp +4h</span>
         <span class="nt">properties</span><span class="p">:</span>
@@ -2966,7 +2965,7 @@ The various strings containing to day names, day periods, weather conditions can
             <span class="no">{%- elif delta == 1 %}</span>
             <span class="no">Tomorrow</span>
             <span class="no">{%- endif %}</span>
-            <span class="no">{{- as_timestamp(strptime(state_attr(&#39;weather.openweathermap&#39;,&#39;forecast&#39;)[12][&#39;datetime&#39;], &#39;%Y-%m-%d %H:%M:%S&#39;)) | timestamp_custom(&quot; %-I %p&quot;) }}</span>
+            <span class="no">{{- event | timestamp_custom(&quot; %-I %p&quot;) }}</span>
 
       <span class="p p-Indicator">-</span> <span class="nt">obj</span><span class="p">:</span> <span class="s">&quot;p5b52&quot;</span> <span class="c1"># Forecast temp +8h</span>
         <span class="nt">properties</span><span class="p">:</span>
@@ -2977,8 +2976,7 @@ The various strings containing to day names, day periods, weather conditions can
           <span class="s">&quot;src&quot;</span><span class="p p-Indicator">:</span> <span class="s">&quot;/littlefs/w-32-{{</span><span class="nv"> </span><span class="s">state_attr(&#39;weather.openweathermap&#39;,&#39;forecast&#39;)[12][&#39;condition&#39;]</span><span class="nv"> </span><span class="s">}}.png&quot;</span>
 
 
-
-      <span class="p p-Indicator">-</span> <span class="nt">obj</span><span class="p">:</span> <span class="s">&quot;p5b61&quot;</span> <span class="c1"># Forecast date +1d</span>
+<span class="p p-Indicator">-</span> <span class="nt">obj</span><span class="p">:</span> <span class="s">&quot;p5b61&quot;</span> <span class="c1"># Forecast date +1d</span>
         <span class="nt">properties</span><span class="p">:</span>
           <span class="s">&quot;text&quot;</span><span class="p p-Indicator">:</span> <span class="p p-Indicator">&gt;</span>
             <span class="no">{%- set now = as_timestamp(strptime(state_attr(&#39;weather.your_homename&#39;,&#39;forecast&#39;)[0][&#39;datetime&#39;], &#39;%Y-%m-%d %H:%M:%S&#39;)) %}</span>
@@ -2986,7 +2984,7 @@ The various strings containing to day names, day periods, weather conditions can
             <span class="no">{%- set days = [&quot;Monday&quot;, &quot;Tuesday&quot;, &quot;Wednesday&quot;, &quot;Thursday&quot;, &quot;Friday&quot;, &quot;Saturday&quot;, &quot;Sunday&quot;] %}</span>
             <span class="no">{{ days[ day | int -1 ] }}{{- now | timestamp_custom(&quot; %d&quot;) }}</span>
 
-      <span class="p p-Indicator">-</span> <span class="nt">obj</span><span class="p">:</span> <span class="s">&quot;p5b62&quot;</span> <span class="c1"># Forecast temp min +1d</span>
+  <span class=" -Error">    </span><span class="p p-Indicator">-</span> <span class="nt">obj</span><span class="p">:</span> <span class="s">&quot;p5b62&quot;</span> <span class="c1"># Forecast temp min +1d</span>
         <span class="nt">properties</span><span class="p">:</span>
           <span class="s">&quot;text&quot;</span><span class="p p-Indicator">:</span> <span class="s">&quot;{{</span><span class="nv"> </span><span class="s">state_attr(&#39;weather.your_homename&#39;,&#39;forecast&#39;)[0][&#39;templow&#39;]</span><span class="nv"> </span><span class="s">}}&quot;</span>
 
