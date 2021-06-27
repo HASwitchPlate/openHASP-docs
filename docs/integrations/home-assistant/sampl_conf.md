@@ -843,7 +843,6 @@ relevant **openHASP-custom-component config:**
             {%- set days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"] %}
             {{- days[ day | int -1 ] }} {{ (states.weather.openweathermap.last_changed).strftime('%m. %d. ') }}
 
-
       - obj: "p5b16" # Current temp (you can use your own outdoor temp sensor if you have one)
         properties:
           "text": "{{ state_attr('weather.openweathermap','temperature') |string + '°C' if not is_state('weather.openweathermap','unavailable') }}"
@@ -923,7 +922,6 @@ relevant **openHASP-custom-component config:**
         properties:
           "src": "/littlefs/w-32-{{ state_attr('weather.openweathermap','forecast')[1]['condition'] }}.png"
 
-
       - obj: "p5b31" # Forecast time +2h (using Dawn/Morn etc instead of Today/Tomorrow)
         properties:
           "text": >
@@ -950,7 +948,6 @@ relevant **openHASP-custom-component config:**
       - obj: "p5b33" # Forecast condition +2h
         properties:
           "src": "/littlefs/w-32-{{ state_attr('weather.openweathermap','forecast')[3]['condition'] }}.png"
-
 
       - obj: "p5b41" # Forecast time +4h
         properties:
@@ -997,8 +994,7 @@ relevant **openHASP-custom-component config:**
         properties:
           "src": "/littlefs/w-32-{{ state_attr('weather.openweathermap','forecast')[12]['condition'] }}.png"
 
-
-- obj: "p5b61" # Forecast date +1d
+      - obj: "p5b61" # Forecast date +1d
         properties:
           "text": >
             {%- set now = as_timestamp(strptime(state_attr('weather.your_homename','forecast')[0]['datetime'], '%Y-%m-%d %H:%M:%S')) %}
@@ -1017,7 +1013,6 @@ relevant **openHASP-custom-component config:**
       - obj: "p5b64" # Forecast condition +1d
         properties:
           "src": "/littlefs/w-32-{{ state_attr('weather.your_homename','forecast')[0]['condition'] }}.png"
-
 
       - obj: "p5b71" # Forecast date +2d
         properties:
@@ -1039,7 +1034,6 @@ relevant **openHASP-custom-component config:**
         properties:
           "src": "/littlefs/w-32-{{ state_attr('weather.your_homename','forecast')[1]['condition'] }}.png"
 
-
       - obj: "p5b81" # Forecast date +3d
         properties:
           "text": >
@@ -1059,7 +1053,6 @@ relevant **openHASP-custom-component config:**
       - obj: "p5b84" # Forecast condition +3d
         properties:
           "src": "/littlefs/w-32-{{ state_attr('weather.your_homename','forecast')[2]['condition'] }}.png"
-
 
       - obj: "p5b91" # Forecast date +4d
         properties:
