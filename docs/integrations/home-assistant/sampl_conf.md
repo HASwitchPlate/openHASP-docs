@@ -836,14 +836,13 @@ relevant **openHASP-custom-component config:**
         properties:
           "src": "{{ '/littlefs/w-128-' + states('weather.openweathermap') + '.png' if not is_state('weather.openweathermap','unavailable') }}"
 
-      - obj: "p5b15" # Date
+      - obj: "p5b15" # Current date (adjust format to your needs)
         properties:
           "text": >
-            {{ (states.weather.openweathermap.last_changed).strftime('%m. %d. ') }}
             {%- set day = (states.weather.openweathermap.last_changed).strftime('%w') %}
             {%- set days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"] %}
-            {%- set localday = days[ day | int -1 ] %}
-            {{- localday }}
+            {{- days[ day | int -1 ] }} {{ (states.weather.openweathermap.last_changed).strftime('%m. %d. ') }}
+
 
       - obj: "p5b16" # Current temp (you can use your own outdoor temp sensor if you have one)
         properties:
@@ -914,7 +913,8 @@ relevant **openHASP-custom-component config:**
             {%- elif delta == 1 %}
             Tomorrow
             {%- endif %}
-            {{- as_timestamp(strptime(state_attr('weather.openweathermap','forecast')[1]['datetime'], '%Y-%m-%d %H:%M:%S')) | timestamp_custom(" %-I %p") }}
+            {{- event | timestamp_custom(" %-I %p") }}
+
       - obj: "p5b22" # Forecast temp +1h
         properties:
           "text": "{{ state_attr('weather.openweathermap','forecast')[1]['temperature'] }}"
@@ -941,7 +941,7 @@ relevant **openHASP-custom-component config:**
             {%- elif 23 <= hour or hour < 4 %}
             Night
             {%- endif %}
-            {{- as_timestamp(strptime(state_attr('weather.openweathermap','forecast')[3]['datetime'], '%Y-%m-%d %H:%M:%S')) | timestamp_custom(" %-H. óra") }}
+            {{- " " + hour |string + " o'clock" }}
 
       - obj: "p5b32" # Forecast temp +2h
         properties:
@@ -964,7 +964,7 @@ relevant **openHASP-custom-component config:**
             {%- elif delta == 1 %}
             Tomorrow
             {%- endif %}
-            {{- as_timestamp(strptime(state_attr('weather.openweathermap','forecast')[6]['datetime'], '%Y-%m-%d %H:%M:%S')) | timestamp_custom(" %-I %p") }}
+            {{- event | timestamp_custom(" %-I %p") }}
 
       - obj: "p5b42" # Forecast temp +4h
         properties:
@@ -987,7 +987,7 @@ relevant **openHASP-custom-component config:**
             {%- elif delta == 1 %}
             Tomorrow
             {%- endif %}
-            {{- as_timestamp(strptime(state_attr('weather.openweathermap','forecast')[12]['datetime'], '%Y-%m-%d %H:%M:%S')) | timestamp_custom(" %-I %p") }}
+            {{- event | timestamp_custom(" %-I %p") }}
 
       - obj: "p5b52" # Forecast temp +8h
         properties:
@@ -998,8 +998,7 @@ relevant **openHASP-custom-component config:**
           "src": "/littlefs/w-32-{{ state_attr('weather.openweathermap','forecast')[12]['condition'] }}.png"
 
 
-
-      - obj: "p5b61" # Forecast date +1d
+- obj: "p5b61" # Forecast date +1d
         properties:
           "text": >
             {%- set now = as_timestamp(strptime(state_attr('weather.your_homename','forecast')[0]['datetime'], '%Y-%m-%d %H:%M:%S')) %}
