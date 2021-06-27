@@ -1002,7 +1002,7 @@ relevant **openHASP-custom-component config:**
       - obj: "p5b61" # Forecast date +1d
         properties:
           "text": >
-            {%- set now = as_timestamp(strptime(state_attr('weather.your_homename','forecast')[2]['datetime'], '%Y-%m-%d %H:%M:%S')) %}
+            {%- set now = as_timestamp(strptime(state_attr('weather.your_homename','forecast')[0]['datetime'], '%Y-%m-%d %H:%M:%S')) %}
             {%- set day = now | timestamp_custom("%w") %}
             {%- set days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"] %}
             {{ days[ day | int -1 ] }}{{- now | timestamp_custom(" %d") }}
@@ -1023,7 +1023,7 @@ relevant **openHASP-custom-component config:**
       - obj: "p5b71" # Forecast date +2d
         properties:
           "text": >
-            {%- set now = as_timestamp(strptime(state_attr('weather.your_homename','forecast')[2]['datetime'], '%Y-%m-%d %H:%M:%S')) %}
+            {%- set now = as_timestamp(strptime(state_attr('weather.your_homename','forecast')[1]['datetime'], '%Y-%m-%d %H:%M:%S')) %}
             {%- set day = now | timestamp_custom("%w") %}
             {%- set days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"] %}
             {{ days[ day | int -1 ] }}{{- now | timestamp_custom(" %d") }}
@@ -1065,7 +1065,7 @@ relevant **openHASP-custom-component config:**
       - obj: "p5b91" # Forecast date +4d
         properties:
           "text": >
-            {%- set now = as_timestamp(strptime(state_attr('weather.your_homename','forecast')[2]['datetime'], '%Y-%m-%d %H:%M:%S')) %}
+            {%- set now = as_timestamp(strptime(state_attr('weather.your_homename','forecast')[3]['datetime'], '%Y-%m-%d %H:%M:%S')) %}
             {%- set day = now | timestamp_custom("%w") %}
             {%- set days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"] %}
             {{ days[ day | int -1 ] }}{{- now | timestamp_custom(" %d") }}
