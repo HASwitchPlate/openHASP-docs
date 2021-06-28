@@ -884,6 +884,8 @@ relevant **openHASP-custom-component config:**
              Exceptional
              {% elif states('weather.openweathermap') == 'unavailable' -%}
              (not available)
+             {% else -%}
+             {{ states('weather.openweathermap') }}
              {% endif -%}
 
       - obj: "p5b10"  # tab dots
