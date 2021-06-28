@@ -761,15 +761,17 @@ Since there's no weather integration in Home Assistant which can offer so much i
 - [Met.no](https://www.home-assistant.io/integrations/met/) (the one coming by default pre-installed) for next days forecast.
 - [OpenWeatherMap](https://www.home-assistant.io/integrations/openweathermap/) (available as standard integration to be activated) for next hours forecast. _You need to set the forecast mode to **onecall_hourly** to get forecasts for the day's next hours._
 
-The openHASP configuration grabs information from both weather sources and updates them on every change.   
-The various strings containing to day names, day periods, weather conditions can be localized easily to any language within the configuration.
+The openHASP component grabs information from both weather sources and updates them on every change.   
+The various strings containing day names, day periods, weather conditions can be localized easily to any language within the configuration.
 
-Weather condition icons are displayed from the internal flash space of the plate. For this, you need to upload all the icons to the plate:
+Weather condition icons are displayed from the internal flash space of the plate. For this, you need to unzip and upload all the icons to the plate:
 
 - [light theme](../../assets/users/openhasp-weathericons-day.zip)
 - [dark theme](../../assets/users/openhasp-weathericons-nigh.zip)
 
 _Icons are copyright from [manifestinteractive](https://github.com/manifestinteractive/weather-underground-icons) and [merlinthered](https://www.deviantart.com/merlinthered/art/plain-weather-icons-157162192)._
+
+This example implements Home Assistant's [standard weather conditions](https://www.home-assistant.io/integrations/weather/) only (as in 2021.06), so any weather integration component can be used. Some integrations know extra conditions in addition to the standard ones, those (with their corresponding icons) can be easily added to the component configuration below.
 
 Note that the tab swiping dots (_p5b10_) are also handled by the custom component. Don't forget to update the service call in the configuration if you change the page of the objects.
 
@@ -845,8 +847,7 @@ relevant **openHASP-custom-component config:**
 
       - obj: "p5b16" # Current temp (you can use your own outdoor temp sensor if you have one)
         properties:
-          "text": "{{ state_attr('weather.openweathermap','temperature') |string + '°C' if not is_state('weather.openweathermap','unavailable') }}"
-#          "text": "{{ states('sensor.your_own_temp_sensor') }}°C"
+          "text": "{{ state_attr('weather.openweathermap','temperature') |string + '°C' if not is_state('weather.openweathermap','unavailable') }}"  # or "{{ states('sensor.your_own_temp_sensor') }}°C"
 
       - obj: "p5b17" # Current weather condition
         properties:
