@@ -2803,7 +2803,9 @@ The various strings containing day names, day periods, weather conditions can be
 <span class="normal">237</span>
 <span class="normal">238</span>
 <span class="normal">239</span>
-<span class="normal">240</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>      <span class="p p-Indicator">-</span> <span class="nt">obj</span><span class="p">:</span> <span class="s">&quot;p5b14&quot;</span> <span class="c1"># Icon</span>
+<span class="normal">240</span>
+<span class="normal">241</span>
+<span class="normal">242</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>      <span class="p p-Indicator">-</span> <span class="nt">obj</span><span class="p">:</span> <span class="s">&quot;p5b14&quot;</span> <span class="c1"># Icon</span>
         <span class="nt">properties</span><span class="p">:</span>
           <span class="s">&quot;src&quot;</span><span class="p p-Indicator">:</span> <span class="s">&quot;{{</span><span class="nv"> </span><span class="s">&#39;/littlefs/w-128-&#39;</span><span class="nv"> </span><span class="s">+</span><span class="nv"> </span><span class="s">states(&#39;weather.openweathermap&#39;)</span><span class="nv"> </span><span class="s">+</span><span class="nv"> </span><span class="s">&#39;.png&#39;</span><span class="nv"> </span><span class="s">if</span><span class="nv"> </span><span class="s">not</span><span class="nv"> </span><span class="s">is_state(&#39;weather.openweathermap&#39;,&#39;unavailable&#39;)</span><span class="nv"> </span><span class="s">}}&quot;</span>
 
@@ -2853,6 +2855,8 @@ The various strings containing day names, day periods, weather conditions can be
              <span class="no">Exceptional</span>
              <span class="no">{% elif states(&#39;weather.openweathermap&#39;) == &#39;unavailable&#39; -%}</span>
              <span class="no">(not available)</span>
+             <span class="no">{% else -%}</span>
+             <span class="no">{{ states(&#39;weather.openweathermap&#39;) }}</span>
              <span class="no">{% endif -%}</span>
 
       <span class="p p-Indicator">-</span> <span class="nt">obj</span><span class="p">:</span> <span class="s">&quot;p5b10&quot;</span>  <span class="c1"># tab dots</span>
