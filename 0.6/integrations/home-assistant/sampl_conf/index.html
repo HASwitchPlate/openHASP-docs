@@ -2453,14 +2453,15 @@ Your browser does not support the video tag.
 <li><a href="https://www.home-assistant.io/integrations/met/">Met.no</a> (the one coming by default pre-installed) for next days forecast.</li>
 <li><a href="https://www.home-assistant.io/integrations/openweathermap/">OpenWeatherMap</a> (available as standard integration to be activated) for next hours forecast. <em>You need to set the forecast mode to <strong>onecall_hourly</strong> to get forecasts for the day's next hours.</em></li>
 </ul>
-<p>The openHASP configuration grabs information from both weather sources and updates them on every change. <br />
-The various strings containing to day names, day periods, weather conditions can be localized easily to any language within the configuration.</p>
-<p>Weather condition icons are displayed from the internal flash space of the plate. For this, you need to upload all the icons to the plate:</p>
+<p>The openHASP component grabs information from both weather sources and updates them on every change. <br />
+The various strings containing day names, day periods, weather conditions can be localized easily to any language within the configuration.</p>
+<p>Weather condition icons are displayed from the internal flash space of the plate. For this, you need to unzip and upload all the icons to the plate:</p>
 <ul>
 <li><a href="../../../assets/users/openhasp-weathericons-day.zip">light theme</a></li>
 <li><a href="../../../assets/users/openhasp-weathericons-nigh.zip">dark theme</a></li>
 </ul>
 <p><em>Icons are copyright from <a href="https://github.com/manifestinteractive/weather-underground-icons">manifestinteractive</a> and <a href="https://www.deviantart.com/merlinthered/art/plain-weather-icons-157162192">merlinthered</a>.</em></p>
+<p>This example implements Home Assistant's <a href="https://www.home-assistant.io/integrations/weather/">standard weather conditions</a> only (as in 2021.06), so any weather integration component can be used. Some integrations know extra conditions in addition to the standard ones, those (with their corresponding icons) can be easily added to the component configuration below.</p>
 <p>Note that the tab swiping dots (<em>p5b10</em>) are also handled by the custom component. Don't forget to update the service call in the configuration if you change the page of the objects.</p>
 <p>relevant <strong>openHASP config:</strong> (screen size 240x320, UI Theme: Hasp Light) </p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
@@ -2802,8 +2803,7 @@ The various strings containing to day names, day periods, weather conditions can
 <span class="normal">237</span>
 <span class="normal">238</span>
 <span class="normal">239</span>
-<span class="normal">240</span>
-<span class="normal">241</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>      <span class="p p-Indicator">-</span> <span class="nt">obj</span><span class="p">:</span> <span class="s">&quot;p5b14&quot;</span> <span class="c1"># Icon</span>
+<span class="normal">240</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>      <span class="p p-Indicator">-</span> <span class="nt">obj</span><span class="p">:</span> <span class="s">&quot;p5b14&quot;</span> <span class="c1"># Icon</span>
         <span class="nt">properties</span><span class="p">:</span>
           <span class="s">&quot;src&quot;</span><span class="p p-Indicator">:</span> <span class="s">&quot;{{</span><span class="nv"> </span><span class="s">&#39;/littlefs/w-128-&#39;</span><span class="nv"> </span><span class="s">+</span><span class="nv"> </span><span class="s">states(&#39;weather.openweathermap&#39;)</span><span class="nv"> </span><span class="s">+</span><span class="nv"> </span><span class="s">&#39;.png&#39;</span><span class="nv"> </span><span class="s">if</span><span class="nv"> </span><span class="s">not</span><span class="nv"> </span><span class="s">is_state(&#39;weather.openweathermap&#39;,&#39;unavailable&#39;)</span><span class="nv"> </span><span class="s">}}&quot;</span>
 
@@ -2816,8 +2816,7 @@ The various strings containing to day names, day periods, weather conditions can
 
       <span class="p p-Indicator">-</span> <span class="nt">obj</span><span class="p">:</span> <span class="s">&quot;p5b16&quot;</span> <span class="c1"># Current temp (you can use your own outdoor temp sensor if you have one)</span>
         <span class="nt">properties</span><span class="p">:</span>
-          <span class="s">&quot;text&quot;</span><span class="p p-Indicator">:</span> <span class="s">&quot;{{</span><span class="nv"> </span><span class="s">state_attr(&#39;weather.openweathermap&#39;,&#39;temperature&#39;)</span><span class="nv"> </span><span class="s">|string</span><span class="nv"> </span><span class="s">+</span><span class="nv"> </span><span class="s">&#39;°C&#39;</span><span class="nv"> </span><span class="s">if</span><span class="nv"> </span><span class="s">not</span><span class="nv"> </span><span class="s">is_state(&#39;weather.openweathermap&#39;,&#39;unavailable&#39;)</span><span class="nv"> </span><span class="s">}}&quot;</span>
-<span class="c1">#          &quot;text&quot;: &quot;{{ states(&#39;sensor.your_own_temp_sensor&#39;) }}°C&quot;</span>
+          <span class="s">&quot;text&quot;</span><span class="p p-Indicator">:</span> <span class="s">&quot;{{</span><span class="nv"> </span><span class="s">state_attr(&#39;weather.openweathermap&#39;,&#39;temperature&#39;)</span><span class="nv"> </span><span class="s">|string</span><span class="nv"> </span><span class="s">+</span><span class="nv"> </span><span class="s">&#39;°C&#39;</span><span class="nv"> </span><span class="s">if</span><span class="nv"> </span><span class="s">not</span><span class="nv"> </span><span class="s">is_state(&#39;weather.openweathermap&#39;,&#39;unavailable&#39;)</span><span class="nv"> </span><span class="s">}}&quot;</span>  <span class="c1"># or &quot;{{ states(&#39;sensor.your_own_temp_sensor&#39;) }}°C&quot;</span>
 
       <span class="p p-Indicator">-</span> <span class="nt">obj</span><span class="p">:</span> <span class="s">&quot;p5b17&quot;</span> <span class="c1"># Current weather condition</span>
         <span class="nt">properties</span><span class="p">:</span>
@@ -3054,7 +3053,7 @@ The various strings containing to day names, day periods, weather conditions can
 <div class="md-source-date">
   <small>
     
-      Last update: 2021-06-27
+      Last update: 2021-06-28
     
   </small>
 </div>
