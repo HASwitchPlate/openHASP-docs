@@ -2462,7 +2462,7 @@ The various strings containing day names, day periods, weather conditions can be
 </ul>
 <p><em>Icons are copyright from <a href="https://github.com/manifestinteractive/weather-underground-icons">manifestinteractive</a> and <a href="https://www.deviantart.com/merlinthered/art/plain-weather-icons-157162192">merlinthered</a>.</em></p>
 <p>This example implements Home Assistant's <a href="https://www.home-assistant.io/integrations/weather/">standard weather conditions</a> only (as in 2021.06), so any weather integration component can be used. Some integrations know extra conditions in addition to the standard ones, those (with their corresponding icons) can be easily added to the component configuration below.</p>
-<p>Note that the tab swiping dots (<em>p5b10</em>) are also handled by the custom component. Don't forget to update the service call in the configuration if you change the page of the objects.</p>
+<p>Note that the tab swiping dots (<em>p5b10</em>) are also handled by the custom component. Don't forget update the service call in the configuration with your plate's MQTT node name, and the command parameters if you change the page of the objects.</p>
 <p>relevant <strong>openHASP config:</strong> (screen size 240x320, UI Theme: Hasp Light) </p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
@@ -2802,10 +2802,7 @@ The various strings containing day names, day periods, weather conditions can be
 <span class="normal">236</span>
 <span class="normal">237</span>
 <span class="normal">238</span>
-<span class="normal">239</span>
-<span class="normal">240</span>
-<span class="normal">241</span>
-<span class="normal">242</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>      <span class="p p-Indicator">-</span> <span class="nt">obj</span><span class="p">:</span> <span class="s">&quot;p5b14&quot;</span> <span class="c1"># Icon</span>
+<span class="normal">239</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>      <span class="p p-Indicator">-</span> <span class="nt">obj</span><span class="p">:</span> <span class="s">&quot;p5b14&quot;</span> <span class="c1"># Icon</span>
         <span class="nt">properties</span><span class="p">:</span>
           <span class="s">&quot;src&quot;</span><span class="p p-Indicator">:</span> <span class="s">&quot;{{</span><span class="nv"> </span><span class="s">&#39;/littlefs/w-128-&#39;</span><span class="nv"> </span><span class="s">+</span><span class="nv"> </span><span class="s">states(&#39;weather.openweathermap&#39;)</span><span class="nv"> </span><span class="s">+</span><span class="nv"> </span><span class="s">&#39;.png&#39;</span><span class="nv"> </span><span class="s">if</span><span class="nv"> </span><span class="s">not</span><span class="nv"> </span><span class="s">is_state(&#39;weather.openweathermap&#39;,&#39;unavailable&#39;)</span><span class="nv"> </span><span class="s">}}&quot;</span>
 
@@ -2862,12 +2859,10 @@ The various strings containing day names, day periods, weather conditions can be
       <span class="p p-Indicator">-</span> <span class="nt">obj</span><span class="p">:</span> <span class="s">&quot;p5b10&quot;</span>  <span class="c1"># tab dots</span>
         <span class="nt">event</span><span class="p">:</span>
           <span class="s">&quot;changed&quot;</span><span class="p p-Indicator">:</span>
-            <span class="p p-Indicator">-</span> <span class="nt">service</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">openhasp.command</span>
-              <span class="nt">target</span><span class="p">:</span>
-                <span class="nt">entity_id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">openhasp.plate_4</span>
+            <span class="p p-Indicator">-</span> <span class="nt">service</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">mqtt.publish</span>
               <span class="nt">data</span><span class="p">:</span>
-                <span class="nt">keyword</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">p5b19.text</span>
-                <span class="nt">parameters</span><span class="p">:</span> <span class="p p-Indicator">&gt;</span>
+                <span class="nt">topic</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">hasp/your_plate/command/p5b19.text</span>
+                <span class="nt">payload</span><span class="p">:</span> <span class="p p-Indicator">&gt;</span>
                   <span class="no">{% if val == 0 %}</span>
                   <span class="no">{{ &quot;#000000 \u2022# #909090 \u2022#&quot; | e }}</span>
                   <span class="no">{%-elif val == 1 %}</span>
@@ -2944,7 +2939,6 @@ The various strings containing day names, day periods, weather conditions can be
       <span class="p p-Indicator">-</span> <span class="nt">obj</span><span class="p">:</span> <span class="s">&quot;p5b43&quot;</span> <span class="c1"># Forecast condition +4h</span>
         <span class="nt">properties</span><span class="p">:</span>
           <span class="s">&quot;src&quot;</span><span class="p p-Indicator">:</span> <span class="s">&quot;/littlefs/w-32-{{</span><span class="nv"> </span><span class="s">state_attr(&#39;weather.openweathermap&#39;,&#39;forecast&#39;)[6][&#39;condition&#39;]</span><span class="nv"> </span><span class="s">}}.png&quot;</span>
-
 
       <span class="p p-Indicator">-</span> <span class="nt">obj</span><span class="p">:</span> <span class="s">&quot;p5b51&quot;</span> <span class="c1"># Forecast time +8h</span>
         <span class="nt">properties</span><span class="p">:</span>
