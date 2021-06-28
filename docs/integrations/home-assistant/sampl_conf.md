@@ -773,7 +773,7 @@ _Icons are copyright from [manifestinteractive](https://github.com/manifestinter
 
 This example implements Home Assistant's [standard weather conditions](https://www.home-assistant.io/integrations/weather/) only (as in 2021.06), so any weather integration component can be used. Some integrations know extra conditions in addition to the standard ones, those (with their corresponding icons) can be easily added to the component configuration below.
 
-Note that the tab swiping dots (_p5b10_) are also handled by the custom component. Don't forget to update the service call in the configuration if you change the page of the objects.
+Note that the tab swiping dots (_p5b10_) are also handled by the custom component. Don't forget update the service call in the configuration with your plate's MQTT node name, and the command parameters if you change the page of the objects.
 
 
 relevant **openHASP config:** (screen size 240x320, UI Theme: Hasp Light) 
@@ -891,12 +891,10 @@ relevant **openHASP-custom-component config:**
       - obj: "p5b10"  # tab dots
         event:
           "changed":
-            - service: openhasp.command
-              target:
-                entity_id: openhasp.plate_4
+            - service: mqtt.publish
               data:
-                keyword: p5b19.text
-                parameters: >
+                topic: hasp/your_plate/command/p5b19.text
+                payload: >
                   {% if val == 0 %}
                   {{ "#000000 \u2022# #909090 \u2022#" | e }}
                   {%-elif val == 1 %}
@@ -973,7 +971,6 @@ relevant **openHASP-custom-component config:**
       - obj: "p5b43" # Forecast condition +4h
         properties:
           "src": "/littlefs/w-32-{{ state_attr('weather.openweathermap','forecast')[6]['condition'] }}.png"
-
 
       - obj: "p5b51" # Forecast time +8h
         properties:
