@@ -520,6 +520,18 @@ mark {
     height: auto
 }
 
+.vid-fluid {
+    width: 560;
+    display: inline-block;
+    padding: 4px;
+    line-height: 1.428571429;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin: 15px auto 15px auto;
+    height: 320
+}
+
 .ekko-lightbox-item .img-fluid {
     margin: auto auto auto auto;
 }

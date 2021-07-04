@@ -1,4 +1,4 @@
-site_url: https://haswitchplate.github.io/openHASP-docs/0.6/
+site_url: https://haswitchplate.github.io/openHASP-docs/0.6.1/
 site_name: "openHASP"
 site_description: "Open firmware for MCUs to drive a low-cost commodity touch display"
 site_author: "Francis Van Roie"
@@ -89,7 +89,7 @@ extra:
 
   version:
     provider: mike
-    default: 0.5
+    default: 0.6
 
 # nav:
 #
