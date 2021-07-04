@@ -1562,7 +1562,7 @@ To allow read-access to the folder, add these lines to your <code>configuration.
     // Show warning banner when displaying old content versions
     window.addEventListener("DOMContentLoaded", function() {
         var xhr = new XMLHttpRequest();
-        xhr.open("GET", "/versions.json");
+        xhr.open("GET", "/openHASP-docs/versions.json");
         xhr.onload = function() {
             var versions = JSON.parse(this.responseText);
             latest_version = ""

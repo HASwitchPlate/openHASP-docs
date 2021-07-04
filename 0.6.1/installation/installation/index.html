@@ -1305,7 +1305,7 @@ esptool.py --port <span class="s2">&quot;COM1&quot;</span> write_flash 0xe000 bo
     // Show warning banner when displaying old content versions
     window.addEventListener("DOMContentLoaded", function() {
         var xhr = new XMLHttpRequest();
-        xhr.open("GET", "/versions.json");
+        xhr.open("GET", "/openHASP-docs/versions.json");
         xhr.onload = function() {
             var versions = JSON.parse(this.responseText);
             latest_version = ""

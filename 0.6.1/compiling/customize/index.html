@@ -1213,7 +1213,7 @@ Uncomment <code>-DUSE_CONFIG_OVERRIDE</code> in <code>platformio_override.ini</c
     // Show warning banner when displaying old content versions
     window.addEventListener("DOMContentLoaded", function() {
         var xhr = new XMLHttpRequest();
-        xhr.open("GET", "/versions.json");
+        xhr.open("GET", "/openHASP-docs/versions.json");
         xhr.onload = function() {
             var versions = JSON.parse(this.responseText);
             latest_version = ""
