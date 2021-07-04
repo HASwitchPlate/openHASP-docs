@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://haswitchplate.github.io/openHASP-docs/0.6.1/0.6.1/displays/ILI9341_IPS/">
       
       <link rel="icon" href="../../favicon.ico">
-      <meta name="generator" content="mkdocs-1.2.1, mkdocs-material-7.1.9">
+      <meta name="generator" content="mkdocs-1.2, mkdocs-material-7.1.5">
     
     
       
@@ -24,10 +24,10 @@
       
     
      
-      <link rel="stylesheet" href="../../assets/stylesheets/main.ca7ac06f.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.bde7dde4.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.f1a3b89f.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ef6f36e2.min.css">
         
       
     
@@ -71,8 +71,6 @@
     
     
       
-
-
     
     
   </head>
@@ -138,7 +136,7 @@
         
           
           
-          <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="deep-orange"  aria-label="Dark mode"  type="radio" name="__palette" id="__palette_1">
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="deep-orange" type="radio" name="__palette" id="__palette_1">
           
             <label class="md-header__button md-icon" title="Dark mode" for="__palette_2" hidden>
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 10a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2m10-3a5 5 0 0 1 5 5 5 5 0 0 1-5 5H7a5 5 0 0 1-5-5 5 5 0 0 1 5-5h10M7 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3h10a3 3 0 0 0 3-3 3 3 0 0 0-3-3H7z"/></svg>
@@ -147,7 +145,7 @@
         
           
           
-          <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="cyan" data-md-color-accent="deep-orange"  aria-label="Light mode"  type="radio" name="__palette" id="__palette_2">
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="cyan" data-md-color-accent="deep-orange" type="radio" name="__palette" id="__palette_2">
           
             <label class="md-header__button md-icon" title="Light mode" for="__palette_1" hidden>
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3z"/></svg>
@@ -1264,52 +1262,52 @@
 <h2 id="custom-build">Custom build<a class="headerlink" href="#custom-build" title="Permanent link">~</a></h2>
 <p>Define a custom environment in <code>platformio_override.ini</code> and add a new <code>esp32_ili9341_spi</code> entry under <code>extra_default_envs =</code> </p>
 <p>If you've wired pins differently, change the values below.</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span>
-<span class="normal">21</span>
-<span class="normal">22</span>
-<span class="normal">23</span>
-<span class="normal">24</span>
-<span class="normal">25</span>
-<span class="normal">26</span>
-<span class="normal">27</span>
-<span class="normal">28</span>
-<span class="normal">29</span>
-<span class="normal">30</span>
-<span class="normal">31</span>
-<span class="normal">32</span>
-<span class="normal">33</span>
-<span class="normal">34</span>
-<span class="normal">35</span>
-<span class="normal">36</span>
-<span class="normal">37</span>
-<span class="normal">38</span>
-<span class="normal">39</span>
-<span class="normal">40</span>
-<span class="normal">41</span>
-<span class="normal">42</span>
-<span class="normal">43</span>
-<span class="normal">44</span>
-<span class="normal">45</span>
-<span class="normal">46</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1">;-- ILI9341 SPI version ------------------------</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1">;-- ILI9341 SPI version ------------------------</span>
 <span class="k">[env:esp32_ili9341_spi]</span>
 <span class="na">platform</span> <span class="o">=</span> <span class="s">espressif32</span>
 <span class="na">platform_packages</span> <span class="o">=</span> <span class="s">framework-arduinoespressif32</span>
@@ -1320,41 +1318,41 @@
 <span class="na">monitor_filters</span> <span class="o">=</span> <span class="s">esp32_exception_decoder</span>
 <span class="na">board_build.partitions</span> <span class="o">=</span> <span class="s">user_setups/esp32_partition_app1300k_spiffs1216k.csv</span>
 
-<span class="na">build_flags</span> <span class="o">=</span>
-    <span class="na">${env.build_flags}</span>
-    <span class="na">${esp32.build_flags}</span>
-    <span class="na">-D ILI9341_DRIVER</span><span class="o">=</span><span class="s">1</span>
-    <span class="na">-D TFT_WIDTH</span><span class="o">=</span><span class="s">240</span>
-    <span class="na">-D TFT_HEIGHT</span><span class="o">=</span><span class="s">320</span>
-    <span class="na">-D TFT_ROTATION</span><span class="o">=</span><span class="s">0 ; see TFT_ROTATION values</span>
-    <span class="na">-D INVERT_COLORS</span><span class="o">=</span><span class="s">1  ; to fix colors</span>
-    <span class="na">-D SPI_FREQUENCY</span><span class="o">=</span><span class="s">60000000</span>
-    <span class="na">-D SPI_TOUCH_FREQUENCY</span><span class="o">=</span><span class="s">2500000</span>
-    <span class="na">-D SPI_READ_FREQUENCY</span><span class="o">=</span><span class="s">20000000</span>
-    <span class="na">-D USER_SETUP_LOADED</span><span class="o">=</span><span class="s">1</span>
-    <span class="na">-D TOUCH_DRIVER</span><span class="o">=</span><span class="s">2046     ; XPT2046 Resistive SPI touch panel driver</span>
-    <span class="na">-D SUPPORT_TRANSACTIONS</span>
-    <span class="na">${esp32.vspi}        ; Use VSPI hardware SPI bus: </span>
-                         <span class="c1">; TFT_MISO=19 | TFT_MOSI=23 | TFT_SCLK=18</span>
-                         <span class="c1">; MISO    = 8 | MOSI    = 4 | CLK     = 3</span>
+<span class="na">build_flags</span> <span class="o">=</span><span class="s"></span>
+<span class="s">    ${env.build_flags}</span>
+<span class="s">    ${esp32.build_flags}</span>
+<span class="s">    -D ILI9341_DRIVER=1</span>
+<span class="s">    -D TFT_WIDTH=240</span>
+<span class="s">    -D TFT_HEIGHT=320</span>
+<span class="s">    -D TFT_ROTATION=0 ; see TFT_ROTATION values</span>
+<span class="s">    -D INVERT_COLORS=1  ; to fix colors</span>
+<span class="s">    -D SPI_FREQUENCY=60000000</span>
+<span class="s">    -D SPI_TOUCH_FREQUENCY=2500000</span>
+<span class="s">    -D SPI_READ_FREQUENCY=20000000</span>
+<span class="s">    -D USER_SETUP_LOADED=1</span>
+<span class="s">    -D TOUCH_DRIVER=2046     ; XPT2046 Resistive SPI touch panel driver</span>
+<span class="s">    -D SUPPORT_TRANSACTIONS</span>
+<span class="s">    ${esp32.vspi}        ; Use VSPI hardware SPI bus: </span>
+<span class="s">                         ; TFT_MISO=19 | TFT_MOSI=23 | TFT_SCLK=18</span>
+<span class="s">                         ; MISO    = 8 | MOSI    = 4 | CLK     = 3</span>
 <span class="c1">; wiring recommendations, change pins according to your wiring</span>
     <span class="na">-D TFT_DC</span><span class="o">=</span><span class="s">5          ; DC,  lcd pin 3</span>
-    <span class="na">-D TFT_RST</span><span class="o">=</span><span class="s">15        ; RES, lcd pin 5</span>
-    <span class="na">-D TFT_BCKL</span><span class="o">=</span><span class="s">-1       ; BLK, lcd pin 7 (configurable via web UI (e.g. 21))</span>
-    <span class="na">-D TFT_CS</span><span class="o">=</span><span class="s">26         ; CS1, lcd pin 9</span>
-    <span class="na">-D TOUCH_CS</span><span class="o">=</span><span class="s">17       ; CS2, lcd pin 10  </span>
+<span class="s">    -D TFT_RST=15        ; RES, lcd pin 5</span>
+<span class="s">    -D TFT_BCKL=-1       ; BLK, lcd pin 7 (configurable via web UI (e.g. 21))</span>
+<span class="s">    -D TFT_CS=26         ; CS1, lcd pin 9</span>
+<span class="s">    -D TOUCH_CS=17       ; CS2, lcd pin 10  </span>
 
-<span class="na">lib_deps</span> <span class="o">=</span>
-    <span class="na">${env.lib_deps}</span>
-    <span class="na">${esp32.lib_deps}</span>
+<span class="na">lib_deps</span> <span class="o">=</span><span class="s"></span>
+<span class="s">    ${env.lib_deps}</span>
+<span class="s">    ${esp32.lib_deps}</span>
 
-<span class="na">lib_ignore</span> <span class="o">=</span>
-    <span class="na">${env.lib_ignore}</span>
-    <span class="na">${esp32.lib_ignore}</span>
+<span class="na">lib_ignore</span> <span class="o">=</span><span class="s"></span>
+<span class="s">    ${env.lib_ignore}</span>
+<span class="s">    ${esp32.lib_ignore}</span>
 
-<span class="na">extra_scripts</span> <span class="o">=</span>
-    <span class="na">${env.extra_scripts}</span>
-    <span class="na">${esp32.extra_scripts}</span>
+<span class="na">extra_scripts</span> <span class="o">=</span><span class="s"></span>
+<span class="s">    ${env.extra_scripts}</span>
+<span class="s">    ${esp32.extra_scripts}</span>
 </code></pre></div>
 </td></tr></table>
                 
@@ -1365,7 +1363,7 @@
 <div class="md-source-date">
   <small>
     
-      Last update: 2021-07-05
+      Last update: 2021-05-25
     
   </small>
 </div>
@@ -1427,10 +1425,10 @@
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tracking", "search.suggest", "search.highlight", "navigation.top"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.477d984a.min.js", "version": {"default": 0.6, "provider": "mike"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tracking", "search.suggest", "search.highlight", "navigation.top"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../../assets/javascripts/workers/search.d351de03.min.js", "version": {"default": 0.6, "provider": "mike"}}</script>
     
      
-      <script src="../../assets/javascripts/bundle.82b56eb2.min.js"></script>
+      <script src="../../assets/javascripts/bundle.a1609d9a.min.js"></script>
       
     
 <script src="../../js/youtube.js"></script>

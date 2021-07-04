@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://haswitchplate.github.io/openHASP-docs/0.6.1/0.6.1/compiling/">
       
       <link rel="icon" href="../favicon.ico">
-      <meta name="generator" content="mkdocs-1.2.1, mkdocs-material-7.1.9">
+      <meta name="generator" content="mkdocs-1.2, mkdocs-material-7.1.5">
     
     
       
@@ -24,10 +24,10 @@
       
     
      
-      <link rel="stylesheet" href="../assets/stylesheets/main.ca7ac06f.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.bde7dde4.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.f1a3b89f.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ef6f36e2.min.css">
         
       
     
@@ -71,8 +71,6 @@
     
     
       
-
-
     
     
   </head>
@@ -138,7 +136,7 @@
         
           
           
-          <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="deep-orange"  aria-label="Dark mode"  type="radio" name="__palette" id="__palette_1">
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="deep-orange" type="radio" name="__palette" id="__palette_1">
           
             <label class="md-header__button md-icon" title="Dark mode" for="__palette_2" hidden>
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 10a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2m10-3a5 5 0 0 1 5 5 5 5 0 0 1-5 5H7a5 5 0 0 1-5-5 5 5 0 0 1 5-5h10M7 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3h10a3 3 0 0 0 3-3 3 3 0 0 0-3-3H7z"/></svg>
@@ -147,7 +145,7 @@
         
           
           
-          <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="cyan" data-md-color-accent="deep-orange"  aria-label="Light mode"  type="radio" name="__palette" id="__palette_2">
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="cyan" data-md-color-accent="deep-orange" type="radio" name="__palette" id="__palette_2">
           
             <label class="md-header__button md-icon" title="Light mode" for="__palette_1" hidden>
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3z"/></svg>
@@ -1204,25 +1202,25 @@
 <li>on <a href="https://code.visualstudio.com/docs/setup/windows">Windows</a></li>
 </ul>
 <p>Additional packages on Linux:
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>sudo apt update
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>sudo apt update
 sudo apt install git python3-venv
 </code></pre></div>
 </td></tr></table></p>
 <h2 id="clone-openhasp">Clone openHASP<a class="headerlink" href="#clone-openhasp" title="Permanent link">~</a></h2>
 <p>Make sure to add the <code>--recursive</code> parameter when cloning the project from GitHub. Otherwise git will not download the required submodules in the <code>/lib</code> subdirectory.</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>git clone --recursive https://github.com/HASwitchPlate/openHASP
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>git clone --recursive https://github.com/HASwitchPlate/openHASP
 </code></pre></div>
 </td></tr></table>
 <p>If you already cloned openHASP without the submodules, you can fetch the submodules seperately using:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>git submodule update --init --recursive
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>git submodule update --init --recursive
 </code></pre></div>
 </td></tr></table>
 <p>To switch to a different branch use:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>git clone --recursive https://github.com/HASwitchPlate/openHASP
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>git clone --recursive https://github.com/HASwitchPlate/openHASP
 <span class="nb">cd</span> openHASP
 git checkout <span class="m">0</span>.6.0
 git submodule update --init --recursive
@@ -1237,17 +1235,17 @@ This will automatically install all PlatformIO dependencies and the MCU compiler
 <p>Restart Visual Studio Code when the PIO installation completes.</p>
 <h2 id="create-a-configuration">Create a configuration<a class="headerlink" href="#create-a-configuration" title="Permanent link">~</a></h2>
 <p>Copy <code>platformio_override-template.ini</code> to <code>platformio_override.ini</code> and uncomment the platforms for <code>esp32</code>and <code>esp8266</code>:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">[platformio]</span>
-<span class="na">extra_configs</span> <span class="o">=</span>
-    <span class="c1">; Uncomment or edit the lines to show more User Setups in the PIO sidebar</span>
-    <span class="na">user_setups/esp32/*.ini</span>
-    <span class="na">user_setups/esp8266/*.ini</span>
-    <span class="c1">; user_setups/stm32f4xx/*.ini</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">[platformio]</span>
+<span class="na">extra_configs</span> <span class="o">=</span><span class="s"></span>
+<span class="s">    ; Uncomment or edit the lines to show more User Setups in the PIO sidebar</span>
+<span class="s">    user_setups/esp32/*.ini</span>
+<span class="s">    user_setups/esp8266/*.ini</span>
+<span class="s">    ; user_setups/stm32f4xx/*.ini</span>
 </code></pre></div>
 </td></tr></table>
 <p>Then Click on the "Refresh Project tasks" icon in PlatformIO to list all the configured environments.</p>
@@ -1272,20 +1270,20 @@ Also uncomment <code>-DUSE_CONFIG_OVERRIDE</code> in <code>platformio_override.i
 <p>You can now run "Build" or "Build All" in PlatformIO to compile (all) the firmware.</p>
 <h3 id="native-linux-build">Native Linux build<a class="headerlink" href="#native-linux-build" title="Permanent link">~</a></h3>
 <p>For native linux_sdl builds, you also need:
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>sudo apt update
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>sudo apt update
 sudo apt install build-essential libsdl2-dev
 </code></pre></div>
 </td></tr></table></p>
 <h3 id="native-macos-build">Native MacOS build<a class="headerlink" href="#native-macos-build" title="Permanent link">~</a></h3>
 <p>For native darwin_sdl builds, you also need <a href="https://brew.sh">Homebrew</a>:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>brew install gcc sdl2
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>brew install gcc sdl2
 </code></pre></div>
 </td></tr></table>
 <h3 id="native-windows-build">Native Windows build<a class="headerlink" href="#native-windows-build" title="Permanent link">~</a></h3>
 <p>For native windows_sdl builds, you also need MingW:</p>
 <p>Use <a href="https://www.msys2.org/">MSYS2</a></p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>pacman -S mingw-w64-x86_64-gcc mingw-w64-x86_64-SDL2
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>pacman -S mingw-w64-x86_64-gcc mingw-w64-x86_64-SDL2
 </code></pre></div>
 </td></tr></table>
 <p>Add the path to your Mingw-w64 <code>bin</code> folder to the Windows PATH environment
@@ -1298,8 +1296,8 @@ variable (usually <code>C:\msys64\mingw64\bin</code>). See <a href="https://code
 <p><img alt="Block Diagram" src="../assets/images/block-diagram.svg" /></p>
 <h2 id="mqtt-tests">MQTT Tests<a class="headerlink" href="#mqtt-tests" title="Permanent link">~</a></h2>
 <p>To run the tavern testing suite, install the tavern python package and configure <code>test\config.yaml</code> with your broker settings.</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>pip install tavern
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>pip install tavern
 tavern-ci .<span class="se">\t</span>est<span class="se">\</span>
 </code></pre></div>
 </td></tr></table>
@@ -1311,7 +1309,7 @@ tavern-ci .<span class="se">\t</span>est<span class="se">\</span>
 <div class="md-source-date">
   <small>
     
-      Last update: 2021-07-05
+      Last update: 2021-06-01
     
   </small>
 </div>
@@ -1373,10 +1371,10 @@ tavern-ci .<span class="se">\t</span>est<span class="se">\</span>
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tracking", "search.suggest", "search.highlight", "navigation.top"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.477d984a.min.js", "version": {"default": 0.6, "provider": "mike"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tracking", "search.suggest", "search.highlight", "navigation.top"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../assets/javascripts/workers/search.d351de03.min.js", "version": {"default": 0.6, "provider": "mike"}}</script>
     
      
-      <script src="../assets/javascripts/bundle.82b56eb2.min.js"></script>
+      <script src="../assets/javascripts/bundle.a1609d9a.min.js"></script>
       
     
 <script src="../js/youtube.js"></script>
