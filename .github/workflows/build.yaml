@@ -67,6 +67,7 @@ jobs:
       - name: Deploy docs 0.6.1
         if: github.ref == 'refs/heads/0.6.1'
         run: |
+          mike delete "dev" --push
           mike delete "0.6-dev" --push
           mike deploy --update-aliases "0.6.1" dev --title="dev" --config-file "${GITHUB_WORKSPACE}/mkdocs.yml" --push --rebase
 
