@@ -40,9 +40,9 @@ To add an openHASP plate to your installation with a sample design looking a bit
 {"page":1,"id":62,"obj":"label","x":48,"y":215,"w":130,"h":30,"text":"Green energy active","align":0,"text_font":16,"text_color":"black"}
 {"page":1,"id":63,"obj":"label","x":100,"y":215,"w":130,"h":30,"text":"Yes :)","align":2,"text_color":"black"}
 
-{"page":1,"id":71,"obj":"label","x":8,"y":240,"w":30,"h":35,"text":"\uE026","align":1,"text_font":32,"text_color":"black"}
+{"page":1,"id":71,"obj":"label","x":8,"y":240,"w":30,"h":35,"text":"\uE957","align":1,"text_font":32,"text_color":"black"}
 {"page":1,"id":72,"obj":"label","x":48,"y":250,"w":130,"h":30,"text":"Air quality","align":0,"text_font":16,"text_color":"black"}
-{"page":1,"id":73,"obj":"label","x":100,"y":250,"w":130,"h":30,"text":"OK (29.58 µg/m3)","align":2,"text_color":"black"}
+{"page":1,"id":73,"obj":"label","x":100,"y":250,"w":130,"h":30,"text":"OK (29.58 µg/m³)","align":2,"text_color":"black"}
 ```
 
 Check out the [pagination example](../example-pagination) to learn how to implement the bottom bar.  
