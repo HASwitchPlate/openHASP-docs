@@ -20,12 +20,12 @@ To add an openHASP plate to your installation with a sample design looking a bit
 {"page":1,"id":12,"obj":"label","x":48,"y":40,"w":130,"h":30,"text":"Presence override","align":0,"text_font":16,"text_color":"black"}
 {"page":1,"id":13,"obj":"switch","x":180,"y":37,"w":50,"h":25,"radius":25,"radius2":15}
 
-{"page":1,"id":21,"obj":"label","x":8,"y":65,"w":30,"h":35,"text":"\uF054","align":1,"text_font":32,"text_color":"black"}
-{"page":1,"id":22,"obj":"label","x":48,"y":75,"w":130,"h":30,"text":"Front gate","align":0,"text_font":16,"text_color":"black"}
+{"page":1,"id":21,"obj":"label","x":8,"y":65,"w":30,"h":35,"text":"\uF020","align":1,"text_font":32,"text_color":"black"}
+{"page":1,"id":22,"obj":"label","x":48,"y":75,"w":130,"h":30,"text":"Front door light","align":0,"text_font":16,"text_color":"black"}
 {"page":1,"id":23,"obj":"switch","x":180,"y":72,"w":50,"h":25,"radius":25,"radius2":15}
 
 {"page":1,"id":31,"obj":"label","x":8,"y":100,"w":30,"h":35,"text":"\uF054","align":1,"text_font":32,"text_color":"black"}
-{"page":1,"id":32,"obj":"label","x":48,"y":110,"w":130,"h":30,"text":"Back yard","align":0,"text_font":16,"text_color":"black"}
+{"page":1,"id":32,"obj":"label","x":48,"y":110,"w":130,"h":30,"text":"Back yard light","align":0,"text_font":16,"text_color":"black"}
 {"page":1,"id":33,"obj":"switch","x":180,"y":107,"w":50,"h":25,"radius":25,"radius2":15}
 
 {"page":1,"id":41,"obj":"label","x":8,"y":135,"w":30,"h":35,"text":"\uEA7A","align":1,"text_font":32,"text_color":"black"}
