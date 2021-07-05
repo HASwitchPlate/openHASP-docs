@@ -206,11 +206,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://haswitchplate.github.io/openHASP-docs/0.6/0.6/devices/yeacreate-nscreen32/</loc>
-         <lastmod>2021-07-05</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://haswitchplate.github.io/openHASP-docs/0.6/0.6/displays/ILI9341_IPS/</loc>
          <lastmod>2021-07-05</lastmod>
          <changefreq>daily</changefreq>
