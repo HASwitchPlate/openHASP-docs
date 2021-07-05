@@ -44,12 +44,14 @@ and the hardware is also open source. Due to the extensive documentation it was 
 
 The speaker and SD card are not supported by openHASP 0.6.0.
 
-Available on
-[![Tindie](../assets/images/tindie-logo.png)](https://www.tindie.com/products/dustinwattsnl/esp32-touchdown/)
+Available from:</br>
+[:material-cart-variant: Tindie][1]{ .md-button .md-button--primary } &nbsp; 
+[:material-cart-variant: Eplop (UK)][2]{ .md-button .md-button--primary } &nbsp; 
+[:material-cart-variant: PCBway][3]{ .md-button .md-button--primary }
 
 ## Product Video
 
-![YOUTUBE](sdVtHU2Gz7Y)
+![YOUTUBE](TJTbuOdeoFw)
 
 ## Backlight Control
 
@@ -111,3 +113,7 @@ build_flags =
     -D SPI_READ_FREQUENCY=16000000
 ;endregion
 ```
+
+[1]: https://www.tindie.com/products/dustinwattsnl/esp32-touchdown/
+[2]: https://store.eplop.co.uk/product/esp32touchdown/
+[3]: https://www.pcbway.com/project/gifts_detail/ESP32_TouchDown.html

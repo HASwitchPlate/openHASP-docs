@@ -66,7 +66,7 @@ and [3.5" TFT Featherwing table top case](https://www.thingiverse.com/thing:2776
 </div>
 
 
-### About Adafruit
+<h3>About Adafruit</h3>
 
 *Adafruit invests time and resources providing open source code and libraries,
 please support Adafruit and open-source hardware by purchasing products from Adafruit!*
