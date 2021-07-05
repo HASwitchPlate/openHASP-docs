@@ -554,6 +554,8 @@ The number of the ticks on the gauge is determined from the `min`, `max` attribu
 The active area of the arc changes color based on the current hvac mode of the entity.    
 UI theme set to `Hasp Light` in plate's web interface.
 
+Note that the tab swiping dots (_p3b26_) are also handled by the custom component. Don't forget update the service call in the configuration with your plate's MQTT node name, and the command parameters if you change the page of the objects.
+
 <video width="360" height="640" controls>
   <source src="../../../assets/videos/cc_sampl_climate_control.mp4" type="video/mp4">
 Your browser does not support the video tag.
@@ -569,6 +571,7 @@ relevant **openHASP config:** (screen size 240x320)
 {"page":3,"id":23,"obj":"label","x":0,"y":95,"w":220,"h":30,"parentid":20,"text":"22.4","text_font":24,"align":"center"}
 {"page":3,"id":24,"obj":"obj","x":145,"y":245,"w":60,"h":30,"click":0}
 {"page":3,"id":25,"obj":"label","x":145,"y":245,"w":60,"h":30,"text":"00.0","text_font":24,"align":"center"}
+{"page":3,"id":26,"obj":"label","x":90,"y":220,"w":60,"h":30,"text":"#000000 \u2022# #909090 \u2022# #909090 \u2022#","text_font":24,"align":"center","text_color":"grey","border_width":0}
 {"page":3,"id":30,"obj":"tabview","x":0,"y":235,"w":240,"h":80,"btn_pos":0,"bg_opa":0,"border_width":0,"radius":0}
 {"page":3,"id":31,"obj":"tab","parentid":30}
 {"page":3,"id":32,"obj":"tab","parentid":30}
@@ -659,6 +662,22 @@ relevant **openHASP-custom-component config:**
                 {% endif -%}
               entity_id: "climate.thermostat_1"
 
+      - obj: "p3b30"  # tab dots
+        event:
+          "changed":
+            - service: openhasp.command
+              target:
+                entity_id: openhasp.your_plate
+              data:
+                keyword: p3b26.text
+                parameters: >
+                  {% if val == 0 %}
+                  {{ "#000000 \u2022# #909090 \u2022# #909090 \u2022#" | e }}
+                  {%-elif val == 1 %}
+                  {{ "#909090 \u2022# #000000 \u2022# #909090 \u2022#" | e }}
+                  {%-elif val == 2 %}
+                  {{ "#909090 \u2022# #909090 \u2022# #000000 \u2022#" | e }}
+                  {% endif %}
 
       - obj: "p3b42"  # dropdown with hvac_modes
         properties:
@@ -891,10 +910,12 @@ relevant **openHASP-custom-component config:**
       - obj: "p5b10"  # tab dots
         event:
           "changed":
-            - service: mqtt.publish
+            - service: openhasp.command
+              target:
+                entity_id: openhasp.your_plate
               data:
-                topic: hasp/your_plate/command/p5b19.text
-                payload: >
+                keyword: p8b19.text
+                parameters: >
                   {% if val == 0 %}
                   {{ "#000000 \u2022# #909090 \u2022#" | e }}
                   {%-elif val == 1 %}
