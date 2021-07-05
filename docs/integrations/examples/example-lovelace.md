@@ -32,7 +32,7 @@ To add an openHASP plate to your installation with a sample design looking a bit
 {"page":1,"id":42,"obj":"label","x":48,"y":145,"w":130,"h":30,"text":"Trash service","align":0,"text_font":16,"text_color":"black"}
 {"page":1,"id":43,"obj":"label","x":100,"y":145,"w":130,"h":30,"text":"in 6 days","align":2,"text_color":"black"}
 
-{"page":1,"id":51,"obj":"label","x":8,"y":170,"w":30,"h":35,"text":"\uE70D","align":1,"text_font":32,"text_color":"black"}
+{"page":1,"id":51,"obj":"label","x":8,"y":170,"w":30,"h":35,"text":"\uF39D","align":1,"text_font":32,"text_color":"black"}
 {"page":1,"id":52,"obj":"label","x":48,"y":180,"w":130,"h":30,"text":"Selective trash","align":0,"text_font":16,"text_color":"black"}
 {"page":1,"id":53,"obj":"label","x":100,"y":180,"w":130,"h":30,"text":"in 10 days","align":2,"text_color":"black"}
 
