@@ -48,7 +48,8 @@ There are two ways to create an object on the screen:
 | led       | Visual | [LED](#led-indicator)
 | spinner   | Visual | [Spinner](#spinner)
 | obj       | Visual | [Base Object](#base-object)
-| img :material-new-box:{ .tag-small }      | Visual | [Image](#image)
+| line :material-new-box:{ .tag-small } | Visual | [Line](#line)
+| img :material-new-box:{ .tag-small }  | Visual | [Image](#image)
 | dropdown  | Selector | [Dropdown List](#dropdown-list)
 | roller    | Selector | [Roller](#roller)
 | btnmatrix | Selector | [Button Matrix](#button-matrix)
@@ -652,6 +653,25 @@ The pop-up is centered on the screen.
 ??? example "Example `jsonl`"
     ```json
     {"page":1,"id":24,"obj":"msgbox","text":"A message box with two buttons","options":["Apply","Close"]}
+    ```
+
+
+## Line  :material-new-box:{ .tag-medium }  
+**obj:`line`**
+
+![lv_line](../assets/images/objects/lv_ex_line_1.png)
+
+| Property | Value        | Default | Description
+|----------|--------------|---------|--------------------------
+| points   | [JSON array][11] | ""  | The name of the image file
+| auto_size| [bool][2]    | true    | Automatically set the size of the line object to the outer bounds
+| y_invert | [bool][2]    | false   | The y direction might be conter-intuitive in some cases so the y coordinates can be inverted
+
+The points parameter is a JSON array of [x,y] coordinates, for example `[[10,25],[100,25],[100,0]]`.
+
+??? example "Example `jsonl`"
+    ```json
+    {"page":1,"id":33,"obj":"line","points":[[10,25],[100,25],[100,0]],"auto_size":0,"y_invert":1}
     ```
 
 
