@@ -1338,13 +1338,13 @@ You can 3D print a custom enclosure.</p>
     <span class="na">-D TFT_ROTATION</span><span class="o">=</span><span class="s">0 ; 0=0, 1=90, 2=180 or 3=270 degree</span>
     <span class="na">-D TFT_WIDTH</span><span class="o">=</span><span class="s">320</span>
     <span class="na">-D TFT_HEIGHT</span><span class="o">=</span><span class="s">480</span>
-    <span class="na">-D TFT_MISO</span><span class="o">=</span><span class="s">19    ;// (leave TFT SDO disconnected if other SPI devices share MISO)</span>
+    <span class="na">-D TFT_MISO</span><span class="o">=</span><span class="s">19    ; don&#39;t connect TFT SDO if other SPI devices share MISO</span>
     <span class="na">-D TFT_MOSI</span><span class="o">=</span><span class="s">23</span>
     <span class="na">-D TFT_SCLK</span><span class="o">=</span><span class="s">18</span>
-    <span class="na">-D TFT_CS</span><span class="o">=</span><span class="s">15      ;// Chip select control pin</span>
-    <span class="na">-D TFT_DC</span><span class="o">=</span><span class="s">2       ;// Data Command control pin</span>
-    <span class="na">-D TFT_RST</span><span class="o">=</span><span class="s">4      ;// Reset pin (could connect to RST pin)</span>
-    <span class="na">-D TFT_BCKL</span><span class="o">=</span><span class="s">32    ;None, configurable via web UI (e.g. 2 for D4)</span>
+    <span class="na">-D TFT_CS</span><span class="o">=</span><span class="s">15      ; Chip select control pin</span>
+    <span class="na">-D TFT_DC</span><span class="o">=</span><span class="s">2       ; Data Command control pin</span>
+    <span class="na">-D TFT_RST</span><span class="o">=</span><span class="s">4      ; Reset pin (could connect to RST pin)</span>
+    <span class="na">-D TFT_BCKL</span><span class="o">=</span><span class="s">32    ; Default, configurable via web UI (e.g. 2 for D4)</span>
     <span class="na">-D SUPPORT_TRANSACTIONS</span>
     <span class="na">-D TOUCH_CS</span><span class="o">=</span><span class="s">21</span>
     <span class="na">-D TOUCH_DRIVER</span><span class="o">=</span><span class="s">2046 ; XPT2606 Resistive touch panel driver</span>
