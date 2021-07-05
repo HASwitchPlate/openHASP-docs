@@ -188,16 +188,20 @@ This component implements some specific services to make interactions with the p
         The contents of the file are loaded line by line thus `"page":X` has to be defined for each object.
     
     Unless you clear the page first, the objects will be updated.
-<!--
-**openhasp.publish**
-:   Wraps up any raw [command](../../commands.md) so that it can be called against the _entity_id_ of the plate. Useful in Automations and Blueprints.
+
+**openhasp.command**
+:   Wraps up any [command](../../../commands.md) so that it can be called against the _entity_id_ of the plate. Useful in Automations and Blueprints.
 
     !!! warning
-        This service handles data without any input validation. Only for advanced users. No support for any problems caused by using this!
+        This service handles data without input validation. Only for advanced users. No support for any problems caused by using this!
 
+**openhasp.config**
+:   Wraps up any raw [submodule config](../../../commands.md/#configsubmodule) so that it can be called against the _entity_id_ of the plate. Useful in Automations and Blueprints.
 
--->
-Check out the example automations for further information on how to use these services within Home Assistant.
+    !!! warning
+        This service handles data without input validation. Only for advanced users. No support for any problems caused by using this!
+
+Check out the example confgurations and automations to learn how to use these services within Home Assistant.
 
 ## Send jsonl files from Home Assistant
 
