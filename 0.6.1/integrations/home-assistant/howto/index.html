@@ -1443,17 +1443,24 @@ The brightness of the screen when idle (before long idle). Numeric value between
 </div>
 <p>Unless you clear the page first, the objects will be updated.</p>
 </dd>
+<dt><strong>openhasp.command</strong></dt>
+<dd>
+<p>Wraps up any <a href="../../../commands.md">command</a> so that it can be called against the <em>entity_id</em> of the plate. Useful in Automations and Blueprints.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This service handles data without input validation. Only for advanced users. No support for any problems caused by using this!</p>
+</div>
+</dd>
+<dt><strong>openhasp.config</strong></dt>
+<dd>
+<p>Wraps up any raw <a href="../../../commands.md/#configsubmodule">submodule config</a> so that it can be called against the <em>entity_id</em> of the plate. Useful in Automations and Blueprints.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This service handles data without input validation. Only for advanced users. No support for any problems caused by using this!</p>
+</div>
+</dd>
 </dl>
-<!--
-**openhasp.publish**
-:   Wraps up any raw [command](../../commands.md) so that it can be called against the _entity_id_ of the plate. Useful in Automations and Blueprints.
-
-    !!! warning
-        This service handles data without any input validation. Only for advanced users. No support for any problems caused by using this!
-
-
--->
-<p>Check out the example automations for further information on how to use these services within Home Assistant.</p>
+<p>Check out the example confgurations and automations to learn how to use these services within Home Assistant.</p>
 <h2 id="send-jsonl-files-from-home-assistant">Send jsonl files from Home Assistant<a class="headerlink" href="#send-jsonl-files-from-home-assistant" title="Permanent link">~</a></h2>
 <p>You can save your jsonl files in Home Assistant too. The custom component can send the contents of the file when the plate connects.
 To allow read-access to the folder, add these lines to your <code>configuration.yaml</code>:</p>
