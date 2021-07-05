@@ -19,7 +19,7 @@ The display is connected via an 8-bit parallel bus resulting in a fast performan
 openHASP can take advantage of the 320x480 resolution to show a large custom user-interface.
 
 On the back there is an expansion port with 12 GPIOs so you can expand the capabilities as needed.
-However, there is [no support for backlight control][2]. The display is always-on.
+However, there is no support for backlight control. The display is always-on.
 
 The development board can be powered via micro USB or the 5V-in JST connector.
 
@@ -90,4 +90,3 @@ build_flags =
 ```
 
 [1]: https://store.yeacreate.com/products/3
-[2]: https://github.com/yeacreate-opensources/Nscreen_32/issues/2
