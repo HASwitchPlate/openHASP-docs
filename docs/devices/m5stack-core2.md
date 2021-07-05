@@ -32,6 +32,13 @@ Dimensions: 54 x 54 x 16mm
 | Internal Battery |
 | Capacitive Touchscreen |
 
+Available from:
+
+[:material-cart-variant: M5stack][1]{ .md-button .md-button--primary } &nbsp; 
+[:material-cart-variant: Mouser][2]{ .md-button .md-button--primary } &nbsp; 
+[:material-cart-variant: Digikey][3]{ .md-button .md-button--primary } &nbsp; 
+[:material-cart-variant: Amazon][3]{ .md-button .md-button--primary }
+
 ## Video
 
 ![YOUTUBE](axN3O232WN0)
@@ -49,3 +56,8 @@ The M5Stack series comes with an opensource library to give you a jump start in 
 including a Getting Started guide, examples and API reference.
 
 Visit the [M5Stack Github](https://github.com/m5stack/M5Stack) repo.
+
+[1]: https://shop.m5stack.com/products/m5stack-core2-esp32-iot-development-kit
+[2]: https://www.mouser.com/new/m5stack/m5stack-core2-iot-dev-kit/
+[3]: https://www.digikey.com/en/product-highlight/m/m5stack/core2-esp32-development-kit
+[4]: https://www.amazon.com/dp/B07RTKTJZB/
