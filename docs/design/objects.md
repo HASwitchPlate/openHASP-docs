@@ -618,10 +618,10 @@ While pressing and dragging the `cpicker` object the following events are sent: 
 | Property | Value            | Default  | Description
 |----------|------------------|----------|--------------
 | options  | [json array][11] | "Text"   | Json array of [strings][10] where each element is the label of a button. Use `"\n"` for a new line of buttons
-| val      | [int8][9]        | 0        | The number of the active button, starting at 0
 | align    | [string][10]     | `center` | Text alignment: `left`, `center`, `right` 
 | toggle   | [bool][2]        | false    | All buttons behave as toggle buttons or normal buttons
 | one_check| [bool][2]        | false    | Allow only one button to be checked (toggled) at once
+| val      | [int8][9]        | 0        | The number of the active button, starting at 0. In conjunction with `toggle` and `one_check` set it to `-1` to deactivate all buttons
 
 The [styling properties][12] apply to *all* buttons in the matrix.
 To change the color of a single label you can prefix the text with a `#RRGGBB` hexadecimal color code and close with a single hash `#` tag.
