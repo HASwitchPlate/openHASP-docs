@@ -2916,12 +2916,6 @@ You first create the <code>tabview</code> object and then add <code>tab</code> o
 <td>Json array of <a href="../data-types/#string">strings</a> where each element is the label of a button. Use <code>"\n"</code> for a new line of buttons</td>
 </tr>
 <tr>
-<td>val</td>
-<td><a href="../data-types/#integer">int8</a></td>
-<td>0</td>
-<td>The number of the active button, starting at 0</td>
-</tr>
-<tr>
 <td>align</td>
 <td><a href="../data-types/#string">string</a></td>
 <td><code>center</code></td>
@@ -2938,6 +2932,12 @@ You first create the <code>tabview</code> object and then add <code>tab</code> o
 <td><a href="../data-types/#boolean">bool</a></td>
 <td>false</td>
 <td>Allow only one button to be checked (toggled) at once</td>
+</tr>
+<tr>
+<td>val</td>
+<td><a href="../data-types/#integer">int8</a></td>
+<td>0</td>
+<td>The number of the active button, starting at 0. In conjunction with <code>toggle</code> and <code>one_check</code> set it to <code>-1</code> to deactivate all buttons</td>
 </tr>
 </tbody>
 </table>
@@ -3100,7 +3100,7 @@ The pop-up is centered on the screen.</p>
 <div class="md-source-date">
   <small>
     
-      Last update: 2021-07-05
+      Last update: 2021-07-06
     
   </small>
 </div>
