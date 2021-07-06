@@ -236,6 +236,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://haswitchplate.github.io/openHASP-docs/0.6.1/0.6.1/displays/lolin-tft-shield/</loc>
+         <lastmod>2021-07-06</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://haswitchplate.github.io/openHASP-docs/0.6.1/0.6.1/installation/esp32/</loc>
          <lastmod>2021-07-06</lastmod>
          <changefreq>daily</changefreq>
