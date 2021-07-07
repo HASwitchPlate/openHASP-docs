@@ -107,14 +107,17 @@ Value is an arbitrary text label drawn on top of an object. It can be a lightwei
 
 Properties for [line](../objects/#line), [line meter](../objects/#line-meter) objects.
 
-| Property          |  Type         | Description
-| :---              |  :---:        | :---
-| line_color        | [color][1]    | Color of the line
-| line_opa          | [uint8][3]    | Opacity level of the line [0-255]
-| line_width        | [int16][3]    | Width of a scale line in the active region (also see `scale_end_line_width` below)
-| line_rounded      | [bool][2]     | `true` = draw rounded line endings. Default = `false`
-| line_dash_width   | [int16][3]    | Width of dash. Dashing is drawn only for horizontal or vertical lines. `0` = disable dash (= default)
-| line_dash_gap     | [int16][3]    | Gap between two dash line. Dashing is drawn only for horizontal or vertical lines. `0` = disable dash (= default)
+| Property               |  Type         | Description
+| :---                   |  :---:        | :---
+| line_color             | [color][1]    | Color of the line
+| line_opa               | [uint8][3]    | Opacity level of the line [0-255]
+| line_width             | [int16][3]    | Width of a scale line in the active region (also see `scale_end_line_width` below), or gauge minor ticks thickness
+| line_width1            | [int16][3]    | Gauge major ticks thickness
+| line_color             | [color][1]    | Starting color of the gauge minor ticks
+| line_color1            | [color][1]    | Starting color of the gauge major ticks
+| line_rounded           | [bool][2]     | `true` = draw rounded line endings. Default = `false`
+| line_dash_width        | [int16][3]    | Width of dash. Dashing is drawn only for horizontal or vertical lines. `0` = disable dash (= default)
+| line_dash_gap          | [int16][3]    | Gap between two dash line. Dashing is drawn only for horizontal or vertical lines. `0` = disable dash (= default)
 
 ## Scale
 
@@ -123,16 +126,14 @@ The properties for styling the scale of [line meter](../objects/#line-meter), [g
 | Property               |  Type         | Description
 | :---                   |  :---:        | :---
 | scale_grad_color       | [color][1]    | Gradient to this color on the scale lines, or gauge minor ticks
+| scale_grad_color1      | [color][1]    | Gradient to this color on the gauge major ticks
 | scale_end_color        | [color][1]    | Color of the scale lines in the end region, or gauge minor ticks / critical area
+| scale_end_color1       | [color][1]    | Color of the gauge major ticks in the critical area
 | scale_width            | [int16][3]    | Width of the scale in the normal region, or length of gauge minor ticks
+| scale_width1           | [int16][3]    | Length of the gauge major ticks
 | scale_border_width     | [int16][3]    | Width of a border drawn on the outer side of the scale in the normal region
 | scale_end_line_width   | [int16][3]    | Width of a scale line in the end region
 | scale_end_border_width | [int16][3]    | Width of a border drawn on the outer side of the scale in the end region
-| line_color             | [color][1]    | Starting color of the gauge minor ticks
-| line_color1            | [color][1]    | Starting color of the gauge major ticks
-| scale_grad_color1      | [color][1]    | Gradient to this color on the gauge major ticks
-| scale_end_color1       | [color][1]    | Color of the gauge major ticks in the critical area
-| scale_width1           | [int16][3]    | Length of the gauge major ticks
 
 ## Needle
 
