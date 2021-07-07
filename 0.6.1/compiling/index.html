@@ -1234,7 +1234,7 @@ sudo apt install git python3-venv
 </code></pre></div>
 </td></tr></table></p>
 <h2 id="clone-openhasp">Clone openHASP<a class="headerlink" href="#clone-openhasp" title="Permanent link">~</a></h2>
-<p>Make sure to add the <code>--recursive</code> parameter when cloning the project from GitHub. Otherwise git will not download the required submodules in the <code>/lib</code> subdirectory.</p>
+<p>Make sure to add the <code>--recursive</code> parameter when cloning the project from GitHub. Otherwise git will not download the required submodules in the <code>/lib</code> subdirectory. To clone the current development version (<em>main</em> branch):</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>git clone --recursive https://github.com/HASwitchPlate/openHASP
 </code></pre></div>
 </td></tr></table>
@@ -1248,7 +1248,7 @@ sudo apt install git python3-venv
 <span class="normal">3</span>
 <span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>git clone --recursive https://github.com/HASwitchPlate/openHASP
 <span class="nb">cd</span> openHASP
-git checkout <span class="m">0</span>.6.0
+git checkout <span class="m">0</span>.6.1
 git submodule update --init --recursive
 </code></pre></div>
 </td></tr></table>
@@ -1295,7 +1295,7 @@ Also uncomment <code>-DUSE_CONFIG_OVERRIDE</code> in <code>platformio_override.i
 <p><img alt="Build All" src="../assets/images/compiling/build_all.png" /></p>
 <p>You can now run "Build" or "Build All" in PlatformIO to compile (all) the firmware.</p>
 <h3 id="native-linux-build">Native Linux build<a class="headerlink" href="#native-linux-build" title="Permanent link">~</a></h3>
-<p>For native linux_sdl builds, you also need:
+<p>For native linux_sdl builds, you also need (for Debian-based distros):
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>sudo apt update
 sudo apt install build-essential libsdl2-dev
