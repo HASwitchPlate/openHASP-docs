@@ -1683,7 +1683,22 @@ Some objects allow for more complex syling, effectively changing its appearance 
 <tr>
 <td align="left">line_width</td>
 <td align="center"><a href="../data-types/#integer">int16</a></td>
-<td align="left">Width of a scale line in the active region (also see <code>scale_end_line_width</code> below)</td>
+<td align="left">Width of a scale line in the active region (also see <code>scale_end_line_width</code> below), or gauge minor ticks thickness</td>
+</tr>
+<tr>
+<td align="left">line_width1</td>
+<td align="center"><a href="../data-types/#integer">int16</a></td>
+<td align="left">Gauge major ticks thickness</td>
+</tr>
+<tr>
+<td align="left">line_color</td>
+<td align="center"><a href="../data-types/#colors">color</a></td>
+<td align="left">Starting color of the gauge minor ticks</td>
+</tr>
+<tr>
+<td align="left">line_color1</td>
+<td align="center"><a href="../data-types/#colors">color</a></td>
+<td align="left">Starting color of the gauge major ticks</td>
 </tr>
 <tr>
 <td align="left">line_rounded</td>
@@ -1719,14 +1734,29 @@ Some objects allow for more complex syling, effectively changing its appearance 
 <td align="left">Gradient to this color on the scale lines, or gauge minor ticks</td>
 </tr>
 <tr>
+<td align="left">scale_grad_color1</td>
+<td align="center"><a href="../data-types/#colors">color</a></td>
+<td align="left">Gradient to this color on the gauge major ticks</td>
+</tr>
+<tr>
 <td align="left">scale_end_color</td>
 <td align="center"><a href="../data-types/#colors">color</a></td>
 <td align="left">Color of the scale lines in the end region, or gauge minor ticks / critical area</td>
 </tr>
 <tr>
+<td align="left">scale_end_color1</td>
+<td align="center"><a href="../data-types/#colors">color</a></td>
+<td align="left">Color of the gauge major ticks in the critical area</td>
+</tr>
+<tr>
 <td align="left">scale_width</td>
 <td align="center"><a href="../data-types/#integer">int16</a></td>
 <td align="left">Width of the scale in the normal region, or length of gauge minor ticks</td>
+</tr>
+<tr>
+<td align="left">scale_width1</td>
+<td align="center"><a href="../data-types/#integer">int16</a></td>
+<td align="left">Length of the gauge major ticks</td>
 </tr>
 <tr>
 <td align="left">scale_border_width</td>
@@ -1742,31 +1772,6 @@ Some objects allow for more complex syling, effectively changing its appearance 
 <td align="left">scale_end_border_width</td>
 <td align="center"><a href="../data-types/#integer">int16</a></td>
 <td align="left">Width of a border drawn on the outer side of the scale in the end region</td>
-</tr>
-<tr>
-<td align="left">line_color</td>
-<td align="center"><a href="../data-types/#colors">color</a></td>
-<td align="left">Starting color of the gauge minor ticks</td>
-</tr>
-<tr>
-<td align="left">line_color1</td>
-<td align="center"><a href="../data-types/#colors">color</a></td>
-<td align="left">Starting color of the gauge major ticks</td>
-</tr>
-<tr>
-<td align="left">scale_grad_color1</td>
-<td align="center"><a href="../data-types/#colors">color</a></td>
-<td align="left">Gradient to this color on the gauge major ticks</td>
-</tr>
-<tr>
-<td align="left">scale_end_color1</td>
-<td align="center"><a href="../data-types/#colors">color</a></td>
-<td align="left">Color of the gauge major ticks in the critical area</td>
-</tr>
-<tr>
-<td align="left">scale_width1</td>
-<td align="center"><a href="../data-types/#integer">int16</a></td>
-<td align="left">Length of the gauge major ticks</td>
 </tr>
 </tbody>
 </table>
