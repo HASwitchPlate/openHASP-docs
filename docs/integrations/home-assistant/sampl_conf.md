@@ -1,3 +1,6 @@
+!!! note
+    Some examples below may generate errors during Home Assistant startup. Log messages like `Error while processing template` or `Template variable error: 'None' has no attribute 'last_changed'` etc. can be caused by the fact that openHASP component loads faster than the other integrations you have set up, from where you want to pull data. Because the data required by openHASP component is not yet available, an error is generated. But as soon as Home Assistant finishes loading everything, and all the data you've configured is available, things will be normal. Nevertheless the log should be checked regularly to find repetitive problems.
+
 ## Display clock and temperature
 
 ![screenshot](../../assets/images/screenshots/cc_sampl_clocktemp.png)
