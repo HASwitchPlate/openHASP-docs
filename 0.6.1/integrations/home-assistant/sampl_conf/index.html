@@ -1304,7 +1304,11 @@
                 
                   <h1>Example Configurations</h1>
                 
-                <h2 id="display-clock-and-temperature">Display clock and temperature<a class="headerlink" href="#display-clock-and-temperature" title="Permanent link">~</a></h2>
+                <div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Some examples below may generate errors during Home Assistant startup. Log messages like <code>Error while processing template</code> or <code>Template variable error: 'None' has no attribute 'last_changed'</code> etc. can be caused by the fact that openHASP component loads faster than the other integrations you have set up, from where you want to pull data. Because the data required by openHASP component is not yet available, an error is generated. But as soon as Home Assistant finishes loading everything, and all the data you've configured is available, things will be normal. Nevertheless the log should be checked regularly to find repetitive problems.</p>
+</div>
+<h2 id="display-clock-and-temperature">Display clock and temperature<a class="headerlink" href="#display-clock-and-temperature" title="Permanent link">~</a></h2>
 <p><img alt="screenshot" src="../../../assets/images/screenshots/cc_sampl_clocktemp.png" /></p>
 <p>The easiest example is to display the state of a clock and a temperature sensor from Home Assistant, using <em>label</em> objects in openHASP.</p>
 <p>Create a label object to display the temperature value, a separate label object to display the unit and a third label object for the clock:</p>
