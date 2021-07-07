@@ -1009,7 +1009,7 @@
   
     <li class="md-nav__item">
       <a href="../../displays/MSPxxxx/" class="md-nav__link">
-        MSPxxxx
+        MSP Series (Red PCB)
       </a>
     </li>
   
@@ -1239,8 +1239,9 @@
 </div>
 
 <p>The Makerfabs ESP32 TFT Touch development board incorporates a 3.2” or 3.5” touch display, based on ESP32-WROVER, with a built-in 2M pixel OV2640 camera, which makes it a very suitable platform for any ESP32 project.
-There is a version with capacitive and resistive touch:</p>
-<p>On the back there is an SD-card slot, USB-C connector and expansion port with 14 GPIOs.</p>
+There is a version with capacitive and resistive touch.</p>
+<p>On the back there is an SD-card slot, USB-C connector and expansion port with 14 GPIOs.
+However, the camera can not be used at the same time as the expansion port!</p>
 <h3 id="models">Models<a class="headerlink" href="#models" title="Permanent link">~</a></h3>
 <table>
 <thead>
@@ -1308,12 +1309,17 @@ There is a version with capacitive and resistive touch:</p>
 </tr>
 </tbody>
 </table>
+<p>The camera and SD card are not supported by openHASP 0.6.1.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>An optional <a href="https://www.makerfabs.com/esp32-touch-indoor-environment-expansion.html">environmental expansion board</a> can be added to provide a temperature, humidity and air quality sensor.</p>
 </div>
 <h2 id="video">Video<a class="headerlink" href="#video" title="Permanent link">~</a></h2>
-<p><img alt="YOUTUBE" src="kkXKwpDRld0" /></p>
+<div class="embed-responsive embed-responsive-16by9" style="max-width:560px; margin:auto;">
+    <iframe title="YouTube video player" src="https://www.youtube.com/embed/kkXKwpDRld0?rel=0&controls=1" class="embed-responsive-item" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+    </iframe>
+</div>
+
 <h2 id="documentation">Documentation<a class="headerlink" href="#documentation" title="Permanent link">~</a></h2>
 <p>More information can be found in the Makerfabs Wiki and there are plenty of example projects available on the Github repository.</p>
 <p><a class="md-button md-button" href="https://www.makerfabs.com/wiki/index.php?title=ESP32_TFT_LCD_with_Camera(3.5%27%27)"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m19 2-5 4.5v11l5-4.5V2M6.5 5C4.55 5 2.45 5.4 1 6.5v14.66c0 .25.25.5.5.5.1 0 .15-.07.25-.07 1.35-.65 3.3-1.09 4.75-1.09 1.95 0 4.05.4 5.5 1.5 1.35-.85 3.8-1.5 5.5-1.5 1.65 0 3.35.31 4.75 1.06.1.05.15.03.25.03.25 0 .5-.25.5-.5V6.5c-.6-.45-1.25-.75-2-1V19c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5V6.5C10.55 5.4 8.45 5 6.5 5z"/></svg></span> Makerfabs Wiki</a> &nbsp;
@@ -1399,19 +1405,24 @@ There is a version with capacitive and resistive touch:</p>
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tracking", "search.suggest", "search.highlight", "navigation.top"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.477d984a.min.js", "version": {"default": 0.6, "provider": "mike"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tracking", "search.suggest", "search.highlight", "navigation.top"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.477d984a.min.js", "version": {"default": 0.6, "provider": "mike"}}</script>
     
      
       <script src="../../assets/javascripts/bundle.82b56eb2.min.js"></script>
       
     
-<script src="../../js/youtube.js"></script>
+<!-- <script src="../../js/youtube.js"></script> -->
 <script src="../../js/ekko-lightbox.min.js"></script>
 <script>
     $(document).on('click', '[data-toggle="lightbox"]', function(event) {
         event.preventDefault();
         $(this).ekkoLightbox();
     });
+
+    // Open external links in new window
+    $(document.links).filter(function() {
+        return this.hostname != window.location.hostname;
+    }).attr('target', '_blank');
 
     // Show warning banner when displaying old content versions
     window.addEventListener("DOMContentLoaded", function() {

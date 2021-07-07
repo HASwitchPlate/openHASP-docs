@@ -1037,7 +1037,7 @@
   
     <li class="md-nav__item">
       <a href="../MSPxxxx/" class="md-nav__link">
-        MSPxxxx
+        MSP Series (Red PCB)
       </a>
     </li>
   
@@ -1413,7 +1413,11 @@ There are 3 ways to connect an ESP32:</p>
 <p>(²) Because the board is developed for the D1-mini, you must <em>only</em> solder a row of 1x8 male pins to pads <code>TXD-5V</code> and <code>RST-3V3</code> each.</p>
 </div>
 <h2 id="product-video">Product Video<a class="headerlink" href="#product-video" title="Permanent link">~</a></h2>
-<p><img alt="YOUTUBE" src="bNdo3G_vKTY" /></p>
+<div class="embed-responsive embed-responsive-16by9" style="max-width:560px; margin:auto;">
+    <iframe title="YouTube video player" src="https://www.youtube.com/embed/bNdo3G_vKTY?rel=0&controls=1" class="embed-responsive-item" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+    </iframe>
+</div>
+
 <h2 id="backlight-control">Backlight Control<a class="headerlink" href="#backlight-control" title="Permanent link">~</a></h2>
 <p>To use PWM dimming on the Lolin TFT 2.4" you must connect the TFT-LED pin to either D1 or D2.
 <strong>D1 is recommended</strong> for backlight control and configured by default in the firmware.</p>
@@ -1503,19 +1507,24 @@ also the D1-mini has D4 connected to the on-board LED and boot fails if pulled L
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tracking", "search.suggest", "search.highlight", "navigation.top"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.477d984a.min.js", "version": {"default": 0.6, "provider": "mike"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tracking", "search.suggest", "search.highlight", "navigation.top"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.477d984a.min.js", "version": {"default": 0.6, "provider": "mike"}}</script>
     
      
       <script src="../../assets/javascripts/bundle.82b56eb2.min.js"></script>
       
     
-<script src="../../js/youtube.js"></script>
+<!-- <script src="../../js/youtube.js"></script> -->
 <script src="../../js/ekko-lightbox.min.js"></script>
 <script>
     $(document).on('click', '[data-toggle="lightbox"]', function(event) {
         event.preventDefault();
         $(this).ekkoLightbox();
     });
+
+    // Open external links in new window
+    $(document.links).filter(function() {
+        return this.hostname != window.location.hostname;
+    }).attr('target', '_blank');
 
     // Show warning banner when displaying old content versions
     window.addEventListener("DOMContentLoaded", function() {
