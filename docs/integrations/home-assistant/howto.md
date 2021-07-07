@@ -190,13 +190,13 @@ This component implements some specific services to make interactions with the p
     Unless you clear the page first, the objects will be updated.
 
 **openhasp.command**
-:   Wraps up any [command](../../../commands.md) so that it can be called against the _entity_id_ of the plate. Useful in Automations and Blueprints.
+:   Wraps up any [command](../../commands.md) so that it can be called against the _entity_id_ of the plate. Useful in Automations and Blueprints.
 
     !!! warning
         This service handles data without input validation. Only for advanced users. No support for any problems caused by using this!
 
 **openhasp.config**
-:   Wraps up any raw [submodule config](../../../commands.md/#configsubmodule) so that it can be called against the _entity_id_ of the plate. Useful in Automations and Blueprints.
+:   Wraps up any raw [submodule config](../../commands.md/#configsubmodule) so that it can be called against the _entity_id_ of the plate. Useful in Automations and Blueprints.
 
     !!! warning
         This service handles data without input validation. Only for advanced users. No support for any problems caused by using this!
