@@ -33,7 +33,7 @@ theme:
         icon: material/toggle-switch
         name: Light mode
   features:
-#    - navigation.instant    # When this is enabled the $(document).ready(function() won't run !
+    - navigation.instant    # When this is enabled the $(document).ready(function() won't run from youtube.js!
     - navigation.tracking
 #    - navigation.tabs
 #    - navigation.tabs.sticky

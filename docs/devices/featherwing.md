@@ -47,12 +47,17 @@ You can connect it to a PWM output pin, like `GPIO 21`:
 
 ### 2.4" TFT Featherwing
 
-![YOUTUBE](0JUA1IHCI-o?start=630&end=0)
+<div class="embed-responsive embed-responsive-16by9" style="max-width:560px; margin:auto;">
+    <iframe title="YouTube video player" src="https://www.youtube.com/embed/0JUA1IHCI-o?start=630&end=0&rel=0&controls=1" class="embed-responsive-item" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+    </iframe>
+</div>
 
 ### 3.5" TFT Featherwing
 
-![YOUTUBE](Wt_QXeipqpk?start=268&end=0)
-
+<div class="embed-responsive embed-responsive-16by9" style="max-width:560px; margin:auto;">
+    <iframe title="YouTube video player" src="https://www.youtube.com/embed/Wt_QXeipqpk?start=268&end=0&rel=0&controls=1" class="embed-responsive-item" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+    </iframe>
+</div>
 
 ## 3D Printed Case
 

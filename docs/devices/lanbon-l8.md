@@ -174,7 +174,10 @@ The switch supports several wiring configurations:
 
 ## Videos
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/Rce5yp4mhXI?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class="embed-responsive embed-responsive-16by9" style="max-width:560px; margin:auto;">
+    <iframe title="YouTube video player" src="https://www.youtube.com/embed/Rce5yp4mhXI?rel=0&controls=1" class="embed-responsive-item" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+    </iframe>
+</div>
 
 <video width="360" height="640" controls>
   <source src="../../assets/videos/cc_sampl_climate_control.mp4" type="video/mp4">

@@ -61,8 +61,10 @@ The Lolin TFT 2.4" headers are plug-and-play compatible with these development b
 
 ## Product Video
 
-![YOUTUBE](bNdo3G_vKTY)
-
+<div class="embed-responsive embed-responsive-16by9" style="max-width:560px; margin:auto;">
+    <iframe title="YouTube video player" src="https://www.youtube.com/embed/bNdo3G_vKTY?rel=0&controls=1" class="embed-responsive-item" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+    </iframe>
+</div>
 
 ## Backlight Control
 

@@ -36,7 +36,10 @@ You can 3D print a custom enclosure.
 
 ## Video
 
-![YOUTUBE](s2X4BQ9VmEU)
+<div class="embed-responsive embed-responsive-16by9" style="max-width:560px; margin:auto;">
+    <iframe title="YouTube video player" src="https://www.youtube.com/embed/s2X4BQ9VmEU?rel=0&controls=1" class="embed-responsive-item" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+    </iframe>
+</div>
 
 ## 3D Printed Cases
 

@@ -41,7 +41,10 @@ On the back there is an SD-card slot, USB-C connector and expansion port with 14
 
 ## Video
 
-![YOUTUBE](kkXKwpDRld0)
+<div class="embed-responsive embed-responsive-16by9" style="max-width:560px; margin:auto;">
+    <iframe title="YouTube video player" src="https://www.youtube.com/embed/kkXKwpDRld0?rel=0&controls=1" class="embed-responsive-item" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+    </iframe>
+</div>
 
 ## Documentation
 
