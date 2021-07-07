@@ -123,7 +123,7 @@ The properties for styling the scale of [line meter](../objects/#line-meter), [g
 | Property               |  Type         | Description
 | :---                   |  :---:        | :---
 | scale_grad_color       | [color][1]    | Gradient to this color on the scale lines, or gauge minor ticks
-| scale_end_color        | [color][1]    | Color of the scale lines in the end region, or gauge minor ticks
+| scale_end_color        | [color][1]    | Color of the scale lines in the end region, or gauge minor ticks / critical area
 | scale_width            | [int16][3]    | Width of the scale in the normal region, or length of gauge minor ticks
 | scale_border_width     | [int16][3]    | Width of a border drawn on the outer side of the scale in the normal region
 | scale_end_line_width   | [int16][3]    | Width of a scale line in the end region
@@ -131,6 +131,7 @@ The properties for styling the scale of [line meter](../objects/#line-meter), [g
 | line_color             | [color][1]    | Starting color of the gauge minor ticks
 | line_color1            | [color][1]    | Starting color of the gauge major ticks
 | scale_grad_color1      | [color][1]    | Gradient to this color on the gauge major ticks
+| scale_end_color1       | [color][1]    | Color of the gauge major ticks in the critical area
 | scale_width1           | [int16][3]    | Length of the gauge major ticks
 
 ## Needle
@@ -152,10 +153,10 @@ The properties for styling the arc of [arc](../objects/#arc) objects.
 
 | Property               |  Type      | Description
 | :---                   |   :---:    | :---
-| line_width             | [int16][9] | width of the arc background (default 20)
-| line_color             | [color][1] | color of the arc background
-| line_width1            | [int16][9] | width of the arc indicator (default 20)
-| line_color1            | [color][1] | color of the arc indicator
+| line_width             | [int16][9] | Width of the arc background (default 20)
+| line_color             | [color][1] | Color of the arc background
+| line_width1            | [int16][9] | Width of the arc indicator (default 20)
+| line_color1            | [color][1] | Color of the arc indicator
   
 ## Image
 
