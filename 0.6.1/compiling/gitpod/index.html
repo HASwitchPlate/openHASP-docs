@@ -1231,7 +1231,7 @@ If you don't want to install an IDE (Integrated Development Environment) like Pl
 <p>Click on one of the links below, and that will automatically load Gitpod with openHASP prepared for creating your custom build:</p>
 <ul>
 <li>Master release: <a href="https://gitpod.io#https://github.com/HASwitchPlate/openHASP">https://gitpod.io#https://github.com/HASwitchPlate/openHASP</a></li>
-<li>Development branch (for example 0.6.0): <a href="https://gitpod.io#https://github.com/HASwitchPlate/openHASP/tree/0.6.0">https://gitpod.io#https://github.com/HASwitchPlate/openHASP/tree/0.6.0</a></li>
+<li>Development branch (for example 0.6.1): <a href="https://gitpod.io#https://github.com/HASwitchPlate/openHASP/tree/0.6.1">https://gitpod.io#https://github.com/HASwitchPlate/openHASP/tree/0.6.1</a></li>
 </ul>
 <p>After Gitpod loads the project, you will be greeted by the main window.</p>
 <p><a href="../../assets/images/compiling/gitpod.png" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-8" data-title="GitPod" data-footer="">
@@ -1397,10 +1397,10 @@ Save the file by pressing <code>Ctrl + S</code> or selecting <code>Save</code> f
         $(this).ekkoLightbox();
     });
 
-    // Open external links in new window
-    $(document.links).filter(function() {
-        return this.hostname != window.location.hostname;
-    }).attr('target', '_blank');
+    // Open external links in new window -- doesn't work with mkdocs feature: navigation.instant
+    // $(document.links).filter(function() {
+    //     return this.hostname != window.location.hostname;
+    // }).attr('target', '_blank');
 
     // Show warning banner when displaying old content versions
     window.addEventListener("DOMContentLoaded", function() {

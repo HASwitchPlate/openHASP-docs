@@ -1213,7 +1213,7 @@
 The display is connected via an 8-bit parallel bus resulting in a fast performance.
 openHASP can take advantage of the 320x480 resolution to show a large custom user-interface.</p>
 <p>On the back there is an expansion port with 12 GPIOs so you can expand the capabilities as needed.
-Unfortunately, there is <a href="https://github.com/yeacreate-opensources/Nscreen_32/issues/2">no support for backlight control</a>. The display is always-on.</p>
+Unfortunately, there is <a href="https://github.com/yeacreate-opensources/Nscreen_32/issues/2" target="_blank">no support for backlight control</a>. The display is always-on.</p>
 <p>The development board can be powered via micro USB or the 5V-in JST connector.</p>
 <table>
 <thead>
@@ -1245,8 +1245,8 @@ Unfortunately, there is <a href="https://github.com/yeacreate-opensources/Nscree
 </tr>
 </tbody>
 </table>
-<p><a class="md-button md-button--primary" href="https://store.yeacreate.com/products/3"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 20c0 1.11-.89 2-2 2a2 2 0 0 1-2-2c0-1.11.89-2 2-2a2 2 0 0 1 2 2M7 18c-1.11 0-2 .89-2 2a2 2 0 0 0 2 2c1.11 0 2-.89 2-2s-.89-2-2-2m.2-3.37-.03.12c0 .14.11.25.25.25H19v2H7a2 2 0 0 1-2-2c0-.35.09-.68.24-.96l1.36-2.45L3 4H1V2h3.27l.94 2H20c.55 0 1 .45 1 1 0 .17-.05.34-.12.5l-3.58 6.47c-.34.61-1 1.03-1.75 1.03H8.1l-.9 1.63M8.5 11H10V9H7.56l.94 2M11 9v2h3V9h-3m3-1V6h-3v2h3m3.11 1H15v2h1l1.11-2m1.67-3H15v2h2.67l1.11-2M6.14 6l.94 2H10V6H6.14z"/></svg></span> YeaCreate Store</a></p>
-<p><a href="https://github.com/yeacreate-opensources/Nscreen_32/blob/master/documents/Schematic.pdf">Schematics</a></p>
+<p><a class="md-button md-button--primary" href="https://store.yeacreate.com/products/3" target="_blank"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 20c0 1.11-.89 2-2 2a2 2 0 0 1-2-2c0-1.11.89-2 2-2a2 2 0 0 1 2 2M7 18c-1.11 0-2 .89-2 2a2 2 0 0 0 2 2c1.11 0 2-.89 2-2s-.89-2-2-2m.2-3.37-.03.12c0 .14.11.25.25.25H19v2H7a2 2 0 0 1-2-2c0-.35.09-.68.24-.96l1.36-2.45L3 4H1V2h3.27l.94 2H20c.55 0 1 .45 1 1 0 .17-.05.34-.12.5l-3.58 6.47c-.34.61-1 1.03-1.75 1.03H8.1l-.9 1.63M8.5 11H10V9H7.56l.94 2M11 9v2h3V9h-3m3-1V6h-3v2h3m3.11 1H15v2h1l1.11-2m1.67-3H15v2h2.67l1.11-2M6.14 6l.94 2H10V6H6.14z"/></svg></span> YeaCreate Store</a></p>
+<p><a href="https://github.com/yeacreate-opensources/Nscreen_32/blob/master/documents/Schematic.pdf" target="_blank">Schematics</a></p>
 <h2 id="video">Video<a class="headerlink" href="#video" title="Permanent link">~</a></h2>
 <p>Nscreen32 is the first device to receive the LVGL Certified Board label:</p>
 <div class="embed-responsive embed-responsive-16by9" style="max-width:560px; margin:auto;">
@@ -1419,10 +1419,10 @@ Unfortunately, there is <a href="https://github.com/yeacreate-opensources/Nscree
         $(this).ekkoLightbox();
     });
 
-    // Open external links in new window
-    $(document.links).filter(function() {
-        return this.hostname != window.location.hostname;
-    }).attr('target', '_blank');
+    // Open external links in new window -- doesn't work with mkdocs feature: navigation.instant
+    // $(document.links).filter(function() {
+    //     return this.hostname != window.location.hostname;
+    // }).attr('target', '_blank');
 
     // Show warning banner when displaying old content versions
     window.addEventListener("DOMContentLoaded", function() {

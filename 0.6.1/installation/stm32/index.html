@@ -1236,16 +1236,16 @@ table th:last-of-type {
 </tr>
 <tr>
 <td align="left">Dev. Board*</td>
-<td align="center">[D1 mini ESP8266][3]</td>
-<td align="center">[D1 mini ESP32][4]</td>
-<td align="center">[TTGO T7 v1.5 Mini32][5]</td>
+<td align="center">[D1 mini ESP8266][3]{target=_blank}</td>
+<td align="center">[D1 mini ESP32][4]{target=_blank}</td>
+<td align="center">[TTGO T7 v1.5 Mini32][5]{target=_blank}</td>
 <td align="center">STM32F407VET/ZGT Black</td>
 </tr>
 <tr>
 <td align="left">Firmware</td>
-<td align="center"><a href="../installation/">Download</a></td>
-<td align="center"><a href="../installation/">Download</a></td>
-<td align="center"><a href="../installation/">Download</a></td>
+<td align="center"><a href="../installation/" target="_blank">Download</a></td>
+<td align="center"><a href="../installation/" target="_blank">Download</a></td>
+<td align="center"><a href="../installation/" target="_blank">Download</a></td>
 <td align="center"></td>
 </tr>
 </tbody>
@@ -1275,12 +1275,12 @@ The pinout of each header &amp; display is different and are <strong>not</strong
     <figcaption>STM32F407VET6 Black (v2.0 and v2.1)</figcaption></p>
 <ul>
 <li>Purchase Links:<ul>
-<li><a href="https://www.aliexpress.com/item/32618222721.html">AliExpress</a></li>
-<li><a href="https://www.aliexpress.com/item/33013274704.html">AliExpress</a></li>
-<li><a href="https://www.aliexpress.com/item/1000006481553.html">AliExpress</a> (! V2.0 !)</li>
+<li><a href="https://www.aliexpress.com/item/32618222721.html" target="_blank">AliExpress</a></li>
+<li><a href="https://www.aliexpress.com/item/33013274704.html" target="_blank">AliExpress</a></li>
+<li><a href="https://www.aliexpress.com/item/1000006481553.html" target="_blank">AliExpress</a> (! V2.0 !)</li>
 </ul>
 </li>
-<li>Documentation can be found on <a href="https://github.com/mcauser/BLACK_F407VE">GitHub</a> </li>
+<li>Documentation can be found on <a href="https://github.com/mcauser/BLACK_F407VE" target="_blank">GitHub</a> </li>
 </ul>
 <h4 id="stm32f407zgt6-black-v30-with-1-mb-flash">STM32F407ZGT6 Black (V3.0) with 1 MB flash<a class="headerlink" href="#stm32f407zgt6-black-v30-with-1-mb-flash" title="Permanent link">~</a></h4>
 <p><img alt="STM32F407ZET6-STM32F4XX-1" src="../../assets/images/boards/STM32F407ZET6-STM32F4XX-1.jpg" />
@@ -1289,13 +1289,13 @@ The pinout of each header &amp; display is different and are <strong>not</strong
     <figcaption>STM32F407ZGT6 Black (v3.0)</figcaption></p>
 <ul>
 <li>Purchase Link: </li>
-<li>Documentation can be found on <a href="https://github.com/mcauser/BLACK_F407ZG">GitHub</a> </li>
+<li>Documentation can be found on <a href="https://github.com/mcauser/BLACK_F407ZG" target="_blank">GitHub</a> </li>
 </ul>
 <div class="admonition warning">
 <p class="admonition-title">Attention</p>
 <p>The STM32F4 boards do not have network connectivity. You can use a compatible network adapter and configure it in PlatformIO.</p>
 </div>
-<p><sub>Images of STM32 boards are <a href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a> from https://stm32-base.org/</sub></p>
+<p><sub>Images of STM32 boards are <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a> from https://stm32-base.org/</sub></p>
                 
                   
                     
@@ -1380,10 +1380,10 @@ The pinout of each header &amp; display is different and are <strong>not</strong
         $(this).ekkoLightbox();
     });
 
-    // Open external links in new window
-    $(document.links).filter(function() {
-        return this.hostname != window.location.hostname;
-    }).attr('target', '_blank');
+    // Open external links in new window -- doesn't work with mkdocs feature: navigation.instant
+    // $(document.links).filter(function() {
+    //     return this.hostname != window.location.hostname;
+    // }).attr('target', '_blank');
 
     // Show warning banner when displaying old content versions
     window.addEventListener("DOMContentLoaded", function() {

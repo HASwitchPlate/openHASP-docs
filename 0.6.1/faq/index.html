@@ -1223,7 +1223,7 @@ This default font is just intended to get the device setup, then you can Upload 
 <h3 id="how-to-use-fontawesome-icons"><img alt="❓" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/2753.svg" title=":question:" /> How to use Fontawesome icons?<a class="headerlink" href="#how-to-use-fontawesome-icons" title="Permanent link">~</a></h3>
 <p>Upload another .zi file named fontawesome<em>xx</em>.zi of the same point size as the normal text .zi font.
 e.g. If your custom font is <code>arial24.zi´, you should also add a</code>fontawesome24.zi` file.</p>
-<p>You can download <code>fontawesome.zip</code> from the <a href="https://github.com/fvanroie/HMI-Font-Pack/releases">HMI Font Pack</a> repository.</p>
+<p>You can download <code>fontawesome.zip</code> from the <a href="https://github.com/fvanroie/HMI-Font-Pack/releases" target="_blank">HMI Font Pack</a> repository.</p>
 <h3 id="is-there-a-file-browser-built-in"><img alt="❓" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/2753.svg" title=":question:" /> Is there a file browser built-in?<a class="headerlink" href="#is-there-a-file-browser-built-in" title="Permanent link">~</a></h3>
 <p>Since v0.6.0 there is a native file browser included on ESP32.</p>
 <p>You can use it to upload, download and edit files on the flash partition of the ESP32.
@@ -1317,10 +1317,10 @@ Using that webpage, you can right-click and delete files:</p>
         $(this).ekkoLightbox();
     });
 
-    // Open external links in new window
-    $(document.links).filter(function() {
-        return this.hostname != window.location.hostname;
-    }).attr('target', '_blank');
+    // Open external links in new window -- doesn't work with mkdocs feature: navigation.instant
+    // $(document.links).filter(function() {
+    //     return this.hostname != window.location.hostname;
+    // }).attr('target', '_blank');
 
     // Show warning banner when displaying old content versions
     window.addEventListener("DOMContentLoaded", function() {

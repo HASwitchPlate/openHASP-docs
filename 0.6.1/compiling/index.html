@@ -1223,9 +1223,9 @@
 
 <h2 id="install-visual-studio-code">Install Visual Studio Code<a class="headerlink" href="#install-visual-studio-code" title="Permanent link">~</a></h2>
 <ul>
-<li>on <a href="https://code.visualstudio.com/docs/setup/linux">Linux</a></li>
-<li>on <a href="https://code.visualstudio.com/docs/setup/mac">MacOS</a></li>
-<li>on <a href="https://code.visualstudio.com/docs/setup/windows">Windows</a></li>
+<li>on <a href="https://code.visualstudio.com/docs/setup/linux" target="_blank">Linux</a></li>
+<li>on <a href="https://code.visualstudio.com/docs/setup/mac" target="_blank">MacOS</a></li>
+<li>on <a href="https://code.visualstudio.com/docs/setup/windows" target="_blank">Windows</a></li>
 </ul>
 <p>Additional packages on Linux:
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
@@ -1254,7 +1254,7 @@ git submodule update --init --recursive
 </td></tr></table>
 <h2 id="open-in-platformio">Open in PlatformIO<a class="headerlink" href="#open-in-platformio" title="Permanent link">~</a></h2>
 <p><img alt="Install PIO" src="../assets/images/compiling/install_pio.png" /></p>
-<p>Open the project folder in <a href="https://code.visualstudio.com">Visual Studio Code</a>.
+<p>Open the project folder in <a href="https://code.visualstudio.com" target="_blank">Visual Studio Code</a>.
 You will receive a popup to install PlatformIO IDE if it is not already installed.
 This will automatically install all PlatformIO dependencies and the MCU compiler frameworks needed.</p>
 <p><img alt="PIO Installed" src="../assets/images/compiling/pio_installed.png" /></p>
@@ -1302,18 +1302,18 @@ sudo apt install build-essential libsdl2-dev
 </code></pre></div>
 </td></tr></table></p>
 <h3 id="native-macos-build">Native MacOS build<a class="headerlink" href="#native-macos-build" title="Permanent link">~</a></h3>
-<p>For native darwin_sdl builds, you also need <a href="https://brew.sh">Homebrew</a>:</p>
+<p>For native darwin_sdl builds, you also need <a href="https://brew.sh" target="_blank">Homebrew</a>:</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>brew install gcc sdl2
 </code></pre></div>
 </td></tr></table>
 <h3 id="native-windows-build">Native Windows build<a class="headerlink" href="#native-windows-build" title="Permanent link">~</a></h3>
 <p>For native windows_sdl builds, you also need MingW:</p>
-<p>Use <a href="https://www.msys2.org/">MSYS2</a></p>
+<p>Use <a href="https://www.msys2.org/" target="_blank">MSYS2</a></p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>pacman -S mingw-w64-x86_64-gcc mingw-w64-x86_64-SDL2
 </code></pre></div>
 </td></tr></table>
 <p>Add the path to your Mingw-w64 <code>bin</code> folder to the Windows PATH environment
-variable (usually <code>C:\msys64\mingw64\bin</code>). See <a href="https://code.visualstudio.com/docs/cpp/config-mingw#_prerequisites">instruction, 4</a>.</p>
+variable (usually <code>C:\msys64\mingw64\bin</code>). See <a href="https://code.visualstudio.com/docs/cpp/config-mingw#_prerequisites" target="_blank">instruction, 4</a>.</p>
 <!--
 ## Development
 -->
@@ -1411,10 +1411,10 @@ tavern-ci .<span class="se">\t</span>est<span class="se">\</span>
         $(this).ekkoLightbox();
     });
 
-    // Open external links in new window
-    $(document.links).filter(function() {
-        return this.hostname != window.location.hostname;
-    }).attr('target', '_blank');
+    // Open external links in new window -- doesn't work with mkdocs feature: navigation.instant
+    // $(document.links).filter(function() {
+    //     return this.hostname != window.location.hostname;
+    // }).attr('target', '_blank');
 
     // Show warning banner when displaying old content versions
     window.addEventListener("DOMContentLoaded", function() {

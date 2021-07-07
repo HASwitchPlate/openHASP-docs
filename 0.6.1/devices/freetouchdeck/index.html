@@ -1270,8 +1270,8 @@
 <li>ILI9488 TFT SPI 4-WIRE</li>
 <li>XPT2046 resistive touch controller</li>
 </ul>
-<p>This board is created for the <a href="https://github.com/DustinWatts/FreeTouchDeck">FreeTouchDeck project</a>
-and the <a href="https://www.pcbway.com/project/shareproject/ESP32_TFT_Combiner_V1.html">PCB-combiner board</a> is open source. Due to the extensive documentation it was easy to port openHASP to the FreeTouchDeck.</p>
+<p>This board is created for the <a href="https://github.com/DustinWatts/FreeTouchDeck" target="_blank">FreeTouchDeck project</a>
+and the <a href="https://www.pcbway.com/project/shareproject/ESP32_TFT_Combiner_V1.html" target="_blank">PCB-combiner board</a> is open source. Due to the extensive documentation it was easy to port openHASP to the FreeTouchDeck.</p>
 <table>
 <thead>
 <tr>
@@ -1289,7 +1289,7 @@ and the <a href="https://www.pcbway.com/project/shareproject/ESP32_TFT_Combiner_
 <td align="left">No PSram</td>
 </tr>
 <tr>
-<td align="left"><a href="https://www.instructables.com/A-Bluetooth-ESP32-TFT-Touch-Macro-Keypad/">Build Instructions</a></td>
+<td align="left"><a href="https://www.instructables.com/A-Bluetooth-ESP32-TFT-Touch-Macro-Keypad/" target="_blank">Build Instructions</a></td>
 <td align="left">Resistive touch</td>
 </tr>
 </tbody>
@@ -1303,7 +1303,8 @@ You can 3D print a custom enclosure.</p>
 </div>
 
 <h2 id="3d-printed-cases">3D Printed Cases<a class="headerlink" href="#3d-printed-cases" title="Permanent link">~</a></h2>
-<p>You can find a 3D printable case on <a href="(https://www.thingiverse.com/thing:4661069)">Thingiverse</a> and <a href="https://github.com/DustinWatts/FreeTouchDeck/tree/master/case/ESP32_TFT_Combiner_Case">Github</a>.</p>
+<p>You can find a 3D printable case on <a href="https://www.thingiverse.com/thing:4661069" target="_blank">Thingiverse</a>
+and <a href="https://github.com/DustinWatts/FreeTouchDeck/tree/master/case/ESP32_TFT_Combiner_Case" target="_blank">Github</a>.</p>
 <div class="row justify-content-center">
         <a href="../../assets/images/devices/freetouchdeck-case1.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4" data-title="FreeTouchDeck in 3D printed case" data-footer="Original image by Dustin Watts - Used with permission">
             <img src="../../assets/images/devices/freetouchdeck-case1.jpg" class="img-fluid">
@@ -1323,7 +1324,7 @@ You can 3D print a custom enclosure.</p>
 <h2 id="gpio-settings">GPIO Settings<a class="headerlink" href="#gpio-settings" title="Permanent link">~</a></h2>
 <p>These pins can be used freely as GPIOs:</p>
 <h2 id="pcb-blueprint">PCB Blueprint<a class="headerlink" href="#pcb-blueprint" title="Permanent link">~</a></h2>
-<p>The PCB Combiner is fully <a href="https://github.com/DustinWatts/ESP32_TFT_Combiner">Open Source Hardware</a>:</p>
+<p>The PCB Combiner is fully <a href="https://github.com/DustinWatts/ESP32_TFT_Combiner" target="_blank">Open Source Hardware</a>:</p>
 <ul>
 <li>Schematics</li>
 <li>PCB layout</li>
@@ -1466,10 +1467,10 @@ You can 3D print a custom enclosure.</p>
         $(this).ekkoLightbox();
     });
 
-    // Open external links in new window
-    $(document.links).filter(function() {
-        return this.hostname != window.location.hostname;
-    }).attr('target', '_blank');
+    // Open external links in new window -- doesn't work with mkdocs feature: navigation.instant
+    // $(document.links).filter(function() {
+    //     return this.hostname != window.location.hostname;
+    // }).attr('target', '_blank');
 
     // Show warning banner when displaying old content versions
     window.addEventListener("DOMContentLoaded", function() {

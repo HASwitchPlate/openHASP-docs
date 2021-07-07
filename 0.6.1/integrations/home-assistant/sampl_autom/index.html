@@ -1390,7 +1390,7 @@ You need to allow Home Assistant components to access this directory, this can b
 
 With the [services](#custom-component/services) `openhasp.clear_page` and `openhasp.load_pages` you can clear one or all the pages of your plate, and reload their configuration from the server, respectively.
 
-For the example automation below i've created an [input_boolean](https://www.home-assistant.io/integrations/input_boolean/) named `load_pages_plate_my_room` in order to have a switch in Lovelace UI to trigger this manually.
+For the example automation below i've created an [input_boolean](https://www.home-assistant.io/integrations/input_boolean/){target=_blank} named `load_pages_plate_my_room` in order to have a switch in Lovelace UI to trigger this manually.
 
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
@@ -1454,7 +1454,7 @@ _Note:_ You can also use the `path` directive in the component config to load th
 <hr />
 <h2 id="prevent-burn-in-of-the-lcd-screen">Prevent burn-in of the LCD screen<a class="headerlink" href="#prevent-burn-in-of-the-lcd-screen" title="Permanent link">~</a></h2>
 <p>You can use this to protect and prolonge the lifetime of the LCD screens, thus being more green and generating less hazardous waste.</p>
-<p>Wall mounted LCD screns main problem is that they display the same picture 99.999% of the time. Even if somebody turns off backlight during the night or dark periods, the LCD screen keeps showing the same picture, seen by nobody. There are high chances that this will lead to screen <a href="https://github.com/HASwitchPlate/openHASP/issues/134">picture burn-in</a> after a few years of operation.</p>
+<p>Wall mounted LCD screns main problem is that they display the same picture 99.999% of the time. Even if somebody turns off backlight during the night or dark periods, the LCD screen keeps showing the same picture, seen by nobody. There are high chances that this will lead to screen <a href="https://github.com/HASwitchPlate/openHASP/issues/134" target="_blank">picture burn-in</a> after a few years of operation.</p>
 <h3>Pixel training</h3>
 
 <p>One way to reduce this is to "train" the pixels periodically with completely different other content.
@@ -1755,10 +1755,10 @@ Don't forget to adjust the size of the object to your screen if it's not 240x320
         $(this).ekkoLightbox();
     });
 
-    // Open external links in new window
-    $(document.links).filter(function() {
-        return this.hostname != window.location.hostname;
-    }).attr('target', '_blank');
+    // Open external links in new window -- doesn't work with mkdocs feature: navigation.instant
+    // $(document.links).filter(function() {
+    //     return this.hostname != window.location.hostname;
+    // }).attr('target', '_blank');
 
     // Show warning banner when displaying old content versions
     window.addEventListener("DOMContentLoaded", function() {

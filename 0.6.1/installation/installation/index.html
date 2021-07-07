@@ -1175,7 +1175,7 @@
                 <h1>Installation</h1>
 
 <h2 id="download-the-firmware">Download the firmware<a class="headerlink" href="#download-the-firmware" title="Permanent link">~</a></h2>
-<p>Go to the <a href="https://github.com/HASwitchPlate/openHASP/releases">releases</a> page on GitHub to download the latest openHASP binaries.</p>
+<p>Go to the <a href="https://github.com/HASwitchPlate/openHASP/releases" target="_blank">releases</a> page on GitHub to download the latest openHASP binaries.</p>
 <p>There are currently 2 download options, pick the one appropriate for your hardware:</p>
 <ul>
 <li>openHASP-0.2.0-esp32_ili9341_spi.bin + boot files</li>
@@ -1208,7 +1208,7 @@ esptool.py --port <span class="s2">&quot;COM1&quot;</span> write_flash 0xe000 bo
 </td></tr></table>
 <h3 id="flash-esp8266">Flash ESP8266<a class="headerlink" href="#flash-esp8266" title="Permanent link">~</a></h3>
 <p>Unlike the ESP32, for ESP8266 you only need one single <code>.bin</code> file:</p>
-<h4 id="using-tasmotizer-windows">Using <a href="https://github.com/tasmota/tasmotizer">Tasmotizer</a> (Windows)<a class="headerlink" href="#using-tasmotizer-windows" title="Permanent link">~</a></h4>
+<h4 id="using-tasmotizer-windows">Using <a href="https://github.com/tasmota/tasmotizer" target="_blank">Tasmotizer</a> (Windows)<a class="headerlink" href="#using-tasmotizer-windows" title="Permanent link">~</a></h4>
 <h4 id="using-esp-toolpy">Using esp-tool.py<a class="headerlink" href="#using-esp-toolpy" title="Permanent link">~</a></h4>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>esptool.py -p <span class="s2">&quot;COM1&quot;</span> write_flash --flash_mode qio --flash_size 4m 0x0 d1-mini-esp8266_ili9341_&lt;version&gt;.bin
 </code></pre></div>
@@ -1326,10 +1326,10 @@ esptool.py --port <span class="s2">&quot;COM1&quot;</span> write_flash 0xe000 bo
         $(this).ekkoLightbox();
     });
 
-    // Open external links in new window
-    $(document.links).filter(function() {
-        return this.hostname != window.location.hostname;
-    }).attr('target', '_blank');
+    // Open external links in new window -- doesn't work with mkdocs feature: navigation.instant
+    // $(document.links).filter(function() {
+    //     return this.hostname != window.location.hostname;
+    // }).attr('target', '_blank');
 
     // Show warning banner when displaying old content versions
     window.addEventListener("DOMContentLoaded", function() {

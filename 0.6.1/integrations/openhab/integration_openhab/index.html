@@ -1204,7 +1204,7 @@
 <img alt="Screenshot" src="../../../assets/images/screenshots/demo_jaffa3.png" /></p>
 <p>We call <em>plate</em> any device running openHASP in your system.</p>
 <h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">~</a></h2>
-<p>The openHAB configuration files to have this demo load automatically can be found <a href="https://github.com/HASwitchPlate/openHASP-demo">here</a>.</p>
+<p>The openHAB configuration files to have this demo load automatically can be found <a href="https://github.com/HASwitchPlate/openHASP-demo" target="_blank">here</a>.</p>
 <p>Update the IP-address for your MQTT-broker in the <code>haspLVGL_demo.things</code> file. </p>
 <p>Make sure you have your plate connected to the network and to your MQTT boker, and your topic is set to <code>demo_plate</code>.</p>
 <h2 id="code">Code<a class="headerlink" href="#code" title="Permanent link">~</a></h2>
@@ -1361,10 +1361,10 @@
         $(this).ekkoLightbox();
     });
 
-    // Open external links in new window
-    $(document.links).filter(function() {
-        return this.hostname != window.location.hostname;
-    }).attr('target', '_blank');
+    // Open external links in new window -- doesn't work with mkdocs feature: navigation.instant
+    // $(document.links).filter(function() {
+    //     return this.hostname != window.location.hostname;
+    // }).attr('target', '_blank');
 
     // Show warning banner when displaying old content versions
     window.addEventListener("DOMContentLoaded", function() {

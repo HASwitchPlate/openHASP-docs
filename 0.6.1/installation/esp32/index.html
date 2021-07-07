@@ -1196,11 +1196,11 @@
                 
                 <h1 id="flash-esp32">Flash ESP32<a class="headerlink" href="#flash-esp32" title="Permanent link">~</a></h1>
 <h2 id="download-the-firmware">Download the firmware<a class="headerlink" href="#download-the-firmware" title="Permanent link">~</a></h2>
-<p>Go to the <a href="https://github.com/HASwitchPlate/openHASP/releases">releases</a> page on GitHub to download the latest openHASP binaries.</p>
+<p>Go to the <a href="https://github.com/HASwitchPlate/openHASP/releases" target="_blank">releases</a> page on GitHub to download the latest openHASP binaries.</p>
 <p>Get the <em>full</em> binary file for your ESP32 device: <em>e.g.</em> d1-mini-esp32_ili9341_full_4MB_v0.6.0.bin</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>You can also download the <em>nightly</em> openHASP firmware.zip file from the <a href="https://github.com/HASwitchPlate/openHASP/actions">Actions tab</a> on Github.</p>
+<p>You can also download the <em>nightly</em> openHASP firmware.zip file from the <a href="https://github.com/HASwitchPlate/openHASP/actions" target="_blank">Actions tab</a> on Github.</p>
 </div>
 <h2 id="flash-esp32_1">Flash ESP32<a class="headerlink" href="#flash-esp32_1" title="Permanent link">~</a></h2>
 <div class="admonition important">
@@ -1225,12 +1225,12 @@ esptool.py --port COM1 --baud <span class="m">921600</span> write_flash 0x0 d1-m
 <p>Change <code>COM1</code> to the correct port on your computer. If you get an error at the end of the flash procedure, you can try with a lower the baudrate eg. 460800.</p>
 </div>
 <input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">Tasmota-PyFlasher <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 12V6.75l6-1.32v6.48L3 12m17-9v8.75l-10 .15V5.21L20 3M3 13l6 .09v6.81l-6-1.15V13m17 .25V22l-10-1.91V13.1l10 .15z"/></svg></span></label><div class="tabbed-content">
-<p><a href="https://github.com/tasmota/tasmota-pyflasher/releases/tag/1.0">Tasmota-PyFlasher</a> is a simple GUI tool for flashing ESP32 firmware wihout any installation.</p>
+<p><a href="https://github.com/tasmota/tasmota-pyflasher/releases/tag/1.0" target="_blank">Tasmota-PyFlasher</a> is a simple GUI tool for flashing ESP32 firmware wihout any installation.</p>
 <p><img alt="Tasmota-PyFlasher" src="../../assets/images/esp32-pyflasher.png" /></p>
 <p>Change <code>COM7</code> to the correct port on your computer.</p>
 </div>
 <input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><label for="__tabbed_1_3">ESP Flash Tools <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 12V6.75l6-1.32v6.48L3 12m17-9v8.75l-10 .15V5.21L20 3M3 13l6 .09v6.81l-6-1.15V13m17 .25V22l-10-1.91V13.1l10 .15z"/></svg></span></label><div class="tabbed-content">
-<p>Espressif provides their own <a href="https://www.espressif.com/en/support/download/other-tools">Flash Download Tools</a> for Windows.</p>
+<p>Espressif provides their own <a href="https://www.espressif.com/en/support/download/other-tools" target="_blank">Flash Download Tools</a> for Windows.</p>
 <p><img alt="Flash Download Tools" src="../../assets/images/esp32-espressif-flash.png" /></p>
 <p>Change <code>COM90</code> to the correct port on your computer.</p>
 </div>
@@ -1319,10 +1319,10 @@ esptool.py --port COM1 --baud <span class="m">921600</span> write_flash 0x0 d1-m
         $(this).ekkoLightbox();
     });
 
-    // Open external links in new window
-    $(document.links).filter(function() {
-        return this.hostname != window.location.hostname;
-    }).attr('target', '_blank');
+    // Open external links in new window -- doesn't work with mkdocs feature: navigation.instant
+    // $(document.links).filter(function() {
+    //     return this.hostname != window.location.hostname;
+    // }).attr('target', '_blank');
 
     // Show warning banner when displaying old content versions
     window.addEventListener("DOMContentLoaded", function() {
