@@ -609,6 +609,20 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#needle" class="md-nav__link">
+    Needle
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#arc" class="md-nav__link">
+    Arc
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#image" class="md-nav__link">
     Image
   </a>
@@ -1283,6 +1297,20 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#needle" class="md-nav__link">
+    Needle
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#arc" class="md-nav__link">
+    Arc
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#image" class="md-nav__link">
     Image
   </a>
@@ -1632,7 +1660,7 @@ Some objects allow for more complex syling, effectively changing its appearance 
 </tbody>
 </table>
 <h2 id="line">Line<a class="headerlink" href="#line" title="Permanent link">~</a></h2>
-<p>Properties for <a href="../objects/#line-meter">line meter</a> objects.</p>
+<p>Properties for <a href="../objects/#line">line</a>, <a href="../objects/#line-meter">line meter</a> objects.</p>
 <table>
 <thead>
 <tr>
@@ -1658,6 +1686,11 @@ Some objects allow for more complex syling, effectively changing its appearance 
 <td align="left">Width of a scale line in the active region (also see <code>scale_end_line_width</code> below)</td>
 </tr>
 <tr>
+<td align="left">line_rounded</td>
+<td align="center"><a href="../data-types/#boolean">bool</a></td>
+<td align="left"><code>true</code> = draw rounded line endings. Default = <code>false</code></td>
+</tr>
+<tr>
 <td align="left">line_dash_width</td>
 <td align="center"><a href="../data-types/#integer">int16</a></td>
 <td align="left">Width of dash. Dashing is drawn only for horizontal or vertical lines. <code>0</code> = disable dash (= default)</td>
@@ -1667,15 +1700,10 @@ Some objects allow for more complex syling, effectively changing its appearance 
 <td align="center"><a href="../data-types/#integer">int16</a></td>
 <td align="left">Gap between two dash line. Dashing is drawn only for horizontal or vertical lines. <code>0</code> = disable dash (= default)</td>
 </tr>
-<tr>
-<td align="left">line_rounded</td>
-<td align="center"><a href="../data-types/#boolean">bool</a></td>
-<td align="left"><code>true</code> = draw rounded line endings. Default = <code>false</code></td>
-</tr>
 </tbody>
 </table>
 <h2 id="scale">Scale<a class="headerlink" href="#scale" title="Permanent link">~</a></h2>
-<p>The properties for styling the scale of <a href="../objects/#line-meter">line meter</a> or <a href="../objects/#gauge">gauge</a> objects.</p>
+<p>The properties for styling the scale of <a href="../objects/#line-meter">line meter</a>, <a href="../objects/#gauge">gauge</a> objects.</p>
 <table>
 <thead>
 <tr>
@@ -1688,17 +1716,17 @@ Some objects allow for more complex syling, effectively changing its appearance 
 <tr>
 <td align="left">scale_grad_color</td>
 <td align="center"><a href="../data-types/#colors">color</a></td>
-<td align="left">Make gradient to this color on the scale lines</td>
+<td align="left">Gradient to this color on the scale lines, or gauge minor ticks</td>
 </tr>
 <tr>
 <td align="left">scale_end_color</td>
 <td align="center"><a href="../data-types/#colors">color</a></td>
-<td align="left">Color of the scale lines in the end region</td>
+<td align="left">Color of the scale lines in the end region, or gauge minor ticks</td>
 </tr>
 <tr>
 <td align="left">scale_width</td>
 <td align="center"><a href="../data-types/#integer">int16</a></td>
-<td align="left">Width of the scale</td>
+<td align="left">Width of the scale in the normal region, or length of gauge minor ticks</td>
 </tr>
 <tr>
 <td align="left">scale_border_width</td>
@@ -1706,14 +1734,110 @@ Some objects allow for more complex syling, effectively changing its appearance 
 <td align="left">Width of a border drawn on the outer side of the scale in the normal region</td>
 </tr>
 <tr>
+<td align="left">scale_end_line_width</td>
+<td align="center"><a href="../data-types/#integer">int16</a></td>
+<td align="left">Width of a scale line in the end region</td>
+</tr>
+<tr>
 <td align="left">scale_end_border_width</td>
 <td align="center"><a href="../data-types/#integer">int16</a></td>
 <td align="left">Width of a border drawn on the outer side of the scale in the end region</td>
 </tr>
 <tr>
-<td align="left">scale_end_line_width</td>
+<td align="left">line_color</td>
+<td align="center"><a href="../data-types/#colors">color</a></td>
+<td align="left">Starting color of the gauge minor ticks</td>
+</tr>
+<tr>
+<td align="left">line_color1</td>
+<td align="center"><a href="../data-types/#colors">color</a></td>
+<td align="left">Starting color of the gauge major ticks</td>
+</tr>
+<tr>
+<td align="left">scale_grad_color1</td>
+<td align="center"><a href="../data-types/#colors">color</a></td>
+<td align="left">Gradient to this color on the gauge major ticks</td>
+</tr>
+<tr>
+<td align="left">scale_width1</td>
 <td align="center"><a href="../data-types/#integer">int16</a></td>
-<td align="left">Width of a scale line in the end region</td>
+<td align="left">Length of the gauge major ticks</td>
+</tr>
+</tbody>
+</table>
+<h2 id="needle">Needle<a class="headerlink" href="#needle" title="Permanent link">~</a></h2>
+<p>The properties for styling the needle of <a href="../objects/#gauge">gauge</a> objects.</p>
+<table>
+<thead>
+<tr>
+<th align="left">Property</th>
+<th align="center">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">line_width2</td>
+<td align="center"><a href="../data-types/#integer">int16</a></td>
+<td align="left">Width of the needle line</td>
+</tr>
+<tr>
+<td align="left">line_rounded2</td>
+<td align="center"><a href="../data-types/#boolean">bool</a></td>
+<td align="left"><code>true</code> = draw rounded needle ending. Default = <code>false</code></td>
+</tr>
+<tr>
+<td align="left">line_color2</td>
+<td align="center"><a href="../data-types/#colors">color</a></td>
+<td align="left">Color of the needle line</td>
+</tr>
+<tr>
+<td align="left">line_opa2</td>
+<td align="center"><a href="../data-types/#integer">uint8</a></td>
+<td align="left">Opacity level of the needle line [0-255]</td>
+</tr>
+<tr>
+<td align="left">bg_color2</td>
+<td align="center"><a href="../data-types/#colors">color</a></td>
+<td align="left">Color of the needle central circle</td>
+</tr>
+<tr>
+<td align="left">bg_opa2</td>
+<td align="center"><a href="../data-types/#integer">uint8</a></td>
+<td align="left">Opacity level of the needle central circle [0-255]</td>
+</tr>
+</tbody>
+</table>
+<h2 id="arc">Arc<a class="headerlink" href="#arc" title="Permanent link">~</a></h2>
+<p>The properties for styling the arc of <a href="../objects/#arc">arc</a> objects.</p>
+<table>
+<thead>
+<tr>
+<th align="left">Property</th>
+<th align="center">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">line_width</td>
+<td align="center">[int16][9]</td>
+<td align="left">width of the arc background (default 20)</td>
+</tr>
+<tr>
+<td align="left">line_color</td>
+<td align="center"><a href="../data-types/#colors">color</a></td>
+<td align="left">color of the arc background</td>
+</tr>
+<tr>
+<td align="left">line_width1</td>
+<td align="center">[int16][9]</td>
+<td align="left">width of the arc indicator (default 20)</td>
+</tr>
+<tr>
+<td align="left">line_color1</td>
+<td align="center"><a href="../data-types/#colors">color</a></td>
+<td align="left">color of the arc indicator</td>
 </tr>
 </tbody>
 </table>
