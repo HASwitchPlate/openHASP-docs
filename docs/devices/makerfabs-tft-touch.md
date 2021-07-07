@@ -16,9 +16,10 @@
 </div>
 
 The Makerfabs ESP32 TFT Touch development board incorporates a 3.2” or 3.5” touch display, based on ESP32-WROVER, with a built-in 2M pixel OV2640 camera, which makes it a very suitable platform for any ESP32 project.
-There is a version with capacitive and resistive touch:
+There is a version with capacitive and resistive touch.
 
 On the back there is an SD-card slot, USB-C connector and expansion port with 14 GPIOs.
+However, the camera can not be used at the same time as the expansion port!
 
 ### Models
 
@@ -34,6 +35,7 @@ On the back there is an SD-card slot, USB-C connector and expansion port with 14
 | PWM Screen dimming      | :x: no    | :x: no    | :x: no
 | | [:material-cart-variant: Buy][1]{ .md-button .md-button--primary } | [:material-cart-variant: Buy][2]{ .md-button .md-button--primary } | [:material-cart-variant: Buy][3]{ .md-button .md-button--primary }
 
+The camera and SD card are not supported by openHASP 0.6.1.
 
 !!! tip
     An optional [environmental expansion board][4] can be added to provide a temperature, humidity and air quality sensor.
