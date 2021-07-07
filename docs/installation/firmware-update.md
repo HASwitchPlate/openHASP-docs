@@ -5,7 +5,7 @@
 
 ### Serial Upload
 
-Either use [Tasmotizer](https://github.com/tasmota/tasmotizer) or esptool.py to upload a new firmware file to the ESP. This procedure is the same as the initial installation.
+Either use [Tasmotizer](https://github.com/tasmota/tasmotizer){target=_blank} or esptool.py to upload a new firmware file to the ESP. This procedure is the same as the initial installation.
 
 ### HTTP Upload
 

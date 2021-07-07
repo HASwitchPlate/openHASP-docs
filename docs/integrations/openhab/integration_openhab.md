@@ -10,7 +10,7 @@ We call _plate_ any device running openHASP in your system.
 
 ## Installation
 
-The openHAB configuration files to have this demo load automatically can be found [here](https://github.com/HASwitchPlate/openHASP-demo).
+The openHAB configuration files to have this demo load automatically can be found [here](https://github.com/HASwitchPlate/openHASP-demo){target=_blank}.
 
 Update the IP-address for your MQTT-broker in the `haspLVGL_demo.things` file. 
 

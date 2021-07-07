@@ -19,14 +19,14 @@ Features:
    - ILI9488 TFT SPI 4-WIRE
    - XPT2046 resistive touch controller
 
-This board is created for the [FreeTouchDeck project](https://github.com/DustinWatts/FreeTouchDeck)
-and the [PCB-combiner board](https://www.pcbway.com/project/shareproject/ESP32_TFT_Combiner_V1.html) is open source. Due to the extensive documentation it was easy to port openHASP to the FreeTouchDeck.
+This board is created for the [FreeTouchDeck project](https://github.com/DustinWatts/FreeTouchDeck){target=_blank}
+and the [PCB-combiner board](https://www.pcbway.com/project/shareproject/ESP32_TFT_Combiner_V1.html){target=_blank} is open source. Due to the extensive documentation it was easy to port openHASP to the FreeTouchDeck.
 
 | Pros               | Cons
 |:-----              |:----
 | 480x320 Display    | 4 MB flash
 | Price              | No PSram
-| [Build Instructions][1] | Resistive touch
+| [Build Instructions][1]{target=_blank} | Resistive touch
 
 [1]: https://www.instructables.com/A-Bluetooth-ESP32-TFT-Touch-Macro-Keypad/
 
@@ -43,7 +43,8 @@ You can 3D print a custom enclosure.
 
 ## 3D Printed Cases
 
-You can find a 3D printable case on [Thingiverse]((https://www.thingiverse.com/thing:4661069)) and [Github](https://github.com/DustinWatts/FreeTouchDeck/tree/master/case/ESP32_TFT_Combiner_Case).
+You can find a 3D printable case on [Thingiverse](https://www.thingiverse.com/thing:4661069){target=_blank}
+and [Github](https://github.com/DustinWatts/FreeTouchDeck/tree/master/case/ESP32_TFT_Combiner_Case){target=_blank}.
 
 <div class="row justify-content-center">
         <a href="../../assets/images/devices/freetouchdeck-case1.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4" data-title="FreeTouchDeck in 3D printed case" data-footer="Original image by Dustin Watts - Used with permission">
@@ -69,7 +70,7 @@ These pins can be used freely as GPIOs:
 
 ## PCB Blueprint
 
-The PCB Combiner is fully [Open Source Hardware](https://github.com/DustinWatts/ESP32_TFT_Combiner):
+The PCB Combiner is fully [Open Source Hardware](https://github.com/DustinWatts/ESP32_TFT_Combiner){target=_blank}:
 
 - Schematics
 - PCB layout

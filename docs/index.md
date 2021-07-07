@@ -4,8 +4,8 @@
 Control your home-automation devices from a customizable touchscreen UI connected via MQTT.
 
 openHASP is a re-implementation of the popular HASwitchPlate sketch created by aderusha.
-The [HASPone][1] project uses a Wemos D1 mini and requires a Nextion/TJC HMI display.
-This rewrite removes the Nextion/TJC requirement by using the [Light and Versatile Graphics Library][2]
+The [HASPone][1]{target=_blank} project uses a Wemos D1 mini and requires a Nextion/TJC HMI display.
+This rewrite removes the Nextion/TJC requirement by using the [Light and Versatile Graphics Library][2]{target=_blank}
 on the MCU to drive a commodity display.
 
 This project also adds ESP32 and STM32F4 support to take advantage of the additional hardware capabilities.
@@ -29,7 +29,7 @@ This project also adds ESP32 and STM32F4 support to take advantage of the additi
 | [Object Types / Widgets][7]| 20      | 20 | 20
 | Dynamic Objects         | :white_check_mark: yes | :white_check_mark: yes | :white_check_mark: yes
 | Theme Support           | yes     | yes     | yes
-| [Custom .zi V5 font][4] | :white_check_mark: yes (latin1) | :white_check_mark: yes (latin1) | no
+| [Custom .zi V5 font][4]{target=_blank} | :white_check_mark: yes (latin1) | :white_check_mark: yes (latin1) | no
 | MDI Icons               | :white_check_mark: yes | :white_check_mark: yes | no
 | [PNG images][8]         | :x: no | :white_check_mark: yes | :white_check_mark: yes
 | Network                 | :white_check_mark: Wi-Fi | :white_check_mark: Wi-Fi | :white_check_mark: Ethernet
@@ -38,9 +38,9 @@ This project also adds ESP32 and STM32F4 support to take advantage of the additi
 
 For support using openHASP please find us on Github, Discord or Home Assistant:
 
-[:material-github: Github Discussions][3]{ .md-button .md-button--primary }
-[:material-discord: Discord Chat][5]{ .md-button .md-button--primary }
-[:material-home-assistant: Home Assistant Forum][6]{ .md-button .md-button--primary }
+[:material-github: Github Discussions][3]{target=_blank .md-button .md-button--primary }
+[:material-discord: Discord Chat][5]{target=_blank .md-button .md-button--primary }
+[:material-home-assistant: Home Assistant Forum][6]{target=_blank .md-button .md-button--primary }
 
 
 [1]: https://github.com/HASwitchPlate/HASPone

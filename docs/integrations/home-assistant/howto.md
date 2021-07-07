@@ -1,4 +1,4 @@
-The [openHASP Custom Component][1] simplifies synchronization of objects on one or more openHASP plates with Home Assistant entities. You can map any service supported by any entity in Home Assistant to any object event in openHASP, moreover, you can set any property of any object in openHASP to any value from Home Assistant. This powerful concept gives you full freedom to create a completely customized, hardware-based control user interface for your home automation.
+The [openHASP Custom Component][1]{target=_blank} simplifies synchronization of objects on one or more openHASP plates with Home Assistant entities. You can map any service supported by any entity in Home Assistant to any object event in openHASP, moreover, you can set any property of any object in openHASP to any value from Home Assistant. This powerful concept gives you full freedom to create a completely customized, hardware-based control user interface for your home automation.
 
 We call _plate_ any device running openHASP in your system.
 
@@ -7,7 +7,7 @@ We call _plate_ any device running openHASP in your system.
 You have the option to install the custom component using HACS or via manual download:
 
 === "Using HACS"
-    [![hacs_badge](https://img.shields.io/badge/HACS-Default-orange.svg?style=for-the-badge)][3]
+    [![hacs_badge](https://img.shields.io/badge/HACS-Default-orange.svg?style=for-the-badge)][3]{target=_blank}
 
     Install using [HACS][4] in one-click. This is the preferred and recommended method, as HACS provides a very effective way to keep the component updated and/or choose between various versions.
 
@@ -21,7 +21,7 @@ You have the option to install the custom component using HACS or via manual dow
 === "Manual Install"
     Alternatively, you can also install it manually: 
 
-    [:material-file-download-outline: Download ZIP][2]{ .md-button .md-button--primary }
+    [:material-file-download-outline: Download ZIP][2]{target=_blank .md-button .md-button--primary }
 
     1. Using the tool of choice open the directory (folder) for your HA configuration (where you find `configuration.yaml`).
     2. If you do not have a `custom_components` directory there, you need to create it.
@@ -32,7 +32,7 @@ You have the option to install the custom component using HACS or via manual dow
     7. Restart Home Assistant
 
     !!! note
-        The [download][2] link points to the actual _development code_ in the _master_ branch. 
+        The [download][2]{target=_blank} link points to the actual _development code_ in the _master_ branch. 
 
 !!! warning
     You have to use component version consistently with the firmware version on your plates. For example, if your plates are at firmware version 0.6.x, you also need to use component version 0.6.x to ensure interoperability. Home Assistant will show a warning if it finds a version mismatch. Note that you can only have one version of the component installed at a time so a mix of plate versions cannot be deployed.
@@ -144,7 +144,7 @@ openhasp:
 
 #### Split configuration
 
-You can use Home Assistant's [split configuration][5] to help better organizing your config files.
+You can use Home Assistant's [split configuration][5]{target=_blank} to help better organizing your config files.
 
 Instead of keeping the configuration of all openHASP plates in Home Assistant's main config file, you can keep openHASP config separately, by adding only this to `configuration.yaml`:
 
@@ -182,7 +182,7 @@ This component implements some specific services to make interactions with the p
 **openhasp.load_pages**  
 :   Loads new design from `pages.jsonl` file from _full path_.
 
-    The file must be located in an authorised location defined by [allowlist_external_dirs](https://www.home-assistant.io/docs/configuration/basic/#allowlist_external_dirs) (in case of hassio `/config/` is the directory where Home Assistant's configuration.yaml resides, so in case of a subdirectory called `openhasp` the full path would be e.g. `/config/openhasp/pages.jsonl`, and you need to add  `/config/openhasp/` to your `allowlist_external_dirs`).
+    The file must be located in an authorised location defined by [allowlist_external_dirs](https://www.home-assistant.io/docs/configuration/basic/#allowlist_external_dirs){target=_blank} (in case of hassio `/config/` is the directory where Home Assistant's configuration.yaml resides, so in case of a subdirectory called `openhasp` the full path would be e.g. `/config/openhasp/pages.jsonl`, and you need to add  `/config/openhasp/` to your `allowlist_external_dirs`).
 
     !!! important
         The contents of the file are loaded line by line thus `"page":X` has to be defined for each object.

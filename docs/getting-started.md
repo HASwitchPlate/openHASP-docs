@@ -36,8 +36,8 @@ table th:last-of-type {
 | Display     | ILI9341 SPI | ILI9341 SPI  | ILI9341 SPI
 | Touch       | XPT2046 SPI | XPT2046 SPI  | XPT2046 SPI
 | Network     | Wi-Fi        | Wi-Fi         | Wi-Fi
-| Dev. Board* |[D1 mini ESP8266][3]|[D1 mini ESP32][4]|[TTGO T7 v1.5 Mini32][5]
-| Firmware    | [Download][1] | [Download][1]  | [Download][1]
+| Dev. Board* |[D1 mini ESP8266][3]{target=_blank}|[D1 mini ESP32][4]{target=_blank}|[TTGO T7 v1.5 Mini32][5]{target=_blank}
+| Firmware    | [Download][1]{target=_blank} | [Download][1]{target=_blank}  | [Download][1]{target=_blank}
 
 [1]: https://github.com/HASwitchPlate/openHASP/releases
 [3]: https://www.aliexpress.com/item/32643142716.html
@@ -109,9 +109,9 @@ no need to use any jumper cables:
 
 Any common ILI9341 320x240 4-wire SPI touchscreen with XPT2046 Resistive Touch driver can be used, like:
 
-- 2.4" SKU: [MSP2402](http://www.lcdwiki.com/2.4inch_SPI_Module_ILI9341_SKU:MSP2402)
-- 2.8" SKU: [MSP2807](http://www.lcdwiki.com/2.8inch_SPI_Module_ILI9341_SKU:MSP2807)
-- 3.2" SKU: [MSP3218](http://www.lcdwiki.com/3.2inch_SPI_Module_ILI9341_SKU:MSP3218)
+- 2.4" SKU: [MSP2402](http://www.lcdwiki.com/2.4inch_SPI_Module_ILI9341_SKU:MSP2402){target=_blank}
+- 2.8" SKU: [MSP2807](http://www.lcdwiki.com/2.8inch_SPI_Module_ILI9341_SKU:MSP2807){target=_blank}
+- 3.2" SKU: [MSP3218](http://www.lcdwiki.com/3.2inch_SPI_Module_ILI9341_SKU:MSP3218){target=_blank}
 
 You will need to connect [the GPIO pins](displays/MSPxxxx.md) using jumper wires.
 

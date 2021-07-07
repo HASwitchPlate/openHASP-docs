@@ -2,9 +2,9 @@
 
 ## Install Visual Studio Code
 
-- on [Linux](https://code.visualstudio.com/docs/setup/linux)
-- on [MacOS](https://code.visualstudio.com/docs/setup/mac)
-- on [Windows](https://code.visualstudio.com/docs/setup/windows)
+- on [Linux](https://code.visualstudio.com/docs/setup/linux){target=_blank}
+- on [MacOS](https://code.visualstudio.com/docs/setup/mac){target=_blank}
+- on [Windows](https://code.visualstudio.com/docs/setup/windows){target=_blank}
 
 Additional packages on Linux:
 ```bash
@@ -39,7 +39,7 @@ git submodule update --init --recursive
 
 ![Install PIO](assets/images/compiling/install_pio.png)
 
-Open the project folder in [Visual Studio Code](https://code.visualstudio.com).
+Open the project folder in [Visual Studio Code](https://code.visualstudio.com){target=_blank}.
 You will receive a popup to install PlatformIO IDE if it is not already installed.
 This will automatically install all PlatformIO dependencies and the MCU compiler frameworks needed.
 
@@ -98,7 +98,7 @@ sudo apt install build-essential libsdl2-dev
 
 ### Native MacOS build
 
-For native darwin_sdl builds, you also need [Homebrew](https://brew.sh):
+For native darwin_sdl builds, you also need [Homebrew](https://brew.sh){target=_blank}:
 
 ```sh
 brew install gcc sdl2
@@ -109,14 +109,14 @@ brew install gcc sdl2
 
 For native windows_sdl builds, you also need MingW:
 
-Use [MSYS2](https://www.msys2.org/)
+Use [MSYS2](https://www.msys2.org/){target=_blank}
 
 ```sh
 pacman -S mingw-w64-x86_64-gcc mingw-w64-x86_64-SDL2
 ```
 
 Add the path to your Mingw-w64 `bin` folder to the Windows PATH environment
-variable (usually `C:\msys64\mingw64\bin`). See [instruction, 4](https://code.visualstudio.com/docs/cpp/config-mingw#_prerequisites).
+variable (usually `C:\msys64\mingw64\bin`). See [instruction, 4](https://code.visualstudio.com/docs/cpp/config-mingw#_prerequisites){target=_blank}.
 
 <!--
 ## Development

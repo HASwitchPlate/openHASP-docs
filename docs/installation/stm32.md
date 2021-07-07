@@ -31,8 +31,8 @@ table th:last-of-type {
 | Display    | ILI9341 SPI | ILI9341 SPI  | ILI9341 SPI  | ILI9341 FSMC 
 | Touch      | XPT2046 SPI | XPT2046 SPI  | XPT2046 SPI  | XPT2046 SPI  
 | Network    | Wi-Fi        | Wi-Fi         | Wi-Fi         | Ethernet / Wi-Fi
-| Dev. Board*|[D1 mini ESP8266][3]|[D1 mini ESP32][4]|[TTGO T7 v1.5 Mini32][5]| STM32F407VET/ZGT Black
-| Firmware   | [Download][1] | [Download][1]  | [Download][1]  |
+| Dev. Board*|[D1 mini ESP8266][3]{target=_blank}|[D1 mini ESP32][4]{target=_blank}|[TTGO T7 v1.5 Mini32][5]{target=_blank}| STM32F407VET/ZGT Black
+| Firmware   | [Download][1]{target=_blank} | [Download][1]{target=_blank}  | [Download][1]{target=_blank}  |
 
 [1]: ./installation.md
 
@@ -66,10 +66,10 @@ The following boards are being tested:
     <figcaption>STM32F407VET6 Black (v2.0 and v2.1)</figcaption>
 
 - Purchase Links:
-    * [AliExpress](https://www.aliexpress.com/item/32618222721.html)
-    * [AliExpress](https://www.aliexpress.com/item/33013274704.html)
-    * [AliExpress](https://www.aliexpress.com/item/1000006481553.html) (! V2.0 !)
-- Documentation can be found on [GitHub](https://github.com/mcauser/BLACK_F407VE) 
+    * [AliExpress](https://www.aliexpress.com/item/32618222721.html){target=_blank}
+    * [AliExpress](https://www.aliexpress.com/item/33013274704.html){target=_blank}
+    * [AliExpress](https://www.aliexpress.com/item/1000006481553.html){target=_blank} (! V2.0 !)
+- Documentation can be found on [GitHub](https://github.com/mcauser/BLACK_F407VE){target=_blank} 
 
 #### STM32F407ZGT6 Black (V3.0) with 1 MB flash
   ![STM32F407ZET6-STM32F4XX-1](../assets/images/boards/STM32F407ZET6-STM32F4XX-1.jpg)
@@ -78,10 +78,10 @@ The following boards are being tested:
     <figcaption>STM32F407ZGT6 Black (v3.0)</figcaption>
 
 - Purchase Link: 
-- Documentation can be found on [GitHub](https://github.com/mcauser/BLACK_F407ZG) 
+- Documentation can be found on [GitHub](https://github.com/mcauser/BLACK_F407ZG){target=_blank} 
 
 
 !!! warning "Attention"
     The STM32F4 boards do not have network connectivity. You can use a compatible network adapter and configure it in PlatformIO.
 
-<sub>Images of STM32 boards are [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) from https://stm32-base.org/</sub>
+<sub>Images of STM32 boards are [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/){target=_blank} from https://stm32-base.org/</sub>

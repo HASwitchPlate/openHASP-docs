@@ -34,10 +34,10 @@ Dimensions: 54 x 54 x 16mm
 
 Available from:
 
-[:material-cart-variant: M5stack][1]{ .md-button .md-button--primary } &nbsp; 
-[:material-cart-variant: Mouser][2]{ .md-button .md-button--primary } &nbsp; 
-[:material-cart-variant: Digikey][3]{ .md-button .md-button--primary } &nbsp; 
-[:material-cart-variant: Amazon][3]{ .md-button .md-button--primary }
+[:material-cart-variant: M5stack][1]{target=_blank .md-button .md-button--primary } &nbsp; 
+[:material-cart-variant: Mouser][2]{target=_blank .md-button .md-button--primary } &nbsp; 
+[:material-cart-variant: Digikey][3]{target=_blank .md-button .md-button--primary } &nbsp; 
+[:material-cart-variant: Amazon][3]{target=_blank .md-button .md-button--primary }
 
 ## Video
 

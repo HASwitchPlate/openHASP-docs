@@ -45,9 +45,9 @@ and the hardware is also open source. Due to the extensive documentation it was 
 The speaker and SD card are not supported by openHASP 0.6.1.
 
 Available from:</br>
-[:material-cart-variant: Tindie][1]{ .md-button .md-button--primary } &nbsp; 
-[:material-cart-variant: Eplop (UK)][2]{ .md-button .md-button--primary } &nbsp; 
-[:material-cart-variant: PCBway][3]{ .md-button .md-button--primary }
+[:material-cart-variant: Tindie][1]{target=_blank .md-button .md-button--primary } &nbsp; 
+[:material-cart-variant: Eplop (UK)][2]{target=_blank .md-button .md-button--primary } &nbsp; 
+[:material-cart-variant: PCBway][3]{target=_blank .md-button .md-button--primary }
 
 ## Product Video
 

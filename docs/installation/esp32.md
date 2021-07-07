@@ -2,12 +2,12 @@
 
 ## Download the firmware
 
-Go to the [releases](https://github.com/HASwitchPlate/openHASP/releases) page on GitHub to download the latest openHASP binaries.
+Go to the [releases](https://github.com/HASwitchPlate/openHASP/releases){target=_blank} page on GitHub to download the latest openHASP binaries.
 
 Get the *full* binary file for your ESP32 device: *e.g.* d1-mini-esp32_ili9341_full_4MB_v0.6.0.bin
 
 !!! note
-    You can also download the *nightly* openHASP firmware.zip file from the [Actions tab](https://github.com/HASwitchPlate/openHASP/actions) on Github.
+    You can also download the *nightly* openHASP firmware.zip file from the [Actions tab](https://github.com/HASwitchPlate/openHASP/actions){target=_blank} on Github.
 
 
 ## Flash ESP32
@@ -35,14 +35,14 @@ The actual procedure to flash the ESP32 depends on the tool used. Click on the t
     Change `COM1` to the correct port on your computer. If you get an error at the end of the flash procedure, you can try with a lower the baudrate eg. 460800.
 
 === "Tasmota-PyFlasher :material-microsoft-windows:"
-    [Tasmota-PyFlasher](https://github.com/tasmota/tasmota-pyflasher/releases/tag/1.0) is a simple GUI tool for flashing ESP32 firmware wihout any installation.
+    [Tasmota-PyFlasher](https://github.com/tasmota/tasmota-pyflasher/releases/tag/1.0){target=_blank} is a simple GUI tool for flashing ESP32 firmware wihout any installation.
 
     ![Tasmota-PyFlasher](../../assets/images/esp32-pyflasher.png)
 
     Change `COM7` to the correct port on your computer.
 
 === "ESP Flash Tools :material-microsoft-windows:"
-    Espressif provides their own [Flash Download Tools](https://www.espressif.com/en/support/download/other-tools) for Windows.
+    Espressif provides their own [Flash Download Tools](https://www.espressif.com/en/support/download/other-tools){target=_blank} for Windows.
 
     ![Flash Download Tools](../../assets/images/esp32-espressif-flash.png)
 

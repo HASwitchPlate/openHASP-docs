@@ -32,8 +32,10 @@ Pin	  |Function            |ESP32 Pin  |Config Name|Display Pin |
 
 SPI MISO, MOSI and SCLK are shared between the touch controller and the LCD controller.
 
+## Backlight Control
+
 !!! warning "Attention (*)"
-    Only the WaveShare 4.0" RPi LCD Revision C has a solder jumper on the back to enable PWM backlight dimming. Other revisions of this board do not have this feature.
+    Only the WaveShare 4.0" RPi LCD **Revision C** has a solder jumper on the back to enable PWM backlight dimming. Other revisions of this board do not have this feature.
 
 ## LCD Configuration
 

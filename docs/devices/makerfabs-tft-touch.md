@@ -25,7 +25,7 @@ However, the camera can not be used at the same time as the expansion port!
 
 | Model                   | 3.2" Resistive | 3.5" Resistive | 3.5" Capacitive
 |-------------------------|:-------:|:-------:|:--------:
-| SKU                     | [ESPTFT32CA][1] | [ESPTFT35RE][2] | [ESPTFT35CA][3]
+| SKU                     | [ESPTFT32CA][1]{target=_blank} | [ESPTFT35RE][2]{target=_blank} | [ESPTFT35CA][3]{target=_blank}
 | Flash                   | 16 MB   | 16 MB   | 16 MB
 | PSram                   | 8 MB    | 8 MB    | 8 MB
 | Resolution              | 3.2" 320x240 | 3.5" 480x320 | 3.5" 480x320
@@ -33,12 +33,12 @@ However, the camera can not be used at the same time as the expansion port!
 | OV2640 Camera           | 2M pixel | 2M pixel | 2M pixel
 | SD Card                 | :white_check_mark: yes | :white_check_mark: yes | :white_check_mark: yes
 | PWM Screen dimming      | :x: no    | :x: no    | :x: no
-| | [:material-cart-variant: Buy][1]{ .md-button .md-button--primary } | [:material-cart-variant: Buy][2]{ .md-button .md-button--primary } | [:material-cart-variant: Buy][3]{ .md-button .md-button--primary }
+| | [:material-cart-variant: Buy][1]{target=_blank .md-button .md-button--primary } | [:material-cart-variant: Buy][2]{target=_blank .md-button .md-button--primary } | [:material-cart-variant: Buy][3]{target=_blank .md-button .md-button--primary }
 
 The camera and SD card are not supported by openHASP 0.6.1.
 
 !!! tip
-    An optional [environmental expansion board][4] can be added to provide a temperature, humidity and air quality sensor.
+    An optional [environmental expansion board][4]{target=_blank} can be added to provide a temperature, humidity and air quality sensor.
 
 
 ## Video
@@ -52,8 +52,8 @@ The camera and SD card are not supported by openHASP 0.6.1.
 
 More information can be found in the Makerfabs Wiki and there are plenty of example projects available on the Github repository.
 
-[:material-book-open-page-variant: Makerfabs Wiki][6]{ .md-button .md-button } &nbsp;
-[:material-github: Github Repo][5]{ .md-button .md-button }
+[:material-book-open-page-variant: Makerfabs Wiki][6]{target=_blank .md-button .md-button } &nbsp;
+[:material-github: Github Repo][5]{target=_blank .md-button .md-button }
 
 ## Acrylic Case
 

@@ -29,62 +29,62 @@ SOFTWARE.
 
 openHASP is based on the existing work of the following open source developers:
 
-- [HASwitchPlate](https://github.com/HASwitchPlate/HASPone), the original Arduino project,
+- [HASwitchPlate](https://github.com/HASwitchPlate/HASPone){target=_blank}, the original Arduino project,
   Copyright© 2019 Allen Derusha.
-  HASwitchPlate is distributed under the terms of the [MIT License](http://opensource.org/licenses/MIT).
+  HASwitchPlate is distributed under the terms of the [MIT License](http://opensource.org/licenses/MIT){target=_blank}.
 
-- [LVGL](https://lvgl.io/) graphics library,
+- [LVGL](https://lvgl.io/){target=_blank} graphics library,
   Copyright© 2016 Gábor Kiss-Vámosi and
   Copyright© 2020 LVGL LLC.
-  LVGL is distributed under the terms of the [MIT License](http://opensource.org/licenses/MIT).
+  LVGL is distributed under the terms of the [MIT License](http://opensource.org/licenses/MIT){target=_blank}.
 
-- [ArduinoJson](https://arduinojson.org/)
+- [ArduinoJson](https://arduinojson.org/){target=_blank}
   Copyright© 2014-2021 Benoit BLANCHON
-  [MIT License](http://opensource.org/licenses/MIT).
+  [MIT License](http://opensource.org/licenses/MIT){target=_blank}.
 
 ### MCU
 
-- [TFT_eSPI](https://github.com/Bodmer/TFT_eSPI) display library,
-  Copyright© 2020 Bodmer (https://github.com/Bodmer) All rights reserved.
-  TFT_eSPI is distributed under the terms of the [FreeBSD License](https://opensource.org/licenses/BSD-2-Clause)
-  and includes parts from the [Adafruit_GFX library](https://github.com/adafruit/Adafruit-GFX-Library),
+- [TFT_eSPI](https://github.com/Bodmer/TFT_eSPI){target=_blank} display library,
+  Copyright© 2020 Bodmer (https://github.com/Bodmer){target=_blank} All rights reserved.
+  TFT_eSPI is distributed under the terms of the [FreeBSD License](https://opensource.org/licenses/BSD-2-Clause){target=_blank}
+  and includes parts from the [Adafruit_GFX library](https://github.com/adafruit/Adafruit-GFX-Library){target=_blank},
   Copyright© 2012 Adafruit Industries. All rights reserved.
-  Adafruit_GFX is distributed under the terms of the [BSD License](https://opensource.org/licenses/BSD-2-Clause)
+  Adafruit_GFX is distributed under the terms of the [BSD License](https://opensource.org/licenses/BSD-2-Clause){target=_blank}
 
 - zi Font Engine
   Copyright© 2020 fvanroie, netwize.be
-  [MIT License](http://opensource.org/licenses/MIT).
+  [MIT License](http://opensource.org/licenses/MIT){target=_blank}.
 
-- [PubSubClient](https://github.com/knolleary/pubsubclient)
+- [PubSubClient](https://github.com/knolleary/pubsubclient){target=_blank}
   Copyright© 2008-2015 Nicholas O'Leary
-  [MIT License](http://opensource.org/licenses/MIT).
+  [MIT License](http://opensource.org/licenses/MIT){target=_blank}.
 
-- Logging engine is based on [ArduinoLog](https://github.com/thijse/Arduino-Log),
+- Logging engine is based on [ArduinoLog](https://github.com/thijse/Arduino-Log){target=_blank},
   Copyright© 2017,2018 Thijs Elenbaas, MrRobot62, rahuldeo2047, NOX73, dhylands, Josha blemasle, mfalkvidd
   with modifications by fvanroie, netwize.be.
-  ArduinoLog is distributed under the terms of the [MIT License](http://opensource.org/licenses/MIT).
+  ArduinoLog is distributed under the terms of the [MIT License](http://opensource.org/licenses/MIT){target=_blank}.
 
-- [QR Code generator](https://github.com/nayuki/QR-Code-generator)
+- [QR Code generator](https://github.com/nayuki/QR-Code-generator){target=_blank}
   Copyright© Project Nayuki
-  [MIT License](http://opensource.org/licenses/MIT).
+  [MIT License](http://opensource.org/licenses/MIT){target=_blank}.
 
-- [AceButton](https://github.com/bxparks/AceButton)
+- [AceButton](https://github.com/bxparks/AceButton){target=_blank}
   Copyright© 2018 Brian T. Park
-  [MIT License](http://opensource.org/licenses/MIT).
+  [MIT License](http://opensource.org/licenses/MIT){target=_blank}.
 
-- [ArduinoStreamUtils](https://github.com/bblanchon/ArduinoStreamUtils)
+- [ArduinoStreamUtils](https://github.com/bblanchon/ArduinoStreamUtils){target=_blank}
   Copyright© 2019 Benoit BLANCHON
-  [MIT License](http://opensource.org/licenses/MIT).
+  [MIT License](http://opensource.org/licenses/MIT){target=_blank}.
 
 ### Native Application
 
 - paho.mqtt.c client library
   Copyright© Eclipse Foundation
-  Paho is distributed under the terms of the [Eclipse Public License v2.0](https://www.eclipse.org/legal/epl-2.0/)
+  Paho is distributed under the terms of the [Eclipse Public License v2.0](https://www.eclipse.org/legal/epl-2.0/){target=_blank}
 
 - Simple DirectMedia Layer library
   Copyright© 1997-2021 Sam Lantinga <slouken@libsdl.org>
-  SDL 2.0 and newer are available under the [zlib license](https://www.zlib.net/zlib_license.html)
+  SDL 2.0 and newer are available under the [zlib license](https://www.zlib.net/zlib_license.html){target=_blank}
 
 ### Native Windows Application
 
@@ -101,14 +101,14 @@ openHASP is based on the existing work of the following open source developers:
 
 - Built-in font Roboto Consensed
   Copyright© 2011 Google Inc. All Rights Reserved.
-  Ubuntu Consensed is licensed under the [Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0).
+  Ubuntu Consensed is licensed under the [Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0){target=_blank}.
 
-- Custom zi fonts and built-in fonts incorporate [Font Awesome](http://fontawesome.io/),
+- Custom zi fonts and built-in fonts incorporate [Font Awesome](http://fontawesome.io/){target=_blank},
   Copyright© 2017 Dave Gandy.
-  Font Awesome is distributed under the terms of the [SIL OFL 1.1](http://scripts.sil.org/OFL) 
-  and [MIT License](http://opensource.org/licenses/MIT).
+  Font Awesome is distributed under the terms of the [SIL OFL 1.1](http://scripts.sil.org/OFL){target=_blank} 
+  and [MIT License](http://opensource.org/licenses/MIT){target=_blank}.
 
-- The bootscreen uses the [MaterialDesign Icons](https://materialdesignicons.com/) font,
+- The bootscreen uses the [MaterialDesign Icons](https://materialdesignicons.com/){target=_blank} font,
   Copyright© 2014, Austin Andrews.
   MaterialDesign Icons font is licensed under the SIL Open Font License, Version 1.1.
 

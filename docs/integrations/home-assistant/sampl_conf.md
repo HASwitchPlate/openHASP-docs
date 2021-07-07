@@ -788,9 +788,10 @@ Weather condition icons are displayed from the internal flash space of the plate
 - [light theme](../../assets/users/openhasp-weathericons-day.zip)
 - [dark theme](../../assets/users/openhasp-weathericons-nigh.zip)
 
-_Icons are copyright from [manifestinteractive](https://github.com/manifestinteractive/weather-underground-icons) and [merlinthered](https://www.deviantart.com/merlinthered/art/plain-weather-icons-157162192)._
+_Icons are copyright from [manifestinteractive](https://github.com/manifestinteractive/weather-underground-icons){target=_blank}
+and [merlinthered](https://www.deviantart.com/merlinthered/art/plain-weather-icons-157162192){target=_blank}._
 
-This example implements Home Assistant's [standard weather conditions](https://www.home-assistant.io/integrations/weather/) only (as in 2021.06), so any weather integration component can be used. Some integrations know extra conditions in addition to the standard ones, those (with their corresponding icons) can be easily added to the component configuration below.
+This example implements Home Assistant's [standard weather conditions](https://www.home-assistant.io/integrations/weather/){target=_blank} only (as in 2021.06), so any weather integration component can be used. Some integrations know extra conditions in addition to the standard ones, those (with their corresponding icons) can be easily added to the component configuration below.
 
 Note that the tab swiping dots (_p5b10_) are also handled by the custom component. Don't forget update the service call in the configuration with your plate's MQTT node name, and the command parameters if you change the page of the objects.
 

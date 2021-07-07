@@ -2,7 +2,7 @@
 
 ## Download the firmware
 
-Go to the [releases](https://github.com/HASwitchPlate/openHASP/releases) page on GitHub to download the latest openHASP binaries.
+Go to the [releases](https://github.com/HASwitchPlate/openHASP/releases){target=_blank} page on GitHub to download the latest openHASP binaries.
 
 There are currently 2 download options, pick the one appropriate for your hardware:
 
@@ -43,7 +43,7 @@ esptool.py -p "COM1" --baud 921600 --before default_reset --after hard_reset wri
 
 Unlike the ESP32, for ESP8266 you only need one single `.bin` file:
 
-#### Using [Tasmotizer](https://github.com/tasmota/tasmotizer) (Windows)
+#### Using [Tasmotizer](https://github.com/tasmota/tasmotizer){target=_blank} (Windows)
 
 #### Using esp-tool.py
 

@@ -13,7 +13,7 @@ On ESP32, the default font is Roboto Condensed 12.
 Upload another .zi file named fontawesome*xx*.zi of the same point size as the normal text .zi font.
 e.g. If your custom font is `arial24.zi´, you should also add a `fontawesome24.zi` file.
 
-You can download `fontawesome.zip` from the [HMI Font Pack](https://github.com/fvanroie/HMI-Font-Pack/releases) repository.
+You can download `fontawesome.zip` from the [HMI Font Pack](https://github.com/fvanroie/HMI-Font-Pack/releases){target=_blank} repository.
 
 
 ### :question: Is there a file browser built-in?

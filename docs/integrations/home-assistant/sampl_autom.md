@@ -114,7 +114,7 @@ homeassistant:
 
 With the [services](#custom-component/services) `openhasp.clear_page` and `openhasp.load_pages` you can clear one or all the pages of your plate, and reload their configuration from the server, respectively.
 
-For the example automation below i've created an [input_boolean](https://www.home-assistant.io/integrations/input_boolean/) named `load_pages_plate_my_room` in order to have a switch in Lovelace UI to trigger this manually.
+For the example automation below i've created an [input_boolean](https://www.home-assistant.io/integrations/input_boolean/){target=_blank} named `load_pages_plate_my_room` in order to have a switch in Lovelace UI to trigger this manually.
 
 ```yaml
 - id: openhasp-reload_pages
@@ -159,7 +159,7 @@ _Note:_ You can also use the `path` directive in the component config to load th
 
 You can use this to protect and prolonge the lifetime of the LCD screens, thus being more green and generating less hazardous waste.
 
-Wall mounted LCD screns main problem is that they display the same picture 99.999% of the time. Even if somebody turns off backlight during the night or dark periods, the LCD screen keeps showing the same picture, seen by nobody. There are high chances that this will lead to screen [picture burn-in](https://github.com/HASwitchPlate/openHASP/issues/134) after a few years of operation.
+Wall mounted LCD screns main problem is that they display the same picture 99.999% of the time. Even if somebody turns off backlight during the night or dark periods, the LCD screen keeps showing the same picture, seen by nobody. There are high chances that this will lead to screen [picture burn-in](https://github.com/HASwitchPlate/openHASP/issues/134){target=_blank} after a few years of operation.
 
 <h3>Pixel training</h3>
 
