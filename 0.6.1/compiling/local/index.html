@@ -1321,7 +1321,7 @@ sudo apt install git python3-venv
 </code></pre></div>
 </td></tr></table></p>
 <h2 id="clone-openhasp">Clone openHASP<a class="headerlink" href="#clone-openhasp" title="Permanent link">~</a></h2>
-<p>Make sure to add the <code>--recursive</code> parameter when cloning the project from GitHub. Otherwise git will not download the required submodules in the <code>/lib</code> subdirectory.</p>
+<p>Make sure to add the <code>--recursive</code> parameter when cloning the project from GitHub. Otherwise git will not download the required submodules in the <code>/lib</code> subdirectory. To clone the current development version (<em>main</em> branch):</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>git clone --recursive https://github.com/HASwitchPlate/openHASP
 </code></pre></div>
 </td></tr></table>
@@ -1329,7 +1329,7 @@ sudo apt install git python3-venv
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>git submodule update --init --recursive
 </code></pre></div>
 </td></tr></table>
-<p>To switch to a different branch (for example 0.6.1) use:</p>
+<p>To switch to a different branch (for example 0.6.1 release) use:</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
