@@ -11,7 +11,7 @@
 $(document).ready(function() {
     $('img[alt="YOUTUBE"]').each(function() {
         var id = $(this).attr('src').split('/')[$(this).attr('src').split('/').length - 1];
-        var video = '<iframe title="YouTube video player" width="560" height="320" src="https://www.youtube.com/embed/' + id + '?controls=1" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+        var video = '<div class="video-container"><iframe title="YouTube video player" src="https://www.youtube.com/embed/' + id + '?rel=0controls=1" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>';
         $(this).replaceWith(video);
     });
 });
