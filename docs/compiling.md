@@ -14,7 +14,7 @@ sudo apt install git python3-venv
 
 ## Clone openHASP
 
-Make sure to add the `--recursive` parameter when cloning the project from GitHub. Otherwise git will not download the required submodules in the `/lib` subdirectory.
+Make sure to add the `--recursive` parameter when cloning the project from GitHub. Otherwise git will not download the required submodules in the `/lib` subdirectory. To clone the current development version (_main_ branch):
 
 ```bash
 git clone --recursive https://github.com/HASwitchPlate/openHASP
@@ -31,7 +31,7 @@ To switch to a different branch use:
 ```bash
 git clone --recursive https://github.com/HASwitchPlate/openHASP
 cd openHASP
-git checkout 0.6.0
+git checkout 0.6.1
 git submodule update --init --recursive
 ```
 
@@ -87,14 +87,14 @@ Also uncomment `-DUSE_CONFIG_OVERRIDE` in `platformio_override.ini` to ensure th
 
 You can now run "Build" or "Build All" in PlatformIO to compile (all) the firmware.
 
+
 ### Native Linux build
 
-For native linux_sdl builds, you also need:
+For native linux_sdl builds, you also need (for Debian-based distros):
 ```bash
 sudo apt update
 sudo apt install build-essential libsdl2-dev
 ```
-
 
 ### Native MacOS build
 
