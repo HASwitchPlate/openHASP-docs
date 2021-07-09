@@ -91,44 +91,74 @@ Properties applied to the textual elements of the objects.
 
 Value is an arbitrary text label drawn on top of an object. It can be a lightweight replacement for creating standalone label objects.
 
-| Property           |  Type    | Description
-| :---               |  :---:   | :---
+| Property           |  Type         | Description
+| :---               |  :---:        | :---
 | value_str          | [string][4]   | Text to display
-| value_color        |[color][1]| Color of the text
-| value_opa          | [uint8][3]     | Opacity level of the text [0-255]
-| value_font         | [uint8][3]     | The [Font ID][6]
+| value_color        | [color][1]    | Color of the text
+| value_opa          | [uint8][3]    | Opacity level of the text [0-255]
+| value_font         | [uint8][3]    | The [Font ID][6]
 | value_letter_space | [int16][3]    | Distance between letters of the text, can be negative
 | value_line_space   | [int16][3]    | Distance between lines of the text, can be negative
-| value_align        | align    | Alignment of the text. Can be: <br>none <br>left <br>right <br>top <br>bottom <br>full <br>center *(=default)*
+| value_align        | align         | Alignment of the text. Can be: <br>none <br>left <br>right <br>top <br>bottom <br>full <br>center *(=default)*
 | value_ofs_x        | [int16][3]    | X offset from the default position of the alignment
 | value_ofs_y        | [int16][3]    | Y offset from the default position of the alignment
 
 ## Line
 
-Properties for [line meter](../objects/#line-meter) objects.
+Properties for [line](../objects/#line), [line meter](../objects/#line-meter) objects.
 
-| Property          |  Type    | Description
-| :---              |  :---:   | :---
-| line_color        |[color][1]| Color of the line
-| line_opa          | [uint8][3]     | Opacity level of the line [0-255]
-| line_width        | [int16][3]    | Width of a scale line in the active region (also see `scale_end_line_width` below)
-| line_dash_width   | [int16][3]    | Width of dash. Dashing is drawn only for horizontal or vertical lines. `0` = disable dash (= default)
-| line_dash_gap     | [int16][3]    | Gap between two dash line. Dashing is drawn only for horizontal or vertical lines. `0` = disable dash (= default)
-| line_rounded      | [bool][2]| `true` = draw rounded line endings. Default = `false`
+| Property               |  Type         | Description
+| :---                   |  :---:        | :---
+| line_color             | [color][1]    | Color of the line
+| line_opa               | [uint8][3]    | Opacity level of the line [0-255]
+| line_width             | [int16][3]    | Width of a scale line in the active region (also see `scale_end_line_width` below), or gauge minor ticks thickness
+| line_width1            | [int16][3]    | Gauge major ticks thickness
+| line_color             | [color][1]    | Starting color of the gauge minor ticks
+| line_color1            | [color][1]    | Starting color of the gauge major ticks
+| line_rounded           | [bool][2]     | `true` = draw rounded line endings. Default = `false`
+| line_dash_width        | [int16][3]    | Width of dash. Dashing is drawn only for horizontal or vertical lines. `0` = disable dash (= default)
+| line_dash_gap          | [int16][3]    | Gap between two dash line. Dashing is drawn only for horizontal or vertical lines. `0` = disable dash (= default)
 
 ## Scale
 
-The properties for styling the scale of [line meter](../objects/#line-meter) or [gauge](../objects/#gauge) objects.
+The properties for styling the scale of [line meter](../objects/#line-meter), [gauge](../objects/#gauge) objects.
 
-| Property               |  Type    | Description
-| :---                   |  :---:   | :---
-| scale_grad_color       |[color][1]| Make gradient to this color on the scale lines
-| scale_end_color        |[color][1]| Color of the scale lines in the end region
-| scale_width            | [int16][3]    | Width of the scale
+| Property               |  Type         | Description
+| :---                   |  :---:        | :---
+| scale_grad_color       | [color][1]    | Gradient to this color on the scale lines, or gauge minor ticks
+| scale_grad_color1      | [color][1]    | Gradient to this color on the gauge major ticks
+| scale_end_color        | [color][1]    | Color of the scale lines in the end region, or gauge minor ticks / critical area
+| scale_end_color1       | [color][1]    | Color of the gauge major ticks in the critical area
+| scale_width            | [int16][3]    | Width of the scale in the normal region, or length of gauge minor ticks
+| scale_width1           | [int16][3]    | Length of the gauge major ticks
 | scale_border_width     | [int16][3]    | Width of a border drawn on the outer side of the scale in the normal region
-| scale_end_border_width | [int16][3]    | Width of a border drawn on the outer side of the scale in the end region
 | scale_end_line_width   | [int16][3]    | Width of a scale line in the end region
+| scale_end_border_width | [int16][3]    | Width of a border drawn on the outer side of the scale in the end region
 
+## Needle
+
+The properties for styling the needle of [gauge](../objects/#gauge) objects.
+
+| Property               |  Type      | Description
+| :---                   |   :---:    | :---
+| line_width2            | [int16][3] | Width of the needle line
+| line_rounded2          | [bool][2]  | `true` = draw rounded needle ending. Default = `false`
+| line_color2            | [color][1] | Color of the needle line
+| line_opa2              | [uint8][3] | Opacity level of the needle line [0-255]
+| bg_color2              | [color][1] | Color of the needle central circle
+| bg_opa2                | [uint8][3] | Opacity level of the needle central circle [0-255]
+
+## Arc
+
+The properties for styling the arc of [arc](../objects/#arc) objects.
+
+| Property               |  Type      | Description
+| :---                   |   :---:    | :---
+| line_width             | [int16][9] | Width of the arc background (default 20)
+| line_color             | [color][1] | Color of the arc background
+| line_width1            | [int16][9] | Width of the arc indicator (default 20)
+| line_color1            | [color][1] | Color of the arc indicator
+  
 ## Image
 
 | Property      |  Type    | Description

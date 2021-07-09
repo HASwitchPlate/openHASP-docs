@@ -18,7 +18,7 @@ sudo apt install git python3-venv
 
 ## Clone openHASP
 
-Make sure to add the `--recursive` parameter when cloning the project from GitHub. Otherwise git will not download the required submodules in the `/lib` subdirectory.
+Make sure to add the `--recursive` parameter when cloning the project from GitHub. Otherwise git will not download the required submodules in the `/lib` subdirectory. To clone the current development version (_main_ branch):
 
 ```bash
 git clone --recursive https://github.com/HASwitchPlate/openHASP
@@ -30,7 +30,7 @@ If you already cloned openHASP without the submodules, you can fetch the submodu
 git submodule update --init --recursive
 ```
 
-To switch to a different branch (for example 0.6.1) use:
+To switch to a different branch (for example 0.6.1 release) use:
 
 ```bash
 git clone --recursive https://github.com/HASwitchPlate/openHASP

@@ -348,12 +348,9 @@ While pressing and dragging the `slider` object the following events are sent: `
 | adjustable| [bool][2]  | false   | Add knob that the user can operate to change the value
 |start_angle| 0-360      |         | start angle of the arc background (see note)
 | end_angle | 0-360      |         | end angle of the arc background (see note)
-| line_width  | [int16][9] | 20       | width of the arc background
-| line_color  | [color][1] | depends<BR>on theme | color of the arc background
 |start_angle1| 0-360     |         | start angle of the arc indicator (see note)
 | end_angle1 | 0-360     |         | end angle of the arc indicator (see note)
-| line_width1 | [int16][9] | 20       | width  of the arc indicator
-| line_color1 | [color][1] | depends<BR>on theme | color of the arc indicator
+
 
 !!! note
     Zero degree is at the middle right (3 o'clock) of the object and the degrees are increasing in a clockwise direction. The angles should be in the [0-360] range.     
