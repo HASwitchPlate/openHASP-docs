@@ -14,6 +14,9 @@
     </a>
 </div>
 
+
+## Features
+
 The Nscreen32 uses an ESP32-WROVER-IE module with a large 4-inch capacitive touch display.
 The display is connected via an 8-bit parallel bus resulting in a fast performance.
 openHASP can take advantage of the 320x480 resolution to show a large custom user-interface.

@@ -13,11 +13,11 @@
         <a href="../../assets/images/devices/freetouchdeck-bare.jpg" data-toggle="lightbox" data-gallery="example-gallery" rel="lightbox[work]" data-title="FreeTouchDeck PCB combiner with display" data-footer="Original image by Dustin Watts - Used with permission">more images...</a>
 </div>
 
-Features:
+## Features
 
-   - ESP32 DevKitC (38pin)
-   - ILI9488 TFT SPI 4-WIRE
-   - XPT2046 resistive touch controller
+- ESP32 DevKitC (38pin)
+- ILI9488 TFT SPI 4-WIRE
+- XPT2046 resistive touch controller
 
 This board is created for the [FreeTouchDeck project](https://github.com/DustinWatts/FreeTouchDeck){target=_blank}
 and the [PCB-combiner board](https://www.pcbway.com/project/shareproject/ESP32_TFT_Combiner_V1.html){target=_blank} is open source. Due to the extensive documentation it was easy to port openHASP to the FreeTouchDeck.

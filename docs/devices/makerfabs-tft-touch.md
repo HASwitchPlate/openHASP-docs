@@ -15,6 +15,9 @@
         <a href="../../assets/images/devices/makerfabs-sensors.jpg" data-toggle="lightbox" data-gallery="example-gallery" rel="lightbox[vacation]" data-title="Makerfabs ESP32 TFT Touch" data-footer="Copyright &copy; 2021, Makerfabs, All Rights Reserved"></a>
 </div>
 
+
+## Features
+
 The Makerfabs ESP32 TFT Touch development board incorporates a 3.2” or 3.5” touch display, with a built-in 2M pixel OV2640 camera,
 which makes it a very suitable platform for any ESP32 project. There is a version with capacitive and resistive touch.
 
