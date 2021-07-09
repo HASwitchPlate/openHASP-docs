@@ -2,7 +2,7 @@
 
 ## Encoding
 
-The character sets are encoded in UTF-8. All character sets contain the ASCII 0x20-0x7E characters and the non-braking-space (NBSP). Each set contains roughly the same *extended* characters from its equivalent [iso-8859 standard](https://en.wikipedia.org/wiki/ISO/IEC_8859).
+The character sets are encoded in UTF-8. All character sets contain the ASCII 0x20-0x7E characters and the non-braking-space (NBSP). Each set contains roughly the same *extended* characters from its equivalent [iso-8859 standard](https://en.wikipedia.org/wiki/ISO/IEC_8859){target=_blank}.
 
 For example: To display the &#x00F7; character on the plate you need to use `\u00F7` in json or jsonl commands, or send the encoded UTF-8 bytes `0xC3` `0xB7` in other commands.
 
