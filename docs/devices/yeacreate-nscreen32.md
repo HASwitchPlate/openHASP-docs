@@ -36,7 +36,7 @@ The development board can be powered via micro USB or the 5V-in JST connector.
 
 ## Documentation
 
-The a couple of example projects and the schematics for the Nscreen32 can be found on the Yeacreate Github repository.
+Some example projects and the schematics for the Nscreen32 can be found on the Yeacreate Github repository.
 
 [:material-github: Github Repo][3]{target=_blank .md-button .md-button } &nbsp;
 [:material-github: Schematics][4]{target=_blank .md-button .md-button }
