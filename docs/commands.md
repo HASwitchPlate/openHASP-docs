@@ -166,9 +166,6 @@ _accepted json keys:_
 
 Changes the state GPIO pin to `on` or `off`. If the pin is configured as a `LED` or `Serial Dimmer` then the `val` key will control the brightness.
 
-!!! bug
-    Update to the latest 0.6-dev release, otherwise the relay won't switch without also setting the `val` property.
-
 !!! note
     If the GPIO is assigned to a group then objects and other GPIOs that share the same `groupid` will change state accordingly.
 
