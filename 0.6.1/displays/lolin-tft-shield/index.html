@@ -972,20 +972,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3d-printed-cases" class="md-nav__link">
-    3D Printed Cases
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#flashing" class="md-nav__link">
-    Flashing
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#documentation" class="md-nav__link">
     Documentation
   </a>
@@ -1234,20 +1220,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3d-printed-cases" class="md-nav__link">
-    3D Printed Cases
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#flashing" class="md-nav__link">
-    Flashing
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#documentation" class="md-nav__link">
     Documentation
   </a>
@@ -1280,12 +1252,12 @@
                 
                 <h1 id="lolin-tft-24-touch-shield">Lolin TFT 2.4" Touch Shield<a class="headerlink" href="#lolin-tft-24-touch-shield" title="Permanent link">~</a></h1>
 <div class="row justify-content-center">
-        <a href="../../assets/images/devices/lolin-tft-shield-front.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-6" data-title="ESP32 TouchDown" data-footer="">
-            <img src="../../assets/images/devices/lolin-tft-shield-front.jpg" class="img-fluid">
+        <a href="../../assets/images/displays/lolin-tft-shield-front.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-6" data-title="ESP32 TouchDown" data-footer="">
+            <img src="../../assets/images/displays/lolin-tft-shield-front.jpg" class="img-fluid">
         </a>
 
-        <a href="../../assets/images/devices/lolin-tft-shield-back.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-6" data-title="ESP32 TouchDown" data-footer="">
-            <img src="../../assets/images/devices/lolin-tft-shield-back.jpg" class="img-fluid">
+        <a href="../../assets/images/displays/lolin-tft-shield-back.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-6" data-title="ESP32 TouchDown" data-footer="">
+            <img src="../../assets/images/displays/lolin-tft-shield-back.jpg" class="img-fluid">
         </a>
 </div>
 
@@ -1295,7 +1267,7 @@ There are 3 ways to connect an ESP32:</p>
 <ol>
 <li>Plug a compatible ESP32 onto the female headers on the back</li>
 <li>Attach a <a href="https://www.aliexpress.com/item/32883116057.html" target="_blank">LOLIN D32 Pro V2.0</a> using the 10-pin TFT connector and cable</li>
-<li>Solder headers onto the bottom pinholes for pluging into a breadboard or jumper cables for any other ESP</li>
+<li>Solder headers onto the bottom pinholes for pluging into a breadboard or jumper cables for any other ESP32</li>
 </ol>
 <table>
 <thead>
@@ -1339,7 +1311,7 @@ There are 3 ways to connect an ESP32:</p>
 <tr>
 <td>SKU</td>
 <td align="center"><a href="https://www.aliexpress.com/item/32815530502.html" target="_blank">D1 Mini ESP32</a></td>
-<td align="center"><a href="https://www.aliexpress.com/item/32977375539.html" target="_blank">TTGO T7 V1.5 Mini32 ESP32</a></td>
+<td align="center"><a href="https://www.aliexpress.com/item/32977375539.html" target="_blank">TTGO T7 V1.5 Mini32</a></td>
 <td align="center"><a href="https://www.aliexpress.com/item/32883116057.html" target="_blank">Lolin D32 Pro V2.0</a></td>
 </tr>
 <tr>
@@ -1385,7 +1357,7 @@ There are 3 ways to connect an ESP32:</p>
 <td align="center">CH340C</td>
 </tr>
 <tr>
-<td>PWM Screen dimming</td>
+<td>Screen dimming</td>
 <td align="center"><img alt="✅" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/2705.svg" title=":white_check_mark:" /> yes</td>
 <td align="center"><img alt="✅" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/2705.svg" title=":white_check_mark:" /> yes</td>
 <td align="center"><img alt="✅" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/2705.svg" title=":white_check_mark:" /> yes</td>
@@ -1422,16 +1394,11 @@ There are 3 ways to connect an ESP32:</p>
 Do <em>not</em> use D4 for backlight control because it is already in use for PSram on the ESP32-WROVER,
 also the D1-mini has D4 connected to the on-board LED and boot fails if pulled LOW</p>
 </div>
-<h2 id="3d-printed-cases">3D Printed Cases<a class="headerlink" href="#3d-printed-cases" title="Permanent link">~</a></h2>
-<p>You can find several different <a href="https://github.com/DustinWatts/esp32-touchdown/tree/main/Case" target="_blank">3D printable cases</a>
-in the <a href="https://github.com/DustinWatts/esp32-touchdown/" target="_blank">ESP32 TouchDown repository</a>:</p>
-<h2 id="flashing">Flashing<a class="headerlink" href="#flashing" title="Permanent link">~</a></h2>
-<p>The ESP32 can be flashed over USB like any ESP32 development board.</p>
 <h2 id="documentation">Documentation<a class="headerlink" href="#documentation" title="Permanent link">~</a></h2>
 <p><a class="md-button md-button" href="https://www.wemos.cc/en/latest/d1_mini_shield/tft_2_4.html" target="_blank"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m19 2-5 4.5v11l5-4.5V2M6.5 5C4.55 5 2.45 5.4 1 6.5v14.66c0 .25.25.5.5.5.1 0 .15-.07.25-.07 1.35-.65 3.3-1.09 4.75-1.09 1.95 0 4.05.4 5.5 1.5 1.35-.85 3.8-1.5 5.5-1.5 1.65 0 3.35.31 4.75 1.06.1.05.15.03.25.03.25 0 .5-.25.5-.5V6.5c-.6-.45-1.25-.75-2-1V19c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5V6.5C10.55 5.4 8.45 5 6.5 5z"/></svg></span> Wemos Wiki</a> &nbsp;
 <a class="md-button md-button" href="https://www.wemos.cc/en/latest/_static/files/sch_tft2.4_v1.0.0.pdf" target="_blank"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14 2 6 6v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8m4 18V9h-5V4H6v16h12m-7.08-7.69c-.24-.77-.77-3.23.63-3.27 1.4-.04.48 3.12.48 3.12.39 1.49 2.02 2.56 2.02 2.56.5-.15 3.35-.48 2.95 1-.43 1.48-3.5.09-3.5.09-1.95.14-3.41.66-3.41.66-1.13 2.11-2.45 3.03-2.99 2.14-.67-1.11 2.13-2.54 2.13-2.54 1.45-2.35 1.67-3.72 1.69-3.76m.65.84c-.4 1.3-1.2 2.69-1.2 2.69.85-.34 2.71-.73 2.71-.73-1.14-1-1.49-1.95-1.51-1.96m3.14 2.17s1.75.65 1.79.39c.07-.27-1.33-.51-1.79-.39m-5.66 1.49c-.77.3-1.51 1.58-1.33 1.58.18.01.91-.6 1.33-1.58m2.52-5.55c0-.05.43-1.68 0-1.73-.3-.03-.01 1.69 0 1.73z"/></svg></span> Schematics</a></p>
 <h2 id="dimensions">Dimensions<a class="headerlink" href="#dimensions" title="Permanent link">~</a></h2>
-<p><img alt="PCB Dimensions" src="../assets/images/devices/lolin-24-tft-shield-dimensions.jpg" /></p>
+<p><img alt="PCB Dimensions" src="../assets/images/displays/lolin-24-tft-shield-dimensions.jpg" /></p>
                 
                   
                     
@@ -1440,7 +1407,7 @@ in the <a href="https://github.com/DustinWatts/esp32-touchdown/" target="_blank"
 <div class="md-source-date">
   <small>
     
-      Last update: 2021-07-07
+      Last update: 2021-07-09
     
   </small>
 </div>

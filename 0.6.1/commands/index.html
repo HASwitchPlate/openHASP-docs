@@ -1538,10 +1538,6 @@ These leds can then be controlled together using the <code>moodlight</code> comm
 <li><strong>val:</strong> <code>0..255</code></li>
 </ul>
 <p>Changes the state GPIO pin to <code>on</code> or <code>off</code>. If the pin is configured as a <code>LED</code> or <code>Serial Dimmer</code> then the <code>val</code> key will control the brightness.</p>
-<div class="admonition bug">
-<p class="admonition-title">Bug</p>
-<p>Update to the latest 0.6-dev release, otherwise the relay won't switch without also setting the <code>val</code> property.</p>
-</div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>If the GPIO is assigned to a group then objects and other GPIOs that share the same <code>groupid</code> will change state accordingly.</p>
@@ -1684,7 +1680,7 @@ The result will be published to <code>hasp/&lt;nodename&gt;/state/config</code>.
 <div class="md-source-date">
   <small>
     
-      Last update: 2021-07-07
+      Last update: 2021-07-09
     
   </small>
 </div>
