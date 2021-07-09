@@ -34,7 +34,13 @@ The development board can be powered via micro USB or the 5V-in JST connector.
 [:material-cart-variant: YeaCreate Store][1]{target=_blank .md-button .md-button--primary }
 
 
-[Schematics](https://github.com/yeacreate-opensources/Nscreen_32/blob/master/documents/Schematic.pdf){target=_blank}
+## Documentation
+
+The a couple of example projects and the schematics for the Nscreen32 can be found on the Yeacreate Github repository.
+
+[:material-github: Github Repo][3]{target=_blank .md-button .md-button } &nbsp;
+[:material-github: Schematics][4]{target=_blank .md-button .md-button }
+
 
 ## Video
 
@@ -93,3 +99,5 @@ build_flags =
 
 [1]: https://store.yeacreate.com/products/3
 [2]: https://github.com/yeacreate-opensources/Nscreen_32/issues/2
+[3]: https://github.com/yeacreate-opensources/Nscreen_32
+[4]: https://github.com/yeacreate-opensources/Nscreen_32/blob/master/documents/Schematic.pdf
