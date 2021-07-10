@@ -21,9 +21,7 @@ The Nscreen32 uses an ESP32-WROVER-IE module with a large 4-inch capacitive touc
 The display is connected via an 8-bit parallel bus resulting in a fast performance.
 openHASP can take advantage of the 320x480 resolution to show a large custom user-interface.
 
-On the back there is an expansion port with 12 GPIOs so you can expand the capabilities as needed.
-Unfortunately, there is [no support for backlight control][2]{target=_blank}. The display is always-on.
-
+On the back there is an expansion port with 6 GPIOs (4 input only, RX & TX) so you add inputs if needed.
 The development board can be powered via micro USB or the 5V-in JST connector.
 
 | Pros                   | Cons
@@ -35,6 +33,11 @@ The development board can be powered via micro USB or the 5V-in JST connector.
 | External antenna       |
 
 [:material-cart-variant: YeaCreate Store][1]{target=_blank .md-button .md-button--primary }
+
+
+## Backlight Control
+
+Unfortunately, there is [no support for backlight control][2]{target=_blank}. The display is always-on.
 
 
 ## Documentation
