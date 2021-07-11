@@ -302,6 +302,66 @@ Covers Central and Eastern European languages: Czech (cs), Hungarian (hu), Polis
 &#x021A;
 &#x021B;
 
+### Greek
+
+Includes all characters and symbols from the [Ascii range](#ascii) above.
+
+Covers the Greek (el) language
+
+&#x0391;
+&#x0392;
+&#x0393;
+&#x0394;
+&#x0395;
+&#x0396;
+&#x0397;
+&#x0398;
+&#x0399;
+&#x039A;
+&#x039B;
+&#x039C;
+&#x039D;
+&#x039E;
+&#x039F;
+&#x03A0;
+&#x03A1;
+&#x03A3;
+&#x03A4;
+&#x03A5;
+&#x03A6;
+&#x03A7;
+&#x03A8;
+&#x03A9;
+&#x03B1;
+&#x03B2;
+&#x03B3;
+&#x03B4;
+&#x03B5;
+&#x03B6;
+&#x03B7;
+&#x03B8;
+&#x03B9;
+&#x03BA;
+&#x03BB;
+&#x03BC;
+&#x03BD;
+&#x03BE;
+&#x03BF;
+&#x03C0;
+&#x03C1;
+&#x03C2;
+&#x03C3;
+&#x03C4;
+&#x03C5;
+&#x03C6;
+&#x03C7;
+&#x03C8;
+&#x03C9;
+&#x03D1;
+&#x03D2;
+&#x03D6;
+
+
 ## External Fonts
 
 You can also add a custom `.zi` font by uploading it to the internal flash.
