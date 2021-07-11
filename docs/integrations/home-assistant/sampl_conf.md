@@ -568,7 +568,7 @@ relevant **openHASP config:** (screen size 240x320)
 
 ```json
 {"page":3,"id":10,"obj":"obj","x":5,"y":35,"w":230,"h":250,"click":0}
-{"page":3,"id":20,"obj":"arc","x":10,"y":42,"w":220,"h":220,"min":170,"max":300,"val":224,"border_side":0,"type":0,"rotation":0,"start_angle":135,"end_angle":45,"start_angle1":135,"end_angle1":45,"adjustable":"true","line_width":21,"line_width1":21,"line_color1":"#9f96b0","bg_opa":0}
+{"page":3,"id":20,"obj":"arc","x":10,"y":42,"w":220,"h":220,"min":170,"max":300,"val":224,"border_side":0,"type":0,"rotation":0,"start_angle":135,"end_angle":45,"adjustable":"true","line_width":21,"line_width1":21,"line_color1":"#9f96b0","bg_opa":0}
 {"page":3,"id":21,"obj":"gauge","x":22,"y":22,"w":176,"h":176,"parentid":20,"min":170,"max":300,"val":224,"format":1,"critical_value":301,"label_count":14,"line_count":27,"border_width":0,"pad_top":2,"pad_bottom":2,"pad_left":2,"pad_right":2,"value_str":"°C","value_ofs_y":45,"value_font":16,"bg_opa":0,"line_width2":3,"line_rounded2":1,"line_color1":"#348feb","scale_grad_color1":"#eb4934","scale_end_color1":"#eb4934"}
 {"page":3,"id":22,"obj":"obj","x":80,"y":80,"w":60,"h":60,"parentid":20,"click":0,"radius":30,"border_width":2,"border_opa":200}
 {"page":3,"id":23,"obj":"label","x":0,"y":95,"w":220,"h":30,"parentid":20,"text":"22.4","text_font":24,"align":"center"}
