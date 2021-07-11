@@ -1282,41 +1282,41 @@ table th:last-of-type {
 <thead>
 <tr>
 <th align="left">&nbsp;</th>
-<th align="center">Minimal</th>
 <th align="center">Basic</th>
 <th align="center">Standard</th>
+<th align="center">Capacity</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td align="left">MCU</td>
-<td align="center">ESP8266</td>
 <td align="center">ESP32-WROOM</td>
+<td align="center">ESP32-WROVER</td>
 <td align="center">ESP32-WROVER</td>
 </tr>
 <tr>
 <td align="left">CPU Freq.</td>
-<td align="center">80Mhz</td>
+<td align="center">240Mhz</td>
 <td align="center">240Mhz</td>
 <td align="center">240Mhz</td>
 </tr>
 <tr>
 <td align="left">Ram</td>
-<td align="center">80Kb</td>
+<td align="center">520Kb</td>
 <td align="center">520Kb</td>
 <td align="center">520Kb</td>
 </tr>
 <tr>
 <td align="left">PSRam</td>
 <td align="center">no</td>
-<td align="center">no</td>
+<td align="center">yes</td>
 <td align="center">yes</td>
 </tr>
 <tr>
 <td align="left">Minimal Flash</td>
 <td align="center">4MB</td>
 <td align="center">4MB</td>
-<td align="center">4MB</td>
+<td align="center">16MB</td>
 </tr>
 <tr>
 <td align="left">Display</td>
@@ -1338,9 +1338,9 @@ table th:last-of-type {
 </tr>
 <tr>
 <td align="left">Dev. Board*</td>
-<td align="center"><a href="https://www.aliexpress.com/item/32643142716.html" target="_blank">D1 mini ESP8266</a></td>
 <td align="center"><a href="https://www.aliexpress.com/item/32815530502.html" target="_blank">D1 mini ESP32</a></td>
 <td align="center"><a href="https://www.aliexpress.com/item/32977375539.html" target="_blank">TTGO T7 v1.5 Mini32</a></td>
+<td align="center"><a href="https://www.aliexpress.com/item/32883116057.html" target="_blank">Lolin D32 Pro V2.0</a></td>
 </tr>
 <tr>
 <td align="left">Firmware</td>
@@ -1355,8 +1355,6 @@ table th:last-of-type {
 <p><em>Due to the large number of possible hardware options a selection of 3 popular ESP development boards has been made for the precompiled binaries.</em></p>
 </div>
 <p>For new projects we recommend ESP32-WROVER boards with PSram.</p>
-<p>The performance of the ESP8266 will be slow due to its low memory and CPU frequency.
-It is okay for getting started, for small project where speed is not needed or when you have one at hand.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>Advanced users can build and compile custom configurations using PlatformIO <a href="../compiling/local/">locally</a> or <a href="../compiling/gitpod/">online with Gitpod</a>, however this is not currently supported.</p>
@@ -1425,7 +1423,7 @@ In that case you can skip ahead to the <a href="../installation/esp32/">Firmware
 <div class="md-source-date">
   <small>
     
-      Last update: 2021-07-10
+      Last update: 2021-07-11
     
   </small>
 </div>
