@@ -26,31 +26,30 @@ table th:last-of-type {
     width: 22%;
 }
 </style>
-|&nbsp;       | Minimal     | Basic        | Standard
+|&nbsp;       | Basic       | Standard     | Capacity
 |:----        |:----:       |:----:        |:----:
-| MCU         | ESP8266     | ESP32-WROOM  | ESP32-WROVER 
-| CPU Freq.   | 80Mhz       | 240Mhz       | 240Mhz   
-| Ram         | 80Kb        | 520Kb        | 520Kb
-| PSRam       | no          | no           | yes
-| Minimal Flash | 4MB         | 4MB          | 4MB
+| MCU         | ESP32-WROOM | ESP32-WROVER | ESP32-WROVER
+| CPU Freq.   | 240Mhz      | 240Mhz       | 240Mhz   
+| Ram         | 520Kb       | 520Kb        | 520Kb
+| PSRam       | no          | yes          | yes
+| Minimal Flash | 4MB       | 4MB          | 16MB
 | Display     | ILI9341 SPI | ILI9341 SPI  | ILI9341 SPI
 | Touch       | XPT2046 SPI | XPT2046 SPI  | XPT2046 SPI
 | Network     | Wi-Fi        | Wi-Fi         | Wi-Fi
-| Dev. Board* |[D1 mini ESP8266][3]{target=_blank}|[D1 mini ESP32][4]{target=_blank}|[TTGO T7 v1.5 Mini32][5]{target=_blank}
+| Dev. Board* |[D1 mini ESP32][4]{target=_blank}|[TTGO T7 v1.5 Mini32][5]{target=_blank}|[Lolin D32 Pro V2.0][6]{target=_blank}
 | Firmware    | [Download][1]{target=_blank} | [Download][1]{target=_blank}  | [Download][1]{target=_blank}
 
 [1]: https://github.com/HASwitchPlate/openHASP/releases
 [3]: https://www.aliexpress.com/item/32643142716.html
 [4]: https://www.aliexpress.com/item/32815530502.html
 [5]: https://www.aliexpress.com/item/32977375539.html
+[6]: https://www.aliexpress.com/item/32883116057.html
 
 !!! note
     *Due to the large number of possible hardware options a selection of 3 popular ESP development boards has been made for the precompiled binaries.*
 
 For new projects we recommend ESP32-WROVER boards with PSram.
 
-The performance of the ESP8266 will be slow due to its low memory and CPU frequency.
-It is okay for getting started, for small project where speed is not needed or when you have one at hand.
 
 !!! tip
     Advanced users can build and compile custom configurations using PlatformIO [locally](compiling/local.md) or [online with Gitpod](compiling/gitpod.md), however this is not currently supported.
