@@ -357,9 +357,6 @@ Covers the Greek (el) language
 &#x03C7;
 &#x03C8;
 &#x03C9;
-&#x03D1;
-&#x03D2;
-&#x03D6;
 
 
 ## External Fonts
