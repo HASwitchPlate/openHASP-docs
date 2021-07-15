@@ -222,6 +222,14 @@ Reports the status of the MCU. The response will be posted to the state topic. F
     }
 ```
 
+!!! danger "`unzip`"
+
+Unzip a file-packgage on the plate. You can upload **uncompressed** ZIP files to the flash space of your plate and unzip them locally. This is useful for cases when you need a lot of small files to be uploaded - putting them in an uncompressed zip allows to upload them in one go, and then extract them with a single command:
+
+```
+unzip /openhasp-weathericons-day.zip
+```
+
 !!! danger "`reboot` or `restart`"
 
 Saves any changes in the configuration file and reboots the device.
