@@ -533,8 +533,8 @@ To add other objects to these tabs, set the `parentid` when creating those objec
     {"page":1,"id":52,"obj":"tab","parentid":14,"text":"Tab 2"}
     {"page":1,"id":53,"obj":"tab","parentid":14,"text":"Tab 3"}
     {"page":1,"id":61,"obj":"switch","x":35,"y":10,"w":60,"h":30,"parentid":51,"radius":25,"radius2":25}
-    {"page":1,"id":71,"obj":"dropdown","x":15,"y":10,"w":110,"h":30,"parentid":52,"options":"hvac_modes"}
-    {"page":1,"id":81,"obj":"dropdown","x":15,"y":10,"w":110,"h":30,"parentid":53,"options":"fan_modes"} 
+    {"page":1,"id":71,"obj":"dropdown","x":15,"y":10,"w":110,"h":30,"parentid":52,"options":"Apple\nBanana\nOrange\nMelon"}
+    {"page":1,"id":81,"obj":"roller","x":15,"y":10,"w":110,"h":30,"parentid":53,"options":"Bus\nTrain\nPlane\nShip"} 
     ```
 
 
