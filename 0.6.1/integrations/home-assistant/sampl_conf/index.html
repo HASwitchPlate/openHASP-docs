@@ -2518,11 +2518,12 @@ Your browser does not support the video tag.
 </ul>
 <p>The openHASP component grabs information from both weather sources and updates them on every change. <br />
 The various strings containing day names, day periods, weather conditions can be localized easily to any language within the configuration.</p>
-<p>Weather condition icons are displayed from the internal flash space of the plate. For this, you need to unzip and upload all the icons to the plate:</p>
+<p>Weather condition icons are displayed from the internal flash space of the plate. For this, you need to upload the desired icon pack to the plate:</p>
 <ul>
 <li><a href="../../../assets/users/openhasp-weathericons-day.zip">light theme</a></li>
 <li><a href="../../../assets/users/openhasp-weathericons-nigh.zip">dark theme</a></li>
 </ul>
+<p>To unzip them on the plate, connect via Telnet and run the command <code>unzip /openhasp-weathericons-day.zip</code> to unzip the light theme above (alternatively you can unzip them on your computer and upload them one by one). The configuration example only shows how to use the light theme icons.</p>
 <p><em>Icons are copyright from <a href="https://github.com/manifestinteractive/weather-underground-icons" target="_blank">manifestinteractive</a>
 and <a href="https://www.deviantart.com/merlinthered/art/plain-weather-icons-157162192" target="_blank">merlinthered</a>.</em></p>
 <p>This example implements Home Assistant's <a href="https://www.home-assistant.io/integrations/weather/" target="_blank">standard weather conditions</a> only (as in 2021.06), so any weather integration component can be used. Some integrations know extra conditions in addition to the standard ones, those (with their corresponding icons) can be easily added to the component configuration below.</p>
