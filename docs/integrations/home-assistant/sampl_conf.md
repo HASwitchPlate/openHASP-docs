@@ -786,10 +786,12 @@ Since there's no weather integration in Home Assistant which can offer so much i
 The openHASP component grabs information from both weather sources and updates them on every change.   
 The various strings containing day names, day periods, weather conditions can be localized easily to any language within the configuration.
 
-Weather condition icons are displayed from the internal flash space of the plate. For this, you need to unzip and upload all the icons to the plate:
+Weather condition icons are displayed from the internal flash space of the plate. For this, you need to upload the desired icon pack to the plate:
 
 - [light theme](../../assets/users/openhasp-weathericons-day.zip)
 - [dark theme](../../assets/users/openhasp-weathericons-nigh.zip)
+
+To unzip them on the plate, connect via Telnet and run the command `unzip /openhasp-weathericons-day.zip` to unzip the light theme above (alternatively you can unzip them on your computer and upload them one by one). The configuration example only shows how to use the light theme icons.
 
 _Icons are copyright from [manifestinteractive](https://github.com/manifestinteractive/weather-underground-icons){target=_blank}
 and [merlinthered](https://www.deviantart.com/merlinthered/art/plain-weather-icons-157162192){target=_blank}._
