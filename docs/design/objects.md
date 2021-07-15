@@ -70,24 +70,24 @@ There are two ways to create an object on the screen:
 These are the common properties shared among all objects,
 but only the `id` and `obj` properties are required to create an object:
 
-| Property | | Value     | Required | Default | Description
-|:---------|-|:---------:|:--------:|:-------:|:----
-| id       | | 1..254    | yes      | n/a     | ID of the object on this page
-| obj      | | [string][10]    | yes      | n/a     | Name of the object type _(see below)_ 
-| page     | | 0..12     | no       | n/a     | ID of the page the object appears on _(see below)_
-| groupid  | | 0..15     | no       | 0 (none)| ID of the [GPIO group][3] the object belongs to
-| x        | | [int16][9]     | no       | 0       | Horizontal position on the page
-| y        | | [int16][9]     | no       | 0       | Vertical position on the page
-| w        | | [int16][9]     | no       | 0       | Width of the object
-| h        | | [int16][9]     | no       | 0       | Height of the object
-| hidden   | | [bool][2] | no       | false   | Object is hidden
-| opacity  | | 0..255    | no       | 255     | How much the the object is opaque
-| action   | | [string][10]    | no       | 0       | Command handled locally _(see below)_
-| swipe    | | [bool][2] | no       | false   | Page navigation using swipe gestures _(see below)_
-| click    | | [bool][2] | no       | true    | Object is touch/clickable _(also see [enabled][4])_
-| ext_click_h | :material-new-box:{ .tag-small }  | 0..255 | no       | 0       | Extended horizontal clickable are on the left and right 
-| ext_click_v | :material-new-box:{ .tag-small }  | 0..255 | no       | 0       | Extended vertical clickable are on the top and bottom
-| parentid | :material-new-box:{ .tag-small }  | 0..255  | no       | 0       | Set the object to be the child of another object.<br>`x` and `y` will be relative to the parent object.
+| Property | | Value        | Required | Default | Description
+|:---------|-|:------------:|:--------:|:-------:|:----
+| id       | | 1..254       | yes      | n/a     | ID of the object on this page
+| obj      | | [string][10] | yes      | n/a     | Name of the object type _(see below)_ 
+| page     | | 0..12        | no       | n/a     | ID of the page the object appears on _(see below)_
+| groupid  | | 0..15        | no       | 0 (none)| ID of the [GPIO group][3] the object belongs to
+| x        | | [int16][9]   | no       | 0       | Horizontal position on the page
+| y        | | [int16][9]   | no       | 0       | Vertical position on the page
+| w        | | [int16][9]   | no       | 0       | Width of the object
+| h        | | [int16][9]   | no       | 0       | Height of the object
+| hidden   | | [bool][2]    | no       | false   | Object is hidden
+| opacity  | | 0..255       | no       | 255     | How much the the object is opaque
+| action   | | [string][10] | no       | 0       | Command handled locally _(see below)_
+| swipe    | | [bool][2]    | no       | false   | Page navigation using swipe gestures _(see below)_
+| click    | | [bool][2]    | no       | true    | Object is touch/clickable _(also see [enabled][4])_
+| ext_click_h | :material-new-box:{ .tag-small } | 0..255 | no       | 0       | Extended horizontal clickable are on the left and right 
+| ext_click_v | :material-new-box:{ .tag-small } | 0..255 | no       | 0       | Extended vertical clickable are on the top and bottom
+| parentid | :material-new-box:{ .tag-small }    | 0..255 | no       | 0       | Set the object to be the child of another object.<br>`x` and `y` will be relative to the parent object.
 
 !!! tip
     Further customizable properties can be found in [styling][12].
@@ -519,21 +519,23 @@ To change the currently visible tab, use the `val` attribute after all tabs have
 ## Tab  :material-new-box:{ .tag-medium }  
 **obj:`tab`**
 
-| Property | Value      | Default | Description
-|----------|------------|---------|--------------------------
-| parentid | [int8][9]       | 0       | The `id` of the tabview object to which this tab is added
-| text     | [string][10]     | "Tab"   | The name of tab
+| Property | Value        | Default | Description
+|----------|--------------|---------|--------------------------
+| parentid | [int8][9]    | 0       | The `id` of the tabview object to which this tab is added
+| text     | [string][10] | "Tab"   | The name of tab
 
-Set the parent object by referencing the `parentid` in the tab. It must be a `tabview` object.
+Set the parent object (which `tabview` the tabs belong to) by referencing the `parentid` when creating the tab.
+To add other objects to these tabs, set the `parentid` when creating those objects to the _id of the tab_ you wamt them to appear on.
 
 ??? example "Example `jsonl`"
     ```json
-    {"page":1,"id":50,"obj":"tab","parentid":14,"text":"Tab 1"}
-    {"page":1,"id":51,"obj":"tab","parentid":14,"text":"Tab 2"}
-    {"page":1,"id":52,"obj":"tab","parentid":14,"text":"Tab 3"}
+    {"page":1,"id":51,"obj":"tab","parentid":14,"text":"Tab 1"}
+    {"page":1,"id":52,"obj":"tab","parentid":14,"text":"Tab 2"}
+    {"page":1,"id":53,"obj":"tab","parentid":14,"text":"Tab 3"}
+    {"page":1,"id":61,"obj":"switch","x":35,"y":10,"w":60,"h":30,"parentid":51,"radius":25,"radius2":25}
+    {"page":1,"id":71,"obj":"dropdown","x":15,"y":10,"w":110,"h":30,"parentid":52,"options":"hvac_modes"}
+    {"page":1,"id":81,"obj":"dropdown","x":15,"y":10,"w":110,"h":30,"parentid":53,"options":"fan_modes"} 
     ```
-
-To add other objects to these tabs, also use the `parentid` when creating those objects.
 
 
 ## Color picker
