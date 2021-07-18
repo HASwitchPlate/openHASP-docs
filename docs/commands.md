@@ -230,6 +230,23 @@ Unzip a file-packgage on the plate. You can upload **uncompressed** ZIP files to
 unzip /openhasp-weathericons-day.zip
 ```
 
+!!! danger "`service`"
+
+Start or stop some of the processes running on the plate.    
+Currently supported parameters:
+- `start`
+- `stop`
+Currently supported services:
+- `telnet`
+- `http`
+
+??? example "Example"
+    To stop the web interface of the plate, send to topic `hasp/<your_plate>/command/service` the string `stop http`.
+    To start the web interface of the plate, send to topic `hasp/<your_plate>/command/service` the string `start http`.
+    To stop the telnet service of the plate, send to topic `hasp/<your_plate>/command/service` the string `stop telnet`.
+    To start the telnet service of the plate, send to topic `hasp/<your_plate>/command/service` the string `start telnet`.
+
+
 !!! danger "`reboot` or `restart`"
 
 Saves any changes in the configuration file and reboots the device.
