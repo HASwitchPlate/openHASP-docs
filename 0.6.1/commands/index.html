@@ -1612,13 +1612,17 @@ This can be handy for bug reporting or documentation.</p>
 <div class="admonition danger">
 <p class="admonition-title"><code>service</code></p>
 </div>
-<p>Start or stop some of the processes running on the plate.  <br />
-Currently supported parameters:
-- <code>start</code>
-- <code>stop</code>
-Currently supported services:
-- <code>telnet</code>
-- <code>http</code></p>
+<p>Start or stop some of the processes running on the plate.</p>
+<p>Currently supported parameters:</p>
+<ul>
+<li><code>start</code></li>
+<li><code>stop</code></li>
+</ul>
+<p>Currently supported services:</p>
+<ul>
+<li><code>telnet</code></li>
+<li><code>http</code></li>
+</ul>
 <details class="example"><summary>Example</summary><p>To stop the web interface of the plate, send to topic <code>hasp/&lt;your_plate&gt;/command/service</code> the string <code>stop http</code>.
 To start the web interface of the plate, send to topic <code>hasp/&lt;your_plate&gt;/command/service</code> the string <code>start http</code>.
 To stop the telnet service of the plate, send to topic <code>hasp/&lt;your_plate&gt;/command/service</code> the string <code>stop telnet</code>.
@@ -1630,9 +1634,9 @@ To start the telnet service of the plate, send to topic <code>hasp/&lt;your_plat
 <p>Saves any changes in the configuration file and reboots the device.</p>
 <div class="admonition danger">
 <p class="admonition-title"><code>update</code></p>
-<p><em>accepted parameters:</em> <code>[url]</code></p>
 </div>
-<p>Update the firmware from the url provided. Reboots when update was successful.</p>
+<p><em>accepted parameters:</em> <code>[url]</code>   <br />
+Update the firmware from the url provided. Reboots when update was successful.</p>
 <div class="admonition danger">
 <p class="admonition-title"><code>factoryreset</code></p>
 </div>
