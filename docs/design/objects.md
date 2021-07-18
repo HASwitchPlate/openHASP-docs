@@ -511,8 +511,8 @@ You first create the `tabview` object and then add `tab` objects to it.
 To change the currently visible tab, use the `val` attribute after all tabs have been added.   
 
 !!! note
-    To adjust the height of the tab buttons row, use `pad_top` and `pad_bottom` [styling][13] properties.     
-    To adjust the text size of the tab names, use the `text_font` [styling][14] property.    
+    To adjust the height of the tab buttons row, use `pad_top1` and `pad_bottom1` [styling][13] properties. Accepts also negative values.     
+    To adjust the text size of the tab names, use the `text_font1` [styling][14] property.    
 
 Read further down to learn now to add tabs to the tabview.
 
