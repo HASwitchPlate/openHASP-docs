@@ -232,13 +232,18 @@ unzip /openhasp-weathericons-day.zip
 
 !!! danger "`service`"
 
-Start or stop some of the processes running on the plate.    
+Start or stop some of the processes running on the plate.
+
 Currently supported parameters:
+
 - `start`
 - `stop`
+
 Currently supported services:
+
 - `telnet`
 - `http`
+
 
 ??? example "Example"
     To stop the web interface of the plate, send to topic `hasp/<your_plate>/command/service` the string `stop http`.
@@ -251,10 +256,12 @@ Currently supported services:
 
 Saves any changes in the configuration file and reboots the device.
 
-!!! danger "`update`"
-    _accepted parameters:_ `[url]`
 
+!!! danger "`update`"
+
+_accepted parameters:_ `[url]`     
 Update the firmware from the url provided. Reboots when update was successful.
+
 
 !!! danger "`factoryreset`"
 
