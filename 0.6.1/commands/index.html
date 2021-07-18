@@ -1610,6 +1610,21 @@ This can be handy for bug reporting or documentation.</p>
 </code></pre></div>
 </td></tr></table>
 <div class="admonition danger">
+<p class="admonition-title"><code>service</code></p>
+</div>
+<p>Start or stop some of the processes running on the plate.  <br />
+Currently supported parameters:
+- <code>start</code>
+- <code>stop</code>
+Currently supported services:
+- <code>telnet</code>
+- <code>http</code></p>
+<details class="example"><summary>Example</summary><p>To stop the web interface of the plate, send to topic <code>hasp/&lt;your_plate&gt;/command/service</code> the string <code>stop http</code>.
+To start the web interface of the plate, send to topic <code>hasp/&lt;your_plate&gt;/command/service</code> the string <code>start http</code>.
+To stop the telnet service of the plate, send to topic <code>hasp/&lt;your_plate&gt;/command/service</code> the string <code>stop telnet</code>.
+To start the telnet service of the plate, send to topic <code>hasp/&lt;your_plate&gt;/command/service</code> the string <code>start telnet</code>.</p>
+</details>
+<div class="admonition danger">
 <p class="admonition-title"><code>reboot</code> or <code>restart</code></p>
 </div>
 <p>Saves any changes in the configuration file and reboots the device.</p>
