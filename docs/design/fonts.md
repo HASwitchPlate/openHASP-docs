@@ -79,7 +79,7 @@ For example: To display the &#x00F7; character on the plate you need to use `\u0
 
 Includes all ASCII 0x20-0x7E characters extended with these 11 *universal* symbols: 
 
-NBSP
+`NBSP`
 &#x00A3;
 &#x00B0;
 &#x00B1;
@@ -94,7 +94,7 @@ NBSP
 
 ### Latin 1
 
-The default character set for the pre-compiled firmware binary files.</br>
+The default character set for the pre-compiled firmware binary files.     
 Includes all characters and symbols from the [Ascii range](#ascii) above.
 
 Covers Northern, Western and Southern European languages: English (en), French (fr), Spanish (es), Portuguese (pt), Italian (it), Dutch (nl), German (de), Danish (da), Swedish (sv), Norwegian (no), Finnish (fi), Albanian (sq), Turkish (tr)
@@ -179,6 +179,7 @@ Covers Northern, Western and Southern European languages: English (en), French (
 
 ### Latin 2
 
+Needs compiling with [customization](compiling/customize.md).      
 Includes all characters and symbols from the [Ascii range](#ascii) above.
 
 Covers Central and Eastern European languages: Czech (cs), Hungarian (hu), Polish (pl), Romanian (ro), Croatian (hr), Slovak (sk), Slovenian (sl), Sorbian (sb)
@@ -304,6 +305,7 @@ Covers Central and Eastern European languages: Czech (cs), Hungarian (hu), Polis
 
 ### Greek
 
+Needs compiling with [customization](compiling/customize.md).      
 Includes all characters and symbols from the [Ascii range](#ascii) above.
 
 Covers the Greek (el) language
