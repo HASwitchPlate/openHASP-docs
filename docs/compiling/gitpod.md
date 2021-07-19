@@ -2,7 +2,7 @@
 
 Even though openHASP is available in several pre-compiled firmware variants, sometimes the ready-to-flash binaries aren't enough.
 If you need to customize some features, or simply change some parameters, then you need to compile a firmware binary yourself.  
-If you don't want to install an IDE (Integrated Development Environment) like PlatformIO or ATOM on your computer, compiling your own firmware is a breeze using [Gitpod](https://www.gitpod.io/).
+If you don't want to install an IDE (Integrated Development Environment) like PlatformIO or ATOM on your computer, compiling your own firmware is a breeze using [Gitpod](https://www.gitpod.io/){target=_blank}.
 
 Gitpod is a web browser based online IDE. All you need to use it is to link your GitHub account (or make a new one [here](https://github.com/join?source=header){target=_blank}). Gitpod will take care of all the necessary software package dependencies for you.
 
