@@ -179,7 +179,7 @@ Covers Northern, Western and Southern European languages: English (en), French (
 
 ### Latin 2
 
-Needs compiling with [customization](compiling/customize.md).      
+Needs compiling with [customization](compiling/customize).      
 Includes all characters and symbols from the [Ascii range](#ascii) above.
 
 Covers Central and Eastern European languages: Czech (cs), Hungarian (hu), Polish (pl), Romanian (ro), Croatian (hr), Slovak (sk), Slovenian (sl), Sorbian (sb)
@@ -305,7 +305,7 @@ Covers Central and Eastern European languages: Czech (cs), Hungarian (hu), Polis
 
 ### Greek
 
-Needs compiling with [customization](compiling/customize.md).      
+Needs compiling with [customization](compiling/customize).      
 Includes all characters and symbols from the [Ascii range](#ascii) above.
 
 Covers the Greek (el) language
