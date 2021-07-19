@@ -4,14 +4,14 @@ Even though openHASP is available in several pre-compiled firmware variants, som
 If you need to customize some features, or simply change some parameters, then you need to compile a firmware binary yourself.  
 If you don't want to install an IDE (Integrated Development Environment) like PlatformIO or ATOM on your computer, compiling your own firmware is a breeze using [Gitpod](https://www.gitpod.io/).
 
-Gitpod is a web browser based online IDE. All you need to use it is to link your GitHub account (or make a new one [here](https://github.com/join?source=header)). Gitpod will take care of all the necessary software package dependencies for you.
+Gitpod is a web browser based online IDE. All you need to use it is to link your GitHub account (or make a new one [here](https://github.com/join?source=header){target=_blank}). Gitpod will take care of all the necessary software package dependencies for you.
 
 ## Load openHASP project in Gitpod
 
 Click on one of the links below, and that will automatically load Gitpod with openHASP prepared for creating your custom build:
 
-- Release (for example 0.6.1): [https://gitpod.io#https://github.com/HASwitchPlate/openHASP/tree/0.6.1](https://gitpod.io#https://github.com/HASwitchPlate/openHASP/tree/0.6.1)
-- Development (_main_ branch): [https://gitpod.io#https://github.com/HASwitchPlate/openHASP](https://gitpod.io#https://github.com/HASwitchPlate/openHASP)
+- Release (for example 0.6.1): [https://gitpod.io#https://github.com/HASwitchPlate/openHASP/tree/0.6.1](https://gitpod.io#https://github.com/HASwitchPlate/openHASP/tree/0.6.1){target=_blank}
+- Development (_main_ branch): [https://gitpod.io#https://github.com/HASwitchPlate/openHASP](https://gitpod.io#https://github.com/HASwitchPlate/openHASP){target=_blank}
 
 After Gitpod loads the project, you will be greeted by the main window.
 
