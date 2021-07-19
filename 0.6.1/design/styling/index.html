@@ -1335,8 +1335,13 @@
                 
                 
                 <h1 id="styling-properties">Styling Properties<a class="headerlink" href="#styling-properties" title="Permanent link">~</a></h1>
-<p>You can adjust the appearance of objects by changing the foreground, background and/or border color of each object.
-Some objects allow for more complex syling, effectively changing their appearance or their sub-components.     </p>
+<p>You can adjust the appearance of objects by changing the foreground, background and/or border color of each object. Some objects allow for more complex syling, effectively changing their appearance or their sub-components.     </p>
+<p>Certain more complex objects are made up of several sub-parts, which can be styled separately. To access the properties of the parts use a number suffix appended to the property.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>For example the <em>gauge</em> object uses <code>line_width</code> to set the minor ticks thickness, <code>line_width1</code> for major ticks and <code>line_width2</code> for the thickness of the needle.    <br />
+<em>Note:</em> not all the suffixed properties are mentioned in this documentation, feel free to discover them yourself.</p>
+</div>
 <p>If objects are children of other objects (they have the <a href="../objects/#common-properties">parentid</a> property set), property inheritance takes place. </p>
 <div class="admonition inheritance">
 <p class="admonition-title">Inheritance</p>
