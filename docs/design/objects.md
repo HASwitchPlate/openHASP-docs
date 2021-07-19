@@ -355,6 +355,7 @@ While pressing and dragging the `slider` object the following events are sent: `
 !!! note
     Zero degree is at the middle right (3 o'clock) of the object and the degrees are increasing in a clockwise direction. The angles should be in the [0-360] range.     
     `min`, `max` and `val` support also negative values.
+    To adjust the size of the knob, use `pad_top2`, `pad_bottom2`, `pad_left2`, `pad_right2` [styling][13] properties. If you increase the knob beyond the margins of the object, you also need to increase `pad_top`, `pad_bottom`, `pad_left`, `pad_right` for the arc itself.    
 
 !!! tip
     Check out [value styling][6] to display a textual value in the middle of the arc.
