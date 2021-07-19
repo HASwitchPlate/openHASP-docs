@@ -1,8 +1,14 @@
 
 # Styling Properties
 
-You can adjust the appearance of objects by changing the foreground, background and/or border color of each object.
-Some objects allow for more complex syling, effectively changing their appearance or their sub-components.     
+You can adjust the appearance of objects by changing the foreground, background and/or border color of each object. Some objects allow for more complex syling, effectively changing their appearance or their sub-components.     
+
+Certain more complex objects are made up of several sub-parts, which can be styled separately. To access the properties of the parts use a number suffix appended to the property.
+
+!!! tip
+    For example the _gauge_ object uses `line_width` to set the minor ticks thickness, `line_width1` for major ticks and `line_width2` for the thickness of the needle.      
+    _Note:_ not all the suffixed properties are mentioned in this documentation, feel free to discover them yourself.
+
 
 If objects are children of other objects (they have the [parentid][7] property set), property inheritance takes place. 
 
