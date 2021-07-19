@@ -67,7 +67,7 @@ To use an icon in a text you need to prefix the UTF-8 character code with `\u`.
 
 ### Character Sets
 
-The characters are encoded in UTF-8. All character sets include the [Ascii](#ascii) 0x20-0x7E characters, the non-braking-space (NBSP) and 10 universal symbols.
+The characters are encoded in UTF-8. All character sets include the [Ascii](#ascii) `0x20-0x7E` characters, the non-braking-space (NBSP) and 10 universal symbols.
 Each set contains roughly the same *extended* characters from its equivalent [iso-8859 standard](https://en.wikipedia.org/wiki/ISO/IEC_8859){target=_blank}.
 All character sets also contain about 130 standard Material Design Icons for home automation use.
 
@@ -306,8 +306,16 @@ Covers Central and Eastern European languages: Czech (cs), Hungarian (hu), Polis
 
 Includes all characters and symbols from the [Ascii range](#ascii) above.
 
-Covers the Greek (el) language
+Covers the Greek (el) language:
 
+&#x0386;
+&#x0388;
+&#x0389;
+&#x038A;
+&#x038C;
+&#x038E;
+&#x038F;
+&#x0390;
 &#x0391;
 &#x0392;
 &#x0393;
@@ -332,6 +340,11 @@ Covers the Greek (el) language
 &#x03A7;
 &#x03A8;
 &#x03A9;
+&#x03AC;
+&#x03AD;
+&#x03AE;
+&#x03AF;
+&#x03B0;
 &#x03B1;
 &#x03B2;
 &#x03B3;
@@ -357,6 +370,12 @@ Covers the Greek (el) language
 &#x03C7;
 &#x03C8;
 &#x03C9;
+&#x03CA;
+&#x03CB;
+&#x03CC;
+&#x03CD;
+&#x03CE;
+
 
 
 ## External Fonts
