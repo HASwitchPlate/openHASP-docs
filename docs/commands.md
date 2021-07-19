@@ -222,14 +222,46 @@ Reports the status of the MCU. The response will be posted to the state topic. F
     }
 ```
 
+!!! danger "`unzip`"
+
+Unzip a file-packgage on the plate. You can upload **uncompressed** ZIP files to the flash space of your plate and unzip them locally. This is useful for cases when you need a lot of small files to be uploaded - putting them in an uncompressed zip allows to upload them in one go, and then extract them with a single command:
+
+```
+unzip /openhasp-weathericons-day.zip
+```
+
+!!! danger "`service`"
+
+Start or stop some of the processes running on the plate.
+
+Currently supported parameters:
+
+- `start`
+- `stop`
+
+Currently supported services:
+
+- `telnet`
+- `http`
+
+
+??? example "Example"
+    To stop the web interface of the plate, send to topic `hasp/<your_plate>/command/service` the string `stop http`.
+    To start the web interface of the plate, send to topic `hasp/<your_plate>/command/service` the string `start http`.
+    To stop the telnet service of the plate, send to topic `hasp/<your_plate>/command/service` the string `stop telnet`.
+    To start the telnet service of the plate, send to topic `hasp/<your_plate>/command/service` the string `start telnet`.
+
+
 !!! danger "`reboot` or `restart`"
 
 Saves any changes in the configuration file and reboots the device.
 
-!!! danger "`update`"
-    _accepted parameters:_ `[url]`
 
+!!! danger "`update`"
+
+_accepted parameters:_ `[url]`     
 Update the firmware from the url provided. Reboots when update was successful.
+
 
 !!! danger "`factoryreset`"
 

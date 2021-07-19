@@ -568,20 +568,21 @@ relevant **openHASP config:** (screen size 240x320)
 
 ```json
 {"page":3,"id":10,"obj":"obj","x":5,"y":35,"w":230,"h":250,"click":0}
-{"page":3,"id":20,"obj":"arc","x":10,"y":42,"w":220,"h":220,"min":170,"max":300,"val":224,"border_side":0,"type":0,"rotation":0,"start_angle":135,"end_angle":45,"start_angle1":135,"end_angle1":45,"adjustable":"true","line_width":21,"line_width1":21,"line_color1":"#9f96b0","bg_opa":0}
-{"page":3,"id":21,"obj":"gauge","x":22,"y":22,"w":176,"h":176,"parentid":20,"min":170,"max":300,"val":224,"format":1,"critical_value":301,"label_count":14,"line_count":27,"border_width":0,"pad_top":2,"pad_bottom":2,"pad_left":2,"pad_right":2,"value_str":"°C","value_ofs_y":45,"value_font":16,"bg_opa":0,"line_width2":3,"line_rounded2":1,"line_color1":"#348feb","scale_grad_color1":"#eb4934","scale_end_color1":"#eb4934"}
-{"page":3,"id":22,"obj":"obj","x":80,"y":80,"w":60,"h":60,"parentid":20,"click":0,"radius":30,"border_width":2,"border_opa":200}
-{"page":3,"id":23,"obj":"label","x":0,"y":95,"w":220,"h":30,"parentid":20,"text":"22.4","text_font":24,"align":"center"}
-{"page":3,"id":24,"obj":"obj","x":145,"y":245,"w":60,"h":30,"click":0}
-{"page":3,"id":25,"obj":"label","x":145,"y":245,"w":60,"h":30,"text":"00.0","text_font":24,"align":"center"}
-{"page":3,"id":26,"obj":"label","x":90,"y":220,"w":60,"h":30,"text":"#000000 \u2022# #909090 \u2022# #909090 \u2022#","text_font":24,"align":"center","text_color":"grey","border_width":0}
+{"page":3,"id":10,"obj":"obj","x":5,"y":35,"w":230,"h":250,"click":0}
+{"page":3,"id":20,"obj":"arc","x":5,"y":37,"w":230,"h":230,"min":170,"max":300,"val":250,"border_side":0,"type":0,"rotation":0,"start_angle":135,"end_angle":45,"adjustable":"true","line_width":21,"line_width1":21,"line_color1":"#34bdeb","bg_opa":0,"pad_top2":5,"pad_bottom2":5,"pad_left2":5,"pad_right2":5,"pad_top":5,"pad_bottom":5,"pad_left":5,"pad_right":5}
+{"page":3,"id":21,"obj":"gauge","x":28,"y":28,"w":175,"h":175,"parentid":20,"min":170,"max":300,"val":224,"format":1,"critical_value":301,"label_count":14,"line_count":27,"border_width":0,"pad_top":2,"pad_bottom":2,"pad_left":2,"pad_right":2,"value_str":"°C","value_ofs_y":55,"value_font":16,"bg_opa":0,"line_width2":3,"line_rounded2":1,"line_color":"#348feb","line_color1":"#348feb","scale_grad_color":"#eb4934","scale_grad_color1":"#eb4934","scale_end_color1":"#eb4934"}
+{"page":3,"id":22,"obj":"obj","x":85,"y":85,"w":60,"h":60,"parentid":20,"click":0,"radius":30,"border_width":2,"border_opa":200}
+{"page":3,"id":23,"obj":"label","x":80,"y":100,"w":70,"h":30,"parentid":20,"text":"22.4","text_font":24,"align":"center"}
+{"page":3,"id":24,"obj":"obj","x":145,"y":245,"w":60,"h":30,"click":0,"radius":5}
+{"page":3,"id":25,"obj":"label","x":145,"y":245,"w":60,"h":30,"text":"25","text_font":24,"align":"center"}
+{"page":3,"id":26,"obj":"label","x":90,"y":220,"w":60,"h":30,"text":"#909090 \u2022# #000000 \u2022# #909090 \u2022#","text_font":24,"align":"center","text_color":"grey","border_width":0}
 {"page":3,"id":30,"obj":"tabview","x":0,"y":235,"w":240,"h":80,"btn_pos":0,"bg_opa":0,"border_width":0,"radius":0}
 {"page":3,"id":31,"obj":"tab","parentid":30}
 {"page":3,"id":32,"obj":"tab","parentid":30}
 {"page":3,"id":33,"obj":"tab","parentid":30}
 {"page":3,"id":41,"obj":"switch","x":35,"y":10,"w":60,"h":30,"parentid":31,"radius":25,"radius2":25}
-{"page":3,"id":42,"obj":"dropdown","x":15,"y":10,"w":110,"h":30,"parentid":32,"options":"hvac_modes","direction":"1"}
-{"page":3,"id":43,"obj":"dropdown","x":15,"y":10,"w":110,"h":30,"parentid":33,"options":"fan_modes","direction":"1"}
+{"page":3,"id":42,"obj":"dropdown","x":15,"y":10,"w":110,"h":30,"parentid":32,"options":"fan_modes","direction":"1","radius":5}
+{"page":3,"id":43,"obj":"dropdown","x":15,"y":10,"w":110,"h":30,"parentid":33,"options":"hvac_modes","direction":"1","radius":5}
 ```
 
 relevant **openHASP-custom-component config:**
@@ -682,7 +683,46 @@ relevant **openHASP-custom-component config:**
                   {{ "#909090 \u2022# #909090 \u2022# #000000 \u2022#" | e }}
                   {% endif %}
 
-      - obj: "p3b42"  # dropdown with hvac_modes
+      - obj: "p3b42"  # dropdown with fan_modes
+        properties:
+          "options": >
+            {% if not (is_state('climate.thermostat_1','unavailable')) %}{%for mode in state_attr('climate.thermostat_1','fan_modes')%}
+            {%- if mode == 'auto' -%}
+            Automatic{{"\n"|e}}
+            {%- elif mode == 'low' -%}
+            Low{{"\n"|e}}
+            {%- elif mode == 'medium' -%}
+            Medium{{"\n"|e}}
+            {%- elif mode == 'high' -%}
+            High{{"\n"|e}}
+            {%- elif mode == 'turbo' -%}
+            Turbo{{"\n"|e}}
+            {%- endif -%}
+            {%-if not loop.last%}{%-endif%}{%-endfor%}{% endif %}
+          "val": >
+            {% if not (is_state('climate.thermostat_1','unavailable')) %}{%for mode in state_attr('climate.thermostat_1','fan_modes')%}
+            {{loop.index -1 if mode == state_attr('climate.thermostat_1','fan_mode') }}
+            {%-endfor%}{% endif %}
+        event:
+          "changed":
+            - service: climate.set_fan_mode
+              target:
+                entity_id: climate.thermostat_1
+              data:
+                fan_mode: >
+                  {% if text == "Automatic" -%}
+                  auto
+                  {% elif text == 'Low' -%}
+                  low
+                  {% elif text == 'Medium' -%}
+                  medium
+                  {% elif text == 'High' -%}
+                  high
+                  {% elif text == 'Turbo' -%}
+                  turbo
+                  {% endif -%}
+
+      - obj: "p3b43"  # dropdown with hvac_modes
         properties:
           "options": >
             {% if not (is_state('climate.thermostat_1','unavailable')) %}{%for mode in state_attr('climate.thermostat_1','hvac_modes')%}
@@ -726,46 +766,6 @@ relevant **openHASP-custom-component config:**
                   {% elif text == 'Fan only' -%}
                   fan_only
                   {% endif -%}
-
-
-      - obj: "p3b43"  # dropdown with fan_modes
-        properties:
-          "options": >
-            {% if not (is_state('climate.thermostat_1','unavailable')) %}{%for mode in state_attr('climate.thermostat_1','fan_modes')%}
-            {%- if mode == 'auto' -%}
-            Automatic{{"\n"|e}}
-            {%- elif mode == 'low' -%}
-            Low{{"\n"|e}}
-            {%- elif mode == 'medium' -%}
-            Medium{{"\n"|e}}
-            {%- elif mode == 'high' -%}
-            High{{"\n"|e}}
-            {%- elif mode == 'turbo' -%}
-            Turbo{{"\n"|e}}
-            {%- endif -%}
-            {%-if not loop.last%}{%-endif%}{%-endfor%}{% endif %}
-          "val": >
-            {% if not (is_state('climate.thermostat_1','unavailable')) %}{%for mode in state_attr('climate.thermostat_1','fan_modes')%}
-            {{loop.index -1 if mode == state_attr('climate.thermostat_1','fan_mode') }}
-            {%-endfor%}{% endif %}
-        event:
-          "changed":
-            - service: climate.set_fan_mode
-              target:
-                entity_id: climate.thermostat_1
-              data:
-                fan_mode: >
-                  {% if text == "Automatic" -%}
-                  auto
-                  {% elif text == 'Low' -%}
-                  low
-                  {% elif text == 'Medium' -%}
-                  medium
-                  {% elif text == 'High' -%}
-                  high
-                  {% elif text == 'Turbo' -%}
-                  turbo
-                  {% endif -%}
 ```
 
 
@@ -786,10 +786,12 @@ Since there's no weather integration in Home Assistant which can offer so much i
 The openHASP component grabs information from both weather sources and updates them on every change.   
 The various strings containing day names, day periods, weather conditions can be localized easily to any language within the configuration.
 
-Weather condition icons are displayed from the internal flash space of the plate. For this, you need to unzip and upload all the icons to the plate:
+Weather condition icons are displayed from the internal flash space of the plate. For this, you need to upload the desired icon pack to the plate:
 
 - [light theme](../../assets/users/openhasp-weathericons-day.zip)
 - [dark theme](../../assets/users/openhasp-weathericons-nigh.zip)
+
+To unzip them on the plate, connect via Telnet and run the command `unzip /openhasp-weathericons-day.zip` to unzip the light theme above (alternatively you can unzip them on your computer and upload them one by one). The configuration example only shows how to use the light theme icons.
 
 _Icons are copyright from [manifestinteractive](https://github.com/manifestinteractive/weather-underground-icons){target=_blank}
 and [merlinthered](https://www.deviantart.com/merlinthered/art/plain-weather-icons-157162192){target=_blank}._

@@ -1,8 +1,19 @@
 
 # Styling Properties
 
-You can adjust the appearance of objects by changing the foreground, background and/or border color of each object.
-Some objects allow for more complex syling, effectively changing its appearance or its sub-components.
+You can adjust the appearance of objects by changing the foreground, background and/or border color of each object. Some objects allow for more complex syling, effectively changing their appearance or their sub-components.     
+
+Certain more complex objects are made up of several sub-parts, which can be styled separately. To access the properties of the parts use a number suffix appended to the property.
+
+!!! tip
+    For example the _gauge_ object uses `line_width` to set the minor ticks thickness, `line_width1` for major ticks and `line_width2` for the thickness of the needle.      
+    _Note:_ not all the suffixed properties are mentioned in this documentation, feel free to discover them yourself.
+
+
+If objects are children of other objects (they have the [parentid][7] property set), property inheritance takes place. 
+
+!!! Inheritance
+    Some properties (typically that are related to text and opacity) can be inherited from the parent object's styles. Inheritance is applied only if the given property is not set in the initial jsonl of the child object (at first draw). In this case, if the property is inheritable, the property's value will be searched in the parents too until an object specifies a value for the property. The parents will use their own state to detemine the value. So for example if a button is pressed, and the text color comes from here, the pressed text color will be used. ([source][8]{target=_blank}) Inheritance takes place at run time too.
 
 ## General
 
@@ -189,3 +200,5 @@ n/a
 [4]: ../data-types/#string
 [5]: ../data-types/#json-object
 [6]: ../fonts/
+[7]: ../objects/#common-properties
+[8]: https://docs.lvgl.io/master/overview/style.html?#inheritance
