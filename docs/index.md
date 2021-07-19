@@ -17,6 +17,8 @@ This project also adds ESP32 and STM32F4 support to take advantage of the additi
 [![screenshot](assets/images/screenshots/demo_mediaplayer.png)](integrations/home-assistant/sampl_conf/#media-player) &nbsp; 
 [![Screenshot](assets/images/screenshots/dashui-060.png)](integrations/examples/example-dashui.md) &nbsp;     
 [![Screenshot](assets/images/screenshots/demo_jaffa1.png)](integrations/openhab/integration_openhab.md) &nbsp; 
+[![screenshot](assets/images/screenshots/demo_climate.png)](integrations/home-assistant/sampl_conf/#generic-thermostatclimate) &nbsp;     
+
 
 ### Features
 
