@@ -141,38 +141,57 @@ relevant **openHASP-custom-component config:**
 
 *  *  *  *  *
 
-## RGB light color
+## Light brightness and color
 
 ![screenshot](../../assets/images/screenshots/cc_sampl_rgb.png)
 
-Have an RGB light in Home Assistant controlled by hasp-lvgl. In our example we use Lanbon L8's moodlight.
+Have a light in Home Assistant controlled by openHASP. In our example we use Lanbon L8's moodlight which has both brightness and color - we use a [slider](../../../design/objects#slider) object for the brightness, and a [cpicker](../../../design/objects#color-picker) object for color.
 
 relevant **openHASP config:**
 
 ```json
-{"page":1,"id":4,"obj":"cpicker","x":20,"y":70,"w":200,"h":200}
+{"page":1,"id":31,"obj":"slider","x":6,"y":15,"w":14,"h":180,"min":1,"max":255}
+{"page":1,"id":32,"obj":"cpicker","x":30,"y":10,"w":180,"h":180}
 ```
 
 relevant **openHASP-custom-component config:**
 
 ```yaml
-      - obj: "p1b4" # color picker
+      - obj: "p1b31" # Light brightness
+        properties:
+          "val": "{{ state_attr('light.plate_moodlight', 'brightness') if state_attr('light.plate_moodlight', 'brightness') != None else 0 }}"
+        event:
+          "changed":
+            - service: light.turn_on
+              data:
+                entity_id: light.plate_moodlight
+                brightness:  "{{ val }}"
+          "up":
+            - service: light.turn_on
+              data:
+                entity_id: light.plate_moodlight
+                brightness:  "{{ val }}"
+
+      - obj: "p1b32" # Light color
         properties:
           "color": >
-            {% if is_state('light.openhasp_lanbon_test_moodlight','on') %}
-            {% set rgb = state_attr('light.openhasp_lanbon_test_moodlight','rgb_color') %}
-            {{ "#%02x%02x%02x" | format(rgb[0],rgb[1],rgb[2]) }}            
+            {% if is_state('light.plate_moodlight','on') %}
+            {% set rgb = state_attr('light.plate_moodlight','rgb_color') %}
+            {{ "#%02x%02x%02x" | format(rgb[0],rgb[1],rgb[2]) }}
             {% endif %}
         event:
           "up":
             - service: light.turn_on
               data:
-                entity_id: light.openhasp_lanbon_test_moodlight
+                entity_id: light.plate_moodlight
                 rgb_color: "[{{ r }},{{ g }},{{ b }}]"
-```
-The `color` property gets updated from the `rgb_color` attriburte of `light.openhasp_lanbon_test_moodlight`. The R, G and B decimal color values are converted to hexadecimal html color code using a template whenever the color of the light changes in Home Assistant.
 
-Whenever somebody changes the color of the `cpicker` object on the plate, the light in Home Assustant gets updated with `rgb_color` values received in the MQTT message.
+```
+The brightness slider value gets updated from the `brightness` attribute of `light.plate_moodlight`, while it's on. If it's off, that attribute is removed by Home Assistant, in that case we set it to `0`.
+
+The `color` property gets updated from the `rgb_color` attriburte of the light. The R, G and B decimal color values are converted to hexadecimal html color code using a template whenever the color of the light changes in Home Assistant.
+
+When somebody changes the color of the picker object on the page, the light in Home Assistant gets updated with `rgb_color` values received in the MQTT message from the plate.
 
 *  *  *  *  *
 
