@@ -368,196 +368,207 @@ UI theme set to `Hasp Light` in plate's web interface.
 relevant **openHASP config:** (screen size 240x320) 
 
 ```json
-{"page":6,"id":1,"obj":"obj","x":5,"y":35,"w":200,"h":84,"click":0}
-{"page":6,"id":2,"obj":"label","x":7,"y":45,"w":196,"h":30,"text":"-","mode":"scroll","align":1}
-{"page":6,"id":3,"obj":"label","x":7,"y":80,"w":196,"h":30,"text":"-","mode":"scroll","align":1}
-{"page":6,"id":4,"obj":"bar","x":5,"y":114,"w":200,"h":5,"min":0,"max":100,"border_opa":0,"pad_top":0,"pad_bottom":0,"pad_left":0,"pad_right":0}
-{"page":6,"id":5,"obj":"dropdown","x":5,"y":128,"w":120,"h":30,"options":"Source1\nSource2\nSource3","direction":3,"max_height":300}
-{"page":6,"id":6,"obj":"dropdown","x":130,"y":128,"w":75,"h":30,"options":"Jazz\nPop\nRock","direction":2}
-{"page":6,"id":7,"obj":"btn","x":5,"y":170,"w":50,"h":60,"toggle":false,"text":"\uE4AE","text_font":32}
-{"page":6,"id":8,"obj":"btn","x":63,"y":170,"w":83,"h":60,"toggle":false,"text":"\uE40A","text_font":32}
-{"page":6,"id":9,"obj":"btn","x":154,"y":170,"w":51,"h":60,"toggle":false,"text":"\uE4AD","text_font":32}
-{"page":6,"id":10,"obj":"slider","x":212,"y":35,"w":22,"h":245,"min":0,"max":100}
-{"page":6,"id":12,"obj":"btn","x":57,"y":242,"w":45,"h":37,"toggle":false,"text":"\uE457","text_font":32}
-{"page":6,"id":13,"obj":"btn","x":108,"y":242,"w":45,"h":37,"toggle":false,"text":"\uE49E","text_font":32}
-{"page":6,"id":14,"obj":"btn","x":5,"y":242,"w":45,"h":37,"toggle":false,"text":"\uE425","text_font":32}
-{"page":6,"id":15,"obj":"btn","x":160,"y":242,"w":45,"h":37,"toggle":false,"text":"\uE57E","text_font":32}
+{"page":6,"id":10,"obj":"obj","x":5,"y":35,"w":230,"h":250,"click":0,"bg_opa":0,"shadow_opa":140,"shadow_color":"black","shadow_width":20,"shadow_spread":0}
+{"page":6,"id":11,"obj":"obj","x":8,"y":38,"w":200,"h":84,"click":0}
+{"page":6,"id":12,"obj":"label","x":10,"y":48,"w":196,"h":30,"text":"-","mode":"scroll","align":1}
+{"page":6,"id":13,"obj":"label","x":10,"y":83,"w":196,"h":30,"text":"-","mode":"scroll","align":1}
+{"page":6,"id":14,"obj":"bar","x":8,"y":117,"w":200,"h":5,"min":0,"max":100,"border_opa":0,"pad_top":0,"pad_bottom":0,"pad_left":0,"pad_right":0}
+{"page":6,"id":15,"obj":"dropdown","x":8,"y":129,"w":120,"h":30,"options":"Source1\nSource2\nSource3","direction":3,"max_height":300,"radius":5}
+{"page":6,"id":16,"obj":"dropdown","x":133,"y":129,"w":75,"h":30,"options":"Jazz\nPop\nRock","direction":2,"radius":5}
+{"page":6,"id":17,"obj":"btn","x":8,"y":166,"w":50,"h":70,"toggle":false,"text":"\uE4AE","text_font":32}
+{"page":6,"id":18,"obj":"btn","x":66,"y":166,"w":83,"h":70,"toggle":false,"text":"\uE40A","text_font":32}
+{"page":6,"id":19,"obj":"btn","x":157,"y":166,"w":51,"h":70,"toggle":false,"text":"\uE4AD","text_font":32}
+{"page":6,"id":20,"obj":"slider","x":212,"y":38,"w":20,"h":244,"min":0,"max":100,"val":85}
+{"page":6,"id":21,"obj":"btn","x":8,"y":241,"w":45,"h":40,"toggle":false,"text":"\uE425","text_font":32}
+{"page":6,"id":22,"obj":"btn","x":60,"y":241,"w":45,"h":40,"toggle":false,"text":"\uE457","text_font":32}
+{"page":6,"id":23,"obj":"btn","x":111,"y":241,"w":45,"h":40,"toggle":false,"text":"\uE49E","text_font":32}
+{"page":6,"id":24,"obj":"btn","x":163,"y":241,"w":45,"h":40,"toggle":false,"text":"\uE57E","text_font":32}
 ```
 
 relevant **openHASP-custom-component config:**
 
 ```yaml
-      - obj: "p6b2" # artist
+      - obj: "p6b12" # artist label
         properties:
-          "text": "{{ state_attr('media_player.sound_my_room','media_artist') if state_attr('media_player.sound_my_room','media_artist') else '-' }}"
+          "text": "{{ state_attr('media_player.sound_my_room1','media_artist') if state_attr('media_player.sound_my_room1','media_artist') else '-' }}"
 
-      - obj: "p6b3" # title
+      - obj: "p6b13" # title label
         properties:
-          "text": "{{ state_attr('media_player.sound_my_room','media_title') if state_attr('media_player.sound_my_room','media_title') else '-' }}"
+          "text": "{{ state_attr('media_player.sound_my_room1','media_title') if state_attr('media_player.sound_my_room1','media_title') else '-' }}"
 
-      - obj: "p6b5" # sources list
+      - obj: "p6b15" # sources list
         properties:
           "options": >
-            {% if not (is_state('media_player.sound_my_room','unavailable')) %}{{"(no source)\n"|e}}{%for source in state_attr('media_player.sound_my_room','source_list')%}{{source+"\n"|e}}{%-if not loop.last%}{%-endif%}{%-endfor%}{% endif %}
+            {% if not (is_state('media_player.sound_my_room1','unavailable')) %}
+            {{"(no source)\n"|e}}
+            {%- for source in state_attr('media_player.sound_my_room1','source_list') -%}
+            {{source+"\n"|e}}{%-if not loop.last%}{%-endif%}{%-endfor%}{%-endif %}
           "val": >
-            {% if not (is_state('media_player.sound_my_room','unavailable')) %}{%for source in state_attr('media_player.sound_my_room','source_list')%}
-            {{loop.index if source == state_attr('media_player.sound_my_room','source') }}
-            {%-endfor%}{% endif %}
-          "click": "{{ 'false' if (is_state('media_player.sound_my_room','unavailable') or is_state('media_player.sound_my_room','unknown')) else 'true' }}"
+            {% if not (is_state('media_player.sound_my_room1','unavailable')) %}
+            {% if state_attr('media_player.sound_my_room1','source') == None %}0{% else %}
+            {%for source in state_attr('media_player.sound_my_room1','source_list')%}
+            {{loop.index if source == state_attr('media_player.sound_my_room1','source') }}
+            {%-endfor%}{%-endif %}{%-endif %}
+          "click": "{{ 'false' if (is_state('media_player.sound_my_room1','unavailable') or is_state('media_player.sound_my_room1','unknown')) else 'true' }}"
         event:
           "changed":
             - service: media_player.select_source
               data:
-                entity_id: media_player.sound_my_room
+                entity_id: media_player.sound_my_room1
                 source: "{{ text }}"
 
-      - obj: "p6b6" # sound modes list
+      - obj: "p6b16" # sound modes list
         properties:
           "options": >
-            {% if not (is_state('media_player.sound_my_room','unavailable')) %}{%for soundmode in state_attr('media_player.sound_my_room','sound_mode_list')%}{{soundmode+"\n"|e}}{%-if not loop.last%}{%-endif%}{%-endfor%}{% endif %}
+            {% if not (is_state('media_player.sound_my_room1','unavailable')) %}
+            {%-for soundmode in state_attr('media_player.sound_my_room1','sound_mode_list')-%}
+            {{soundmode+"\n"|e}}{%-if not loop.last%}{%-endif%}{%-endfor%}{%-endif %}
           "val": >
-            {% if not (is_state('media_player.sound_my_room','unavailable')) %}{%for source in state_attr('media_player.sound_my_room','sound_mode_list')%}
-            {{loop.index -1 if source == state_attr('media_player.sound_my_room','sound_mode') }}
+            {% if not (is_state('media_player.sound_my_room1','unavailable')) %}{%for source in state_attr('media_player.sound_my_room1','sound_mode_list')%}
+            {{loop.index -1 if source == state_attr('media_player.sound_my_room1','sound_mode') }}
             {%-endfor%}{% endif %}
-          "click": "{{ 'false' if (is_state('media_player.sound_my_room','unavailable') or is_state('media_player.sound_my_room','unknown')) else 'true' }}"
+          "click": "{{ 'false' if (is_state('media_player.sound_my_room1','unavailable') or is_state('media_player.sound_my_room1','unknown')) else 'true' }}"
         event:
           "changed":
             - service: media_player.select_sound_mode
               data:
-                entity_id: media_player.sound_my_room
+                entity_id: media_player.sound_my_room1
                 sound_mode: "{{ text }}"
 
-      - obj: "p6b4" # progressbar
+      - obj: "p6b14" # progressbar
         properties:
-          "max": "{{ state_attr('media_player.sound_my_room','media_duration') | int }}"
-          "val": "{{ state_attr('media_player.sound_my_room','media_position') | int }}"
+          "max": "{{ state_attr('media_player.sound_my_room1','media_duration') | int }}"
+          "val": "{{ state_attr('media_player.sound_my_room1','media_position') | int }}"
 
-      - obj: "p6b7" # prev
-        properties:
-          "text_opa": "{{ '80' if (is_state('media_player.sound_my_room','unavailable') or is_state('media_player.sound_my_room','unknown')) else '255' }}"
-        event:
-          "down":
-            - service: media_player.media_previous_track
-              target:
-                entity_id: media_player.sound_my_room
-
-      - obj: "p6b9" # next
-        properties:
-          "text_opa": "{{ '80' if (is_state('media_player.sound_my_room','unavailable') or is_state('media_player.sound_my_room','unknown')) else '255' }}"
-        event:
-          "down":
-            - service: media_player.media_next_track
-              target:
-                entity_id: media_player.sound_my_room
-
-      - obj: "p6b8" # play/pause
+      - obj: "p6b18" # play/pause/stop
         properties:
           "text": >
-            {% if is_state('media_player.sound_my_room', 'playing') %}
+            {% if is_state('media_player.sound_my_room1', 'playing') %}
             {{ "\uE3E4" | e }}
             {%-else %}
             {{ "\uE40A" | e }}
             {%-endif %}
-          "text_opa": "{{ '80' if (is_state('media_player.sound_my_room','unavailable') or is_state('media_player.sound_my_room','unknown')) else '255' }}"
+          "text_opa": "{{ '80' if (is_state('media_player.sound_my_room1','unavailable') or is_state('media_player.sound_my_room1','unknown')) else '255' }}"
         event:
           "down":
             - service: media_player.media_play_pause
               target:
-                entity_id: media_player.sound_my_room
+                entity_id: media_player.sound_my_room1
+          "long":
+            - service: media_player.media_stop
+              target:
+                entity_id: media_player.sound_my_room1
 
-      - obj: "p6b10" # volume slider
+      - obj: "p6b17" # prev
         properties:
-          "val": "{{ state_attr('media_player.sound_my_room','volume_level') * 100 | int }}"
-          "click": "{{ 'false' if (is_state('media_player.sound_my_room','unavailable') or is_state('media_player.sound_my_room','unknown')) else 'true' }}"
+          "text_opa": "{{ '80' if (is_state('media_player.sound_my_room1','unavailable') or is_state('media_player.sound_my_room1','unknown')) else '255' }}"
+        event:
+          "down":
+            - service: media_player.media_previous_track
+              target:
+                entity_id: media_player.sound_my_room1
+
+      - obj: "p6b19" # next
+        properties:
+          "text_opa": "{{ '80' if (is_state('media_player.sound_my_room1','unavailable') or is_state('media_player.sound_my_room1','unknown')) else '255' }}"
+        event:
+          "down":
+            - service: media_player.media_next_track
+              target:
+                entity_id: media_player.sound_my_room1
+
+      - obj: "p6b20" # volume slider
+        properties:
+          "val": "{{ state_attr('media_player.sound_my_room1','volume_level') * 100 | int }}"
+          "click": "{{ 'false' if (is_state('media_player.sound_my_room1','unavailable') or is_state('media_player.sound_my_room1','unknown')) else 'true' }}"
         event:
           "changed":
             - service: media_player.volume_set
               data:
-                entity_id: media_player.sound_my_room
+                entity_id: media_player.sound_my_room1
                 volume_level: "{{ val | int / 100 }}"
           "up":
             - service: media_player.volume_set
               data:
-                entity_id: media_player.sound_my_room
+                entity_id: media_player.sound_my_room1
                 volume_level: "{{ val | int / 100 }}"
 
-      - obj: "p6b12" # repeat
+      - obj: "p6b21" # power
         properties:
-          "text": >
-            {% if is_state_attr('media_player.sound_my_room', 'repeat', 'one') %}
-            {{ "\uE458" | e }}
-            {% elif is_state_attr('media_player.sound_my_room', 'repeat', 'all') %}
-            {{ "\uE456" | e }}
-            {%-else %}
-            {{ "\uE457" | e }}
-            {%-endif %}
-          "text_opa": "{{ '80' if (is_state('media_player.sound_my_room','unavailable') or is_state('media_player.sound_my_room','unknown')) else '255' }}"
-        event:
-          "down":
-            - service: media_player.repeat_set
-              data:
-                entity_id: media_player.sound_my_room
-                repeat: >
-                  {% if is_state_attr('media_player.sound_my_room', 'repeat', 'one') %}
-                  all
-                  {% elif is_state_attr('media_player.sound_my_room', 'repeat', 'all') %}
-                  off
-                  {% elif is_state_attr('media_player.sound_my_room', 'repeat', 'off') %}
-                  one
-                  {%-endif %}
-
-      - obj: "p6b13" # shuffle
-        properties:
-          "text": >
-            {% if state_attr('media_player.sound_my_room', 'shuffle') %}
-            {{ "\uE49D" | e }}
-            {%-else %}
-            {{ "\uE49E" | e }}
-            {%-endif %}
-          "text_opa": "{{ '80' if (is_state('media_player.sound_my_room','unavailable') or is_state('media_player.sound_my_room','unknown')) else '255' }}"
-        event:
-          "down":
-            - service: media_player.shuffle_set
-              data:
-                entity_id: media_player.sound_my_room
-                shuffle:  >
-                  {% if state_attr('media_player.sound_my_room', 'shuffle') %}
-                  false
-                  {% else %}
-                  true
-                  {%-endif %}
-
-      - obj: "p6b15" # mute
-        properties:
-          "text": >
-            {% if state_attr('media_player.sound_my_room', 'is_volume_muted') %}
-            {{ "\uE75F" | e }}
-            {%-else %}
-            {{ "\uE57E" | e }}
-            {%-endif %}
-          "text_opa": "{{ '80' if (is_state('media_player.sound_my_room','unavailable') or is_state('media_player.sound_my_room','unknown')) else '255' }}"
-        event:
-          "down":
-            - service: media_player.volume_mute
-              data:
-                entity_id: media_player.sound_my_room
-                is_volume_muted:  >
-                  {% if state_attr('media_player.sound_my_room', 'is_volume_muted') %}
-                  false
-                  {% else %}
-                  true
-                  {%-endif %}
-
-      - obj: "p6b14" # power
-        properties:
-          "text_color": "{{ '#B00000' if states('media_player.sound_my_room') == 'off' else '#FFFFFF' }}"
-          "text_opa": "{{ '80' if (is_state('media_player.sound_my_room','unavailable') or is_state('media_player.sound_my_room','unknown')) else '255' }}"
+          "text_color": "{{ '#B00000' if states('media_player.sound_my_room1') == 'off' else '#FFFFFF' }}"
+          "text_opa": "{{ '80' if (is_state('media_player.sound_my_room1','unavailable') or is_state('media_player.sound_my_room1','unknown')) else '255' }}"
         event:
           "down":
             - service: media_player.toggle
               data:
-                entity_id: media_player.sound_my_room
+                entity_id: media_player.sound_my_room1
 
+      - obj: "p6b22" # repeat
+        properties:
+          "text": >
+            {% if is_state_attr('media_player.sound_my_room1', 'repeat', 'one') %}
+            {{ "\uE458" | e }}
+            {% elif is_state_attr('media_player.sound_my_room1', 'repeat', 'all') %}
+            {{ "\uE456" | e }}
+            {%-else %}
+            {{ "\uE457" | e }}
+            {%-endif %}
+          "text_opa": "{{ '80' if (is_state('media_player.sound_my_room1','unavailable') or is_state('media_player.sound_my_room1','unknown')) else '255' }}"
+        event:
+          "down":
+            - service: media_player.repeat_set
+              data:
+                entity_id: media_player.sound_my_room1
+                repeat: >
+                  {% if is_state_attr('media_player.sound_my_room1', 'repeat', 'one') %}
+                  all
+                  {% elif is_state_attr('media_player.sound_my_room1', 'repeat', 'all') %}
+                  off
+                  {% elif is_state_attr('media_player.sound_my_room1', 'repeat', 'off') %}
+                  one
+                  {%-endif %}
+
+      - obj: "p6b23" # shuffle
+        properties:
+          "text": >
+            {% if state_attr('media_player.sound_my_room1', 'shuffle') %}
+            {{ "\uE49D" | e }}
+            {%-else %}
+            {{ "\uE49E" | e }}
+            {%-endif %}
+          "text_opa": "{{ '80' if (is_state('media_player.sound_my_room1','unavailable') or is_state('media_player.sound_my_room1','unknown')) else '255' }}"
+        event:
+          "down":
+            - service: media_player.shuffle_set
+              data:
+                entity_id: media_player.sound_my_room1
+                shuffle:  >
+                  {% if state_attr('media_player.sound_my_room1', 'shuffle') %}
+                  false
+                  {% else %}
+                  true
+                  {%-endif %}
+
+      - obj: "p6b24" # mute
+        properties:
+          "text": >
+            {% if state_attr('media_player.sound_my_room1', 'is_volume_muted') %}
+            {{ "\uE75F" | e }}
+            {%-else %}
+            {{ "\uE57E" | e }}
+            {%-endif %}
+          "text_opa": "{{ '80' if (is_state('media_player.sound_my_room1','unavailable') or is_state('media_player.sound_my_room1','unknown')) else '255' }}"
+        event:
+          "down":
+            - service: media_player.volume_mute
+              data:
+                entity_id: media_player.sound_my_room1
+                is_volume_muted:  >
+                  {% if state_attr('media_player.sound_my_room1', 'is_volume_muted') %}
+                  false
+                  {% else %}
+                  true
+                  {%-endif %}
 ```
 Note that the `val` value of the slider is multiplied and divided by 100 when read and set, because [LVGL only suppports integers](../../design/data-types#integer) for object values. By multiplying and dividing by 100, it becomes possible to set volume between 0 and 1 as required by Home Assistant.
 
