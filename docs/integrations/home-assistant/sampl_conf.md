@@ -361,8 +361,9 @@ relevant **openHASP-custom-component config:**
 
 ![screenshot](../../assets/images/screenshots/cc_sampl_mediaplayer.png)  
 
-The labels with artist and title are scrolling, the progressbar fills if the media player provides duration and playback position. The dropdown lists containing the available sources and sound modes of the player get populated automatically by the values existing on the player in Home Assistant, also the actually selected value is in sync with the values selected in Home Assistant.  
-Player availability is shown by the opacity of the buttons. Player state (play/pause) is shown by the middle button. Power state shown by color, repeat, shuffle and muted state shown by appropriate icons on the buttons.
+The labels with artist and title are scrolling, the progressbar fills if the media player provides duration and playback position. The dropdown lists containing the available sources and sound modes of the player get populated automatically by the values existing on the player in Home Assistant, and also the actually selected source is in sync with it.
+
+Player availability is shown by the opacity of the buttons. Player state (play/pause) is shown by the middle button, short pressing means pause, long-press means stop. Power state shown by color, repeat, shuffle and muted state shown by appropriate icons on the buttons.
 UI theme set to `Hasp Light` in plate's web interface.
 
 relevant **openHASP config:** (screen size 240x320) 
