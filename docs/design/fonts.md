@@ -10,7 +10,6 @@
 {
   min-width: 5%;
   padding: 0.5em 0.25m;
-
 }
 
 th:nth-child(3n+1) { width: 8%; text-align: center;}
@@ -44,7 +43,8 @@ p4b2.value_font=12
 !!! note
     It is possible to create custom builds with built-in fonts of other sizes (choose any _four_ of 12, 14, 16, 20, 22, 24, 26, 28, 32, 36, 38, 40, 44, 48) and supporting Latin-2 or Cyrillic character sets (even combined) by [customizing](../compiling/customize.md) `user_config_override.h`.
 
-### Built-in Icons
+
+## Built-in Icons
 
 The icons in the list below are included with the built-in font sizes.
 Included are a range of arrows, navigation, climate, controls, devices, energy, lights, places, presence, security, sound, time and wireless icons.
@@ -65,7 +65,7 @@ To use an icon in a text you need to prefix the UTF-8 character code with `\u`.
 ```
 
 
-### Character Sets
+## Character Sets
 
 The characters are encoded in UTF-8. All character sets include the [Ascii](#ascii) `0x20-0x7E` characters, the non-braking-space (NBSP) and 10 universal symbols.
 Each set contains roughly the same *extended* characters from its equivalent [iso-8859 standard](https://en.wikipedia.org/wiki/ISO/IEC_8859){target=_blank}.
@@ -179,7 +179,7 @@ Covers Northern, Western and Southern European languages: English (en), French (
 
 ### Latin 2
 
-Needs compiling with [customization](../../compiling/customize).      
+Needs compiling with [customization](../../compiling/customize/).
 Includes all characters and symbols from the [Ascii range](#ascii) above.
 
 Covers Central and Eastern European languages: Czech (cs), Hungarian (hu), Polish (pl), Romanian (ro), Croatian (hr), Slovak (sk), Slovenian (sl), Sorbian (sb)
@@ -303,9 +303,115 @@ Covers Central and Eastern European languages: Czech (cs), Hungarian (hu), Polis
 &#x021A;
 &#x021B;
 
+
+### Cyrillic
+
+Needs compiling with [customization](../../compiling/customize/).
+Includes all characters and symbols from the [Ascii range](#ascii) above.
+
+Covers the Slavic languages that use a Cyrillic alphabet, including Belarusian, Bulgarian, Macedonian, Russian, Serbian, and Ukrainian 
+
+&#x0400;
+&#x0401;
+&#x0402;
+&#x0403;
+&#x0404;
+&#x0405;
+&#x0406;
+&#x0407;
+&#x0408;
+&#x0409;
+&#x040A;
+&#x040B;
+&#x040C;
+&#x040D;
+&#x040E;
+&#x040F;
+&#x0410;
+&#x0411;
+&#x0412;
+&#x0413;
+&#x0414;
+&#x0415;
+&#x0416;
+&#x0417;
+&#x0418;
+&#x0419;
+&#x041A;
+&#x041B;
+&#x041C;
+&#x041D;
+&#x041E;
+&#x041F;
+&#x0420;
+&#x0421;
+&#x0422;
+&#x0423;
+&#x0424;
+&#x0425;
+&#x0426;
+&#x0427;
+&#x0428;
+&#x0429;
+&#x042A;
+&#x042B;
+&#x042C;
+&#x042D;
+&#x042E;
+&#x042F;
+&#x0430;
+&#x0431;
+&#x0432;
+&#x0433;
+&#x0434;
+&#x0435;
+&#x0436;
+&#x0437;
+&#x0438;
+&#x0439;
+&#x043A;
+&#x043B;
+&#x043C;
+&#x043D;
+&#x043E;
+&#x043F;
+&#x0440;
+&#x0441;
+&#x0442;
+&#x0443;
+&#x0444;
+&#x0445;
+&#x0446;
+&#x0447;
+&#x0448;
+&#x0449;
+&#x044A;
+&#x044B;
+&#x044C;
+&#x044D;
+&#x044E;
+&#x044F;
+&#x0450;
+&#x0451;
+&#x0452;
+&#x0453;
+&#x0454;
+&#x0455;
+&#x0456;
+&#x0457;
+&#x0458;
+&#x0459;
+&#x045A;
+&#x045B;
+&#x045C;
+&#x045D;
+&#x045E;
+&#x045F;
+
+
 ### Greek
 
-Needs compiling with [customization](../../compiling/customize).      
+Needs compiling with [customization](../../compiling/customize/).
 Includes all characters and symbols from the [Ascii range](#ascii) above.
 
 Covers the Greek (el) language:
@@ -377,7 +483,6 @@ Covers the Greek (el) language:
 &#x03CC;
 &#x03CD;
 &#x03CE;
-
 
 
 ## External Fonts
