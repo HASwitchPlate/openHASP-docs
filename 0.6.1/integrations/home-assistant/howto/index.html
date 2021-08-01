@@ -677,13 +677,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#send-jsonl-files-from-home-assistant" class="md-nav__link">
-    Send jsonl files from Home Assistant
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#debugging" class="md-nav__link">
     Debugging
   </a>
@@ -1254,13 +1247,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#send-jsonl-files-from-home-assistant" class="md-nav__link">
-    Send jsonl files from Home Assistant
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#debugging" class="md-nav__link">
     Debugging
   </a>
@@ -1332,7 +1318,7 @@
 </ol>
 <p>The component will automatically discover the plates and you will see them appearing in <em>Home Assistant &gt; Configuration &gt; Integrations &gt; HASP-Open Hardware Edition</em>.</p>
 <p>When Home Assistant detects your plate, you will have to give it a name. In the examples below both name and node name is <code>plate35</code>. <br />
-You will be presented with options to set the backlight brightness level when the plate is idle and optionally you can set a path to a centrally located <code>pages.jsonl</code> file containing design for this plate.</p>
+You will be presented with options to set the backlight brightness level when the plate is idle and optionally you can set a path to a centrally located <code>pages.jsonl</code> file containing design for this plate - the component can send the contents of the file when the plate connects.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>If you opt to store the <code>pages.jsonl</code> file on Home Assistant server, it will only be loaded on start of Home Assistant and reloaded on plate availability (becoming online). In this case, don't upload any <code>pages.jsonl</code> file to the plate's flash memory! This assumes your plate pages are empty in initial state. Checkout the <em>services</em> section for requirements to deploy this.</p>
@@ -1469,15 +1455,24 @@ The brightness of the screen when idle (before long idle). Numeric value between
 <dt><strong>openhasp.clear_page</strong></dt>
 <dd>Clears the contents of the specified page number. If page number not specified, clears all the pages.</dd>
 <dt><strong>openhasp.load_pages</strong></dt>
-<dd>
-<p>Loads new design from <code>pages.jsonl</code> file from <em>full path</em>.</p>
+<dd>Loads new design from <code>pages.jsonl</code> file from <em>full path</em> on Home Assistant server.</dd>
+</dl>
 <p>The file must be located in an authorised location defined by <a href="https://www.home-assistant.io/docs/configuration/basic/#allowlist_external_dirs" target="_blank">allowlist_external_dirs</a> (in case of hassio <code>/config/</code> is the directory where Home Assistant's configuration.yaml resides, so in case of a subdirectory called <code>openhasp</code> the full path would be e.g. <code>/config/openhasp/pages.jsonl</code>, and you need to add  <code>/config/openhasp/</code> to your <code>allowlist_external_dirs</code>).</p>
-<div class="admonition important">
-<p class="admonition-title">Important</p>
-<p>The contents of the file are loaded line by line thus <code>"page":X</code> has to be defined for each object.</p>
-</div>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>!!! important
+    The contents of the file are loaded line by line thus `&quot;page&quot;:X` has to be defined for each object.
+</code></pre></div>
+</td></tr></table>
 <p>Unless you clear the page first, the objects will be updated.</p>
-</dd>
+<p>For example, to allow read-access to the folder, add these lines to your <code>configuration.yaml</code>:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nt">homeassistant</span><span class="p">:</span>
+  <span class="nt">allowlist_external_dirs</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="s">&quot;/config/openhasp&quot;</span>
+</code></pre></div>
+</td></tr></table>
+<dl>
 <dt><strong>openhasp.command</strong></dt>
 <dd>
 <p>Wraps up any <a href="../../../commands/">command</a> so that it can be called against the <em>entity_id</em> of the plate. Useful in Automations and Blueprints.</p>
@@ -1496,18 +1491,8 @@ The brightness of the screen when idle (before long idle). Numeric value between
 </dd>
 </dl>
 <p>Check out the example confgurations and automations to learn how to use these services within Home Assistant.</p>
-<h2 id="send-jsonl-files-from-home-assistant">Send jsonl files from Home Assistant<a class="headerlink" href="#send-jsonl-files-from-home-assistant" title="Permanent link">~</a></h2>
-<p>You can save your jsonl files in Home Assistant too. The custom component can send the contents of the file when the plate connects.
-To allow read-access to the folder, add these lines to your <code>configuration.yaml</code>:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nt">homeassistant</span><span class="p">:</span>
-  <span class="nt">allowlist_external_dirs</span><span class="p">:</span>
-    <span class="p p-Indicator">-</span> <span class="s">&quot;/config/openhasp&quot;</span>
-</code></pre></div>
-</td></tr></table>
 <h2 id="debugging">Debugging<a class="headerlink" href="#debugging" title="Permanent link">~</a></h2>
-<p>Add these lines to your <code>configuration.yaml</code> configuration and restart Home Assistant:</p>
+<p>Add these lines to your main <code>configuration.yaml</code> configuration and restart Home Assistant:</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
@@ -1517,6 +1502,7 @@ To allow read-access to the folder, add these lines to your <code>configuration.
     <span class="nt">custom_components.openhasp</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">debug</span>
 </code></pre></div>
 </td></tr></table>
+<p>Look for the debug messages in the <code>home-assistant.log</code> file.</p>
                 
                   
                     
