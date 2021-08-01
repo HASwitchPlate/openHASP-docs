@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://haswitchplate.github.io/openHASP-docs/0.6.1/0.6.1/integrations/home-assistant/howto/">
       
       <link rel="icon" href="../../../favicon.ico">
-      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.1">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.2">
     
     
       
@@ -1331,7 +1331,12 @@
 <li>Set the <a href="../../../configuration/mqtt/">MQTT server</a> settings and make sure each plate has a unique node name, save and reboot.</li>
 </ol>
 <p>The component will automatically discover the plates and you will see them appearing in <em>Home Assistant &gt; Configuration &gt; Integrations &gt; HASP-Open Hardware Edition</em>.</p>
-<p>When Home Assistant detects your plate, you will have to give it a name. In the examples below both name and node name is <code>plate35</code>.</p>
+<p>When Home Assistant detects your plate, you will have to give it a name. In the examples below both name and node name is <code>plate35</code>. <br />
+You will be presented with options to set the backlight brightness level when the plate is idle and optionally you can set a path to a centrally located <code>pages.jsonl</code> file containing design for this plate.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you opt to store the <code>pages.jsonl</code> file on Home Assistant server, it will olnly be loaded on start of Home Assistant and reloaded on plate availability (becoming online). In this case, don't upload any <code>pages.jsonl</code> file to the plate's flash memory! This assumes your plate pages are empty in initial state. Checkout the <em>services</em> section for requirements to deploy this.</p>
+</div>
 <p>Currently you will get a warning that you need to add manual configuration for the objects in your <code>configuration.yaml</code>, that's no problem, read ahead.</p>
 <h3 id="example">Example<a class="headerlink" href="#example" title="Permanent link">~</a></h3>
 <p>To add an openHASP plate to your installation with a sample configuration, upload a <code>pages.jsonl</code> file with the folowing content to your plate first:</p>
@@ -1520,7 +1525,7 @@ To allow read-access to the folder, add these lines to your <code>configuration.
 <div class="md-source-date">
   <small>
     
-      Last update: 2021-07-30
+      Last update: 2021-08-01
     
   </small>
 </div>
@@ -1583,10 +1588,10 @@ To allow read-access to the folder, add these lines to your <code>configuration.
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.instant", "navigation.tracking", "search.suggest", "search.highlight", "navigation.top"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../assets/javascripts/workers/search.53c85856.min.js", "version": {"default": 0.6, "provider": "mike"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.instant", "navigation.tracking", "search.suggest", "search.highlight", "navigation.top"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../assets/javascripts/workers/search.709b4209.min.js", "version": {"default": 0.6, "provider": "mike"}}</script>
     
      
-      <script src="../../../assets/javascripts/bundle.716f8af4.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.2b46852b.min.js"></script>
       
     
 <!-- <script src="../../../js/youtube.js"></script> -->
