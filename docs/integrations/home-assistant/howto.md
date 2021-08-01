@@ -52,7 +52,7 @@ When Home Assistant detects your plate, you will have to give it a name. In the 
 You will be presented with options to set the backlight brightness level when the plate is idle and optionally you can set a path to a centrally located `pages.jsonl` file containing design for this plate.
 
 !!! note
-     If you opt to store the `pages.jsonl` file on Home Assistant server, it will olnly be loaded on start of Home Assistant and reloaded on plate availability (becoming online). In this case, don't upload any `pages.jsonl` file to the plate's flash memory! This assumes your plate pages are empty in initial state. Checkout the _services_ section for requirements to deploy this.
+     If you opt to store the `pages.jsonl` file on Home Assistant server, it will only be loaded on start of Home Assistant and reloaded on plate availability (becoming online). In this case, don't upload any `pages.jsonl` file to the plate's flash memory! This assumes your plate pages are empty in initial state. Checkout the _services_ section for requirements to deploy this.
 
 Currently you will get a warning that you need to add manual configuration for the objects in your `configuration.yaml`, that's no problem, read ahead.
 
