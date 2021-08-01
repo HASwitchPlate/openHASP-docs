@@ -49,7 +49,7 @@ First prepare your plates to be integrated with Home Assistant (follow steps in 
 The component will automatically discover the plates and you will see them appearing in _Home Assistant > Configuration > Integrations > HASP-Open Hardware Edition_.
 
 When Home Assistant detects your plate, you will have to give it a name. In the examples below both name and node name is `plate35`.   
-You will be presented with options to set the backlight brightness level when the plate is idle and optionally you can set a path to a centrally located `pages.jsonl` file containing design for this plate.
+You will be presented with options to set the backlight brightness level when the plate is idle and optionally you can set a path to a centrally located `pages.jsonl` file containing design for this plate - the component can send the contents of the file when the plate connects.
 
 !!! note
      If you opt to store the `pages.jsonl` file on Home Assistant server, it will only be loaded on start of Home Assistant and reloaded on plate availability (becoming online). In this case, don't upload any `pages.jsonl` file to the plate's flash memory! This assumes your plate pages are empty in initial state. Checkout the _services_ section for requirements to deploy this.
@@ -184,14 +184,22 @@ This component implements some specific services to make interactions with the p
 :   Clears the contents of the specified page number. If page number not specified, clears all the pages.
 
 **openhasp.load_pages**  
-:   Loads new design from `pages.jsonl` file from _full path_.
+:   Loads new design from `pages.jsonl` file from _full path_ on Home Assistant server.
 
-    The file must be located in an authorised location defined by [allowlist_external_dirs](https://www.home-assistant.io/docs/configuration/basic/#allowlist_external_dirs){target=_blank} (in case of hassio `/config/` is the directory where Home Assistant's configuration.yaml resides, so in case of a subdirectory called `openhasp` the full path would be e.g. `/config/openhasp/pages.jsonl`, and you need to add  `/config/openhasp/` to your `allowlist_external_dirs`).
+The file must be located in an authorised location defined by [allowlist_external_dirs](https://www.home-assistant.io/docs/configuration/basic/#allowlist_external_dirs){target=_blank} (in case of hassio `/config/` is the directory where Home Assistant's configuration.yaml resides, so in case of a subdirectory called `openhasp` the full path would be e.g. `/config/openhasp/pages.jsonl`, and you need to add  `/config/openhasp/` to your `allowlist_external_dirs`).
 
     !!! important
         The contents of the file are loaded line by line thus `"page":X` has to be defined for each object.
     
-    Unless you clear the page first, the objects will be updated.
+Unless you clear the page first, the objects will be updated.
+
+For example, to allow read-access to the folder, add these lines to your `configuration.yaml`:
+
+```yaml
+homeassistant:
+  allowlist_external_dirs:
+    - "/config/openhasp"
+```
 
 **openhasp.command**
 :   Wraps up any [command](../../commands.md) so that it can be called against the _entity_id_ of the plate. Useful in Automations and Blueprints.
@@ -207,20 +215,9 @@ This component implements some specific services to make interactions with the p
 
 Check out the example confgurations and automations to learn how to use these services within Home Assistant.
 
-## Send jsonl files from Home Assistant
-
-You can save your jsonl files in Home Assistant too. The custom component can send the contents of the file when the plate connects.
-To allow read-access to the folder, add these lines to your `configuration.yaml`:
-
-```yaml
-homeassistant:
-  allowlist_external_dirs:
-    - "/config/openhasp"
-```
-
 ## Debugging
 
-Add these lines to your `configuration.yaml` configuration and restart Home Assistant:
+Add these lines to your main `configuration.yaml` configuration and restart Home Assistant:
 
 ```yaml
 logger:
@@ -228,6 +225,9 @@ logger:
   logs:
     custom_components.openhasp: debug
 ```
+
+Look for the debug messages in the `home-assistant.log` file.
+
 
 [1]: https://github.com/HASwitchPlate/openHASP-custom-component
 [2]: https://github.com/HASwitchPlate/openHASP-custom-component/archive/refs/heads/main.zip
