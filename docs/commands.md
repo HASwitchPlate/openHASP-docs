@@ -243,6 +243,7 @@ Currently supported services:
 
 - `telnet`
 - `http`
+- `console`
 
 
 ??? example "Example"
