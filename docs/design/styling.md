@@ -1,7 +1,7 @@
 
 # Styling Properties
 
-You can adjust the appearance of objects by changing the foreground, background and/or border color of each object. Some objects allow for more complex syling, effectively changing their appearance or their sub-components.     
+You can adjust the appearance of objects by changing the foreground, background and/or border color of each object. Some objects allow for more complex styling, effectively changing their appearance or their sub-components.     
 
 Certain more complex objects are made up of several sub-parts, which can be styled separately. To access the properties of the parts use a number suffix appended to the property.
 

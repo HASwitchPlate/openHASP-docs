@@ -28,7 +28,7 @@ This project also adds ESP32 and STM32F4 support to take advantage of the additi
 | Parallel display        | :x: no | :white_check_mark: yes | :white_check_mark: yes
 | PWM Screen dimming      | :white_check_mark: yes | :white_check_mark: yes | :white_check_mark: yes
 | Maximum Page Count      | 4       | 12 | 12
-| [Object Types / Widgets][7]| 20      | 20 | 20
+| [Object Types / Widgets][7]| 21   | 21 | 21
 | Dynamic Objects         | :white_check_mark: yes | :white_check_mark: yes | :white_check_mark: yes
 | Theme Support           | yes     | yes     | yes
 | [Custom .zi V5 font][4]{target=_blank} | :white_check_mark: yes (latin1) | :white_check_mark: yes (latin1) | no

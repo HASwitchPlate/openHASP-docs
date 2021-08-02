@@ -49,8 +49,9 @@ markdown_extensions:
   - def_list
   - pymdownx.highlight:
       linenums: true
-  - pymdownx.superfences
   - pymdownx.details
+  - pymdownx.snippets
+  - pymdownx.superfences
   - pymdownx.tabbed
   - pymdownx.tilde
   - pymdownx.emoji:
