@@ -1631,10 +1631,12 @@ This can be handy for bug reporting or documentation.</p>
 <li><code>console</code></li>
 </ul>
 <details class="example"><summary>Example</summary><p>To stop the web interface of the plate, send to topic <code>hasp/&lt;your_plate&gt;/command/service</code> the string <code>stop http</code>.
-To start the web interface of the plate, send to topic <code>hasp/&lt;your_plate&gt;/command/service</code> the string <code>start http</code>.
-To stop the telnet service of the plate, send to topic <code>hasp/&lt;your_plate&gt;/command/service</code> the string <code>stop telnet</code>.
-To start the telnet service of the plate, send to topic <code>hasp/&lt;your_plate&gt;/command/service</code> the string <code>start telnet</code>.</p>
+To start the web interface of the plate, send to topic <code>hasp/&lt;your_plate&gt;/command/service</code> the string <code>start http</code>.</p>
 </details>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>It's possible to create self-built binaries which have services stopped by default at boot, using <a href="../compiling/customize/">customization</a>. </p>
+</div>
 <div class="admonition danger">
 <p class="admonition-title"><code>reboot</code> or <code>restart</code></p>
 </div>
