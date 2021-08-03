@@ -42,7 +42,7 @@ _accepted parameters:_ name of a `.cmd` or `.jsonl` file present on the flash fi
 Run a batch script or load a jsonl page.
 
 !!! example "Example" 
-    `run /script.cmd`
+    `run /script.cmd`         
     `run /pages_party_mode.jsonl`
 
 
@@ -295,7 +295,7 @@ Currently supported services:
 
 
 !!! tip
-    Once these services are stopped, connection is lost/not possible to the plate through them. They can be started at any time by sending `service start` commands in through MQTT.
+    Once these services are stopped, connection is lost/not possible to the plate through them. They can be started at any time by sending `service start` commands in through MQTT.             
     It's possible to create self-built firmware binaries which have services stopped by default at boot, using [customization](compiling/customize.md). 
 
 
