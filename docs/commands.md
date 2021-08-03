@@ -245,12 +245,14 @@ Currently supported services:
 - `http`
 - `console`
 
-
 ??? example "Example"
     To stop the web interface of the plate, send to topic `hasp/<your_plate>/command/service` the string `stop http`.
     To start the web interface of the plate, send to topic `hasp/<your_plate>/command/service` the string `start http`.
-    To stop the telnet service of the plate, send to topic `hasp/<your_plate>/command/service` the string `stop telnet`.
-    To start the telnet service of the plate, send to topic `hasp/<your_plate>/command/service` the string `start telnet`.
+
+
+!!! tip
+    It's possible to create self-built binaries which have services stopped by default at boot, using [customization](compiling/customize.md). 
+
 
 
 !!! danger "`reboot` or `restart`"
