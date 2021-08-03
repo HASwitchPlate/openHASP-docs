@@ -356,21 +356,26 @@ Set the optional password for the mqtt broker.
 ### config/submodule
 
 You can get or set the configuration of an openHASP submodule in json format.
-To get the configuration, use the command `config/<submodule>`. 
-The result will be published to `hasp/<nodename>/state/config`. Passwords will be omitted from the result.
+To get the configuration, use the command `config/<submodule>`: 
 
-```json
-config/wifi
-config/mqtt
-config/http
-config/mdns
-config/hasp {"startdim":255}
-config/gui
-config/debug {"tele":300}
-config/gpio
-```
+`config/wifi`
+`config/mqtt`
+`config/http`
+`config/mdns`
+`config/hasp`
+`config/gui`
+`config/debug`
+`config/gpio`
+
+The result will be published to `hasp/<nodename>/state/config`. Passwords will be omitted from the result.    
 
 To update the configuration simply issue the same command `config/<submodule>` with updated json payload.
+
+!!! example "Example"
+    `config/gui {"idle2":0}` disable long idle (don't turn off the screen completely)
+    `config/debug {"tele":300}` set the telemetry period to 300 seconds
+    `config/hasp {"startdim":255}` to set the startup brightness to 255
+
 
 
 [1]: ../design/data-types#colors
