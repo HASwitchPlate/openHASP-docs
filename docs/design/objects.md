@@ -167,7 +167,7 @@ Besides the common properties listed above, each object type can have specific p
 
 | Property | Value      | Default    | Description
 |----------|------------|------------|--------------
-| text     | [string][10]     | "Text"     | The text of the label, `\n` for line break.
+| text     | [string][10]     | "Text"     | The text of the label, `\n` for line break. Can also contain a [variable][15].
 | mode     | [string][10]     | `crop`     | The wrapping mode of long text labels:<br>`expand` Expand the object size to the text size<br>`break` Keep the object width, break the too long lines and expand the object height<br>`dots` Keep the size and write dots at the end if the text is too long<br>`scroll` Keep the size and roll the text back and forth<br>`loop` Keep the size and roll the text circularly<br>`crop` Keep the size and crop the text out of it
 | align    | [string][10]       | `left`       | Text alignment: `left`, `center`, `right` 
 
@@ -641,7 +641,7 @@ To change the color of a single label you can prefix the text with a `#RRGGBB` h
 
 | Property   | Value           | Default | Description
 |------------|-----------------|---------|--------------------------
-| text       | [string][10]    | ""      | The text of the message to be displayed
+| text       | [string][10]    | ""      | The text of the message to be displayed. Can also contain a [variable][15].
 | options    | [json array][11]| ["OK"]  | Json array of [string][10]s where each element is the label of a button
 | ~~modal~~  | [bool][2]       | false   | Make the messagebox a modal dialog requiring user input
 | auto_close | [int16][9]      | 0       | Close the pop-up message automatically after this number of milliseconds have passed
@@ -731,3 +731,4 @@ You can use it as a background shape for other objects by putting its jsonl line
 [12]: ../styling/
 [13]: ../styling/#padding-and-margin
 [14]: ../styling/#text
+[15]: ../data-types/#variables
