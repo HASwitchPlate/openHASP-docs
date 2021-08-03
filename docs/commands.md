@@ -241,9 +241,9 @@ Currently supported parameters:
 
 Currently supported services:
 
-- `telnet`
-- `http`
-- `console`
+- `http` (web interface)
+- `telnet` (remote console)
+- `console` (serial console)
 
 ??? example "Example"
     To stop the web interface of the plate, send to topic `hasp/<your_plate>/command/service` the string `stop http`.
@@ -251,7 +251,8 @@ Currently supported services:
 
 
 !!! tip
-    It's possible to create self-built binaries which have services stopped by default at boot, using [customization](compiling/customize.md). 
+    Once these services are stopped, connection is lost/not possible to the plate through them. They can be started at any time by sending `service start` commands in through MQTT.
+    It's possible to create self-built firmware binaries which have services stopped by default at boot, using [customization](compiling/customize.md). 
 
 
 
