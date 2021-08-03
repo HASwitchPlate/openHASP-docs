@@ -1,12 +1,52 @@
 
 Commands are not related to an object on the screen but can get or set global properties or invoke system commands on the device.
 
+## Issuing commands
+
 Commands can be issued via the Serial commandline, telnet commandline or MQTT.
 
 For MQTT, use the `hasp/<nodename>/command` topic with payload `<keyword> <parameter(s)>`
 
+## Batch processinng
 
-## jsonl
+Commands can be processed in batch one after another from `.cmd` script files located in the flash storage of the plate.    
+General rules when creating `.cmd` batch scripts:
+
+- can contain any command
+- empty lines are ignored
+- `#` or `//` can be used for comments
+- `space` or `tab` in front of a command is ignored
+- lines starting with `{` are processed as `jsonl` payloads
+- lines starting with `[` are processed as `json` payloads
+- other lines are processed as `<command> <payload>`
+- `CR`, `LF` or `CRLF` line endings allowed
+- `UTF8` encoding is required for special characters
+
+To start a batch script, use `run` command.
+
+### System scripts
+
+If any of the following scripts is present on the filesystem, it will be run automatically according to the rules below:
+
+- `/online.cmd` will be executed after connection to the network was successfull
+- `/offline.cmd` will be executed after connection to the WiFi is lost
+
+This makes it possible to disable or hide buttons, load a special offline page, etc...
+
+## Global commands
+
+### run
+
+_accepted parameters:_ name of a `.cmd` or `.jsonl` file present on the flash filesystem of the plate. Filename must be preceeded by the `/` character      
+
+Run a batch script or load a jsonl page.
+
+!!! example "Example" 
+    `run /script.cmd`
+    `run /pages_party_mode.jsonl`
+
+
+### jsonl
 
 _accepted parameters:_ one or more json formatted lines     
 
@@ -15,29 +55,29 @@ Create new objects *or* update the properties of an existing object. When updati
 Each line in the `jsonl` payload defines one object and has to be in the json format. If the payload exceeds the MQTT buffer of 2 kB it will be cut off to fit,
 don't send too many lines in a single payload, you can always sends multiple jsonl commands.
 
-Example:    
-```json
-jsonl {"obj":"btn","id":14,"x":120,"y":1,"w":30,"h":40,"text_font":"2","text":"Test","text_color":"gray","bg_opa":0,"border_width":0}
-```
+!!! example "Example"    
+    ```json
+    jsonl {"obj":"btn","id":14,"x":120,"y":1,"w":30,"h":40,"text_font":"2","text":"Test","text_color":"gray","bg_opa":0,"border_width":0}
+    ```
 
 _For more details see [Pages](../design/pages) and [Objects](../design/objects)._
 
 
-## json
+### json
 
 _accepted parameters:_ json array of strings
 
 Use the `json` command to send multiple commands as an array of strings in one payload.
 
-Example:    
-```json
-json ['page 3','backlight {"state":"OFF","brightness":100}','idle off']
-```
+!!! example "Example"  
+    ```json
+    json ['page 3','backlight {"state":"OFF","brightness":100}','idle off']
+    ```
 
 This command will change to page 3, turn the backlight on at ~40% brightness and reset the idle timer.
 
 
-## page
+### page
 
 _accepted parameters:_ `[1-12]`, `prev`, `next` or `back`
 
@@ -46,7 +86,7 @@ Switches the display to show the objects from a different page and return the pa
 Calling the `page` command without a parameter will return the value of the current page in `state/page`.
 
 
-## clearpage
+### clearpage
 _accepted parameters:_ `[0-12]` or `all`
 
 Deletes all objects on a given page. If no page number is specified, it clears the current page.
@@ -55,7 +95,7 @@ Use `clearpage all` to clear all objects on all pages.
 To delete individual objects, you can issue the `pXbY.delete` command.
 
 <!--
-## dim
+### dim
 _accepted parameters:_ `[0-255]`
 
 Sets the level of the backlight from 0 to 255, where 0 is off and 255 is full brightness.
@@ -65,7 +105,7 @@ Sets the level of the backlight from 0 to 255, where 0 is off and 255 is full br
 
 This can be used in conjunction with the [idle events][4], e.g. to dim the screen after a period of inactivity.
 
-## light
+### light
 _accepted parameters:_ `on`/`off`, `true`/`false`, `0`/`1`, `yes`/`no`
 
 Switches the backlight on or off, independent of the set dim level. Turning the backlight on will restore the brightness to the previous dim level.
@@ -77,20 +117,19 @@ Switches the backlight on or off, independent of the set dim level. Turning the 
 
 `dim 0` and `light 0` both turn off the screen, however, with `dim 0` the touching will haven an effect on the objects beneath but not wake the screen, while with `light 0` it will only wake the scren but will not affect the objects.
 
+
+### dim
+
+!!! warning "Deprecated, use `backlight` instead"
+
+
+### light
+
+!!! warning "Deprecated, use `backlight` instead"
+
 -->
 
-
-## dim
-
-!!! warning "Deprecated, use `backlight` instead"
-
-
-## light
-
-!!! warning "Deprecated, use `backlight` instead"
-
-
-## backlight :material-new-box:{ .tag-medium }
+### backlight :material-new-box:{ .tag-medium }
 _accepted json keys:_
 
 - **state:** `on`/`off`, `true`/`false`, `0`/`1`, `yes`/`no`
@@ -108,7 +147,7 @@ A simple integer payload of `1..255` will adjust the brightness.
     `backlight 200`  sets the display brightness to ~80%.
 
 
-## moodlight
+### moodlight
 _accepted json keys:_
 
 - **state:** `on`/`off`, `true`/`false`, `0`/`1`, `yes`/`no`
@@ -119,12 +158,13 @@ _accepted json keys:_
 An RGB moodlight can be controlled by configuring 3 [GPIO pins][3] as type `Mood Red`, `Mood Green` and `Mood blue`.
 These leds can then be controlled together using the `moodlight` command.
 
-```json
-moodlight {"state":"off","color":"green"}
-moodlight {"state":true,"color":"#ff00e7"}
-moodlight {"color":12345}
-moodlight {"state":"on","r":255,"g":0,"b":255}
-```
+!!! example "Example"
+    ```json
+    moodlight {"state":"off","color":"green"}
+    moodlight {"state":true,"color":"#ff00e7"}
+    moodlight {"color":12345}
+    moodlight {"state":"on","r":255,"g":0,"b":255}
+    ```
 
 - The `state` key accepts [boolean values][2] to turn the moodlight on or off
 - The `brightness` key can be set between `1` and `255` to dim the moodlight
@@ -133,14 +173,15 @@ moodlight {"state":"on","r":255,"g":0,"b":255}
 
 Calling the `moodlight` command without parameters (or sending an empty payload to the `hasp/<nodename>/command/moodlight` topic) returns the current state:
 
-```json
-"state/moodlight" {"state":"ON","brightness":255,"color":"#ff0000","r":255,"g":0,"b":0}
-```
+!!! example "Example"
+    ```json
+    "state/moodlight" {"state":"ON","brightness":255,"color":"#ff0000","r":255,"g":0,"b":0}
+    ```
 
 The color is returned as a hexadecimal value and as individual RGB channels.
 
 
-## idle :material-new-box:{ .tag-medium }
+### idle :material-new-box:{ .tag-medium }
 _accepted parameters:_ `off`
 
 Clears the idle state of the device and publishes a `state/idle = OFF` status message.
@@ -149,13 +190,13 @@ It resets the idle counter as if a touch event occurred on the device. This is h
 
 Calling the `idle` command without a parameter will return the current idle state `short`, `long` or `off` in the `state/idle` topic.
 
-
-## wakeup
+<!--
+### wakeup
 
 !!! warning "Deprecated, use `idle off` instead"
+-->
 
-
-## output[x] :material-new-box:{ .tag-medium }
+### output[x] :material-new-box:{ .tag-medium }
 
 where `[x]` is number of the gpio pin (0-39)
 
@@ -170,7 +211,7 @@ Changes the state GPIO pin to `on` or `off`. If the pin is configured as a `LED`
     If the GPIO is assigned to a group then objects and other GPIOs that share the same `groupid` will change state accordingly.
 
 
-## input[x] :material-new-box:{ .tag-medium }
+### input[x] :material-new-box:{ .tag-medium }
 
 where `[x]` is number of the gpio pin (0-39)
 
@@ -178,30 +219,32 @@ _read-only_
 
 Returns a JSON object containing the current state of the input, either `on` or `off`
 
-```json
-input4 => {"state":"on"}
-```
+!!! example "Example"
+    ```json
+    input4 => {"state":"on"}
+    ```
 
 ## System Commands
 
-!!! danger "`calibrate`"
+### `calibrate`
 
 Start on-screen touch calibration.
 
 You need to issue a soft reboot command to save the new calibration settings. If you do a hard reset of the device, the calibration settings will be lost.
 
-!!! danger "`screenshot`"
+### `screenshot`
 
 Saves a picture of the current screen to the flash filesystem. You can retrieve it via http://&lt;ip-address&gt;/screenshot.bmp.
 This can be handy for bug reporting or documentation.
 
 The previous screenshot is overwritten.
 
-!!! danger "`statusupdate`"
+### `statusupdate`
 
-Reports the status of the MCU. The response will be posted to the state topic. For example:
+Reports the status of the MCU. The response will be posted to the state topic.
 
-```json
+!!! example "Example"
+    ```json
     "hasp/<platename>/state/statusupdate" => {
         "node":"plate35",
         "idle":"short",
@@ -220,17 +263,18 @@ Reports the status of the MCU. The response will be posted to the state topic. F
         "tftWidth":240,
         "tftHeight":320
     }
-```
+    ```
 
-!!! danger "`unzip`"
+### `unzip`
 
 Unzip a file-packgage on the plate. You can upload **uncompressed** ZIP files to the flash space of your plate and unzip them locally. This is useful for cases when you need a lot of small files to be uploaded - putting them in an uncompressed zip allows to upload them in one go, and then extract them with a single command:
 
-```
-unzip /openhasp-weathericons-day.zip
-```
+!!! example "Example"
+    ```
+    unzip /openhasp-weathericons-day.zip
+    ```
 
-!!! danger "`service`"
+### `service`
 
 Start or stop some of the processes running on the plate.
 
@@ -245,7 +289,7 @@ Currently supported services:
 - `telnet` (remote console)
 - `console` (serial console)
 
-??? example "Example"
+!!! example "Example"
     To stop the web interface of the plate, send to topic `hasp/<your_plate>/command/service` the string `stop http`.
     To start the web interface of the plate, send to topic `hasp/<your_plate>/command/service` the string `start http`.
 
@@ -256,18 +300,18 @@ Currently supported services:
 
 
 
-!!! danger "`reboot` or `restart`"
+### `reboot` or `restart`
 
 Saves any changes in the configuration file and reboots the device.
 
 
-!!! danger "`update`"
+### `update`
 
 _accepted parameters:_ `[url]`     
 Update the firmware from the url provided. Reboots when update was successful.
 
 
-!!! danger "`factoryreset`"
+### `factoryreset`
 
 Clear the filesystem and EEPROM and reboot the device in its initial state.
 
@@ -279,37 +323,37 @@ Clear the filesystem and EEPROM and reboot the device in its initial state.
 
 ### Wi-FI
 
-!!! danger "`ssid`"
+#### `ssid`
 
 Set network name of the access point to connect to.
 
-!!! danger "`pass`"
+#### `pass`
 
 Set the optional password for the access point to connect to.
 
 ### MQTT
 
-!!! danger "`nodename`"
+#### `nodename`
 
 Set the nodename of the device and mqtt topic for the node to `hasp/<nodename>/`
 
-!!! danger "`mqtthost`"
+#### `mqtthost`
 
 Set the IP address or nodename of the mqtt broker.
 
-!!! danger "`mqttport`"
+#### `mqttport`
 
 Set the port of the mqtt broker.
 
-!!! danger "`mqttuser`"
+#### `mqttuser`
 
 Set the optional username for the mqtt broker.
 
-!!! danger "`mqttpass`"
+#### `mqttpass`
 
 Set the optional password for the mqtt broker.
 
-## config/submodule
+### config/submodule
 
 You can get or set the configuration of an openHASP submodule in json format.
 To get the configuration, use the command `config/<submodule>`. 
