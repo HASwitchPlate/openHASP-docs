@@ -641,7 +641,7 @@ To change the color of a single label you can prefix the text with a `#RRGGBB` h
 
 | Property   | Value           | Default | Description
 |------------|-----------------|---------|--------------------------
-| text       | [string][10]    | ""      | The text of the message to be displayed. Can also contain a [variable][15].
+| text       | [string][10]    | ""      | The text of the message to be displayed.
 | options    | [json array][11]| ["OK"]  | Json array of [string][10]s where each element is the label of a button
 | ~~modal~~  | [bool][2]       | false   | Make the messagebox a modal dialog requiring user input
 | auto_close | [int16][9]      | 0       | Close the pop-up message automatically after this number of milliseconds have passed
