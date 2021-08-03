@@ -1891,26 +1891,23 @@ Update the firmware from the url provided. Reboots when update was successful.</
 <p>Set the optional password for the mqtt broker.</p>
 <h3 id="configsubmodule">config/submodule<a class="headerlink" href="#configsubmodule" title="Permanent link">~</a></h3>
 <p>You can get or set the configuration of an openHASP submodule in json format.
-To get the configuration, use the command <code>config/&lt;submodule&gt;</code>. 
-The result will be published to <code>hasp/&lt;nodename&gt;/state/config</code>. Passwords will be omitted from the result.</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span>
-<span class="normal">7</span>
-<span class="normal">8</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="err">co</span><span class="kc">nf</span><span class="err">ig/wi</span><span class="kc">f</span><span class="err">i</span>
-<span class="err">co</span><span class="kc">nf</span><span class="err">ig/mq</span><span class="kc">tt</span>
-<span class="err">co</span><span class="kc">nf</span><span class="err">ig/h</span><span class="kc">tt</span><span class="err">p</span>
-<span class="err">co</span><span class="kc">nf</span><span class="err">ig/md</span><span class="kc">ns</span>
-<span class="err">co</span><span class="kc">nf</span><span class="err">ig/hasp</span> <span class="p">{</span><span class="nt">&quot;startdim&quot;</span><span class="p">:</span><span class="mi">255</span><span class="p">}</span>
-<span class="err">co</span><span class="kc">nf</span><span class="err">ig/gui</span>
-<span class="err">co</span><span class="kc">nf</span><span class="err">ig/debug</span> <span class="p">{</span><span class="nt">&quot;tele&quot;</span><span class="p">:</span><span class="mi">300</span><span class="p">}</span>
-<span class="err">co</span><span class="kc">nf</span><span class="err">ig/gpio</span>
-</code></pre></div>
-</td></tr></table>
+To get the configuration, use the command <code>config/&lt;submodule&gt;</code>: </p>
+<p><code>config/wifi</code>
+<code>config/mqtt</code>
+<code>config/http</code>
+<code>config/mdns</code>
+<code>config/hasp</code>
+<code>config/gui</code>
+<code>config/debug</code>
+<code>config/gpio</code></p>
+<p>The result will be published to <code>hasp/&lt;nodename&gt;/state/config</code>. Passwords will be omitted from the result.    </p>
 <p>To update the configuration simply issue the same command <code>config/&lt;submodule&gt;</code> with updated json payload.</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p><code>config/gui {"idle2":0}</code> disable long idle (don't turn off the screen completely)
+<code>config/debug {"tele":300}</code> set the telemetry period to 300 seconds
+<code>config/hasp {"startdim":255}</code> to set the startup brightness to 255</p>
+</div>
                 
                   
                     
