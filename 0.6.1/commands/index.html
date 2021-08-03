@@ -1892,21 +1892,21 @@ Update the firmware from the url provided. Reboots when update was successful.</
 <h3 id="configsubmodule">config/submodule<a class="headerlink" href="#configsubmodule" title="Permanent link">~</a></h3>
 <p>You can get or set the configuration of an openHASP submodule in json format.
 To get the configuration, use the command <code>config/&lt;submodule&gt;</code>: </p>
-<p><code>config/wifi</code>
-<code>config/mqtt</code>
-<code>config/http</code>
-<code>config/mdns</code>
-<code>config/hasp</code>
-<code>config/gui</code>
-<code>config/debug</code>
-<code>config/gpio</code></p>
+<p><code>config/wifi</code>  <br />
+<code>config/mqtt</code>  <br />
+<code>config/http</code>  <br />
+<code>config/mdns</code>  <br />
+<code>config/hasp</code>  <br />
+<code>config/gui</code>  <br />
+<code>config/debug</code>  <br />
+<code>config/gpio</code>    </p>
 <p>The result will be published to <code>hasp/&lt;nodename&gt;/state/config</code>. Passwords will be omitted from the result.    </p>
 <p>To update the configuration simply issue the same command <code>config/&lt;submodule&gt;</code> with updated json payload.</p>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
-<p><code>config/gui {"idle2":0}</code> disable long idle (don't turn off the screen completely)
-<code>config/debug {"tele":300}</code> set the telemetry period to 300 seconds
-<code>config/hasp {"startdim":255}</code> to set the startup brightness to 255</p>
+<p><code>config/gui {"idle2":0}</code> disable long idle (don't turn off the screen completely)  <br />
+<code>config/debug {"tele":300}</code> set the telemetry period to 300 seconds  <br />
+<code>config/hasp {"startdim":255}</code> to set the startup brightness to 255    </p>
 </div>
                 
                   
