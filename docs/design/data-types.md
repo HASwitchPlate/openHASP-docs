@@ -63,3 +63,14 @@ For example, the color returned by a color picker change event is:
 ```json
 {"color":"#00fff6","r":0,"g":255,"b":246}
 ```
+
+## Variables
+
+Some properties can be set with variable data at plate runtime. Use the strings below to retrieve data:
+
+- `%ip%` - IP address of the plate
+- `%hostname%` - hostname (nodename)
+- `%ssid%` - SSID of the network connected to
+- `%model%` - plate model (set in the firmware)
+- `%version%` - firmware version number
+
