@@ -60,6 +60,8 @@ markdown_extensions:
   - toc:
       permalink: "~"
       toc_depth: 3
+  - markdown_include.include:
+      base_path: docs
 
 extra:
   # alternate:

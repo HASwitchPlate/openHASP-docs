@@ -13,3 +13,4 @@ mkdocs-redirects>=1.0.0
 mkdocs-static-i18n>=0.13
 mkdocs-table-reader-plugin>=0.4.3
 mkdocs-git-revision-date-plugin>=0.3.1
+markdown-include
