@@ -1284,6 +1284,7 @@ table th:last-of-type {
     width: 22%;
 }
 </style>
+
 <table>
 <thead>
 <tr>
@@ -1294,6 +1295,12 @@ table th:last-of-type {
 </tr>
 </thead>
 <tbody>
+<tr>
+<td align="left">Dev. Board*</td>
+<td align="center"><a href="https://www.aliexpress.com/item/32815530502.html" target="_blank">D1 mini ESP32</a></td>
+<td align="center"><a href="https://www.aliexpress.com/item/32977375539.html" target="_blank">TTGO T7 v1.5 Mini32</a></td>
+<td align="center"><a href="https://www.aliexpress.com/item/32883116057.html" target="_blank">Lolin D32 Pro V2.0</a></td>
+</tr>
 <tr>
 <td align="left">MCU</td>
 <td align="center">ESP32-WROOM</td>
@@ -1319,9 +1326,9 @@ table th:last-of-type {
 <td align="center">yes</td>
 </tr>
 <tr>
-<td align="left">Minimal Flash</td>
+<td align="left">Flash</td>
 <td align="center">4MB</td>
-<td align="center">4MB</td>
+<td align="center">4MB or 16MB</td>
 <td align="center">16MB</td>
 </tr>
 <tr>
@@ -1343,12 +1350,6 @@ table th:last-of-type {
 <td align="center">Wi-Fi</td>
 </tr>
 <tr>
-<td align="left">Dev. Board*</td>
-<td align="center"><a href="https://www.aliexpress.com/item/32815530502.html" target="_blank">D1 mini ESP32</a></td>
-<td align="center"><a href="https://www.aliexpress.com/item/32977375539.html" target="_blank">TTGO T7 v1.5 Mini32</a></td>
-<td align="center"><a href="https://www.aliexpress.com/item/32883116057.html" target="_blank">Lolin D32 Pro V2.0</a></td>
-</tr>
-<tr>
 <td align="left">Firmware</td>
 <td align="center"><a href="https://github.com/HASwitchPlate/openHASP/releases" target="_blank">Download</a></td>
 <td align="center"><a href="https://github.com/HASwitchPlate/openHASP/releases" target="_blank">Download</a></td>
@@ -1360,7 +1361,7 @@ table th:last-of-type {
 <p class="admonition-title">Note</p>
 <p><em>Due to the large number of possible hardware options a selection of 3 popular ESP development boards has been made for the precompiled binaries.</em></p>
 </div>
-<p>For new projects we recommend ESP32-WROVER boards with PSram.</p>
+<p>For new projects we recommend ESP32-WROVER boards with PSram and 8MB of flash.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>Advanced users can build and compile custom configurations using PlatformIO <a href="../compiling/local/">locally</a> or <a href="../compiling/gitpod/">online with Gitpod</a>, however this is not currently supported.</p>
@@ -1429,7 +1430,7 @@ In that case you can skip ahead to the <a href="../installation/esp32/">Firmware
 <div class="md-source-date">
   <small>
     
-      Last update: 2021-08-18
+      Last update: 2021-08-21
     
   </small>
 </div>
