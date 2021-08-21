@@ -1,16 +1,15 @@
 # Lolin TFT 2.4" Touch Shield
 
 <div class="row justify-content-center">
-        <a href="../../assets/images/displays/lolin-tft-shield-front.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-6" data-title="ESP32 TouchDown" data-footer="">
+        <a href="../../assets/images/displays/lolin-tft-shield-front.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-6" data-title="TFT 2.4&quot; Touch Shield" data-footer="">
             <img src="../../assets/images/displays/lolin-tft-shield-front.jpg" class="img-fluid">
         </a>
-
-        <a href="../../assets/images/displays/lolin-tft-shield-back.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-6" data-title="ESP32 TouchDown" data-footer="">
+        <a href="../../assets/images/displays/lolin-tft-shield-back.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-6" data-title="TFT 2.4&quot; Touch Shield" data-footer="">
             <img src="../../assets/images/displays/lolin-tft-shield-back.jpg" class="img-fluid">
         </a>
 </div>
 
-## TFT 2.4" Touch Shield
+## 
 
 This Lolin TFT has a 2.4" touchscreen with XPT2046 resistive touch controller.
 There are 3 ways to connect an ESP32:
