@@ -26,17 +26,18 @@ table th:last-of-type {
     width: 22%;
 }
 </style>
+
 |&nbsp;       | Basic       | Standard     | Capacity
 |:----        |:----:       |:----:        |:----:
+| Dev. Board* |[D1 mini ESP32][4]{target=_blank}|[TTGO T7 v1.5 Mini32][5]{target=_blank}|[Lolin D32 Pro V2.0][6]{target=_blank}
 | MCU         | ESP32-WROOM | ESP32-WROVER | ESP32-WROVER
 | CPU Freq.   | 240Mhz      | 240Mhz       | 240Mhz   
 | Ram         | 520Kb       | 520Kb        | 520Kb
 | PSRam       | no          | yes          | yes
-| Minimal Flash | 4MB       | 4MB          | 16MB
+| Flash       | 4MB         | 4MB or 16MB  | 16MB
 | Display     | ILI9341 SPI | ILI9341 SPI  | ILI9341 SPI
 | Touch       | XPT2046 SPI | XPT2046 SPI  | XPT2046 SPI
 | Network     | Wi-Fi        | Wi-Fi         | Wi-Fi
-| Dev. Board* |[D1 mini ESP32][4]{target=_blank}|[TTGO T7 v1.5 Mini32][5]{target=_blank}|[Lolin D32 Pro V2.0][6]{target=_blank}
 | Firmware    | [Download][1]{target=_blank} | [Download][1]{target=_blank}  | [Download][1]{target=_blank}
 
 [1]: https://github.com/HASwitchPlate/openHASP/releases
@@ -48,7 +49,7 @@ table th:last-of-type {
 !!! note
     *Due to the large number of possible hardware options a selection of 3 popular ESP development boards has been made for the precompiled binaries.*
 
-For new projects we recommend ESP32-WROVER boards with PSram.
+For new projects we recommend ESP32-WROVER boards with PSram and 8MB of flash.
 
 
 !!! tip
