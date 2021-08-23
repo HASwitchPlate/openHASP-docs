@@ -5,6 +5,7 @@ This screen comes in 3.5" and 4.0" sizes.
 6 GPIOs are required to drive the SPI display. One additional GPIO is needed for the XPT2046 touch sensor and one extra GPIO for backlight dimming.
 Including the VCC and GND pins, a total of 13 connections need to be made to the MCU:
 
+
 ## Pin Configuration
 
 Pin	  |Function            |ESP32 Pin  |Config Name|Display Pin |
@@ -35,7 +36,7 @@ SPI MISO, MOSI and SCLK are shared between the touch controller and the LCD cont
 ## Backlight Control
 
 !!! warning "Attention (*)"
-    Only the WaveShare 4.0" RPi LCD **Revision C** has a solder jumper on the back to enable PWM backlight dimming. Other revisions of this board do not have this feature.
+    Only the WaveShare 4.0" RPi LCD **Revision C** (SKU 16099) and WaveShare 3.5" RPi LCD **Revision C** (SKU 15811) have a solder jumper on the back to enable PWM backlight dimming. Other revisions of this board do not have this feature.
 
 ## LCD Configuration
 
@@ -71,3 +72,7 @@ build_flags =
     -D TFT_BCKL=-1       ; None, configurable via web UI (e.g. 21)
     -D TOUCH_CS=22
 ```
+
+[1]: https://www.waveshare.com/4inch-rpi-lcd-c.htm
+[2]: https://www.aliexpress.com/item/32976207190.html
+[3]: https://www.waveshare.com/3.5inch-rpi-lcd-c.htm

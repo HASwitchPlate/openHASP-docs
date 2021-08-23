@@ -23,6 +23,8 @@ The TFT Featherwing comes in 2 sizes:
 !!! note "<i class='fa fa-info-circle'></i>&nbsp; Note" 
     Don't use the ESP8266 based Feather HUZZAH because it lacks both in memory and MCU power.
 
+The Huzzah32 boards only have 4MB flash. If you want more storage, consider getting the SparkFun Thing Plus ESP32-WROOM instead.
+
 ## Instructions
 
 The HUZZAH32 – ESP32 and TFT Featherwings are plug-and-play. You only need to upload the firmware via the USB port.
