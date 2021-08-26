@@ -188,7 +188,7 @@ This component implements some specific services to make interactions with the p
 
 The file must be located in an authorised location defined by [allowlist_external_dirs](https://www.home-assistant.io/docs/configuration/basic/#allowlist_external_dirs){target=_blank} (in case of hassio `/config/` is the directory where Home Assistant's configuration.yaml resides, so in case of a subdirectory called `openhasp` the full path would be e.g. `/config/openhasp/pages.jsonl`, and you need to add  `/config/openhasp/` to your `allowlist_external_dirs`).
 
-!!! important
+!!! note
     The contents of the file are loaded line by line thus `"page":X` has to be defined for each object.
     
 Unless you clear the page first, the objects will be updated.
