@@ -1458,8 +1458,8 @@ The brightness of the screen when idle (before long idle). Numeric value between
 <dd>Loads new design from <code>pages.jsonl</code> file from <em>full path</em> on Home Assistant server.</dd>
 </dl>
 <p>The file must be located in an authorised location defined by <a href="https://www.home-assistant.io/docs/configuration/basic/#allowlist_external_dirs" target="_blank">allowlist_external_dirs</a> (in case of hassio <code>/config/</code> is the directory where Home Assistant's configuration.yaml resides, so in case of a subdirectory called <code>openhasp</code> the full path would be e.g. <code>/config/openhasp/pages.jsonl</code>, and you need to add  <code>/config/openhasp/</code> to your <code>allowlist_external_dirs</code>).</p>
-<div class="admonition important">
-<p class="admonition-title">Important</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
 <p>The contents of the file are loaded line by line thus <code>"page":X</code> has to be defined for each object.</p>
 </div>
 <p>Unless you clear the page first, the objects will be updated.</p>
