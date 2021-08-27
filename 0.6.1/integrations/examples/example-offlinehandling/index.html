@@ -1157,15 +1157,15 @@
 </code></pre></div>
 </td></tr></table>
 <p>You can use <a href="../../../commands/#batch-processinng">batch processing</a> and create scripts which run when the plate connects to the WiFi network or loses connection from it.</p>
-<p><code>online.cmd</code> - batch script to run after connected to the WiFi network will clear the screen and load the pages with objects related to the home automation:</p>
+<p><code>online.cmd</code> - batch script to run after connected to the WiFi network, it will clear the screen and load the pages with objects related to the home automation:</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>clearpage all
 run /pages_online.jsonl
 </code></pre></div>
 </td></tr></table>
 <p><code>pages_online.jsonl</code> - to be loaded after connected to the WiFi network:</p>
-<p>Put in <code>pages_online.jsonl</code> the main configuration for the pages you'd like to use when the pate is connected to the network and the home automation system. See integraions examples corresponding to the home automation system you have.</p>
-<p><code>offline.cmd</code> - batch script to run when connection is lost from the WiFi network will clear the screen and load the page only with objects related to local relays:</p>
+<p>Put in <code>pages_online.jsonl</code> the main configuration for the pages you'd like to use when the pate is connected to the network and the home automation system. See integrations examples corresponding to the home automation system you have.</p>
+<p><code>offline.cmd</code> - batch script to run when connection is lost from the WiFi network, it will clear the screen and load the page only with objects related to local relays:</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>clearpage all
 run /pages_offline.jsonl
