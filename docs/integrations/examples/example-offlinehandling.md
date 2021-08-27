@@ -35,7 +35,7 @@ run /pages_online.jsonl
 
 `pages_online.jsonl` - to be loaded after connected to the WiFi network:
 
-Put in `pages_online.jsonl` the page configuration you'd like to use when the pate is connected to the network and the home automation system. See integraions examples corresponding to the home automation system you have.
+Put in `pages_online.jsonl` the main configuration for the pages you'd like to use when the pate is connected to the network and the home automation system. See integraions examples corresponding to the home automation system you have.
 
 `offline.cmd` - batch script to run when connection is lost from the WiFi network will clear the screen and load the page only with objects related to local relays:
 
