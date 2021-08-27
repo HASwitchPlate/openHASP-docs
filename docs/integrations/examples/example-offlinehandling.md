@@ -8,7 +8,7 @@ openHASP can detect the state when the plate is disconnected from the network. W
 In the use case presented below, the following assumptions are made:
 
 - you have a plate with 2 local relays (configured on [output GPIOs](../../../configuration/gpio/#output-pin) as lights), each relay added to a different group (Group 1 and 2 respectively).
-- you want to have 2 toggle buttons on the screen acting directly on these relays when the plate is not yet, or disconnected from the WiFi network. No page navigation is needed as no other objects related to the home automation services have to be displayed.
+- you want to have 2 toggle buttons on the screen acting directly on these relays when the plate is not yet, or disconnected from the WiFi network. No page navigation is needed as no other objects related to the home automation services have to be displayed. The buttons have the `groupid` property set to 1 and 2 respectively.
 
 <h2>Configuration</h2>
 
