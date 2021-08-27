@@ -1,7 +1,7 @@
 
 <h1>Handle offline state</h1>
 
-openHASP can detect the state when the plate is disconnected from the network. With [Group ID](../../../configuration/gpio/#group) object property combined with [batch processing](../../../commands/#batch-processinng), objects on the screen can act on locally connected devices without using the home automation system - letting you use only these devices when the network is down and the home automation server is not reachable.
+openHASP can detect the state when the plate is disconnected from the network. With [Group ID](../../../configuration/gpio/#group) object property combined with [batch processing](../../../commands/#batch-processinng), objects on the screen can act on locally connected devices without using the home automation system - letting you use only these devices when the network is down.
 
 <h2>Prerequisites</h2>
 
