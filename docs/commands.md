@@ -31,7 +31,7 @@ If any of the following scripts is present on the filesystem, it will be run aut
 - `/online.cmd` will be executed after connection to the network was successfull
 - `/offline.cmd` will be executed after connection to the WiFi is lost
 
-This makes it possible to disable or hide buttons, load a special offline page, etc...
+This makes it possible to disable or hide buttons, load a special offline page, etc. See [example][5].
 
 ## Global commands
 
@@ -382,3 +382,4 @@ To update the configuration simply issue the same command `config/<submodule>` w
 [2]: ../design/data-types#boolean
 [3]: ../configuration/gpio
 [4]: ../configuration/display#short-idle
+[5]: ../integrations/examples/example-offlinehandling
