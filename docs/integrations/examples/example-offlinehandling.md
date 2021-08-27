@@ -26,7 +26,7 @@ In the plate's web UI keep the default `/pages.jsonl` as Startup Layout. This wi
 
 You can use [batch processing](../../../commands/#batch-processinng) and create scripts which run when the plate connects to the WiFi network or loses connection from it.
 
-`online.cmd` - batch script to run after connected to the WiFi network will clear the screen and load the pages with objects related to the home automation:
+`online.cmd` - batch script to run after connected to the WiFi network, it will clear the screen and load the pages with objects related to the home automation:
 
 ```
 clearpage all
@@ -35,9 +35,9 @@ run /pages_online.jsonl
 
 `pages_online.jsonl` - to be loaded after connected to the WiFi network:
 
-Put in `pages_online.jsonl` the main configuration for the pages you'd like to use when the pate is connected to the network and the home automation system. See integraions examples corresponding to the home automation system you have.
+Put in `pages_online.jsonl` the main configuration for the pages you'd like to use when the pate is connected to the network and the home automation system. See integrations examples corresponding to the home automation system you have.
 
-`offline.cmd` - batch script to run when connection is lost from the WiFi network will clear the screen and load the page only with objects related to local relays:
+`offline.cmd` - batch script to run when connection is lost from the WiFi network, it will clear the screen and load the page only with objects related to local relays:
 
 ```
 clearpage all
