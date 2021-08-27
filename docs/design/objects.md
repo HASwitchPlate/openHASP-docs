@@ -72,7 +72,7 @@ but only the `id` and `obj` properties are required to create an object:
 
 | Property | | Value        | Required | Default | Description
 |:---------|-|:------------:|:--------:|:-------:|:----
-| id       | | 1..254       | yes      | n/a     | ID of the object on this page
+| id       | | 1..254       | yes      | n/a     | ID of the object on this page. `0` for the page itself.
 | obj      | | [string][10] | yes      | n/a     | Name of the object type _(see below)_ 
 | page     | | 0..12        | no       | n/a     | ID of the page the object appears on _(see below)_
 | groupid  | | 0..15        | no       | 0 (none)| ID of the [GPIO group][3] the object belongs to
