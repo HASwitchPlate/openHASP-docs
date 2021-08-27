@@ -3,4 +3,5 @@ nav:
     - Dash UI: example-dashui.md
     - Widgets Demo: example-widgets.md
     - Lovelace Entities: example-lovelace.md
+    - example-offlinehandling.md
 #    - Some fun: surprise.md
