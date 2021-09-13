@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://haswitchplate.github.io/openHASP-docs/0.6.1/0.6.1/integrations/home-assistant/howto/">
       
       <link rel="icon" href="../../../favicon.ico">
-      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.5">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.6">
     
     
       
@@ -24,7 +24,7 @@
       
     
      
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.be71726b.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.802231af.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.3f5d1f46.min.css">
@@ -677,6 +677,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#json-files" class="md-nav__link">
+    JSON Files
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#debugging" class="md-nav__link">
     Debugging
   </a>
@@ -1259,6 +1266,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#json-files" class="md-nav__link">
+    JSON Files
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#debugging" class="md-nav__link">
     Debugging
   </a>
@@ -1330,7 +1344,7 @@
 </ol>
 <p>The component will automatically discover the plates and you will see them appearing in <em>Home Assistant &gt; Configuration &gt; Integrations &gt; HASP-Open Hardware Edition</em>.</p>
 <p>When Home Assistant detects your plate, you will have to give it a name. In the examples below both name and node name is <code>plate35</code>. <br />
-You will be presented with options to set the backlight brightness level when the plate is idle and optionally you can set a path to a centrally located <code>pages.jsonl</code> file containing design for this plate - the component can send the contents of the file when the plate connects.</p>
+You will be presented with options to set the backlight brightness level when the plate is idle and optionally you can set a path to a centrally located <code>pages.jsonl</code> file containing design for this plate - the component can send the contents of the file when the plate connects. From v0.6.3 of the component this file can also be a file with a <code>.json</code> extenstion. See the <em>JSON Files</em> section below.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>If you opt to store the <code>pages.jsonl</code> file on Home Assistant server, it will only be loaded on start of Home Assistant and reloaded on plate availability (becoming online). In this case, don't upload any <code>pages.jsonl</code> file to the plate's flash memory! This assumes your plate pages are empty in initial state. Checkout the <em>services</em> section for requirements to deploy this.</p>
@@ -1502,6 +1516,71 @@ The brightness of the screen when idle (before long idle). Numeric value between
 </dd>
 </dl>
 <p>Check out the example confgurations and automations to learn how to use these services within Home Assistant.</p>
+<hr />
+<h2 id="json-files">JSON Files<a class="headerlink" href="#json-files" title="Permanent link">~</a></h2>
+<p>From v0.6.3 pages file supplied in the plate config within home assistant can be a <code>.json</code>, files with this extension will be parsed differently and expect a JSON array containing objects or strings. Objects must be valid JSONL lines and strings can be used for comments. </p>
+<p>As this file is valid JSON whitespace will be ignored when parsing and removed before sending the JSONL data to the plate. If you are storing your plate config along with your HA config, this allows you to have more  readable config which will be formatted in your editor of choice.</p>
+<p>Example:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">[</span>
+  <span class="p">{</span>
+    <span class="nt">&quot;page&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+    <span class="nt">&quot;obj&quot;</span><span class="p">:</span> <span class="s2">&quot;btn&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;x&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+    <span class="nt">&quot;y&quot;</span><span class="p">:</span> <span class="mi">40</span><span class="p">,</span>
+    <span class="nt">&quot;w&quot;</span><span class="p">:</span> <span class="mi">105</span><span class="p">,</span>
+    <span class="nt">&quot;h&quot;</span><span class="p">:</span> <span class="mi">90</span><span class="p">,</span>
+    <span class="nt">&quot;toggle&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="nt">&quot;text&quot;</span><span class="p">:</span> <span class="s2">&quot;Normal Button&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;mode&quot;</span><span class="p">:</span> <span class="s2">&quot;break&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;align&quot;</span><span class="p">:</span> <span class="s2">&quot;center&quot;</span>
+  <span class="p">},</span>
+  <span class="s2">&quot;Comment string will be removed when parsing&quot;</span><span class="p">,</span>
+  <span class="p">{</span>
+    <span class="nt">&quot;page&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+    <span class="nt">&quot;obj&quot;</span><span class="p">:</span> <span class="s2">&quot;btn&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;x&quot;</span><span class="p">:</span> <span class="mi">125</span><span class="p">,</span>
+    <span class="nt">&quot;y&quot;</span><span class="p">:</span> <span class="mi">40</span><span class="p">,</span>
+    <span class="nt">&quot;w&quot;</span><span class="p">:</span> <span class="mi">105</span><span class="p">,</span>
+    <span class="nt">&quot;h&quot;</span><span class="p">:</span> <span class="mi">90</span><span class="p">,</span>
+    <span class="nt">&quot;toggle&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nt">&quot;text&quot;</span><span class="p">:</span> <span class="s2">&quot;#FFD700 Toggle# Button&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;mode&quot;</span><span class="p">:</span> <span class="s2">&quot;break&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;align&quot;</span><span class="p">:</span> <span class="s2">&quot;center&quot;</span>
+  <span class="p">}</span>
+<span class="p">]</span>
+</code></pre></div>
+</td></tr></table>
+<hr />
 <h2 id="debugging">Debugging<a class="headerlink" href="#debugging" title="Permanent link">~</a></h2>
 <p>Add these lines to your main <code>configuration.yaml</code> configuration and restart Home Assistant:</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
@@ -1522,7 +1601,7 @@ The brightness of the screen when idle (before long idle). Numeric value between
 <div class="md-source-date">
   <small>
     
-      Last update: 2021-08-27
+      Last update: 2021-09-13
     
   </small>
 </div>
@@ -1585,10 +1664,10 @@ The brightness of the screen when idle (before long idle). Numeric value between
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.instant", "navigation.tracking", "search.suggest", "search.highlight", "navigation.top"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../assets/javascripts/workers/search.409db549.min.js", "version": {"default": 0.6, "provider": "mike"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.instant", "navigation.tracking", "search.suggest", "search.highlight", "navigation.top"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../assets/javascripts/workers/search.409db549.min.js", "version": {"provider": "mike", "default": 0.6}}</script>
     
      
-      <script src="../../../assets/javascripts/bundle.56a63758.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.756773cc.min.js"></script>
       
     
 <!-- <script src="../../../js/youtube.js"></script> -->
