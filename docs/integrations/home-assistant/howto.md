@@ -49,7 +49,7 @@ First prepare your plates to be integrated with Home Assistant (follow steps in 
 The component will automatically discover the plates and you will see them appearing in _Home Assistant > Configuration > Integrations > HASP-Open Hardware Edition_.
 
 When Home Assistant detects your plate, you will have to give it a name. In the examples below both name and node name is `plate35`.   
-You will be presented with options to set the backlight brightness level when the plate is idle and optionally you can set a path to a centrally located `pages.jsonl` file containing design for this plate - the component can send the contents of the file when the plate connects.
+You will be presented with options to set the backlight brightness level when the plate is idle and optionally you can set a path to a centrally located `pages.jsonl` file containing design for this plate - the component can send the contents of the file when the plate connects. From v0.6.3 of the component this file can also be a file with a `.json` extenstion. See the _JSON Files_ section below.
 
 !!! note
      If you opt to store the `pages.jsonl` file on Home Assistant server, it will only be loaded on start of Home Assistant and reloaded on plate availability (becoming online). In this case, don't upload any `pages.jsonl` file to the plate's flash memory! This assumes your plate pages are empty in initial state. Checkout the _services_ section for requirements to deploy this.
@@ -164,7 +164,6 @@ Create a directory `openhasp_configs` right near `configuration.yaml`, and put i
 
 * * * * *
 
-
 ## Services
 This component implements some specific services to make interactions with the plate even more comfortable.
 
@@ -188,8 +187,8 @@ This component implements some specific services to make interactions with the p
 
 The file must be located in an authorised location defined by [allowlist_external_dirs](https://www.home-assistant.io/docs/configuration/basic/#allowlist_external_dirs){target=_blank} (in case of hassio `/config/` is the directory where Home Assistant's configuration.yaml resides, so in case of a subdirectory called `openhasp` the full path would be e.g. `/config/openhasp/pages.jsonl`, and you need to add  `/config/openhasp/` to your `allowlist_external_dirs`).
 
-    !!! important
-        The contents of the file are loaded line by line thus `"page":X` has to be defined for each object.
+!!! note
+    The contents of the file are loaded line by line thus `"page":X` has to be defined for each object.
     
 Unless you clear the page first, the objects will be updated.
 
@@ -215,6 +214,50 @@ homeassistant:
 
 Check out the example confgurations and automations to learn how to use these services within Home Assistant.
 
+* * * * *
+
+## JSON Files
+
+From v0.6.3 pages file supplied in the plate config within home assistant can be a `.json`, files with this extension will be parsed differently and expect a JSON array containing objects or strings. Objects must be valid JSONL lines and strings can be used for comments. 
+
+As this file is valid JSON whitespace will be ignored when parsing and removed before sending the JSONL data to the plate. If you are storing your plate config along with your HA config, this allows you to have more  readable config which will be formatted in your editor of choice.
+
+Example:
+
+```json
+[
+  {
+    "page": 1,
+    "id": 2,
+    "obj": "btn",
+    "x": 10,
+    "y": 40,
+    "w": 105,
+    "h": 90,
+    "toggle": false,
+    "text": "Normal Button",
+    "mode": "break",
+    "align": "center"
+  },
+  "Comment string will be removed when parsing",
+  {
+    "page": 1,
+    "id": 3,
+    "obj": "btn",
+    "x": 125,
+    "y": 40,
+    "w": 105,
+    "h": 90,
+    "toggle": true,
+    "text": "#FFD700 Toggle# Button",
+    "mode": "break",
+    "align": "center"
+  }
+]
+```
+
+
+* * * * *
 ## Debugging
 
 Add these lines to your main `configuration.yaml` configuration and restart Home Assistant:
