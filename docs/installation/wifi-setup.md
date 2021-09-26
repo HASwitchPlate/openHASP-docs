@@ -25,7 +25,7 @@ The device will validate the entered credentials and reboot if they are correct.
 Connect to the temporary Access Point by scanning the QR on the display, if available.
 Or Check the serial log for the SSID and password to connect.
 
-- Browse to `http://192.168.4.1`
+- Once connected, your browser should automatically connect to `http://192.168.4.1` (captive portal address)
 - Enter your local SSID and password for joining the device to your wireless network
 - Click Save Settings
 - The device will automatically reboot and connect to your wireless LAN
