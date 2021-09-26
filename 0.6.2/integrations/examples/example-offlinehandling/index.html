@@ -13,27 +13,27 @@
         <meta name="author" content="Francis Van Roie">
       
       
-        <link rel="canonical" href="https://haswitchplate.github.io/openHASP-docs/0.6.1/0.6.2/configuration/mqtt/">
+        <link rel="canonical" href="https://haswitchplate.github.io/openHASP-docs/0.6.1/0.6.2/integrations/examples/example-offlinehandling/">
       
-      <link rel="icon" href="../../favicon.ico">
+      <link rel="icon" href="../../../favicon.ico">
       <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.3.0">
     
     
       
-        <title>MQTT Settings - openHASP</title>
+        <title>Handle Offline State - openHASP</title>
       
     
      
-      <link rel="stylesheet" href="../../assets/stylesheets/main.8b42a75e.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.8b42a75e.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.3f5d1f46.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.3f5d1f46.min.css">
         
       
     
-<link rel="stylesheet" href="../../css/openhasp.css">
-<link rel="stylesheet" href="../../css/ekko-lightbox.min.css">
-<link rel="stylesheet" href="../../css/bootstrap4.min.css"> 
+<link rel="stylesheet" href="../../../css/openhasp.css">
+<link rel="stylesheet" href="../../../css/ekko-lightbox.min.css">
+<link rel="stylesheet" href="../../../css/bootstrap4.min.css"> 
      
 
 <!-- Jquery from Google CDN -->
@@ -88,7 +88,7 @@
     <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="deep-orange">
   
     
-    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    <script>function __prefix(e){return new URL("../../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
     
       <script>var palette=__get("__palette");if(null!==palette&&"object"==typeof palette.color)for(var key in palette.color)document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
     
@@ -96,11 +96,6 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
-      
-        
-        <a href="#mqtt-settings" class="md-skip">
-          Skip to content
-        </a>
       
     </div>
     <div data-md-component="announce">
@@ -111,9 +106,9 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="openHASP" class="md-header__button md-logo" aria-label="openHASP" data-md-component="logo">
+    <a href="../../.." title="openHASP" class="md-header__button md-logo" aria-label="openHASP" data-md-component="logo">
       
-  <img src="../../assets/images/logo.png" alt="logo">
+  <img src="../../../assets/images/logo.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -129,7 +124,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              MQTT Settings
+              Handle Offline State
             
           </span>
         </div>
@@ -232,9 +227,9 @@
                       
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
     <label class="md-nav__title" for="__drawer">
-      <a href="../.." title="openHASP" class="md-nav__button md-logo" aria-label="openHASP" data-md-component="logo">
+      <a href="../../.." title="openHASP" class="md-nav__button md-logo" aria-label="openHASP" data-md-component="logo">
         
-  <img src="../../assets/images/logo.png" alt="logo">
+  <img src="../../../assets/images/logo.png" alt="logo">
 
       </a>
       openHASP
@@ -259,7 +254,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         Home
       </a>
     </li>
@@ -270,7 +265,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../getting-started/" class="md-nav__link">
+      <a href="../../../getting-started/" class="md-nav__link">
         Getting started
       </a>
     </li>
@@ -307,7 +302,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../installation/esp32/" class="md-nav__link">
+      <a href="../../../installation/esp32/" class="md-nav__link">
         ESP32
       </a>
     </li>
@@ -321,7 +316,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../installation/esp8266/" class="md-nav__link">
+      <a href="../../../installation/esp8266/" class="md-nav__link">
         ESP8266
       </a>
     </li>
@@ -335,7 +330,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../installation/wifi-setup/" class="md-nav__link">
+      <a href="../../../installation/wifi-setup/" class="md-nav__link">
         Wifi Setup
       </a>
     </li>
@@ -349,7 +344,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../installation/firmware-update/" class="md-nav__link">
+      <a href="../../../installation/firmware-update/" class="md-nav__link">
         Firmware Update
       </a>
     </li>
@@ -365,14 +360,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
       
       
       
@@ -395,7 +388,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../hasp/" class="md-nav__link">
+      <a href="../../../configuration/hasp/" class="md-nav__link">
         HASP Design
       </a>
     </li>
@@ -409,7 +402,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../wifi/" class="md-nav__link">
+      <a href="../../../configuration/wifi/" class="md-nav__link">
         Wifi Settings
       </a>
     </li>
@@ -423,7 +416,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../http/" class="md-nav__link">
+      <a href="../../../configuration/http/" class="md-nav__link">
         HTTP Settings
       </a>
     </li>
@@ -435,99 +428,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          MQTT Settings
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../configuration/mqtt/" class="md-nav__link">
         MQTT Settings
       </a>
-      
-        
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#web-ui" class="md-nav__link">
-    Web UI
-  </a>
-  
-    <nav class="md-nav" aria-label="Web UI">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#hasp-node-name" class="md-nav__link">
-    HASP Node Name
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#group-name" class="md-nav__link">
-    Group Name
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#mqtt-broker" class="md-nav__link">
-    MQTT Broker
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#mqtt-port" class="md-nav__link">
-    MQTT Port
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#mqtt-user-and-password" class="md-nav__link">
-    MQTT User and Password
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#commandline" class="md-nav__link">
-    Commandline
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -539,7 +444,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../display/" class="md-nav__link">
+      <a href="../../../configuration/display/" class="md-nav__link">
         Display Settings
       </a>
     </li>
@@ -553,7 +458,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../gpio/" class="md-nav__link">
+      <a href="../../../configuration/gpio/" class="md-nav__link">
         GPIO Settings
       </a>
     </li>
@@ -567,7 +472,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../debug/" class="md-nav__link">
+      <a href="../../../configuration/debug/" class="md-nav__link">
         Debug Settings
       </a>
     </li>
@@ -611,7 +516,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../design/pages/" class="md-nav__link">
+      <a href="../../../design/pages/" class="md-nav__link">
         Pages
       </a>
     </li>
@@ -625,7 +530,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../design/objects/" class="md-nav__link">
+      <a href="../../../design/objects/" class="md-nav__link">
         Objects
       </a>
     </li>
@@ -639,7 +544,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../design/fonts/" class="md-nav__link">
+      <a href="../../../design/fonts/" class="md-nav__link">
         Fonts
       </a>
     </li>
@@ -653,7 +558,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../design/styling/" class="md-nav__link">
+      <a href="../../../design/styling/" class="md-nav__link">
         Styling Properties
       </a>
     </li>
@@ -667,7 +572,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../design/data-types/" class="md-nav__link">
+      <a href="../../../design/data-types/" class="md-nav__link">
         Data Types
       </a>
     </li>
@@ -685,7 +590,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../commands/" class="md-nav__link">
+      <a href="../../../commands/" class="md-nav__link">
         Commands
       </a>
     </li>
@@ -694,12 +599,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" checked>
       
       
       
@@ -748,7 +655,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../integrations/home-assistant/howto/" class="md-nav__link">
+      <a href="../../home-assistant/howto/" class="md-nav__link">
         How-To
       </a>
     </li>
@@ -762,7 +669,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../integrations/home-assistant/sampl_conf/" class="md-nav__link">
+      <a href="../../home-assistant/sampl_conf/" class="md-nav__link">
         Example Configurations
       </a>
     </li>
@@ -776,7 +683,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../integrations/home-assistant/sampl_autom/" class="md-nav__link">
+      <a href="../../home-assistant/sampl_autom/" class="md-nav__link">
         Example Automations
       </a>
     </li>
@@ -823,7 +730,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../integrations/openhab/integration_openhab/" class="md-nav__link">
+      <a href="../../openhab/integration_openhab/" class="md-nav__link">
         Installation and Example
       </a>
     </li>
@@ -842,12 +749,14 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_3" type="checkbox" id="__nav_7_3" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_3" type="checkbox" id="__nav_7_3" checked>
       
       
       
@@ -870,7 +779,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../integrations/examples/example-pagination/" class="md-nav__link">
+      <a href="../example-pagination/" class="md-nav__link">
         Page Navigation
       </a>
     </li>
@@ -884,7 +793,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../integrations/examples/example-widgets/" class="md-nav__link">
+      <a href="../example-widgets/" class="md-nav__link">
         Widgets Demo
       </a>
     </li>
@@ -898,7 +807,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../integrations/examples/example-dashui/" class="md-nav__link">
+      <a href="../example-dashui/" class="md-nav__link">
         Dash UI
       </a>
     </li>
@@ -912,7 +821,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../integrations/examples/example-lovelace/" class="md-nav__link">
+      <a href="../example-lovelace/" class="md-nav__link">
         Lovelace Entities
       </a>
     </li>
@@ -924,11 +833,19 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../integrations/examples/example-offlinehandling/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Handle Offline State
       </a>
+      
     </li>
   
 
@@ -977,7 +894,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devices/featherwing/" class="md-nav__link">
+      <a href="../../../devices/featherwing/" class="md-nav__link">
         Adafruit Featherwing
       </a>
     </li>
@@ -991,7 +908,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devices/esp32-touchdown/" class="md-nav__link">
+      <a href="../../../devices/esp32-touchdown/" class="md-nav__link">
         ESP32 TouchDown
       </a>
     </li>
@@ -1005,7 +922,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devices/freetouchdeck/" class="md-nav__link">
+      <a href="../../../devices/freetouchdeck/" class="md-nav__link">
         FreeTouchDeck
       </a>
     </li>
@@ -1019,7 +936,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devices/lanbon-l8/" class="md-nav__link">
+      <a href="../../../devices/lanbon-l8/" class="md-nav__link">
         Lanbon L8
       </a>
     </li>
@@ -1033,7 +950,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devices/m5stack-core2/" class="md-nav__link">
+      <a href="../../../devices/m5stack-core2/" class="md-nav__link">
         M5stack core2
       </a>
     </li>
@@ -1047,7 +964,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devices/makerfabs-tft-touch/" class="md-nav__link">
+      <a href="../../../devices/makerfabs-tft-touch/" class="md-nav__link">
         Makerfabs TFT Touch
       </a>
     </li>
@@ -1061,7 +978,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devices/wt32-sc01/" class="md-nav__link">
+      <a href="../../../devices/wt32-sc01/" class="md-nav__link">
         Wireless-Tag WT32-SC01
       </a>
     </li>
@@ -1075,7 +992,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devices/yeacreate-nscreen32/" class="md-nav__link">
+      <a href="../../../devices/yeacreate-nscreen32/" class="md-nav__link">
         YeaCreate Nscreen32
       </a>
     </li>
@@ -1119,7 +1036,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../displays/ILI9341_IPS/" class="md-nav__link">
+      <a href="../../../displays/ILI9341_IPS/" class="md-nav__link">
         ILI9341 IPS
       </a>
     </li>
@@ -1133,7 +1050,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../displays/lolin-tft-shield/" class="md-nav__link">
+      <a href="../../../displays/lolin-tft-shield/" class="md-nav__link">
         Lolin TFT Shield
       </a>
     </li>
@@ -1147,7 +1064,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../displays/MHS4001/" class="md-nav__link">
+      <a href="../../../displays/MHS4001/" class="md-nav__link">
         MHS4001
       </a>
     </li>
@@ -1161,7 +1078,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../displays/MRB3511/" class="md-nav__link">
+      <a href="../../../displays/MRB3511/" class="md-nav__link">
         MRB3511
       </a>
     </li>
@@ -1175,7 +1092,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../displays/MSPxxxx/" class="md-nav__link">
+      <a href="../../../displays/MSPxxxx/" class="md-nav__link">
         MSP Series (Red PCB)
       </a>
     </li>
@@ -1189,7 +1106,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../displays/Waveshare_RPi_LCD_Rev_C/" class="md-nav__link">
+      <a href="../../../displays/Waveshare_RPi_LCD_Rev_C/" class="md-nav__link">
         Waveshare RPi LCD Rev C
       </a>
     </li>
@@ -1207,7 +1124,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../gallery/" class="md-nav__link">
+      <a href="../../../gallery/" class="md-nav__link">
         Gallery
       </a>
     </li>
@@ -1218,7 +1135,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../faq/" class="md-nav__link">
+      <a href="../../../faq/" class="md-nav__link">
         FAQ
       </a>
     </li>
@@ -1255,7 +1172,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../compiling/local/" class="md-nav__link">
+      <a href="../../../compiling/local/" class="md-nav__link">
         Compiling locally
       </a>
     </li>
@@ -1269,7 +1186,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../compiling/gitpod/" class="md-nav__link">
+      <a href="../../../compiling/gitpod/" class="md-nav__link">
         Compiling online with Gitpod
       </a>
     </li>
@@ -1283,7 +1200,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../compiling/customize/" class="md-nav__link">
+      <a href="../../../compiling/customize/" class="md-nav__link">
         Customization
       </a>
     </li>
@@ -1301,7 +1218,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../license/" class="md-nav__link">
+      <a href="../../../license/" class="md-nav__link">
         License
       </a>
     </li>
@@ -1339,134 +1256,73 @@
               </div>
             
             
-              
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#web-ui" class="md-nav__link">
-    Web UI
-  </a>
-  
-    <nav class="md-nav" aria-label="Web UI">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#hasp-node-name" class="md-nav__link">
-    HASP Node Name
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#group-name" class="md-nav__link">
-    Group Name
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#mqtt-broker" class="md-nav__link">
-    MQTT Broker
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#mqtt-port" class="md-nav__link">
-    MQTT Port
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#mqtt-user-and-password" class="md-nav__link">
-    MQTT User and Password
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#commandline" class="md-nav__link">
-    Commandline
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-                  </div>
-                </div>
-              </div>
-            
           
           <div class="md-content" data-md-component="content">
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/HASwitchPlate/openHASP-docs/edit/0.6.1/docs/configuration/mqtt.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/HASwitchPlate/openHASP-docs/edit/0.6.1/docs/integrations/examples/example-offlinehandling.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                <h1 id="mqtt-settings">MQTT Settings<a class="headerlink" href="#mqtt-settings" title="Permanent link">~</a></h1>
-<p>All communication between <strong>HASP Open Display</strong> and your Home Automation service is done over MQTT. You will need an already working MQTT Broker.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Learn more about the protocol on <a href="http://www.hivemq.com/mqtt-essentials/">MQTT Essentials</a></p>
-</div>
-<p><img alt="MQTT Settings" src="../../assets/images/settings/mqtt_settings.png" title="MQTT Settings" /></p>
-<h2 id="web-ui">Web UI<a class="headerlink" href="#web-ui" title="Permanent link">~</a></h2>
-<h3 id="hasp-node-name">HASP Node Name<a class="headerlink" href="#hasp-node-name" title="Permanent link">~</a></h3>
-<p>The <em>Node Name</em> is the unique identifier of your device on your MQTT Broker.</p>
-<p>For example, setting the <em>Node Name</em> to <strong>plate35</strong> will make the device listen and communicate on the main topic <strong>hasp/plate35/</strong></p>
-<h3 id="group-name">Group Name<a class="headerlink" href="#group-name" title="Permanent link">~</a></h3>
-<p>The <em>Group Name</em> is the unique identifier for a <strong>Group</strong> of devices.</p>
-<p>For example, the default <em>Group Name</em> is <strong>plates</strong>. This will make all devices in this group listen on the main topic <strong>hasp/plates/</strong>
-This way you can send a command to all devices in the group at the same moment. Each devices will only respond on their own main <em>Node Name</em> topic.</p>
-<h3 id="mqtt-broker">MQTT Broker<a class="headerlink" href="#mqtt-broker" title="Permanent link">~</a></h3>
-<p>Set the IP or hostname of your MQTT Broker</p>
-<h3 id="mqtt-port">MQTT Port<a class="headerlink" href="#mqtt-port" title="Permanent link">~</a></h3>
-<p>Set the port for your MQTT Broker</p>
-<h3 id="mqtt-user-and-password">MQTT User and Password<a class="headerlink" href="#mqtt-user-and-password" title="Permanent link">~</a></h3>
-<p>Enter credentials if your <em>MQTT Broker</em> requires a Username and Password.</p>
-<hr />
-<p>Click 'Save Settings' to save your settings to the device. A restart is required to make the settings active. Navigate back to the Main Menu and click Restart to activate the settings.</p>
-<h2 id="commandline">Commandline<a class="headerlink" href="#commandline" title="Permanent link">~</a></h2>
-<p>You can also configure the mqtt settings via the serial or telnet console:</p>
+                <h1>Handle offline state</h1>
+
+<p>openHASP can detect the state when the plate is disconnected from the network. With <a href="../../../configuration/gpio/#group">Group ID</a> object property combined with <a href="../../../commands/#batch-processinng">batch processing</a>, objects on the screen can act on locally connected devices without using the home automation system - letting you use only these devices when the network is down.</p>
+<h2>Prerequisites</h2>
+
+<p>In the use case presented below, the following assumptions are made:</p>
+<ul>
+<li>you have a plate with 2 local relays (configured on <a href="../../../configuration/gpio/#output-pin">output GPIOs</a> as lights), each relay added to a different group (Group 1 and 2 respectively).</li>
+<li>you want to have 2 toggle buttons on the screen acting directly on these relays when the plate is not yet, or disconnected from the WiFi network. No page navigation is needed as no other objects related to the home automation services have to be displayed. The buttons have the <code>groupid</code> property set to 1 and 2 respectively.</li>
+</ul>
+<h2>Configuration</h2>
+
+<p>In the plate's web UI keep the default <code>/pages.jsonl</code> as Startup Layout. This will load immediately after plate boot, before the pate is connected to the network. If your network is not available after boot, this page configuration will be on screen while the plate keeps connecting in the background.</p>
+<p><code>pages.jsonl</code> - loaded at boot, has only with objects related to local relays, and displays the hostname:</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
 <span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>hostname myPlateName
-mqtthost <span class="m">192</span>.168.0.123
-mqttport <span class="m">1883</span>
-mqttuser myUsername
-mqttpass myPassword
-reboot
+<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;page&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="nt">&quot;obj&quot;</span><span class="p">:</span><span class="s2">&quot;btn&quot;</span><span class="p">,</span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="nt">&quot;w&quot;</span><span class="p">:</span><span class="mi">240</span><span class="p">,</span><span class="nt">&quot;h&quot;</span><span class="p">:</span><span class="mi">30</span><span class="p">,</span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="s2">&quot;LIGHTS&quot;</span><span class="p">,</span><span class="nt">&quot;text_font&quot;</span><span class="p">:</span><span class="mi">16</span><span class="p">,</span><span class="nt">&quot;bg_color&quot;</span><span class="p">:</span><span class="s2">&quot;#2C3E50&quot;</span><span class="p">,</span><span class="nt">&quot;text_color&quot;</span><span class="p">:</span><span class="s2">&quot;#FFFFFF&quot;</span><span class="p">,</span><span class="nt">&quot;radius&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="nt">&quot;border_side&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="nt">&quot;click&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">}</span>
+<span class="p">{</span><span class="nt">&quot;page&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="nt">&quot;obj&quot;</span><span class="p">:</span><span class="s2">&quot;btn&quot;</span><span class="p">,</span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="mi">10</span><span class="p">,</span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="mi">40</span><span class="p">,</span><span class="nt">&quot;w&quot;</span><span class="p">:</span><span class="mi">220</span><span class="p">,</span><span class="nt">&quot;h&quot;</span><span class="p">:</span><span class="mi">115</span><span class="p">,</span><span class="nt">&quot;toggle&quot;</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="s2">&quot;\uE335&quot;</span><span class="p">,</span><span class="nt">&quot;text_font&quot;</span><span class="p">:</span><span class="mi">32</span><span class="p">,</span><span class="nt">&quot;mode&quot;</span><span class="p">:</span><span class="s2">&quot;break&quot;</span><span class="p">,</span><span class="nt">&quot;align&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="nt">&quot;radius&quot;</span><span class="p">:</span><span class="mi">20</span><span class="p">,</span><span class="nt">&quot;groupid&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">}</span>
+<span class="p">{</span><span class="nt">&quot;page&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span><span class="nt">&quot;obj&quot;</span><span class="p">:</span><span class="s2">&quot;btn&quot;</span><span class="p">,</span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="mi">10</span><span class="p">,</span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="mi">165</span><span class="p">,</span><span class="nt">&quot;w&quot;</span><span class="p">:</span><span class="mi">220</span><span class="p">,</span><span class="nt">&quot;h&quot;</span><span class="p">:</span><span class="mi">115</span><span class="p">,</span><span class="nt">&quot;toggle&quot;</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="s2">&quot;\uE335&quot;</span><span class="p">,</span><span class="nt">&quot;text_font&quot;</span><span class="p">:</span><span class="mi">32</span><span class="p">,</span><span class="nt">&quot;mode&quot;</span><span class="p">:</span><span class="s2">&quot;break&quot;</span><span class="p">,</span><span class="nt">&quot;align&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="nt">&quot;radius&quot;</span><span class="p">:</span><span class="mi">20</span><span class="p">,</span><span class="nt">&quot;groupid&quot;</span><span class="p">:</span><span class="mi">2</span><span class="p">}</span>
+<span class="p">{</span><span class="nt">&quot;page&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">98</span><span class="p">,</span><span class="nt">&quot;obj&quot;</span><span class="p">:</span><span class="s2">&quot;btn&quot;</span><span class="p">,</span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="mi">290</span><span class="p">,</span><span class="nt">&quot;w&quot;</span><span class="p">:</span><span class="mi">240</span><span class="p">,</span><span class="nt">&quot;h&quot;</span><span class="p">:</span><span class="mi">30</span><span class="p">,</span><span class="nt">&quot;bg_color&quot;</span><span class="p">:</span><span class="s2">&quot;#2C3E50&quot;</span><span class="p">,</span><span class="nt">&quot;text_color&quot;</span><span class="p">:</span><span class="s2">&quot;#FFFFFF&quot;</span><span class="p">,</span><span class="nt">&quot;radius&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="nt">&quot;border_side&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="nt">&quot;click&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">}</span>
+<span class="p">{</span><span class="nt">&quot;page&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">99</span><span class="p">,</span><span class="nt">&quot;obj&quot;</span><span class="p">:</span><span class="s2">&quot;label&quot;</span><span class="p">,</span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="mi">295</span><span class="p">,</span><span class="nt">&quot;w&quot;</span><span class="p">:</span><span class="mi">240</span><span class="p">,</span><span class="nt">&quot;align&quot;</span><span class="p">:</span><span class="s2">&quot;center&quot;</span><span class="p">,</span><span class="nt">&quot;text&quot;</span><span class="p">:</span> <span class="s2">&quot;%hostname%&quot;</span><span class="p">,</span><span class="nt">&quot;text_color&quot;</span><span class="p">:</span><span class="s2">&quot;#FFFFFF&quot;</span><span class="p">}</span>
 </code></pre></div>
 </td></tr></table>
+<p>You can use <a href="../../../commands/#batch-processinng">batch processing</a> and create scripts which run when the plate connects to the WiFi network or loses connection from it.</p>
+<p><code>online.cmd</code> - batch script to run after connected to the WiFi network, it will clear the screen and load the pages with objects related to the home automation:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>clearpage all
+run /pages_online.jsonl
+</code></pre></div>
+</td></tr></table>
+<p><code>pages_online.jsonl</code> - to be loaded after connected to the WiFi network:</p>
+<p>Put in <code>pages_online.jsonl</code> the main configuration for the pages you'd like to use when the pate is connected to the network and the home automation system. See integrations examples corresponding to the home automation system you have.</p>
+<p><code>offline.cmd</code> - batch script to run when connection is lost from the WiFi network, it will clear the screen and load the page only with objects related to local relays:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>clearpage all
+run /pages_offline.jsonl
+</code></pre></div>
+</td></tr></table>
+<p><code>pages_offline.jsonl</code> - to be loaded after connection is lost to the WiFi network, has only with objects related to local relays:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;page&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="nt">&quot;obj&quot;</span><span class="p">:</span><span class="s2">&quot;btn&quot;</span><span class="p">,</span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="nt">&quot;w&quot;</span><span class="p">:</span><span class="mi">240</span><span class="p">,</span><span class="nt">&quot;h&quot;</span><span class="p">:</span><span class="mi">30</span><span class="p">,</span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="s2">&quot;LIGHTS&quot;</span><span class="p">,</span><span class="nt">&quot;text_font&quot;</span><span class="p">:</span><span class="mi">16</span><span class="p">,</span><span class="nt">&quot;bg_color&quot;</span><span class="p">:</span><span class="s2">&quot;#2C3E50&quot;</span><span class="p">,</span><span class="nt">&quot;text_color&quot;</span><span class="p">:</span><span class="s2">&quot;#FFFFFF&quot;</span><span class="p">,</span><span class="nt">&quot;radius&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="nt">&quot;border_side&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="nt">&quot;click&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">}</span>
+<span class="p">{</span><span class="nt">&quot;page&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="nt">&quot;obj&quot;</span><span class="p">:</span><span class="s2">&quot;btn&quot;</span><span class="p">,</span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="mi">10</span><span class="p">,</span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="mi">40</span><span class="p">,</span><span class="nt">&quot;w&quot;</span><span class="p">:</span><span class="mi">220</span><span class="p">,</span><span class="nt">&quot;h&quot;</span><span class="p">:</span><span class="mi">115</span><span class="p">,</span><span class="nt">&quot;toggle&quot;</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="s2">&quot;\uE335&quot;</span><span class="p">,</span><span class="nt">&quot;text_font&quot;</span><span class="p">:</span><span class="mi">32</span><span class="p">,</span><span class="nt">&quot;mode&quot;</span><span class="p">:</span><span class="s2">&quot;break&quot;</span><span class="p">,</span><span class="nt">&quot;align&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="nt">&quot;radius&quot;</span><span class="p">:</span><span class="mi">20</span><span class="p">,</span><span class="nt">&quot;groupid&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">}</span>
+<span class="p">{</span><span class="nt">&quot;page&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span><span class="nt">&quot;obj&quot;</span><span class="p">:</span><span class="s2">&quot;btn&quot;</span><span class="p">,</span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="mi">10</span><span class="p">,</span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="mi">165</span><span class="p">,</span><span class="nt">&quot;w&quot;</span><span class="p">:</span><span class="mi">220</span><span class="p">,</span><span class="nt">&quot;h&quot;</span><span class="p">:</span><span class="mi">115</span><span class="p">,</span><span class="nt">&quot;toggle&quot;</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="s2">&quot;\uE335&quot;</span><span class="p">,</span><span class="nt">&quot;text_font&quot;</span><span class="p">:</span><span class="mi">32</span><span class="p">,</span><span class="nt">&quot;mode&quot;</span><span class="p">:</span><span class="s2">&quot;break&quot;</span><span class="p">,</span><span class="nt">&quot;align&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="nt">&quot;radius&quot;</span><span class="p">:</span><span class="mi">20</span><span class="p">,</span><span class="nt">&quot;groupid&quot;</span><span class="p">:</span><span class="mi">2</span><span class="p">}</span>
+<span class="p">{</span><span class="nt">&quot;page&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">99</span><span class="p">,</span><span class="nt">&quot;obj&quot;</span><span class="p">:</span><span class="s2">&quot;btn&quot;</span><span class="p">,</span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="mi">290</span><span class="p">,</span><span class="nt">&quot;w&quot;</span><span class="p">:</span><span class="mi">240</span><span class="p">,</span><span class="nt">&quot;h&quot;</span><span class="p">:</span><span class="mi">30</span><span class="p">,</span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="s2">&quot;\uE156\uE5A9&quot;</span><span class="p">,</span><span class="nt">&quot;text_font&quot;</span><span class="p">:</span><span class="mi">16</span><span class="p">,</span><span class="nt">&quot;bg_color&quot;</span><span class="p">:</span><span class="s2">&quot;#2C3E50&quot;</span><span class="p">,</span><span class="nt">&quot;text_color&quot;</span><span class="p">:</span><span class="s2">&quot;#FFFFFF&quot;</span><span class="p">,</span><span class="nt">&quot;radius&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="nt">&quot;border_side&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="nt">&quot;click&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+<h2>Testing</h2>
+
+<ul>
+<li>Reboot the plate. First only the buttons related to local relays are shown, these act the relays. After the plate connects to the network, screen is cleared and home automation-related pages are loaded.</li>
+<li>Kill the WiFi network. Plate detects the disconnection from the network, thus screen is cleared and only the buttons related to local relays are shown, relays can be turned on and off.</li>
+<li>Restore the WiFi network. Plate reconnects to the network, screen is cleared and home automation-related pages are loaded back again.</li>
+</ul>
                 
                   
                     
@@ -1503,7 +1359,7 @@ reboot
     
     <nav class="md-footer__inner md-grid" aria-label="Footer">
         
-        <a href="../http/" class="md-footer__link md-footer__link--prev" rel="prev">
+        <a href="../example-lovelace/" class="md-footer__link md-footer__link--prev" rel="prev">
             <div class="md-footer__button md-icon">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -1511,17 +1367,17 @@ reboot
                 <div class="md-ellipsis">
                     <span class="md-footer__direction">
                   Previous
-                </span> HTTP Settings
+                </span> Lovelace Entities
                 </div>
             </div>
         </a>
          
-        <a href="../display/" class="md-footer__link md-footer__link--next" rel="next">
+        <a href="../../../devices/featherwing/" class="md-footer__link md-footer__link--next" rel="next">
             <div class="md-footer__title">
                 <div class="md-ellipsis">
                     <span class="md-footer__direction">
                   Next
-                </span> Display Settings
+                </span> Adafruit Featherwing
                 </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -1538,14 +1394,14 @@ reboot
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tracking", "search.suggest", "search.highlight", "navigation.top"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.f8263e09.min.js", "version": {"provider": "mike", "default": 0.6}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.instant", "navigation.tracking", "search.suggest", "search.highlight", "navigation.top"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../assets/javascripts/workers/search.f8263e09.min.js", "version": {"provider": "mike", "default": 0.6}}</script>
     
      
-      <script src="../../assets/javascripts/bundle.4fc53ad4.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.4fc53ad4.min.js"></script>
       
     
-<!-- <script src="../../js/youtube.js"></script> -->
-<script src="../../js/ekko-lightbox.min.js"></script>
+<!-- <script src="../../../js/youtube.js"></script> -->
+<script src="../../../js/ekko-lightbox.min.js"></script>
 <script>
     $(document).on('click', '[data-toggle="lightbox"]', function(event) {
         event.preventDefault();
