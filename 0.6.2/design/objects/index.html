@@ -3235,6 +3235,24 @@ The pop-up is centered on the screen.</p>
 <td>0</td>
 <td>Shift the picture vertically relative to the image object</td>
 </tr>
+<tr>
+<td>angle</td>
+<td><a href="../data-types/#integer">int16</a></td>
+<td>0</td>
+<td>Rotate the picture around its center. Angle has <code>0.1</code> degree precision, so for <code>45.8°</code> use <code>458</code>.</td>
+</tr>
+<tr>
+<td>zoom</td>
+<td><a href="../data-types/#integer">uint16</a></td>
+<td>256</td>
+<td>A larger value enlarges the images (e.g. <code>512</code> double size), a smaller value shrinks it (e.g. <code>128</code> half size). Fractional scale works as well. E.g. <code>281</code> for <code>10%</code> enlargement.</td>
+</tr>
+<tr>
+<td>antialias</td>
+<td><a href="../data-types/#boolean">bool</a></td>
+<td>false</td>
+<td>The quality of the angle and zoom transformation. With enabled anti-aliasing the transformations has a higher quality but they are slower.</td>
+</tr>
 </tbody>
 </table>
 <p>Only PNG image files are supported, from flash. </p>
@@ -3243,7 +3261,7 @@ The pop-up is centered on the screen.</p>
 <p class="admonition-title">Note</p>
 <p>The decoding of the images is done in memory, thus you'll be able to display full-screen images only if your microcontroller <a href="../../getting-started/#recommended-boards">has installed PSram memory</a>, else you will be limited to small icons.</p>
 </div>
-<details class="example"><summary>Example <code>jsonl</code></summary><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;page&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">34</span><span class="p">,</span><span class="nt">&quot;obj&quot;</span><span class="p">:</span><span class="s2">&quot;img&quot;</span><span class="p">,</span><span class="nt">&quot;src&quot;</span><span class="p">:</span><span class="s2">&quot;/littlefs/image.png&quot;</span><span class="p">,</span><span class="nt">&quot;auto_size&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="nt">&quot;w&quot;</span><span class="p">:</span><span class="mi">50</span><span class="p">}</span>
+<details class="example"><summary>Example <code>jsonl</code></summary><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;page&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">34</span><span class="p">,</span><span class="nt">&quot;obj&quot;</span><span class="p">:</span><span class="s2">&quot;img&quot;</span><span class="p">,</span><span class="nt">&quot;src&quot;</span><span class="p">:</span><span class="s2">&quot;L:/image.png&quot;</span><span class="p">,</span><span class="nt">&quot;auto_size&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="nt">&quot;w&quot;</span><span class="p">:</span><span class="mi">50</span><span class="p">}</span>
 </code></pre></div>
 </td></tr></table>
 </details>
