@@ -39,7 +39,7 @@ This is a real-world example of a `pages.jsonl` file. Upload it to your plate's 
 {"id":20,"obj":"tab","parentid":1,"text":"Tab 2"}
 {"id":30,"obj":"tab","parentid":1,"text":"Tab 3"}
 {"id":11,"obj":"roller","x":40,"y":10,"w":160,"rows":2,"options":"2020\n2021\n2022\n2023\n2024","parentid":10}
-{"id":12,"obj":"img","src":"/littlefs/logo-medium.png","x":45,"y":80,"auto_size":1,"w":150,"parentid":10}
+{"id":12,"obj":"img","src":"L:/logo-medium.png","x":45,"y":80,"auto_size":1,"w":150,"parentid":10}
 
 {"comment":"---------- All Pages ----------"}
 {"page":0,"id":7,"obj":"btn","action":"prev","x":0,"y":290,"w":79,"h":32,"text":"\uE141","text_color":"#FFFFFF","radius":0,"border_side":0,"text_font":32}
