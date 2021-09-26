@@ -688,6 +688,9 @@ The points parameter is a JSON array of [x,y] coordinates, for example `[[10,25]
 | auto_size| [bool][2]    | true    | Automatically set the size of the image object to the image source
 | offset_x | [int16][9]   | 0       | Shift the picture horizontally relative to the image object
 | offset_y | [int16][9]   | 0       | Shift the picture vertically relative to the image object
+| angle    | [int16][9]   | 0       | Rotate the picture around its center. Angle has `0.1` degree precision, so for `45.8°` use `458`.
+| zoom     | [uint16][9]  | 256     | A larger value enlarges the images (e.g. `512` double size), a smaller value shrinks it (e.g. `128` half size). Fractional scale works as well. E.g. `281` for `10%` enlargement.
+| antialias| [bool][2]    | false   | The quality of the angle and zoom transformation. With enabled anti-aliasing the transformations has a higher quality but they are slower.
 
 Only PNG image files are supported, from flash. 
    
@@ -699,7 +702,7 @@ You can use image_recolor and image_recolor_opa from the [image styling][5] prop
 
 ??? example "Example `jsonl`"
     ```json
-    {"page":1,"id":34,"obj":"img","src":"/littlefs/image.png","auto_size":0,"w":50}
+    {"page":1,"id":34,"obj":"img","src":"L:/image.png","auto_size":0,"w":50}
     ```
 
 
