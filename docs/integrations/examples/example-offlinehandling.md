@@ -37,6 +37,9 @@ run /pages_online.jsonl
 
 Put in `pages_online.jsonl` the main configuration for the pages you'd like to use when the pate is connected to the network and the home automation system. See integrations examples corresponding to the home automation system you have.
 
+!!! note
+     If you use Home Assistant and opt to store the `pages.jsonl` file on the server, it will only be loaded on start of Home Assistant and reloaded on plate availability (becoming online) from there, you don't need `run /pages_online.jsonl` in the script and you don't need `pages_online.jsonl` either on the plate.
+
 `offline.cmd` - batch script to run when connection is lost from the WiFi network, it will clear the screen and load the page only with objects related to local relays:
 
 ```
