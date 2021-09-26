@@ -4,9 +4,7 @@
 Control your home-automation devices from a customizable touchscreen UI connected via MQTT.
 
 openHASP is a re-implementation of the popular HASwitchPlate sketch created by aderusha.
-The [HASPone][1]{target=_blank} project uses a Wemos D1 mini and requires a Nextion/TJC HMI display.
-This rewrite removes the Nextion/TJC requirement by using the [Light and Versatile Graphics Library][2]{target=_blank}
-on the MCU to drive a commodity display.
+While the [HASPone][1]{target=_blank} project uses a Wemos D1 mini and requires a Nextion/TJC HMI display, this rewrite removes the Nextion/TJC requirement by using the [Light and Versatile Graphics Library][2]{target=_blank} on the MCU to drive a commodity display.
 
 This project also adds ESP32 and STM32F4 support to take advantage of the additional hardware capabilities.
 
