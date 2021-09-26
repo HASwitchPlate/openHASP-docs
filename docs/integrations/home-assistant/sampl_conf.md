@@ -838,7 +838,7 @@ relevant **openHASP config:** (screen size 240x320, UI Theme: Hasp Light)
 {"page":5,"id":1,"obj":"btn","x":0,"y":0,"w":240,"h":30,"text":"WEATHER","text_font":16,"bg_color":"#2C3E50","text_color":"#FFFFFF","radius":0,"border_side":0,"click":0}
 {"page":5,"id":2,"obj":"obj","x":5,"y":35,"w":230,"h":250,"click":0}
 
-{"page":5,"id":14,"obj":"img","src":"/littlefs/openhasp_dummy_img.png","parentid":2,"auto_size":1,"w":128,"offset_x":-6,"offset_y":-10}
+{"page":5,"id":14,"obj":"img","src":"L:/openhasp_dummy_img.png","parentid":2,"auto_size":1,"w":128,"offset_x":-6,"offset_y":-10}
 
 {"page":5,"id":15,"obj":"label","x":100,"y":10,"w":130,"h":25,"align":"center","text":"date current","parentid":2}
 {"page":5,"id":16,"obj":"label","x":125,"y":34,"w":95,"h":40,"align":"center","text":"00.0°C","parentid":2,"text_font":32}
@@ -851,39 +851,39 @@ relevant **openHASP config:** (screen size 240x320, UI Theme: Hasp Light)
 
 {"page":5,"id":21,"obj":"label","x":8,"y":123,"w":130,"h":22,"align":"left","text":"hour+2","parentid":11,"pad_top":3,"click":0}
 {"page":5,"id":22,"obj":"label","x":124,"y":123,"w":50,"h":22,"align":"center","text":"00.0","parentid":11,"pad_top":-2,"text_font":24,"click":0}
-{"page":5,"id":23,"obj":"img","x":182,"y":118,"w":32,"h":32,"src":"/littlefs/openhasp_dummy_img.png","parentid":11,"click":0}
+{"page":5,"id":23,"obj":"img","x":182,"y":118,"w":32,"h":32,"src":"L:/openhasp_dummy_img.png","parentid":11,"click":0}
 
 {"page":5,"id":31,"obj":"label","x":8,"y":154,"w":130,"h":22,"align":"left","text":"hour+3","parentid":11,"pad_top":3,"click":0}
 {"page":5,"id":32,"obj":"label","x":124,"y":154,"w":50,"h":22,"align":"center","text":"00.0","parentid":11,"pad_top":-2,"text_font":24,"click":0}
-{"page":5,"id":33,"obj":"img","x":182,"y":150,"w":32,"h":32,"src":"/littlefs/openhasp_dummy_img.png","parentid":11,"click":0}
+{"page":5,"id":33,"obj":"img","x":182,"y":150,"w":32,"h":32,"src":"L:/openhasp_dummy_img.png","parentid":11,"click":0}
 
 {"page":5,"id":41,"obj":"label","x":8,"y":186,"w":130,"h":22,"align":"left","text":"hour+4","parentid":11,"pad_top":3,"click":0}
 {"page":5,"id":42,"obj":"label","x":124,"y":186,"w":50,"h":22,"align":"center","text":"00.0","parentid":11,"pad_top":-2,"text_font":24,"click":0}
-{"page":5,"id":43,"obj":"img","x":182,"y":182,"w":32,"h":32,"src":"/littlefs/openhasp_dummy_img.png","parentid":11,"click":0}
+{"page":5,"id":43,"obj":"img","x":182,"y":182,"w":32,"h":32,"src":"L:/openhasp_dummy_img.png","parentid":11,"click":0}
 
 {"page":5,"id":51,"obj":"label","x":8,"y":218,"w":130,"h":22,"align":"left","text":"hour+5","parentid":11,"pad_top":3,"click":0}
 {"page":5,"id":52,"obj":"label","x":124,"y":218,"w":50,"h":22,"align":"center","text":"00.0","parentid":11,"pad_top":-2,"text_font":24,"click":0}
-{"page":5,"id":53,"obj":"img","x":182,"y":214,"w":32,"h":32,"src":"/littlefs/openhasp_dummy_img.png","parentid":11,"click":0}
+{"page":5,"id":53,"obj":"img","x":182,"y":214,"w":32,"h":32,"src":"L:/openhasp_dummy_img.png","parentid":11,"click":0}
 
 {"page":5,"id":61,"obj":"label","x":6,"y":123,"w":100,"h":22,"align":"left","text":"date+1","parentid":12,"pad_top":3,"click":0}
 {"page":5,"id":62,"obj":"label","x":102,"y":123,"w":40,"h":22,"align":"center","text":"00.0","parentid":12,"pad_top":-2,"text_font":24,"text_color":"Navy","click":0}
 {"page":5,"id":63,"obj":"label","x":150,"y":123,"w":40,"h":22,"align":"center","text":"00.0","parentid":12,"pad_top":-2,"text_font":24,"text_color":"Blush","click":0}
-{"page":5,"id":64,"obj":"img","x":194,"y":118,"w":32,"h":32,"src":"/littlefs/openhasp_dummy_img.png","parentid":12,"click":0}
+{"page":5,"id":64,"obj":"img","x":194,"y":118,"w":32,"h":32,"src":"L:/openhasp_dummy_img.png","parentid":12,"click":0}
 
 {"page":5,"id":71,"obj":"label","x":6,"y":154,"w":100,"h":22,"align":"left","text":"date+2","parentid":12,"pad_top":3,"click":0}
 {"page":5,"id":72,"obj":"label","x":102,"y":154,"w":40,"h":22,"align":"center","text":"00.0","parentid":12,"pad_top":-2,"text_font":24,"text_color":"Navy","click":0}
 {"page":5,"id":73,"obj":"label","x":150,"y":154,"w":40,"h":22,"align":"center","text":"00.0","parentid":12,"pad_top":-2,"text_font":24,"text_color":"Blush","click":0}
-{"page":5,"id":74,"obj":"img","x":194,"y":150,"w":32,"h":32,"src":"/littlefs/openhasp_dummy_img.png","parentid":12,"click":0}
+{"page":5,"id":74,"obj":"img","x":194,"y":150,"w":32,"h":32,"src":"L:/openhasp_dummy_img.png","parentid":12,"click":0}
 
 {"page":5,"id":81,"obj":"label","x":6,"y":186,"w":100,"h":22,"align":"left","text":"date+3","parentid":12,"pad_top":3,"click":0}
 {"page":5,"id":82,"obj":"label","x":102,"y":186,"w":40,"h":22,"align":"center","text":"00.0","parentid":12,"pad_top":-2,"text_font":24,"text_color":"Navy","click":0}
 {"page":5,"id":83,"obj":"label","x":150,"y":186,"w":40,"h":22,"align":"center","text":"00.0","parentid":12,"pad_top":-2,"text_font":24,"text_color":"Blush","click":0}
-{"page":5,"id":84,"obj":"img","x":194,"y":182,"w":32,"h":32,"src":"/littlefs/openhasp_dummy_img.png","parentid":12,"click":0}
+{"page":5,"id":84,"obj":"img","x":194,"y":182,"w":32,"h":32,"src":"L:/openhasp_dummy_img.png","parentid":12,"click":0}
 
 {"page":5,"id":91,"obj":"label","x":6,"y":218,"w":100,"h":22,"align":"left","text":"date+4","parentid":12,"pad_top":3,"click":0}
 {"page":5,"id":92,"obj":"label","x":102,"y":218,"w":40,"h":22,"align":"center","text":"00.0","parentid":12,"pad_top":-2,"text_font":24,"text_color":"Navy","click":0}
 {"page":5,"id":93,"obj":"label","x":150,"y":218,"w":40,"h":22,"align":"center","text":"00.0","parentid":12,"pad_top":-2,"text_font":24,"text_color":"Blush","click":0}
-{"page":5,"id":94,"obj":"img","x":194,"y":214,"w":32,"h":32,"src":"/littlefs/openhasp_dummy_img.png","parentid":12,"click":0}
+{"page":5,"id":94,"obj":"img","x":194,"y":214,"w":32,"h":32,"src":"L:/openhasp_dummy_img.png","parentid":12,"click":0}
 
 ```
 
@@ -892,7 +892,7 @@ relevant **openHASP-custom-component config:**
 ```yaml
       - obj: "p5b14" # Icon
         properties:
-          "src": "{{ '/littlefs/w-128-' + states('weather.openweathermap') + '.png' if not is_state('weather.openweathermap','unavailable') }}"
+          "src": "{{ 'L:/w-128-' + states('weather.openweathermap') + '.png' if not is_state('weather.openweathermap','unavailable') }}"
 
       - obj: "p5b15" # Current date (adjust format to your needs)
         properties:
