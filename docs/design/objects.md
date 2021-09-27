@@ -694,7 +694,7 @@ The points parameter is a JSON array of [x,y] coordinates, for example `[[10,25]
 
 Only PNG image files are supported, from flash. 
    
-You can use image_recolor and image_recolor_opa from the [image styling][5] properties to apply a color overlay mask.
+You can use `image_recolor` and `image_recolor_opa` from the [image styling][5] properties to apply a color overlay mask.
    
 !!! note
     The decoding of the images is done in memory, thus you'll be able to display full-screen images only if your microcontroller [has installed PSram memory](../../getting-started/#recommended-boards), else you will be limited to small icons.
