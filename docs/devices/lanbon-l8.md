@@ -57,10 +57,6 @@ Both models have the same recessed housing sliding in the wall, sized 50x50mm, w
 - Capacitive touch screen
 - Energy counter
 
-!!! note
-    An earlier revision V1.14 (20191203) of the PCB had an analog temperature sensor onboard.
-    It was removed from V1.15 (20200521) of the PCB. You are likely *not* to get it when buying a recent switch.
-
 | Pros           | Cons
 |:-----          |:----
 | 8 MB flash     | Mood LEDS not uniform
@@ -69,6 +65,16 @@ Both models have the same recessed housing sliding in the wall, sized 50x50mm, w
 | Built-in PSU |
 | Energy monitor |
 | Standard wallmount form factor both EU and US |
+
+!!! note "Note 1"
+    An earlier revision V1.14 (20191203) of the PCB had an analog temperature sensor onboard.
+    It was removed from V1.15 (20200521) of the PCB. You are likely *not* to get it when buying a recent switch.
+
+!!! note "Note 2"
+    There is a new V1.17 of the PCB with Tuya support.
+    openHASP does **not** support the proprietary Tuya chip, but you can still flash the firmware
+    and use the other Lanbon L8 features just fine.
+
 
 ## Contents
 
@@ -87,9 +93,8 @@ Steps:
 
 1. Disengage the high-voltage power
 2. Detach the panel from the PSU power supply
-3. Connect RX, TX, IO0, GND and power pins to the female pinheader:
-     - Either supply 3.3V or 5V on the corresponding power pin, depending on the voltage supplied by the UART ttl (not both at the same time).
-5. Because there is no `RESET` pin, you need to powercycle the board with IO0 connected to GND to activate flash mode
+3. Connect RX, TX, IO0, GND and 5V pins to the female pinheader:
+4. Because there is no `RESET` pin, you need to powercycle the board with `IO0` connected to `GND` to activate flash mode
 
 Once the serial connections are made, flash the [Lanbon-L8 ESP32 binary](../installation/esp32.md) like on any other device.
 
@@ -225,7 +230,7 @@ build_flags =
     -D TFT_MOSI=23       ; FCP pin6 SDA
     -D TFT_MISO=25       ; FCP pin7 SDO
     -D TFT_BCKL=5
-    -D TOUCH_DRIVER=5206
+    -D TOUCH_DRIVER=6336
     -D TOUCH_SDA=4
     -D TOUCH_SCL=0
     -D TOUCH_IRQ=-1   ; not connected
