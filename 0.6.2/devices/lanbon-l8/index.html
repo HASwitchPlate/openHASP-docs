@@ -1540,11 +1540,6 @@
 <li>Capacitive touch screen</li>
 <li>Energy counter</li>
 </ul>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>An earlier revision V1.14 (20191203) of the PCB had an analog temperature sensor onboard.
-It was removed from V1.15 (20200521) of the PCB. You are likely <em>not</em> to get it when buying a recent switch.</p>
-</div>
 <table>
 <thead>
 <tr>
@@ -1579,6 +1574,17 @@ It was removed from V1.15 (20200521) of the PCB. You are likely <em>not</em> to 
 </tr>
 </tbody>
 </table>
+<div class="admonition note">
+<p class="admonition-title">Note 1</p>
+<p>An earlier revision V1.14 (20191203) of the PCB had an analog temperature sensor onboard.
+It was removed from V1.15 (20200521) of the PCB. You are likely <em>not</em> to get it when buying a recent switch.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note 2</p>
+<p>There is a new V1.17 of the PCB with Tuya support.
+openHASP does <strong>not</strong> support the proprietary Tuya chip, but you can still flash the firmware
+and use the other Lanbon L8 features just fine.</p>
+</div>
 <h2 id="contents">Contents<a class="headerlink" href="#contents" title="Permanent link">~</a></h2>
 <p><img alt="Display image" src="../../assets/images/devices/lanbon-l8-contents.png" /></p>
 <h2 id="flashing">Flashing<a class="headerlink" href="#flashing" title="Permanent link">~</a></h2>
@@ -1592,11 +1598,8 @@ It was removed from V1.15 (20200521) of the PCB. You are likely <em>not</em> to 
 <ol>
 <li>Disengage the high-voltage power</li>
 <li>Detach the panel from the PSU power supply</li>
-<li>Connect RX, TX, IO0, GND and power pins to the female pinheader:<ul>
-<li>Either supply 3.3V or 5V on the corresponding power pin, depending on the voltage supplied by the UART ttl (not both at the same time).</li>
-</ul>
-</li>
-<li>Because there is no <code>RESET</code> pin, you need to powercycle the board with IO0 connected to GND to activate flash mode</li>
+<li>Connect RX, TX, IO0, GND and 5V pins to the female pinheader:</li>
+<li>Because there is no <code>RESET</code> pin, you need to powercycle the board with <code>IO0</code> connected to <code>GND</code> to activate flash mode</li>
 </ol>
 <p>Once the serial connections are made, flash the <a href="../../installation/esp32/">Lanbon-L8 ESP32 binary</a> like on any other device.</p>
 <h2 id="gpio-settings">GPIO Settings<a class="headerlink" href="#gpio-settings" title="Permanent link">~</a></h2>
@@ -1874,7 +1877,7 @@ Your browser does not support the video tag.
     <span class="na">-D TFT_MOSI</span><span class="o">=</span><span class="s">23       ; FCP pin6 SDA</span>
     <span class="na">-D TFT_MISO</span><span class="o">=</span><span class="s">25       ; FCP pin7 SDO</span>
     <span class="na">-D TFT_BCKL</span><span class="o">=</span><span class="s">5</span>
-    <span class="na">-D TOUCH_DRIVER</span><span class="o">=</span><span class="s">5206</span>
+    <span class="na">-D TOUCH_DRIVER</span><span class="o">=</span><span class="s">6336</span>
     <span class="na">-D TOUCH_SDA</span><span class="o">=</span><span class="s">4</span>
     <span class="na">-D TOUCH_SCL</span><span class="o">=</span><span class="s">0</span>
     <span class="na">-D TOUCH_IRQ</span><span class="o">=</span><span class="s">-1   ; not connected</span>
