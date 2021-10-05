@@ -1,6 +1,7 @@
 Pygments>=2.4
 markdown>=3.3.3
 pymdown-extensions>=7.0
+pymdownx.plainhtml
 mike>=1.0.0
 mkdocs>=1.1.2
 mkdocs-awesome-pages-plugin>=2.5.0

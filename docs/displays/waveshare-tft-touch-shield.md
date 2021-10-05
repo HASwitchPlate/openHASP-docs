@@ -1,19 +1,19 @@
 # Waveshare TFT Touch Shield
 
 <div class="row justify-content-center">
-        <a href="../../assets/images/displays/waveshare-touch-shield-28-angle.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4" data-title="Waveshare 2.8&quot; TFT Touch Shields" data-footer="">
+        <a href="../../assets/images/displays/waveshare-touch-shield-28-angle.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4" data-title="Waveshare 2.8&quot; TFT Touch Shields" data-footer="Copyright © 2021, Waveshare, All Rights Reserved - Permission Pending"">
             <img src="../../assets/images/displays/waveshare-touch-shield-28-angle.jpg" class="img-fluid">
         </a>
-        <a href="../../assets/images/displays/waveshare-touch-shield-35-side.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4" data-title="Waveshare 3.5&quot; TFT Touch Shields" data-footer="">
+        <a href="../../assets/images/displays/waveshare-touch-shield-35-side.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4" data-title="Waveshare 3.5&quot; TFT Touch Shields" data-footer="Copyright © 2021, Waveshare, All Rights Reserved - Permission Pending"">
             <img src="../../assets/images/displays/waveshare-touch-shield-35-side.jpg" class="img-fluid">
         </a>
-        <a href="../../assets/images/displays/waveshare-touch-shield-40-side.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4" data-title="Waveshare 4&quot; TFT Touch Shields" data-footer="">
+        <a href="../../assets/images/displays/waveshare-touch-shield-40-side.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4" data-title="Waveshare 4&quot; TFT Touch Shields" data-footer="Copyright © 2021, Waveshare, All Rights Reserved - Permission Pending"">
             <img src="../../assets/images/displays/waveshare-touch-shield-40-side.jpg" class="img-fluid">
         </a>
 </div>
 
-Waveshare has a [line of TFT Touch Shields for Arduino][8]{target=_blank} which are also plug-and-play compatible with the ESPDUINO-32 aka. Wemos “TTGo” D1 R32 board.
-Unlike many other common Arduino UNO shields these Waveshare displays have an SPI interface with resistive touch controller and [backlight control](#backlight-control).
+Waveshare has a line of [TFT Touch Shields for Arduino][8]{target=_blank} which are also plug-and-play compatible with the ESPDUINO-32 aka. Wemos “TTGo” D1 R32 board.
+Unlike many other common Arduino UNO shields the Waveshare displays have an SPI interface with resistive touch controller and [backlight control](#backlight-control).
 
 Be sure to check if the `LCD_BL`, `LCD_CS` and `TP_CS` pins are present. If these pins are missing, the screen won't work with the pre-compiled builds.
 
@@ -21,17 +21,21 @@ Be sure to check if the `LCD_BL`, `LCD_CS` and `TP_CS` pins are present. If thes
 
 There are 3 models of this TFT shield:
 
-| Model                   | 2.8" Rev 2.1 | 3.5inch | 4.0inch
-|-------------------------|:-------:|:-------:|:--------:
-| SKU                     | [10684][1]{target=_blank} | [13506][2]{target=_blank} | [13587][3]{target=_blank}
-| Resolution              | 320x240 | 480x320 | 480x320
-| TFT controller          | ST7789</br>*(Rev 2.1 only)*  | ILI9486 | ILI9486
-| Interface               | SPI     | SPI     | SPI
-| Touchscreen             |Resistive|Resistive|Resistive
-| Touch controller        | XPT2046 | XPT2046 | XPT2046
-| SD Card                 | :white_check_mark: yes| :white_check_mark: yes| :white_check_mark: yes
-| Screen dimming          | :white_check_mark: yes | :white_check_mark: yes | :white_check_mark: yes   
-| | {!assets/buy/waveshare-tft-touch-shield.md!}
+<!-- this is a comment
+# Model                   | 2.8" Rev 2.1 | 3.5inch | 4.0inch
+#-------------------------|:-------:|:-------:|:--------:
+# SKU                     | [10684][1]{target=_blank} | [13506][2]{target=_blank} | [13587][3]{target=_blank}
+# Resolution              | 320x240 | 480x320 | 480x320
+# TFT controller          | ST7789</br>*(Rev 2.1 only)*  | ILI9486 | ILI9486
+# Interface               | SPI     | SPI     | SPI
+# Touchscreen             |Resistive|Resistive|Resistive
+# Touch controller        | XPT2046 | XPT2046 | XPT2046
+# SD Card                 | :white_check_mark: yes| :white_check_mark: yes| :white_check_mark: yes
+# Screen dimming          | :white_check_mark: yes | :white_check_mark: yes | :white_check_mark: yes   
+# | {!assets/buy/waveshare-tft-touch-shield.md!}
+-->
+
+{!assets/buy/waveshare-tft-touch-shield-table.html!}
 
 ## Backlight Control
 
@@ -42,7 +46,7 @@ It is connected to `GPIO13` on the D1 R32 development board.
 ## Documentation
 
 [:material-book-open-page-variant: Waveshare Wiki][6]{target=_blank .md-button .md-button } &nbsp;
-[:material-file-pdf-outline: Schematics][7]{target=_blank .md-button .md-button }
+[:fontawesome-regular-file-pdf: Schematics][7]{target=_blank .md-button .md-button }
 
 
 ## Configuration
