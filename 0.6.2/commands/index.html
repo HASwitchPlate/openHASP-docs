@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://haswitchplate.github.io/openHASP-docs/0.6.2/0.6.2/commands/">
       
       <link rel="icon" href="../favicon.ico">
-      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.3.0">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.3.1">
     
     
       
@@ -24,7 +24,7 @@
       
     
      
-      <link rel="stylesheet" href="../assets/stylesheets/main.8b42a75e.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.1c75ef36.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.3f5d1f46.min.css">
@@ -1819,41 +1819,6 @@ don't send too many lines in a single payload, you can always sends multiple jso
 <p>Deletes all objects on a given page. If no page number is specified, it clears the current page.
 Use <code>clearpage all</code> to clear all objects on all pages.</p>
 <p>To delete individual objects, you can issue the <code>pXbY.delete</code> command.</p>
-<!--
-### dim
-_accepted parameters:_ `[0-255]`
-
-Sets the level of the backlight from 0 to 255, where 0 is off and 255 is full brightness.
-
-!!! example "Example"
-    `dim 127` sets the display to half the brightness.
-
-This can be used in conjunction with the [idle events][4], e.g. to dim the screen after a period of inactivity.
-
-### light
-_accepted parameters:_ `on`/`off`, `true`/`false`, `0`/`1`, `yes`/`no`
-
-Switches the backlight on or off, independent of the set dim level. Turning the backlight on will restore the brightness to the previous dim level.
-
-!!! example "Example"
-    `light on` Turn the backlight on 
-
-`dim` and `light` commands will work only if a Backlight GPIO pin is configured to the pin required to control the display backlight.
-
-`dim 0` and `light 0` both turn off the screen, however, with `dim 0` the touching will haven an effect on the objects beneath but not wake the screen, while with `light 0` it will only wake the scren but will not affect the objects.
-
-
-### dim
-
-!!! warning "Deprecated, use `backlight` instead"
-
-
-### light
-
-!!! warning "Deprecated, use `backlight` instead"
-
--->
-
 <h3 id="backlight">backlight <span class="twemoji tag-medium"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 4c1.11 0 2 .89 2 2v12c0 1.11-.89 2-2 2H4c-1.11 0-2-.89-2-2V6c0-1.11.89-2 2-2h16M8.5 15V9H7.25v3.5L4.75 9H3.5v6h1.25v-3.5L7.3 15h1.2m5-4.74V9h-4v6h4v-1.25H11v-1.11h2.5v-1.26H11v-1.12h2.5m7 3.74V9h-1.25v4.5h-1.12V10h-1.25v3.5h-1.13V9H14.5v5a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1z"/></svg></span><a class="headerlink" href="#backlight" title="Permanent link">~</a></h3>
 <p><em>accepted json keys:</em></p>
 <ul>
@@ -1913,12 +1878,6 @@ These leds can then be controlled together using the <code>moodlight</code> comm
 <p>Clears the idle state of the device and publishes a <code>state/idle = OFF</code> status message.</p>
 <p>It resets the idle counter as if a touch event occurred on the device. This is helpful e.g. when you want to wake up the display when an external event has occurred, like a PIR motion sensor.</p>
 <p>Calling the <code>idle</code> command without a parameter will return the current idle state <code>short</code>, <code>long</code> or <code>off</code> in the <code>state/idle</code> topic.</p>
-<!--
-### wakeup
-
-!!! warning "Deprecated, use `idle off` instead"
--->
-
 <h3 id="outputx">output[x] <span class="twemoji tag-medium"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 4c1.11 0 2 .89 2 2v12c0 1.11-.89 2-2 2H4c-1.11 0-2-.89-2-2V6c0-1.11.89-2 2-2h16M8.5 15V9H7.25v3.5L4.75 9H3.5v6h1.25v-3.5L7.3 15h1.2m5-4.74V9h-4v6h4v-1.25H11v-1.11h2.5v-1.26H11v-1.12h2.5m7 3.74V9h-1.25v4.5h-1.12V10h-1.25v3.5h-1.13V9H14.5v5a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1z"/></svg></span><a class="headerlink" href="#outputx" title="Permanent link">~</a></h3>
 <p>where <code>[x]</code> is number of the gpio pin (0-39)</p>
 <p><em>accepted json keys:</em></p>
@@ -2077,7 +2036,7 @@ To get the configuration, use the command <code>config/&lt;submodule&gt;</code>:
 <div class="md-source-date">
   <small>
     
-      Last update: 2021-09-27
+      Last update: 2021-10-06
     
   </small>
 </div>
@@ -2140,10 +2099,10 @@ To get the configuration, use the command <code>config/&lt;submodule&gt;</code>:
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.tracking", "search.suggest", "search.highlight", "navigation.top"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.f8263e09.min.js", "version": {"provider": "mike", "default": 0.6}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.tracking", "search.suggest", "search.highlight", "navigation.top"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.e99e714c.min.js", "version": {"provider": "mike", "default": 0.6}}</script>
     
      
-      <script src="../assets/javascripts/bundle.4fc53ad4.min.js"></script>
+      <script src="../assets/javascripts/bundle.c7d1b464.min.js"></script>
       
     
 <!-- <script src="../js/youtube.js"></script> -->

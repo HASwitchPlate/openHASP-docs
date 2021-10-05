@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://haswitchplate.github.io/openHASP-docs/0.6.2/0.6.2/displays/Waveshare_RPi_LCD_Rev_C/">
       
       <link rel="icon" href="../../favicon.ico">
-      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.3.0">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.3.1">
     
     
       
@@ -24,7 +24,7 @@
       
     
      
-      <link rel="stylesheet" href="../../assets/stylesheets/main.8b42a75e.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.1c75ef36.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.3f5d1f46.min.css">
@@ -98,7 +98,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#pin-configuration" class="md-skip">
+        <a href="#models" class="md-skip">
           Skip to content
         </a>
       
@@ -1130,8 +1130,8 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#pin-configuration" class="md-nav__link">
-    Pin Configuration
+  <a href="#models" class="md-nav__link">
+    Models
   </a>
   
 </li>
@@ -1139,6 +1139,33 @@
         <li class="md-nav__item">
   <a href="#backlight-control" class="md-nav__link">
     Backlight Control
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#development-boards" class="md-nav__link">
+    Development Boards
+  </a>
+  
+    <nav class="md-nav" aria-label="Development Boards">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#esp32-one" class="md-nav__link">
+    ESP32 One
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pin-configuration" class="md-nav__link">
+    Pin Configuration
   </a>
   
 </li>
@@ -1339,8 +1366,8 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#pin-configuration" class="md-nav__link">
-    Pin Configuration
+  <a href="#models" class="md-nav__link">
+    Models
   </a>
   
 </li>
@@ -1348,6 +1375,33 @@
         <li class="md-nav__item">
   <a href="#backlight-control" class="md-nav__link">
     Backlight Control
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#development-boards" class="md-nav__link">
+    Development Boards
+  </a>
+  
+    <nav class="md-nav" aria-label="Development Boards">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#esp32-one" class="md-nav__link">
+    ESP32 One
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pin-configuration" class="md-nav__link">
+    Pin Configuration
   </a>
   
 </li>
@@ -1385,14 +1439,165 @@
                 
                 <h1>Waveshare RPi LCD (Rev C)</h1>
 
-<p>This screen comes in 3.5" and 4.0" sizes.</p>
-<p>6 GPIOs are required to drive the SPI display. One additional GPIO is needed for the XPT2046 touch sensor and one extra GPIO for backlight dimming.
-Including the VCC and GND pins, a total of 13 connections need to be made to the MCU:</p>
+<div class="row justify-content-center">
+        <a href="https://www.waveshare.com/media/catalog/product/cache/1/image/800x800/9df78eab33525d08d6e5fb8d27136e95/4/r/4rcp-fs.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4" data-title="WaveShare 4.0&quot; RPi LCD (Rev C)" data-footer="Copyright © 2021, Waveshare, All Rights Reserved - Permission Pending">
+            <img src="https://www.waveshare.com/media/catalog/product/cache/1/image/800x800/9df78eab33525d08d6e5fb8d27136e95/4/r/4rcp-fs.jpg" class="img-fluid">
+        </a>
+        <a href="https://www.waveshare.com/media/catalog/product/cache/1/image/800x800/9df78eab33525d08d6e5fb8d27136e95/4/r/4rcp-bs2.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4" data-title="WaveShare 4.0&quot; RPi LCD (Rev C)" data-footer="Copyright © 2021, Waveshare, All Rights Reserved - Permission Pending">
+            <img src="https://www.waveshare.com/media/catalog/product/cache/1/image/800x800/9df78eab33525d08d6e5fb8d27136e95/4/r/4rcp-bs2.jpg" class="img-fluid">
+        </a>
+</div>
+
+<h2 id="models">Models<a class="headerlink" href="#models" title="Permanent link">~</a></h2>
+<p>The Waveshare RPi LCD (Rev C) display comes in 3.5" and 4.0" sizes:</p>
+<table>
+    <thead>
+        <tr>
+            <th>Model</th>
+            <th align="center">3.5inch (Rev C)</th>
+            <th align="center">4.0inch (Rev C)</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>SKU</td>
+            <td align="center"><a href="https://www.waveshare.com/3.5inch-rpi-lcd-c.htm" target="_blank">15811</a>
+            </td>
+            <td align="center"><a href="https://www.waveshare.com/4inch-rpi-lcd-c.htm" target="_blank">16099</a>
+            </td>
+        </tr>
+        <tr>
+            <td>Resolution</td>
+            <td align="center">480x320</td>
+            <td align="center">480x320</td>
+        </tr>
+        <tr>
+            <td>TFT controller</td>
+            <td align="center">ST7796</td>
+            <td align="center">ST7796</td>
+        </tr>
+        <tr>
+            <td>Interface</td>
+            <td align="center">SPI</td>
+            <td align="center">SPI</td>
+        </tr>
+        <tr>
+            <td>Touchscreen</td>
+            <td align="center">Resistive</td>
+            <td align="center">Resistive</td>
+        </tr>
+        <tr>
+            <td>Touch controller</td>
+            <td align="center">XPT2046</td>
+            <td align="center">XPT2046</td>
+        </tr>
+        <tr>
+            <td>Screen dimming</td>
+            <td align="center"><img alt="✅" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/2705.svg" title=":white_check_mark:"> yes</td>
+            <td align="center"><img alt="✅" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/2705.svg" title=":white_check_mark:"> yes</td>
+        </tr>
+        <tr>
+            <td align="center"></td>
+            <td align="center">
+                <div class="dropdown show">
+                    <a class="md-button md-button--primary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <span class="twemoji"><svg
+                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path
+                                    d="M19 20c0 1.11-.89 2-2 2a2 2 0 0 1-2-2c0-1.11.89-2 2-2a2 2 0 0 1 2 2M7 18c-1.11 0-2 .89-2 2a2 2 0 0 0 2 2c1.11 0 2-.89 2-2s-.89-2-2-2m.2-3.37-.03.12c0 .14.11.25.25.25H19v2H7a2 2 0 0 1-2-2c0-.35.09-.68.24-.96l1.36-2.45L3 4H1V2h3.27l.94 2H20c.55 0 1 .45 1 1 0 .17-.05.34-.12.5l-3.58 6.47c-.34.61-1 1.03-1.75 1.03H8.1l-.9 1.63M8.5 11H10V9H7.56l.94 2M11 9v2h3V9h-3m3-1V6h-3v2h3m3.11 1H15v2h1l1.11-2m1.67-3H15v2h2.67l1.11-2M6.14 6l.94 2H10V6H6.14z">
+                                </path>
+                            </svg></span> Buy </a>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        <a class="dropdown-item md-typeset__table" href="https://www.amazon.com/dp/B07L1215W5/">Amazon
+                            US</a>
+                        <a class="dropdown-item md-typeset__table" href="https://www.amazon.co.uk/dp/B07L1215W5/">Amazon
+                            UK</a>
+                        <a class="dropdown-item md-typeset__table" href="https://www.amazon.de/dp/B07L1215W5/">Amazon
+                            DE</a>
+                        <a class="dropdown-item md-typeset__table" href="https://www.amazon.fr/dp/B07L1215W5/">Amazon
+                            FR</a>
+                        <a class="dropdown-item md-typeset__table" href="https://www.amazon.es/dp/B07L1215W5/">Amazon
+                            ES</a>
+                        <a class="dropdown-item md-typeset__table" href="https://www.amazon.nl/dp/B07L1215W5/">Amazon
+                            NL</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item md-typeset__table" href="https://www.aliexpress.com/item/32960779351.html">AliExpress</a>
+                        <a class="dropdown-item md-typeset__table" href="https://www.waveshare.com/3.5inch-rpi-lcd-c.htm">Waveshare.com</a>
+                    </div>
+                </div>
+            </td>
+            <td align="center">
+                <div class="dropdown show">
+                    <a class="md-button md-button--primary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <span class="twemoji"><svg
+                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path
+                                    d="M19 20c0 1.11-.89 2-2 2a2 2 0 0 1-2-2c0-1.11.89-2 2-2a2 2 0 0 1 2 2M7 18c-1.11 0-2 .89-2 2a2 2 0 0 0 2 2c1.11 0 2-.89 2-2s-.89-2-2-2m.2-3.37-.03.12c0 .14.11.25.25.25H19v2H7a2 2 0 0 1-2-2c0-.35.09-.68.24-.96l1.36-2.45L3 4H1V2h3.27l.94 2H20c.55 0 1 .45 1 1 0 .17-.05.34-.12.5l-3.58 6.47c-.34.61-1 1.03-1.75 1.03H8.1l-.9 1.63M8.5 11H10V9H7.56l.94 2M11 9v2h3V9h-3m3-1V6h-3v2h3m3.11 1H15v2h1l1.11-2m1.67-3H15v2h2.67l1.11-2M6.14 6l.94 2H10V6H6.14z">
+                                </path>
+                            </svg></span> Buy </a>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        <a class="dropdown-item md-typeset__table" href="https://www.aliexpress.com/item/32839265335.html">AliExpress</a>
+                        <a class="dropdown-item md-typeset__table" href="https://www.waveshare.com/4inch-rpi-lcd-c.htm">Waveshare.com</a>
+                    </div>
+                </div>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<h2 id="backlight-control">Backlight Control<a class="headerlink" href="#backlight-control" title="Permanent link">~</a></h2>
+<p>By default the display is always on. To enable backlight dimming, you can connect the pads marked by the red arrow using a 0R resistor or a direct solder connection:</p>
+<div class="row justify-content-center">
+    <a href="https://www.waveshare.com/w/upload/1/17/3.5inch-RPi-LCD-C-Manual-01.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-6" data-title="WaveShare 3.5&quot; RPi LCD (Rev C)" data-footer="Copyright © 2021, Waveshare, All Rights Reserved - Permission Pending">
+        <img src="https://www.waveshare.com/w/upload/1/17/3.5inch-RPi-LCD-C-Manual-01.jpg" class="img-fluid">
+    </a>
+</div>
+
+<div class="admonition warning">
+<p class="admonition-title">Attention (*)</p>
+<p>The WaveShare 3.5" RPi LCD <strong>Revision C</strong> (SKU 15811) and WaveShare 4.0" RPi LCD <strong>Revision C</strong> (SKU 16099) have the solder jumper on the back to enable PWM backlight dimming.
+Most revisions of this board do not have this feature!</p>
+</div>
+<h2 id="development-boards">Development Boards<a class="headerlink" href="#development-boards" title="Permanent link">~</a></h2>
+<h3 id="esp32-one">ESP32 One<a class="headerlink" href="#esp32-one" title="Permanent link">~</a></h3>
+<p>The Waveshare ESP32 One development board has the same form factor as the Raspberry Pi Zero, inluding a 40 pin GPIO header.
+The ESP32 One is plug-and-play compatible with the Waveshare RPi LCD (Rev C) 3.5" and 4".</p>
+<div class="row justify-content-center">
+        <a href="https://www.waveshare.com/media/catalog/product/cache/1/image/800x800/9df78eab33525d08d6e5fb8d27136e95/e/s/esp32-one-kit-1.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4" data-title="WaveShare ESP32 One" data-footer="Copyright © 2021, Waveshare, All Rights Reserved - Permission Pending">
+            <img src="https://www.waveshare.com/media/catalog/product/cache/1/image/800x800/9df78eab33525d08d6e5fb8d27136e95/e/s/esp32-one-kit-1.jpg" class="img-fluid">
+        </a>
+        <a href="https://www.waveshare.com/img/devkit/accBoard/ESP32-One/ESP32-One-details-1.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4" data-title="WaveShare ESP32 One" data-footer="Copyright © 2021, Waveshare, All Rights Reserved - Permission Pending">
+            <img src="https://www.waveshare.com/img/devkit/accBoard/ESP32-One/ESP32-One-details-1.jpg" class="img-fluid">
+        </a>
+</div>
+
+<div class="dropdown show">
+    <a class="md-button md-button--primary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <span class="twemoji"><svg
+                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path
+                    d="M19 20c0 1.11-.89 2-2 2a2 2 0 0 1-2-2c0-1.11.89-2 2-2a2 2 0 0 1 2 2M7 18c-1.11 0-2 .89-2 2a2 2 0 0 0 2 2c1.11 0 2-.89 2-2s-.89-2-2-2m.2-3.37-.03.12c0 .14.11.25.25.25H19v2H7a2 2 0 0 1-2-2c0-.35.09-.68.24-.96l1.36-2.45L3 4H1V2h3.27l.94 2H20c.55 0 1 .45 1 1 0 .17-.05.34-.12.5l-3.58 6.47c-.34.61-1 1.03-1.75 1.03H8.1l-.9 1.63M8.5 11H10V9H7.56l.94 2M11 9v2h3V9h-3m3-1V6h-3v2h3m3.11 1H15v2h1l1.11-2m1.67-3H15v2h2.67l1.11-2M6.14 6l.94 2H10V6H6.14z">
+                </path>
+            </svg></span> Buy </a>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+        <a class="dropdown-item md-typeset__table" href="https://www.amazon.com/dp/B08TBB2R2G/">Amazon US</a>
+        <a class="dropdown-item md-typeset__table" href="https://www.amazon.co.uk/dp/B08TBB2R2G/">Amazon UK</a>
+        <a class="dropdown-item md-typeset__table" href="https://www.amazon.de/dp/B08TBB2R2G/">Amazon DE</a>
+        <a class="dropdown-item md-typeset__table" href="https://www.amazon.fr/dp/B08TBB2R2G/">Amazon FR</a>
+        <a class="dropdown-item md-typeset__table" href="https://www.amazon.es/dp/B08TBB2R2G/">Amazon ES</a>
+        <a class="dropdown-item md-typeset__table" href="https://www.amazon.nl/dp/B08TBB2R2G/">Amazon NL</a>
+    <div class="dropdown-divider"></div>
+        <a class="dropdown-item md-typeset__table" href="https://www.aliexpress.com/item/1005002055975943.html">AliExpress</a>
+        <a class="dropdown-item md-typeset__table" href="https://www.waveshare.com/esp32-one.htm">Waveshare.com</a>
+    </div>
+</div>
+
+<h4 id="pinout">Pinout<a class="headerlink" href="#pinout" title="Permanent link">~</a></h4>
+<p><a href="https://www.waveshare.com/img/devkit/accBoard/ESP32-One/ESP32-One-details-inter.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4" data-title="WaveShare ESP32 One Pinout" data-footer="Copyright © 2021, Waveshare, All Rights Reserved - Permission Pending">
+    <img src="https://www.waveshare.com/img/devkit/accBoard/ESP32-One/ESP32-One-details-inter.jpg" class="img-fluid">
+</a></p>
 <h2 id="pin-configuration">Pin Configuration<a class="headerlink" href="#pin-configuration" title="Permanent link">~</a></h2>
 <table>
 <thead>
 <tr>
-<th>Pin</th>
+<th>LCD Pin</th>
 <th>Function</th>
 <th>ESP32 Pin</th>
 <th>Config Name</th>
@@ -1445,7 +1650,7 @@ Including the VCC and GND pins, a total of 13 connections need to be made to the
 <tr>
 <td>12 (*)</td>
 <td>LED Backlight PWM</td>
-<td></td>
+<td>GPIO26</td>
 <td>TFT_BCKL</td>
 <td>LCD_LED</td>
 </tr>
@@ -1487,7 +1692,7 @@ Including the VCC and GND pins, a total of 13 connections need to be made to the
 <tr>
 <td>19</td>
 <td>SPI Master Out Slave In</td>
-<td>GPIO23</td>
+<td>GPIO13</td>
 <td>TFT_MOSI</td>
 <td>LCD/SI/TP_SI</td>
 </tr>
@@ -1501,7 +1706,7 @@ Including the VCC and GND pins, a total of 13 connections need to be made to the
 <tr>
 <td>21</td>
 <td>Touch Panel Slave Out</td>
-<td>GPIO19</td>
+<td>GPIO12</td>
 <td>TFT_MISO</td>
 <td>TP_SO</td>
 </tr>
@@ -1515,14 +1720,14 @@ Including the VCC and GND pins, a total of 13 connections need to be made to the
 <tr>
 <td>23</td>
 <td>SPI Clock</td>
-<td>GPIO18</td>
+<td>GPIO14</td>
 <td>TFT_SCLK</td>
 <td>LCD_SCK/TP_SCK</td>
 </tr>
 <tr>
 <td>24</td>
 <td>Chip select control pin</td>
-<td>GPIO15</td>
+<td>GPIO5</td>
 <td>TFT_CS</td>
 <td>LCD_CS</td>
 </tr>
@@ -1543,11 +1748,9 @@ Including the VCC and GND pins, a total of 13 connections need to be made to the
 </tbody>
 </table>
 <p>SPI MISO, MOSI and SCLK are shared between the touch controller and the LCD controller.</p>
-<h2 id="backlight-control">Backlight Control<a class="headerlink" href="#backlight-control" title="Permanent link">~</a></h2>
-<div class="admonition warning">
-<p class="admonition-title">Attention (*)</p>
-<p>Only the WaveShare 4.0" RPi LCD <strong>Revision C</strong> (SKU 16099) and WaveShare 3.5" RPi LCD <strong>Revision C</strong> (SKU 15811) have a solder jumper on the back to enable PWM backlight dimming. Other revisions of this board do not have this feature.</p>
-</div>
+<p>You can also use jumper wires to connect the display to any ESP32 development board:</p>
+<p>6 GPIOs are required to drive the SPI display. One additional GPIO is needed for the XPT2046 touch sensor and one extra GPIO for backlight dimming.
+Including the VCC and GND pins, a total of 13 connections need to be made to the MCU.</p>
 <h2 id="lcd-configuration">LCD Configuration<a class="headerlink" href="#lcd-configuration" title="Permanent link">~</a></h2>
 <p>The <code>lcd_config.ini</code> file specifies the different properties of the display, except for the actual pin configuration:</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
@@ -1584,16 +1787,24 @@ Including the VCC and GND pins, a total of 13 connections need to be made to the
 <span class="normal"> 7</span>
 <span class="normal"> 8</span>
 <span class="normal"> 9</span>
-<span class="normal">10</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="na">build_flags</span> <span class="o">=</span>
-    <span class="na">${flags.esp32_flags}</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="na">build_flags</span> <span class="o">=</span>
+    <span class="na">${env.build_flags}</span>
+    <span class="na">${esp32.build_flags}</span>
+    <span class="na">-DBOARD_HAS_PSRAM               ; uses 78kB</span>
+
 <span class="c1">; -- TFT_eSPI build options ------------------------</span>
     <span class="na">${lcd.raspberrypi}</span>
-    <span class="na">${esp32.vspi}        ; Use VSPI hardware SPI bus</span>
-    <span class="na">-D TFT_CS</span><span class="o">=</span><span class="s">15</span>
+    <span class="na">${esp32.hspi}        ; Use HSPI hardware SPI bus</span>
+    <span class="na">-D TFT_CS</span><span class="o">=</span><span class="s">5</span>
     <span class="na">-D TFT_DC</span><span class="o">=</span><span class="s">4</span>
     <span class="na">-D TFT_RST</span><span class="o">=</span><span class="s">32</span>
-    <span class="na">-D TFT_BCKL</span><span class="o">=</span><span class="s">-1       ; None, configurable via web UI (e.g. 21)</span>
+    <span class="na">-D TFT_BCKL</span><span class="o">=</span><span class="s">26       ; Default, configurable via web UI</span>
     <span class="na">-D TOUCH_CS</span><span class="o">=</span><span class="s">22</span>
+    <span class="na">-D SD_CS</span><span class="o">=</span><span class="s">15          ; Currently not supported</span>
 </code></pre></div>
 </td></tr></table>
                 
@@ -1604,7 +1815,7 @@ Including the VCC and GND pins, a total of 13 connections need to be made to the
 <div class="md-source-date">
   <small>
     
-      Last update: 2021-09-27
+      Last update: 2021-10-06
     
   </small>
 </div>
@@ -1667,10 +1878,10 @@ Including the VCC and GND pins, a total of 13 connections need to be made to the
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tracking", "search.suggest", "search.highlight", "navigation.top"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.f8263e09.min.js", "version": {"provider": "mike", "default": 0.6}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tracking", "search.suggest", "search.highlight", "navigation.top"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.e99e714c.min.js", "version": {"provider": "mike", "default": 0.6}}</script>
     
      
-      <script src="../../assets/javascripts/bundle.4fc53ad4.min.js"></script>
+      <script src="../../assets/javascripts/bundle.c7d1b464.min.js"></script>
       
     
 <!-- <script src="../../js/youtube.js"></script> -->
