@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://haswitchplate.github.io/openHASP-docs/0.6.2/0.6.2/integrations/home-assistant/sampl_conf/">
       
       <link rel="icon" href="../../../favicon.ico">
-      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.3.1">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.3.2">
     
     
       
@@ -24,7 +24,7 @@
       
     
      
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.1c75ef36.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.24c991ad.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.3f5d1f46.min.css">
@@ -2601,13 +2601,13 @@ Your browser does not support the video tag.
               <span class="nt">target</span><span class="p">:</span>
                 <span class="nt">entity_id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">climate.thermostat_1</span>
               <span class="nt">data</span><span class="p">:</span>
-                <span class="nt">temperature</span><span class="p">:</span> <span class="s">&quot;{{</span><span class="nv"> </span><span class="s">state_attr(&#39;climate.thermostat_1&#39;,&#39;temperature&#39;)</span><span class="nv"> </span><span class="s">+</span><span class="nv"> </span><span class="s">state_attr(&#39;climate.thermostat_1&#39;,&#39;target_temp_step&#39;)</span><span class="nv"> </span><span class="s">|</span><span class="nv"> </span><span class="s">float}}&quot;</span> 
+                <span class="nt">temperature</span><span class="p">:</span> <span class="s">&quot;{{</span><span class="nv"> </span><span class="s">state_attr(&#39;climate.thermostat_1&#39;,&#39;temperature&#39;)</span><span class="nv"> </span><span class="s">+</span><span class="nv"> </span><span class="s">state_attr(&#39;climate.thermostat_1&#39;,&#39;target_temp_step&#39;)</span><span class="nv"> </span><span class="s">|</span><span class="nv"> </span><span class="s">float(default=0)}}&quot;</span> 
           <span class="s">&quot;long&quot;</span><span class="p p-Indicator">:</span>
             <span class="p p-Indicator">-</span> <span class="nt">service</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">climate.set_temperature</span>
               <span class="nt">target</span><span class="p">:</span>
                 <span class="nt">entity_id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">climate.thermostat_1</span>
               <span class="nt">data</span><span class="p">:</span>
-                <span class="nt">temperature</span><span class="p">:</span> <span class="s">&quot;{{</span><span class="nv"> </span><span class="s">state_attr(&#39;climate.thermostat_1&#39;,&#39;temperature&#39;)</span><span class="nv"> </span><span class="s">-</span><span class="nv"> </span><span class="s">state_attr(&#39;climate.thermostat_1&#39;,&#39;target_temp_step&#39;)</span><span class="nv"> </span><span class="s">|</span><span class="nv"> </span><span class="s">float}}&quot;</span> 
+                <span class="nt">temperature</span><span class="p">:</span> <span class="s">&quot;{{</span><span class="nv"> </span><span class="s">state_attr(&#39;climate.thermostat_1&#39;,&#39;temperature&#39;)</span><span class="nv"> </span><span class="s">-</span><span class="nv"> </span><span class="s">state_attr(&#39;climate.thermostat_1&#39;,&#39;target_temp_step&#39;)</span><span class="nv"> </span><span class="s">|</span><span class="nv"> </span><span class="s">float(default=0)}}&quot;</span> 
 
 
       <span class="p p-Indicator">-</span> <span class="nt">obj</span><span class="p">:</span> <span class="s">&quot;p3b25&quot;</span>  <span class="c1"># label target temp</span>
@@ -3167,7 +3167,7 @@ and <a href="https://www.deviantart.com/merlinthered/art/plain-weather-icons-157
           <span class="s">&quot;text&quot;</span><span class="p p-Indicator">:</span> <span class="p p-Indicator">&gt;</span>
             <span class="no">{%- set update = states(&#39;sensor.date&#39;) %}</span>
             <span class="no">{%- set midnight = now().replace(hour=0, minute=0, second=0, microsecond=0).timestamp() %}</span>
-            <span class="no">{%- set event = as_timestamp(strptime(state_attr(&#39;weather.openweathermap&#39;,&#39;forecast&#39;)[1][&#39;datetime&#39;], &#39;%Y-%m-%d %H:%M:%S&#39;)) %}</span>
+            <span class="no">{%- set event = as_timestamp(strptime(state_attr(&#39;weather.openweathermap&#39;,&#39;forecast&#39;)[1][&#39;datetime&#39;], &#39;%Y-%m-%dT%H:%M:%S%z&#39;, default=&#39;2020-01-00T00:00:00+00:00&#39;)) %}</span>
             <span class="no">{%- set delta = ((event - midnight) // 86400) | int %}</span>
             <span class="no">{%- if delta == 0 %}</span>
             <span class="no">Today</span>
@@ -3187,7 +3187,7 @@ and <a href="https://www.deviantart.com/merlinthered/art/plain-weather-icons-157
       <span class="p p-Indicator">-</span> <span class="nt">obj</span><span class="p">:</span> <span class="s">&quot;p5b31&quot;</span> <span class="c1"># Forecast time +2h (using Dawn/Morn etc instead of Today/Tomorrow)</span>
         <span class="nt">properties</span><span class="p">:</span>
           <span class="s">&quot;text&quot;</span><span class="p p-Indicator">:</span> <span class="p p-Indicator">&gt;</span>
-            <span class="no">{%- set hour = as_timestamp(strptime(state_attr(&#39;weather.openweathermap&#39;,&#39;forecast&#39;)[3][&#39;datetime&#39;], &#39;%Y-%m-%d %H:%M:%S&#39;)) | timestamp_custom(&quot;%-H&quot;) | int %}</span>
+            <span class="no">{%- set hour = as_timestamp(strptime(state_attr(&#39;weather.openweathermap&#39;,&#39;forecast&#39;)[3][&#39;datetime&#39;], &#39;%Y-%m-%dT%H:%M:%S%z&#39;, default=&#39;2020-01-00T00:00:00+00:00&#39;)) | timestamp_custom(&quot;%-H&quot;) | int %}</span>
             <span class="no">{%- if 4 &lt;= hour &lt; 6 %}</span>
             <span class="no">Dawning</span>
             <span class="no">{%- elif 6 &lt;= hour &lt; 9 %}</span>
@@ -3216,7 +3216,7 @@ and <a href="https://www.deviantart.com/merlinthered/art/plain-weather-icons-157
           <span class="s">&quot;text&quot;</span><span class="p p-Indicator">:</span> <span class="p p-Indicator">&gt;</span>
             <span class="no">{%- set update = states(&#39;sensor.date&#39;) %}</span>
             <span class="no">{%- set midnight = now().replace(hour=0, minute=0, second=0, microsecond=0).timestamp() %}</span>
-            <span class="no">{%- set event = as_timestamp(strptime(state_attr(&#39;weather.openweathermap&#39;,&#39;forecast&#39;)[6][&#39;datetime&#39;], &#39;%Y-%m-%d %H:%M:%S&#39;)) %}</span>
+            <span class="no">{%- set event = as_timestamp(strptime(state_attr(&#39;weather.openweathermap&#39;,&#39;forecast&#39;)[6][&#39;datetime&#39;], &#39;%Y-%m-%dT%H:%M:%S%z&#39;, default=&#39;2020-01-00T00:00:00+00:00&#39;)) %}</span>
             <span class="no">{%- set delta = ((event - midnight) // 86400) | int %}</span>
             <span class="no">{%- if delta == 0 %}</span>
             <span class="no">Today</span>
@@ -3238,7 +3238,7 @@ and <a href="https://www.deviantart.com/merlinthered/art/plain-weather-icons-157
           <span class="s">&quot;text&quot;</span><span class="p p-Indicator">:</span> <span class="p p-Indicator">&gt;</span>
             <span class="no">{%- set update = states(&#39;sensor.date&#39;) %}</span>
             <span class="no">{%- set midnight = now().replace(hour=0, minute=0, second=0, microsecond=0).timestamp() %}</span>
-            <span class="no">{%- set event = as_timestamp(strptime(state_attr(&#39;weather.openweathermap&#39;,&#39;forecast&#39;)[12][&#39;datetime&#39;], &#39;%Y-%m-%d %H:%M:%S&#39;)) %}</span>
+            <span class="no">{%- set event = as_timestamp(strptime(state_attr(&#39;weather.openweathermap&#39;,&#39;forecast&#39;)[12][&#39;datetime&#39;], &#39;%Y-%m-%dT%H:%M:%S%z&#39;, default=&#39;2020-01-00T00:00:00+00:00&#39;)) %}</span>
             <span class="no">{%- set delta = ((event - midnight) // 86400) | int %}</span>
             <span class="no">{%- if delta == 0 %}</span>
             <span class="no">Today</span>
@@ -3258,7 +3258,7 @@ and <a href="https://www.deviantart.com/merlinthered/art/plain-weather-icons-157
       <span class="p p-Indicator">-</span> <span class="nt">obj</span><span class="p">:</span> <span class="s">&quot;p5b61&quot;</span> <span class="c1"># Forecast date +1d</span>
         <span class="nt">properties</span><span class="p">:</span>
           <span class="s">&quot;text&quot;</span><span class="p p-Indicator">:</span> <span class="p p-Indicator">&gt;</span>
-            <span class="no">{%- set now = as_timestamp(strptime(state_attr(&#39;weather.your_homename&#39;,&#39;forecast&#39;)[0][&#39;datetime&#39;], &#39;%Y-%m-%d %H:%M:%S&#39;)) %}</span>
+            <span class="no">{%- set now = as_timestamp(strptime(state_attr(&#39;weather.your_homename&#39;,&#39;forecast&#39;)[0][&#39;datetime&#39;], &#39;%Y-%m-%dT%H:%M:%S%z&#39;, default=&#39;2020-01-00T00:00:00+00:00&#39;)) %}</span>
             <span class="no">{%- set day = now | timestamp_custom(&quot;%w&quot;) %}</span>
             <span class="no">{%- set days = [&quot;Monday&quot;, &quot;Tuesday&quot;, &quot;Wednesday&quot;, &quot;Thursday&quot;, &quot;Friday&quot;, &quot;Saturday&quot;, &quot;Sunday&quot;] %}</span>
             <span class="no">{{ days[ day | int -1 ] }}{{- now | timestamp_custom(&quot; %d&quot;) }}</span>
@@ -3278,7 +3278,7 @@ and <a href="https://www.deviantart.com/merlinthered/art/plain-weather-icons-157
       <span class="p p-Indicator">-</span> <span class="nt">obj</span><span class="p">:</span> <span class="s">&quot;p5b71&quot;</span> <span class="c1"># Forecast date +2d</span>
         <span class="nt">properties</span><span class="p">:</span>
           <span class="s">&quot;text&quot;</span><span class="p p-Indicator">:</span> <span class="p p-Indicator">&gt;</span>
-            <span class="no">{%- set now = as_timestamp(strptime(state_attr(&#39;weather.your_homename&#39;,&#39;forecast&#39;)[1][&#39;datetime&#39;], &#39;%Y-%m-%d %H:%M:%S&#39;)) %}</span>
+            <span class="no">{%- set now = as_timestamp(strptime(state_attr(&#39;weather.your_homename&#39;,&#39;forecast&#39;)[1][&#39;datetime&#39;], &#39;%Y-%m-%dT%H:%M:%S%z&#39;, default=&#39;2020-01-00T00:00:00+00:00&#39;)) %}</span>
             <span class="no">{%- set day = now | timestamp_custom(&quot;%w&quot;) %}</span>
             <span class="no">{%- set days = [&quot;Monday&quot;, &quot;Tuesday&quot;, &quot;Wednesday&quot;, &quot;Thursday&quot;, &quot;Friday&quot;, &quot;Saturday&quot;, &quot;Sunday&quot;] %}</span>
             <span class="no">{{ days[ day | int -1 ] }}{{- now | timestamp_custom(&quot; %d&quot;) }}</span>
@@ -3298,7 +3298,7 @@ and <a href="https://www.deviantart.com/merlinthered/art/plain-weather-icons-157
       <span class="p p-Indicator">-</span> <span class="nt">obj</span><span class="p">:</span> <span class="s">&quot;p5b81&quot;</span> <span class="c1"># Forecast date +3d</span>
         <span class="nt">properties</span><span class="p">:</span>
           <span class="s">&quot;text&quot;</span><span class="p p-Indicator">:</span> <span class="p p-Indicator">&gt;</span>
-            <span class="no">{%- set now = as_timestamp(strptime(state_attr(&#39;weather.your_homename&#39;,&#39;forecast&#39;)[2][&#39;datetime&#39;], &#39;%Y-%m-%d %H:%M:%S&#39;)) %}</span>
+            <span class="no">{%- set now = as_timestamp(strptime(state_attr(&#39;weather.your_homename&#39;,&#39;forecast&#39;)[2][&#39;datetime&#39;], &#39;%Y-%m-%dT%H:%M:%S%z&#39;, default=&#39;2020-01-00T00:00:00+00:00&#39;)) %}</span>
             <span class="no">{%- set day = now | timestamp_custom(&quot;%w&quot;) %}</span>
             <span class="no">{%- set days = [&quot;Monday&quot;, &quot;Tuesday&quot;, &quot;Wednesday&quot;, &quot;Thursday&quot;, &quot;Friday&quot;, &quot;Saturday&quot;, &quot;Sunday&quot;] %}</span>
             <span class="no">{{ days[ day | int -1 ] }}{{- now | timestamp_custom(&quot; %d&quot;) }}</span>
@@ -3318,7 +3318,7 @@ and <a href="https://www.deviantart.com/merlinthered/art/plain-weather-icons-157
       <span class="p p-Indicator">-</span> <span class="nt">obj</span><span class="p">:</span> <span class="s">&quot;p5b91&quot;</span> <span class="c1"># Forecast date +4d</span>
         <span class="nt">properties</span><span class="p">:</span>
           <span class="s">&quot;text&quot;</span><span class="p p-Indicator">:</span> <span class="p p-Indicator">&gt;</span>
-            <span class="no">{%- set now = as_timestamp(strptime(state_attr(&#39;weather.your_homename&#39;,&#39;forecast&#39;)[3][&#39;datetime&#39;], &#39;%Y-%m-%d %H:%M:%S&#39;)) %}</span>
+            <span class="no">{%- set now = as_timestamp(strptime(state_attr(&#39;weather.your_homename&#39;,&#39;forecast&#39;)[3][&#39;datetime&#39;], &#39;%Y-%m-%dT%H:%M:%S%z&#39;, default=&#39;2020-01-00T00:00:00+00:00&#39;)) %}</span>
             <span class="no">{%- set day = now | timestamp_custom(&quot;%w&quot;) %}</span>
             <span class="no">{%- set days = [&quot;Monday&quot;, &quot;Tuesday&quot;, &quot;Wednesday&quot;, &quot;Thursday&quot;, &quot;Friday&quot;, &quot;Saturday&quot;, &quot;Sunday&quot;] %}</span>
             <span class="no">{{ days[ day | int -1 ] }}{{- now | timestamp_custom(&quot; %d&quot;) }}</span>
@@ -3410,7 +3410,7 @@ and <a href="https://www.deviantart.com/merlinthered/art/plain-weather-icons-157
     <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.instant", "navigation.tracking", "search.suggest", "search.highlight", "navigation.top"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../assets/javascripts/workers/search.e99e714c.min.js", "version": {"provider": "mike", "default": 0.6}}</script>
     
      
-      <script src="../../../assets/javascripts/bundle.c7d1b464.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.bc35569b.min.js"></script>
       
     
 <!-- <script src="../../../js/youtube.js"></script> -->
