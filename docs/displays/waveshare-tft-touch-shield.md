@@ -12,7 +12,7 @@
         </a>
 </div>
 
-Waveshare has a line of [TFT Touch Shields for Arduino][8]{target=_blank} which are also plug-and-play compatible with the ESPDUINO-32 aka. Wemos “TTGo” D1 R32 board.
+Waveshare has a line of [TFT Touch Shields for Arduino][8]{target=_blank} which are also plug-and-play compatible with the ESPDUINO-32 *aka.* Wemos “TTGo” D1 R32 board.
 Unlike many other common Arduino UNO shields the Waveshare displays have an SPI interface with resistive touch controller and [backlight control](#backlight-control).
 
 Be sure to check if the `LCD_BL`, `LCD_CS` and `TP_CS` pins are present. If these pins are missing, the screen won't work with the pre-compiled builds.
@@ -45,8 +45,18 @@ It is connected to `GPIO13` on the D1 R32 development board.
 
 ## Documentation
 
-[:material-book-open-page-variant: Waveshare Wiki][6]{target=_blank .md-button .md-button } &nbsp;
-[:fontawesome-regular-file-pdf: Schematics][7]{target=_blank .md-button .md-button }
+Please visit the Waveshare Wiki pages for more information, schematics and demo code:
+
+<div class="dropdown show">
+    <a class="md-button md-button dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <span class="twemoji">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m19 2-5 4.5v11l5-4.5V2M6.5 5C4.55 5 2.45 5.4 1 6.5v14.66c0 .25.25.5.5.5.1 0 .15-.07.25-.07 1.35-.65 3.3-1.09 4.75-1.09 1.95 0 4.05.4 5.5 1.5 1.35-.85 3.8-1.5 5.5-1.5 1.65 0 3.35.31 4.75 1.06.1.05.15.03.25.03.25 0 .5-.25.5-.5V6.5c-.6-.45-1.25-.75-2-1V19c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5V6.5C10.55 5.4 8.45 5 6.5 5z"></path></svg>
+    </span> Waveshare Wiki </a>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+        <a class="dropdown-item md-typeset__table" href="http://www.waveshare.com/wiki/2.8inch_TFT_Touch_Shield">TFT Touch Shield 2.8" Rev 2.1</a>
+        <a class="dropdown-item md-typeset__table" href="https://www.waveshare.com/wiki/3.5inch_TFT_Touch_Shield">TFT Touch Shield 3.5"</a>
+        <a class="dropdown-item md-typeset__table" href="https://www.waveshare.com/wiki/4inch_TFT_Touch_Shield">TFT Touch Shield 4.0"</a>
+    </div>
+</div>
 
 
 ## Configuration
@@ -54,13 +64,16 @@ It is connected to `GPIO13` on the D1 R32 development board.
 !!!note
     By default the DIP switches on the display are set in the `ICSP` position instead of the `SPI` position.
 
-You need to peel of the orange tape that sticks on top of the dip switches.
+To use the `MISO`, `MOSI` and `SCLK` SPI pins you need to peel of the orange tape that sticks on top of the dip switches.
 Then move all 3 DIP switches to the `ON` position with a tiny screwdriver.
 
-The 2.8" model has 3 solder bridges `SB1`, `SB2` and `SB3` that need to be bridged instead!
+The 2.8" model has 3 solder jumpers `SB1`, `SB2` and `SB3` that need to be bridged instead!
 
-![PCB Dimensions](../assets/images/displays/waveshare-touch-shield-40-dimensions.jpg)
-
+<div class="row justify-content-center">
+    <a href="../../assets/images/displays/waveshare-touch-shield-40-dimensions.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-6" data-title="SPI Dip Switches" data-footer="Copyright © 2021, Waveshare, All Rights Reserved - Permission Pending">
+        <img src="../../assets/images/displays/waveshare-touch-shield-40-dimensions.jpg" class="img-fluid">
+    </a>
+</div>
 
 ## Development Boards
 

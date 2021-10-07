@@ -4,5 +4,5 @@ nav:
     - MHS4001.md
     - MRB3511.md
     - MSP Series (Red PCB): MSPxxxx.md
-    - Waveshare_RPi_LCD_Rev_C.md
+    - Waveshare RPi LCD (Rev C): waveshare-rpi-lcd.md
     - Waveshare TFT Touch Shield: waveshare-tft-touch-shield.md
