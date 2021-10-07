@@ -74,8 +74,8 @@ To use PWM dimming on the Lolin TFT 2.4" you must connect the TFT-LED pin to eit
 
 ## Documentation
 
-[:material-book-open-page-variant: Wemos Wiki][6]{target=_blank .md-button .md-button } &nbsp;
-[:fontawesome-regular-file-pdf: Schematics][7]{target=_blank .md-button .md-button }
+[:material-book-open-page-variant: Wemos Wiki][6]{target=_blank .md-button } &nbsp;
+[:fontawesome-regular-file-pdf: Schematics][7]{target=_blank .md-button }
 
 
 ## Dimensions

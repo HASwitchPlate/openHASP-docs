@@ -63,9 +63,9 @@ Unfortunately, there is no support for backlight control. The display is always-
 
 More information can be found in the Makerfabs Wiki and there are plenty of example projects available on the Github repository.
 
-[:material-book-open-page-variant: Makerfabs Wiki][6]{target=_blank .md-button .md-button } &nbsp;
-[:material-github: Github Repo][5]{target=_blank .md-button .md-button } &nbsp;
-[:material-github: Schematics][12]{target=_blank .md-button .md-button }
+[:material-book-open-page-variant: Makerfabs Wiki][6]{target=_blank .md-button } &nbsp;
+[:material-github: Github Repo][5]{target=_blank .md-button } &nbsp;
+[:material-github: Schematics][12]{target=_blank .md-button }
 
 ## Acrylic Case
 

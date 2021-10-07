@@ -44,8 +44,8 @@ Unfortunately, there is [no support for backlight control][2]{target=_blank}. Th
 
 Some example projects and the schematics for the Nscreen32 can be found on the Yeacreate Github repository.
 
-[:material-github: Github Repo][3]{target=_blank .md-button .md-button } &nbsp;
-[:material-github: Schematics][4]{target=_blank .md-button .md-button }
+[:material-github: Github Repo][3]{target=_blank .md-button } &nbsp;
+[:material-github: Schematics][4]{target=_blank .md-button }
 
 
 ## Video
