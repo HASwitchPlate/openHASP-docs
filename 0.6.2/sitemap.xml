@@ -286,6 +286,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://haswitchplate.github.io/openHASP-docs/0.6.2/0.6.2/integrations/examples/example-fan/</loc>
+         <lastmod>2021-10-08</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://haswitchplate.github.io/openHASP-docs/0.6.2/0.6.2/integrations/examples/example-lovelace/</loc>
          <lastmod>2021-10-08</lastmod>
          <changefreq>daily</changefreq>
