@@ -21,7 +21,7 @@ To add an openHASP plate to your installation with a sample design to control an
 
 ```
 
-This is made from a transparent [PNG image](../../../design/objects/#image) and a [spinner](../../../design/objects/#spinner) object placed on top of it. To reflect various states of the fan from your home automation system, you could change the `speed` of the spinner, the `value_str` to display it numerically, or `line_color1` to colorize it. You can use `image_recolor` and `image_recolor_opa` from the [image styling](../../../design/styling/#image) properties to apply a color overlay mask.
+This is made from a transparent [PNG image](../../../design/objects/#image) and a [spinner](../../../design/objects/#spinner) object placed on top of it. To reflect various states of the fan from your home automation system, you could change the `speed` of the spinner, the `value_str` to display it numerically, or `line_color1` to colorize it. You can use `image_recolor` and `image_recolor_opa` from the [image styling](../../../design/styling/#image) properties to apply a color overlay mask to the fan itself.
 
 Check out the [pagination example](../example-pagination) to learn how to implement the bottom bar.  
 Check out the [clock and temperature example](../../home-assistant/sampl_conf/#display-clock-and-temperature) to learn how to implement values to the top.  
