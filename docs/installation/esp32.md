@@ -37,13 +37,13 @@ The actual procedure to flash the ESP32 depends on the tool used. Click on the t
 === "Tasmota-PyFlasher :material-microsoft-windows:"
     [Tasmota-PyFlasher](https://github.com/tasmota/tasmota-pyflasher/releases/tag/1.0){target=_blank} is a simple GUI tool for flashing ESP32 firmware wihout any installation.
 
-    ![Tasmota-PyFlasher](../../assets/images/esp32-pyflasher.png)
+    ![Tasmota-PyFlasher](../assets/images/esp32-pyflasher.png)
 
     Change `COM7` to the correct port on your computer.
 
 === "ESP Flash Tools :material-microsoft-windows:"
     Espressif provides their own [Flash Download Tools](https://www.espressif.com/en/support/download/other-tools){target=_blank} for Windows.
 
-    ![Flash Download Tools](../../assets/images/esp32-espressif-flash.png)
+    ![Flash Download Tools](../assets/images/esp32-espressif-flash.png)
 
     Change `COM90` to the correct port on your computer.
