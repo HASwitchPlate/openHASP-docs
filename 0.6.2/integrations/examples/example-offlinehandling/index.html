@@ -1306,7 +1306,7 @@
 </ul>
 <h2>Configuration</h2>
 
-<p>In the plate's web UI keep the default <code>/pages.jsonl</code> as Startup Layout. This will load immediately after plate boot, before the pate is connected to the network. If your network is not available after boot, this page configuration will be on screen while the plate keeps connecting in the background.</p>
+<p>In the plate's web UI keep the default <code>/pages.jsonl</code> as Startup Layout. This will load immediately after plate boot, before the plate is connected to the network. If your network is not available after boot, this page configuration will be on screen while the plate keeps connecting in the background.</p>
 <p><code>pages.jsonl</code> - loaded at boot, has only with objects related to local relays, and displays the hostname:</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
@@ -1327,7 +1327,7 @@ run /pages_online.jsonl
 </code></pre></div>
 </td></tr></table>
 <p><code>pages_online.jsonl</code> - to be loaded after connected to the WiFi network:</p>
-<p>Put in <code>pages_online.jsonl</code> the main configuration for the pages you'd like to use when the pate is connected to the network and the home automation system. See integrations examples corresponding to the home automation system you have.</p>
+<p>Put in <code>pages_online.jsonl</code> the main configuration for the pages you'd like to use when the plate is connected to the network and the home automation system. See integrations examples corresponding to the home automation system you have.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>If you use Home Assistant and opt to store the <code>pages.jsonl</code> file on the server, which will be loaded on start of Home Assistant, it will also be reloaded on plate becoming online. Don't put <code>run /pages_online.jsonl</code> in the script and don't need <code>pages_online.jsonl</code> either on the plate.</p>
