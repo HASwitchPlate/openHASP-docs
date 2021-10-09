@@ -56,7 +56,7 @@ markdown_extensions:
   - pymdownx.tilde
   - pymdownx.emoji:
       emoji_index: !!python/name:materialx.emoji.twemoji
-      emoji_generator: !!python/name:materialx.emoji.to_svg     
+      emoji_generator: !!python/name:materialx.emoji.to_svg
   - pymdownx.striphtml:
       strip_comments: true
       strip_js_on_attributes: false
