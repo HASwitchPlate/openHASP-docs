@@ -77,7 +77,7 @@ For example: To display the &#x00F7; character on the plate you need to use `\u0
 
 ### Ascii
 
-Includes all ASCII 0x20-0x7E characters extended with these 11 *universal* symbols: 
+Includes all ASCII 0x20-0x7E characters extended with a non-breaking space and 10 *universal* symbols: 
 
 `NBSP`
 &#x00A3;

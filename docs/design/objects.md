@@ -688,18 +688,25 @@ The points parameter is a JSON array of [x,y] coordinates, for example `[[10,25]
 | auto_size| [bool][2]    | true    | Automatically set the size of the image object to the image source
 | offset_x | [int16][9]   | 0       | Shift the picture horizontally relative to the image object
 | offset_y | [int16][9]   | 0       | Shift the picture vertically relative to the image object
+| zoom     | [uint16][9]  | 256     | A larger value enlarges the images (e.g. `512` double size), a smaller value shrinks it (e.g. `128` half size). Fractional scale works as well. E.g. `281` for `10%` enlargement.
 | angle    | [int16][9]   | 0       | Rotate the picture around its pivot point. Angle has `0.1` degree precision, so for `45.8°` use `458`.
 | pivot_x  | [int16][9]   | H center| The pivot point of the rotation, by default centered
 | pivot_y  | [int16][9]   | V center| The pivot point of the rotation, by default centered
-| zoom     | [uint16][9]  | 256     | A larger value enlarges the images (e.g. `512` double size), a smaller value shrinks it (e.g. `128` half size). Fractional scale works as well. E.g. `281` for `10%` enlargement.
 | antialias| [bool][2]    | false   | The quality of the angle and zoom transformation. With enabled anti-aliasing the transformations has a higher quality but they are slower.
 
-Only PNG image files are supported, from flash. 
-   
-You can use `image_recolor` and `image_recolor_opa` from the [image styling][5] properties to apply a color overlay mask.
-   
 !!! note
-    The decoding of the images is done in memory, thus you'll be able to display full-screen images only if your microcontroller [has installed PSram memory](../../getting-started/#recommended-boards), else you will be limited to small icons.
+    You can use `image_recolor` and `image_recolor_opa` from the [image styling][5] properties to apply a color overlay mask.
+
+Either PNG or BIN image files are supported, from flash:
+
+- Decoded PNG image are stored in memory, thus you'll be able to display full-screen images only if your microcontroller [has installed PSram memory](../../getting-started/#recommended-boards),
+  else you will be limited to small icons.
+
+- BIN images are *not* stored in memory and are read from flash each time. This will be slower but allows the use of larger images even if your microcontroller doesn't have PSram.   
+
+- BIN images from flash do not support `zoom` or `angle` transformations.
+
+- Use the online [LVGL Image Converter][16]{target=_blank} to create BIN files. Set the output format to *Binary* or *Binary RGB565*.
 
 
 ??? example "Example `jsonl`"
@@ -737,3 +744,4 @@ You can use it as a background shape for other objects by putting its jsonl line
 [13]: ../styling/#padding-and-margin
 [14]: ../styling/#text
 [15]: ../data-types/#variables
+[16]: https://lvgl.io/tools/imageconverter
