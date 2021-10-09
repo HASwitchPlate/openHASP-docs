@@ -581,11 +581,12 @@ While pressing and dragging the `cpicker` object the following events are sent: 
 
 ![lv_spinner](../assets/images/objects/lv_ex_spinner_1.png)
 
-| Property  | Value      | Default | Description
-|-----------|------------|---------|--------------
-| speed     | [int16][9] | 1000    | The time for 1 turn in ms
-| direction | [int16][9] | 0       | `0` = clockwise, `1` = counter-clockwise
-| angle     | 0-360      | 60      | The length of the spinning segment in degrees
+| Property    | Value      | Default | Description
+|-------------|------------|---------|--------------
+| speed       | [int16][9] | 1000    | The time for 1 turn in ms
+| direction   | [int16][9] | 0       | `0` = clockwise, `1` = counter-clockwise
+| angle       | 0-360      | 60      | The length of the spinning segment in degrees
+| type        | 0-2        | 0       | `0` = slow down on the top, `1` = slow down and stretch, `2` = constant speed no stretch
 | line_width  | [int16][9] | 20    | The width of the background circle
 | line_width1 | [int16][9] | 20    | The width of the spinning segment
 | line_color  | [color][1] | depends<BR>on theme | color of the background circle
