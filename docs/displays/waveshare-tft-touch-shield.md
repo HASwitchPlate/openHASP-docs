@@ -1,13 +1,13 @@
 # Waveshare TFT Touch Shield
 
 <div class="row justify-content-center">
-        <a href="../../assets/images/displays/waveshare-touch-shield-28-angle.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4" data-title="Waveshare 2.8&quot; TFT Touch Shield" data-footer="Copyright © 2021, Waveshare, All Rights Reserved - Permission Pending"">
+        <a href="../../assets/images/displays/waveshare-touch-shield-28-angle.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4" data-title="Waveshare 2.8&quot; TFT Touch Shield" data-footer="Copyright © 2021, Waveshare, All Rights Reserved - Used with permission"">
             <img src="../../assets/images/displays/waveshare-touch-shield-28-angle.jpg" class="img-fluid">
         </a>
-        <a href="../../assets/images/displays/waveshare-touch-shield-35-side.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4" data-title="Waveshare 3.5&quot; TFT Touch Shield" data-footer="Copyright © 2021, Waveshare, All Rights Reserved - Permission Pending"">
+        <a href="../../assets/images/displays/waveshare-touch-shield-35-side.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4" data-title="Waveshare 3.5&quot; TFT Touch Shield" data-footer="Copyright © 2021, Waveshare, All Rights Reserved - Used with permission"">
             <img src="../../assets/images/displays/waveshare-touch-shield-35-side.jpg" class="img-fluid">
         </a>
-        <a href="../../assets/images/displays/waveshare-touch-shield-40-side.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4" data-title="Waveshare 4&quot; TFT Touch Shield" data-footer="Copyright © 2021, Waveshare, All Rights Reserved - Permission Pending"">
+        <a href="../../assets/images/displays/waveshare-touch-shield-40-side.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4" data-title="Waveshare 4&quot; TFT Touch Shield" data-footer="Copyright © 2021, Waveshare, All Rights Reserved - Used with permission"">
             <img src="../../assets/images/displays/waveshare-touch-shield-40-side.jpg" class="img-fluid">
         </a>
 </div>
@@ -70,7 +70,7 @@ Then move all 3 DIP switches to the `ON` position with a tiny screwdriver.
 The 2.8" model has 3 solder jumpers `SB1`, `SB2` and `SB3` that need to be bridged instead!
 
 <div class="row justify-content-center">
-    <a href="../../assets/images/displays/waveshare-touch-shield-40-dimensions.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-6" data-title="SPI Dip Switches" data-footer="Copyright © 2021, Waveshare, All Rights Reserved - Permission Pending">
+    <a href="../../assets/images/displays/waveshare-touch-shield-40-dimensions.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-6" data-title="SPI Dip Switches" data-footer="Copyright © 2021, Waveshare, All Rights Reserved - Used with permission">
         <img src="../../assets/images/displays/waveshare-touch-shield-40-dimensions.jpg" class="img-fluid">
     </a>
 </div>

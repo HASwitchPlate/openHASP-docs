@@ -1,10 +1,10 @@
 <h1>Waveshare RPi LCD (Rev C)</h1>
 
 <div class="row justify-content-center">
-        <a href="https://www.waveshare.com/media/catalog/product/cache/1/image/800x800/9df78eab33525d08d6e5fb8d27136e95/4/r/4rcp-fs.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4" data-title="WaveShare 4.0&quot; RPi LCD (Rev C)" data-footer="Copyright © 2021, Waveshare, All Rights Reserved - Permission Pending">
+        <a href="https://www.waveshare.com/media/catalog/product/cache/1/image/800x800/9df78eab33525d08d6e5fb8d27136e95/4/r/4rcp-fs.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4" data-title="WaveShare 4.0&quot; RPi LCD (Rev C)" data-footer="Copyright © 2021, Waveshare, All Rights Reserved - Used with permission">
             <img src="https://www.waveshare.com/media/catalog/product/cache/1/image/800x800/9df78eab33525d08d6e5fb8d27136e95/4/r/4rcp-fs.jpg" class="img-fluid">
         </a>
-        <a href="https://www.waveshare.com/media/catalog/product/cache/1/image/800x800/9df78eab33525d08d6e5fb8d27136e95/4/r/4rcp-bs2.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4" data-title="WaveShare 4.0&quot; RPi LCD (Rev C)" data-footer="Copyright © 2021, Waveshare, All Rights Reserved - Permission Pending">
+        <a href="https://www.waveshare.com/media/catalog/product/cache/1/image/800x800/9df78eab33525d08d6e5fb8d27136e95/4/r/4rcp-bs2.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4" data-title="WaveShare 4.0&quot; RPi LCD (Rev C)" data-footer="Copyright © 2021, Waveshare, All Rights Reserved - Used with permission">
             <img src="https://www.waveshare.com/media/catalog/product/cache/1/image/800x800/9df78eab33525d08d6e5fb8d27136e95/4/r/4rcp-bs2.jpg" class="img-fluid">
         </a>
 </div>
@@ -22,7 +22,7 @@ The Waveshare RPi LCD (Rev C) display comes in 3.5" and 4.0" sizes:
 By default the display is always on. To enable backlight dimming, you can connect the pads marked by the red arrow using a 0R resistor or a direct solder connection:
 
 <div class="row justify-content-center">
-    <a href="https://www.waveshare.com/w/upload/1/17/3.5inch-RPi-LCD-C-Manual-01.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-6" data-title="WaveShare 3.5&quot; RPi LCD (Rev C)" data-footer="Copyright © 2021, Waveshare, All Rights Reserved - Permission Pending">
+    <a href="https://www.waveshare.com/w/upload/1/17/3.5inch-RPi-LCD-C-Manual-01.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-6" data-title="WaveShare 3.5&quot; RPi LCD (Rev C)" data-footer="Copyright © 2021, Waveshare, All Rights Reserved - Used with permission">
         <img src="https://www.waveshare.com/w/upload/1/17/3.5inch-RPi-LCD-C-Manual-01.jpg" class="img-fluid">
     </a>
 </div>
@@ -40,10 +40,10 @@ The Waveshare ESP32 One development board has the same form factor as the Raspbe
 The ESP32 One is plug-and-play compatible with the Waveshare RPi LCD (Rev C) 3.5" and 4".
 
 <div class="row justify-content-center">
-        <a href="https://www.waveshare.com/media/catalog/product/cache/1/image/800x800/9df78eab33525d08d6e5fb8d27136e95/e/s/esp32-one-kit-1.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4" data-title="WaveShare ESP32 One" data-footer="Copyright © 2021, Waveshare, All Rights Reserved - Permission Pending">
+        <a href="https://www.waveshare.com/media/catalog/product/cache/1/image/800x800/9df78eab33525d08d6e5fb8d27136e95/e/s/esp32-one-kit-1.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4" data-title="WaveShare ESP32 One" data-footer="Copyright © 2021, Waveshare, All Rights Reserved - Used with permission">
             <img src="https://www.waveshare.com/media/catalog/product/cache/1/image/800x800/9df78eab33525d08d6e5fb8d27136e95/e/s/esp32-one-kit-1.jpg" class="img-fluid">
         </a>
-        <a href="https://www.waveshare.com/img/devkit/accBoard/ESP32-One/ESP32-One-details-1.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4" data-title="WaveShare ESP32 One" data-footer="Copyright © 2021, Waveshare, All Rights Reserved - Permission Pending">
+        <a href="https://www.waveshare.com/img/devkit/accBoard/ESP32-One/ESP32-One-details-1.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4" data-title="WaveShare ESP32 One" data-footer="Copyright © 2021, Waveshare, All Rights Reserved - Used with permission">
             <img src="https://www.waveshare.com/img/devkit/accBoard/ESP32-One/ESP32-One-details-1.jpg" class="img-fluid">
         </a>
 </div>
@@ -56,21 +56,21 @@ The ESP32 One is plug-and-play compatible with the Waveshare RPi LCD (Rev C) 3.5
                 </path>
             </svg></span> Buy </a>
     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-        <a class="dropdown-item md-typeset__table" href="https://www.amazon.com/dp/B08TBB2R2G/">Amazon US</a>
-        <a class="dropdown-item md-typeset__table" href="https://www.amazon.co.uk/dp/B08TBB2R2G/">Amazon UK</a>
-        <a class="dropdown-item md-typeset__table" href="https://www.amazon.de/dp/B08TBB2R2G/">Amazon DE</a>
-        <a class="dropdown-item md-typeset__table" href="https://www.amazon.fr/dp/B08TBB2R2G/">Amazon FR</a>
-        <a class="dropdown-item md-typeset__table" href="https://www.amazon.es/dp/B08TBB2R2G/">Amazon ES</a>
-        <a class="dropdown-item md-typeset__table" href="https://www.amazon.nl/dp/B08TBB2R2G/">Amazon NL</a>
+        <a class="dropdown-item md-typeset__table" target="_blank" href="https://www.amazon.com/dp/B08TBB2R2G/">Amazon US</a>
+        <a class="dropdown-item md-typeset__table" target="_blank" href="https://www.amazon.co.uk/dp/B08TBB2R2G/">Amazon UK</a>
+        <a class="dropdown-item md-typeset__table" target="_blank" href="https://www.amazon.de/dp/B08TBB2R2G/">Amazon DE</a>
+        <a class="dropdown-item md-typeset__table" target="_blank" href="https://www.amazon.fr/dp/B08TBB2R2G/">Amazon FR</a>
+        <a class="dropdown-item md-typeset__table" target="_blank" href="https://www.amazon.es/dp/B08TBB2R2G/">Amazon ES</a>
+        <a class="dropdown-item md-typeset__table" target="_blank" href="https://www.amazon.nl/dp/B08TBB2R2G/">Amazon NL</a>
     <div class="dropdown-divider"></div>
-        <a class="dropdown-item md-typeset__table" href="https://www.aliexpress.com/item/1005002055975943.html">AliExpress</a>
-        <a class="dropdown-item md-typeset__table" href="https://www.waveshare.com/esp32-one.htm">Waveshare.com</a>
+        <a class="dropdown-item md-typeset__table" target="_blank" href="https://www.aliexpress.com/item/1005002055975943.html">AliExpress</a>
+        <a class="dropdown-item md-typeset__table" target="_blank" href="https://www.waveshare.com/esp32-one.htm">Waveshare.com</a>
     </div>
 </div>
 
 #### Pinout
 
-<a href="https://www.waveshare.com/img/devkit/accBoard/ESP32-One/ESP32-One-details-inter.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4" data-title="WaveShare ESP32 One Pinout" data-footer="Copyright © 2021, Waveshare, All Rights Reserved - Permission Pending">
+<a href="https://www.waveshare.com/img/devkit/accBoard/ESP32-One/ESP32-One-details-inter.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4" data-title="WaveShare ESP32 One Pinout" data-footer="Copyright © 2021, Waveshare, All Rights Reserved - Used with permission">
     <img src="https://www.waveshare.com/img/devkit/accBoard/ESP32-One/ESP32-One-details-inter.jpg" class="img-fluid">
 </a>
 

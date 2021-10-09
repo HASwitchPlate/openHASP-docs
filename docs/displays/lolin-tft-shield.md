@@ -9,7 +9,7 @@
         </a>
 </div>
 
-## 
+## Features
 
 This Lolin TFT has a 2.4" touchscreen with XPT2046 resistive touch controller.
 There are 3 ways to connect an ESP32:
