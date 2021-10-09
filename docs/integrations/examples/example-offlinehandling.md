@@ -12,7 +12,7 @@ In the use case presented below, the following assumptions are made:
 
 <h2>Configuration</h2>
 
-In the plate's web UI keep the default `/pages.jsonl` as Startup Layout. This will load immediately after plate boot, before the pate is connected to the network. If your network is not available after boot, this page configuration will be on screen while the plate keeps connecting in the background.
+In the plate's web UI keep the default `/pages.jsonl` as Startup Layout. This will load immediately after plate boot, before the plate is connected to the network. If your network is not available after boot, this page configuration will be on screen while the plate keeps connecting in the background.
 
 `pages.jsonl` - loaded at boot, has only with objects related to local relays, and displays the hostname:
 
@@ -35,7 +35,7 @@ run /pages_online.jsonl
 
 `pages_online.jsonl` - to be loaded after connected to the WiFi network:
 
-Put in `pages_online.jsonl` the main configuration for the pages you'd like to use when the pate is connected to the network and the home automation system. See integrations examples corresponding to the home automation system you have.
+Put in `pages_online.jsonl` the main configuration for the pages you'd like to use when the plate is connected to the network and the home automation system. See integrations examples corresponding to the home automation system you have.
 
 !!! note
      If you use Home Assistant and opt to store the `pages.jsonl` file on the server, which will be loaded on start of Home Assistant, it will also be reloaded on plate becoming online. Don't put `run /pages_online.jsonl` in the script and don't need `pages_online.jsonl` either on the plate.
