@@ -24,7 +24,10 @@ Before starting the flash process you have to put the ESP into *flash mode*:
 2. Power-on or reset the ESP while `GPIO0` is connected to `GND`
 3. Start the flash process
 
-The actual procedure to flash the ESP32 depends on the tool used. Click on the tab below that matches your flash tool:
+The actual procedure to flash the ESP32 depends on the tool used. Click on the tab below that matches your flash tool.
+
+!!! note
+    ESPHome Flasher cannot flash the openHASP binary. Use one of the other tools below instead.
 
 === "ESPtool.py :material-linux::material-apple::material-microsoft-windows:"
     ```shell
