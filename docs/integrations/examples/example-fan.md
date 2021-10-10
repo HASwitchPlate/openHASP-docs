@@ -21,8 +21,15 @@ To add an openHASP plate to your installation with a sample design to control an
 
 ```
 
-This is made from a transparent [PNG image](../../../design/objects/#image) and a [spinner](../../../design/objects/#spinner) object placed on top of it. To reflect various states of the fan from your home automation system, you could change the `speed` of the spinner, the `value_str` to display it numerically, or `line_color1` to colorize it. You can use `image_recolor` and `image_recolor_opa` from the [image styling](../../../design/styling/#image) properties to apply a color overlay mask to the fan itself. You could use the spinner's `down` touch events to change the speed of the fan in an OFF > 1 > 2 > 3 > OFF style (consult the documentation of your home automation system how to do this based on MQTT messages).
+It is made from a transparent [PNG image](../../../design/objects/#image) and a [spinner](../../../design/objects/#spinner) object placed on top of it. To reflect various states of the fan from your home automation system, you could change the `speed` of the spinner, the `value_str` to display it numerically, or `line_color1` to colorize it. You can use `image_recolor` and `image_recolor_opa` from the [image styling](../../../design/styling/#image) properties to apply a color overlay mask to the fan itself. You could use the spinner's `down` touch events to change the speed of the fan in an OFF > 1 > 2 > 3 > OFF style (consult the documentation of your home automation system how to do this based on MQTT messages).
 
+Below is another approach where the spinner discretely shows up behind the blades:
+
+```json
+{"page":3,"id":11,"obj":"spinner","x":68,"y":91,"w":105,"h":105,"bg_opa":0,"border_width":0,"line_width":0,"line_width1":32,"line_color1":"teal","type":2,"angle":160,"speed":500,"value_str":3}
+{"page":3,"id":12,"obj":"img","src":"/littlefs/fan3.png","auto_size":1,"w":140,"h":140,"x":50,"y":75}
+
+```
 
 
 Check out the [pagination example](../example-pagination) to learn how to implement the bottom bar.  
