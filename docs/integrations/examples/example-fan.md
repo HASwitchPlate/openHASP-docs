@@ -27,7 +27,7 @@ Below is another approach where the spinner discretely shows up behind the blade
 
 ```json
 {"page":3,"id":11,"obj":"spinner","x":68,"y":91,"w":105,"h":105,"bg_opa":0,"border_width":0,"line_width":0,"line_width1":32,"line_color1":"orange","type":2,"angle":160,"speed":500,"value_str":3}
-{"page":3,"id":12,"obj":"img","src":"/littlefs/fan3.png","auto_size":1,"w":140,"h":140,"x":50,"y":75}
+{"page":3,"id":12,"obj":"img","src":"L:/noun_Fan_35097_140.png","auto_size":1,"w":140,"h":140,"x":50,"y":75}
 
 ```
 
