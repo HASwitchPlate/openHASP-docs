@@ -17,7 +17,7 @@ To add an openHASP plate to your installation with a sample design to control an
 {"page":1,"id":1,"obj":"btn","x":0,"y":0,"w":240,"h":30,"text":"FAN STATUS","text_font":16,"bg_color":"#2C3E50","text_color":"#FFFFFF","radius":0,"border_side":0,"click":0}
 
 {"page":1,"id":11,"obj":"img","src":"L:/noun_Fan_35097_140.png","auto_size":1,"w":140,"h":140,"x":50,"y":75,"image_recolor":"lime","image_recolor_opa":150}
-{"page":1,"id":13,"obj":"spinner","parentid":11,"x":7,"y":6,"w":126,"h":126,"bg_opa":0,"border_width":0,"line_width":7,"line_width1":7,"type":2,"angle":120,"speed":1000,"value_str":3}
+{"page":1,"id":12,"obj":"spinner","parentid":11,"x":7,"y":6,"w":126,"h":126,"bg_opa":0,"border_width":0,"line_width":7,"line_width1":7,"type":2,"angle":120,"speed":1000,"value_str":3}
 
 ```
 
@@ -26,8 +26,8 @@ It is made from a transparent [PNG image](../../../design/objects/#image) and a 
 Below is another approach where the spinner discretely shows up behind the blades:
 
 ```json
-{"page":3,"id":11,"obj":"spinner","x":68,"y":91,"w":105,"h":105,"bg_opa":0,"border_width":0,"line_width":0,"line_width1":32,"line_color1":"orange","line_rounded1":1,"type":2,"angle":160,"speed":1000,"value_str":3,"value_ofs_y":1}
-{"page":3,"id":12,"obj":"img","src":"L:/noun_Fan_35097_140.png","auto_size":1,"w":140,"h":140,"x":50,"y":75,"image_recolor":"silver","image_recolor_opa":120}
+{"page":1,"id":13,"obj":"spinner","x":68,"y":91,"w":105,"h":105,"bg_opa":0,"border_width":0,"line_width":0,"line_width1":32,"line_color1":"orange","line_rounded1":1,"type":2,"angle":160,"speed":1000,"value_str":3,"value_ofs_y":1}
+{"page":1,"id":14,"obj":"img","src":"L:/noun_Fan_35097_140.png","auto_size":1,"w":140,"h":140,"x":50,"y":75,"image_recolor":"silver","image_recolor_opa":120}
 
 ```
 
