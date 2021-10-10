@@ -26,11 +26,10 @@ It is made from a transparent [PNG image](../../../design/objects/#image) and a 
 Below is another approach where the spinner discretely shows up behind the blades:
 
 ```json
-{"page":3,"id":11,"obj":"spinner","x":68,"y":91,"w":105,"h":105,"bg_opa":0,"border_width":0,"line_width":0,"line_width1":32,"line_color1":"orange","type":2,"angle":160,"speed":500,"value_str":3}
-{"page":3,"id":12,"obj":"img","src":"L:/noun_Fan_35097_140.png","auto_size":1,"w":140,"h":140,"x":50,"y":75,"image_recolor":"silver","image_recolor_opa":120}
+{"page":3,"id":11,"obj":"spinner","x":68,"y":91,"w":105,"h":105,"bg_opa":0,"border_width":0,"line_width":0,"line_width1":32,"line_color1":"orange","line_rounded1":1,"type":2,"angle":160,"speed":1000,"value_str":3,"value_ofs_y":1}
+{"page":3,"id":12,"obj":"img","src":"/littlefs/fan3.png","auto_size":1,"w":140,"h":140,"x":50,"y":75,"image_recolor":"silver","image_recolor_opa":120}
 
 ```
-
 
 Check out the [pagination example](../example-pagination) to learn how to implement the bottom bar.  
 Check out the [clock and temperature example](../../home-assistant/sampl_conf/#display-clock-and-temperature) to learn how to implement values to the top.  
