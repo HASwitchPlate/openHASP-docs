@@ -668,7 +668,7 @@ The pop-up is centered on the screen.
 |----------|--------------|---------|--------------------------
 | points   | [JSON array][11] | ""  | The name of the image file
 | auto_size| [bool][2]    | true    | Automatically set the size of the line object to the outer bounds
-| y_invert | [bool][2]    | false   | The y direction might be conter-intuitive in some cases so the y coordinates can be inverted
+| y_invert | [bool][2]    | false   | The y direction might be counter-intuitive in some cases so the y coordinates can be inverted
 
 The points parameter is a JSON array of [x,y] coordinates, for example `[[10,25],[100,25],[100,0]]`.
 
