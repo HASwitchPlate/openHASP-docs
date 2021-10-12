@@ -700,8 +700,8 @@ The points parameter is a JSON array of [x,y] coordinates, for example `[[10,25]
 
 Either PNG or BIN image files are supported, from flash:
 
-- Decoded PNG image are stored in memory, thus you'll be able to display full-screen images only if your microcontroller [has installed PSram memory](../../getting-started/#recommended-boards),
-  else you will be limited to small icons.
+- PNG image are decoded and kept in memory, thus you'll be able to display full-screen images only if your microcontroller [has installed PSram memory](../../getting-started/#recommended-boards),
+  else you will be limited to small icons or `BIN` files.
 
 - BIN images are *not* stored in memory and are read from flash each time. This will be slower but allows the use of larger images even if your microcontroller doesn't have PSram.   
 

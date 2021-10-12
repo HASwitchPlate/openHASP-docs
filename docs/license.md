@@ -47,8 +47,13 @@ openHASP is building upon the existing work of the following open source develop
 - [TFT_eSPI](https://github.com/Bodmer/TFT_eSPI){target=_blank} display library,
   Copyright© 2020 Bodmer ([https://github.com/Bodmer](https://github.com/Bodmer){target=_blank}) All rights reserved.
   TFT_eSPI is distributed under the terms of the [FreeBSD License][6]{target=_blank}
-  and includes parts from the [Adafruit_GFX library](https://github.com/adafruit/Adafruit-GFX-Library){target=_blank},
-  Copyright© 2012 Adafruit Industries. All rights reserved.
+
+- [LovyanGFX](https://github.com/Bodmer/TFT_eSPI){target=_blank} display library,
+  Copyright© 2020 lovyan03 ([https://github.com/lovyan03](https://github.com/lovyan03){target=_blank}) All rights reserved.
+  LovyanGFX is distributed under the terms of the [FreeBSD License][6]{target=_blank}
+
+- Portions from [Adafruit_GFX library](https://github.com/adafruit/Adafruit-GFX-Library){target=_blank},
+  Copyright© 2012 Adafruit Industries All rights reserved.
   Adafruit_GFX is distributed under the terms of the [BSD License][6]{target=_blank}
 
 - zi Font Engine
@@ -76,7 +81,7 @@ openHASP is building upon the existing work of the following open source develop
   Copyright© 2019 Benoit BLANCHON
   [MIT License][1]{target=_blank}.
 
-### Native Application
+### Native Applications
 
 - paho.mqtt.c client library
   Copyright© Eclipse Foundation
@@ -86,7 +91,7 @@ openHASP is building upon the existing work of the following open source develop
   Copyright© 1997-2021 Sam Lantinga <slouken@libsdl.org>
   SDL 2.0 and newer are available under the [zlib license][2]{target=_blank}
 
-### Native Windows Application
+#### Native Windows Application
 
 - mingw-w64 GCC for Windows 64 & 32 bits
   Copyright© 2009 - 2013 by the mingw-w64 project
@@ -99,18 +104,18 @@ openHASP is building upon the existing work of the following open source develop
   Copyright© viznut.
   A public domain bitmapped Unicode font 
 
-- Built-in font Roboto Consensed
+- Built-in fonts use rasterized glyphs from the Roboto Consensed font
   Copyright© 2011 Google Inc. All Rights Reserved.
-  Ubuntu Consensed is licensed under the [Apache License, Version 2.0][4]{target=_blank}.
+  Roboto Consensed is licensed under the [Apache License, Version 2.0][4]{target=_blank}.
 
-- Custom zi fonts and built-in fonts incorporate [Font Awesome](http://fontawesome.io/){target=_blank},
+- The built-in fonts and bootscreen use rasterized glyphs from the [MaterialDesign Icons](https://materialdesignicons.com/){target=_blank} font,
+  Copyright© 2014, Austin Andrews.
+  MaterialDesign Icons font is licensed under the SIL Open Font License, Version 1.1.
+
+- Custom zi fonts incorporate [Font Awesome](http://fontawesome.io/){target=_blank},
   Copyright© 2017 Dave Gandy.
   Font Awesome is distributed under the terms of the [SIL OFL 1.1][3]{target=_blank} 
   and [MIT License][1]{target=_blank}.
-
-- The bootscreen uses the [MaterialDesign Icons](https://materialdesignicons.com/){target=_blank} font,
-  Copyright© 2014, Austin Andrews.
-  MaterialDesign Icons font is licensed under the SIL Open Font License, Version 1.1.
 
 [1]: http://opensource.org/licenses/MIT
 [2]: https://www.zlib.net/zlib_license.html

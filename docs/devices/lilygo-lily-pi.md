@@ -1,20 +1,12 @@
-<script async defer crossorigin="anonymous" src="https://connect.facebook.net/nl_BE/sdk.js#xfbml=1&version=v11.0" nonce="shnKogT5"></script>
-
 # Lilygo Lily Pi
 
 <div class="row justify-content-center">
-        <a href="https://0.rc.xiniu.com/g3/M00/83/FA/CgAH6F-Pt1GAUuPlAADV1mh4ahc430.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-6" data-title="Lilygo Lily Pi" data-footer="">
-            <img src="https://0.rc.xiniu.com/g3/M00/83/FA/CgAH6F-Pt1GAUuPlAADV1mh4ahc430.jpg" class="img-fluid">
+        <a href="../../assets/images/devices/lily-pi-front.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-6" data-title="LILYGO® Lily Pi" data-footer="">
+            <img src="../../assets/images/devices/lily-pi-front.jpg" class="img-fluid">
         </a>
-
-        <a href="https://0.rc.xiniu.com/g3/M00/83/FA/CgAH6F-Pt1qAXLvAAADuSeaLd7E534.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-6" data-title="Lilygo Lily Pi" data-footer="">
-            <img src="https://0.rc.xiniu.com/g3/M00/83/FA/CgAH6F-Pt1qAXLvAAADuSeaLd7E534.jpg" class="img-fluid">
+        <a href="../../assets/images/devices/lily-pi-side.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-6" data-title="LILYGO® Lily Pi" data-footer="">
+            <img src="../../assets/images/devices/lily-pi-side.jpg" class="img-fluid">
         </a>
-</div>
-<div>
-        <a href="https://0.rc.xiniu.com/g3/M00/83/FA/CgAH6F-Pt1qASIQkAADN_NNjq0k654.jpg" data-toggle="lightbox" data-gallery="example-gallery" rel="lightbox[work]" data-title="Lilygo Lily Pi" data-footer="">more images...</a>
-        <a href="https://0.rc.xiniu.com/g3/M00/83/FA/CgAH6F-Pt1uAfBPVAAEYhjDqNQs067.jpg" data-toggle="lightbox" data-gallery="example-gallery" rel="lightbox[vacation]" data-title="Lilygo Lily Pi" data-footer=""></a>
-        <a href="https://0.rc.xiniu.com/g3/M00/83/FA/CgAH6F-Pt1yAfvsBAADekDxTpW4556.jpg" data-toggle="lightbox" data-gallery="example-gallery" rel="lightbox[vacation]" data-title="Lilygo Lily Pi" data-footer=""></a>
 </div>
 
 
@@ -38,10 +30,10 @@ Some Rpi expansion boards *could* work on this PCB too depending on the pins use
 
 | Pros              | Cons
 |:-----             |:----
-| 480x320 display   | Non standard USB-A connectors
-| PSram             | Two display versions
-| 8 MB flash        | Price
-| Capactitive touch
+| 480x320 display   | Non-standard USB-A connectors as GPIO
+| 16 MB flash
+| 8 MB PSram
+| Capacitive Touchscreen
 
 The RTC and SD card are not supported by openHASP 0.6.1.
 
@@ -53,6 +45,19 @@ Available from:</br>
 ## Backlight Control
 
 The GPIO that controls the backlight is `GPIO12`.
+
+
+## Documentation
+
+The Lily Pi comes with the following information cards describing all the GPIOs used:
+<div class="row justify-content-center">
+        <a href="../../assets/images/devices/lily-pi-gpio-left.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-6" data-title="LILYGO® Lily Pi" data-footer="">
+            <img src="../../assets/images/devices/lily-pi-gpio-left.jpg" class="img-fluid">
+        </a>
+        <a href="../../assets/images/devices/lily-pi-gpio-right.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-6" data-title="LILYGO® Lily Pi" data-footer="">
+            <img src="../../assets/images/devices/lily-pi-gpio-right.jpg" class="img-fluid">
+        </a>
+</div>
 
 
 ## Flashing
