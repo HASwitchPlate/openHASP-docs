@@ -69,5 +69,5 @@ The Lilygo Lily Pi can easily be flashed over USB like any ESP32 development boa
 Size: 99.7 x 62.5 x 31.2mm
 
 
-[1]: https://www.aliexpress.com/item/1005001447548347.html
+[1]: https://s.click.aliexpress.com/e/_9I2hQ9
 [2]: https://www.tindie.com/products/lilygo/lilygo-lily-pi-esp32-wifi-bluetooth-35-inch/

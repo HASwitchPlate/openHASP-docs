@@ -41,9 +41,9 @@ table th:last-of-type {
 | Firmware    | [Download][1]{target=_blank} | [Download][1]{target=_blank}  | [Download][1]{target=_blank}
 
 [1]: https://github.com/HASwitchPlate/openHASP/releases
-[3]: https://www.aliexpress.com/item/32643142716.html
-[4]: https://www.aliexpress.com/item/32815530502.html
-[5]: https://www.aliexpress.com/item/32977375539.html
+[3]: https://s.click.aliexpress.com/e/_A5xLGZ
+[4]: https://s.click.aliexpress.com/e/_AWRRQl
+[5]: https://s.click.aliexpress.com/e/_Ab00fT
 [6]: https://www.aliexpress.com/item/32883116057.html
 
 !!! note

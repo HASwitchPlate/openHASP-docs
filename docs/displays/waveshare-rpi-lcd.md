@@ -63,7 +63,7 @@ The ESP32 One is plug-and-play compatible with the Waveshare RPi LCD (Rev C) 3.5
         <a class="dropdown-item md-typeset__table" target="_blank" href="https://www.amazon.es/dp/B08TBB2R2G/">Amazon ES</a>
         <a class="dropdown-item md-typeset__table" target="_blank" href="https://www.amazon.nl/dp/B08TBB2R2G/">Amazon NL</a>
     <div class="dropdown-divider"></div>
-        <a class="dropdown-item md-typeset__table" target="_blank" href="https://www.aliexpress.com/item/1005002055975943.html">AliExpress</a>
+        <a class="dropdown-item md-typeset__table" target="_blank" href="https://s.click.aliexpress.com/e/_AYV2FF">AliExpress</a>
         <a class="dropdown-item md-typeset__table" target="_blank" href="https://www.waveshare.com/esp32-one.htm">Waveshare.com</a>
     </div>
 </div>
