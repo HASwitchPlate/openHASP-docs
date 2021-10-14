@@ -1936,10 +1936,12 @@ These leds can then be controlled together using the <code>moodlight</code> comm
 <p><em>accepted parameters:</em> <code>on</code>/<code>off</code>, <code>true</code>/<code>false</code>, <code>0</code>/<code>1</code>, <code>yes</code>/<code>no</code> <br />
 Start LCD anti burn-in protection.</p>
 <p>This cycles the display to a full black, red, green, blue and white color each second to relief the tension put on each individual pixel.
-The cycle stops when either:
-- 30 seconds have passed
-- <code>antiburn=off</code> is received
-- The screen is touched</p>
+The cycle stops when either:</p>
+<ul>
+<li>30 seconds have passed</li>
+<li><code>antiburn=off</code> is received</li>
+<li>The screen is touched</li>
+</ul>
 <h3 id="screenshot"><code>screenshot</code><a class="headerlink" href="#screenshot" title="Permanent link">~</a></h3>
 <p>Saves a picture of the current screen to the flash filesystem. You can retrieve it via http://&lt;ip-address&gt;/screenshot.bmp.
 This can be handy for bug reporting or documentation.</p>
