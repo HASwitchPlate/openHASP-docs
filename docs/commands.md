@@ -239,6 +239,7 @@ Start LCD anti burn-in protection.
 
 This cycles the display to a full black, red, green, blue and white color each second to relief the tension put on each individual pixel.
 The cycle stops when either:
+
 - 30 seconds have passed
 - `antiburn=off` is received
 - The screen is touched
