@@ -749,6 +749,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#antiburn" class="md-nav__link">
+    antiburn
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#screenshot" class="md-nav__link">
     screenshot
   </a>
@@ -1661,6 +1668,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#antiburn" class="md-nav__link">
+    antiburn
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#screenshot" class="md-nav__link">
     screenshot
   </a>
@@ -1918,6 +1932,14 @@ These leds can then be controlled together using the <code>moodlight</code> comm
 <h3 id="calibrate"><code>calibrate</code><a class="headerlink" href="#calibrate" title="Permanent link">~</a></h3>
 <p>Start on-screen touch calibration.</p>
 <p>You need to issue a soft reboot command to save the new calibration settings. If you do a hard reset of the device, the calibration settings will be lost.</p>
+<h3 id="antiburn"><code>antiburn</code><a class="headerlink" href="#antiburn" title="Permanent link">~</a></h3>
+<p><em>accepted parameters:</em> <code>on</code>/<code>off</code>, <code>true</code>/<code>false</code>, <code>0</code>/<code>1</code>, <code>yes</code>/<code>no</code> <br />
+Start LCD anti burn-in protection.</p>
+<p>This cycles the display to a full black, red, green, blue and white color each second to relief the tension put on each individual pixel.
+The cycle stops when either:
+- 30 seconds have passed
+- <code>antiburn=off</code> is received
+- The screen is touched</p>
 <h3 id="screenshot"><code>screenshot</code><a class="headerlink" href="#screenshot" title="Permanent link">~</a></h3>
 <p>Saves a picture of the current screen to the flash filesystem. You can retrieve it via http://&lt;ip-address&gt;/screenshot.bmp.
 This can be handy for bug reporting or documentation.</p>
@@ -2050,7 +2072,7 @@ To get the configuration, use the command <code>config/&lt;submodule&gt;</code>:
 <div class="md-source-date">
   <small>
     
-      Last update: 2021-10-13
+      Last update: 2021-10-14
     
   </small>
 </div>
