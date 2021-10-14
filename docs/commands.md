@@ -232,6 +232,17 @@ Start on-screen touch calibration.
 
 You need to issue a soft reboot command to save the new calibration settings. If you do a hard reset of the device, the calibration settings will be lost.
 
+### `antiburn`
+
+_accepted parameters:_ `on`/`off`, `true`/`false`, `0`/`1`, `yes`/`no`   
+Start LCD anti burn-in protection.
+
+This cycles the display to a full black, red, green, blue and white color each second to relief the tension put on each individual pixel.
+The cycle stops when either:
+- 30 seconds have passed
+- `antiburn=off` is received
+- The screen is touched
+
 ### `screenshot`
 
 Saves a picture of the current screen to the flash filesystem. You can retrieve it via http://&lt;ip-address&gt;/screenshot.bmp.
