@@ -38,7 +38,7 @@ The actual procedure to flash the ESP32 depends on the tool used. Click on the t
     Change `COM1` to the correct port on your computer. If you get an error at the end of the flash procedure, you can try with a lower the baudrate eg. 460800.
 
 === "Tasmota-PyFlasher :material-microsoft-windows:"
-    [Tasmota-PyFlasher](https://github.com/tasmota/tasmota-pyflasher/releases/tag/1.0){target=_blank} is a simple GUI tool for flashing ESP32 firmware wihout any installation.
+    [Tasmota-PyFlasher](https://github.com/tasmota/tasmota-pyflasher/releases/tag/1.0){target=_blank} is a simple GUI tool for flashing ESP32 firmware without any installation.
 
     ![Tasmota-PyFlasher](../assets/images/esp32-pyflasher.png)
 

@@ -235,6 +235,7 @@ You need to issue a soft reboot command to save the new calibration settings. If
 ### `antiburn`
 
 _accepted parameters:_ `on`/`off`, `true`/`false`, `0`/`1`, `yes`/`no`   
+
 Start LCD anti burn-in protection.
 
 This cycles the display to a full black, red, green, blue and white color each second to relief the tension put on each individual pixel.
