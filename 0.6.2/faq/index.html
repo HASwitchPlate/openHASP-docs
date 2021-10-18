@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://haswitchplate.github.io/openHASP-docs/0.6.2/0.6.2/faq/">
       
       <link rel="icon" href="../favicon.ico">
-      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-7.3.3">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-7.3.4">
     
     
       
@@ -24,7 +24,7 @@
       
     
      
-      <link rel="stylesheet" href="../assets/stylesheets/main.5143246d.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.db9e7362.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.3f5d1f46.min.css">
@@ -98,7 +98,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#the-font-looks-tiny" class="md-skip">
+        <a href="#the-display-stays-white" class="md-skip">
           Skip to content
         </a>
       
@@ -1185,6 +1185,20 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#the-display-stays-white" class="md-nav__link">
+    The display stays white
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#error-the-firmware-binary-is-invalid-magic-byteff-should-be-e9" class="md-nav__link">
+    Error: The firmware binary is invalid (magic byte=FF, should be E9)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#the-font-looks-tiny" class="md-nav__link">
     The font looks tiny
   </a>
@@ -1351,6 +1365,20 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#the-display-stays-white" class="md-nav__link">
+    The display stays white
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#error-the-firmware-binary-is-invalid-magic-byteff-should-be-e9" class="md-nav__link">
+    Error: The firmware binary is invalid (magic byte=FF, should be E9)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#the-font-looks-tiny" class="md-nav__link">
     The font looks tiny
   </a>
@@ -1397,6 +1425,26 @@
                 
                 <h1>Frequently Asked Questions</h1>
 
+<h3 id="the-display-stays-white"><img alt="❓" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/2753.svg" title=":question:" /> The display stays white<a class="headerlink" href="#the-display-stays-white" title="Permanent link">~</a></h3>
+<p>The good news is the backlight is working, but a white screen is typical of a problem with the pin assignment (software config) or wiring (hardware):</p>
+<ol>
+<li>
+<p>Check the serial log when the plate boots and look for the <code>TFT</code> pin assignments.
+    The configured GPIOs must match the connections on the display.</p>
+</li>
+<li>
+<p>If the pin configuration is OK then the next step is checking the connection from the ESP to the display:</p>
+<ul>
+<li>Check the solder connections or jumper wires for bad connections or shorts</li>
+<li>Test with a multi-meter if there is a good connection from the ESP pins to the display pins</li>
+<li>Try disconnecting the wires from the touch device and only test the display first</li>
+</ul>
+</li>
+</ol>
+<h3 id="error-the-firmware-binary-is-invalid-magic-byteff-should-be-e9"><img alt="❓" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/2753.svg" title=":question:" /> Error: The firmware binary is invalid (magic byte=FF, should be E9)<a class="headerlink" href="#error-the-firmware-binary-is-invalid-magic-byteff-should-be-e9" title="Permanent link">~</a></h3>
+<p>ESPhome-Flasher does not recognize the openHASP <em>full</em> binary firmware correctly.
+It expects the firmware to be written to address <code>0x10000</code> and will throw a "magic byte error".</p>
+<p>The openHASP <em>full</em> binary is meant to be flashed to address <code>0x0</code> with ESPtool, Flash Download Tools or Tasmota-PyFlasher.</p>
 <h3 id="the-font-looks-tiny"><img alt="❓" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/2753.svg" title=":question:" /> The font looks tiny<a class="headerlink" href="#the-font-looks-tiny" title="Permanent link">~</a></h3>
 <p>On ESP8266, the out-of-the box font is Unscii 8pt because this font takes up very little space in memory and on flash.
 This default font is just intended to get the device setup, then you can Upload your own .zi font.</p>
@@ -1422,7 +1470,7 @@ Using that webpage, you can right-click and delete files:</p>
 <div class="md-source-date">
   <small>
     
-      Last update: 2021-10-15
+      Last update: 2021-10-18
     
   </small>
 </div>
@@ -1488,7 +1536,7 @@ Using that webpage, you can right-click and delete files:</p>
     <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.tracking", "search.suggest", "search.highlight", "navigation.top"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.8397ff9e.min.js", "version": {"provider": "mike", "default": 0.6}}</script>
     
      
-      <script src="../assets/javascripts/bundle.f89c2efe.min.js"></script>
+      <script src="../assets/javascripts/bundle.1e84347e.min.js"></script>
       
     
 <!-- <script src="../js/youtube.js"></script> -->
