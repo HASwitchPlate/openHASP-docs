@@ -1,5 +1,24 @@
 <h1>Frequently Asked Questions</h1>
 
+### :question: The display stays white
+
+The good news is the backlight is working, but a white screen is typical of a problem with the pin assignment (software config) or wiring (hardware):
+
+1.  Check the serial log when the plate boots and look for the `TFT` pin assignments.
+    The configured GPIOs must match the connections on the display.
+
+2. If the pin configuration is OK then the next step is checking the connection from the ESP to the display:
+    - Check the solder connections or jumper wires for bad connections or shorts
+    - Test with a multi-meter if there is a good connection from the ESP pins to the display pins
+    - Try disconnecting the wires from the touch device and only test the display first
+
+### :question: Error: The firmware binary is invalid (magic byte=FF, should be E9)
+
+ESPhome-Flasher does not recognize the openHASP *full* binary firmware correctly.
+It expects the firmware to be written to address `0x10000` and will throw a "magic byte error".
+
+The openHASP *full* binary is meant to be flashed to address `0x0` with ESPtool, Flash Download Tools or Tasmota-PyFlasher.
+
 ### :question: The font looks tiny
 
 On ESP8266, the out-of-the box font is Unscii 8pt because this font takes up very little space in memory and on flash.
