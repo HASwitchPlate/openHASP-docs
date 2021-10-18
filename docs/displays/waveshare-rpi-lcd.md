@@ -74,6 +74,15 @@ The ESP32 One is plug-and-play compatible with the Waveshare RPi LCD (Rev C) 3.5
     <img src="https://www.waveshare.com/img/devkit/accBoard/ESP32-One/ESP32-One-details-inter.jpg" class="img-fluid">
 </a>
 
+## Gallery
+
+<div class="row justify-content-center">
+    <a href="../../assets/images/builds/telemetry-plate.png" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4" data-title="Telemetry panel" data-footer="Waveshare RPi LCD (Rev C) display with ESP32 dev board">
+        <img src="../../assets/images/builds/telemetry-plate.png" class="img-fluid">
+    </a>
+</div>
+
+
 ## Pin Configuration
 
 LCD Pin |Function          |ESP32 Pin  |Config Name|Display Pin |

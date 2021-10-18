@@ -36,35 +36,32 @@
                 </a>
             </div>
             <div class="row">
-                <a href="https://raw.githubusercontent.com/HASwitchPlate/openHASP-docs/master/docs/assets/images/builds/wallbox-us-0.png" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4" data-title="US Switchbox 3D model" data-footer="Designed by Nurp">
+                <a href="../assets/images/builds/wallbox-us-0.png" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4" data-title="US Switchbox 3D model" data-footer="Designed by Nurp">
                     <img src="../assets/images/builds/wallbox-us-0.png" class="img-fluid">
                 </a>
-                <a href="https://raw.githubusercontent.com/HASwitchPlate/openHASP-docs/master/docs/assets/images/builds/wallbox-us-1.png" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4" data-title="US Switchbox" data-footer="Lolin 2.4&quot; display with D1 mini">
+                <a href="../assets/images/builds/wallbox-us-1.png" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4" data-title="US Switchbox" data-footer="Lolin 2.4&quot; display with D1 mini">
                     <img src="../assets/images/builds/wallbox-us-1.png" class="img-fluid">
                 </a>
-                <a href="https://raw.githubusercontent.com/HASwitchPlate/openHASP-docs/master/docs/assets/images/builds/wallbox-us-0.png" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4" data-title="US Switchplate with motion sensor" data-footer="Lolin 2.4&quot; display with D1 mini">
+                <a href="../assets/images/builds/wallbox-us-2.png" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4" data-title="US Switchplate with motion sensor" data-footer="Lolin 2.4&quot; display with D1 mini">
                     <img src="../assets/images/builds/wallbox-us-2.png" class="img-fluid">
                 </a>
-
-        </div>
+            </div>
             <div class="row">
-                <a href="https://user-images.githubusercontent.com/1550668/119644162-db261580-be1c-11eb-9e89-7d960094e613.png" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4" data-title="Lanbon L8 Switch" data-footer="Lanbon L8 in operation as a 5-cover commander">
-                    <img src="https://user-images.githubusercontent.com/1550668/119644162-db261580-be1c-11eb-9e89-7d960094e613.png" class="img-fluid">
+                <a href="../assets/images/builds/lanbon-l8-covers.png" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4" data-title="Lanbon L8 Switch" data-footer="Lanbon L8 in operation as a 5-cover commander">
+                    <img src="../assets/images/builds/lanbon-l8-covers.png" class="img-fluid">
                 </a>
-                <a href="https://user-images.githubusercontent.com/1550668/119645244-1d038b80-be1e-11eb-86c2-c102a0f24885.png" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4" data-title="Lanbon L8 Switch" data-footer="Lanbon L8 in operation as sensors and switches panel">
-                    <img src="https://user-images.githubusercontent.com/1550668/119645244-1d038b80-be1e-11eb-86c2-c102a0f24885.png" class="img-fluid">
+                <a href="../assets/images/builds/lanbon-l8-lovelace.png" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4" data-title="Lanbon L8 Switch" data-footer="Lanbon L8 in operation as sensors and switches panel">
+                    <img src="../assets/images/builds/lanbon-l8-lovelace.png" class="img-fluid">
                 </a>
-                <a href="https://raw.githubusercontent.com/HASwitchPlate/openHASP-docs/master/docs/assets/images/builds/lanbon-l8.png" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4" data-title="Lanbon L8 Switch" data-footer="Customized Lanbon L8 Switchplate">
+                <a href="../assets/images/builds/lanbon-l8.png" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4" data-title="Lanbon L8 Switch" data-footer="Customized Lanbon L8 Switchplate">
                     <img src="../assets/images/builds/lanbon-l8.png" class="img-fluid">
                 </a>
-                </div>
-
-        
-                <div class="row">
-                <a href="https://raw.githubusercontent.com/HASwitchPlate/openHASP-docs/master/docs/assets/images/builds/telemetry-plate.png" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4" data-title="Telemetry panel" data-footer="Waveshare RPi LCD (Rev C) display with ESP32 dev board">
+            </div>
+            <div class="row">
+                <a href="../assets/images/builds/telemetry-plate.png" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4" data-title="Telemetry panel" data-footer="Waveshare RPi LCD (Rev C) display with ESP32 dev board">
                     <img src="../assets/images/builds/telemetry-plate.png" class="img-fluid">
                 </a>
-                </div>
+            </div>
         </div>
     </div>
 </article>

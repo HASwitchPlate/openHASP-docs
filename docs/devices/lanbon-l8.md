@@ -189,6 +189,21 @@ The switch supports several wiring configurations:
 Your browser does not support the video tag.
 </video>
 
+
+## Gallery
+
+<div class="row justify-content-center">
+    <a href="../../assets/images/builds/lanbon-l8-covers.png" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4" data-title="Lanbon L8 Switch" data-footer="Lanbon L8 in operation as a 5-cover commander">
+        <img src="../../assets/images/builds/lanbon-l8-covers.png" class="img-fluid">
+    </a>
+    <a href="../../assets/images/builds/lanbon-l8-lovelace.png" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4" data-title="Lanbon L8 Switch" data-footer="Lanbon L8 in operation as sensors and switches panel">
+        <img src="../../assets/images/builds/lanbon-l8-lovelace.png" class="img-fluid">
+    </a>
+    <a href="../../assets/images/builds/lanbon-l8.png" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4" data-title="Lanbon L8 Switch" data-footer="Customized Lanbon L8 Switchplate">
+        <img src="../../assets/images/builds/lanbon-l8.png" class="img-fluid">
+    </a>
+</div>
+
 ## LCD Configuration
 
 The `lcd_config.ini` file specifies the different properties of the display, except for the actual pin configuration:
