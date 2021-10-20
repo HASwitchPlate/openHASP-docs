@@ -21,7 +21,8 @@ jobs:
 
       - name: Install dependencies
         run: |
-          python -m pip install --upgrade pip setuptools wheel
+          python -m pip install --upgrade pip wheel
+          python -m pip install --upgrade setuptools==57.4.0
           python -m pip install -r requirements.txt
 
       - name: Build docs
@@ -48,6 +49,12 @@ jobs:
         run: |
           git fetch origin gh-pages --verbose
 
+      # Uncomment this action if dev needs to be present
+      - name: Delete dev tag
+        run: |
+          mike delete "dev"
+        continue-on-error: true
+
       - name: Set default
         run: |
           mike set-default "latest"
@@ -62,12 +69,17 @@ jobs:
       - name: Deploy docs 0.6
         if: github.ref == 'refs/heads/0.6'
         run: |
-          mike deploy --update-aliases "0.6" latest --title="0.6.0" --config-file "${GITHUB_WORKSPACE}/mkdocs.yml" --push --rebase
+          mike deploy "0.6" --title="0.6.0" --config-file "${GITHUB_WORKSPACE}/mkdocs.yml" --push --rebase
 
-      #- name: Deploy docs 0.6-dev
-      #  if: github.ref == 'refs/heads/0.6-dev'
-      #  run: |
-      #    mike deploy --update-aliases "0.6-dev" dev --title="dev" --config-file "${GITHUB_WORKSPACE}/mkdocs.yml" --push --rebase
+      - name: Deploy docs 0.6.1
+        if: github.ref == 'refs/heads/0.6.1'
+        run: |
+          mike deploy --update-aliases "0.6.1" --title="0.6.1" --config-file "${GITHUB_WORKSPACE}/mkdocs.yml" --push --rebase
+
+      - name: Deploy docs 0.6.2
+        if: github.ref == 'refs/heads/0.6.2'
+        run: |
+          mike deploy --update-aliases "0.6.2" latest --title="0.6.2" --config-file "${GITHUB_WORKSPACE}/mkdocs.yml" --push --rebase
 
       - name: List
         run: |
