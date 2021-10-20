@@ -53,6 +53,7 @@ jobs:
       - name: Delete dev tag
         run: |
           mike delete "dev"
+        continue-on-error: true
 
       - name: Set default
         run: |
