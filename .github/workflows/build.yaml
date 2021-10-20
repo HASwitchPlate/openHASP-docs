@@ -68,12 +68,12 @@ jobs:
       - name: Deploy docs 0.6.1
         if: github.ref == 'refs/heads/0.6.1'
         run: |
-          mike deploy --update-aliases "0.6.1" latest --title="0.6.1" --config-file "${GITHUB_WORKSPACE}/mkdocs.yml" --push --rebase
+          mike deploy --update-aliases "0.6.1" --title="0.6.1" --config-file "${GITHUB_WORKSPACE}/mkdocs.yml" --push --rebase
 
       - name: Deploy docs 0.6.2
         if: github.ref == 'refs/heads/0.6.2'
         run: |
-          mike deploy --update-aliases "0.6.2" dev --title="dev" --config-file "${GITHUB_WORKSPACE}/mkdocs.yml" --push --rebase
+          mike deploy --update-aliases "0.6.2" latest --title="dev" --config-file "${GITHUB_WORKSPACE}/mkdocs.yml" --push --rebase
 
       - name: List
         run: |
