@@ -1,11 +1,11 @@
 <h1>Waveshare RPi LCD (Rev C)</h1>
 
 <div class="row justify-content-center">
-        <a href="https://www.waveshare.com/media/catalog/product/cache/1/image/800x800/9df78eab33525d08d6e5fb8d27136e95/4/r/4rcp-fs.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4" data-title="WaveShare 4.0&quot; RPi LCD (Rev C)" data-footer="Copyright © 2021, Waveshare, All Rights Reserved - Used with permission">
-            <img src="https://www.waveshare.com/media/catalog/product/cache/1/image/800x800/9df78eab33525d08d6e5fb8d27136e95/4/r/4rcp-fs.jpg" class="img-fluid">
+        <a href="../../assets/images/displays/waveshare-rpi-40-front.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4" data-title="WaveShare 4.0&quot; RPi LCD (Rev C)" data-footer="Copyright © 2021, Waveshare, All Rights Reserved - Used with permission">
+            <img src="../../assets/images/displays/waveshare-rpi-40-front.jpg" class="img-fluid">
         </a>
-        <a href="https://www.waveshare.com/media/catalog/product/cache/1/image/800x800/9df78eab33525d08d6e5fb8d27136e95/4/r/4rcp-bs2.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4" data-title="WaveShare 4.0&quot; RPi LCD (Rev C)" data-footer="Copyright © 2021, Waveshare, All Rights Reserved - Used with permission">
-            <img src="https://www.waveshare.com/media/catalog/product/cache/1/image/800x800/9df78eab33525d08d6e5fb8d27136e95/4/r/4rcp-bs2.jpg" class="img-fluid">
+        <a href="../../assets/images/displays/waveshare-rpi-40-back.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4" data-title="WaveShare 4.0&quot; RPi LCD (Rev C)" data-footer="Copyright © 2021, Waveshare, All Rights Reserved - Used with permission">
+            <img src="../../assets/images/displays/waveshare-rpi-40-back.jpg" class="img-fluid">
         </a>
 </div>
 
@@ -13,7 +13,7 @@
 
 The Waveshare RPi LCD (Rev C) display comes in 3.5" and 4.0" sizes:
 
-{!assets/buy/waveshare-rpi-lcd-table.html!}
+{!displays/waveshare-rpi-lcd-table.html!}
 
 
 
@@ -22,8 +22,8 @@ The Waveshare RPi LCD (Rev C) display comes in 3.5" and 4.0" sizes:
 By default the display is always on. To enable backlight dimming, you can connect the pads marked by the red arrow using a 0R resistor or a direct solder connection:
 
 <div class="row justify-content-center">
-    <a href="https://www.waveshare.com/w/upload/1/17/3.5inch-RPi-LCD-C-Manual-01.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-6" data-title="WaveShare 3.5&quot; RPi LCD (Rev C)" data-footer="Copyright © 2021, Waveshare, All Rights Reserved - Used with permission">
-        <img src="https://www.waveshare.com/w/upload/1/17/3.5inch-RPi-LCD-C-Manual-01.jpg" class="img-fluid">
+    <a href="../../assets/images/displays/waveshare-rpi-35-backlight.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-6" data-title="WaveShare 3.5&quot; RPi LCD (Rev C) Backlight Jumper" data-footer="Copyright © 2021, Waveshare, All Rights Reserved - Used with permission">
+            <img src="../../assets/images/displays/waveshare-rpi-35-backlight.jpg" class="img-fluid">
     </a>
 </div>
 
@@ -40,12 +40,12 @@ The Waveshare ESP32 One development board has the same form factor as the Raspbe
 The ESP32 One is plug-and-play compatible with the Waveshare RPi LCD (Rev C) 3.5" and 4".
 
 <div class="row justify-content-center">
-        <a href="https://www.waveshare.com/media/catalog/product/cache/1/image/800x800/9df78eab33525d08d6e5fb8d27136e95/e/s/esp32-one-kit-1.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4" data-title="WaveShare ESP32 One" data-footer="Copyright © 2021, Waveshare, All Rights Reserved - Used with permission">
-            <img src="https://www.waveshare.com/media/catalog/product/cache/1/image/800x800/9df78eab33525d08d6e5fb8d27136e95/e/s/esp32-one-kit-1.jpg" class="img-fluid">
-        </a>
-        <a href="https://www.waveshare.com/img/devkit/accBoard/ESP32-One/ESP32-One-details-1.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4" data-title="WaveShare ESP32 One" data-footer="Copyright © 2021, Waveshare, All Rights Reserved - Used with permission">
-            <img src="https://www.waveshare.com/img/devkit/accBoard/ESP32-One/ESP32-One-details-1.jpg" class="img-fluid">
-        </a>
+    <a href="../../assets/images/displays/waveshare-esp32-one-front.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4" data-title="WaveShare ESP32 One" data-footer="Copyright © 2021, Waveshare, All Rights Reserved - Used with permission">
+                <img src="../../assets/images/displays/waveshare-esp32-one-front.jpg" class="img-fluid">
+    </a>
+    <a href="../../assets/images/displays/waveshare-esp32-one-pinout.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4" data-title="WaveShare ESP32 One Pinout" data-footer="Copyright © 2021, Waveshare, All Rights Reserved - Used with permission">
+                <img src="../../assets/images/displays/waveshare-esp32-one-pinout.jpg" class="img-fluid">
+    </a>
 </div>
 
 <div class="dropdown show">
@@ -68,16 +68,11 @@ The ESP32 One is plug-and-play compatible with the Waveshare RPi LCD (Rev C) 3.5
     </div>
 </div>
 
-#### Pinout
-
-<a href="https://www.waveshare.com/img/devkit/accBoard/ESP32-One/ESP32-One-details-inter.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4" data-title="WaveShare ESP32 One Pinout" data-footer="Copyright © 2021, Waveshare, All Rights Reserved - Used with permission">
-    <img src="https://www.waveshare.com/img/devkit/accBoard/ESP32-One/ESP32-One-details-inter.jpg" class="img-fluid">
-</a>
 
 ## Gallery
 
 <div class="row justify-content-center">
-    <a href="../../assets/images/builds/telemetry-plate.png" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4" data-title="Telemetry panel" data-footer="Waveshare RPi LCD (Rev C) display with ESP32 dev board">
+    <a href="../../assets/images/builds/telemetry-plate.png" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4" data-title="Telemetry panel" data-footer="Waveshare RPi LCD (Rev C) display with ESP32 One board">
         <img src="../../assets/images/builds/telemetry-plate.png" class="img-fluid">
     </a>
 </div>
