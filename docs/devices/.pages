@@ -3,6 +3,7 @@ nav:
     - ESP32 TouchDown: esp32-touchdown.md
     - FreeTouchDeck: freetouchdeck.md
     - Lanbon L8: lanbon-l8.md
+    - LILYGO Lily Pi: lilygo-lily-pi.md
     - M5stack core2: m5stack-core2.md
     - Makerfabs TFT Touch: makerfabs-tft-touch.md
     - Wireless-Tag WT32-SC01: wt32-sc01.md
