@@ -131,7 +131,7 @@ raspberrypi =
 
 ## HASP build_flags
 
-Specify the LCD Configuration to use and define the 7 GPIOs in the environment build flags:
+Specify the LCD Configuration to use and define the GPIOs in the environment build flags:
 
 ```ini
 build_flags =
