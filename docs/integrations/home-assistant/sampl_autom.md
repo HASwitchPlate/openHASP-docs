@@ -164,7 +164,7 @@ Wall mounted LCD screns main problem is that they display the same picture 99.99
 <h3>Pixel training</h3>
 
 One way to reduce this is to "train" the pixels periodically with completely different other content.
-Assuming your group name is configured as `plates` in your 240x320 screens running openHASP, here is a possible solution to extend their life (all at once). The cycle runs for 30 seconds each time, can be stopped by touching. The trigger runs this 6 times each night.
+Assuming your group name is configured as `plates` in your screens running openHASP, here is a possible solution to extend their life (all at once). The cycle runs for 30 seconds each time, can be stopped by touching. The trigger runs this 6 times each night.
 
 ```yaml
 - id: openhasp_antiburn_start_at_night
@@ -188,7 +188,6 @@ Assuming your group name is configured as `plates` in your 240x320 screens runni
       data:
         topic: hasp/plates/command/antiburn
         payload: '1'
-
 ```
 
 <h3>Clear pixels when backlight off</h3>
