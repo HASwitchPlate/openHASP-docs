@@ -164,104 +164,31 @@ Wall mounted LCD screns main problem is that they display the same picture 99.99
 <h3>Pixel training</h3>
 
 One way to reduce this is to "train" the pixels periodically with completely different other content.
-Assuming your group name is configured as `plates` in your 240x320 screens running openHASP, here is a possible solution to extend their life (all at once).
-
-The first automation runs for 1 minute by cycling an overlay with a full-screen base object every second through white, red, green, blue and black. It starts and remains turned off at Home Assistant start, to run it you need to turn it on using the service `automation.turn_on`.
-
-```yaml
-- id: openhasp_antiburn
-  alias: "openHASP anti burn-in screen protection"
-  initial_state: false
-  trigger:
-    platform: state
-    entity_id: automation.openhasp_anti_burn_in_screen_protection
-    from: 'off'
-    to: 'on'
-  action:
-    - service: mqtt.publish
-      data:
-        topic: hasp/plates/command/jsonl
-        payload: '{"page":0,"id":99,"obj":"obj","x":0,"y":0,"w":240,"h":320,"radius":0,"hidden":0,"bg_grad_dir":0,"bg_color":"white"}'
-    - repeat:
-        while:
-          - condition: template
-            value_template: '{{ repeat.index <= 12 }}'
-        sequence:
-          - service: mqtt.publish
-            data:
-              topic: hasp/plates/command/p0b99.bg_color
-              payload: 'white'
-          - delay: '00:00:01'
-          - service: mqtt.publish
-            data:
-              topic: hasp/plates/command/p0b99.bg_color
-              payload: 'red'
-          - delay: '00:00:01'
-          - service: mqtt.publish
-            data:
-              topic: hasp/plates/command/p0b99.bg_color
-              payload: 'green'
-          - delay: '00:00:01'
-          - service: mqtt.publish
-            data:
-              topic: hasp/plates/command/p0b99.bg_color
-              payload: 'blue'
-          - delay: '00:00:01'
-          - service: mqtt.publish
-            data:
-              topic: hasp/plates/command/p0b99.bg_color
-              payload: 'black'
-          - delay: '00:00:01'
-    - service: mqtt.publish
-      data:
-        topic: hasp/plates/command/p0b99.delete
-        payload: ''
-    - service: automation.turn_off
-      target:
-        entity_id: automation.openhasp_anti_burn_in_screen_protection
-```
-
-The second automation takes care to stop the looping colors when you touch the screen:
-
-```yaml
-- id: openhasp_antiburn_touch_stop
-  alias: "openHASP anti-burn-in stop when touched"
-  initial_state: 'on'
-  mode: restart
-  trigger:
-    - platform: mqtt
-      topic: 'hasp/+/state/p0b99'
-      payload: '{"event":"down"}'
-    - platform: mqtt
-      topic: 'hasp/+/LWT'
-      payload: "online"
-  action:
-    - service: automation.turn_off
-      target:
-        entity_id: automation.openhasp_anti_burn_in_screen_protection
-    - service: mqtt.publish
-      data:
-        topic: hasp/plates/command/p0b99.delete
-        payload: ''
-```
-
-The third automation simply runs the first automation at 3 different times every night:
+Assuming your group name is configured as `plates` in your 240x320 screens running openHASP, here is a possible solution to extend their life (all at once). The cycle runs for 30 seconds each time, can be stopped by touching. The trigger runs this 6 times each night.
 
 ```yaml
 - id: openhasp_antiburn_start_at_night
-  alias: "openHASP anti-burn-in start at night"
+  alias: openHASP anti-burn-in start at night
   initial_state: 'on'
   trigger:
     - platform: time
       at: '00:20:00'
     - platform: time
+      at: '01:20:00'
+    - platform: time
       at: '02:20:00'
     - platform: time
+      at: '03:20:00'
+    - platform: time
       at: '04:20:00'
+    - platform: time
+      at: '05:20:00'
   action:
-    - service: automation.turn_on
-      target:
-        entity_id: automation.openhasp_anti_burn_in_screen_protection
+    - service: mqtt.publish
+      data:
+        topic: hasp/plates/command/antiburn
+        payload: '1'
+
 ```
 
 <h3>Clear pixels when backlight off</h3>
@@ -281,9 +208,6 @@ for automation `openhasp-moodlight-on`, add to actions:
 for automation `openhasp-moodlight-off`, add to actions:
 
 ```yaml
-    - service: automation.turn_off
-      target:
-        entity_id: automation.openhasp_anti_burn_in_screen_protection
     - service: mqtt.publish
       data:
         topic: hasp/plates/command/p0b99.hidden
@@ -294,5 +218,4 @@ for automation `openhasp-moodlight-off`, add to actions:
         payload: ''
 ```
 
-Both methods can coexist.  
 Don't forget to adjust the size of the object to your screen if it's not 240x320.
