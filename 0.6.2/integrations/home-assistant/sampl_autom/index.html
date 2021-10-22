@@ -1574,8 +1574,7 @@
 <h3>Pixel training</h3>
 
 <p>One way to reduce this is to "train" the pixels periodically with completely different other content.
-Assuming your group name is configured as <code>plates</code> in your 240x320 screens running openHASP, here is a possible solution to extend their life (all at once).</p>
-<p>The first automation runs for 1 minute by cycling an overlay with a full-screen base object every second through white, red, green, blue and black. It starts and remains turned off at Home Assistant start, to run it you need to turn it on using the service <code>automation.turn_on</code>.</p>
+Assuming your group name is configured as <code>plates</code> in your 240x320 screens running openHASP, here is a possible solution to extend their life (all at once). The cycle runs for 30 seconds each time, can be stopped by touching. The trigger runs this 6 times each night.</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -1596,155 +1595,27 @@ Assuming your group name is configured as <code>plates</code> in your 240x320 sc
 <span class="normal">18</span>
 <span class="normal">19</span>
 <span class="normal">20</span>
-<span class="normal">21</span>
-<span class="normal">22</span>
-<span class="normal">23</span>
-<span class="normal">24</span>
-<span class="normal">25</span>
-<span class="normal">26</span>
-<span class="normal">27</span>
-<span class="normal">28</span>
-<span class="normal">29</span>
-<span class="normal">30</span>
-<span class="normal">31</span>
-<span class="normal">32</span>
-<span class="normal">33</span>
-<span class="normal">34</span>
-<span class="normal">35</span>
-<span class="normal">36</span>
-<span class="normal">37</span>
-<span class="normal">38</span>
-<span class="normal">39</span>
-<span class="normal">40</span>
-<span class="normal">41</span>
-<span class="normal">42</span>
-<span class="normal">43</span>
-<span class="normal">44</span>
-<span class="normal">45</span>
-<span class="normal">46</span>
-<span class="normal">47</span>
-<span class="normal">48</span>
-<span class="normal">49</span>
-<span class="normal">50</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p p-Indicator">-</span> <span class="nt">id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">openhasp_antiburn</span>
-  <span class="nt">alias</span><span class="p">:</span> <span class="s">&quot;openHASP</span><span class="nv"> </span><span class="s">anti</span><span class="nv"> </span><span class="s">burn-in</span><span class="nv"> </span><span class="s">screen</span><span class="nv"> </span><span class="s">protection&quot;</span>
-  <span class="nt">initial_state</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
-  <span class="nt">trigger</span><span class="p">:</span>
-    <span class="nt">platform</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">state</span>
-    <span class="nt">entity_id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">automation.openhasp_anti_burn_in_screen_protection</span>
-    <span class="nt">from</span><span class="p">:</span> <span class="s">&#39;off&#39;</span>
-    <span class="nt">to</span><span class="p">:</span> <span class="s">&#39;on&#39;</span>
-  <span class="nt">action</span><span class="p">:</span>
-    <span class="p p-Indicator">-</span> <span class="nt">service</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">mqtt.publish</span>
-      <span class="nt">data</span><span class="p">:</span>
-        <span class="nt">topic</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">hasp/plates/command/jsonl</span>
-        <span class="nt">payload</span><span class="p">:</span> <span class="s">&#39;{&quot;page&quot;:0,&quot;id&quot;:99,&quot;obj&quot;:&quot;obj&quot;,&quot;x&quot;:0,&quot;y&quot;:0,&quot;w&quot;:240,&quot;h&quot;:320,&quot;radius&quot;:0,&quot;hidden&quot;:0,&quot;bg_grad_dir&quot;:0,&quot;bg_color&quot;:&quot;white&quot;}&#39;</span>
-    <span class="p p-Indicator">-</span> <span class="nt">repeat</span><span class="p">:</span>
-        <span class="nt">while</span><span class="p">:</span>
-          <span class="p p-Indicator">-</span> <span class="nt">condition</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">template</span>
-            <span class="nt">value_template</span><span class="p">:</span> <span class="s">&#39;{{</span><span class="nv"> </span><span class="s">repeat.index</span><span class="nv"> </span><span class="s">&lt;=</span><span class="nv"> </span><span class="s">12</span><span class="nv"> </span><span class="s">}}&#39;</span>
-        <span class="nt">sequence</span><span class="p">:</span>
-          <span class="p p-Indicator">-</span> <span class="nt">service</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">mqtt.publish</span>
-            <span class="nt">data</span><span class="p">:</span>
-              <span class="nt">topic</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">hasp/plates/command/p0b99.bg_color</span>
-              <span class="nt">payload</span><span class="p">:</span> <span class="s">&#39;white&#39;</span>
-          <span class="p p-Indicator">-</span> <span class="nt">delay</span><span class="p">:</span> <span class="s">&#39;00:00:01&#39;</span>
-          <span class="p p-Indicator">-</span> <span class="nt">service</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">mqtt.publish</span>
-            <span class="nt">data</span><span class="p">:</span>
-              <span class="nt">topic</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">hasp/plates/command/p0b99.bg_color</span>
-              <span class="nt">payload</span><span class="p">:</span> <span class="s">&#39;red&#39;</span>
-          <span class="p p-Indicator">-</span> <span class="nt">delay</span><span class="p">:</span> <span class="s">&#39;00:00:01&#39;</span>
-          <span class="p p-Indicator">-</span> <span class="nt">service</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">mqtt.publish</span>
-            <span class="nt">data</span><span class="p">:</span>
-              <span class="nt">topic</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">hasp/plates/command/p0b99.bg_color</span>
-              <span class="nt">payload</span><span class="p">:</span> <span class="s">&#39;green&#39;</span>
-          <span class="p p-Indicator">-</span> <span class="nt">delay</span><span class="p">:</span> <span class="s">&#39;00:00:01&#39;</span>
-          <span class="p p-Indicator">-</span> <span class="nt">service</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">mqtt.publish</span>
-            <span class="nt">data</span><span class="p">:</span>
-              <span class="nt">topic</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">hasp/plates/command/p0b99.bg_color</span>
-              <span class="nt">payload</span><span class="p">:</span> <span class="s">&#39;blue&#39;</span>
-          <span class="p p-Indicator">-</span> <span class="nt">delay</span><span class="p">:</span> <span class="s">&#39;00:00:01&#39;</span>
-          <span class="p p-Indicator">-</span> <span class="nt">service</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">mqtt.publish</span>
-            <span class="nt">data</span><span class="p">:</span>
-              <span class="nt">topic</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">hasp/plates/command/p0b99.bg_color</span>
-              <span class="nt">payload</span><span class="p">:</span> <span class="s">&#39;black&#39;</span>
-          <span class="p p-Indicator">-</span> <span class="nt">delay</span><span class="p">:</span> <span class="s">&#39;00:00:01&#39;</span>
-    <span class="p p-Indicator">-</span> <span class="nt">service</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">mqtt.publish</span>
-      <span class="nt">data</span><span class="p">:</span>
-        <span class="nt">topic</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">hasp/plates/command/p0b99.delete</span>
-        <span class="nt">payload</span><span class="p">:</span> <span class="s">&#39;&#39;</span>
-    <span class="p p-Indicator">-</span> <span class="nt">service</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">automation.turn_off</span>
-      <span class="nt">target</span><span class="p">:</span>
-        <span class="nt">entity_id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">automation.openhasp_anti_burn_in_screen_protection</span>
-</code></pre></div>
-</td></tr></table>
-<p>The second automation takes care to stop the looping colors when you touch the screen:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p p-Indicator">-</span> <span class="nt">id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">openhasp_antiburn_touch_stop</span>
-  <span class="nt">alias</span><span class="p">:</span> <span class="s">&quot;openHASP</span><span class="nv"> </span><span class="s">anti-burn-in</span><span class="nv"> </span><span class="s">stop</span><span class="nv"> </span><span class="s">when</span><span class="nv"> </span><span class="s">touched&quot;</span>
-  <span class="nt">initial_state</span><span class="p">:</span> <span class="s">&#39;on&#39;</span>
-  <span class="nt">mode</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">restart</span>
-  <span class="nt">trigger</span><span class="p">:</span>
-    <span class="p p-Indicator">-</span> <span class="nt">platform</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">mqtt</span>
-      <span class="nt">topic</span><span class="p">:</span> <span class="s">&#39;hasp/+/state/p0b99&#39;</span>
-      <span class="nt">payload</span><span class="p">:</span> <span class="s">&#39;{&quot;event&quot;:&quot;down&quot;}&#39;</span>
-    <span class="p p-Indicator">-</span> <span class="nt">platform</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">mqtt</span>
-      <span class="nt">topic</span><span class="p">:</span> <span class="s">&#39;hasp/+/LWT&#39;</span>
-      <span class="nt">payload</span><span class="p">:</span> <span class="s">&quot;online&quot;</span>
-  <span class="nt">action</span><span class="p">:</span>
-    <span class="p p-Indicator">-</span> <span class="nt">service</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">automation.turn_off</span>
-      <span class="nt">target</span><span class="p">:</span>
-        <span class="nt">entity_id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">automation.openhasp_anti_burn_in_screen_protection</span>
-    <span class="p p-Indicator">-</span> <span class="nt">service</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">mqtt.publish</span>
-      <span class="nt">data</span><span class="p">:</span>
-        <span class="nt">topic</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">hasp/plates/command/p0b99.delete</span>
-        <span class="nt">payload</span><span class="p">:</span> <span class="s">&#39;&#39;</span>
-</code></pre></div>
-</td></tr></table>
-<p>The third automation simply runs the first automation at 3 different times every night:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p p-Indicator">-</span> <span class="nt">id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">openhasp_antiburn_start_at_night</span>
-  <span class="nt">alias</span><span class="p">:</span> <span class="s">&quot;openHASP</span><span class="nv"> </span><span class="s">anti-burn-in</span><span class="nv"> </span><span class="s">start</span><span class="nv"> </span><span class="s">at</span><span class="nv"> </span><span class="s">night&quot;</span>
+<span class="normal">21</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p p-Indicator">-</span> <span class="nt">id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">openhasp_antiburn_start_at_night</span>
+  <span class="nt">alias</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">openHASP anti-burn-in start at night</span>
   <span class="nt">initial_state</span><span class="p">:</span> <span class="s">&#39;on&#39;</span>
   <span class="nt">trigger</span><span class="p">:</span>
     <span class="p p-Indicator">-</span> <span class="nt">platform</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">time</span>
       <span class="nt">at</span><span class="p">:</span> <span class="s">&#39;00:20:00&#39;</span>
     <span class="p p-Indicator">-</span> <span class="nt">platform</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">time</span>
+      <span class="nt">at</span><span class="p">:</span> <span class="s">&#39;01:20:00&#39;</span>
+    <span class="p p-Indicator">-</span> <span class="nt">platform</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">time</span>
       <span class="nt">at</span><span class="p">:</span> <span class="s">&#39;02:20:00&#39;</span>
     <span class="p p-Indicator">-</span> <span class="nt">platform</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">time</span>
+      <span class="nt">at</span><span class="p">:</span> <span class="s">&#39;03:20:00&#39;</span>
+    <span class="p p-Indicator">-</span> <span class="nt">platform</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">time</span>
       <span class="nt">at</span><span class="p">:</span> <span class="s">&#39;04:20:00&#39;</span>
+    <span class="p p-Indicator">-</span> <span class="nt">platform</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">time</span>
+      <span class="nt">at</span><span class="p">:</span> <span class="s">&#39;05:20:00&#39;</span>
   <span class="nt">action</span><span class="p">:</span>
-    <span class="p p-Indicator">-</span> <span class="nt">service</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">automation.turn_on</span>
-      <span class="nt">target</span><span class="p">:</span>
-        <span class="nt">entity_id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">automation.openhasp_anti_burn_in_screen_protection</span>
+    <span class="p p-Indicator">-</span> <span class="nt">service</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">mqtt.publish</span>
+      <span class="nt">data</span><span class="p">:</span>
+        <span class="nt">topic</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">hasp/plates/command/antiburn</span>
+        <span class="nt">payload</span><span class="p">:</span> <span class="s">&#39;1&#39;</span>
 </code></pre></div>
 </td></tr></table>
 <h3>Clear pixels when backlight off</h3>
@@ -1762,20 +1633,14 @@ Just add these actions to the <a href="#turn-on-moodlight-when-backlight-goes-of
 </code></pre></div>
 </td></tr></table>
 <p>for automation <code>openhasp-moodlight-off</code>, add to actions:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>    <span class="p p-Indicator">-</span> <span class="nt">service</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">automation.turn_off</span>
-      <span class="nt">target</span><span class="p">:</span>
-        <span class="nt">entity_id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">automation.openhasp_anti_burn_in_screen_protection</span>
-    <span class="p p-Indicator">-</span> <span class="nt">service</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">mqtt.publish</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>    <span class="p p-Indicator">-</span> <span class="nt">service</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">mqtt.publish</span>
       <span class="nt">data</span><span class="p">:</span>
         <span class="nt">topic</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">hasp/plates/command/p0b99.hidden</span>
         <span class="nt">payload</span><span class="p">:</span> <span class="s">&#39;1&#39;</span>
@@ -1785,8 +1650,7 @@ Just add these actions to the <a href="#turn-on-moodlight-when-backlight-goes-of
         <span class="nt">payload</span><span class="p">:</span> <span class="s">&#39;&#39;</span>
 </code></pre></div>
 </td></tr></table>
-<p>Both methods can coexist.<br />
-Don't forget to adjust the size of the object to your screen if it's not 240x320.</p>
+<p>Don't forget to adjust the size of the object to your screen if it's not 240x320.</p>
                 
                   
                     
