@@ -1246,9 +1246,39 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Customization
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         Customization
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#custom-code" class="md-nav__link">
+    Custom code
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1315,6 +1345,21 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#custom-code" class="md-nav__link">
+    Custom code
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1346,6 +1391,8 @@
 </ul>
 <p>Copy it to <code>include\user_config_override.h</code> and change the settins per your needs. <br />
 Uncomment <code>-DUSE_CONFIG_OVERRIDE</code> in <code>platformio_override.ini</code> to ensure that the config overrides are taken into account during the compilation process.</p>
+<h2 id="custom-code">Custom code<a class="headerlink" href="#custom-code" title="Permanent link">~</a></h2>
+<p>It is possible to include your own custom code in the <code>src/custom</code> directory. If you enable <code>#define HASP_USE_CUSTOM 1</code> in your <code>include\user_config_override.h</code>, you can start adding code by copying the template files as <code>my_custom.h</code> and <code>my_custom.cpp</code>. This will add the <code>custom\my_custom.h</code> header to openHASP compilation and call the defined functions from the main loop.</p>
                 
                   
                     
