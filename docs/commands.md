@@ -245,6 +245,8 @@ The cycle stops when either:
 - `antiburn=off` is received
 - The screen is touched
 
+If you're using Home Assistant, check out the [automation example][6] to make it run on a regular basis.
+
 ### `screenshot`
 
 Saves a picture of the current screen to the flash filesystem. You can retrieve it via http://&lt;ip-address&gt;/screenshot.bmp.
@@ -396,3 +398,4 @@ To update the configuration simply issue the same command `config/<submodule>` w
 [3]: ../configuration/gpio
 [4]: ../configuration/display#short-idle
 [5]: ../integrations/examples/example-offlinehandling
+[6]: ../integrations/home-assistant/sampl_autom#prevent-burn-in-of-the-lcd-screen
