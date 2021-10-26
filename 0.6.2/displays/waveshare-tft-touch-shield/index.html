@@ -1675,9 +1675,10 @@ It is connected to <code>GPIO13</code> on the D1 R32 development board.</p>
 <h2 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">~</a></h2>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>By default the DIP switches on the display are set in the <code>ICSP</code> position instead of the <code>SPI</code> position.</p>
+<p>By default the DIP switches on the display are set in the <code>ICSP</code> position instead of the <code>SPI</code> position.
+If your board does not include an <code>ICSP</code> header, you need to switch the display over to use the <code>SPI</code> pins.</p>
 </div>
-<p>To use the <code>MISO</code>, <code>MOSI</code> and <code>SCLK</code> SPI pins you need to peel of the orange tape that sticks on top of the dip switches.
+<p>To use the <code>MISO</code>, <code>MOSI</code> and <code>SCLK</code> SPI pins you first need to peel of the orange tape that sticks on top of the dip switches.
 Then move all 3 DIP switches to the <code>ON</code> position with a tiny screwdriver.</p>
 <p>The 2.8" model has 3 solder jumpers <code>SB1</code>, <code>SB2</code> and <code>SB3</code> that need to be bridged instead!</p>
 <div class="row justify-content-center">
