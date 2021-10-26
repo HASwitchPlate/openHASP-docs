@@ -70,8 +70,9 @@ Please visit the Waveshare Wiki pages for more information, schematics and demo 
 
 !!!note
     By default the DIP switches on the display are set in the `ICSP` position instead of the `SPI` position.
+    If your board does not include an `ICSP` header, you need to switch the display over to use the `SPI` pins.
 
-To use the `MISO`, `MOSI` and `SCLK` SPI pins you need to peel of the orange tape that sticks on top of the dip switches.
+To use the `MISO`, `MOSI` and `SCLK` SPI pins you first need to peel of the orange tape that sticks on top of the dip switches.
 Then move all 3 DIP switches to the `ON` position with a tiny screwdriver.
 
 The 2.8" model has 3 solder jumpers `SB1`, `SB2` and `SB3` that need to be bridged instead!
