@@ -10,7 +10,7 @@ Gitpod is a web browser based online IDE. All you need to use it is to link your
 
 Click on one of the links below, and that will automatically load Gitpod with openHASP prepared for creating your custom build:
 
-- Release (for example 0.6.1): [https://gitpod.io#https://github.com/HASwitchPlate/openHASP/tree/0.6.1](https://gitpod.io#https://github.com/HASwitchPlate/openHASP/tree/0.6.1){target=_blank}
+- Release (for example 0.6.2): [https://gitpod.io#https://github.com/HASwitchPlate/openHASP/tree/0.6.2](https://gitpod.io#https://github.com/HASwitchPlate/openHASP/tree/0.6.2){target=_blank}
 - Development (_main_ branch): [https://gitpod.io#https://github.com/HASwitchPlate/openHASP](https://gitpod.io#https://github.com/HASwitchPlate/openHASP){target=_blank}
 
 After Gitpod loads the project, you will be greeted by the main window.

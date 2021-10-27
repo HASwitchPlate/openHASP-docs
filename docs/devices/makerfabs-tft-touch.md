@@ -44,7 +44,7 @@ Also available on [:material-cart-variant: Tindie][10]{target=_blank .md-button 
     An optional [environmental expansion board][4]{target=_blank} can be added to provide a temperature, humidity and air quality sensor.
     The camera can not be used at the same time as the expansion port.
 
-The camera and SD card are not supported by openHASP 0.6.1.
+The camera and SD card are not supported by openHASP 0.6.2.
 
 
 ## Backlight Control
