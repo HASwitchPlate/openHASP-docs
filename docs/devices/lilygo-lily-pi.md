@@ -35,11 +35,19 @@ Some Rpi expansion boards *could* work on this PCB too depending on the pins use
 | 8 MB PSram
 | Capacitive Touchscreen
 
-The RTC and SD card are not supported by openHASP 0.6.1.
+The RTC and SD card are not supported by openHASP 0.6.2.
 
-Available from:</br>
-[:material-cart-variant: AliExpress][1]{target=_blank .md-button .md-button--primary } &nbsp; 
-[:material-cart-variant: Tindie][2]{target=_blank .md-button .md-button--primary }
+## Models
+
+{!devices/lilygo-lily-pi-table.html!}
+
+
+## Video
+
+<div class="embed-responsive embed-responsive-16by9" style="max-width:560px; margin:auto;">
+    <iframe title="YouTube video player" src="https://www.youtube.com/embed/kRTFc2vY5A8?rel=0&controls=1" class="embed-responsive-item" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+    </iframe>
+</div>
 
 
 ## Backlight Control
@@ -68,6 +76,3 @@ The Lilygo Lily Pi can easily be flashed over USB like any ESP32 development boa
 
 Size: 99.7 x 62.5 x 31.2mm
 
-
-[1]: https://s.click.aliexpress.com/e/_9I2hQ9
-[2]: https://www.tindie.com/products/lilygo/lilygo-lily-pi-esp32-wifi-bluetooth-35-inch/
