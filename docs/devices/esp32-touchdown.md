@@ -42,7 +42,7 @@ and the hardware is also open source. Due to the extensive documentation it was 
 | Battery connector |
 | Battery sensor    |
 
-The speaker and SD card are not supported by openHASP 0.6.1.
+The speaker and SD card are not supported by openHASP 0.6.2.
 
 Available from:</br>
 [:material-cart-variant: Tindie][1]{target=_blank .md-button .md-button--primary } &nbsp; 
