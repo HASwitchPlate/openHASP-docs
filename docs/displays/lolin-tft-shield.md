@@ -36,8 +36,8 @@ The Lolin TFT 2.4" headers are plug-and-play compatible with these development b
 |-------------------------|:-------:|:-------:|:--------:
 | SKU                     | [D1 Mini ESP32][1]{target=_blank} | [TTGO T7 V1.5 Mini32][2]{target=_blank} | [Lolin D32 Pro V2.0][3]{target=_blank}
 | MCU                     | ESP32-WROOM | ESP32-WROVER | ESP32-WROVER
-| Flash                   | 4 MB    | 4 MB   | 4 or 16 MB
-| PSram                   | No      | 8 MB    | 8 MB
+| Flash                   | 4 MB    | 4 or 16 MB| 4 or 16 MB
+| PSram                   | No      | 8 MB      | 8 MB
 | Connection              | Two 1x8 Pinheaders² | Two 1x8 Pinheaders² | [10-pin TFT cable][5]{target=_blank} *(optional)*
 | SD Card                 | no | no | :white_check_mark: yes
 | Battery charging        | no | :white_check_mark: yes | :white_check_mark: yes
