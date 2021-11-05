@@ -1,5 +1,16 @@
 <h1>Frequently Asked Questions</h1>
 
+### :question: What is the difference between openHASP and HASPone
+
+HASPone uses a d1-mini ESP8266 connected to a Nextion/TJC smart display via the serial port.
+HASPone is the *go-to* firmware for using a Nextion/TJC screen in your Home Automation setup.
+
+openHASP does not support Nextion/TJC displays because it needs to be able to drive the display directly.
+It was created specifically to eliminate the proprietary hardware and take control of the screen.
+
+So openHASP is a hard fork of the original HASwitchPlate project to run on open hardware.
+
+
 ### :question: The display stays white
 
 The good news is the backlight is working, but a white screen is typical of a problem with the pin assignment (software config) or wiring (hardware):
