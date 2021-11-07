@@ -64,7 +64,8 @@ Click on the File Editor button on the Main Webpage:
 
 Yes: *See: Is there a file browser built-in?*
 
-### Other questions
+
+### :question: Other question
 
 For support using openHASP please find us on Github, Discord or Home Assistant:
 
