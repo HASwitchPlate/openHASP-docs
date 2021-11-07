@@ -63,3 +63,15 @@ Click on the File Editor button on the Main Webpage:
 ### :question: How to delete files from flash?
 
 Yes: *See: Is there a file browser built-in?*
+
+### Other questions
+
+For support using openHASP please find us on Github, Discord or Home Assistant:
+
+[:material-github: Github Discussions][1]{target=_blank .md-button .md-button--primary }
+[:material-discord: Discord Chat][2]{target=_blank .md-button .md-button--primary }
+[:material-home-assistant: Home Assistant Forum][3]{target=_blank .md-button .md-button--primary }
+
+[1]: https://github.com/HASwitchPlate/openHASP/discussions
+[2]: https://discord.gg/VCWyuhF
+[3]: https://community.home-assistant.io/t/openhasp-an-mqtt-driven-touchscreen-scene-controller/300853
