@@ -6,7 +6,7 @@
     <meta content='width=device-width' name='viewport'>
     <meta name="theme-color" content="#222222">
     <title>Install openHASP</title>
-    <script type="module" src="https://unpkg.com/esp-web-tools@3.3.0/dist/web/install-button.js?module"></script>
+    <script type="module" src="https://unpkg.com/esp-web-tools@3.6.0/dist/web/install-button.js?module"></script>
 
     <script src="js/installer.js"></script>
     <style>
@@ -21,6 +21,30 @@
         .sub {
             margin: -18px 0 18px 0;
             color: #09f;
+        }
+        
+        select {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' fill='white'><polygon points='0,0 100,0 50,50'/></svg>") no-repeat;
+            background-size: 12px;
+            background-position: 206px 17px;
+            padding-left: 12px !important;
+            padding-right: 36px !important;
+            background-repeat: no-repeat;
+            outline: none;
+        }
+        
+        select:-moz-focusring {
+            transition-duration: 0s;
+            color: transparent;
+            text-shadow: 0 0 0 #fff;
+        }
+        
+        option {
+            background-color: var(--c-3);
+            color: var(--c-f);
         }
         
         .btn {
@@ -163,14 +187,65 @@
 
             <ol>
                 <li>Plug in your ESP to a USB port. We will install openHASP 0.6.0 to it.</li>
-                <li id="coms">Hit "Install" and select the correct COM port. <a onclick="showSerialHelp()">No device found?</a>
+                <li id="coms">Hit "Install" and select the correct COM port. <a onclick="showSerialHelp()">No device
+                        found?</a>
                 </li>
                 <li>Wait a while, the process is a lot faster if you stay on this tab.</li>
             </ol><br><br>
 
             <div class="container inst-button">
-                <esp-web-install-button id="inst" manifest="assets/json/manifest.json" hide-progress erase-first>
-                    <button slot="activate">Custom install button</button>
+                <select id="board" class="btn" onchange="setModel()">
+                    <optgroup label="Boards">
+                        <option data-manifest="d1-mini ESP32" data-flashsize="[4]">
+                            D1 Mini ESP32 </option>
+                        <option data-manifest="d1-mini ESP32" data-flashsize="[4]" data-lcd="['st7796']">
+                            ESP32 DevKitC V4/32E/32UE
+                        </option>
+                        <option data-manifest="d1-mini ESP32" data-flashsize="[4,8]" data-lcd="['st7796']">
+                            ESP32 DevKitC VE/VIE
+                        </option>
+                        <option data-manifest="d1-mini ESP32" data-flashsize="[4]" data-lcd="['st7796']">
+                            ESP32 One</option>
+                        <option data-manifest="d1-mini ESP32" data-flashsize="[4]" data-lcd="['ili9486','st7789']">
+                            ESPduino32 D1 R32</option>
+                        <option data-manifest="d1-mini ESP32" data-flashsize="[4,8]" data-lcd="['st7796']">
+                            Freetouchdeck
+                        </option>
+                        <option data-manifest="ttgo-t7-1.5" data-flashsize="[4,16]"
+                            data-lcd="['lolin-tft','arduitouch-mod']">
+                            Lolin D32 Pro V2.0</option>
+                        <option data-manifest="ttgo-t7-1.5" data-flashsize="[4,16]"
+                            data-lcd="['lolin-tft','arduitouch-mod']">
+                            TTGO T7 V1.5 Mini32</option>
+                    </optgroup>
+                    <optgroup label="Devices">
+                        <option data-manifest="assets/json/lanbon-l8_full" data-flashsize="[4]">
+                            ESP32 TouchDown</option>
+                        <option data-manifest="assets/json/lanbon-l8_full" data-flashsize="[8]">
+                            Lanbon L8-HS</option>
+                        <option data-manifest="assets/json/lanbon-l8_full" data-flashsize="[8]">
+                            Lanbon L8-HD (EU)</option>
+                        <option data-manifest="assets/json/lanbon-l8_full" data-flashsize="[8]">
+                            Lanbon L8-HD (US)</option>
+                        <option data-manifest="assets/json/lanbon-l8_full" data-flashsize="[16]">
+                            Lilygo Lily Pi</option>
+                        <option data-manifest="assets/json/lanbon-l8_full" data-flashsize="[16]">
+                            M5Stack core2</option>
+                        <option data-manifest="assets/json/lanbon-l8_full" data-flashsize="[16]">
+                            M5Though</option>
+                        <option data-manifest="assets/json/lanbon-l8_full" data-flashsize="[16]">
+                            Makerfabs ESP32 TFT Touch</option>
+                        <option data-manifest="assets/json/lanbon-l8_full" data-flashsize="[4]">
+                            WT32-SC01</option>
+                        <option data-manifest="assets/json/lanbon-l8_full" data-flashsize="[16]">
+                            YeaCreate Nscreen32</option>
+                    </optgroup>
+                </select>
+                <select id="size" class="btn" onchange="setManifest()">
+                    <option value="4MB.json">4 MB</option>option>
+                </select>
+                <esp-web-install-button id="inst" manifest="assets/json/d1-mini-esp32_ili9341_full_4MB.json" hide-progress erase-first>
+                    <button slot="activate" class="btn">Custom install button</button>
                     <span slot="unsupported">Ah snap, your browser doesn't work!</span>
                     <span slot="not-allowed">Ah snap, you are not allowed to use this on HTTP!</span>
                 </esp-web-install-button><br>

@@ -43,6 +43,46 @@ function handleStateEvent(ev) {
 }
 
 
+function setManifest() {
+    var sel = document.getElementById('board');
+    var opt = sel.options[sel.selectedIndex];
+    var man = opt.dataset.manifest;
+
+    var flashsize = document.getElementById('size');
+    opt = flashsize.options[flashsize.selectedIndex];
+    man += "_";
+    man += opt.value;
+    man += "MB.json";
+
+    document.getElementById('inst').setAttribute('manifest', man);
+    // document.getElementById('verstr').textContent = opt.text;
+}
+
+
+function setModel() {
+    var sel = document.getElementById('board');
+    var opt = sel.options[sel.selectedIndex];
+    var man = opt.dataset.manifest;
+    var sizes = JSON.parse(opt.dataset.flashsize);
+    var flashsize = document.getElementById('size');
+    opt = flashsize.options[flashsize.selectedIndex];
+    var selsize = opt.value;
+
+    flashsize.options.length = 0;
+    for (let i in sizes) {
+        size = sizes[i];
+
+        option = document.createElement('option');
+        option.setAttribute('value', size);
+        option.appendChild(document.createTextNode(size + " MB"));
+        flashsize.appendChild(option);
+        if (size == selsize) flashsize.value = size;
+    }
+    //flashsize.style.visibility = (flashsize.length > 1) ? 'visible' : 'hidden';
+
+    setManifest();
+}
+
 
 function toggleErase() {
     if (document.getElementById('erase').checked) {
