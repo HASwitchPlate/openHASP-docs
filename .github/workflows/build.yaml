@@ -56,7 +56,7 @@ jobs:
           repository: "HASwitchPlate/openHASP"
           tag: "v0.6.2"
           fileName: "*"
-          out-file-path: "docs/assets/json"
+          out-file-path: "docs/assets/firmware"
 
       # Uncomment this action if dev needs to be present
       - name: Delete dev tag
