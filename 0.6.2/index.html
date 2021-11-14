@@ -1403,9 +1403,16 @@
                 
                   <h1>Home</h1>
                 
-                <p><img src="assets/images/logo.png" style="width:10rem"></img>
-<span style="font-family: 'Lato', 'Arial', helvetica;  font-size: 350%; font-weight: bold">openHASP 0.6.2<span></p>
-<p>Control your home-automation devices from a customizable touchscreen UI connected via MQTT.</p>
+                <style>
+  .md-typeset h1 {
+    display: none; // Hide page title
+  }
+</style>
+
+<p><img src="assets/images/logo.png" style="width:10rem" class="float-left"></img>
+<span style="font-family: 'Lato', 'Arial', helvetica;  font-size: 350%; font-weight: bold">openHASP<span></p>
+<div class="clearfix">Control your home-automation devices from a customizable touchscreen UI connected via MQTT.</div>
+
 <p>openHASP is a re-implementation of the popular HASwitchPlate sketch created by aderusha.
 While the <a href="https://github.com/HASwitchPlate/HASPone" target="_blank">HASPone</a> project uses a Wemos D1 mini and requires a Nextion/TJC HMI display, this rewrite removes the Nextion/TJC requirement by using the <a href="https://github.com/lvgl/lvgl" target="_blank">Light and Versatile Graphics Library</a> on the MCU to drive a commodity display.</p>
 <p>This project also adds ESP32 and STM32F4 support to take advantage of the additional hardware capabilities.</p>
