@@ -13,27 +13,27 @@
         <meta name="author" content="Francis Van Roie">
       
       
-        <link rel="canonical" href="https://haswitchplate.github.io/openHASP-docs/0.6.2/0.6.2/integrations/examples/surprise/">
+        <link rel="canonical" href="https://haswitchplate.github.io/openHASP-docs/0.6.2/0.6.2/design/convert/">
       
-      <link rel="icon" href="../../../favicon.ico">
+      <link rel="icon" href="../../favicon.ico">
       <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-7.3.6">
     
     
       
-        <title>Surprise - openHASP</title>
+        <title>Convert JSONL - openHASP</title>
       
     
      
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.a57b2b03.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.a57b2b03.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.3f5d1f46.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.3f5d1f46.min.css">
         
       
     
-<link rel="stylesheet" href="../../../css/openhasp.css">
-<link rel="stylesheet" href="../../../css/ekko-lightbox.min.css">
-<link rel="stylesheet" href="../../../css/bootstrap4.min.css"> 
+<link rel="stylesheet" href="../../css/openhasp.css">
+<link rel="stylesheet" href="../../css/ekko-lightbox.min.css">
+<link rel="stylesheet" href="../../css/bootstrap4.min.css"> 
      
 
 <!-- Jquery from Google CDN 
@@ -58,7 +58,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
 
 <script type="module" src="https://unpkg.com/esp-web-tools@3.6.0/dist/web/install-button.js?module"></script>
-<script src="../../../js/installer.js"></script>
+<script src="../../js/installer.js"></script>
 
 
     
@@ -90,7 +90,7 @@
     <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="deep-orange">
   
     
-    <script>function __prefix(e){return new URL("../../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
     
       <script>var palette=__get("__palette");if(null!==palette&&"object"==typeof palette.color)for(var key in palette.color)document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
     
@@ -98,6 +98,11 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
+      
+        
+        <a href="#convert-jsonl" class="md-skip">
+          Skip to content
+        </a>
       
     </div>
     <div data-md-component="announce">
@@ -108,9 +113,9 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../.." title="openHASP" class="md-header__button md-logo" aria-label="openHASP" data-md-component="logo">
+    <a href="../.." title="openHASP" class="md-header__button md-logo" aria-label="openHASP" data-md-component="logo">
       
-  <img src="../../../assets/images/logo.png" alt="logo">
+  <img src="../../assets/images/logo.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -126,7 +131,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Surprise
+              Convert JSONL
             
           </span>
         </div>
@@ -229,9 +234,9 @@
                       
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
     <label class="md-nav__title" for="__drawer">
-      <a href="../../.." title="openHASP" class="md-nav__button md-logo" aria-label="openHASP" data-md-component="logo">
+      <a href="../.." title="openHASP" class="md-nav__button md-logo" aria-label="openHASP" data-md-component="logo">
         
-  <img src="../../../assets/images/logo.png" alt="logo">
+  <img src="../../assets/images/logo.png" alt="logo">
 
       </a>
       openHASP
@@ -256,7 +261,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         Home
       </a>
     </li>
@@ -267,7 +272,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../getting-started/" class="md-nav__link">
+      <a href="../../getting-started/" class="md-nav__link">
         Getting started
       </a>
     </li>
@@ -304,7 +309,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../installation/esp32/" class="md-nav__link">
+      <a href="../../installation/esp32/" class="md-nav__link">
         ESP32
       </a>
     </li>
@@ -318,7 +323,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../installation/esp8266/" class="md-nav__link">
+      <a href="../../installation/esp8266/" class="md-nav__link">
         ESP8266
       </a>
     </li>
@@ -332,7 +337,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../installation/wifi-setup/" class="md-nav__link">
+      <a href="../../installation/wifi-setup/" class="md-nav__link">
         Wifi Setup
       </a>
     </li>
@@ -346,7 +351,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../installation/firmware-update/" class="md-nav__link">
+      <a href="../../installation/firmware-update/" class="md-nav__link">
         Firmware Update
       </a>
     </li>
@@ -390,7 +395,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../configuration/hasp/" class="md-nav__link">
+      <a href="../../configuration/hasp/" class="md-nav__link">
         HASP Design
       </a>
     </li>
@@ -404,7 +409,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../configuration/wifi/" class="md-nav__link">
+      <a href="../../configuration/wifi/" class="md-nav__link">
         Wifi Settings
       </a>
     </li>
@@ -418,7 +423,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../configuration/http/" class="md-nav__link">
+      <a href="../../configuration/http/" class="md-nav__link">
         HTTP Settings
       </a>
     </li>
@@ -432,7 +437,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../configuration/mqtt/" class="md-nav__link">
+      <a href="../../configuration/mqtt/" class="md-nav__link">
         MQTT Settings
       </a>
     </li>
@@ -446,7 +451,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../configuration/display/" class="md-nav__link">
+      <a href="../../configuration/display/" class="md-nav__link">
         Display Settings
       </a>
     </li>
@@ -460,7 +465,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../configuration/gpio/" class="md-nav__link">
+      <a href="../../configuration/gpio/" class="md-nav__link">
         GPIO Settings
       </a>
     </li>
@@ -474,7 +479,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../configuration/debug/" class="md-nav__link">
+      <a href="../../configuration/debug/" class="md-nav__link">
         Debug Settings
       </a>
     </li>
@@ -490,12 +495,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" checked>
       
       
       
@@ -518,7 +525,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../design/pages/" class="md-nav__link">
+      <a href="../pages/" class="md-nav__link">
         Pages
       </a>
     </li>
@@ -532,7 +539,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../design/objects/" class="md-nav__link">
+      <a href="../objects/" class="md-nav__link">
         Objects
       </a>
     </li>
@@ -546,7 +553,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../design/fonts/" class="md-nav__link">
+      <a href="../fonts/" class="md-nav__link">
         Fonts
       </a>
     </li>
@@ -560,7 +567,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../design/styling/" class="md-nav__link">
+      <a href="../styling/" class="md-nav__link">
         Styling Properties
       </a>
     </li>
@@ -574,7 +581,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../design/data-types/" class="md-nav__link">
+      <a href="../data-types/" class="md-nav__link">
         Data Types
       </a>
     </li>
@@ -592,7 +599,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../commands/" class="md-nav__link">
+      <a href="../../commands/" class="md-nav__link">
         Commands
       </a>
     </li>
@@ -601,14 +608,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
       
       
       
@@ -657,7 +662,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../home-assistant/howto/" class="md-nav__link">
+      <a href="../../integrations/home-assistant/howto/" class="md-nav__link">
         How-To
       </a>
     </li>
@@ -671,7 +676,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../home-assistant/sampl_conf/" class="md-nav__link">
+      <a href="../../integrations/home-assistant/sampl_conf/" class="md-nav__link">
         Example Configurations
       </a>
     </li>
@@ -685,7 +690,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../home-assistant/sampl_autom/" class="md-nav__link">
+      <a href="../../integrations/home-assistant/sampl_autom/" class="md-nav__link">
         Example Automations
       </a>
     </li>
@@ -732,7 +737,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../openhab/integration_openhab/" class="md-nav__link">
+      <a href="../../integrations/openhab/integration_openhab/" class="md-nav__link">
         Installation and Example
       </a>
     </li>
@@ -751,14 +756,12 @@
               
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_3" type="checkbox" id="__nav_7_3" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_3" type="checkbox" id="__nav_7_3" >
       
       
       
@@ -781,7 +784,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../example-pagination/" class="md-nav__link">
+      <a href="../../integrations/examples/example-pagination/" class="md-nav__link">
         Page Navigation
       </a>
     </li>
@@ -795,7 +798,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../example-widgets/" class="md-nav__link">
+      <a href="../../integrations/examples/example-widgets/" class="md-nav__link">
         Widgets Demo
       </a>
     </li>
@@ -809,7 +812,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../example-dashui/" class="md-nav__link">
+      <a href="../../integrations/examples/example-dashui/" class="md-nav__link">
         Dash UI
       </a>
     </li>
@@ -823,7 +826,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../example-lovelace/" class="md-nav__link">
+      <a href="../../integrations/examples/example-lovelace/" class="md-nav__link">
         Lovelace Entities
       </a>
     </li>
@@ -837,7 +840,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../example-fan/" class="md-nav__link">
+      <a href="../../integrations/examples/example-fan/" class="md-nav__link">
         Animated Fan
       </a>
     </li>
@@ -851,7 +854,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../example-offlinehandling/" class="md-nav__link">
+      <a href="../../integrations/examples/example-offlinehandling/" class="md-nav__link">
         Handle Offline State
       </a>
     </li>
@@ -902,7 +905,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../devices/featherwing/" class="md-nav__link">
+      <a href="../../devices/featherwing/" class="md-nav__link">
         Adafruit Featherwing
       </a>
     </li>
@@ -916,7 +919,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../devices/esp32-touchdown/" class="md-nav__link">
+      <a href="../../devices/esp32-touchdown/" class="md-nav__link">
         ESP32 TouchDown
       </a>
     </li>
@@ -930,7 +933,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../devices/freetouchdeck/" class="md-nav__link">
+      <a href="../../devices/freetouchdeck/" class="md-nav__link">
         FreeTouchDeck
       </a>
     </li>
@@ -944,7 +947,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../devices/lanbon-l8/" class="md-nav__link">
+      <a href="../../devices/lanbon-l8/" class="md-nav__link">
         Lanbon L8
       </a>
     </li>
@@ -958,7 +961,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../devices/lilygo-lily-pi/" class="md-nav__link">
+      <a href="../../devices/lilygo-lily-pi/" class="md-nav__link">
         LILYGO Lily Pi
       </a>
     </li>
@@ -972,7 +975,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../devices/m5stack-core2/" class="md-nav__link">
+      <a href="../../devices/m5stack-core2/" class="md-nav__link">
         M5stack core2
       </a>
     </li>
@@ -986,7 +989,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../devices/makerfabs-tft-touch/" class="md-nav__link">
+      <a href="../../devices/makerfabs-tft-touch/" class="md-nav__link">
         Makerfabs TFT Touch
       </a>
     </li>
@@ -1000,7 +1003,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../devices/wt32-sc01/" class="md-nav__link">
+      <a href="../../devices/wt32-sc01/" class="md-nav__link">
         Wireless-Tag WT32-SC01
       </a>
     </li>
@@ -1014,7 +1017,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../devices/yeacreate-nscreen32/" class="md-nav__link">
+      <a href="../../devices/yeacreate-nscreen32/" class="md-nav__link">
         YeaCreate Nscreen32
       </a>
     </li>
@@ -1058,7 +1061,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../displays/ILI9341_IPS/" class="md-nav__link">
+      <a href="../../displays/ILI9341_IPS/" class="md-nav__link">
         ILI9341 IPS
       </a>
     </li>
@@ -1072,7 +1075,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../displays/lolin-tft-shield/" class="md-nav__link">
+      <a href="../../displays/lolin-tft-shield/" class="md-nav__link">
         Lolin TFT Shield
       </a>
     </li>
@@ -1086,7 +1089,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../displays/MHS4001/" class="md-nav__link">
+      <a href="../../displays/MHS4001/" class="md-nav__link">
         MHS4001
       </a>
     </li>
@@ -1100,7 +1103,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../displays/MRB3511/" class="md-nav__link">
+      <a href="../../displays/MRB3511/" class="md-nav__link">
         MRB3511
       </a>
     </li>
@@ -1114,7 +1117,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../displays/MSPxxxx/" class="md-nav__link">
+      <a href="../../displays/MSPxxxx/" class="md-nav__link">
         MSP Series (Red PCB)
       </a>
     </li>
@@ -1128,7 +1131,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../displays/waveshare-rpi-lcd/" class="md-nav__link">
+      <a href="../../displays/waveshare-rpi-lcd/" class="md-nav__link">
         Waveshare RPi LCD (Rev C)
       </a>
     </li>
@@ -1142,7 +1145,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../displays/waveshare-tft-touch-shield/" class="md-nav__link">
+      <a href="../../displays/waveshare-tft-touch-shield/" class="md-nav__link">
         Waveshare TFT Touch Shield
       </a>
     </li>
@@ -1160,7 +1163,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../gallery/" class="md-nav__link">
+      <a href="../../gallery/" class="md-nav__link">
         Gallery
       </a>
     </li>
@@ -1171,7 +1174,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../faq/" class="md-nav__link">
+      <a href="../../faq/" class="md-nav__link">
         FAQ
       </a>
     </li>
@@ -1208,7 +1211,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../compiling/local/" class="md-nav__link">
+      <a href="../../compiling/local/" class="md-nav__link">
         Compiling locally
       </a>
     </li>
@@ -1222,7 +1225,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../compiling/gitpod/" class="md-nav__link">
+      <a href="../../compiling/gitpod/" class="md-nav__link">
         Compiling online with Gitpod
       </a>
     </li>
@@ -1236,7 +1239,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../compiling/customize/" class="md-nav__link">
+      <a href="../../compiling/customize/" class="md-nav__link">
         Customization
       </a>
     </li>
@@ -1254,7 +1257,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../license/" class="md-nav__link">
+      <a href="../../license/" class="md-nav__link">
         License
       </a>
     </li>
@@ -1292,29 +1295,65 @@
               </div>
             
             
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content" data-md-component="content">
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/HASwitchPlate/openHASP-docs/edit/0.6.2/docs/integrations/examples/surprise.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/HASwitchPlate/openHASP-docs/edit/0.6.2/docs/design/convert.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                <h1>Surprise</h1>
+                <h1 id="convert-jsonl">Convert JSONL<a class="headerlink" href="#convert-jsonl" title="Permanent link">~</a></h1>
+<ul>
+<li>Paste your pages.jsonl into the textarea.</li>
+<li>Click the convert button to replace the old icon codes to the new UTF-16 format.</li>
+<li>Copy/paste the jsonl back onto your plate.</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Save a copy of the original JSONL to your computer first, just in case.</p>
+</div>
+<form action="/">
+    <button class="btn bg-primary" type="submit" onclick="convert(); return false;">Convert</button>
+    <textarea id="jsonl" style="height: 600px; width: 95%"></textarea>
+</form>
 
-<p>No screenshot available. To see the result, test the code!</p>
-<h2>Code</h2>
+<script>
+ function convert(){
+    let ta = document.getElementById("jsonl");
+    let jsonl = ta.value;
+    let data = JSON.parse('{"E335":["DB80","DF35"],"E502":["DB81","DD02"],"E95F":["DB82","DD5F"]}');
 
-<p>Strictly for geeks:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;page&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">60</span><span class="p">,</span><span class="nt">&quot;obj&quot;</span><span class="p">:</span><span class="s2">&quot;obj&quot;</span><span class="p">,</span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="nt">&quot;w&quot;</span><span class="p">:</span><span class="mi">240</span><span class="p">,</span><span class="nt">&quot;h&quot;</span><span class="p">:</span><span class="mi">320</span><span class="p">,</span><span class="nt">&quot;radius&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="nt">&quot;hidden&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="nt">&quot;bg_grad_dir&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="nt">&quot;bg_color&quot;</span><span class="p">:</span><span class="s2">&quot;#0000bb&quot;</span><span class="p">}</span>
-<span class="p">{</span><span class="nt">&quot;page&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">61</span><span class="p">,</span><span class="nt">&quot;obj&quot;</span><span class="p">:</span><span class="s2">&quot;btn&quot;</span><span class="p">,</span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="mi">80</span><span class="p">,</span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="mi">50</span><span class="p">,</span><span class="nt">&quot;w&quot;</span><span class="p">:</span><span class="mi">80</span><span class="p">,</span><span class="nt">&quot;h&quot;</span><span class="p">:</span><span class="mi">20</span><span class="p">,</span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="s2">&quot;openHASP&quot;</span><span class="p">,</span><span class="nt">&quot;text_font&quot;</span><span class="p">:</span><span class="mi">16</span><span class="p">,</span><span class="nt">&quot;bg_color&quot;</span><span class="p">:</span><span class="s2">&quot;gray&quot;</span><span class="p">,</span><span class="nt">&quot;bg_grad_color&quot;</span><span class="p">:</span><span class="s2">&quot;gray&quot;</span><span class="p">,</span><span class="nt">&quot;text_color&quot;</span><span class="p">:</span><span class="s2">&quot;white&quot;</span><span class="p">,</span><span class="nt">&quot;radius&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="nt">&quot;border_side&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="nt">&quot;click&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">}</span>
-<span class="p">{</span><span class="nt">&quot;page&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">62</span><span class="p">,</span><span class="nt">&quot;obj&quot;</span><span class="p">:</span><span class="s2">&quot;label&quot;</span><span class="p">,</span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="mi">80</span><span class="p">,</span><span class="nt">&quot;w&quot;</span><span class="p">:</span><span class="mi">240</span><span class="p">,</span><span class="nt">&quot;h&quot;</span><span class="p">:</span><span class="mi">220</span><span class="p">,</span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="s2">&quot;A fatal exception has ocured in MCU.\nThe application will be terminated.\n\n\uE40A Touch the screen to terminate it.\n\uE40A Press CTRL+ALT+DEL again to\n  restart your computer. You will lose\n  any unsaved information.\n\n        Press any key to continue _\n&quot;</span><span class="p">,</span><span class="nt">&quot;text_color&quot;</span><span class="p">:</span><span class="s2">&quot;white&quot;</span><span class="p">}</span>
-</code></pre></div>
-</td></tr></table>
+    for (key in data) {
+        let search = '\\\\u'+key;
+        console.log(search);
+        let searchRegExp = new RegExp(search, 'gi');
+        jsonl = jsonl.replaceAll(searchRegExp, '\\u'+data[key][0]+'\\u'+data[key][1]);
+    }
+    ta.value = jsonl;
+ }
+</script>
                 
                   
                     
@@ -1351,7 +1390,7 @@
     
     <nav class="md-footer__inner md-grid" aria-label="Footer">
         
-        <a href="../example-widgets/" class="md-footer__link md-footer__link--prev" rel="prev">
+        <a href="../characters/" class="md-footer__link md-footer__link--prev" rel="prev">
             <div class="md-footer__button md-icon">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -1359,17 +1398,17 @@
                 <div class="md-ellipsis">
                     <span class="md-footer__direction">
                   Previous
-                </span> Widgets Demo
+                </span> Characters
                 </div>
             </div>
         </a>
          
-        <a href="../../home-assistant/howto/" class="md-footer__link md-footer__link--next" rel="next">
+        <a href="../data-types/" class="md-footer__link md-footer__link--next" rel="next">
             <div class="md-footer__title">
                 <div class="md-ellipsis">
                     <span class="md-footer__direction">
                   Next
-                </span> How-To
+                </span> Data Types
                 </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -1386,14 +1425,14 @@
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.instant", "navigation.tracking", "search.suggest", "search.highlight", "navigation.top"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../assets/javascripts/workers/search.fcfe8b6d.min.js", "version": {"provider": "mike", "default": 0.6}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tracking", "search.suggest", "search.highlight", "navigation.top"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.fcfe8b6d.min.js", "version": {"provider": "mike", "default": 0.6}}</script>
     
      
-      <script src="../../../assets/javascripts/bundle.b1047164.min.js"></script>
+      <script src="../../assets/javascripts/bundle.b1047164.min.js"></script>
       
     
-<!-- <script src="../../../js/youtube.js"></script> -->
-<script src="../../../js/ekko-lightbox.min.js"></script>
+<!-- <script src="../../js/youtube.js"></script> -->
+<script src="../../js/ekko-lightbox.min.js"></script>
 <script>
     $(document).on('click', '[data-toggle="lightbox"]', function(event) {
         event.preventDefault();
