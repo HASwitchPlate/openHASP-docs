@@ -97,8 +97,13 @@ openHASP is building upon the existing work of the following open source develop
   Copyright© 2009 - 2013 by the mingw-w64 project
   Mingw-w64 is free software and permissively-licensed. The details are located in the sources themselves. 
 
+## Website
 
-### Assets
+- Built with Material for MkDocs
+  Copyright © 2016-2021 Martin Donath
+  [MIT License][1]{target=_blank}.
+
+## Assets
 
 - Built-in font unscii (8pt)
   Copyright© viznut.
@@ -108,11 +113,11 @@ openHASP is building upon the existing work of the following open source develop
   Copyright© 2011 Google Inc. All Rights Reserved.
   Roboto Consensed is licensed under the [Apache License, Version 2.0][4]{target=_blank}.
 
-- The built-in fonts and bootscreen use rasterized glyphs from the [MaterialDesign Icons](https://materialdesignicons.com/){target=_blank} font,
+- The built-in fonts, bootscreen, web UI and website all use the [MaterialDesign Icons](https://materialdesignicons.com/){target=_blank} font,
   Copyright© 2014, Austin Andrews.
   MaterialDesign Icons font is licensed under the SIL Open Font License, Version 1.1.
 
-- Custom zi fonts incorporate [Font Awesome](http://fontawesome.io/){target=_blank},
+- The website incorporates [Font Awesome](http://fontawesome.io/){target=_blank},
   Copyright© 2017 Dave Gandy.
   Font Awesome is distributed under the terms of the [SIL OFL 1.1][3]{target=_blank} 
   and [MIT License][1]{target=_blank}.

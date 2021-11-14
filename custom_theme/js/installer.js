@@ -113,10 +113,20 @@ function reset() {
 }
 
 function checkSupported() {
-    if (document.getElementById('inst').hasAttribute('install-unsupported')) {
-        unsupported();
+    var elemenent = document.getElementById('inst');
+    let supported = false;
+
+    if (typeof(element) != 'undefined' && element != null) {
+        if (elemenent, hasAttribute('install-unsupported')) {
+            unsupported();
+        } else {
+            supported = true;
+        }
+    }
+    if (supported) {
+        console.log('The browser does not support web installer');
     } else {
-        console.log('The browser is supported');
+        console.log('The browser does not support web installer');
     }
 }
 
