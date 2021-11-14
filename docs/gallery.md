@@ -1,18 +1,6 @@
 <article class="md-content__inner md-typeset">
     <div class="row justify-content-center">
-        <div class="col-md-auto">
-                <div class="row">
-                <a href="https://raw.githubusercontent.com/HASwitchPlate/openHASP-docs/master/docs/assets/images/builds/tabletop.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4" data-title="<a href='https://www.thouters.be/HaspLvglBuild.html'>TFT Desktopstand</a> - front" data-footer="2.8&quot; LCD SKU: MSP2807">
-                    <img src="../assets/images/builds/tabletop.jpg" class="img-fluid">
-                </a>
-                <a href="https://raw.githubusercontent.com/HASwitchPlate/openHASP-docs/master/docs/assets/images/builds/back.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4" data-title="<a href='https://www.thouters.be/HaspLvglBuild.html'>TFT Desktopstand</a> - back" data-footer="2.8&quot; LCD SKU: MSP2807">
-                    <img src="../assets/images/builds/back.jpg" class="img-fluid">
-                </a>
-                <a href="https://raw.githubusercontent.com/HASwitchPlate/openHASP-docs/master/docs/assets/images/builds/bottom.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4" data-title="<a href='https://www.thouters.be/HaspLvglBuild.html'>TFT Desktopstand</a> - bottom" data-footer="TTGO T7 v1.4 Mini32">
-                    <img src="../assets/images/builds/bottom.jpg" class="img-fluid">
-                </a>
-            </div>
-                <div class="col-md-auto">
+            <div class="col-md-auto">
                 <div class="row">
                 <a href="https://raw.githubusercontent.com/HASwitchPlate/openHASP-docs/master/docs/assets/images/builds/desktop-stand-design.png" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4" data-title="<a href='https://github.com/amauryverschooren/HASP-LVGL'>Desktop Build</a> - design" data-footer="By <a href='https://www.instagram.com/the_diy_project_be/'>Amaury V.</a> - available on <a href='https://www.thingiverse.com/thing:4773558'>Thingiverse</a>">
                     <img src="../assets/images/builds/desktop-stand-design.png" class="img-fluid">

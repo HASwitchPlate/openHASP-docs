@@ -12,6 +12,22 @@ The "red" 240x320 TFT displays with an ILI9341 controller and XPT2046 touch cont
 
 Make sure to select the touch version when ordering these screens online. The U2 touch chip needs to be populated on the board.
 
+
+## Gallery
+
+<div class="row justify-content-center">
+    <a href="../../assets/images/builds/tabletop.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4" data-title="TFT Desktopstand - front" data-footer="2.8&quot; LCD SKU: MSP2807 - image courtesy of <a href='https://www.thouters.be/HaspLvglBuild.html' target='_blank'>thouters.be</a>">
+        <img src="../../assets/images/builds/tabletop.jpg" class="img-fluid">
+    </a>
+    <a href="../../assets/images/builds/back.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4" data-title="TFT Desktopstand - back" data-footer="2.8&quot; LCD SKU: MSP2807 - image courtesy of <a href='https://www.thouters.be/HaspLvglBuild.html' target='_blank'>thouters.be</a>">
+        <img src="../../assets/images/builds/back.jpg" class="img-fluid">
+    </a>
+    <a href="../../assets/images/builds/bottom.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4" data-title="TFT Desktopstand - bottom" data-footer="TTGO T7 v1.4 Mini32 - image courtesy of <a href='https://www.thouters.be/HaspLvglBuild.html' target='_blank'>thouters.be</a>">
+        <img src="../../assets/images/builds/bottom.jpg" class="img-fluid">
+    </a>
+</div>
+
+
 ## Pin Configuration
 
 Pin| Function            |ESP32 Pin|Config Name|Display Pin |
