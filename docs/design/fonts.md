@@ -71,7 +71,7 @@ The characters are encoded in UTF-8. All character sets include the [Ascii](#asc
 Each set contains roughly the same *extended* characters from its equivalent [iso-8859 standard](https://en.wikipedia.org/wiki/ISO/IEC_8859){target=_blank}.
 All character sets also contain about 130 standard Material Design Icons for home automation use.
 
-The default font in pre-compiled binaries is Roboto-Condensed-Regular with the [Latin 1](#latin-1) character set. There is no support for right-to-left scipts.
+The default font in pre-compiled binaries is Roboto-Condensed-Regular with the [Latin 1](#latin-1) character set. There is no support for right-to-left scripts.
 
 For example: To display the &#x00F7; character on the plate you need to use `\u00F7` in json or jsonl commands, or send the encoded UTF-8 bytes `0xC3` `0xB7` in other commands.
 
