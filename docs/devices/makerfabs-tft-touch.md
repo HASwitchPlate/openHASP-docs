@@ -65,7 +65,7 @@ More information can be found in the Makerfabs Wiki and there are plenty of exam
 
 [:material-book-open-page-variant: Makerfabs Wiki][6]{target=_blank .md-button } &nbsp;
 [:material-github: Github Repo][5]{target=_blank .md-button } &nbsp;
-[:material-github: Schematics][12]{target=_blank .md-button }
+[:fontawesome-regular-file-pdf: Schematics][12]{target=_blank .md-button }
 
 ## Acrylic Case
 

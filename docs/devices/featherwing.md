@@ -48,7 +48,7 @@ You can connect it to a PWM output pin, like `GPIO 21`:
             </a>
 </div>
 
-## Product Videos
+## Product Video
 
 #### 2.4" TFT Featherwing
 
@@ -67,9 +67,11 @@ You can connect it to a PWM output pin, like `GPIO 21`:
 ## 3D Printed Case
 
 Check out these enclosures, the designs are available on Thingiverse:
-- [2.4" TFT Feather Wing Enclosure](https://learn.adafruit.com/3d-printed-case-for-adafruit-feather/tft-feather-wing)
-- [3.5" TFT Featherwing table top case](https://www.thingiverse.com/thing:2776163)
-- [3.5" TFT Featherwing Touch Deck](https://www.thingiverse.com/thing:4803265)
+
+- [2.4" TFT Feather Wing Enclosure](https://learn.adafruit.com/3d-printed-case-for-adafruit-feather/tft-feather-wing){target=_blank}
+- [2.4" TFT Feather Wing Weather Station](https://www.thingiverse.com/thing:1944905){target=_blank}
+- [3.5" TFT Featherwing table top case](https://www.thingiverse.com/thing:2776163){target=_blank}
+- [3.5" TFT Featherwing Touch Deck](https://www.thingiverse.com/thing:4803265){target=_blank}
 
 <div class="row justify-content-center">
     <a href="https://raw.githubusercontent.com/HASwitchPlate/openHASP-docs/master/docs/assets/images/devices/3d_printing_done-assembly.gif" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4" data-title="<a href='https://learn.adafruit.com/3d-printed-case-for-adafruit-feather/tft-feather-wing'>TFT Feather Wing Enclosure</a>" data-footer="Original image by <a href='https://learn.adafruit.com/assets/40717'>Ruiz Brothers</a> - LICENSE: <a href='https://creativecommons.org/licenses/by-sa/3.0/'>Attribution-ShareAlike Creative Commons</a>">

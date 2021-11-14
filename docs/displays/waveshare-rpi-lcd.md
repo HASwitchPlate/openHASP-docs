@@ -50,7 +50,7 @@ This board has 4 MB flash and 8 MB PSRAM.
     </a>
 </div>
 
-[:material-github: Schematics][5]{target=_blank .md-button }&nbsp;
+[:fontawesome-regular-file-pdf: Schematics][5]{target=_blank .md-button }&nbsp;
 <span class="dropdown show">
     <a class="md-button md-button--primary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <span class="twemoji"><svg
                 xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">

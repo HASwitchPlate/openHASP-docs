@@ -39,7 +39,7 @@ Available from:
 [:material-cart-variant: Digikey][3]{target=_blank .md-button .md-button--primary } &nbsp; 
 [:material-cart-variant: Amazon][3]{target=_blank .md-button .md-button--primary }
 
-## Video
+## Product Video
 
 <div class="embed-responsive embed-responsive-16by9" style="max-width:560px; margin:auto;">
     <iframe title="YouTube video player" src="https://www.youtube.com/embed/axN3O232WN0?rel=0&controls=1" class="embed-responsive-item" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
@@ -51,7 +51,8 @@ Available from:
 <a href="../../assets/images/devices/m5stack-core2-schematic.png" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-6" data-title="M5stack core2 Schematic" data-footer="">
     <img src="../../assets/images/devices/m5stack-core2-schematic.png" class="img-fluid">
 </a>
-[PDF](https://m5stack.oss-cn-shenzhen.aliyuncs.com/resource/docs/schematic/Core/CORE2_V1.0_SCH.pdf)
+[:fontawesome-regular-file-pdf: Schematics][5]{target=_blank .md-button}
+
 
 ## M5Stack Library
 
@@ -64,3 +65,4 @@ Visit the [M5Stack Github](https://github.com/m5stack/M5Stack) repo.
 [2]: https://www.mouser.com/new/m5stack/m5stack-core2-iot-dev-kit/
 [3]: https://www.digikey.com/en/product-highlight/m/m5stack/core2-esp32-development-kit
 [4]: https://www.amazon.com/dp/B07RTKTJZB/
+[5]: https://m5stack.oss-cn-shenzhen.aliyuncs.com/resource/docs/schematic/Core/CORE2_V1.0_SCH.pdf
