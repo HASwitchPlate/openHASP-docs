@@ -46,15 +46,25 @@ function handleStateEvent(ev) {
 function setManifest() {
     var sel = document.getElementById('board');
     var opt = sel.options[sel.selectedIndex];
-    var man = opt.dataset.manifest;
+    var name = opt.dataset.manifest;
 
     var flashsize = document.getElementById('size');
     opt = flashsize.options[flashsize.selectedIndex];
+
+    var man = "../../assets/json/"
+    man += name;
     man += "_";
     man += opt.value;
     man += "MB.json";
 
+    var firmware = name;
+    firmware += "_";
+    firmware += opt.value;
+    firmware += "MB.bin";
+
     document.getElementById('inst').setAttribute('manifest', man);
+    document.getElementById('link').setAttribute('href', "../assets/firmware/" + firmware);
+    document.getElementById('link').setAttribute('download', firmware);
     // document.getElementById('verstr').textContent = opt.text;
 }
 
@@ -103,13 +113,18 @@ function reset() {
 }
 
 function checkSupported() {
-    if (document.getElementById('inst').hasAttribute('install-unsupported')) unsupported();
+    if (document.getElementById('inst').hasAttribute('install-unsupported')) {
+        unsupported();
+    } else {
+        console.log('The browser is supported');
+    }
 }
 
 
 
 function unsupported() {
-    document.getElementById('flasher').innerHTML = "Sorry, your browser is not yet supported!<br>Please try on Desktop Chrome or Edge.<br>"
+    // document.getElementById('flasher').innerHTML = "Sorry, your browser is not yet supported!<br>Please try on Desktop Chrome or Edge.<br>"
+    document.getElementById('flasher').style.display = "none";
 }
 
 function showSerialHelp() {
