@@ -1,0 +1,61 @@
+<div id="flasher">
+
+    <div>
+        <select id="board" class="btn" onchange="setModel()">
+            <optgroup label="Boards">
+                <option data-manifest="arduitouch-esp32_ili9341_full" data-flashsize="[4]">ArduiTouch MOD </option>
+                <option data-manifest="d1-mini-esp32_ili9341_full" data-flashsize="[4]">D1-mini ESP32 </option>
+                <option data-manifest="esp32-one_st7796_full" data-flashsize="[4]">ESP32 One </option>
+                <option data-manifest="freetouchdeck_full" data-flashsize="[4,8]">FreeTouchDeck </option>
+                <option data-manifest="huzzah32-featherwing-24_full" data-flashsize="[4]">Huzzah32 </option>
+                <option data-manifest="huzzah32-featherwing-35_full" data-flashsize="[4]">Huzzah32 </option>
+            </optgroup>
+            <optgroup label="Devices">
+                <option data-manifest="esp32-touchdown_full" data-flashsize="[4]">ESP32 Touchdown </option>
+                <option data-manifest="lanbon_l8_full" data-flashsize="[8]">Lanbon L8 </option>
+                <option data-manifest="m5stack-core2_full" data-flashsize="[16]">M5Stack core2 </option>
+                <option data-manifest="makerfabs-tft35-cap_full" data-flashsize="[16]">Makerfabs TFT Touch </option>
+                <option data-manifest="wt32-sc01_full" data-flashsize="[4,16]">WT32-SC01 </option>
+                <option data-manifest="yeacreate-nscreen32_full" data-flashsize="[16]">Yeacreate Nscreen32 </option>
+            </optgroup>
+        </select>
+        <select id="size" class="btn" onchange="setManifest()">
+            <option value="4MB.json">4 MB</option>option>
+        </select>
+        <a href="../assets/firmware/arduitouch-esp32_ili9341_full_4MB_v0.6.2.bin" download="arduitouch-esp32_ili9341_full_4MB_v0.6.2.bin"><button class="md-button md-button--primary">Download Firmware</button></a>
+    </div>
+    <h3>Browser install</h3>
+    <div class="container inst-button">
+        <ol>
+            <li>Plug in your ESP to a USB port. We will install openHASP 0.6.0 to it.</li>
+            <li id="coms">Hit "Install" and select the correct COM port. <a onclick="showSerialHelp()">No device
+                    found?</a>
+            </li>
+            <li>Wait a while, the process is a lot faster if you stay on this tab.</li>
+        </ol>
+        <esp-web-install-button id="inst" manifest="assets/json/d1-mini-esp32_ili9341_full_4MB.json" hide-progress erase-first>
+            <button slot="activate" class="md-button md-button--primary">Install Firmware</button>
+            <span slot="unsupported">Ah snap, your browser doesn't work!</span>
+            <span slot="not-allowed">Ah snap, you are not allowed to use this on HTTP!</span>
+        </esp-web-install-button>
+        <span>Powered by <a href="https://esphome.github.io/esp-web-tools/" target="_blank">ESP Web Tools</a></span>
+        <div id="clean">
+            <input type="checkbox" id="erase" name="erase" onchange="toggleErase()" checked>
+            <label for="erase"> Clean install (deletes all files and settings)</label><br>
+        </div>
+    </div>
+
+    <div class="container log">
+        <span class="info-top" id="state">Initializing...</span>
+        <span class="info-top" id="progress"></span><br>
+        <div id="bar">
+            <div id="bar-inner"></div>
+        </div>
+        <span class="info-bot" id="env">&nbsp;</span>
+        <span class="info-bot" id="extra">&nbsp;</span>
+    </div>
+    <div id="reset-button">
+        <br><button class="md-button md-button--primary" onclick="reset()">&#8635; Start over</button><br>
+    </div>
+
+</div>
