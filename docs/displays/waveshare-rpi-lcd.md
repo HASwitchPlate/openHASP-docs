@@ -39,6 +39,8 @@ By default the display is always on. To enable backlight dimming, you can connec
 The Waveshare ESP32 One development board has the same form factor as the Raspberry Pi Zero, inluding a 40 pin GPIO header.
 The ESP32 One is plug-and-play compatible with the Waveshare RPi LCD (Rev C) 3.5" and 4".
 
+This board has 4 MB flash and 8 MB PSRAM.
+
 <div class="row justify-content-center">
     <a href="../../assets/images/displays/waveshare-esp32-one-front.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4" data-title="WaveShare ESP32 One" data-footer="Copyright © 2021, Waveshare, All Rights Reserved - Used with permission">
                 <img src="../../assets/images/displays/waveshare-esp32-one-front.jpg" class="img-fluid">
@@ -48,7 +50,8 @@ The ESP32 One is plug-and-play compatible with the Waveshare RPi LCD (Rev C) 3.5
     </a>
 </div>
 
-<div class="dropdown show">
+[:material-github: Schematics][5]{target=_blank .md-button }&nbsp;
+<span class="dropdown show">
     <a class="md-button md-button--primary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <span class="twemoji"><svg
                 xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                 <path
@@ -62,11 +65,12 @@ The ESP32 One is plug-and-play compatible with the Waveshare RPi LCD (Rev C) 3.5
         <a class="dropdown-item md-typeset__table" target="_blank" href="https://www.amazon.fr/dp/B08TBB2R2G/">Amazon FR</a>
         <a class="dropdown-item md-typeset__table" target="_blank" href="https://www.amazon.es/dp/B08TBB2R2G/">Amazon ES</a>
         <a class="dropdown-item md-typeset__table" target="_blank" href="https://www.amazon.nl/dp/B08TBB2R2G/">Amazon NL</a>
-    <div class="dropdown-divider"></div>
+        <div class="dropdown-divider"></div>
         <a class="dropdown-item md-typeset__table" target="_blank" href="https://s.click.aliexpress.com/e/_AYV2FF">AliExpress</a>
         <a class="dropdown-item md-typeset__table" target="_blank" href="https://www.waveshare.com/esp32-one.htm">Waveshare.com</a>
     </div>
-</div>
+</span>
+
 
 
 ## Gallery
@@ -153,3 +157,5 @@ build_flags =
 [1]: https://www.waveshare.com/4inch-rpi-lcd-c.htm
 [2]: https://www.aliexpress.com/item/32976207190.html
 [3]: https://www.waveshare.com/3.5inch-rpi-lcd-c.htm
+[4]: https://shop.atmegazero.com/products/atmegazero-esp32-s2
+[5]: https://www.waveshare.com/w/upload/a/a1/ESP32_One_Sch.pdf
