@@ -119,7 +119,8 @@ Onboard 4MB PSRAM, 4MByte Flash
 
 With 4 MByte of Flash and 2 MByte of PSRAM
 
-*To be tested*
+!!! note
+    This board has not been tested yet!
 
 <div class="row justify-content-center">
         <a href="../../assets/images/boards/adafruit_products_Metro_ESP32S2_top.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-6" data-title="Adafruit Metro ESP32-S2 Overview" data-footer="Attribution-ShareAlike Creative Commons - Kattni Rembor">

@@ -1,8 +1,11 @@
 # Adafruit Featherwing
 
 <div class="row justify-content-center">
-    <a href="../../assets/images/devices/featherwing24.png" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-8" data-title="<a href='https://learn.adafruit.com/3d-printed-case-for-adafruit-feather/tft-feather-wing'>Adafruit Featherwing</a>" data-footer="Original image by <a href='https://learn.adafruit.com/assets/40718'>Ruiz Brothers</a> - LICENSE: <a href='https://creativecommons.org/licenses/by-sa/3.0/'>Attribution-ShareAlike Creative Commons</a>">
+    <a href="../../assets/images/devices/featherwing24.png" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-6" data-title="<a href='https://learn.adafruit.com/3d-printed-case-for-adafruit-feather/tft-feather-wing'>Adafruit Featherwing 2.4&quot;</a>" data-footer="Original image by <a href='https://learn.adafruit.com/assets/40718'>Ruiz Brothers</a> - LICENSE: <a href='https://creativecommons.org/licenses/by-sa/3.0/'>Attribution-ShareAlike Creative Commons</a>">
         <img src="../../assets/images/devices/featherwing24.png" class="img-fluid">
+    </a>
+    <a href="https://cdn-learn.adafruit.com/assets/assets/000/100/822/original/3d_printing_td-0749.jpg?1616461141" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-6" data-title="<a href='https://learn.adafruit.com/touch-deck-diy-tft-customized-control-pad/assemble-the-touch-deck'>Adafruit Featherwing 3.5&quot;</a>" data-footer="Original image by <a href='https://learn.adafruit.com/assets/100822'>John Park</a> - LICENSE: <a href='http://creativecommons.org/licenses/by-nc-sa/3.0/'>Attribution-NonCommercial-ShareAlike Creative Commons</a>">
+        <img src="https://cdn-learn.adafruit.com/assets/assets/000/100/822/original/3d_printing_td-0749.jpg?1616461141" class="img-fluid">
     </a>
 </div>
 
@@ -47,14 +50,14 @@ You can connect it to a PWM output pin, like `GPIO 21`:
 
 ## Product Videos
 
-### 2.4" TFT Featherwing
+#### 2.4" TFT Featherwing
 
 <div class="embed-responsive embed-responsive-16by9" style="max-width:560px; margin:auto;">
     <iframe title="YouTube video player" src="https://www.youtube.com/embed/0JUA1IHCI-o?start=630&end=0&rel=0&controls=1" class="embed-responsive-item" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
     </iframe>
 </div>
 
-### 3.5" TFT Featherwing
+#### 3.5" TFT Featherwing
 
 <div class="embed-responsive embed-responsive-16by9" style="max-width:560px; margin:auto;">
     <iframe title="YouTube video player" src="https://www.youtube.com/embed/Wt_QXeipqpk?start=268&end=0&rel=0&controls=1" class="embed-responsive-item" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
@@ -63,17 +66,21 @@ You can connect it to a PWM output pin, like `GPIO 21`:
 
 ## 3D Printed Case
 
-Check out the [2.4" TFT Feather Wing Enclosure](https://learn.adafruit.com/3d-printed-case-for-adafruit-feather/tft-feather-wing)
-and [3.5" TFT Featherwing table top case](https://www.thingiverse.com/thing:2776163). Both designs are available on Thingiverse.
+Check out these enclosures, the designs are available on Thingiverse:
+- [2.4" TFT Feather Wing Enclosure](https://learn.adafruit.com/3d-printed-case-for-adafruit-feather/tft-feather-wing)
+- [3.5" TFT Featherwing table top case](https://www.thingiverse.com/thing:2776163)
+- [3.5" TFT Featherwing Touch Deck](https://www.thingiverse.com/thing:4803265)
 
 <div class="row justify-content-center">
-            <a href="https://raw.githubusercontent.com/HASwitchPlate/openHASP-docs/master/docs/assets/images/devices/3d_printing_done-assembly.gif" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-8" data-title="<a href='https://learn.adafruit.com/3d-printed-case-for-adafruit-feather/tft-feather-wing'>TFT Feather Wing Enclosure</a>" data-footer="Original image by <a href='https://learn.adafruit.com/assets/40717'>Ruiz Brothers</a> - LICENSE: <a href='https://creativecommons.org/licenses/by-sa/3.0/'>Attribution-ShareAlike Creative Commons</a>">
-                <img src="../../assets/images/devices/3d_printing_done-assembly.gif" class="img-fluid">
-            </a>
+    <a href="https://raw.githubusercontent.com/HASwitchPlate/openHASP-docs/master/docs/assets/images/devices/3d_printing_done-assembly.gif" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4" data-title="<a href='https://learn.adafruit.com/3d-printed-case-for-adafruit-feather/tft-feather-wing'>TFT Feather Wing Enclosure</a>" data-footer="Original image by <a href='https://learn.adafruit.com/assets/40717'>Ruiz Brothers</a> - LICENSE: <a href='https://creativecommons.org/licenses/by-sa/3.0/'>Attribution-ShareAlike Creative Commons</a>">
+        <img src="../../assets/images/devices/3d_printing_done-assembly.gif" class="img-fluid">
+    </a>
+    <a href="https://cdn-learn.adafruit.com/assets/assets/000/100/924/original/3d_printing_touchdeck.gif?1616540216" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4" data-title="<a href='https://learn.adafruit.com/touch-deck-diy-tft-customized-control-pad/assemble-the-touch-deck'>Adafruit Featherwing 3.5&quot; Touch Deck</a>" data-footer="Original image by <a href='https://learn.adafruit.com/assets/100924'>John Park</a> - LICENSE: <a href='http://creativecommons.org/licenses/by-nc-sa/3.0/'>Attribution-NonCommercial-ShareAlike Creative Commons</a>">
+        <img src="https://cdn-learn.adafruit.com/assets/assets/000/100/924/original/3d_printing_touchdeck.gif?1616540216" class="img-fluid">
+    </a>
 </div>
 
 
-<h3>About Adafruit</h3>
-
-*Adafruit invests time and resources providing open source code and libraries,
-please support Adafruit and open-source hardware by purchasing products from Adafruit!*
+!!! info "About Adafruit"
+    *Adafruit invests time and resources providing open source code and libraries,
+    please support Adafruit and open-source hardware by purchasing products from Adafruit!*
