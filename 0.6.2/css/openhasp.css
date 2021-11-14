@@ -125,3 +125,42 @@ div[data-md-component=announce]>div#announce-msg>a {
 #extra {
     float: right;
 }
+
+
+/* quotes */
+
+.md-typeset .admonition.quote1,
+.md-typeset details.quote1 {
+    border-color: rgb(43, 155, 70);
+}
+
+.md-typeset .quote1>.admonition-title,
+.md-typeset .quote1>summary {
+    background-color: rgba(43, 155, 70, 0.1);
+    border-color: rgb(43, 155, 70);
+}
+
+.md-typeset .quote1>.admonition-title::before,
+.md-typeset .quote1>summary::before {
+    background-color: rgb(43, 155, 70);
+    -webkit-mask-image: var(--md-admonition-icon--quote);
+    mask-image: var(--md-admonition-icon--quote);
+}
+
+.md-typeset .admonition.quote2,
+.md-typeset details.quote2 {
+    border-color: #00b0ff;
+}
+
+.md-typeset .quote2>.admonition-title,
+.md-typeset .quote2>summary {
+    background-color: rgba(0, 176, 255, 0.1);
+    border-color: #00b0ff;
+}
+
+.md-typeset .quote2>.admonition-title::before,
+.md-typeset .quote2>summary::before {
+    background-color: #00b0ff;
+    -webkit-mask-image: var(--md-admonition-icon--quote);
+    mask-image: var(--md-admonition-icon--quote);
+}
