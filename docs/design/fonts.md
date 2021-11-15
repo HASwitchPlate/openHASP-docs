@@ -51,12 +51,18 @@ Included are a range of arrows, navigation, climate, controls, devices, energy, 
 
 {{ read_csv("docs/assets/csv/icons.csv") }}
 
-To use an icon in a text you need to prefix the UTF-8 character code with `\u`.
-**To ensure proper decoding the payload should be used with a `json` or `jsonl` command.**
+### Encoding
+
+The encoding of the icons depends on how they are sent to the plate:
+
+#### 1. As JSON payload
+
+To use an icon in a `json` or `jsonl` payload you need to prefix the UTF-8 character code with `\u`.
+ArduinoJSON will correctly decode the text into it's UTF-8 representation while parsing the JSON object:
 
 `jsonl` example:
 ```json
-{"page":2,"id":1,"obj":"label","x":10,"y":50,"w":150,"h":50,"text":"\uE64A Hello world!","text_font":24}
+{"page":2,"id":1,"obj":"label","w":150,"h":50,"text":"\uE64A Hello world!"}
 ```
 
 `json` example:
@@ -64,6 +70,40 @@ To use an icon in a text you need to prefix the UTF-8 character code with `\u`.
 ["p2b1.text=\uE64A Hello world!"]
 ```
 
+If the icon codepoint is larger than `0xFFFF` you need to convert the codepoint to its **[surrogate pair][1]** first!
+Then include both UTF-16 surrogate characters in the payload like this:
+
+`jsonl` example:
+```json
+{"page":2,"id":1,"obj":"label","w":150,"h":50,"text": "\uDB81\uDC25 Hello world!"}
+```
+
+`json` example:
+```json
+["p2b1.text=\uDB81\uDC25 Hello world!"]
+```
+
+#### 2. As raw payload
+
+Raw payloads are directly passed to the LVGL text rendering engine without any conversion on the MCU.
+You need to make sure the string is properly encoded into UTF-8 **by the application sending the payload**!
+How this is accomplished depends on the Home Automation tool:
+
+##### Home Assistant
+
+- Code points up to `0xFFFF` should be encoded as `"\uE6E8"` in the template.</br>
+  __Note:__ Use lowercase `\u` and exactly 4 hexadecimal digits.
+
+- Code points above `0xFFFF` *must* be encoded as `"\U0001F5E9"` in the template.</br>
+  __Note:__ Use capital `\U` and exactly 8 hexadecimal digits.
+
+- At the end of the template you *must* indicate that Home Assistant needs encoded the string before sending it by appending `|e` *(pipe symbol + `e`)* at the end.
+
+```yaml
+- obj: "p1b2"  # light-switch toggle button
+  properties:
+    "text": '{{ "\uE6E8" if is_state("light.x","on") else "\U0001F5E9" |e }}'
+```
 
 ## Character Sets
 
@@ -94,7 +134,7 @@ Includes all ASCII 0x20-0x7E characters extended with a non-breaking space and 1
 
 ### Latin 1
 
-The default character set for the pre-compiled firmware binary files.     
+This is the default character set of the pre-compiled firmware binary files.     
 Includes all characters and symbols from the [Ascii range](#ascii) above.
 
 Covers Northern, Western and Southern European languages: English (en), French (fr), Spanish (es), Portuguese (pt), Italian (it), Dutch (nl), German (de), Danish (da), Swedish (sv), Norwegian (no), Finnish (fi), Albanian (sq), Turkish (tr)
@@ -491,3 +531,4 @@ You can also add a custom `.zi` font by uploading it to the internal flash.
 Apply it as the default font on the Configuration > HASP Settings page.
 To use it, set the pointsize parameter of the property to `0`.
 
+[1]: http://www.russellcottrell.com/greek/utilities/SurrogatePairCalculator.htm
