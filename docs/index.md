@@ -17,6 +17,15 @@ This project also adds ESP32 and STM32F4 support to take advantage of the additi
 [![Screenshot](assets/images/screenshots/demo_jaffa1.png)](integrations/openhab/integration_openhab.md) &nbsp; 
 [![screenshot](assets/images/screenshots/demo_climate.png)](integrations/home-assistant/sampl_conf/#generic-thermostatclimate) &nbsp;     
 
+### Quotes
+
+
+<div class="admonition quote2 col-sm-9 float-right">
+    <p class="admonition-title">danielo</p>
+    <p>Oh man, integrating this with Home Assistant was super easy.</p>
+    <p>Lucky you can't see me getting hyped about turning on/off my office lights from a tinny screen (and doing it like 3 or 4 times on a row...)</p>
+</div>
+<div class="clearfix"></div>
 
 ### Features
 
