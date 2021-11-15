@@ -1,9 +1,3 @@
-<style>
-  .md-typeset h1 {
-    display: none; // Hide page title
-  }
-</style>
-
 <img src="assets/images/logo.png" style="width:10rem" class="float-left"></img>
 <span style="font-family: 'Lato', 'Arial', helvetica;  font-size: 350%; font-weight: bold">openHASP<span>
 
