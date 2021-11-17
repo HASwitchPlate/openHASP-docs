@@ -114,8 +114,7 @@ openHASP is building upon the existing work of the following open source develop
   Roboto Consensed is licensed under the [Apache License, Version 2.0][4]{target=_blank}.
 
 - The built-in fonts, bootscreen, web UI and website all use the [MaterialDesign Icons](https://materialdesignicons.com/){target=_blank} font,
-  Copyright© 2014, Austin Andrews.
-  MaterialDesign Icons font is licensed under the SIL Open Font License, Version 1.1.
+  MaterialDesign Icons are licensed under the [Apache License, Version 2.0][4]{target=_blank}.
 
 - The website incorporates [Font Awesome](http://fontawesome.io/){target=_blank},
   Copyright© 2017 Dave Gandy.
