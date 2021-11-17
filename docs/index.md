@@ -19,6 +19,11 @@ This project also adds ESP32 and STM32F4 support to take advantage of the additi
 
 ### Quotes
 
+<div class="admonition quote1 col-sm-8">
+    <p class="admonition-title">kazimir</p>
+    <p>Hey man, openHASP is amazing. Currently running 12 pieces of Lanbon L8 plates in my house with your firmware.</p>
+</div>
+<div class="clearfix"></div>
 
 <div class="admonition quote2 col-sm-9 float-right">
     <p class="admonition-title">danielo</p>
