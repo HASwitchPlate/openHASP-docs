@@ -951,7 +951,7 @@ relevant **openHASP-custom-component config:**
               target:
                 entity_id: openhasp.your_plate
               data:
-                keyword: p8b19.text
+                keyword: p5b19.text
                 parameters: >
                   {% if val == 0 %}
                   {{ "#000000 \u2022# #909090 \u2022#" | e }}
