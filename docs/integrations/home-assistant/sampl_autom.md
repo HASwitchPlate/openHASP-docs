@@ -1,4 +1,4 @@
-## Keep backlight ON (dimmed) during the day, and turn it OFF during the night
+## Backlight ON (dimmed) during the day, OFF during the night
 
 The night mode activates when sun goes down, and the day mode activates when the sun comes up. During the day, when the screen is after short idle, it dims to the level configured in Home Assistant, but never turns off. During the night, the screen turns off after the long idle period.
 
@@ -39,6 +39,64 @@ Assuming your plate's configured MQTT _group name_ is `plates`, this will affect
 ```
 
 Note the condition which assures to avoid triggering the automations falsely when Home Assistant (re)starts (allows running the automation only when Home Assistant has been up for at least 2 minutes).
+
+* * * * *
+
+## Backlight ON (dimmed) if there's any light in the room, OFF otherwise
+
+The night mode activates when all the lights are off and shutters are down below 25%, the day mode activates otherwise. During the day, when the screen is after short idle, it dims to the level configured in Home Assistant, but never turns off. During the night, the screen turns off after the long idle period.
+
+This will act directly on the plate in a certain room, as it is triggered by entities located in that room. If you have multiple plates in various rooms, you can create separate automations for each.
+
+```yaml
+- id: openhasp-plate_myroom-day
+  alias: "openHASP Night mode based on My Room entities"
+  trigger:
+    - platform: template
+      value_template: >
+        {{ 
+        state_attr("cover.myroom_1", "current_position") | float(default=0) > 25 or
+        state_attr("cover.myroom_2", "current_position") | float(default=0) > 25 or
+        states("light.plate_myroom_light_12") == "on" or 
+        states("light.plate_myroom_light_14") == "on"
+        }}
+  condition:
+    - condition: template
+      value_template: "{{ (as_timestamp(now()) - as_timestamp(states('sensor.ha_uptime_moment'))) / 60 > 2 }}"
+  action:
+    - service: openhasp.config
+      target:
+        entity_id: openhasp.plate_myroom
+      data:
+        submodule: gui
+        parameters: '{"idle2":0}'
+
+
+- id: openhasp-plate_myroom-night
+  alias: "openHASP Day mode based on My Room entities"
+  trigger:
+    - platform: template
+      value_template: >
+        {{ not (
+        state_attr("cover.myroom_1", "current_position") | float(default=0) > 25 or
+        state_attr("cover.myroom_2", "current_position") | float(default=0) > 25 or
+        states("light.plate_myroom_light_12") == "on" or 
+        states("light.plate_myroom_light_14") == "on" )
+        }}
+  condition:
+    - condition: template
+      value_template: "{{ (as_timestamp(now()) - as_timestamp(states('sensor.ha_uptime_moment'))) / 60 > 2 }}"
+  action:
+    - service: openhasp.config
+      target:
+        entity_id: openhasp.plate_myroom
+      data:
+        submodule: gui
+        parameters: '{"idle2":60}'
+
+```
+
+Note here too the condition which assures to avoid triggering the automations falsely when Home Assistant (re)starts (allows running the automation only when Home Assistant has been up for at least 2 minutes).
 
 * * * * *
 
