@@ -1,4 +1,4 @@
-## Backlight ON (dimmed) during the day, OFF during the night
+## Backlight ON (dimmed) during the day, OFF during the night for all the plates
 
 The night mode activates when sun goes down, and the day mode activates when the sun comes up. During the day, when the screen is after short idle, it dims to the level configured in Home Assistant, but never turns off. During the night, the screen turns off after the long idle period.
 
@@ -44,7 +44,7 @@ Note the condition which assures to avoid triggering the automations falsely whe
 
 ## Backlight ON (dimmed) if there's any light in the room, OFF otherwise
 
-The night mode activates when all the lights are off and shutters are down below 25%, the day mode activates otherwise. During the day, when the screen is after short idle, it dims to the level configured in Home Assistant, but never turns off. During the night, the screen turns off after the long idle period.
+The night mode activates when all the lights are off and shutters are down below 25% (assuming it's dark enough for the backlight to be disturbing in such situation), the day mode activates otherwise. During the day, when the screen is after short idle, it dims to the level configured in Home Assistant, but never turns off. During the night, the screen turns off after the long idle period.
 
 This will act directly on the plate in a certain room, as it is triggered by entities located in that room. If you have multiple plates in various rooms, you can create separate automations for each.
 
