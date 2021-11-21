@@ -100,7 +100,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#backlight-on-dimmed-during-the-day-off-during-the-night" class="md-skip">
+        <a href="#backlight-on-dimmed-during-the-day-off-during-the-night-for-all-the-plates" class="md-skip">
           Skip to content
         </a>
       
@@ -723,8 +723,8 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#backlight-on-dimmed-during-the-day-off-during-the-night" class="md-nav__link">
-    Backlight ON (dimmed) during the day, OFF during the night
+  <a href="#backlight-on-dimmed-during-the-day-off-during-the-night-for-all-the-plates" class="md-nav__link">
+    Backlight ON (dimmed) during the day, OFF during the night for all the plates
   </a>
   
 </li>
@@ -1382,8 +1382,8 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#backlight-on-dimmed-during-the-day-off-during-the-night" class="md-nav__link">
-    Backlight ON (dimmed) during the day, OFF during the night
+  <a href="#backlight-on-dimmed-during-the-day-off-during-the-night-for-all-the-plates" class="md-nav__link">
+    Backlight ON (dimmed) during the day, OFF during the night for all the plates
   </a>
   
 </li>
@@ -1435,7 +1435,7 @@
                 
                   <h1>Example Automations</h1>
                 
-                <h2 id="backlight-on-dimmed-during-the-day-off-during-the-night">Backlight ON (dimmed) during the day, OFF during the night<a class="headerlink" href="#backlight-on-dimmed-during-the-day-off-during-the-night" title="Permanent link">~</a></h2>
+                <h2 id="backlight-on-dimmed-during-the-day-off-during-the-night-for-all-the-plates">Backlight ON (dimmed) during the day, OFF during the night for all the plates<a class="headerlink" href="#backlight-on-dimmed-during-the-day-off-during-the-night-for-all-the-plates" title="Permanent link">~</a></h2>
 <p>The night mode activates when sun goes down, and the day mode activates when the sun comes up. During the day, when the screen is after short idle, it dims to the level configured in Home Assistant, but never turns off. During the night, the screen turns off after the long idle period.</p>
 <p>Assuming your plate's configured MQTT <em>group name</em> is <code>plates</code>, this will affect <em>all</em> the plates in your system at once:</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
@@ -1504,7 +1504,7 @@
 <p>Note the condition which assures to avoid triggering the automations falsely when Home Assistant (re)starts (allows running the automation only when Home Assistant has been up for at least 2 minutes).</p>
 <hr />
 <h2 id="backlight-on-dimmed-if-theres-any-light-in-the-room-off-otherwise">Backlight ON (dimmed) if there's any light in the room, OFF otherwise<a class="headerlink" href="#backlight-on-dimmed-if-theres-any-light-in-the-room-off-otherwise" title="Permanent link">~</a></h2>
-<p>The night mode activates when all the lights are off and shutters are down below 25%, the day mode activates otherwise. During the day, when the screen is after short idle, it dims to the level configured in Home Assistant, but never turns off. During the night, the screen turns off after the long idle period.</p>
+<p>The night mode activates when all the lights are off and shutters are down below 25% (assuming it's dark enough for the backlight to be disturbing in such situation), the day mode activates otherwise. During the day, when the screen is after short idle, it dims to the level configured in Home Assistant, but never turns off. During the night, the screen turns off after the long idle period.</p>
 <p>This will act directly on the plate in a certain room, as it is triggered by entities located in that room. If you have multiple plates in various rooms, you can create separate automations for each.</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
