@@ -831,6 +831,8 @@ This example implements Home Assistant's [standard weather conditions](https://w
 
 Note that the tab swiping dots (_p5b10_) are also handled by the custom component. Don't forget update the service call in the configuration with your plate's MQTT node name, and the command parameters if you change the page of the objects.
 
+!!! warning
+    For this example to work, you need an ESP32 board having [PSRam](../../../design/objects#image) memory installed, otherwise openHASP will crash.
 
 relevant **openHASP config:** (screen size 240x320, UI Theme: Hasp Light) 
 
