@@ -100,7 +100,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#keep-backlight-on-dimmed-during-the-day-and-turn-it-off-during-the-night" class="md-skip">
+        <a href="#backlight-on-dimmed-during-the-day-off-during-the-night" class="md-skip">
           Skip to content
         </a>
       
@@ -723,8 +723,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#keep-backlight-on-dimmed-during-the-day-and-turn-it-off-during-the-night" class="md-nav__link">
-    Keep backlight ON (dimmed) during the day, and turn it OFF during the night
+  <a href="#backlight-on-dimmed-during-the-day-off-during-the-night" class="md-nav__link">
+    Backlight ON (dimmed) during the day, OFF during the night
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#backlight-on-dimmed-if-theres-any-light-in-the-room-off-otherwise" class="md-nav__link">
+    Backlight ON (dimmed) if there's any light in the room, OFF otherwise
   </a>
   
 </li>
@@ -1375,8 +1382,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#keep-backlight-on-dimmed-during-the-day-and-turn-it-off-during-the-night" class="md-nav__link">
-    Keep backlight ON (dimmed) during the day, and turn it OFF during the night
+  <a href="#backlight-on-dimmed-during-the-day-off-during-the-night" class="md-nav__link">
+    Backlight ON (dimmed) during the day, OFF during the night
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#backlight-on-dimmed-if-theres-any-light-in-the-room-off-otherwise" class="md-nav__link">
+    Backlight ON (dimmed) if there's any light in the room, OFF otherwise
   </a>
   
 </li>
@@ -1421,7 +1435,7 @@
                 
                   <h1>Example Automations</h1>
                 
-                <h2 id="keep-backlight-on-dimmed-during-the-day-and-turn-it-off-during-the-night">Keep backlight ON (dimmed) during the day, and turn it OFF during the night<a class="headerlink" href="#keep-backlight-on-dimmed-during-the-day-and-turn-it-off-during-the-night" title="Permanent link">~</a></h2>
+                <h2 id="backlight-on-dimmed-during-the-day-off-during-the-night">Backlight ON (dimmed) during the day, OFF during the night<a class="headerlink" href="#backlight-on-dimmed-during-the-day-off-during-the-night" title="Permanent link">~</a></h2>
 <p>The night mode activates when sun goes down, and the day mode activates when the sun comes up. During the day, when the screen is after short idle, it dims to the level configured in Home Assistant, but never turns off. During the night, the screen turns off after the long idle period.</p>
 <p>Assuming your plate's configured MQTT <em>group name</em> is <code>plates</code>, this will affect <em>all</em> the plates in your system at once:</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
@@ -1488,6 +1502,100 @@
 </code></pre></div>
 </td></tr></table>
 <p>Note the condition which assures to avoid triggering the automations falsely when Home Assistant (re)starts (allows running the automation only when Home Assistant has been up for at least 2 minutes).</p>
+<hr />
+<h2 id="backlight-on-dimmed-if-theres-any-light-in-the-room-off-otherwise">Backlight ON (dimmed) if there's any light in the room, OFF otherwise<a class="headerlink" href="#backlight-on-dimmed-if-theres-any-light-in-the-room-off-otherwise" title="Permanent link">~</a></h2>
+<p>The night mode activates when all the lights are off and shutters are down below 25%, the day mode activates otherwise. During the day, when the screen is after short idle, it dims to the level configured in Home Assistant, but never turns off. During the night, the screen turns off after the long idle period.</p>
+<p>This will act directly on the plate in a certain room, as it is triggered by entities located in that room. If you have multiple plates in various rooms, you can create separate automations for each.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p p-Indicator">-</span> <span class="nt">id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">openhasp-plate_myroom-day</span>
+  <span class="nt">alias</span><span class="p">:</span> <span class="s">&quot;openHASP</span><span class="nv"> </span><span class="s">Night</span><span class="nv"> </span><span class="s">mode</span><span class="nv"> </span><span class="s">based</span><span class="nv"> </span><span class="s">on</span><span class="nv"> </span><span class="s">My</span><span class="nv"> </span><span class="s">Room</span><span class="nv"> </span><span class="s">entities&quot;</span>
+  <span class="nt">trigger</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="nt">platform</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">template</span>
+      <span class="nt">value_template</span><span class="p">:</span> <span class="p p-Indicator">&gt;</span>
+        <span class="no">{{ </span>
+        <span class="no">state_attr(&quot;cover.myroom_1&quot;, &quot;current_position&quot;) | float(default=0) &gt; 25 or</span>
+        <span class="no">state_attr(&quot;cover.myroom_2&quot;, &quot;current_position&quot;) | float(default=0) &gt; 25 or</span>
+        <span class="no">states(&quot;light.plate_myroom_light_12&quot;) == &quot;on&quot; or </span>
+        <span class="no">states(&quot;light.plate_myroom_light_14&quot;) == &quot;on&quot;</span>
+        <span class="no">}}</span>
+  <span class="nt">condition</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="nt">condition</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">template</span>
+      <span class="nt">value_template</span><span class="p">:</span> <span class="s">&quot;{{</span><span class="nv"> </span><span class="s">(as_timestamp(now())</span><span class="nv"> </span><span class="s">-</span><span class="nv"> </span><span class="s">as_timestamp(states(&#39;sensor.ha_uptime_moment&#39;)))</span><span class="nv"> </span><span class="s">/</span><span class="nv"> </span><span class="s">60</span><span class="nv"> </span><span class="s">&gt;</span><span class="nv"> </span><span class="s">2</span><span class="nv"> </span><span class="s">}}&quot;</span>
+  <span class="nt">action</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="nt">service</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">openhasp.config</span>
+      <span class="nt">target</span><span class="p">:</span>
+        <span class="nt">entity_id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">openhasp.plate_myroom</span>
+      <span class="nt">data</span><span class="p">:</span>
+        <span class="nt">submodule</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">gui</span>
+        <span class="nt">parameters</span><span class="p">:</span> <span class="s">&#39;{&quot;idle2&quot;:0}&#39;</span>
+
+
+<span class="p p-Indicator">-</span> <span class="nt">id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">openhasp-plate_myroom-night</span>
+  <span class="nt">alias</span><span class="p">:</span> <span class="s">&quot;openHASP</span><span class="nv"> </span><span class="s">Day</span><span class="nv"> </span><span class="s">mode</span><span class="nv"> </span><span class="s">based</span><span class="nv"> </span><span class="s">on</span><span class="nv"> </span><span class="s">My</span><span class="nv"> </span><span class="s">Room</span><span class="nv"> </span><span class="s">entities&quot;</span>
+  <span class="nt">trigger</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="nt">platform</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">template</span>
+      <span class="nt">value_template</span><span class="p">:</span> <span class="p p-Indicator">&gt;</span>
+        <span class="no">{{ not (</span>
+        <span class="no">state_attr(&quot;cover.myroom_1&quot;, &quot;current_position&quot;) | float(default=0) &gt; 25 or</span>
+        <span class="no">state_attr(&quot;cover.myroom_2&quot;, &quot;current_position&quot;) | float(default=0) &gt; 25 or</span>
+        <span class="no">states(&quot;light.plate_myroom_light_12&quot;) == &quot;on&quot; or </span>
+        <span class="no">states(&quot;light.plate_myroom_light_14&quot;) == &quot;on&quot; )</span>
+        <span class="no">}}</span>
+  <span class="nt">condition</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="nt">condition</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">template</span>
+      <span class="nt">value_template</span><span class="p">:</span> <span class="s">&quot;{{</span><span class="nv"> </span><span class="s">(as_timestamp(now())</span><span class="nv"> </span><span class="s">-</span><span class="nv"> </span><span class="s">as_timestamp(states(&#39;sensor.ha_uptime_moment&#39;)))</span><span class="nv"> </span><span class="s">/</span><span class="nv"> </span><span class="s">60</span><span class="nv"> </span><span class="s">&gt;</span><span class="nv"> </span><span class="s">2</span><span class="nv"> </span><span class="s">}}&quot;</span>
+  <span class="nt">action</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="nt">service</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">openhasp.config</span>
+      <span class="nt">target</span><span class="p">:</span>
+        <span class="nt">entity_id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">openhasp.plate_myroom</span>
+      <span class="nt">data</span><span class="p">:</span>
+        <span class="nt">submodule</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">gui</span>
+        <span class="nt">parameters</span><span class="p">:</span> <span class="s">&#39;{&quot;idle2&quot;:60}&#39;</span>
+</code></pre></div>
+</td></tr></table>
+<p>Note here too the condition which assures to avoid triggering the automations falsely when Home Assistant (re)starts (allows running the automation only when Home Assistant has been up for at least 2 minutes).</p>
 <hr />
 <h2 id="turn-on-moodlight-when-backlight-goes-off-and-back">Turn ON moodlight when backlight goes OFF (and back)<a class="headerlink" href="#turn-on-moodlight-when-backlight-goes-off-and-back" title="Permanent link">~</a></h2>
 <p>If your plate has moodlights, it is useful in dark situations, when you don't want to have the screen backlit on all the time as above, but have the mood light on instead. During the day mood light doesn't light.</p>
