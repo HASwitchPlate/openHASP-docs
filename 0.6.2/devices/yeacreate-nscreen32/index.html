@@ -1491,6 +1491,13 @@ The development board can be powered via micro USB or the 5V-in JST connector.</
 <p><a class="md-button md-button--primary" href="https://store.yeacreate.com/products/3" target="_blank"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 20c0 1.11-.89 2-2 2a2 2 0 0 1-2-2c0-1.11.89-2 2-2a2 2 0 0 1 2 2M7 18c-1.11 0-2 .89-2 2a2 2 0 0 0 2 2c1.11 0 2-.89 2-2s-.89-2-2-2m.2-3.37-.03.12c0 .14.11.25.25.25H19v2H7a2 2 0 0 1-2-2c0-.35.09-.68.24-.96l1.36-2.45L3 4H1V2h3.27l.94 2H20c.55 0 1 .45 1 1 0 .17-.05.34-.12.5l-3.58 6.47c-.34.61-1 1.03-1.75 1.03H8.1l-.9 1.63M8.5 11H10V9H7.56l.94 2M11 9v2h3V9h-3m3-1V6h-3v2h3m3.11 1H15v2h1l1.11-2m1.67-3H15v2h2.67l1.11-2M6.14 6l.94 2H10V6H6.14z"/></svg></span> YeaCreate Store</a></p>
 <h2 id="backlight-control">Backlight Control<a class="headerlink" href="#backlight-control" title="Permanent link">~</a></h2>
 <p>Unfortunately, there is <a href="https://github.com/yeacreate-opensources/Nscreen_32/issues/2" target="_blank">no support for backlight control</a>. The display is always-on.</p>
+<p>With a small hack it is possible to control the backlight using a PNP transistor connected to <code>GPIO0</code>, <code>R8</code> and <code>3.3V</code>.</p>
+<div class="row justify-content-center">
+        <a href="../../assets/images/devices/nscreen32-hack.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-6" data-title="Yeacreate Nscreen32 backlight hack" data-footer="Image provided by arovak">
+            <img src="../../assets/images/devices/nscreen32-hack.jpg" class="img-fluid">
+        </a>
+</div>
+
 <h2 id="documentation">Documentation<a class="headerlink" href="#documentation" title="Permanent link">~</a></h2>
 <p>Some example projects and the schematics for the Nscreen32 can be found on the Yeacreate Github repository.</p>
 <p><a class="md-button" href="https://github.com/yeacreate-opensources/Nscreen_32" target="_blank"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/></svg></span> Github Repo</a> &nbsp;
