@@ -39,6 +39,13 @@ The development board can be powered via micro USB or the 5V-in JST connector.
 
 Unfortunately, there is [no support for backlight control][2]{target=_blank}. The display is always-on.
 
+With a small hack it is possible to control the backlight using a PNP transistor connected to `GPIO0`, `R8` and `3.3V`.
+
+<div class="row justify-content-center">
+        <a href="../../assets/images/devices/nscreen32-hack.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-6" data-title="Yeacreate Nscreen32 backlight hack" data-footer="Image provided by arovak">
+            <img src="../../assets/images/devices/nscreen32-hack.jpg" class="img-fluid">
+        </a>
+</div>
 
 ## Documentation
 
