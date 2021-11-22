@@ -24,13 +24,13 @@ openHASP can take advantage of the 320x480 resolution to show a large custom use
 On the back there is an expansion port with 6 GPIOs (4 input only, RX & TX) so you add inputs if needed.
 The development board can be powered via micro USB or the 5V-in JST connector.
 
-| Pros                   | Cons
-|:-----                  |:----
-| 8-bit parallel display | No backlight control 
-| 16 MB flash + 8 MB PSram | Always-on display
-| Capacitive Touchscreen |
-| Viewing angles         |
-| External antenna       |
+| Pros                     | Cons
+|:-----                    |:----
+| 8-bit parallel display   | No backlight control 
+| 16 MB flash + 8 MB PSram | Bright white power LED
+| Capacitive Touchscreen
+| Viewing angles
+| External antenna
 
 [:material-cart-variant: YeaCreate Store][1]{target=_blank .md-button .md-button--primary }
 
