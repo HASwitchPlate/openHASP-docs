@@ -1549,10 +1549,52 @@
 <span class="normal">41</span>
 <span class="normal">42</span>
 <span class="normal">43</span>
-<span class="normal">44</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p p-Indicator">-</span> <span class="nt">id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">openhasp-plate_myroom-day</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span>
+<span class="normal">55</span>
+<span class="normal">56</span>
+<span class="normal">57</span>
+<span class="normal">58</span>
+<span class="normal">59</span>
+<span class="normal">60</span>
+<span class="normal">61</span>
+<span class="normal">62</span>
+<span class="normal">63</span>
+<span class="normal">64</span>
+<span class="normal">65</span>
+<span class="normal">66</span>
+<span class="normal">67</span>
+<span class="normal">68</span>
+<span class="normal">69</span>
+<span class="normal">70</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p p-Indicator">-</span> <span class="nt">id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">openhasp-plate_myroom-day</span>
   <span class="nt">alias</span><span class="p">:</span> <span class="s">&quot;openHASP</span><span class="nv"> </span><span class="s">Night</span><span class="nv"> </span><span class="s">mode</span><span class="nv"> </span><span class="s">based</span><span class="nv"> </span><span class="s">on</span><span class="nv"> </span><span class="s">My</span><span class="nv"> </span><span class="s">Room</span><span class="nv"> </span><span class="s">entities&quot;</span>
   <span class="nt">trigger</span><span class="p">:</span>
-    <span class="p p-Indicator">-</span> <span class="nt">platform</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">template</span>
+    <span class="p p-Indicator">-</span> <span class="nt">platform</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">state</span>
+      <span class="nt">entity_id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">light.plate_myroom_light_12</span>
+    <span class="p p-Indicator">-</span> <span class="nt">platform</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">state</span>
+      <span class="nt">entity_id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">light.plate_myroom_light_14</span>
+    <span class="p p-Indicator">-</span> <span class="nt">platform</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">state</span>
+      <span class="nt">entity_id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">cover.myroom_1</span>
+    <span class="p p-Indicator">-</span> <span class="nt">platform</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">state</span>
+      <span class="nt">entity_id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">cover.myroom_2</span>
+    <span class="p p-Indicator">-</span> <span class="nt">platform</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">state</span>
+      <span class="nt">entity_id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">openhasp.plate_myroom</span>
+      <span class="nt">from</span><span class="p">:</span> <span class="s">&#39;unavailable&#39;</span>
+  <span class="nt">condition</span><span class="p">:</span>
+    <span class="nt">condition</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">and</span>
+    <span class="nt">conditions</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="nt">condition</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">template</span>
+      <span class="nt">value_template</span><span class="p">:</span> <span class="s">&quot;{{</span><span class="nv"> </span><span class="s">(as_timestamp(now())</span><span class="nv"> </span><span class="s">-</span><span class="nv"> </span><span class="s">as_timestamp(states(&#39;sensor.ha_uptime_moment&#39;)))</span><span class="nv"> </span><span class="s">/</span><span class="nv"> </span><span class="s">60</span><span class="nv"> </span><span class="s">&gt;</span><span class="nv"> </span><span class="s">2</span><span class="nv"> </span><span class="s">}}&quot;</span>
+    <span class="p p-Indicator">-</span> <span class="nt">condition</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">template</span>
       <span class="nt">value_template</span><span class="p">:</span> <span class="p p-Indicator">&gt;</span>
         <span class="no">{{ </span>
         <span class="no">state_attr(&quot;cover.myroom_1&quot;, &quot;current_position&quot;) | float(default=0) &gt; 25 or</span>
@@ -1560,9 +1602,6 @@
         <span class="no">states(&quot;light.plate_myroom_light_12&quot;) == &quot;on&quot; or </span>
         <span class="no">states(&quot;light.plate_myroom_light_14&quot;) == &quot;on&quot;</span>
         <span class="no">}}</span>
-  <span class="nt">condition</span><span class="p">:</span>
-    <span class="p p-Indicator">-</span> <span class="nt">condition</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">template</span>
-      <span class="nt">value_template</span><span class="p">:</span> <span class="s">&quot;{{</span><span class="nv"> </span><span class="s">(as_timestamp(now())</span><span class="nv"> </span><span class="s">-</span><span class="nv"> </span><span class="s">as_timestamp(states(&#39;sensor.ha_uptime_moment&#39;)))</span><span class="nv"> </span><span class="s">/</span><span class="nv"> </span><span class="s">60</span><span class="nv"> </span><span class="s">&gt;</span><span class="nv"> </span><span class="s">2</span><span class="nv"> </span><span class="s">}}&quot;</span>
   <span class="nt">action</span><span class="p">:</span>
     <span class="p p-Indicator">-</span> <span class="nt">service</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">openhasp.config</span>
       <span class="nt">target</span><span class="p">:</span>
@@ -1575,7 +1614,23 @@
 <span class="p p-Indicator">-</span> <span class="nt">id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">openhasp-plate_myroom-night</span>
   <span class="nt">alias</span><span class="p">:</span> <span class="s">&quot;openHASP</span><span class="nv"> </span><span class="s">Day</span><span class="nv"> </span><span class="s">mode</span><span class="nv"> </span><span class="s">based</span><span class="nv"> </span><span class="s">on</span><span class="nv"> </span><span class="s">My</span><span class="nv"> </span><span class="s">Room</span><span class="nv"> </span><span class="s">entities&quot;</span>
   <span class="nt">trigger</span><span class="p">:</span>
-    <span class="p p-Indicator">-</span> <span class="nt">platform</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">template</span>
+    <span class="p p-Indicator">-</span> <span class="nt">platform</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">state</span>
+      <span class="nt">entity_id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">light.plate_myroom_light_12</span>
+    <span class="p p-Indicator">-</span> <span class="nt">platform</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">state</span>
+      <span class="nt">entity_id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">light.plate_myroom_light_14</span>
+    <span class="p p-Indicator">-</span> <span class="nt">platform</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">state</span>
+      <span class="nt">entity_id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">cover.myroom_1</span>
+    <span class="p p-Indicator">-</span> <span class="nt">platform</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">state</span>
+      <span class="nt">entity_id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">cover.myroom_2</span>
+    <span class="p p-Indicator">-</span> <span class="nt">platform</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">state</span>
+      <span class="nt">entity_id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">openhasp.plate_myroom</span>
+      <span class="nt">from</span><span class="p">:</span> <span class="s">&#39;unavailable&#39;</span>
+  <span class="nt">condition</span><span class="p">:</span>
+    <span class="nt">condition</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">and</span>
+    <span class="nt">conditions</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="nt">condition</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">template</span>
+      <span class="nt">value_template</span><span class="p">:</span> <span class="s">&quot;{{</span><span class="nv"> </span><span class="s">(as_timestamp(now())</span><span class="nv"> </span><span class="s">-</span><span class="nv"> </span><span class="s">as_timestamp(states(&#39;sensor.ha_uptime_moment&#39;)))</span><span class="nv"> </span><span class="s">/</span><span class="nv"> </span><span class="s">60</span><span class="nv"> </span><span class="s">&gt;</span><span class="nv"> </span><span class="s">2</span><span class="nv"> </span><span class="s">}}&quot;</span>
+    <span class="p p-Indicator">-</span> <span class="nt">condition</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">template</span>
       <span class="nt">value_template</span><span class="p">:</span> <span class="p p-Indicator">&gt;</span>
         <span class="no">{{ not (</span>
         <span class="no">state_attr(&quot;cover.myroom_1&quot;, &quot;current_position&quot;) | float(default=0) &gt; 25 or</span>
@@ -1583,9 +1638,6 @@
         <span class="no">states(&quot;light.plate_myroom_light_12&quot;) == &quot;on&quot; or </span>
         <span class="no">states(&quot;light.plate_myroom_light_14&quot;) == &quot;on&quot; )</span>
         <span class="no">}}</span>
-  <span class="nt">condition</span><span class="p">:</span>
-    <span class="p p-Indicator">-</span> <span class="nt">condition</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">template</span>
-      <span class="nt">value_template</span><span class="p">:</span> <span class="s">&quot;{{</span><span class="nv"> </span><span class="s">(as_timestamp(now())</span><span class="nv"> </span><span class="s">-</span><span class="nv"> </span><span class="s">as_timestamp(states(&#39;sensor.ha_uptime_moment&#39;)))</span><span class="nv"> </span><span class="s">/</span><span class="nv"> </span><span class="s">60</span><span class="nv"> </span><span class="s">&gt;</span><span class="nv"> </span><span class="s">2</span><span class="nv"> </span><span class="s">}}&quot;</span>
   <span class="nt">action</span><span class="p">:</span>
     <span class="p p-Indicator">-</span> <span class="nt">service</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">openhasp.config</span>
       <span class="nt">target</span><span class="p">:</span>
@@ -1773,7 +1825,7 @@ Just add these actions to the <a href="#turn-on-moodlight-when-backlight-goes-of
 <div class="md-source-date">
   <small>
     
-      Last update: 2021-11-22
+      Last update: 2021-11-24
     
   </small>
 </div>
