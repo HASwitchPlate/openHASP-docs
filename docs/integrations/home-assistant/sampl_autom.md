@@ -52,7 +52,23 @@ This will act directly on the plate in a certain room, as it is triggered by ent
 - id: openhasp-plate_myroom-day
   alias: "openHASP Night mode based on My Room entities"
   trigger:
-    - platform: template
+    - platform: state
+      entity_id: light.plate_myroom_light_12
+    - platform: state
+      entity_id: light.plate_myroom_light_14
+    - platform: state
+      entity_id: cover.myroom_1
+    - platform: state
+      entity_id: cover.myroom_2
+    - platform: state
+      entity_id: openhasp.plate_myroom
+      from: 'unavailable'
+  condition:
+    condition: and
+    conditions:
+    - condition: template
+      value_template: "{{ (as_timestamp(now()) - as_timestamp(states('sensor.ha_uptime_moment'))) / 60 > 2 }}"
+    - condition: template
       value_template: >
         {{ 
         state_attr("cover.myroom_1", "current_position") | float(default=0) > 25 or
@@ -60,9 +76,6 @@ This will act directly on the plate in a certain room, as it is triggered by ent
         states("light.plate_myroom_light_12") == "on" or 
         states("light.plate_myroom_light_14") == "on"
         }}
-  condition:
-    - condition: template
-      value_template: "{{ (as_timestamp(now()) - as_timestamp(states('sensor.ha_uptime_moment'))) / 60 > 2 }}"
   action:
     - service: openhasp.config
       target:
@@ -75,7 +88,23 @@ This will act directly on the plate in a certain room, as it is triggered by ent
 - id: openhasp-plate_myroom-night
   alias: "openHASP Day mode based on My Room entities"
   trigger:
-    - platform: template
+    - platform: state
+      entity_id: light.plate_myroom_light_12
+    - platform: state
+      entity_id: light.plate_myroom_light_14
+    - platform: state
+      entity_id: cover.myroom_1
+    - platform: state
+      entity_id: cover.myroom_2
+    - platform: state
+      entity_id: openhasp.plate_myroom
+      from: 'unavailable'
+  condition:
+    condition: and
+    conditions:
+    - condition: template
+      value_template: "{{ (as_timestamp(now()) - as_timestamp(states('sensor.ha_uptime_moment'))) / 60 > 2 }}"
+    - condition: template
       value_template: >
         {{ not (
         state_attr("cover.myroom_1", "current_position") | float(default=0) > 25 or
@@ -83,9 +112,6 @@ This will act directly on the plate in a certain room, as it is triggered by ent
         states("light.plate_myroom_light_12") == "on" or 
         states("light.plate_myroom_light_14") == "on" )
         }}
-  condition:
-    - condition: template
-      value_template: "{{ (as_timestamp(now()) - as_timestamp(states('sensor.ha_uptime_moment'))) / 60 > 2 }}"
   action:
     - service: openhasp.config
       target:
