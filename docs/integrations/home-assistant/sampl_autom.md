@@ -19,6 +19,7 @@ This will act directly on the plate in a certain room, as it is triggered by ent
     - platform: state
       entity_id: openhasp.plate_myroom
       from: 'unavailable'
+  mode: restart
   condition:
     condition: and
     conditions:
@@ -55,6 +56,7 @@ This will act directly on the plate in a certain room, as it is triggered by ent
     - platform: state
       entity_id: openhasp.plate_myroom
       from: 'unavailable'
+  mode: restart
   condition:
     condition: and
     conditions:
