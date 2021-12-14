@@ -226,12 +226,6 @@ Returns a JSON object containing the current state of the input, either `on` or 
 
 ## System Commands
 
-### `calibrate`
-
-Start on-screen touch calibration.
-
-You need to issue a soft reboot command to save the new calibration settings. If you do a hard reset of the device, the calibration settings will be lost.
-
 ### `antiburn`
 
 _accepted parameters:_ `on`/`off`, `true`/`false`, `0`/`1`, `yes`/`no`   
@@ -247,12 +241,57 @@ The cycle stops when either:
 
 If you're using Home Assistant, check out the [automation example][6] to make it run on a regular basis.
 
+### `calibrate`
+
+Start on-screen touch calibration.
+
+You need to issue a soft reboot command to save the new calibration settings. If you do a hard reset of the device, the calibration settings will be lost.
+
+### `discovery`
+
+Trigger the sending of the discovery payload.
+
+### `factoryreset`
+
+Clear the filesystem and EEPROM and reboot the device in its initial state.
+
+!!! note "Warning"
+    There is no confirmation prompt nor an undo function!
+
+### `reboot` or `restart`
+
+Saves any changes in the configuration file and reboots the device.
+
 ### `screenshot`
 
 Saves a picture of the current screen to the flash filesystem. You can retrieve it via http://&lt;ip-address&gt;/screenshot.bmp.
 This can be handy for bug reporting or documentation.
 
 The previous screenshot is overwritten.
+
+### `service`
+
+Start or stop some of the processes running on the plate.
+
+Currently supported parameters:
+
+- `start`
+- `stop`
+
+Currently supported services:
+
+- `http` (web interface)
+- `telnet` (remote console)
+- `console` (serial console)
+
+!!! example "Example"
+    To stop the web interface of the plate, send to topic `hasp/<your_plate>/command/service` the string `stop http`.
+    To start the web interface of the plate, send to topic `hasp/<your_plate>/command/service` the string `start http`.
+
+
+!!! tip
+    Once these services are stopped, connection is lost/not possible to the plate through them. They can be started at any time by sending `service start` commands in through MQTT.             
+    It's possible to create self-built firmware binaries which have services stopped by default at boot, using [customization](compiling/customize.md). 
 
 ### `statusupdate`
 
@@ -289,49 +328,10 @@ Unzip a file-packgage on the plate. You can upload **uncompressed** ZIP files to
     unzip /openhasp-weathericons-day.zip
     ```
 
-### `service`
-
-Start or stop some of the processes running on the plate.
-
-Currently supported parameters:
-
-- `start`
-- `stop`
-
-Currently supported services:
-
-- `http` (web interface)
-- `telnet` (remote console)
-- `console` (serial console)
-
-!!! example "Example"
-    To stop the web interface of the plate, send to topic `hasp/<your_plate>/command/service` the string `stop http`.
-    To start the web interface of the plate, send to topic `hasp/<your_plate>/command/service` the string `start http`.
-
-
-!!! tip
-    Once these services are stopped, connection is lost/not possible to the plate through them. They can be started at any time by sending `service start` commands in through MQTT.             
-    It's possible to create self-built firmware binaries which have services stopped by default at boot, using [customization](compiling/customize.md). 
-
-
-
-### `reboot` or `restart`
-
-Saves any changes in the configuration file and reboots the device.
-
-
 ### `update`
 
 _accepted parameters:_ `[url]`     
 Update the firmware from the url provided. Reboots when update was successful.
-
-
-### `factoryreset`
-
-Clear the filesystem and EEPROM and reboot the device in its initial state.
-
-!!! note "Warning"
-    There is no confirmation prompt nor an undo function!
 
 
 ## Configuration Settings
