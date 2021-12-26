@@ -1151,7 +1151,7 @@ The fan and the perfume PNG icons are available below. Upload them to the flash 
 - [fan](../../assets/users/g64.png)
 - [perfume](../../assets/users/perfume3.png)
 
-_Icons are copyright from [SVG Repo](https://www.svgrepo.com/){target=_blank}
+_Icons are copyright from [SVG Repo](https://www.svgrepo.com/){target=_blank}_
 
 !!! warning
     For this example to work, you need an ESP32 board having [PSRam](../../../design/objects#image) memory installed, otherwise openHASP will likely crash.
