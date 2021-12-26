@@ -1140,7 +1140,7 @@ relevant **openHASP-custom-component config:**
 
 ## Fan and scent diffuser
 
-![screenshot](https://user-images.githubusercontent.com/1550668/147422223-0728ee0f-dc29-448e-8983-c644b7e72a4d.png)
+![screenshot](../../assets/images/screenshots/cc-sampl-fan-diffuser.png)
 
 This example shows how a transparent PNG image can be combined with a moving spinner object, to create the impression of a spinning fan.
 In Home Assistant this fan appears as a `select` component with the available presets as `Low`,`Mid`,`High`,`Turbo`,`OFF` selectable options. The scent diffuser appears as a standard `fan` component where the intensity can be set by percentage.     
