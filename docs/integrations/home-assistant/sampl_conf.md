@@ -1136,3 +1136,125 @@ relevant **openHASP-custom-component config:**
 
 ```
 
+*  *  *  *  *
+
+## Fan and scent diffuser
+
+![screenshot](https://user-images.githubusercontent.com/1550668/147422223-0728ee0f-dc29-448e-8983-c644b7e72a4d.png)
+
+This example shows how a transparent PNG image can be combined with a moving spinner object, to create the impression of a spinning fan.
+In Home Assistant this fan appears as a `select` component with the available presets as `Low`,`Mid`,`High`,`Turbo`,`OFF` selectable options. The scent diffuser appears as a standard `fan` component where the intensity can be set by percentage.     
+To control the fan we use a button matrix object which has exactly the same buttons as the options of the select component. To control the scent diffuser we use a slider object.
+
+The fan and the perfume PNG icons are available below. Upload them to the flash storage of your plate.
+
+- [fan](../../assets/users/g64.png)
+- [perfume](../../assets/users/perfume3.png)
+
+_Icons are copyright from [SVG Repo](https://www.svgrepo.com/){target=_blank}
+
+!!! warning
+    For this example to work, you need an ESP32 board having [PSRam](../../../design/objects#image) memory installed, otherwise openHASP will likely crash.
+
+relevant **openHASP config:** (screen size 240x320, UI Theme: Hasp Light) 
+
+```json
+{"page":4,"id":1,"obj":"btn","x":0,"y":0,"w":240,"h":30,"text":"AIR TREATMENT","text_font":16,"bg_color":"#2C3E50","text_color":"#FFFFFF","radius":0,"border_side":0,"click":0}
+{"page":4,"id":10,"obj":"obj","x":5,"y":35,"w":230,"h":250,"click":0}
+{"page":4,"id":2,"obj":"label","x":10,"y":40,"w":105,"h":20,"text":"Fresh air flow","align":"center","border_width":0}
+{"page":4,"id":3,"obj":"label","x":125,"y":40,"w":105,"h":20,"text":"Scent intensity","align":"center","border_width":0}
+{"page":4,"id":12,"obj":"spinner","x":36,"y":84,"w":56,"h":56,"bg_opa":0,"border_width":0,"line_width":0,"line_width1":19,"line_color1":"#34eb77","type":2,"angle":160,"speed":3000}
+{"page":4,"id":13,"obj":"img","x":14,"y":75,"src":"L:/g64.png","auto_size":1,"w":100,"h":74}
+{"page":4,"id":14,"obj":"img","x":130,"y":78,"src":"L:/perfume3.png","auto_size":1,"w":60,"h":68}
+{"page":4,"id":40,"obj":"btnmatrix","x":5,"y":130,"w":110,"h":113,"parentid":10,"options":["Low","Mid","\n","High","Turbo","\n","OFF"],"toggle":1,"one_check":1,"bg_opa":0,"pad_inner":5,"border_width":0,"pad_top":0,"pad_bottom":0,"pad_left":0,"pad_right":0}
+{"page":4,"id":51,"obj":"slider","x":200,"y":60,"w":25,"h":220,"min":0,"max":60,"val":15}
+{"page":4,"id":52,"obj":"obj","x":130,"y":130,"w":50,"h":30,"parentid":10,"click":0,"radius":5}
+{"page":4,"id":53,"obj":"label","x":130,"y":130,"w":50,"h":30,"parentid":10,"text":"15","text_font":24,"align":"center"}
+{"page":4,"id":54,"obj":"btn","x":130,"y":168,"w":50,"h":76,"parentid":10,"toggle":true,"text":"\uE425","text_font":32,"align":1,"bg_color":"#A0A0A0","bg_grad_color":"#606060","border_color":"#404040"}
+
+```
+
+relevant **openHASP-custom-component config:**
+```yaml
+      - obj: "p4b40" # Buttin Matrix with the fan presets
+        properties:
+          "click": "{{ 0 if (is_state('input_select.fan_presets','unavailable') or is_state('input_select.fan_presets','unknown')) else 1 }}"
+          "opacity": "{{ 100 if (is_state('input_select.fan_presets','unavailable') or is_state('input_select.fan_presets','unknown')) else 255 }}"
+          "options": '["Low","Mid","\n","High","Turbo","\n","OFF"]'
+          "toggle": '{{ 1 if (not states("input_select.fan_presets") in state_attr("input_select.fan_presets","options")) or (is_state("input_select.fan_presets","unavailable")) -}}'
+
+          "val": >
+            {% if not (is_state('input_select.fan_presets','unavailable')) -%}
+            {% if not states('input_select.fan_presets') in state_attr('input_select.fan_presets','options') -%}-1{% else -%}
+            {% for source in state_attr('input_select.fan_presets','options') -%}
+            {{loop.index - 1 if source == states('input_select.fan_presets') }}
+            {%-endfor%}
+            {%- endif %}
+            {%- endif %}
+        event:
+            - service: input_select.input_select_option
+              data:
+                option: '{{ text }}'
+              target:
+                entity_id: input_select.fan_presets
+
+      - obj: "p4b12"  # Spinner behind the PNG icon
+        properties:
+          "opacity": "{{ 0 if (is_state('input_select.fan_presets','unavailable') or is_state('input_select.fan_presets','unknown') or is_state('input_select.fan_presets','OFF')) else 255 }}"
+          "speed": >
+            {% if is_state('openhasp.plate_test', '4') %}
+            {% if is_state('input_select.fan_presets', 'Low') %}
+            {{ "4200" }}
+            {%-elif is_state('input_select.fan_presets', 'Mid') %}
+            {{ "2000" }}
+            {%-elif is_state('input_select.fan_presets', 'High') %}
+            {{ "1400" }}
+            {%-elif is_state('input_select.fan_presets', 'Turbo') %}
+            {{ "800" }}
+            {%-else %}
+            {{ "0" }}
+            {% endif %}
+            {% else -%}{{ "0" }}{% endif %}
+          "line_color1": >
+            {% if is_state('input_select.fan_presets', 'Low') %}
+            {{ "#31de70" }}
+            {%-elif is_state('input_select.fan_presets', 'Mid') %}
+            {{ "#dede1f" }}
+            {%-elif is_state('input_select.fan_presets', 'High') %}
+            {{ "#d6a11a" }}
+            {%-elif is_state('input_select.fan_presets', 'Turbo') %}
+            {{ "#ff4a4a" }}
+            {%-else %}
+            {{ "#9f96b0" }}
+            {% endif %}
+
+
+      - obj: "p4b54" # Scent Diffuser ON/OFF button
+        properties:
+          "val": '{{ 1 if is_state("fan.scent_diffuser_intensity", "on") else 0 }}'
+          "enabled": "{{ 'false' if (is_state('fan.scent_diffuser_intensity','unavailable') or is_state('fan.scent_diffuser_intensity','unknown')) else 'true' }}"
+        event:
+          "down":
+            - service: fan.toggle
+              target:
+                entity_id: fan.scent_diffuser_intensity
+
+      - obj: "p4b51" # Scent Diffuser intensity slider
+        properties:
+          "val": "{{ state_attr('fan.scent_diffuser_intensity','percentage') }}"
+          "enabled": "{{ 'false' if (is_state('fan.scent_diffuser_intensity','unavailable') or is_state('fan.scent_diffuser_intensity','unknown')) else 'true' }}"
+        event:
+          "up":
+            - service: fan.set_percentage
+              target:
+                entity_id: fan.scent_diffuser_intensity
+              data:
+                percentage: '{{ val }}'
+
+      - obj: "p4b53" # Scent Diffuser intensity number label
+        properties:
+          "text": "{{ '--' if (is_state('fan.scent_diffuser_intensity','unavailable') or is_state('fan.scent_diffuser_intensity','unknown')) else state_attr('fan.scent_diffuser_intensity','percentage') }}"
+          "opacity": "{{ 255 if is_state('fan.scent_diffuser_intensity', 'on') else 95 }}"
+```
+
+Note the condition in the Spinner configuration of the component: `{% if is_state('openhasp.plate_test', '4') %}` - this is useful to only animate the spinner when the page containing it is actually shown. Since the spinner is being overlapped by a transparent PNG image, CPU usage is higher as it has to be completely redrawn every frame. CPU resources can be freed up this way - only animate when it can be seen.
