@@ -824,9 +824,6 @@ Weather condition icons are displayed from the internal flash space of the plate
 
 To unzip them on the plate, connect via Telnet and run the command `unzip /openhasp-weathericons-day.zip` to unzip the light theme above (alternatively you can unzip them on your computer and upload them one by one). The configuration example only shows how to use the light theme icons.
 
-_Icons are copyright from [manifestinteractive](https://github.com/manifestinteractive/weather-underground-icons){target=_blank}
-and [merlinthered](https://www.deviantart.com/merlinthered/art/plain-weather-icons-157162192){target=_blank}._
-
 This example implements Home Assistant's [standard weather conditions](https://www.home-assistant.io/integrations/weather/){target=_blank} only (as in 2021.06), so any weather integration component can be used. Some integrations know extra conditions in addition to the standard ones, those (with their corresponding icons) can be easily added to the component configuration below.
 
 Note that the tab swiping dots (_p5b10_) are also handled by the custom component. Don't forget update the service call in the configuration with your plate's MQTT node name, and the command parameters if you change the page of the objects.
@@ -1136,6 +1133,12 @@ relevant **openHASP-custom-component config:**
 
 ```
 
+
+!!! note "Attribution" 
+    Icons are copyright from [manifestinteractive](https://github.com/manifestinteractive/weather-underground-icons){target=_blank} and [merlinthered](https://www.deviantart.com/merlinthered/art/plain-weather-icons-157162192){target=_blank}._
+
+
+
 *  *  *  *  *
 
 ## Fan and scent diffuser
@@ -1150,8 +1153,6 @@ The fan and the perfume PNG icons are available below. Upload them to the flash 
 
 - [fan](../../assets/users/g64.png)
 - [perfume](../../assets/users/perfume3.png)
-
-_Icons are copyright from [SVG Repo](https://www.svgrepo.com/){target=_blank}_
 
 !!! warning
     For this example to work, you need an ESP32 board having [PSRam](../../../design/objects#image) memory installed, otherwise openHASP will likely crash.
@@ -1258,3 +1259,6 @@ relevant **openHASP-custom-component config:**
 ```
 
 Note the condition in the Spinner configuration of the component: `{% if is_state('openhasp.plate_test', '4') %}` - this is useful to only animate the spinner when the page containing it is actually shown. Since the spinner is being overlapped by a transparent PNG image, CPU usage is higher as it has to be completely redrawn every frame. CPU resources can be freed up this way - only animate when it can be seen.
+
+!!! note "Attribution" 
+    Icons are copyright from [SVG Repo](https://www.svgrepo.com/){target=_blank}
