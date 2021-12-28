@@ -31,7 +31,7 @@ Here's another approach where the spinner discretely shows up behind the blades:
 
 ```
 
-For fans in action, check out the [fan and scent diffuser example](../../home-assistant/sampl_conf/#fan-and-scent-diffuser) for Home Assistant.
+For fans in action, check out the [fan and scent diffuser example](../../home-assistant/sampl_conf/#fan-and-scent-diffuser) for Home Assistant.    
 Check out the [pagination example](../example-pagination) to learn how to implement the bottom bar.  
 Check out the [clock and temperature example](../../home-assistant/sampl_conf/#display-clock-and-temperature) to learn how to implement values to the top.  
 
