@@ -3385,7 +3385,8 @@ The various strings containing day names, day periods, weather conditions can be
 </td></tr></table>
 <div class="admonition note">
 <p class="admonition-title">Attribution</p>
-<p>Icons are copyright from <a href="https://github.com/manifestinteractive/weather-underground-icons">manifestinteractive</a>{target=<em>blank} and <a href="https://www.deviantart.com/merlinthered/art/plain-weather-icons-157162192" target="_blank">merlinthered</a>.</em></p>
+<p>Icons are copyright from <a href="https://github.com/manifestinteractive/weather-underground-icons" target="_blank">manifestinteractive</a>
+and <a href="https://www.deviantart.com/merlinthered/art/plain-weather-icons-157162192" target="_blank">merlinthered</a>.</p>
 </div>
 <hr />
 <h2 id="fan-and-scent-diffuser">Fan and scent diffuser<a class="headerlink" href="#fan-and-scent-diffuser" title="Permanent link">~</a></h2>
@@ -3588,10 +3589,11 @@ To control the fan we use a button matrix object which has exactly the same butt
           <span class="s">&quot;opacity&quot;</span><span class="p p-Indicator">:</span> <span class="s">&quot;{{</span><span class="nv"> </span><span class="s">255</span><span class="nv"> </span><span class="s">if</span><span class="nv"> </span><span class="s">is_state(&#39;fan.scent_diffuser_intensity&#39;,</span><span class="nv"> </span><span class="s">&#39;on&#39;)</span><span class="nv"> </span><span class="s">else</span><span class="nv"> </span><span class="s">95</span><span class="nv"> </span><span class="s">}}&quot;</span>
 </code></pre></div>
 </td></tr></table></p>
-<p>Note the condition in the Spinner configuration of the component: <code>{% if is_state('openhasp.plate_test', '4') %}</code> - this is useful to only animate the spinner when the page containing it is actually shown. Since the spinner is being overlapped by a transparent PNG image, CPU usage is higher as it has to be completely redrawn every frame. CPU resources can be freed up this way - only animate when it can be seen.</p>
+<p>Note the condition in the Spinner configuration of the component:    <br />
+<code>{% if is_state('openhasp.plate_test', '4') %}</code> - this is useful to only animate the spinner when the page containing it is actually shown. Since the spinner is being overlapped by a transparent PNG image, CPU usage is higher as it has to be completely redrawn every frame. CPU resources can be freed up this way - only animate when it can be seen.</p>
 <div class="admonition note">
 <p class="admonition-title">Attribution</p>
-<p>Icons are copyright from <a href="https://www.svgrepo.com/" target="_blank">SVG Repo</a></p>
+<p>Icons are copyright from <a href="https://www.svgrepo.com/" target="_blank">SVG Repo</a>.</p>
 </div>
 
   <hr>
