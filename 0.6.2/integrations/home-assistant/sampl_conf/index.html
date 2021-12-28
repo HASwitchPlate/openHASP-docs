@@ -2793,8 +2793,6 @@ The various strings containing day names, day periods, weather conditions can be
 <li><a href="../../../assets/users/openhasp-weathericons-nigh.zip">dark theme</a></li>
 </ul>
 <p>To unzip them on the plate, connect via Telnet and run the command <code>unzip /openhasp-weathericons-day.zip</code> to unzip the light theme above (alternatively you can unzip them on your computer and upload them one by one). The configuration example only shows how to use the light theme icons.</p>
-<p><em>Icons are copyright from <a href="https://github.com/manifestinteractive/weather-underground-icons" target="_blank">manifestinteractive</a>
-and <a href="https://www.deviantart.com/merlinthered/art/plain-weather-icons-157162192" target="_blank">merlinthered</a>.</em></p>
 <p>This example implements Home Assistant's <a href="https://www.home-assistant.io/integrations/weather/" target="_blank">standard weather conditions</a> only (as in 2021.06), so any weather integration component can be used. Some integrations know extra conditions in addition to the standard ones, those (with their corresponding icons) can be easily added to the component configuration below.</p>
 <p>Note that the tab swiping dots (<em>p5b10</em>) are also handled by the custom component. Don't forget update the service call in the configuration with your plate's MQTT node name, and the command parameters if you change the page of the objects.</p>
 <div class="admonition warning">
@@ -3385,6 +3383,10 @@ and <a href="https://www.deviantart.com/merlinthered/art/plain-weather-icons-157
           <span class="s">&quot;src&quot;</span><span class="p p-Indicator">:</span> <span class="s">&quot;/littlefs/w-32-{{</span><span class="nv"> </span><span class="s">state_attr(&#39;weather.your_homename&#39;,&#39;forecast&#39;)[3][&#39;condition&#39;]</span><span class="nv"> </span><span class="s">}}.png&quot;</span>
 </code></pre></div>
 </td></tr></table>
+<div class="admonition note">
+<p class="admonition-title">Attribution</p>
+<p>Icons are copyright from <a href="https://github.com/manifestinteractive/weather-underground-icons">manifestinteractive</a>{target=<em>blank} and <a href="https://www.deviantart.com/merlinthered/art/plain-weather-icons-157162192" target="_blank">merlinthered</a>.</em></p>
+</div>
 <hr />
 <h2 id="fan-and-scent-diffuser">Fan and scent diffuser<a class="headerlink" href="#fan-and-scent-diffuser" title="Permanent link">~</a></h2>
 <p><img alt="screenshot" src="../../../assets/images/screenshots/cc-sampl-fan-diffuser.png" /></p>
@@ -3396,7 +3398,6 @@ To control the fan we use a button matrix object which has exactly the same butt
 <li><a href="../../../assets/users/g64.png">fan</a></li>
 <li><a href="../../../assets/users/perfume3.png">perfume</a></li>
 </ul>
-<p><em>Icons are copyright from <a href="https://www.svgrepo.com/" target="_blank">SVG Repo</a></em></p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>For this example to work, you need an ESP32 board having <a href="../../../design/objects#image">PSRam</a> memory installed, otherwise openHASP will likely crash.</p>
@@ -3588,6 +3589,10 @@ To control the fan we use a button matrix object which has exactly the same butt
 </code></pre></div>
 </td></tr></table></p>
 <p>Note the condition in the Spinner configuration of the component: <code>{% if is_state('openhasp.plate_test', '4') %}</code> - this is useful to only animate the spinner when the page containing it is actually shown. Since the spinner is being overlapped by a transparent PNG image, CPU usage is higher as it has to be completely redrawn every frame. CPU resources can be freed up this way - only animate when it can be seen.</p>
+<div class="admonition note">
+<p class="admonition-title">Attribution</p>
+<p>Icons are copyright from <a href="https://www.svgrepo.com/" target="_blank">SVG Repo</a></p>
+</div>
 
   <hr>
 <div class="md-source-file">
