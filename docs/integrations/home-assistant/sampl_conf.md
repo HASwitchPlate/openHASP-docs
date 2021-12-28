@@ -1135,7 +1135,8 @@ relevant **openHASP-custom-component config:**
 
 
 !!! note "Attribution" 
-    Icons are copyright from [manifestinteractive](https://github.com/manifestinteractive/weather-underground-icons){target=_blank} and [merlinthered](https://www.deviantart.com/merlinthered/art/plain-weather-icons-157162192){target=_blank}._
+    Icons are copyright from [manifestinteractive](https://github.com/manifestinteractive/weather-underground-icons){target=_blank}
+    and [merlinthered](https://www.deviantart.com/merlinthered/art/plain-weather-icons-157162192){target=_blank}.
 
 
 
@@ -1258,7 +1259,8 @@ relevant **openHASP-custom-component config:**
           "opacity": "{{ 255 if is_state('fan.scent_diffuser_intensity', 'on') else 95 }}"
 ```
 
-Note the condition in the Spinner configuration of the component: `{% if is_state('openhasp.plate_test', '4') %}` - this is useful to only animate the spinner when the page containing it is actually shown. Since the spinner is being overlapped by a transparent PNG image, CPU usage is higher as it has to be completely redrawn every frame. CPU resources can be freed up this way - only animate when it can be seen.
+Note the condition in the Spinner configuration of the component:      
+`{% if is_state('openhasp.plate_test', '4') %}` - this is useful to only animate the spinner when the page containing it is actually shown. Since the spinner is being overlapped by a transparent PNG image, CPU usage is higher as it has to be completely redrawn every frame. CPU resources can be freed up this way - only animate when it can be seen.
 
 !!! note "Attribution" 
-    Icons are copyright from [SVG Repo](https://www.svgrepo.com/){target=_blank}
+    Icons are copyright from [SVG Repo](https://www.svgrepo.com/){target=_blank}.
