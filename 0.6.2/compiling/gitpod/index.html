@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://haswitchplate.github.io/openHASP-docs/0.6.2/0.6.2/compiling/gitpod/">
       
       <link rel="icon" href="../../favicon.ico">
-      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.3">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.4">
     
     
       
@@ -23,7 +23,7 @@
       
     
      
-      <link rel="stylesheet" href="../../assets/stylesheets/main.edf004c2.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.bb3983ee.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.e6a45f82.min.css">
@@ -1310,6 +1310,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../custom/" class="md-nav__link">
+        Custom Code
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -1438,13 +1452,7 @@ If you don't want to install an IDE (Integrated Development Environment) like Pl
 <h2 id="choose-the-version-you-need">Choose the version you need<a class="headerlink" href="#choose-the-version-you-need" title="Permanent link">~</a></h2>
 <p>A copy of <code>platformio_override-template.ini</code> to <code>platformio_override.ini</code> will be readily prepared for you.<br />
 Click <code>platformio_override.ini</code> to open it, and to select your firmware flavour for your hardware uncomment in the <code>extra_configs</code> section the platform of your hadware, for example for ESP32:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span>
-<span class="normal">7</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>[platformio]
+<div class="highlight"><pre><span></span><code>[platformio]
 extra_configs =
     ; Uncomment or edit the lines to show more User Setups in the PIO sidebar
     ; user_setups/darwin_sdl/*.ini
@@ -1452,36 +1460,16 @@ extra_configs =
     ; user_setups/esp8266/*.ini
     ; user_setups/linux_sdl/*.ini
 </code></pre></div>
-</td></tr></table>
 <p>If you use <a href="../customize/">customization</a>, remove the comment from the line <code>-DUSE_CONFIG_OVERRIDE</code> and make sure you have your own <code>user_config_override.h</code> in place: <br />
 (please consider before saving your wifi and mqtt credentials to an online cloud)</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>[override]
+<div class="highlight"><pre><span></span><code>[override]
 ; -- Hasp config options --------------------------------------
 build_flags =
 ; -- Uncomment the next line to use the file include/user_config_override.h settings
     -DUSE_CONFIG_OVERRIDE
 </code></pre></div>
-</td></tr></table>
 <p>And finally select your supported hardware from the <code>extra_default_envs</code> section by uncommenting the corresponding line. For example to build firmware for Lanbon L8, you should remove that comment only:</p>
-<p><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>extra_default_envs =
+<p><div class="highlight"><pre><span></span><code>extra_default_envs =
     ; Comment unneeded environments or create extra
     ; arduitouch-esp32_ili9341
     ; d1-mini-esp32_ili9341
@@ -1497,7 +1485,6 @@ build_flags =
     ; wt32-sc01
     ; ttgo_esp32_poe-ili9341
 </code></pre></div>
-</td></tr></table>
 Save the file by pressing <code>Ctrl + S</code> or selecting <code>Save</code> from the top-left menu.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -1517,7 +1504,7 @@ Save the file by pressing <code>Ctrl + S</code> or selecting <code>Save</code> f
   <small>
     
       Last update:
-      2021-12-29
+      2022-01-08
     
   </small>
 </div>
@@ -1574,10 +1561,10 @@ Save the file by pressing <code>Ctrl + S</code> or selecting <code>Save</code> f
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tracking", "search.suggest", "search.highlight", "navigation.top"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.0bbba5b5.min.js", "version": {"provider": "mike", "default": 0.6}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tracking", "search.suggest", "search.highlight", "navigation.top"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.361d90f1.min.js", "version": {"provider": "mike", "default": 0.6}}</script>
     
      
-      <script src="../../assets/javascripts/bundle.e1a181d9.min.js"></script>
+      <script src="../../assets/javascripts/bundle.289a2a4b.min.js"></script>
       
     
 <!-- <script src="../../js/youtube.js"></script> -->

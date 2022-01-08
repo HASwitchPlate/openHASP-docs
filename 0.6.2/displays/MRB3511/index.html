@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://haswitchplate.github.io/openHASP-docs/0.6.2/0.6.2/displays/MRB3511/">
       
       <link rel="icon" href="../../favicon.ico">
-      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.3">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.4">
     
     
       
@@ -23,7 +23,7 @@
       
     
      
-      <link rel="stylesheet" href="../../assets/stylesheets/main.edf004c2.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.bb3983ee.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.e6a45f82.min.css">
@@ -1299,6 +1299,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../compiling/custom/" class="md-nav__link">
+        Custom Code
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -1597,15 +1611,15 @@
 <span class="normal">6</span>
 <span class="normal">7</span>
 <span class="normal">8</span>
-<span class="normal">9</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="na">mrb3511</span> <span class="o">=</span>
-    <span class="na">-D ESP32_PARALLEL</span><span class="o">=</span><span class="s">1</span>
-    <span class="na">-D ILI9488_DRIVER</span><span class="o">=</span><span class="s">1</span>
-    <span class="na">-D TFT_WIDTH</span><span class="o">=</span><span class="s">320</span>
-    <span class="na">-D TFT_HEIGHT</span><span class="o">=</span><span class="s">480</span>
-    <span class="na">-D TFT_ROTATION</span><span class="o">=</span><span class="s">0 ; 0=0, 1=90, 2=180 or 3=270 degree</span>
-    <span class="na">-D USER_SETUP_LOADED</span><span class="o">=</span><span class="s">1</span>
-    <span class="na">-D TOUCH_DRIVER</span><span class="o">=</span><span class="s">911 ; GT911 Capacitive touch panel driver</span>
-    <span class="na">-D SUPPORT_TRANSACTIONS</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="na">mrb3511</span><span class="w"> </span><span class="o">=</span><span class="w"></span>
+<span class="w">    </span><span class="na">-D ESP32_PARALLEL</span><span class="o">=</span><span class="s">1</span><span class="w"></span>
+<span class="w">    </span><span class="na">-D ILI9488_DRIVER</span><span class="o">=</span><span class="s">1</span><span class="w"></span>
+<span class="w">    </span><span class="na">-D TFT_WIDTH</span><span class="o">=</span><span class="s">320</span><span class="w"></span>
+<span class="w">    </span><span class="na">-D TFT_HEIGHT</span><span class="o">=</span><span class="s">480</span><span class="w"></span>
+<span class="w">    </span><span class="na">-D TFT_ROTATION</span><span class="o">=</span><span class="s">0 ; 0=0, 1=90, 2=180 or 3=270 degree</span><span class="w"></span>
+<span class="w">    </span><span class="na">-D USER_SETUP_LOADED</span><span class="o">=</span><span class="s">1</span><span class="w"></span>
+<span class="w">    </span><span class="na">-D TOUCH_DRIVER</span><span class="o">=</span><span class="s">911 ; GT911 Capacitive touch panel driver</span><span class="w"></span>
+<span class="w">    </span><span class="na">-D SUPPORT_TRANSACTIONS</span><span class="w"></span>
 </code></pre></div>
 </td></tr></table>
 <h2 id="hasp-build_flags">HASP build_flags<a class="headerlink" href="#hasp-build_flags" title="Permanent link">~</a></h2>
@@ -1631,28 +1645,28 @@
 <span class="normal">19</span>
 <span class="normal">20</span>
 <span class="normal">21</span>
-<span class="normal">22</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="na">build_flags</span> <span class="o">=</span>
-    <span class="na">${flags.esp32_flags}</span>
-<span class="c1">; -- TFT_eSPI build options ------------------------</span>
-    <span class="na">${lcd.mrb3511}</span>
-    <span class="na">-D TFT_BCKL</span><span class="o">=</span><span class="s">5  ;None, configurable via web UI (e.g. 2 for D4)</span>
-    <span class="na">-D TFT_CS</span><span class="o">=</span><span class="s">33  ; Chip select control pin</span>
-    <span class="na">-D TFT_DC</span><span class="o">=</span><span class="s">15  ; =RS; Data Command control pin - must use a pin in the range 0-31</span>
-    <span class="na">-D TFT_RST</span><span class="o">=</span><span class="s">32 ; Reset pin</span>
-    <span class="na">-D TFT_WR</span><span class="o">=</span><span class="s">4   ; Write strobe control pin - must use a pin in the range 0-31</span>
-    <span class="na">-D TFT_RD</span><span class="o">=</span><span class="s">2</span>
-    <span class="na">-D TFT_D0</span><span class="o">=</span><span class="s">12  ; Must use pins in the range 0-31 for the data bus</span>
-    <span class="na">-D TFT_D1</span><span class="o">=</span><span class="s">13  ; so a single register write sets/clears all bits</span>
-    <span class="na">-D TFT_D2</span><span class="o">=</span><span class="s">26</span>
-    <span class="na">-D TFT_D3</span><span class="o">=</span><span class="s">25</span>
-    <span class="na">-D TFT_D4</span><span class="o">=</span><span class="s">17</span>
-    <span class="na">-D TFT_D5</span><span class="o">=</span><span class="s">16</span>
-    <span class="na">-D TFT_D6</span><span class="o">=</span><span class="s">27</span>
-    <span class="na">-D TFT_D7</span><span class="o">=</span><span class="s">14</span>
-    <span class="na">-D TOUCH_SDA</span><span class="o">=</span><span class="s">21</span>
-    <span class="na">-D TOUCH_SCL</span><span class="o">=</span><span class="s">22</span>
-    <span class="na">-D TOUCH_IRQ</span><span class="o">=</span><span class="s">34   ; use 34-39 as these are input only pins</span>
-    <span class="na">-D TOUCH_RST</span><span class="o">=</span><span class="s">-1   ; not used, connected to 3.3V</span>
+<span class="normal">22</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="na">build_flags</span><span class="w"> </span><span class="o">=</span><span class="w"></span>
+<span class="w">    </span><span class="na">${flags.esp32_flags}</span><span class="w"></span>
+<span class="c1">; -- TFT_eSPI build options ------------------------</span><span class="w"></span>
+<span class="w">    </span><span class="na">${lcd.mrb3511}</span><span class="w"></span>
+<span class="w">    </span><span class="na">-D TFT_BCKL</span><span class="o">=</span><span class="s">5  ;None, configurable via web UI (e.g. 2 for D4)</span><span class="w"></span>
+<span class="w">    </span><span class="na">-D TFT_CS</span><span class="o">=</span><span class="s">33  ; Chip select control pin</span><span class="w"></span>
+<span class="w">    </span><span class="na">-D TFT_DC</span><span class="o">=</span><span class="s">15  ; =RS; Data Command control pin - must use a pin in the range 0-31</span><span class="w"></span>
+<span class="w">    </span><span class="na">-D TFT_RST</span><span class="o">=</span><span class="s">32 ; Reset pin</span><span class="w"></span>
+<span class="w">    </span><span class="na">-D TFT_WR</span><span class="o">=</span><span class="s">4   ; Write strobe control pin - must use a pin in the range 0-31</span><span class="w"></span>
+<span class="w">    </span><span class="na">-D TFT_RD</span><span class="o">=</span><span class="s">2</span><span class="w"></span>
+<span class="w">    </span><span class="na">-D TFT_D0</span><span class="o">=</span><span class="s">12  ; Must use pins in the range 0-31 for the data bus</span><span class="w"></span>
+<span class="w">    </span><span class="na">-D TFT_D1</span><span class="o">=</span><span class="s">13  ; so a single register write sets/clears all bits</span><span class="w"></span>
+<span class="w">    </span><span class="na">-D TFT_D2</span><span class="o">=</span><span class="s">26</span><span class="w"></span>
+<span class="w">    </span><span class="na">-D TFT_D3</span><span class="o">=</span><span class="s">25</span><span class="w"></span>
+<span class="w">    </span><span class="na">-D TFT_D4</span><span class="o">=</span><span class="s">17</span><span class="w"></span>
+<span class="w">    </span><span class="na">-D TFT_D5</span><span class="o">=</span><span class="s">16</span><span class="w"></span>
+<span class="w">    </span><span class="na">-D TFT_D6</span><span class="o">=</span><span class="s">27</span><span class="w"></span>
+<span class="w">    </span><span class="na">-D TFT_D7</span><span class="o">=</span><span class="s">14</span><span class="w"></span>
+<span class="w">    </span><span class="na">-D TOUCH_SDA</span><span class="o">=</span><span class="s">21</span><span class="w"></span>
+<span class="w">    </span><span class="na">-D TOUCH_SCL</span><span class="o">=</span><span class="s">22</span><span class="w"></span>
+<span class="w">    </span><span class="na">-D TOUCH_IRQ</span><span class="o">=</span><span class="s">34   ; use 34-39 as these are input only pins</span><span class="w"></span>
+<span class="w">    </span><span class="na">-D TOUCH_RST</span><span class="o">=</span><span class="s">-1   ; not used, connected to 3.3V</span><span class="w"></span>
 </code></pre></div>
 </td></tr></table>
 
@@ -1661,7 +1675,7 @@
   <small>
     
       Last update:
-      2021-12-29
+      2022-01-08
     
   </small>
 </div>
@@ -1718,10 +1732,10 @@
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tracking", "search.suggest", "search.highlight", "navigation.top"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.0bbba5b5.min.js", "version": {"provider": "mike", "default": 0.6}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tracking", "search.suggest", "search.highlight", "navigation.top"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.361d90f1.min.js", "version": {"provider": "mike", "default": 0.6}}</script>
     
      
-      <script src="../../assets/javascripts/bundle.e1a181d9.min.js"></script>
+      <script src="../../assets/javascripts/bundle.289a2a4b.min.js"></script>
       
     
 <!-- <script src="../../js/youtube.js"></script> -->

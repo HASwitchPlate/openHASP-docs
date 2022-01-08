@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://haswitchplate.github.io/openHASP-docs/0.6.2/0.6.2/commands.nl/">
       
       <link rel="icon" href="../favicon.ico">
-      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.3">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.4">
     
     
       
@@ -23,7 +23,7 @@
       
     
      
-      <link rel="stylesheet" href="../assets/stylesheets/main.edf004c2.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.bb3983ee.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.e6a45f82.min.css">
@@ -1246,6 +1246,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../compiling/custom/" class="md-nav__link">
+        Custom Code
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -1456,7 +1470,7 @@
 <p>Each line in the <code>jsonl</code> payload defines one object and has to be in the json format. If the payload exceeds the MQTT buffer of 2 kB it will be cut off to fit,
 don't send too many lines in a single payload, you can always sends multiple jsonl commands.</p>
 <p>Example:  <br />
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="err">jso</span><span class="kc">nl</span> <span class="p">{</span><span class="nt">&quot;obj&quot;</span><span class="p">:</span><span class="s2">&quot;btn&quot;</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">14</span><span class="p">,</span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="mi">120</span><span class="p">,</span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="nt">&quot;w&quot;</span><span class="p">:</span><span class="mi">30</span><span class="p">,</span><span class="nt">&quot;h&quot;</span><span class="p">:</span><span class="mi">40</span><span class="p">,</span><span class="nt">&quot;text_font&quot;</span><span class="p">:</span><span class="s2">&quot;2&quot;</span><span class="p">,</span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="s2">&quot;Test&quot;</span><span class="p">,</span><span class="nt">&quot;text_color&quot;</span><span class="p">:</span><span class="s2">&quot;gray&quot;</span><span class="p">,</span><span class="nt">&quot;bg_opa&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="nt">&quot;border_width&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">}</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="err">jso</span><span class="kc">nl</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;obj&quot;</span><span class="p">:</span><span class="s2">&quot;btn&quot;</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">14</span><span class="p">,</span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="mi">120</span><span class="p">,</span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="nt">&quot;w&quot;</span><span class="p">:</span><span class="mi">30</span><span class="p">,</span><span class="nt">&quot;h&quot;</span><span class="p">:</span><span class="mi">40</span><span class="p">,</span><span class="nt">&quot;text_font&quot;</span><span class="p">:</span><span class="s2">&quot;2&quot;</span><span class="p">,</span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="s2">&quot;Test&quot;</span><span class="p">,</span><span class="nt">&quot;text_color&quot;</span><span class="p">:</span><span class="s2">&quot;gray&quot;</span><span class="p">,</span><span class="nt">&quot;bg_opa&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="nt">&quot;border_width&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">}</span><span class="w"></span>
 </code></pre></div>
 </td></tr></table></p>
 <p><em>For more details see <a href="../design/pages">Pages</a> and <a href="../design/objects">Objects</a></em></p>
@@ -1464,7 +1478,7 @@ don't send too many lines in a single payload, you can always sends multiple jso
 <p><em>accepted parameters:</em> json array of strings</p>
 <p>Use the <code>json</code> command to send multiple commands as an array of strings in one payload.</p>
 <p>Example:  <br />
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="err">jso</span><span class="kc">n</span> <span class="p">[</span><span class="err">&#39;page</span> <span class="mi">3</span><span class="err">&#39;</span><span class="p">,</span><span class="err">&#39;backligh</span><span class="kc">t</span> <span class="p">{</span><span class="nt">&quot;state&quot;</span><span class="p">:</span><span class="s2">&quot;OFF&quot;</span><span class="p">,</span><span class="nt">&quot;brightness&quot;</span><span class="p">:</span><span class="mi">100</span><span class="p">}</span><span class="err">&#39;</span><span class="p">,</span><span class="err">&#39;idle</span> <span class="err">o</span><span class="kc">ff</span><span class="err">&#39;</span><span class="p">]</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="err">jso</span><span class="kc">n</span><span class="w"> </span><span class="p">[</span><span class="err">&#39;page</span><span class="w"> </span><span class="mi">3</span><span class="err">&#39;</span><span class="p">,</span><span class="err">&#39;backligh</span><span class="kc">t</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;state&quot;</span><span class="p">:</span><span class="s2">&quot;OFF&quot;</span><span class="p">,</span><span class="nt">&quot;brightness&quot;</span><span class="p">:</span><span class="mi">100</span><span class="p">}</span><span class="err">&#39;</span><span class="p">,</span><span class="err">&#39;idle</span><span class="w"> </span><span class="err">o</span><span class="kc">ff</span><span class="err">&#39;</span><span class="p">]</span><span class="w"></span>
 </code></pre></div>
 </td></tr></table></p>
 <p>This command will change to page 3, turn the backlight on at ~40% brightness and reset the idle timer.</p>
@@ -1512,10 +1526,10 @@ These leds can then be controlled together using the <code>moodlight</code> comm
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="err">moodligh</span><span class="kc">t</span> <span class="p">{</span><span class="nt">&quot;state&quot;</span><span class="p">:</span><span class="s2">&quot;off&quot;</span><span class="p">,</span><span class="nt">&quot;color&quot;</span><span class="p">:</span><span class="s2">&quot;green&quot;</span><span class="p">}</span>
-<span class="err">moodligh</span><span class="kc">t</span> <span class="p">{</span><span class="nt">&quot;state&quot;</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span><span class="nt">&quot;color&quot;</span><span class="p">:</span><span class="s2">&quot;#ff00e7&quot;</span><span class="p">}</span>
-<span class="err">moodligh</span><span class="kc">t</span> <span class="p">{</span><span class="nt">&quot;color&quot;</span><span class="p">:</span><span class="mi">12345</span><span class="p">}</span>
-<span class="err">moodligh</span><span class="kc">t</span> <span class="p">{</span><span class="nt">&quot;state&quot;</span><span class="p">:</span><span class="s2">&quot;on&quot;</span><span class="p">,</span><span class="nt">&quot;r&quot;</span><span class="p">:</span><span class="mi">255</span><span class="p">,</span><span class="nt">&quot;g&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="nt">&quot;b&quot;</span><span class="p">:</span><span class="mi">255</span><span class="p">}</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="err">moodligh</span><span class="kc">t</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;state&quot;</span><span class="p">:</span><span class="s2">&quot;off&quot;</span><span class="p">,</span><span class="nt">&quot;color&quot;</span><span class="p">:</span><span class="s2">&quot;green&quot;</span><span class="p">}</span><span class="w"></span>
+<span class="err">moodligh</span><span class="kc">t</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;state&quot;</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span><span class="nt">&quot;color&quot;</span><span class="p">:</span><span class="s2">&quot;#ff00e7&quot;</span><span class="p">}</span><span class="w"></span>
+<span class="err">moodligh</span><span class="kc">t</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;color&quot;</span><span class="p">:</span><span class="mi">12345</span><span class="p">}</span><span class="w"></span>
+<span class="err">moodligh</span><span class="kc">t</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;state&quot;</span><span class="p">:</span><span class="s2">&quot;on&quot;</span><span class="p">,</span><span class="nt">&quot;r&quot;</span><span class="p">:</span><span class="mi">255</span><span class="p">,</span><span class="nt">&quot;g&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="nt">&quot;b&quot;</span><span class="p">:</span><span class="mi">255</span><span class="p">}</span><span class="w"></span>
 </code></pre></div>
 </td></tr></table>
 <ul>
@@ -1525,7 +1539,7 @@ These leds can then be controlled together using the <code>moodlight</code> comm
 <li>Individual <code>r</code>, <code>g</code> and <code>b</code> keys can also be used to set each channel seperately</li>
 </ul>
 <p>Calling the <code>moodlight</code> command without parameters (or sending an empty payload to the <code>hasp/&lt;nodename&gt;/command/moodlight</code> topic) returns the current state:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="s2">&quot;state/moodlight&quot;</span> <span class="p">{</span><span class="nt">&quot;state&quot;</span><span class="p">:</span><span class="s2">&quot;ON&quot;</span><span class="p">,</span><span class="nt">&quot;brightness&quot;</span><span class="p">:</span><span class="mi">255</span><span class="p">,</span><span class="nt">&quot;color&quot;</span><span class="p">:</span><span class="s2">&quot;#ff0000&quot;</span><span class="p">,</span><span class="nt">&quot;r&quot;</span><span class="p">:</span><span class="mi">255</span><span class="p">,</span><span class="nt">&quot;g&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="nt">&quot;b&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">}</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="s2">&quot;state/moodlight&quot;</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;state&quot;</span><span class="p">:</span><span class="s2">&quot;ON&quot;</span><span class="p">,</span><span class="nt">&quot;brightness&quot;</span><span class="p">:</span><span class="mi">255</span><span class="p">,</span><span class="nt">&quot;color&quot;</span><span class="p">:</span><span class="s2">&quot;#ff0000&quot;</span><span class="p">,</span><span class="nt">&quot;r&quot;</span><span class="p">:</span><span class="mi">255</span><span class="p">,</span><span class="nt">&quot;g&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="nt">&quot;b&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">}</span><span class="w"></span>
 </code></pre></div>
 </td></tr></table>
 <p>The color is returned as a hexadecimal value and as individual RGB channels.</p>
@@ -1574,24 +1588,24 @@ This can be handy for bug reporting or documentation.</p>
 <span class="normal">15</span>
 <span class="normal">16</span>
 <span class="normal">17</span>
-<span class="normal">18</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>    <span class="s2">&quot;hasp/&lt;platename&gt;/state/statusupdate&quot;</span> <span class="err">=&gt;</span> <span class="p">{</span>
-        <span class="nt">&quot;node&quot;</span><span class="p">:</span><span class="s2">&quot;plate35&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;idle&quot;</span><span class="p">:</span><span class="s2">&quot;short&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="s2">&quot;0.5.1&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;uptime&quot;</span><span class="p">:</span><span class="mi">1813</span><span class="p">,</span>
-        <span class="nt">&quot;ssid&quot;</span><span class="p">:</span><span class="s2">&quot;network&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;rssi&quot;</span><span class="p">:</span><span class="mi">-63</span><span class="p">,</span>
-        <span class="nt">&quot;ip&quot;</span><span class="p">:</span><span class="s2">&quot;192.168.4.2&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;heapFree&quot;</span><span class="p">:</span><span class="mi">125820</span><span class="p">,</span>
-        <span class="nt">&quot;heapFrag&quot;</span><span class="p">:</span><span class="mi">35</span><span class="p">,</span>
-        <span class="nt">&quot;core&quot;</span><span class="p">:</span><span class="s2">&quot;v3.3.5-1-g85c43024c&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;canUpdate&quot;</span><span class="p">:</span><span class="s2">&quot;false&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;page&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
-        <span class="nt">&quot;numPages&quot;</span><span class="p">:</span><span class="mi">12</span><span class="p">,</span>
-        <span class="nt">&quot;tftDriver&quot;</span><span class="p">:</span><span class="s2">&quot;ST7789&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;tftWidth&quot;</span><span class="p">:</span><span class="mi">240</span><span class="p">,</span>
-        <span class="nt">&quot;tftHeight&quot;</span><span class="p">:</span><span class="mi">320</span>
-    <span class="p">}</span>
+<span class="normal">18</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="w">    </span><span class="s2">&quot;hasp/&lt;platename&gt;/state/statusupdate&quot;</span><span class="w"> </span><span class="err">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;node&quot;</span><span class="p">:</span><span class="s2">&quot;plate35&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;idle&quot;</span><span class="p">:</span><span class="s2">&quot;short&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="s2">&quot;0.5.1&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;uptime&quot;</span><span class="p">:</span><span class="mi">1813</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;ssid&quot;</span><span class="p">:</span><span class="s2">&quot;network&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;rssi&quot;</span><span class="p">:</span><span class="mi">-63</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;ip&quot;</span><span class="p">:</span><span class="s2">&quot;192.168.4.2&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;heapFree&quot;</span><span class="p">:</span><span class="mi">125820</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;heapFrag&quot;</span><span class="p">:</span><span class="mi">35</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;core&quot;</span><span class="p">:</span><span class="s2">&quot;v3.3.5-1-g85c43024c&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;canUpdate&quot;</span><span class="p">:</span><span class="s2">&quot;false&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;page&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;numPages&quot;</span><span class="p">:</span><span class="mi">12</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;tftDriver&quot;</span><span class="p">:</span><span class="s2">&quot;ST7789&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;tftWidth&quot;</span><span class="p">:</span><span class="mi">240</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;tftHeight&quot;</span><span class="p">:</span><span class="mi">320</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
 </code></pre></div>
 </td></tr></table>
 <div class="admonition danger">
@@ -1651,14 +1665,14 @@ The result will be published to <code>hasp/&lt;nodename&gt;/state/config</code>.
 <span class="normal">5</span>
 <span class="normal">6</span>
 <span class="normal">7</span>
-<span class="normal">8</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="err">co</span><span class="kc">nf</span><span class="err">ig/wi</span><span class="kc">f</span><span class="err">i</span>
-<span class="err">co</span><span class="kc">nf</span><span class="err">ig/mq</span><span class="kc">tt</span>
-<span class="err">co</span><span class="kc">nf</span><span class="err">ig/h</span><span class="kc">tt</span><span class="err">p</span>
-<span class="err">co</span><span class="kc">nf</span><span class="err">ig/md</span><span class="kc">ns</span>
-<span class="err">co</span><span class="kc">nf</span><span class="err">ig/hasp</span> <span class="p">{</span><span class="nt">&quot;startdim&quot;</span><span class="p">:</span><span class="mi">255</span><span class="p">}</span>
-<span class="err">co</span><span class="kc">nf</span><span class="err">ig/gui</span>
-<span class="err">co</span><span class="kc">nf</span><span class="err">ig/debug</span> <span class="p">{</span><span class="nt">&quot;tele&quot;</span><span class="p">:</span><span class="mi">300</span><span class="p">}</span>
-<span class="err">co</span><span class="kc">nf</span><span class="err">ig/gpio</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="err">co</span><span class="kc">nf</span><span class="err">ig/wi</span><span class="kc">f</span><span class="err">i</span><span class="w"></span>
+<span class="err">co</span><span class="kc">nf</span><span class="err">ig/mq</span><span class="kc">tt</span><span class="w"></span>
+<span class="err">co</span><span class="kc">nf</span><span class="err">ig/h</span><span class="kc">tt</span><span class="err">p</span><span class="w"></span>
+<span class="err">co</span><span class="kc">nf</span><span class="err">ig/md</span><span class="kc">ns</span><span class="w"></span>
+<span class="err">co</span><span class="kc">nf</span><span class="err">ig/hasp</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;startdim&quot;</span><span class="p">:</span><span class="mi">255</span><span class="p">}</span><span class="w"></span>
+<span class="err">co</span><span class="kc">nf</span><span class="err">ig/gui</span><span class="w"></span>
+<span class="err">co</span><span class="kc">nf</span><span class="err">ig/debug</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;tele&quot;</span><span class="p">:</span><span class="mi">300</span><span class="p">}</span><span class="w"></span>
+<span class="err">co</span><span class="kc">nf</span><span class="err">ig/gpio</span><span class="w"></span>
 </code></pre></div>
 </td></tr></table>
 <p>To update the configuration simply issue the same command <code>config/&lt;submodule&gt;</code> with updated json payload.</p>
@@ -1668,7 +1682,7 @@ The result will be published to <code>hasp/&lt;nodename&gt;/state/config</code>.
   <small>
     
       Last update:
-      2021-12-29
+      2022-01-08
     
   </small>
 </div>
@@ -1725,10 +1739,10 @@ The result will be published to <code>hasp/&lt;nodename&gt;/state/config</code>.
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.tracking", "search.suggest", "search.highlight", "navigation.top"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.0bbba5b5.min.js", "version": {"provider": "mike", "default": 0.6}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.tracking", "search.suggest", "search.highlight", "navigation.top"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.361d90f1.min.js", "version": {"provider": "mike", "default": 0.6}}</script>
     
      
-      <script src="../assets/javascripts/bundle.e1a181d9.min.js"></script>
+      <script src="../assets/javascripts/bundle.289a2a4b.min.js"></script>
       
     
 <!-- <script src="../js/youtube.js"></script> -->
