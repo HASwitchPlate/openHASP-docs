@@ -46,7 +46,7 @@ The state of a digital input can only be `on` or `off` and will set all group me
 
 ??? example "Example `jsonl`"
     To act on the relays directly from the switch objects on the screen, try this very simple [pages.jsonl](../design/pages.md):
-    ```json
+    ```json linenums="1"
     {"page":1,"id":1,"obj":"switch","x":30,"y":40,"w":180,"h":75,"radius":40,"radius2":40,"groupid":1}
     {"page":1,"id":2,"obj":"switch","x":30,"y":122,"w":180,"h":75,"radius":40,"radius2":40,"groupid":2}
     {"page":1,"id":3,"obj":"switch","x":30,"y":205,"w":180,"h":75,"radius":40,"radius2":40,"groupid":3}
@@ -179,7 +179,7 @@ The various relay types (Light, Power) denote only the device class you want the
 
 Use the hasp/<platename>/command/output[x] topic (where x is the pin number) with an empty payload to query the current state of the relay.
 
-```jsonl
+```json linenums="1"l
 hasp/my_plate/command/output27
 hasp/my_plate/state/output27 {"state":"off"}
 ```

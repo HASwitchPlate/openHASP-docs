@@ -41,7 +41,7 @@ Color values can be:
 ### Setting Color
 
 Examples:
-```json
+```json linenums="1"
 p0b2.value_color=13891
 p1b5.text_color=silver
 p2b3.bg_color=#C042A3
@@ -60,7 +60,7 @@ The format will be a json object with components:
 - b : byte value for blue (`0..255`)
 
 For example, the color returned by a color picker change event is:
-```json
+```json linenums="1"
 {"color":"#00fff6","r":0,"g":255,"b":246}
 ```
 

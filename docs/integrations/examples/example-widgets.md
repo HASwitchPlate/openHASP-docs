@@ -11,7 +11,7 @@
 
 This is a real-world example of a `pages.jsonl` file. Upload it to your plate's flash memory and restart the plate:
 
-```json
+```json linenums="1"
 {"page":1,"comment":"---------- Page 1 ----------"}
 {"id":1,"obj":"btn","x":10,"y":45,"w":220,"h":55,"toggle":true,"text":"Touch me \uE96B","text_font":32}
 {"id":2,"obj":"checkbox","x":10,"y":100,"w":220,"h":55,"text":" My Checkbox"}

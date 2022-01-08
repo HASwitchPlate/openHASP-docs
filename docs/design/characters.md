@@ -8,7 +8,7 @@ For example: To display the &#x00F7; character on the plate you need to use `\u0
 
 All character sets also contain about 100 standaard Material Design Icons for home automation use.
 
-The default font in pre-compiled binaries is Roboto-Condensed-Regular with the Latin 1 character set. There is no support for right-to-left scipts.
+The default font in pre-compiled binaries is Roboto-Condensed-Regular with the Latin 1 character set. There is no support for right-to-left scripts.
 
 ## Ascii
 

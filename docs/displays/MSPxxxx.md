@@ -57,7 +57,7 @@ This pin is not used by openHASP, so it can be left disconnected in case of issu
 
 The `lcd_config.ini` file specifies the different properties of the display, except for the actual pin configuration:
 
-```ini
+```ini linenums="1"
 lolin24 =
     -D ILI9341_DRIVER=1
     -D TFT_WIDTH=240
@@ -75,7 +75,7 @@ lolin24 =
 
 Specify the LCD Configuration to use and define the GPIOs in the environment build flags:
 
-```ini
+```ini linenums="1"
 build_flags =
     ${env.build_flags}
     ${esp32.build_flags}

@@ -68,7 +68,7 @@ Nscreen32 is the first device to receive the LVGL Certified Board label:
 
 Specify the LCD Configuration to use and define the GPIOs in the environment build flags:
 
-```ini
+```ini linenums="1"
 build_flags =
     ${env.build_flags}
     ${esp32.build_flags}

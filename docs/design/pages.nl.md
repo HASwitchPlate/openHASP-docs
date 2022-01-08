@@ -38,13 +38,13 @@ You can also use the `page` parameter in a comment to set the default page for n
 
 Example 1: Add a comment on a single line that is ignored.
 
-```json
+```json linenums="1"
 {"comment":" ----------- Page 1 layout ------------"}
 ```
 
 Example 2: Set the default `page` for next object(s) to `3` besides adding a comment as well.
 
-```json
+```json linenums="1"
 {"page":2,"comment":" ---- My Awesome Color Picker Layout ----"}
 ```
 If you then omit the `page` parameter in the lines below this comment, those objects will appear by default on page `2`.
@@ -52,7 +52,7 @@ If you then omit the `page` parameter in the lines below this comment, those obj
 
 Example 3: Insert a comment for an object.
 
-```json
+```json linenums="1"
 {"page":2,"id":3,"obj":"obj","x":40,"y":100,"w":160,"h":160,"radius":100,"opacity":100,"border_opa":160,"border_width":4,"comment":"touch-catcher"}
 ```
 
@@ -71,7 +71,7 @@ The order of the objects also dictates the *layer* on the page from bottom to to
 
 Example Objects:
 
-```json
+```json linenums="1"
 {"page":1,"id":1,"obj":"label","x":5,"y":5,"h":50,"w":50,"text":"Hello","enabled":true,"hidden":false}
 {"page":1,"id":2,"obj":"btn","x":5,"y":90,"h":90,"w":50,"text":"World","enabled":false,"hidden":false}
 ```
@@ -79,7 +79,7 @@ Example Objects:
 Once the object is created, you can reference it with `pXbY` where `X` is the page number and `Y` is the id of the object.
 
 For example:
-```json
+```json linenums="1"
 p1b1.w=100
 p1b2.hidden=true
 ```
@@ -104,14 +104,14 @@ By default all pages cycle in a round-robin fashion (after the last page jump ba
 _For example, to limit cycle through page 1-5 only:_
 
 on page 5, `page next` action will jump back to page 1:
-```json
+```json linenums="1"
 {"page":5,"id":0,"next":1}
 ```
 The corresponding command is `p5b0.next=1`.
 
 
 on page 1, `page prev` action will go to page 5 (instead of default page 12 on an ESP32)
-```json
+```json linenums="1"
 {"page":1,"id":0,"prev":5}
 ```
 The corresponding command is `p1b0.prev=5`.

@@ -23,7 +23,7 @@ To add an openhasp plate to your installation with Jaffa Sunrise sample configur
 - in the plate's web UI select `Mono` UI theme and reboot,
 - upload a `pages.jsonl` file with the folowing content to your plate and reboot:
 
-```json
+```json linenums="1"
 {"page":1,"comment":"---------- Page 1 ----------"}
 {"obj":"btn","id":4,"x":5,"y":5,"w":230,"h":58,"bg_color":"#000000","border_color":"#FFAC00","border_width":2,"radius":10,"radius1":10,"radius2":10,"text":"Lights On","value_ofs_x":-85,"value_font":32,"value_str":"\uE6E8","value_color":"#B6B6B6","text_color":"#B6B6B6","text_font":24}
 {"obj":"btn","id":5,"x":5,"y":68,"w":230,"h":58,"bg_color":"#000000","border_color":"#FFAC00","border_width":2,"radius":10,"radius1":10,"radius2":10,"text":"Daylight","value_ofs_x":-85,"value_font":32,"value_str":"\uE599","value_color":"#B6B6B6","text_color":"#B6B6B6","text_font":24}

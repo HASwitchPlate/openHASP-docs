@@ -20,19 +20,19 @@ sudo apt install git python3-venv
 
 Make sure to add the `--recursive` parameter when cloning the project from GitHub. Otherwise git will not download the required submodules in the `/lib` subdirectory. To clone the current development version (_main_ branch):
 
-```bash
+```sh linenums="1"
 git clone --recursive https://github.com/HASwitchPlate/openHASP
 ```
 
 If you already cloned openHASP without the submodules, you can fetch the submodules seperately using:
 
-```bash
+```sh linenums="1"
 git submodule update --init --recursive
 ```
 
 To switch to a different branch (for example 0.6.2 release) use:
 
-```bash
+```sh linenums="1"
 git clone --recursive https://github.com/HASwitchPlate/openHASP
 cd openHASP
 git checkout 0.6.2
@@ -98,7 +98,7 @@ sudo apt install build-essential libsdl2-dev
 
 For native darwin_sdl builds, you also need [Homebrew](https://brew.sh):
 
-```sh
+```sh linenums="1"
 brew install gcc sdl2
 ```
 
@@ -109,7 +109,7 @@ For native windows_sdl builds, you also need MingW:
 
 Use [MSYS2](https://www.msys2.org/)
 
-```sh
+```sh linenums="1"
 pacman -S mingw-w64-x86_64-gcc mingw-w64-x86_64-SDL2
 ```
 

@@ -9,7 +9,7 @@ The easiest example is to display the state of a clock and a temperature sensor 
 
 Create a label object to display the temperature value, a separate label object to display the unit and a third label object for the clock:
 
-```json
+```json linenums="1"
 {"page":0,"id":4,"obj":"label","x":175,"y":5,"h":30,"w":45,"text":"00.0","align":2,"bg_color":"#2C3E50"}
 {"page":0,"id":5,"obj":"label","x":220,"y":5,"h":30,"w":45,"text":"°C","align":0,"bg_color":"#2C3E50"}
 {"page":0,"id":6,"obj":"label","x":3,"y":5,"h":30,"w":62,"text":"00:00","align":0,"bg_color":"#2C3E50"}
@@ -17,7 +17,7 @@ Create a label object to display the temperature value, a separate label object 
 
 In component configuration all you need for the objects is:
 
-```yaml
+```yaml linenums="1"
     objects:
       - obj: "p0b4"
         properties:
@@ -30,14 +30,14 @@ In component configuration all you need for the objects is:
 #### Note:
 You can of course omit the second label object with the unit and use the same for both value and unit:
 
-```json
+```json linenums="1"
 {"page":0,"id":4,"obj":"label","x":175,"y":5,"h":30,"w":62,"text":"00.0°C","align":2,"bg_color":"#2C3E50"}
 {"page":0,"id":6,"obj":"label","x":3,"y":5,"h":30,"w":62,"text":"00:00","align":0,"bg_color":"#2C3E50"}
 ```
 
 In component configuration you will add the unit to the value using the template:
 
-```yaml
+```yaml linenums="1"
     objects:
       - obj: "p0b4"
         properties:
@@ -56,11 +56,11 @@ Jsonl and Home Assistant configuration:
 
 ![screenshot](../../assets/images/screenshots/cc_sampl_lightswitch.png)
 
-```json
+```json linenums="1"
 {"page":1,"id":2,"obj":"btn","x":10,"y":40,"w":105,"h":90,"toggle":true,"text":"\uE335","text_font":32,"align":1}
 ```
 
-```yaml
+```yaml linenums="1"
       - obj: "p1b2" # switch, checkbox or btn with toggle true
         properties:
           "val": '{{ 1 if is_state("light.my_lamp", "on") else 0 }}'
@@ -73,11 +73,11 @@ Jsonl and Home Assistant configuration:
 
 #### Dropdown (self-populating from an input_select)
 
-```json
+```json linenums="1"
 {"page":1,"id":3,"obj":"dropdown","x":5,"y":40,"w":230,"h":30,"options":""}
 ```
 
-```yaml
+```yaml linenums="1"
       - obj: "p1b3" # dropdown
         properties:
           "options": >
@@ -109,13 +109,13 @@ Jsonl and Home Assistant configuration:
 
 **openHASP config:** (screen size 240x320) 
 
-```json
+```json linenums="1"
 {"obj":"btn","id":1,"x":120,"y":1,"w":30,"h":40,"text_font":"2","text":"\uE5A9","text_color":"gray","bg_opa":0,"border_width":0}
 ```
 
 relevant **openHASP-custom-component config:**
 
-```yaml
+```yaml linenums="1"
     - obj: "p0b1"
       properties:
         "text_color": "{% if -30 <= state_attr('openhasp.openhasp_plate','rssi') |int %}green{% elif -31 > state_attr('openhasp.openhasp_plate','rssi') |int >= -50 %}orange{% elif -51 > state_attr('openhasp.openhasp_plate','rssi') |int >= -80 %}tomato{% else %}red{% endif %}"
@@ -125,13 +125,13 @@ relevant **openHASP-custom-component config:**
 
 **openHASP config:** (screen size 240x320) 
 
-```json
+```json linenums="1"
 {"obj":"btn","id":3,"x":165,"y":1,"w":30,"h":40,"text_font":"2","text":"\uE50F","text_color":"gray","bg_opa":0,"border_width":0}
 ```
 
 relevant **openHASP-custom-component config:**
 
-```yaml
+```yaml linenums="1"
     - obj: "p0b3"
       properties:
         "text_color": "{% if states('sensor.room_temperature') |int <= 21  %}#4682B4{% elif 21 < states('sensor.room_temperature') |int <= 26 %}green{% else %}red{% endif %}"
@@ -149,14 +149,14 @@ Have a light in Home Assistant controlled by openHASP. In our example we use Lan
 
 relevant **openHASP config:**
 
-```json
+```json linenums="1"
 {"page":1,"id":31,"obj":"slider","x":6,"y":15,"w":14,"h":180,"min":1,"max":255}
 {"page":1,"id":32,"obj":"cpicker","x":30,"y":10,"w":180,"h":180}
 ```
 
 relevant **openHASP-custom-component config:**
 
-```yaml
+```yaml linenums="1"
       - obj: "p1b31" # Light brightness
         properties:
           "val": "{{ state_attr('light.plate_moodlight', 'brightness') if state_attr('light.plate_moodlight', 'brightness') != None else 0 }}"
@@ -204,7 +204,7 @@ The icon on the up and down buttons change color when covers move and set opacit
 
 relevant **openHASP config:** (screen size 240x320) 
 
-```json
+```json linenums="1"
 {"page":1,"id":4,"obj":"btn","x":5,"y":140,"w":73,"h":60,"toggle":false,"text":"\uE05D","text_font":32}
 {"page":1,"id":5,"obj":"btn","x":83,"y":140,"w":73,"h":60,"toggle":false,"text":"\uE4DB","text_font":32}
 {"page":1,"id":6,"obj":"btn","x":161,"y":140,"w":73,"h":60,"toggle":false,"text":"\uE045","text_font":32}
@@ -212,7 +212,7 @@ relevant **openHASP config:** (screen size 240x320)
 
 relevant **openHASP-custom-component config:**
 
-```yaml
+```yaml linenums="1"
       - obj: "p1b4"
         properties:
           "text_color": "{{ '#FFFF00' if is_state('cover.cover_1', 'opening') else '#FFFFFF' }}"
@@ -258,13 +258,13 @@ A simpler cover control with only basic feedback. UI theme set to `Hasp Light` i
 
 relevant **openHASP config:** (screen size 240x320) 
 
-```json
+```json linenums="1"
 {"page":4,"id":20,"obj":"btnmatrix","x":0,"y":20,"w":240,"h":70,"options":["\uE05D","\uE4DB","\uE045"],"text_font":32,"bg_opa":0,"border_opa":0}
 ```
 
 relevant **openHASP-custom-component config:**
 
-```yaml
+```yaml linenums="1"
       - obj: "p4b20"
         properties:
           "options": >
@@ -306,7 +306,7 @@ Check out the [Lovelace-like entities](../examples/example-lovelace.md) for simi
 
 relevant **openHASP config:** (screen size 240x320, UI Theme: Hasp Light) 
 
-```json
+```json linenums="1"
 {"page":5,"id":12,"obj":"label","x":8,"y":33,"w":35,"h":35,"text":"\uF11D","align":1,"text_font":32,"text_color":"#053248"}
 {"page":5,"id":13,"obj":"label","x":48,"y":43,"w":80,"h":30,"text":"Cover 1","align":0,"text_font":16,"text_color":"#053248"}
 {"page":5,"id":14,"obj":"btn","x":125,"y":37,"w":30,"h":30,"toggle":false,"text":"\uE05D","text_font":32,"bg_opa":0,"border_opa":0,"text_color":"#053248"}
@@ -322,7 +322,7 @@ relevant **openHASP config:** (screen size 240x320, UI Theme: Hasp Light)
 
 relevant **openHASP-custom-component config:**
 
-```yaml
+```yaml linenums="1"
       - obj: "p5b12"
         properties:
           "text": >
@@ -368,7 +368,7 @@ UI theme set to `Hasp Light` in plate's web interface.
 
 relevant **openHASP config:** (screen size 240x320) 
 
-```json
+```json linenums="1"
 {"page":6,"id":10,"obj":"obj","x":5,"y":35,"w":230,"h":250,"click":0,"bg_opa":0,"shadow_opa":140,"shadow_color":"black","shadow_width":20,"shadow_spread":0}
 {"page":6,"id":11,"obj":"obj","x":8,"y":38,"w":200,"h":84,"click":0}
 {"page":6,"id":12,"obj":"label","x":10,"y":48,"w":196,"h":30,"text":"-","mode":"scroll","align":1}
@@ -388,7 +388,7 @@ relevant **openHASP config:** (screen size 240x320)
 
 relevant **openHASP-custom-component config:**
 
-```yaml
+```yaml linenums="1"
       - obj: "p6b12" # artist label
         properties:
           "text": "{{ state_attr('media_player.sound_my_room1','media_artist') if state_attr('media_player.sound_my_room1','media_artist') else '-' }}"
@@ -597,7 +597,7 @@ Your browser does not support the video tag.
 
 relevant **openHASP config:** (screen size 240x320) 
 
-```json
+```json linenums="1"
 {"page":3,"id":10,"obj":"obj","x":5,"y":35,"w":230,"h":250,"click":0}
 {"page":3,"id":10,"obj":"obj","x":5,"y":35,"w":230,"h":250,"click":0}
 {"page":3,"id":20,"obj":"arc","x":5,"y":37,"w":230,"h":230,"min":170,"max":300,"val":250,"border_side":0,"type":0,"rotation":0,"start_angle":135,"end_angle":45,"adjustable":"true","line_width":21,"line_width1":21,"line_color1":"#34bdeb","bg_opa":0,"pad_top2":5,"pad_bottom2":5,"pad_left2":5,"pad_right2":5,"pad_top":5,"pad_bottom":5,"pad_left":5,"pad_right":5}
@@ -618,7 +618,7 @@ relevant **openHASP config:** (screen size 240x320)
 
 relevant **openHASP-custom-component config:**
 
-```yaml
+```yaml linenums="1"
       - obj: "p3b20"  # arc slider
         properties:
           "val": "{{ state_attr('climate.thermostat_1','temperature') * 10 | int if not (is_state('climate.thermostat_1','unavailable')) }}"
@@ -833,7 +833,7 @@ Note that the tab swiping dots (_p5b10_) are also handled by the custom componen
 
 relevant **openHASP config:** (screen size 240x320, UI Theme: Hasp Light) 
 
-```json
+```json linenums="1"
 {"page":5,"id":1,"obj":"btn","x":0,"y":0,"w":240,"h":30,"text":"WEATHER","text_font":16,"bg_color":"#2C3E50","text_color":"#FFFFFF","radius":0,"border_side":0,"click":0}
 {"page":5,"id":2,"obj":"obj","x":5,"y":35,"w":230,"h":250,"click":0}
 
@@ -888,7 +888,7 @@ relevant **openHASP config:** (screen size 240x320, UI Theme: Hasp Light)
 
 relevant **openHASP-custom-component config:**
 
-```yaml
+```yaml linenums="1"
       - obj: "p5b14" # Icon
         properties:
           "src": "{{ 'L:/w-128-' + states('weather.openweathermap') + '.png' if not is_state('weather.openweathermap','unavailable') }}"

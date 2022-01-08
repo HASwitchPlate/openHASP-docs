@@ -60,7 +60,7 @@ Currently you will get a warning that you need to add manual configuration for t
 
 To add an openHASP plate to your installation with a sample configuration, upload a `pages.jsonl` file with the folowing content to your plate first:
 
-```json
+```json linenums="1"
 {"page":1,"id":1,"obj":"btn","x":0,"y":0,"w":240,"h":30,"text":"openHASP","value_font":22,"bg_color":"#2C3E50","text_color":"#FFFFFF","radius":0,"border_side":0}
 {"page":1,"id":2,"obj":"btn","x":10,"y":40,"w":105,"h":90,"toggle":true,"text":"\uE335","text_font":32,"mode":"break","align":1}
 {"page":1,"id":3,"obj":"dropdown","x":10,"y":140,"w":170,"h":30,"options":"Apples\nBananas\nOranges\nMelon"}
@@ -69,7 +69,7 @@ To add an openHASP plate to your installation with a sample configuration, uploa
 
 Assuming your plate's configured MQTT node name is `plate35`, add the following to your `configuration.yaml` file (Home Assistant will deliberatey ask for it when finished autodetection procedure):
 
-```yaml
+```yaml linenums="1"
 openhasp:
   plate35:
     objects:
@@ -133,7 +133,7 @@ In the example above, when object `p1b2` (which is a toggle button) generates th
 
 If you have multiple plates you can add them all using different plate identifiers. Their configured topics have to be unique too:
 
-```yaml
+```yaml linenums="1"
 openhasp:
   plate_my_room_1:
     objects:
@@ -194,7 +194,7 @@ Unless you clear the page first, the objects will be updated.
 
 For example, to allow read-access to the folder, add these lines to your `configuration.yaml`:
 
-```yaml
+```yaml linenums="1"
 homeassistant:
   allowlist_external_dirs:
     - "/config/openhasp"
@@ -224,7 +224,7 @@ As this file is valid JSON whitespace will be ignored when parsing and removed b
 
 Example:
 
-```json
+```json linenums="1"
 [
   {
     "page": 1,
@@ -262,7 +262,7 @@ Example:
 
 Add these lines to your main `configuration.yaml` configuration and restart Home Assistant:
 
-```yaml
+```yaml linenums="1"
 logger:
   default: warning
   logs:

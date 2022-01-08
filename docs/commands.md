@@ -56,7 +56,7 @@ Each line in the `jsonl` payload defines one object and has to be in the json fo
 don't send too many lines in a single payload, you can always sends multiple jsonl commands.
 
 !!! example "Example"    
-    ```json
+    ```json linenums="1"
     jsonl {"obj":"btn","id":14,"x":120,"y":1,"w":30,"h":40,"text_font":"2","text":"Test","text_color":"gray","bg_opa":0,"border_width":0}
     ```
 
@@ -70,7 +70,7 @@ _accepted parameters:_ json array of strings
 Use the `json` command to send multiple commands as an array of strings in one payload.
 
 !!! example "Example"  
-    ```json
+    ```json linenums="1"
     json ['page 3','backlight {"state":"OFF","brightness":100}','idle off']
     ```
 
@@ -159,7 +159,7 @@ An RGB moodlight can be controlled by configuring 3 [GPIO pins][3] as type `Mood
 These leds can then be controlled together using the `moodlight` command.
 
 !!! example "Example"
-    ```json
+    ```json linenums="1"
     moodlight {"state":"off","color":"green"}
     moodlight {"state":true,"color":"#ff00e7"}
     moodlight {"color":12345}
@@ -174,7 +174,7 @@ These leds can then be controlled together using the `moodlight` command.
 Calling the `moodlight` command without parameters (or sending an empty payload to the `hasp/<nodename>/command/moodlight` topic) returns the current state:
 
 !!! example "Example"
-    ```json
+    ```json linenums="1"
     "state/moodlight" {"state":"ON","brightness":255,"color":"#ff0000","r":255,"g":0,"b":0}
     ```
 
@@ -220,7 +220,7 @@ _read-only_
 Returns a JSON object containing the current state of the input, either `on` or `off`
 
 !!! example "Example"
-    ```json
+    ```json linenums="1"
     input4 => {"state":"on"}
     ```
 
@@ -298,7 +298,7 @@ Currently supported services:
 Reports the status of the MCU. The response will be posted to the state topic.
 
 !!! example "Example"
-    ```json
+    ```json linenums="1"
     "hasp/<platename>/state/statusupdate" => {
         "node":"plate35",
         "idle":"short",

@@ -23,7 +23,7 @@ Click 'Save Settings' to save your settings to the device. A restart is required
 
 You can also configure the wifi settings via the serial or telnet console:
 
-```bash
+```sh linenums="1"
 ssid myAccessPointName
 pass myWifiPassword
 reboot

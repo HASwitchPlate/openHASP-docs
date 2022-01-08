@@ -16,7 +16,7 @@ In the plate's web UI keep the default `/pages.jsonl` as Startup Layout. This wi
 
 `pages.jsonl` - loaded at boot, has only with objects related to local relays, and displays the hostname:
 
-```json
+```json linenums="1"
 {"page":1,"id":1,"obj":"btn","x":0,"y":0,"w":240,"h":30,"text":"LIGHTS","text_font":16,"bg_color":"#2C3E50","text_color":"#FFFFFF","radius":0,"border_side":0,"click":0}
 {"page":1,"id":2,"obj":"btn","x":10,"y":40,"w":220,"h":115,"toggle":true,"text":"\uE335","text_font":32,"mode":"break","align":1,"radius":20,"groupid":1}
 {"page":1,"id":3,"obj":"btn","x":10,"y":165,"w":220,"h":115,"toggle":true,"text":"\uE335","text_font":32,"mode":"break","align":1,"radius":20,"groupid":2}
@@ -49,7 +49,7 @@ run /pages_offline.jsonl
 
 `pages_offline.jsonl` - to be loaded after connection is lost to the WiFi network, has only with objects related to local relays:
 
-```json
+```json linenums="1"
 {"page":1,"id":1,"obj":"btn","x":0,"y":0,"w":240,"h":30,"text":"LIGHTS","text_font":16,"bg_color":"#2C3E50","text_color":"#FFFFFF","radius":0,"border_side":0,"click":0}
 {"page":1,"id":2,"obj":"btn","x":10,"y":40,"w":220,"h":115,"toggle":true,"text":"\uE335","text_font":32,"mode":"break","align":1,"radius":20,"groupid":1}
 {"page":1,"id":3,"obj":"btn","x":10,"y":165,"w":220,"h":115,"toggle":true,"text":"\uE335","text_font":32,"mode":"break","align":1,"radius":20,"groupid":2}

@@ -93,7 +93,7 @@ The ESP32 TouchDown is fully [Open Source Hardware](https://github.com/DustinWat
 
 Specify the LCD Configuration to use and define the GPIOs in the environment build flags:
 
-```ini
+```ini linenums="1"
 build_flags =
     ${env.build_flags}
     ${esp32.build_flags}

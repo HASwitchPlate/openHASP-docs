@@ -29,7 +29,7 @@ Define a custom environment in `platformio_override.ini` and add a new `esp32_il
 
 If you've wired pins differently, change the values below.
 
-```ini
+```ini linenums="1"
 ;-- ILI9341 SPI version ------------------------
 [env:esp32_ili9341_spi]
 platform = espressif32

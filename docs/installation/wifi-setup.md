@@ -34,7 +34,7 @@ Or Check the serial log for the SSID and password to connect.
 
 You can also directly configure the Wi-Fi settings via the serial console:
 
-```bash
+```sh linenums="1"
 ssid myAccessPointName
 pass myWifiPassword
 reboot

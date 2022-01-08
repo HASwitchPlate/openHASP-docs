@@ -1,6 +1,6 @@
 # Flash ESP32
 
-## Download the firmware
+## Download Firmware
 
 Go to the [releases](https://github.com/HASwitchPlate/openHASP/releases){target=_blank} page on GitHub to download the latest openHASP binaries.
 
@@ -30,7 +30,7 @@ The actual procedure to flash the ESP32 depends on the tool used. Click on the t
     ESPHome Flasher cannot flash the openHASP binary. Use one of the other tools below instead.
 
 === "ESPtool.py :material-linux::material-apple::material-microsoft-windows:"
-    ```shell
+    ```sh linenums="1"
     esptool.py --port COM1 erase_flash
     esptool.py --port COM1 --baud 921600 write_flash 0x0 d1-mini-esp32_ili9341_full_4MB_<version>.bin
     ```

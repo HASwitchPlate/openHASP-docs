@@ -60,7 +60,7 @@ Including selected glyphs of Latin-1 character set and MaterialDesign icons belo
 
 The built-in fonts can be set by using the pointsize as parameter. For example:
 
-```json
+```json linenums="1"
 p4b1.text_font=24
 p4b2.value_font=12
 ```
@@ -79,12 +79,12 @@ To use an icon in a text you need to prefix the UTF-8 character code with `\u`.
 **To ensure proper decoding the payload should be used with a `json` or `jsonl` command.**
 
 `jsonl` example:
-```json
+```json linenums="1"
 {"page":2,"id":1,"obj":"label","x":10,"y":50,"w":150,"h":50,"text":"\uE64A Hello world!","text_font":24}
 ```
 
 `json` example:
-```json
+```json linenums="1"
 ["p2b1.text=\uE64A Hello world!"]
 ```
 

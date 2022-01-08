@@ -119,7 +119,7 @@ Including the VCC and GND pins, a total of 13 connections need to be made to the
 
 The `lcd_config.ini` file specifies the different properties of the display, except for the actual pin configuration:
 
-```ini
+```ini linenums="1"
 raspberrypi =
     -D RPI_DISPLAY_TYPE=1
     -D ST7796_DRIVER=1
@@ -137,7 +137,7 @@ raspberrypi =
 
 Specify the LCD Configuration to use and define the GPIOs in the environment build flags:
 
-```ini
+```ini linenums="1"
 build_flags =
     ${env.build_flags}
     ${esp32.build_flags}

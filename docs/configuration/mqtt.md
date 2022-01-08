@@ -39,7 +39,7 @@ Click 'Save Settings' to save your settings to the device. A restart is required
 
 You can also configure the mqtt settings via the serial or telnet console:
 
-```bash
+```sh linenums="1"
 hostname myPlateName
 mqtthost 192.168.0.123
 mqttport 1883

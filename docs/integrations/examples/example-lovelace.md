@@ -14,7 +14,7 @@ To add an openHASP plate to your installation with a sample design looking a bit
 - upload a `pages.jsonl` file with the folowing content to your plate and reboot:
 
 
-```json
+```json linenums="1"
 {"page":1,"id":1,"obj":"btn","x":0,"y":0,"w":240,"h":30,"text":"ENTITIES","value_font":22,"bg_color":"#2C3E50","text_color":"#FFFFFF","radius":0,"border_side":0,"click":0}
 {"page":1,"id":2,"obj":"obj","x":5,"y":35,"w":230,"h":250,"click":0}
 

@@ -113,11 +113,11 @@ Pin| Mode   | L8-HS      | Group | Default
 
 !!! tip
     To configure the GPIOs _as light switches_ at once for L8-HS send to topic `hasp/<nodename>/config/gpio` a message with payload:  
-    ```json
+    ```json linenums="1"
     {"config":[197658,263456,329249,655628,655886,656155,0,0]}
     ```
     Or for _power switches_:
-    ```json
+    ```json linenums="1"
     {"config":[721164,721422,197658,721691,263456,329249,0,0]}
     ```
     The difference is only the device class you want them to be autodetected as in Home Assistant: _light_ vs. _switch_
@@ -125,7 +125,7 @@ Pin| Mode   | L8-HS      | Group | Default
 
 ??? example "Example `jsonl`"
     To create a page displaying the local relays as switches, try this very simple [pages.jsonl](../design/pages.md):
-    ```json
+    ```json linenums="1"
     {"page":1,"id":1,"obj":"switch","x":30,"y":40,"w":180,"h":75,"radius":40,"radius2":40,"groupid":1}
     {"page":1,"id":2,"obj":"switch","x":30,"y":122,"w":180,"h":75,"radius":40,"radius2":40,"groupid":2}
     {"page":1,"id":3,"obj":"switch","x":30,"y":205,"w":180,"h":75,"radius":40,"radius2":40,"groupid":3}
@@ -144,7 +144,7 @@ Pin| Mode   | L8-HD      | Group | Default
 
 !!! tip
     To configure the GPIOs at once for L8-HD send to topic `hasp/<nodename>/config` a message with payload:  
-    ```json
+    ```json linenums="1"
     {"gpio":{"config":[3211532,197658,263456,329249,0,0,0,0]}}
     ```
 
@@ -159,7 +159,7 @@ Pin| Mode   | L8-HB      | Group | Default
 
 !!! tip
     To configure the GPIOs at once for L8-HB send to topic `hasp/<nodename>/config` a message with payload:  
-    ```json
+    ```json linenums="1"
     {"gpio":{"config":[197658,263456,329249,721179,14,27,0,0]}}
     ```
 
@@ -207,7 +207,7 @@ The switch supports several wiring configurations:
 
 The `lcd_config.ini` file specifies the different properties of the display, except for the actual pin configuration:
 
-```ini
+```ini linenums="1"
 st7789v =
     -D ST7789_DRIVER=1
     ;-D CGRAM_OFFSET=1         ; Library will add offsets required
@@ -228,7 +228,7 @@ st7789v =
 
 Specify the LCD Configuration to use and define the GPIOs in the environment build flags:
 
-```ini
+```ini linenums="1"
 build_flags =
     ${env.build_flags}
     ${esp32.build_flags}

@@ -17,7 +17,7 @@ Each line in the `jsonl` payload defines one object and has to be in the json fo
 don't send too many lines in a single payload, you can always sends multiple jsonl commands.
 
 Example:    
-```json
+```json linenums="1"
 jsonl {"obj":"btn","id":14,"x":120,"y":1,"w":30,"h":40,"text_font":"2","text":"Test","text_color":"gray","bg_opa":0,"border_width":0}
 ```
 
@@ -31,7 +31,7 @@ _accepted parameters:_ json array of strings
 Use the `json` command to send multiple commands as an array of strings in one payload.
 
 Example:    
-```json
+```json linenums="1"
 json ['page 3','backlight {"state":"OFF","brightness":100}','idle off']
 ```
 
@@ -120,7 +120,7 @@ _accepted json keys:_
 An RGB moodlight can be controlled by configuring 3 [GPIO pins][3] as type `Mood Red`, `Mood Green` and `Mood blue`.
 These leds can then be controlled together using the `moodlight` command.
 
-```json
+```json linenums="1"
 moodlight {"state":"off","color":"green"}
 moodlight {"state":true,"color":"#ff00e7"}
 moodlight {"color":12345}
@@ -134,7 +134,7 @@ moodlight {"state":"on","r":255,"g":0,"b":255}
 
 Calling the `moodlight` command without parameters (or sending an empty payload to the `hasp/<nodename>/command/moodlight` topic) returns the current state:
 
-```json
+```json linenums="1"
 "state/moodlight" {"state":"ON","brightness":255,"color":"#ff0000","r":255,"g":0,"b":0}
 ```
 
@@ -186,7 +186,7 @@ The previous screenshot is overwritten.
 
 Reports the status of the MCU. The response will be posted to the state topic. For example:
 
-```json
+```json linenums="1"
     "hasp/<platename>/state/statusupdate" => {
         "node":"plate35",
         "idle":"short",
@@ -264,7 +264,7 @@ You can get or set the configuration of an openHASP submodule in json format.
 To get the configuration, use the command `config/<submodule>`. 
 The result will be published to `hasp/<nodename>/state/config`. Passwords will be omitted from the result.
 
-```json
+```json linenums="1"
 config/wifi
 config/mqtt
 config/http

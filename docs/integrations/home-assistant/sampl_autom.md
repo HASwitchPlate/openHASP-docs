@@ -4,7 +4,7 @@ The night mode activates when all the lights are off and shutters are down below
 
 This will act directly on the plate in a certain room, as it is triggered by entities located in that room. If you have multiple plates in various rooms, you can create separate automations for each.
 
-```yaml
+```yaml linenums="1"
 - id: openhasp-plate_myroom-day
   alias: "openHASP Night mode based on My Room entities"
   trigger:
@@ -90,7 +90,7 @@ The night mode activates when sun goes down, and the day mode activates when the
 
 Assuming your plate's configured MQTT _group name_ is `plates`, this will affect _all_ the plates in your system at once:
 
-```yaml
+```yaml linenums="1"
 - id: openhasp-night
   alias: "openHASP Night mode"
   trigger:
@@ -134,7 +134,7 @@ If your plate has moodlights, it is useful in dark situations, when you don't wa
 
 Put your `light.plate_my_room_moodlight` to a Lovelace card entity row and select a nice color for moodlight.
 
-```yaml
+```yaml linenums="1"
 - id: openhasp-moodlight-on
   alias: "openHASP Moodlight ON when Backlight OFF"
   trigger:
@@ -166,7 +166,7 @@ Put your `light.plate_my_room_moodlight` to a Lovelace card entity row and selec
 
 Apart from the idle times controlling backlight levels, one may want to return to page 1 after a while. 
 
-```yaml
+```yaml linenums="1"
 - id: openhasp-back-to-page-1
   alias: "openHASP back to page 1"
   trigger:
@@ -192,7 +192,7 @@ Apart from the idle times controlling backlight levels, one may want to return t
 It's possible to store the `pages.jsonl` plate design configuration files in a central location, namely your Home Assistant server. Practically you can do this by creating a directory where your `configuration.yaml` resides, say `hasp-lvgl` and you can drop your `pages.jsonl` files there for all your plates.
 
 You need to allow Home Assistant components to access this directory, this can be done in `configuration.yaml` with this directive (in case of hassio looks like this) :
-```yaml
+```yaml linenums="1"
 homeassistant:
   allowlist_external_dirs: 
     - /config/openhasp/
@@ -202,7 +202,7 @@ With the [services](#custom-component/services) `openhasp.clear_page` and `openh
 
 For the example automation below i've created an [input_boolean](https://www.home-assistant.io/integrations/input_boolean/){target=_blank} named `load_pages_plate_my_room` in order to have a switch in Lovelace UI to trigger this manually.
 
-```yaml
+```yaml linenums="1"
 - id: openhasp-reload_pages
   alias: "openHASP reload pages"
   trigger:
@@ -231,7 +231,7 @@ If you omit the `openhasp.clear_page` service completely, the objects will be up
 If you omit lines `data:` and `page: 1`, all pages will be cleared.
 
 To trigger this automation when Home Assistant starts, you can use this in your automation:
-```yaml
+```yaml linenums="1"
   trigger:
     - platform: homeassistant
       event: start
@@ -252,7 +252,7 @@ Wall mounted LCD screns main problem is that they display the same picture 99.99
 One way to reduce this is to "train" the pixels periodically with completely different other content.
 Assuming your group name is configured as `plates` in your screens running openHASP, here is a possible solution to extend their life (all at once). The cycle runs for 30 seconds each time, can be stopped by touching. The trigger runs this 6 times each night.
 
-```yaml
+```yaml linenums="1"
 - id: openhasp_antiburn_start_at_night
   alias: openHASP anti-burn-in start at night
   initial_state: 'on'
@@ -283,7 +283,7 @@ Just add these actions to the [first automation example](#turn-on-moodlight-when
 
 for automation `openhasp-moodlight-on`, add to actions:
 
-```yaml
+```yaml linenums="1"
     - service: mqtt.publish
       data:
         topic: hasp/plates/command/jsonl
@@ -292,7 +292,7 @@ for automation `openhasp-moodlight-on`, add to actions:
 
 for automation `openhasp-moodlight-off`, add to actions:
 
-```yaml
+```yaml linenums="1"
     - service: mqtt.publish
       data:
         topic: hasp/plates/command/p0b99.hidden

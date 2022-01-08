@@ -35,7 +35,7 @@ Including selected glyphs of Latin-1 character set and MaterialDesign icons belo
 
 The built-in fonts can be set by using the pointsize as parameter. For example:
 
-```json
+```json linenums="1"
 p4b1.text_font=24
 p4b2.value_font=12
 ```
@@ -61,12 +61,12 @@ To use an icon in a `json` or `jsonl` payload you need to prefix the UTF-8 chara
 ArduinoJSON will correctly decode the text into it's UTF-8 representation while parsing the JSON object:
 
 `jsonl` example:
-```json
+```json linenums="1"
 {"page":2,"id":1,"obj":"label","w":150,"h":50,"text":"\uE64A Hello world!"}
 ```
 
 `json` example:
-```json
+```json linenums="1"
 ["p2b1.text=\uE64A Hello world!"]
 ```
 
@@ -74,12 +74,12 @@ If the icon codepoint is larger than `0xFFFF` you need to convert the codepoint 
 Then include both UTF-16 surrogate characters in the payload like this:
 
 `jsonl` example:
-```json
+```json linenums="1"
 {"page":2,"id":1,"obj":"label","w":150,"h":50,"text": "\uDB81\uDC25 Hello world!"}
 ```
 
 `json` example:
-```json
+```json linenums="1"
 ["p2b1.text=\uDB81\uDC25 Hello world!"]
 ```
 
@@ -99,7 +99,7 @@ How this is accomplished depends on the Home Automation tool:
 
 - At the end of the template you *must* indicate that Home Assistant needs encoded the string before sending it by appending `|e` *(pipe symbol + `e`)* at the end.
 
-```yaml
+```yaml linenums="1"
 - obj: "p1b2"  # light-switch toggle button
   properties:
     "text": '{{ "\uE6E8" if is_state("light.x","on") else "\U0001F5E9" |e }}'
@@ -524,11 +524,155 @@ Covers the Greek (el) language:
 &#x03CD;
 &#x03CE;
 
+### Vietnamese
+
+Needs compiling with [customization](../../compiling/customize/).
+Includes all characters and symbols from the [Ascii range](#ascii) above.
+
+Covers the Vietnamese (vi) language:
+
+&#xC1;	<!-- 	Á	-->
+&#xC0;	<!-- 	À	-->
+&#xC2;	<!-- 	Â	-->
+&#x102;	<!-- 	Ă	-->
+&#xC3;	<!-- 	Ã	-->
+&#x1EA4;	<!-- 	Ấ	-->
+&#x1EA6;	<!-- 	Ầ	-->
+&#x1EAE;	<!-- 	Ắ	-->
+&#x1EB0;	<!-- 	Ằ	-->
+&#x1EAA;	<!-- 	Ẫ	-->
+&#x1EB4;	<!-- 	Ẵ	-->
+&#x1EA2;	<!-- 	Ả	-->
+&#x1EA8;	<!-- 	Ẩ	-->
+&#x1EB2;	<!-- 	Ẳ	-->
+&#x1EA0;	<!-- 	Ạ	-->
+&#x1EAC;	<!-- 	Ậ	-->
+&#x1EB6;	<!-- 	Ặ	-->
+&#x110;	<!-- 	Đ	-->
+&#xC9;	<!-- 	É	-->
+&#xC8;	<!-- 	È	-->
+&#xCA;	<!-- 	Ê	-->
+&#x1EBC;	<!-- 	Ẽ	-->
+&#x1EBE;	<!-- 	Ế	-->
+&#x1EC0;	<!-- 	Ề	-->
+&#x1EC4;	<!-- 	Ễ	-->
+&#x1EBA;	<!-- 	Ẻ	-->
+&#x1EC2;	<!-- 	Ể	-->
+&#x1EB8;	<!-- 	Ẹ	-->
+&#x1EC6;	<!-- 	Ệ	-->
+&#xCD;	<!-- 	Í	-->
+&#xCC;	<!-- 	Ì	-->
+&#x128;	<!-- 	Ĩ	-->
+&#x1EC8;	<!-- 	Ỉ	-->
+&#x1ECA;	<!-- 	Ị	-->
+&#xD3;	<!-- 	Ó	-->
+&#xD2;	<!-- 	Ò	-->
+&#xD4;	<!-- 	Ô	-->
+&#xD5;	<!-- 	Õ	-->
+&#x1ED0;	<!-- 	Ố	-->
+&#x1ED2;	<!-- 	Ồ	-->
+&#x1ED6;	<!-- 	Ỗ	-->
+&#x1ECE;	<!-- 	Ỏ	-->
+&#x1A0;	<!-- 	Ơ	-->
+&#x1ED4;	<!-- 	Ổ	-->
+&#x1ECC;	<!-- 	Ọ	-->
+&#x1EDA;	<!-- 	Ớ	-->
+&#x1EDC;	<!-- 	Ờ	-->
+&#x1EE0;	<!-- 	Ỡ	-->
+&#x1ED8;	<!-- 	Ộ	-->
+&#x1EDE;	<!-- 	Ở	-->
+&#x1EE2;	<!-- 	Ợ	-->
+&#xDA;	<!-- 	Ú	-->
+&#xD9;	<!-- 	Ù	-->
+&#x168;	<!-- 	Ũ	-->
+&#x1EE6;	<!-- 	Ủ	-->
+&#x1AF;	<!-- 	Ư	-->
+&#x1EE4;	<!-- 	Ụ	-->
+&#x1EE8;	<!-- 	Ứ	-->
+&#x1EEA;	<!-- 	Ừ	-->
+&#x1EEE;	<!-- 	Ữ	-->
+&#x1EEC;	<!-- 	Ử	-->
+&#x1EF0;	<!-- 	Ự	-->
+&#xDD;	<!-- 	Ý	-->
+&#x1EF2;	<!-- 	Ỳ	-->
+&#x1EF8;	<!-- 	Ỹ	-->
+&#x1EF6;	<!-- 	Ỷ	-->
+&#x1EF4;	<!-- 	Ỵ	-->
+&#xE1;	<!-- 	á	-->
+&#xE0;	<!-- 	à	-->
+&#xE2;	<!-- 	â	-->
+&#x103;	<!-- 	ă	-->
+&#xE3;	<!-- 	ã	-->
+&#x1EA5;	<!-- 	ấ	-->
+&#x1EA7;	<!-- 	ầ	-->
+&#x1EAF;	<!-- 	ắ	-->
+&#x1EB1;	<!-- 	ằ	-->
+&#x1EAB;	<!-- 	ẫ	-->
+&#x1EB5;	<!-- 	ẵ	-->
+&#x1EA3;	<!-- 	ả	-->
+&#x1EA9;	<!-- 	ẩ	-->
+&#x1EB3;	<!-- 	ẳ	-->
+&#x1EA1;	<!-- 	ạ	-->
+&#x1EAD;	<!-- 	ậ	-->
+&#x1EB7;	<!-- 	ặ	-->
+&#x111;	<!-- 	đ	-->
+&#xE9;	<!-- 	é	-->
+&#xE8;	<!-- 	è	-->
+&#xEA;	<!-- 	ê	-->
+&#x1EBD;	<!-- 	ẽ	-->
+&#x1EBF;	<!-- 	ế	-->
+&#x1EC1;	<!-- 	ề	-->
+&#x1EC5;	<!-- 	ễ	-->
+&#x1EBB;	<!-- 	ẻ	-->
+&#x1EC3;	<!-- 	ể	-->
+&#x1EB9;	<!-- 	ẹ	-->
+&#x1EC7;	<!-- 	ệ	-->
+&#xED;	<!-- 	í	-->
+&#xEC;	<!-- 	ì	-->
+&#x129;	<!-- 	ĩ	-->
+&#x1EC9;	<!-- 	ỉ	-->
+&#x1ECB;	<!-- 	ị	-->
+&#xF3;	<!-- 	ó	-->
+&#xF2;	<!-- 	ò	-->
+&#xF4;	<!-- 	ô	-->
+&#xF5;	<!-- 	õ	-->
+&#x1ED1;	<!-- 	ố	-->
+&#x1ED3;	<!-- 	ồ	-->
+&#x1ED7;	<!-- 	ỗ	-->
+&#x1ECF;	<!-- 	ỏ	-->
+&#x1A1;	<!-- 	ơ	-->
+&#x1ED5;	<!-- 	ổ	-->
+&#x1ECD;	<!-- 	ọ	-->
+&#x1EDB;	<!-- 	ớ	-->
+&#x1EDD;	<!-- 	ờ	-->
+&#x1EE1;	<!-- 	ỡ	-->
+&#x1ED9;	<!-- 	ộ	-->
+&#x1EDF;	<!-- 	ở	-->
+&#x1EE3;	<!-- 	ợ	-->
+&#xFA;	<!-- 	ú	-->
+&#xF9;	<!-- 	ù	-->
+&#x169;	<!-- 	ũ	-->
+&#x1EE7;	<!-- 	ủ	-->
+&#x1B0;	<!-- 	ư	-->
+&#x1EE5;	<!-- 	ụ	-->
+&#x1EE9;	<!-- 	ứ	-->
+&#x1EEB;	<!-- 	ừ	-->
+&#x1EEF;	<!-- 	ữ	-->
+&#x1EED;	<!-- 	ử	-->
+&#x1EF1;	<!-- 	ự	-->
+&#xFD;	<!-- 	ý	-->
+&#x1EF3;	<!-- 	ỳ	-->
+&#x1EF9;	<!-- 	ỹ	-->
+&#x1EF7;	<!-- 	ỷ	-->
+&#x1EF5;	<!-- 	ỵ	-->
+&#x20AB;	<!-- 	₫	-->
+
 
 ## External Fonts
 
-You can also add a custom `.zi` font by uploading it to the internal flash.
-Apply it as the default font on the Configuration > HASP Settings page.
-To use it, set the pointsize parameter of the property to `0`.
+!!! warning "Deprecated"
+    You can also add a custom `.zi` font by uploading it to the internal flash.
+    Apply it as the default font on the Configuration > HASP Settings page.
+    To use it, set the pointsize parameter of the property to `0`.
 
 [1]: http://www.russellcottrell.com/greek/utilities/SurrogatePairCalculator.htm
