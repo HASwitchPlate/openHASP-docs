@@ -46,7 +46,7 @@ First prepare your plates to be integrated with Home Assistant (follow steps in 
 3. Restart Home Assistant.
 4. Set the [MQTT server](../../configuration/mqtt.md) settings and make sure each plate has a unique node name, save and reboot.
 
-The component will automatically discover the plates and you will see them appearing in Lovelace UI's _Configuration > Devices & Services > openHASP.
+The component will automatically discover the plates and you will see them appearing in Lovelace UI's _Configuration > Devices & Services > openHASP_.
 
 When Home Assistant detects your plate, you will have to give it a name. In the examples below both name and node name is `plate35`.   
 You will be presented with options to set the backlight brightness level when the plate is idle and optionally you can set a path to a centrally located `pages.jsonl` file containing design for this plate - the component can send the contents of the file when the plate connects. From v0.6.3 of the component this file can also be a file with a `.json` extenstion. See the _JSON Files_ section below.
@@ -129,7 +129,7 @@ In the example above, when object `p1b2` (which is a toggle button) generates th
 
 ### Reloading the configuration
 
-After you make changes to the configuration of the plate you can apply them by either restarting Home Assistant or by **reloading the integration** from Lovelace user interface with option found in _Configuration > Devices & Services > openHASP > (your plate >) 3dots menu > Reload_. Note that this can be done individually for each configured plate. 
+After you make changes to the configuration of the plate you can apply them by either restarting Home Assistant or by **reloading the integration** from Lovelace user interface with option found in _Configuration > Devices & Services > openHASP > (your plate >) 3dots menu > Reload_. Note that this has to be done individually for each configured plate. 
 
 You can achieve the same by with a service too:
 
