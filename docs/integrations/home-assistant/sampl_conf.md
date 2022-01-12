@@ -896,54 +896,56 @@ relevant **openHASP-custom-component config:**
       - obj: "p5b15" # Current date (adjust format to your needs)
         properties:
           "text": >
+            {%- if not is_state('weather.openweathermap','unavailable') %}
             {%- set day = (states.weather.openweathermap.last_changed).strftime('%w') %}
             {%- set days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"] %}
             {{- days[ day | int -1 ] }} {{ (states.weather.openweathermap.last_changed).strftime('%m. %d. ') }}
+            {% endif -%}
 
       - obj: "p5b16" # Current temp (you can use your own outdoor temp sensor if you have one)
         properties:
-          "text": "{{ state_attr('weather.openweathermap','temperature') |string + '°C' if not is_state('weather.openweathermap','unavailable') }}"  # or "{{ states('sensor.your_own_temp_sensor') }}°C"
+          "text": "{{ state_attr('weather.openweathermap','temperature') |string + '°C' if not is_state('weather.openweathermap','unavailable') }}"  # or "{{ states('sensor.your_own_temp_sensor') if not is_state('sensor.your_own_temp_sensor','unavailable') else '--' }}°C"
 
       - obj: "p5b17" # Current weather condition
         properties:
           "text": >
-             {% if states('weather.openweathermap') == "clear-night" -%}
+             {% if is_state('weather.openweathermap','clear-night') -%}
              Clear night
-             {% elif states('weather.openweathermap') == 'cloudy' -%}
+             {% elif is_state('weather.openweathermap','cloudy') -%}
              Cloudy
-             {% elif states('weather.openweathermap') == 'fog' -%}
+             {% elif is_state('weather.openweathermap','fog') -%}
              Fog
-             {% elif states('weather.openweathermap') == 'hail' -%}
+             {% elif is_state('weather.openweathermap','hail') -%}
              Hail
-             {% elif states('weather.openweathermap') == 'lightning' -%}
+             {% elif is_state('weather.openweathermap','lightning') -%}
              Lightning
-             {% elif states('weather.openweathermap') == 'lightning-rainy' -%}
+             {% elif is_state('weather.openweathermap','lightning-rainy') -%}
              Thunderstorms
-             {% elif states('weather.openweathermap') == 'partlycloudy' -%}
+             {% elif is_state('weather.openweathermap','partlycloudy') -%}
              Partly cloudy
-             {% elif states('weather.openweathermap') == 'pouring' -%}
+             {% elif is_state('weather.openweathermap','pouring') -%}
              Pouring rain
-             {% elif states('weather.openweathermap') == 'rainy' -%}
+             {% elif is_state('weather.openweathermap','rainy') -%}
              Rainy
-             {% elif states('weather.openweathermap') == 'snowy' -%}
+             {% elif is_state('weather.openweathermap','snowy') -%}
              Snowy
-             {% elif states('weather.openweathermap') == 'snowy-rainy' -%}
+             {% elif is_state('weather.openweathermap','snowy-rainy') -%}
              Snowy-rainy
-             {% elif states('weather.openweathermap') == 'sunny' -%}
+             {% elif is_state('weather.openweathermap','sunny') -%}
              Sunny
-             {% elif states('weather.openweathermap') == 'windy' -%}
+             {% elif is_state('weather.openweathermap','windy') -%}
              Windy
-             {% elif states('weather.openweathermap') == 'windy-variant' -%}
+             {% elif is_state('weather.openweathermap','windy-variant') -%}
              Windy
-             {% elif states('weather.openweathermap') == 'exceptional' -%}
+             {% elif is_state('weather.openweathermap','exceptional') -%}
              Exceptional
-             {% elif states('weather.openweathermap') == 'unavailable' -%}
+             {% elif is_state('weather.openweathermap','unavailable') -%}
              (not available)
              {% else -%}
              {{ states('weather.openweathermap') }}
              {% endif -%}
 
-      - obj: "p5b10"  # tab dots
+      - obj: "p5b10"  # tab dots - MAKE SURE YOU UPDATE THIS ONE!!
         event:
           "changed":
             - service: openhasp.command
@@ -961,6 +963,7 @@ relevant **openHASP-custom-component config:**
       - obj: "p5b21" # Forecast time +1h
         properties:
           "text": >
+            {%- if not is_state('weather.openweathermap','unavailable') %}
             {%- set update = states('sensor.date') %}
             {%- set midnight = now().replace(hour=0, minute=0, second=0, microsecond=0).timestamp() %}
             {%- set event = as_timestamp(strptime(state_attr('weather.openweathermap','forecast')[1]['datetime'], '%Y-%m-%dT%H:%M:%S%z', default='2020-01-00T00:00:00+00:00')) %}
@@ -971,18 +974,23 @@ relevant **openHASP-custom-component config:**
             Tomorrow
             {%- endif %}
             {{- event | timestamp_custom(" %-I %p") }}
+            {%- endif %}
 
       - obj: "p5b22" # Forecast temp +1h
         properties:
-          "text": "{{ state_attr('weather.openweathermap','forecast')[1]['temperature'] }}"
+          "text": "{{ state_attr('weather.openweathermap','forecast')[1]['temperature'] if not is_state('weather.openweathermap','unavailable') else '-' }}"
 
       - obj: "p5b23" # Forecast condition +1h
         properties:
-          "src": "/littlefs/w-32-{{ state_attr('weather.openweathermap','forecast')[1]['condition'] }}.png"
+          "src": >
+            {%- if not is_state('weather.openweathermap','unavailable') %}
+            L:/w-32-{{ state_attr('weather.openweathermap','forecast')[1]['condition'] }}.png
+            {%- endif %}
 
       - obj: "p5b31" # Forecast time +2h (using Dawn/Morn etc instead of Today/Tomorrow)
         properties:
           "text": >
+            {%- if not is_state('weather.openweathermap','unavailable') %}
             {%- set hour = as_timestamp(strptime(state_attr('weather.openweathermap','forecast')[3]['datetime'], '%Y-%m-%dT%H:%M:%S%z', default='2020-01-00T00:00:00+00:00')) | timestamp_custom("%-H") | int %}
             {%- if 4 <= hour < 6 %}
             Dawning
@@ -998,18 +1006,23 @@ relevant **openHASP-custom-component config:**
             Night
             {%- endif %}
             {{- " " + hour |string + " o'clock" }}
+            {%- endif %}
 
       - obj: "p5b32" # Forecast temp +2h
         properties:
-          "text": "{{ state_attr('weather.openweathermap','forecast')[3]['temperature'] }}"
+          "text": "{{ state_attr('weather.openweathermap','forecast')[3]['temperature'] if not is_state('weather.openweathermap','unavailable') else '-' }}"
 
       - obj: "p5b33" # Forecast condition +2h
         properties:
-          "src": "/littlefs/w-32-{{ state_attr('weather.openweathermap','forecast')[3]['condition'] }}.png"
+          "src": >
+            {%- if not is_state('weather.openweathermap','unavailable') %}
+            L:/w-32-{{ state_attr('weather.openweathermap','forecast')[3]['condition'] }}.png
+            {%- endif %}
 
       - obj: "p5b41" # Forecast time +4h
         properties:
           "text": >
+            {%- if not is_state('weather.openweathermap','unavailable') %}
             {%- set update = states('sensor.date') %}
             {%- set midnight = now().replace(hour=0, minute=0, second=0, microsecond=0).timestamp() %}
             {%- set event = as_timestamp(strptime(state_attr('weather.openweathermap','forecast')[6]['datetime'], '%Y-%m-%dT%H:%M:%S%z', default='2020-01-00T00:00:00+00:00')) %}
@@ -1020,18 +1033,23 @@ relevant **openHASP-custom-component config:**
             Tomorrow
             {%- endif %}
             {{- event | timestamp_custom(" %-I %p") }}
+            {%- endif %}
 
       - obj: "p5b42" # Forecast temp +4h
         properties:
-          "text": "{{ state_attr('weather.openweathermap','forecast')[6]['temperature'] }}"
+          "text": "{{ state_attr('weather.openweathermap','forecast')[6]['temperature'] if not is_state('weather.openweathermap','unavailable') else '-' }}"
 
       - obj: "p5b43" # Forecast condition +4h
         properties:
-          "src": "/littlefs/w-32-{{ state_attr('weather.openweathermap','forecast')[6]['condition'] }}.png"
+          "src": >
+            {%- if not is_state('weather.openweathermap','unavailable') %}
+            L:/w-32-{{ state_attr('weather.openweathermap','forecast')[6]['condition'] }}.png
+            {%- endif %}
 
       - obj: "p5b51" # Forecast time +8h
         properties:
           "text": >
+            {%- if not is_state('weather.openweathermap','unavailable') %}
             {%- set update = states('sensor.date') %}
             {%- set midnight = now().replace(hour=0, minute=0, second=0, microsecond=0).timestamp() %}
             {%- set event = as_timestamp(strptime(state_attr('weather.openweathermap','forecast')[12]['datetime'], '%Y-%m-%dT%H:%M:%S%z', default='2020-01-00T00:00:00+00:00')) %}
@@ -1042,95 +1060,118 @@ relevant **openHASP-custom-component config:**
             Tomorrow
             {%- endif %}
             {{- event | timestamp_custom(" %-I %p") }}
+            {%- endif %}
 
       - obj: "p5b52" # Forecast temp +8h
         properties:
-          "text": "{{ state_attr('weather.openweathermap','forecast')[12]['temperature'] }}"
+          "text": "{{ state_attr('weather.openweathermap','forecast')[12]['temperature'] if not is_state('weather.openweathermap','unavailable') else '-' }}"
 
       - obj: "p5b53" # Forecast condition +8h
         properties:
-          "src": "/littlefs/w-32-{{ state_attr('weather.openweathermap','forecast')[12]['condition'] }}.png"
+          "src": >
+            {%- if not is_state('weather.openweathermap','unavailable') %}
+            L:/w-32-{{ state_attr('weather.openweathermap','forecast')[12]['condition'] }}.png
+            {%- endif %}
 
       - obj: "p5b61" # Forecast date +1d
         properties:
           "text": >
+            {%- if not is_state('weather.your_homename','unavailable') %}
             {%- set now = as_timestamp(strptime(state_attr('weather.your_homename','forecast')[0]['datetime'], '%Y-%m-%dT%H:%M:%S%z', default='2020-01-00T00:00:00+00:00')) %}
             {%- set day = now | timestamp_custom("%w") %}
             {%- set days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"] %}
             {{ days[ day | int -1 ] }}{{- now | timestamp_custom(" %d") }}
+            {%- endif %}
 
       - obj: "p5b62" # Forecast temp min +1d
         properties:
-          "text": "{{ state_attr('weather.your_homename','forecast')[0]['templow'] }}"
+          "text": "{{ state_attr('weather.your_homename','forecast')[0]['templow'] if not is_state('weather.your_homename','unavailable') else '-' }}"
 
       - obj: "p5b63" # Forecast temp max +1d
         properties:
-          "text": "{{ state_attr('weather.your_homename','forecast')[0]['temperature'] }}"
+          "text": "{{ state_attr('weather.your_homename','forecast')[0]['temperature'] if not is_state('weather.your_homename','unavailable') else '-' }}"
 
       - obj: "p5b64" # Forecast condition +1d
         properties:
-          "src": "/littlefs/w-32-{{ state_attr('weather.your_homename','forecast')[0]['condition'] }}.png"
+          "src": >
+            {%- if not is_state('weather.your_homename','unavailable') %}
+            L:/w-32-{{ state_attr('weather.your_homename','forecast')[0]['condition'] }}.png
+            {%- endif %}
 
       - obj: "p5b71" # Forecast date +2d
         properties:
           "text": >
+            {%- if not is_state('weather.your_homename','unavailable') %}
             {%- set now = as_timestamp(strptime(state_attr('weather.your_homename','forecast')[1]['datetime'], '%Y-%m-%dT%H:%M:%S%z', default='2020-01-00T00:00:00+00:00')) %}
             {%- set day = now | timestamp_custom("%w") %}
             {%- set days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"] %}
             {{ days[ day | int -1 ] }}{{- now | timestamp_custom(" %d") }}
+            {%- endif %}
 
       - obj: "p5b72" # Forecast temp min +2d
         properties:
-          "text": "{{ state_attr('weather.your_homename','forecast')[1]['templow'] }}"
+          "text": "{{ state_attr('weather.your_homename','forecast')[1]['templow'] if not is_state('weather.your_homename','unavailable') else '-' }}"
 
       - obj: "p5b73" # Forecast temp max +2d
         properties:
-          "text": "{{ state_attr('weather.your_homename','forecast')[1]['temperature'] }}"
+          "text": "{{ state_attr('weather.your_homename','forecast')[1]['temperature'] if not is_state('weather.your_homename','unavailable') else '-' }}"
 
       - obj: "p5b74" # Forecast condition +2d
         properties:
-          "src": "/littlefs/w-32-{{ state_attr('weather.your_homename','forecast')[1]['condition'] }}.png"
+          "src": >
+            {%- if not is_state('weather.your_homename','unavailable') %}
+            L:/w-32-{{ state_attr('weather.your_homename','forecast')[1]['condition'] }}.png
+            {%- endif %}
 
       - obj: "p5b81" # Forecast date +3d
         properties:
           "text": >
+            {%- if not is_state('weather.your_homename','unavailable') %}
             {%- set now = as_timestamp(strptime(state_attr('weather.your_homename','forecast')[2]['datetime'], '%Y-%m-%dT%H:%M:%S%z', default='2020-01-00T00:00:00+00:00')) %}
             {%- set day = now | timestamp_custom("%w") %}
             {%- set days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"] %}
             {{ days[ day | int -1 ] }}{{- now | timestamp_custom(" %d") }}
+            {%- endif %}
 
       - obj: "p5b82" # Forecast temp min +3d
         properties:
-          "text": "{{ state_attr('weather.your_homename','forecast')[2]['templow'] }}"
+          "text": "{{ state_attr('weather.your_homename','forecast')[2]['templow'] if not is_state('weather.your_homename','unavailable') else '-' }}"
 
       - obj: "p5b83" # Forecast temp max +3d
         properties:
-          "text": "{{ state_attr('weather.your_homename','forecast')[2]['temperature'] }}"
+          "text": "{{ state_attr('weather.your_homename','forecast')[2]['temperature'] if not is_state('weather.your_homename','unavailable') else '-' }}"
 
       - obj: "p5b84" # Forecast condition +3d
         properties:
-          "src": "/littlefs/w-32-{{ state_attr('weather.your_homename','forecast')[2]['condition'] }}.png"
+          "src": >
+            {%- if not is_state('weather.your_homename','unavailable') %}
+            L:/w-32-{{ state_attr('weather.your_homename','forecast')[2]['condition'] }}.png
+            {%- endif %}
 
       - obj: "p5b91" # Forecast date +4d
         properties:
           "text": >
+            {%- if not is_state('weather.your_homename','unavailable') %}
             {%- set now = as_timestamp(strptime(state_attr('weather.your_homename','forecast')[3]['datetime'], '%Y-%m-%dT%H:%M:%S%z', default='2020-01-00T00:00:00+00:00')) %}
             {%- set day = now | timestamp_custom("%w") %}
             {%- set days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"] %}
             {{ days[ day | int -1 ] }}{{- now | timestamp_custom(" %d") }}
+            {%- endif %}
 
       - obj: "p5b92" # Forecast temp min +4d
         properties:
-          "text": "{{ state_attr('weather.your_homename','forecast')[3]['templow'] }}"
+          "text": "{{ state_attr('weather.your_homename','forecast')[3]['templow'] if not is_state('weather.your_homename','unavailable') else '-' }}"
 
       - obj: "p5b93" # Forecast temp max +4d
         properties:
-          "text": "{{ state_attr('weather.your_homename','forecast')[3]['temperature'] }}"
+          "text": "{{ state_attr('weather.your_homename','forecast')[3]['temperature'] if not is_state('weather.your_homename','unavailable') else '-' }}"
 
       - obj: "p5b94" # Forecast condition +4d
         properties:
-          "src": "/littlefs/w-32-{{ state_attr('weather.your_homename','forecast')[3]['condition'] }}.png"
-
+          "src": >
+            {%- if not is_state('weather.your_homename','unavailable') %}
+            L:/w-32-{{ state_attr('weather.your_homename','forecast')[3]['condition'] }}.png
+            {%- endif %}
 ```
 
 
