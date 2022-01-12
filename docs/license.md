@@ -2,7 +2,7 @@
 
 ## MIT License
 
-openHASP is Copyright© 2019-2021 fvanroie, netwize.be and contributors
+openHASP is Copyright© 2019-2022 fvanroie, netwize.be and contributors
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -48,7 +48,7 @@ openHASP is building upon the existing work of the following open source develop
   Copyright© 2020 Bodmer ([https://github.com/Bodmer](https://github.com/Bodmer){target=_blank}) All rights reserved.
   TFT_eSPI is distributed under the terms of the [FreeBSD License][6]{target=_blank}
 
-- [LovyanGFX](https://github.com/Bodmer/TFT_eSPI){target=_blank} display library,
+- [LovyanGFX](https://github.com/lovyan03/LovyanGFX){target=_blank} display library,
   Copyright© 2020 lovyan03 ([https://github.com/lovyan03](https://github.com/lovyan03){target=_blank}) All rights reserved.
   LovyanGFX is distributed under the terms of the [FreeBSD License][6]{target=_blank}
 
