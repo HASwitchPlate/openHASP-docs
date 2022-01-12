@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://haswitchplate.github.io/openHASP-docs/0.6.2/0.6.2/integrations/home-assistant/sampl_conf/">
       
       <link rel="icon" href="../../../favicon.ico">
-      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.5">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.6">
     
     
       
@@ -23,7 +23,7 @@
       
     
      
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.ee0f47ba.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.cd566b2a.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.e6a45f82.min.css">
@@ -3154,61 +3154,105 @@ The various strings containing day names, day periods, weather conditions can be
 <span class="normal">238</span>
 <span class="normal">239</span>
 <span class="normal">240</span>
-<span class="normal">241</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">obj</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;p5b14&quot;</span><span class="w"> </span><span class="c1"># Icon</span><span class="w"></span>
+<span class="normal">241</span>
+<span class="normal">242</span>
+<span class="normal">243</span>
+<span class="normal">244</span>
+<span class="normal">245</span>
+<span class="normal">246</span>
+<span class="normal">247</span>
+<span class="normal">248</span>
+<span class="normal">249</span>
+<span class="normal">250</span>
+<span class="normal">251</span>
+<span class="normal">252</span>
+<span class="normal">253</span>
+<span class="normal">254</span>
+<span class="normal">255</span>
+<span class="normal">256</span>
+<span class="normal">257</span>
+<span class="normal">258</span>
+<span class="normal">259</span>
+<span class="normal">260</span>
+<span class="normal">261</span>
+<span class="normal">262</span>
+<span class="normal">263</span>
+<span class="normal">264</span>
+<span class="normal">265</span>
+<span class="normal">266</span>
+<span class="normal">267</span>
+<span class="normal">268</span>
+<span class="normal">269</span>
+<span class="normal">270</span>
+<span class="normal">271</span>
+<span class="normal">272</span>
+<span class="normal">273</span>
+<span class="normal">274</span>
+<span class="normal">275</span>
+<span class="normal">276</span>
+<span class="normal">277</span>
+<span class="normal">278</span>
+<span class="normal">279</span>
+<span class="normal">280</span>
+<span class="normal">281</span>
+<span class="normal">282</span>
+<span class="normal">283</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">obj</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;p5b14&quot;</span><span class="w"> </span><span class="c1"># Icon</span><span class="w"></span>
 <span class="w">        </span><span class="nt">properties</span><span class="p">:</span><span class="w"></span>
 <span class="w">          </span><span class="s">&quot;src&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">&#39;L:/w-128-&#39;</span><span class="nv"> </span><span class="s">+</span><span class="nv"> </span><span class="s">states(&#39;weather.openweathermap&#39;)</span><span class="nv"> </span><span class="s">+</span><span class="nv"> </span><span class="s">&#39;.png&#39;</span><span class="nv"> </span><span class="s">if</span><span class="nv"> </span><span class="s">not</span><span class="nv"> </span><span class="s">is_state(&#39;weather.openweathermap&#39;,&#39;unavailable&#39;)</span><span class="nv"> </span><span class="s">}}&quot;</span><span class="w"></span>
 
 <span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">obj</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;p5b15&quot;</span><span class="w"> </span><span class="c1"># Current date (adjust format to your needs)</span><span class="w"></span>
 <span class="w">        </span><span class="nt">properties</span><span class="p">:</span><span class="w"></span>
 <span class="w">          </span><span class="s">&quot;text&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="p p-Indicator">&gt;</span><span class="w"></span>
+<span class="w">            </span><span class="no">{%- if not is_state(&#39;weather.openweathermap&#39;,&#39;unavailable&#39;) %}</span><span class="w"></span>
 <span class="w">            </span><span class="no">{%- set day = (states.weather.openweathermap.last_changed).strftime(&#39;%w&#39;) %}</span><span class="w"></span>
 <span class="w">            </span><span class="no">{%- set days = [&quot;Monday&quot;, &quot;Tuesday&quot;, &quot;Wednesday&quot;, &quot;Thursday&quot;, &quot;Friday&quot;, &quot;Saturday&quot;, &quot;Sunday&quot;] %}</span><span class="w"></span>
 <span class="w">            </span><span class="no">{{- days[ day | int -1 ] }} {{ (states.weather.openweathermap.last_changed).strftime(&#39;%m. %d. &#39;) }}</span><span class="w"></span>
+<span class="w">            </span><span class="no">{% endif -%}</span><span class="w"></span>
 
 <span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">obj</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;p5b16&quot;</span><span class="w"> </span><span class="c1"># Current temp (you can use your own outdoor temp sensor if you have one)</span><span class="w"></span>
 <span class="w">        </span><span class="nt">properties</span><span class="p">:</span><span class="w"></span>
-<span class="w">          </span><span class="s">&quot;text&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">state_attr(&#39;weather.openweathermap&#39;,&#39;temperature&#39;)</span><span class="nv"> </span><span class="s">|string</span><span class="nv"> </span><span class="s">+</span><span class="nv"> </span><span class="s">&#39;°C&#39;</span><span class="nv"> </span><span class="s">if</span><span class="nv"> </span><span class="s">not</span><span class="nv"> </span><span class="s">is_state(&#39;weather.openweathermap&#39;,&#39;unavailable&#39;)</span><span class="nv"> </span><span class="s">}}&quot;</span><span class="w">  </span><span class="c1"># or &quot;{{ states(&#39;sensor.your_own_temp_sensor&#39;) }}°C&quot;</span><span class="w"></span>
+<span class="w">          </span><span class="s">&quot;text&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">state_attr(&#39;weather.openweathermap&#39;,&#39;temperature&#39;)</span><span class="nv"> </span><span class="s">|string</span><span class="nv"> </span><span class="s">+</span><span class="nv"> </span><span class="s">&#39;°C&#39;</span><span class="nv"> </span><span class="s">if</span><span class="nv"> </span><span class="s">not</span><span class="nv"> </span><span class="s">is_state(&#39;weather.openweathermap&#39;,&#39;unavailable&#39;)</span><span class="nv"> </span><span class="s">}}&quot;</span><span class="w">  </span><span class="c1"># or &quot;{{ states(&#39;sensor.your_own_temp_sensor&#39;) if not is_state(&#39;sensor.your_own_temp_sensor&#39;,&#39;unavailable&#39;) else &#39;--&#39; }}°C&quot;</span><span class="w"></span>
 
 <span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">obj</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;p5b17&quot;</span><span class="w"> </span><span class="c1"># Current weather condition</span><span class="w"></span>
 <span class="w">        </span><span class="nt">properties</span><span class="p">:</span><span class="w"></span>
 <span class="w">          </span><span class="s">&quot;text&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="p p-Indicator">&gt;</span><span class="w"></span>
-<span class="w">             </span><span class="no">{% if states(&#39;weather.openweathermap&#39;) == &quot;clear-night&quot; -%}</span><span class="w"></span>
+<span class="w">             </span><span class="no">{% if is_state(&#39;weather.openweathermap&#39;,&#39;clear-night&#39;) -%}</span><span class="w"></span>
 <span class="w">             </span><span class="no">Clear night</span><span class="w"></span>
-<span class="w">             </span><span class="no">{% elif states(&#39;weather.openweathermap&#39;) == &#39;cloudy&#39; -%}</span><span class="w"></span>
+<span class="w">             </span><span class="no">{% elif is_state(&#39;weather.openweathermap&#39;,&#39;cloudy&#39;) -%}</span><span class="w"></span>
 <span class="w">             </span><span class="no">Cloudy</span><span class="w"></span>
-<span class="w">             </span><span class="no">{% elif states(&#39;weather.openweathermap&#39;) == &#39;fog&#39; -%}</span><span class="w"></span>
+<span class="w">             </span><span class="no">{% elif is_state(&#39;weather.openweathermap&#39;,&#39;fog&#39;) -%}</span><span class="w"></span>
 <span class="w">             </span><span class="no">Fog</span><span class="w"></span>
-<span class="w">             </span><span class="no">{% elif states(&#39;weather.openweathermap&#39;) == &#39;hail&#39; -%}</span><span class="w"></span>
+<span class="w">             </span><span class="no">{% elif is_state(&#39;weather.openweathermap&#39;,&#39;hail&#39;) -%}</span><span class="w"></span>
 <span class="w">             </span><span class="no">Hail</span><span class="w"></span>
-<span class="w">             </span><span class="no">{% elif states(&#39;weather.openweathermap&#39;) == &#39;lightning&#39; -%}</span><span class="w"></span>
+<span class="w">             </span><span class="no">{% elif is_state(&#39;weather.openweathermap&#39;,&#39;lightning&#39;) -%}</span><span class="w"></span>
 <span class="w">             </span><span class="no">Lightning</span><span class="w"></span>
-<span class="w">             </span><span class="no">{% elif states(&#39;weather.openweathermap&#39;) == &#39;lightning-rainy&#39; -%}</span><span class="w"></span>
+<span class="w">             </span><span class="no">{% elif is_state(&#39;weather.openweathermap&#39;,&#39;lightning-rainy&#39;) -%}</span><span class="w"></span>
 <span class="w">             </span><span class="no">Thunderstorms</span><span class="w"></span>
-<span class="w">             </span><span class="no">{% elif states(&#39;weather.openweathermap&#39;) == &#39;partlycloudy&#39; -%}</span><span class="w"></span>
+<span class="w">             </span><span class="no">{% elif is_state(&#39;weather.openweathermap&#39;,&#39;partlycloudy&#39;) -%}</span><span class="w"></span>
 <span class="w">             </span><span class="no">Partly cloudy</span><span class="w"></span>
-<span class="w">             </span><span class="no">{% elif states(&#39;weather.openweathermap&#39;) == &#39;pouring&#39; -%}</span><span class="w"></span>
+<span class="w">             </span><span class="no">{% elif is_state(&#39;weather.openweathermap&#39;,&#39;pouring&#39;) -%}</span><span class="w"></span>
 <span class="w">             </span><span class="no">Pouring rain</span><span class="w"></span>
-<span class="w">             </span><span class="no">{% elif states(&#39;weather.openweathermap&#39;) == &#39;rainy&#39; -%}</span><span class="w"></span>
+<span class="w">             </span><span class="no">{% elif is_state(&#39;weather.openweathermap&#39;,&#39;rainy&#39;) -%}</span><span class="w"></span>
 <span class="w">             </span><span class="no">Rainy</span><span class="w"></span>
-<span class="w">             </span><span class="no">{% elif states(&#39;weather.openweathermap&#39;) == &#39;snowy&#39; -%}</span><span class="w"></span>
+<span class="w">             </span><span class="no">{% elif is_state(&#39;weather.openweathermap&#39;,&#39;snowy&#39;) -%}</span><span class="w"></span>
 <span class="w">             </span><span class="no">Snowy</span><span class="w"></span>
-<span class="w">             </span><span class="no">{% elif states(&#39;weather.openweathermap&#39;) == &#39;snowy-rainy&#39; -%}</span><span class="w"></span>
+<span class="w">             </span><span class="no">{% elif is_state(&#39;weather.openweathermap&#39;,&#39;snowy-rainy&#39;) -%}</span><span class="w"></span>
 <span class="w">             </span><span class="no">Snowy-rainy</span><span class="w"></span>
-<span class="w">             </span><span class="no">{% elif states(&#39;weather.openweathermap&#39;) == &#39;sunny&#39; -%}</span><span class="w"></span>
+<span class="w">             </span><span class="no">{% elif is_state(&#39;weather.openweathermap&#39;,&#39;sunny&#39;) -%}</span><span class="w"></span>
 <span class="w">             </span><span class="no">Sunny</span><span class="w"></span>
-<span class="w">             </span><span class="no">{% elif states(&#39;weather.openweathermap&#39;) == &#39;windy&#39; -%}</span><span class="w"></span>
+<span class="w">             </span><span class="no">{% elif is_state(&#39;weather.openweathermap&#39;,&#39;windy&#39;) -%}</span><span class="w"></span>
 <span class="w">             </span><span class="no">Windy</span><span class="w"></span>
-<span class="w">             </span><span class="no">{% elif states(&#39;weather.openweathermap&#39;) == &#39;windy-variant&#39; -%}</span><span class="w"></span>
+<span class="w">             </span><span class="no">{% elif is_state(&#39;weather.openweathermap&#39;,&#39;windy-variant&#39;) -%}</span><span class="w"></span>
 <span class="w">             </span><span class="no">Windy</span><span class="w"></span>
-<span class="w">             </span><span class="no">{% elif states(&#39;weather.openweathermap&#39;) == &#39;exceptional&#39; -%}</span><span class="w"></span>
+<span class="w">             </span><span class="no">{% elif is_state(&#39;weather.openweathermap&#39;,&#39;exceptional&#39;) -%}</span><span class="w"></span>
 <span class="w">             </span><span class="no">Exceptional</span><span class="w"></span>
-<span class="w">             </span><span class="no">{% elif states(&#39;weather.openweathermap&#39;) == &#39;unavailable&#39; -%}</span><span class="w"></span>
+<span class="w">             </span><span class="no">{% elif is_state(&#39;weather.openweathermap&#39;,&#39;unavailable&#39;) -%}</span><span class="w"></span>
 <span class="w">             </span><span class="no">(not available)</span><span class="w"></span>
 <span class="w">             </span><span class="no">{% else -%}</span><span class="w"></span>
 <span class="w">             </span><span class="no">{{ states(&#39;weather.openweathermap&#39;) }}</span><span class="w"></span>
 <span class="w">             </span><span class="no">{% endif -%}</span><span class="w"></span>
 
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">obj</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;p5b10&quot;</span><span class="w">  </span><span class="c1"># tab dots</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">obj</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;p5b10&quot;</span><span class="w">  </span><span class="c1"># tab dots - MAKE SURE YOU UPDATE THIS ONE!!</span><span class="w"></span>
 <span class="w">        </span><span class="nt">event</span><span class="p">:</span><span class="w"></span>
 <span class="w">          </span><span class="s">&quot;changed&quot;</span><span class="p p-Indicator">:</span><span class="w"></span>
 <span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">service</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">openhasp.command</span><span class="w"></span>
@@ -3226,6 +3270,7 @@ The various strings containing day names, day periods, weather conditions can be
 <span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">obj</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;p5b21&quot;</span><span class="w"> </span><span class="c1"># Forecast time +1h</span><span class="w"></span>
 <span class="w">        </span><span class="nt">properties</span><span class="p">:</span><span class="w"></span>
 <span class="w">          </span><span class="s">&quot;text&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="p p-Indicator">&gt;</span><span class="w"></span>
+<span class="w">            </span><span class="no">{%- if not is_state(&#39;weather.openweathermap&#39;,&#39;unavailable&#39;) %}</span><span class="w"></span>
 <span class="w">            </span><span class="no">{%- set update = states(&#39;sensor.date&#39;) %}</span><span class="w"></span>
 <span class="w">            </span><span class="no">{%- set midnight = now().replace(hour=0, minute=0, second=0, microsecond=0).timestamp() %}</span><span class="w"></span>
 <span class="w">            </span><span class="no">{%- set event = as_timestamp(strptime(state_attr(&#39;weather.openweathermap&#39;,&#39;forecast&#39;)[1][&#39;datetime&#39;], &#39;%Y-%m-%dT%H:%M:%S%z&#39;, default=&#39;2020-01-00T00:00:00+00:00&#39;)) %}</span><span class="w"></span>
@@ -3236,18 +3281,23 @@ The various strings containing day names, day periods, weather conditions can be
 <span class="w">            </span><span class="no">Tomorrow</span><span class="w"></span>
 <span class="w">            </span><span class="no">{%- endif %}</span><span class="w"></span>
 <span class="w">            </span><span class="no">{{- event | timestamp_custom(&quot; %-I %p&quot;) }}</span><span class="w"></span>
+<span class="w">            </span><span class="no">{%- endif %}</span><span class="w"></span>
 
 <span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">obj</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;p5b22&quot;</span><span class="w"> </span><span class="c1"># Forecast temp +1h</span><span class="w"></span>
 <span class="w">        </span><span class="nt">properties</span><span class="p">:</span><span class="w"></span>
-<span class="w">          </span><span class="s">&quot;text&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">state_attr(&#39;weather.openweathermap&#39;,&#39;forecast&#39;)[1][&#39;temperature&#39;]</span><span class="nv"> </span><span class="s">}}&quot;</span><span class="w"></span>
+<span class="w">          </span><span class="s">&quot;text&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">state_attr(&#39;weather.openweathermap&#39;,&#39;forecast&#39;)[1][&#39;temperature&#39;]</span><span class="nv"> </span><span class="s">if</span><span class="nv"> </span><span class="s">not</span><span class="nv"> </span><span class="s">is_state(&#39;weather.openweathermap&#39;,&#39;unavailable&#39;)</span><span class="nv"> </span><span class="s">else</span><span class="nv"> </span><span class="s">&#39;-&#39;</span><span class="nv"> </span><span class="s">}}&quot;</span><span class="w"></span>
 
 <span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">obj</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;p5b23&quot;</span><span class="w"> </span><span class="c1"># Forecast condition +1h</span><span class="w"></span>
 <span class="w">        </span><span class="nt">properties</span><span class="p">:</span><span class="w"></span>
-<span class="w">          </span><span class="s">&quot;src&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;/littlefs/w-32-{{</span><span class="nv"> </span><span class="s">state_attr(&#39;weather.openweathermap&#39;,&#39;forecast&#39;)[1][&#39;condition&#39;]</span><span class="nv"> </span><span class="s">}}.png&quot;</span><span class="w"></span>
+<span class="w">          </span><span class="s">&quot;src&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="p p-Indicator">&gt;</span><span class="w"></span>
+<span class="w">            </span><span class="no">{%- if not is_state(&#39;weather.openweathermap&#39;,&#39;unavailable&#39;) %}</span><span class="w"></span>
+<span class="w">            </span><span class="no">L:/w-32-{{ state_attr(&#39;weather.openweathermap&#39;,&#39;forecast&#39;)[1][&#39;condition&#39;] }}.png</span><span class="w"></span>
+<span class="w">            </span><span class="no">{%- endif %}</span><span class="w"></span>
 
 <span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">obj</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;p5b31&quot;</span><span class="w"> </span><span class="c1"># Forecast time +2h (using Dawn/Morn etc instead of Today/Tomorrow)</span><span class="w"></span>
 <span class="w">        </span><span class="nt">properties</span><span class="p">:</span><span class="w"></span>
 <span class="w">          </span><span class="s">&quot;text&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="p p-Indicator">&gt;</span><span class="w"></span>
+<span class="w">            </span><span class="no">{%- if not is_state(&#39;weather.openweathermap&#39;,&#39;unavailable&#39;) %}</span><span class="w"></span>
 <span class="w">            </span><span class="no">{%- set hour = as_timestamp(strptime(state_attr(&#39;weather.openweathermap&#39;,&#39;forecast&#39;)[3][&#39;datetime&#39;], &#39;%Y-%m-%dT%H:%M:%S%z&#39;, default=&#39;2020-01-00T00:00:00+00:00&#39;)) | timestamp_custom(&quot;%-H&quot;) | int %}</span><span class="w"></span>
 <span class="w">            </span><span class="no">{%- if 4 &lt;= hour &lt; 6 %}</span><span class="w"></span>
 <span class="w">            </span><span class="no">Dawning</span><span class="w"></span>
@@ -3263,18 +3313,23 @@ The various strings containing day names, day periods, weather conditions can be
 <span class="w">            </span><span class="no">Night</span><span class="w"></span>
 <span class="w">            </span><span class="no">{%- endif %}</span><span class="w"></span>
 <span class="w">            </span><span class="no">{{- &quot; &quot; + hour |string + &quot; o&#39;clock&quot; }}</span><span class="w"></span>
+<span class="w">            </span><span class="no">{%- endif %}</span><span class="w"></span>
 
 <span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">obj</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;p5b32&quot;</span><span class="w"> </span><span class="c1"># Forecast temp +2h</span><span class="w"></span>
 <span class="w">        </span><span class="nt">properties</span><span class="p">:</span><span class="w"></span>
-<span class="w">          </span><span class="s">&quot;text&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">state_attr(&#39;weather.openweathermap&#39;,&#39;forecast&#39;)[3][&#39;temperature&#39;]</span><span class="nv"> </span><span class="s">}}&quot;</span><span class="w"></span>
+<span class="w">          </span><span class="s">&quot;text&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">state_attr(&#39;weather.openweathermap&#39;,&#39;forecast&#39;)[3][&#39;temperature&#39;]</span><span class="nv"> </span><span class="s">if</span><span class="nv"> </span><span class="s">not</span><span class="nv"> </span><span class="s">is_state(&#39;weather.openweathermap&#39;,&#39;unavailable&#39;)</span><span class="nv"> </span><span class="s">else</span><span class="nv"> </span><span class="s">&#39;-&#39;</span><span class="nv"> </span><span class="s">}}&quot;</span><span class="w"></span>
 
 <span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">obj</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;p5b33&quot;</span><span class="w"> </span><span class="c1"># Forecast condition +2h</span><span class="w"></span>
 <span class="w">        </span><span class="nt">properties</span><span class="p">:</span><span class="w"></span>
-<span class="w">          </span><span class="s">&quot;src&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;/littlefs/w-32-{{</span><span class="nv"> </span><span class="s">state_attr(&#39;weather.openweathermap&#39;,&#39;forecast&#39;)[3][&#39;condition&#39;]</span><span class="nv"> </span><span class="s">}}.png&quot;</span><span class="w"></span>
+<span class="w">          </span><span class="s">&quot;src&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="p p-Indicator">&gt;</span><span class="w"></span>
+<span class="w">            </span><span class="no">{%- if not is_state(&#39;weather.openweathermap&#39;,&#39;unavailable&#39;) %}</span><span class="w"></span>
+<span class="w">            </span><span class="no">L:/w-32-{{ state_attr(&#39;weather.openweathermap&#39;,&#39;forecast&#39;)[3][&#39;condition&#39;] }}.png</span><span class="w"></span>
+<span class="w">            </span><span class="no">{%- endif %}</span><span class="w"></span>
 
 <span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">obj</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;p5b41&quot;</span><span class="w"> </span><span class="c1"># Forecast time +4h</span><span class="w"></span>
 <span class="w">        </span><span class="nt">properties</span><span class="p">:</span><span class="w"></span>
 <span class="w">          </span><span class="s">&quot;text&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="p p-Indicator">&gt;</span><span class="w"></span>
+<span class="w">            </span><span class="no">{%- if not is_state(&#39;weather.openweathermap&#39;,&#39;unavailable&#39;) %}</span><span class="w"></span>
 <span class="w">            </span><span class="no">{%- set update = states(&#39;sensor.date&#39;) %}</span><span class="w"></span>
 <span class="w">            </span><span class="no">{%- set midnight = now().replace(hour=0, minute=0, second=0, microsecond=0).timestamp() %}</span><span class="w"></span>
 <span class="w">            </span><span class="no">{%- set event = as_timestamp(strptime(state_attr(&#39;weather.openweathermap&#39;,&#39;forecast&#39;)[6][&#39;datetime&#39;], &#39;%Y-%m-%dT%H:%M:%S%z&#39;, default=&#39;2020-01-00T00:00:00+00:00&#39;)) %}</span><span class="w"></span>
@@ -3285,18 +3340,23 @@ The various strings containing day names, day periods, weather conditions can be
 <span class="w">            </span><span class="no">Tomorrow</span><span class="w"></span>
 <span class="w">            </span><span class="no">{%- endif %}</span><span class="w"></span>
 <span class="w">            </span><span class="no">{{- event | timestamp_custom(&quot; %-I %p&quot;) }}</span><span class="w"></span>
+<span class="w">            </span><span class="no">{%- endif %}</span><span class="w"></span>
 
 <span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">obj</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;p5b42&quot;</span><span class="w"> </span><span class="c1"># Forecast temp +4h</span><span class="w"></span>
 <span class="w">        </span><span class="nt">properties</span><span class="p">:</span><span class="w"></span>
-<span class="w">          </span><span class="s">&quot;text&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">state_attr(&#39;weather.openweathermap&#39;,&#39;forecast&#39;)[6][&#39;temperature&#39;]</span><span class="nv"> </span><span class="s">}}&quot;</span><span class="w"></span>
+<span class="w">          </span><span class="s">&quot;text&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">state_attr(&#39;weather.openweathermap&#39;,&#39;forecast&#39;)[6][&#39;temperature&#39;]</span><span class="nv"> </span><span class="s">if</span><span class="nv"> </span><span class="s">not</span><span class="nv"> </span><span class="s">is_state(&#39;weather.openweathermap&#39;,&#39;unavailable&#39;)</span><span class="nv"> </span><span class="s">else</span><span class="nv"> </span><span class="s">&#39;-&#39;</span><span class="nv"> </span><span class="s">}}&quot;</span><span class="w"></span>
 
 <span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">obj</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;p5b43&quot;</span><span class="w"> </span><span class="c1"># Forecast condition +4h</span><span class="w"></span>
 <span class="w">        </span><span class="nt">properties</span><span class="p">:</span><span class="w"></span>
-<span class="w">          </span><span class="s">&quot;src&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;/littlefs/w-32-{{</span><span class="nv"> </span><span class="s">state_attr(&#39;weather.openweathermap&#39;,&#39;forecast&#39;)[6][&#39;condition&#39;]</span><span class="nv"> </span><span class="s">}}.png&quot;</span><span class="w"></span>
+<span class="w">          </span><span class="s">&quot;src&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="p p-Indicator">&gt;</span><span class="w"></span>
+<span class="w">            </span><span class="no">{%- if not is_state(&#39;weather.openweathermap&#39;,&#39;unavailable&#39;) %}</span><span class="w"></span>
+<span class="w">            </span><span class="no">L:/w-32-{{ state_attr(&#39;weather.openweathermap&#39;,&#39;forecast&#39;)[6][&#39;condition&#39;] }}.png</span><span class="w"></span>
+<span class="w">            </span><span class="no">{%- endif %}</span><span class="w"></span>
 
 <span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">obj</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;p5b51&quot;</span><span class="w"> </span><span class="c1"># Forecast time +8h</span><span class="w"></span>
 <span class="w">        </span><span class="nt">properties</span><span class="p">:</span><span class="w"></span>
 <span class="w">          </span><span class="s">&quot;text&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="p p-Indicator">&gt;</span><span class="w"></span>
+<span class="w">            </span><span class="no">{%- if not is_state(&#39;weather.openweathermap&#39;,&#39;unavailable&#39;) %}</span><span class="w"></span>
 <span class="w">            </span><span class="no">{%- set update = states(&#39;sensor.date&#39;) %}</span><span class="w"></span>
 <span class="w">            </span><span class="no">{%- set midnight = now().replace(hour=0, minute=0, second=0, microsecond=0).timestamp() %}</span><span class="w"></span>
 <span class="w">            </span><span class="no">{%- set event = as_timestamp(strptime(state_attr(&#39;weather.openweathermap&#39;,&#39;forecast&#39;)[12][&#39;datetime&#39;], &#39;%Y-%m-%dT%H:%M:%S%z&#39;, default=&#39;2020-01-00T00:00:00+00:00&#39;)) %}</span><span class="w"></span>
@@ -3307,94 +3367,118 @@ The various strings containing day names, day periods, weather conditions can be
 <span class="w">            </span><span class="no">Tomorrow</span><span class="w"></span>
 <span class="w">            </span><span class="no">{%- endif %}</span><span class="w"></span>
 <span class="w">            </span><span class="no">{{- event | timestamp_custom(&quot; %-I %p&quot;) }}</span><span class="w"></span>
+<span class="w">            </span><span class="no">{%- endif %}</span><span class="w"></span>
 
 <span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">obj</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;p5b52&quot;</span><span class="w"> </span><span class="c1"># Forecast temp +8h</span><span class="w"></span>
 <span class="w">        </span><span class="nt">properties</span><span class="p">:</span><span class="w"></span>
-<span class="w">          </span><span class="s">&quot;text&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">state_attr(&#39;weather.openweathermap&#39;,&#39;forecast&#39;)[12][&#39;temperature&#39;]</span><span class="nv"> </span><span class="s">}}&quot;</span><span class="w"></span>
+<span class="w">          </span><span class="s">&quot;text&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">state_attr(&#39;weather.openweathermap&#39;,&#39;forecast&#39;)[12][&#39;temperature&#39;]</span><span class="nv"> </span><span class="s">if</span><span class="nv"> </span><span class="s">not</span><span class="nv"> </span><span class="s">is_state(&#39;weather.openweathermap&#39;,&#39;unavailable&#39;)</span><span class="nv"> </span><span class="s">else</span><span class="nv"> </span><span class="s">&#39;-&#39;</span><span class="nv"> </span><span class="s">}}&quot;</span><span class="w"></span>
 
 <span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">obj</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;p5b53&quot;</span><span class="w"> </span><span class="c1"># Forecast condition +8h</span><span class="w"></span>
 <span class="w">        </span><span class="nt">properties</span><span class="p">:</span><span class="w"></span>
-<span class="w">          </span><span class="s">&quot;src&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;/littlefs/w-32-{{</span><span class="nv"> </span><span class="s">state_attr(&#39;weather.openweathermap&#39;,&#39;forecast&#39;)[12][&#39;condition&#39;]</span><span class="nv"> </span><span class="s">}}.png&quot;</span><span class="w"></span>
+<span class="w">          </span><span class="s">&quot;src&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="p p-Indicator">&gt;</span><span class="w"></span>
+<span class="w">            </span><span class="no">{%- if not is_state(&#39;weather.openweathermap&#39;,&#39;unavailable&#39;) %}</span><span class="w"></span>
+<span class="w">            </span><span class="no">L:/w-32-{{ state_attr(&#39;weather.openweathermap&#39;,&#39;forecast&#39;)[12][&#39;condition&#39;] }}.png</span><span class="w"></span>
+<span class="w">            </span><span class="no">{%- endif %}</span><span class="w"></span>
 
 <span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">obj</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;p5b61&quot;</span><span class="w"> </span><span class="c1"># Forecast date +1d</span><span class="w"></span>
 <span class="w">        </span><span class="nt">properties</span><span class="p">:</span><span class="w"></span>
 <span class="w">          </span><span class="s">&quot;text&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="p p-Indicator">&gt;</span><span class="w"></span>
+<span class="w">            </span><span class="no">{%- if not is_state(&#39;weather.your_homename&#39;,&#39;unavailable&#39;) %}</span><span class="w"></span>
 <span class="w">            </span><span class="no">{%- set now = as_timestamp(strptime(state_attr(&#39;weather.your_homename&#39;,&#39;forecast&#39;)[0][&#39;datetime&#39;], &#39;%Y-%m-%dT%H:%M:%S%z&#39;, default=&#39;2020-01-00T00:00:00+00:00&#39;)) %}</span><span class="w"></span>
 <span class="w">            </span><span class="no">{%- set day = now | timestamp_custom(&quot;%w&quot;) %}</span><span class="w"></span>
 <span class="w">            </span><span class="no">{%- set days = [&quot;Monday&quot;, &quot;Tuesday&quot;, &quot;Wednesday&quot;, &quot;Thursday&quot;, &quot;Friday&quot;, &quot;Saturday&quot;, &quot;Sunday&quot;] %}</span><span class="w"></span>
 <span class="w">            </span><span class="no">{{ days[ day | int -1 ] }}{{- now | timestamp_custom(&quot; %d&quot;) }}</span><span class="w"></span>
+<span class="w">            </span><span class="no">{%- endif %}</span><span class="w"></span>
 
 <span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">obj</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;p5b62&quot;</span><span class="w"> </span><span class="c1"># Forecast temp min +1d</span><span class="w"></span>
 <span class="w">        </span><span class="nt">properties</span><span class="p">:</span><span class="w"></span>
-<span class="w">          </span><span class="s">&quot;text&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">state_attr(&#39;weather.your_homename&#39;,&#39;forecast&#39;)[0][&#39;templow&#39;]</span><span class="nv"> </span><span class="s">}}&quot;</span><span class="w"></span>
+<span class="w">          </span><span class="s">&quot;text&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">state_attr(&#39;weather.your_homename&#39;,&#39;forecast&#39;)[0][&#39;templow&#39;]</span><span class="nv"> </span><span class="s">if</span><span class="nv"> </span><span class="s">not</span><span class="nv"> </span><span class="s">is_state(&#39;weather.your_homename&#39;,&#39;unavailable&#39;)</span><span class="nv"> </span><span class="s">else</span><span class="nv"> </span><span class="s">&#39;-&#39;</span><span class="nv"> </span><span class="s">}}&quot;</span><span class="w"></span>
 
 <span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">obj</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;p5b63&quot;</span><span class="w"> </span><span class="c1"># Forecast temp max +1d</span><span class="w"></span>
 <span class="w">        </span><span class="nt">properties</span><span class="p">:</span><span class="w"></span>
-<span class="w">          </span><span class="s">&quot;text&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">state_attr(&#39;weather.your_homename&#39;,&#39;forecast&#39;)[0][&#39;temperature&#39;]</span><span class="nv"> </span><span class="s">}}&quot;</span><span class="w"></span>
+<span class="w">          </span><span class="s">&quot;text&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">state_attr(&#39;weather.your_homename&#39;,&#39;forecast&#39;)[0][&#39;temperature&#39;]</span><span class="nv"> </span><span class="s">if</span><span class="nv"> </span><span class="s">not</span><span class="nv"> </span><span class="s">is_state(&#39;weather.your_homename&#39;,&#39;unavailable&#39;)</span><span class="nv"> </span><span class="s">else</span><span class="nv"> </span><span class="s">&#39;-&#39;</span><span class="nv"> </span><span class="s">}}&quot;</span><span class="w"></span>
 
 <span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">obj</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;p5b64&quot;</span><span class="w"> </span><span class="c1"># Forecast condition +1d</span><span class="w"></span>
 <span class="w">        </span><span class="nt">properties</span><span class="p">:</span><span class="w"></span>
-<span class="w">          </span><span class="s">&quot;src&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;/littlefs/w-32-{{</span><span class="nv"> </span><span class="s">state_attr(&#39;weather.your_homename&#39;,&#39;forecast&#39;)[0][&#39;condition&#39;]</span><span class="nv"> </span><span class="s">}}.png&quot;</span><span class="w"></span>
+<span class="w">          </span><span class="s">&quot;src&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="p p-Indicator">&gt;</span><span class="w"></span>
+<span class="w">            </span><span class="no">{%- if not is_state(&#39;weather.your_homename&#39;,&#39;unavailable&#39;) %}</span><span class="w"></span>
+<span class="w">            </span><span class="no">L:/w-32-{{ state_attr(&#39;weather.your_homename&#39;,&#39;forecast&#39;)[0][&#39;condition&#39;] }}.png</span><span class="w"></span>
+<span class="w">            </span><span class="no">{%- endif %}</span><span class="w"></span>
 
 <span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">obj</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;p5b71&quot;</span><span class="w"> </span><span class="c1"># Forecast date +2d</span><span class="w"></span>
 <span class="w">        </span><span class="nt">properties</span><span class="p">:</span><span class="w"></span>
 <span class="w">          </span><span class="s">&quot;text&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="p p-Indicator">&gt;</span><span class="w"></span>
+<span class="w">            </span><span class="no">{%- if not is_state(&#39;weather.your_homename&#39;,&#39;unavailable&#39;) %}</span><span class="w"></span>
 <span class="w">            </span><span class="no">{%- set now = as_timestamp(strptime(state_attr(&#39;weather.your_homename&#39;,&#39;forecast&#39;)[1][&#39;datetime&#39;], &#39;%Y-%m-%dT%H:%M:%S%z&#39;, default=&#39;2020-01-00T00:00:00+00:00&#39;)) %}</span><span class="w"></span>
 <span class="w">            </span><span class="no">{%- set day = now | timestamp_custom(&quot;%w&quot;) %}</span><span class="w"></span>
 <span class="w">            </span><span class="no">{%- set days = [&quot;Monday&quot;, &quot;Tuesday&quot;, &quot;Wednesday&quot;, &quot;Thursday&quot;, &quot;Friday&quot;, &quot;Saturday&quot;, &quot;Sunday&quot;] %}</span><span class="w"></span>
 <span class="w">            </span><span class="no">{{ days[ day | int -1 ] }}{{- now | timestamp_custom(&quot; %d&quot;) }}</span><span class="w"></span>
+<span class="w">            </span><span class="no">{%- endif %}</span><span class="w"></span>
 
 <span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">obj</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;p5b72&quot;</span><span class="w"> </span><span class="c1"># Forecast temp min +2d</span><span class="w"></span>
 <span class="w">        </span><span class="nt">properties</span><span class="p">:</span><span class="w"></span>
-<span class="w">          </span><span class="s">&quot;text&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">state_attr(&#39;weather.your_homename&#39;,&#39;forecast&#39;)[1][&#39;templow&#39;]</span><span class="nv"> </span><span class="s">}}&quot;</span><span class="w"></span>
+<span class="w">          </span><span class="s">&quot;text&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">state_attr(&#39;weather.your_homename&#39;,&#39;forecast&#39;)[1][&#39;templow&#39;]</span><span class="nv"> </span><span class="s">if</span><span class="nv"> </span><span class="s">not</span><span class="nv"> </span><span class="s">is_state(&#39;weather.your_homename&#39;,&#39;unavailable&#39;)</span><span class="nv"> </span><span class="s">else</span><span class="nv"> </span><span class="s">&#39;-&#39;</span><span class="nv"> </span><span class="s">}}&quot;</span><span class="w"></span>
 
 <span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">obj</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;p5b73&quot;</span><span class="w"> </span><span class="c1"># Forecast temp max +2d</span><span class="w"></span>
 <span class="w">        </span><span class="nt">properties</span><span class="p">:</span><span class="w"></span>
-<span class="w">          </span><span class="s">&quot;text&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">state_attr(&#39;weather.your_homename&#39;,&#39;forecast&#39;)[1][&#39;temperature&#39;]</span><span class="nv"> </span><span class="s">}}&quot;</span><span class="w"></span>
+<span class="w">          </span><span class="s">&quot;text&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">state_attr(&#39;weather.your_homename&#39;,&#39;forecast&#39;)[1][&#39;temperature&#39;]</span><span class="nv"> </span><span class="s">if</span><span class="nv"> </span><span class="s">not</span><span class="nv"> </span><span class="s">is_state(&#39;weather.your_homename&#39;,&#39;unavailable&#39;)</span><span class="nv"> </span><span class="s">else</span><span class="nv"> </span><span class="s">&#39;-&#39;</span><span class="nv"> </span><span class="s">}}&quot;</span><span class="w"></span>
 
 <span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">obj</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;p5b74&quot;</span><span class="w"> </span><span class="c1"># Forecast condition +2d</span><span class="w"></span>
 <span class="w">        </span><span class="nt">properties</span><span class="p">:</span><span class="w"></span>
-<span class="w">          </span><span class="s">&quot;src&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;/littlefs/w-32-{{</span><span class="nv"> </span><span class="s">state_attr(&#39;weather.your_homename&#39;,&#39;forecast&#39;)[1][&#39;condition&#39;]</span><span class="nv"> </span><span class="s">}}.png&quot;</span><span class="w"></span>
+<span class="w">          </span><span class="s">&quot;src&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="p p-Indicator">&gt;</span><span class="w"></span>
+<span class="w">            </span><span class="no">{%- if not is_state(&#39;weather.your_homename&#39;,&#39;unavailable&#39;) %}</span><span class="w"></span>
+<span class="w">            </span><span class="no">L:/w-32-{{ state_attr(&#39;weather.your_homename&#39;,&#39;forecast&#39;)[1][&#39;condition&#39;] }}.png</span><span class="w"></span>
+<span class="w">            </span><span class="no">{%- endif %}</span><span class="w"></span>
 
 <span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">obj</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;p5b81&quot;</span><span class="w"> </span><span class="c1"># Forecast date +3d</span><span class="w"></span>
 <span class="w">        </span><span class="nt">properties</span><span class="p">:</span><span class="w"></span>
 <span class="w">          </span><span class="s">&quot;text&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="p p-Indicator">&gt;</span><span class="w"></span>
+<span class="w">            </span><span class="no">{%- if not is_state(&#39;weather.your_homename&#39;,&#39;unavailable&#39;) %}</span><span class="w"></span>
 <span class="w">            </span><span class="no">{%- set now = as_timestamp(strptime(state_attr(&#39;weather.your_homename&#39;,&#39;forecast&#39;)[2][&#39;datetime&#39;], &#39;%Y-%m-%dT%H:%M:%S%z&#39;, default=&#39;2020-01-00T00:00:00+00:00&#39;)) %}</span><span class="w"></span>
 <span class="w">            </span><span class="no">{%- set day = now | timestamp_custom(&quot;%w&quot;) %}</span><span class="w"></span>
 <span class="w">            </span><span class="no">{%- set days = [&quot;Monday&quot;, &quot;Tuesday&quot;, &quot;Wednesday&quot;, &quot;Thursday&quot;, &quot;Friday&quot;, &quot;Saturday&quot;, &quot;Sunday&quot;] %}</span><span class="w"></span>
 <span class="w">            </span><span class="no">{{ days[ day | int -1 ] }}{{- now | timestamp_custom(&quot; %d&quot;) }}</span><span class="w"></span>
+<span class="w">            </span><span class="no">{%- endif %}</span><span class="w"></span>
 
 <span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">obj</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;p5b82&quot;</span><span class="w"> </span><span class="c1"># Forecast temp min +3d</span><span class="w"></span>
 <span class="w">        </span><span class="nt">properties</span><span class="p">:</span><span class="w"></span>
-<span class="w">          </span><span class="s">&quot;text&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">state_attr(&#39;weather.your_homename&#39;,&#39;forecast&#39;)[2][&#39;templow&#39;]</span><span class="nv"> </span><span class="s">}}&quot;</span><span class="w"></span>
+<span class="w">          </span><span class="s">&quot;text&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">state_attr(&#39;weather.your_homename&#39;,&#39;forecast&#39;)[2][&#39;templow&#39;]</span><span class="nv"> </span><span class="s">if</span><span class="nv"> </span><span class="s">not</span><span class="nv"> </span><span class="s">is_state(&#39;weather.your_homename&#39;,&#39;unavailable&#39;)</span><span class="nv"> </span><span class="s">else</span><span class="nv"> </span><span class="s">&#39;-&#39;</span><span class="nv"> </span><span class="s">}}&quot;</span><span class="w"></span>
 
 <span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">obj</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;p5b83&quot;</span><span class="w"> </span><span class="c1"># Forecast temp max +3d</span><span class="w"></span>
 <span class="w">        </span><span class="nt">properties</span><span class="p">:</span><span class="w"></span>
-<span class="w">          </span><span class="s">&quot;text&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">state_attr(&#39;weather.your_homename&#39;,&#39;forecast&#39;)[2][&#39;temperature&#39;]</span><span class="nv"> </span><span class="s">}}&quot;</span><span class="w"></span>
+<span class="w">          </span><span class="s">&quot;text&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">state_attr(&#39;weather.your_homename&#39;,&#39;forecast&#39;)[2][&#39;temperature&#39;]</span><span class="nv"> </span><span class="s">if</span><span class="nv"> </span><span class="s">not</span><span class="nv"> </span><span class="s">is_state(&#39;weather.your_homename&#39;,&#39;unavailable&#39;)</span><span class="nv"> </span><span class="s">else</span><span class="nv"> </span><span class="s">&#39;-&#39;</span><span class="nv"> </span><span class="s">}}&quot;</span><span class="w"></span>
 
 <span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">obj</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;p5b84&quot;</span><span class="w"> </span><span class="c1"># Forecast condition +3d</span><span class="w"></span>
 <span class="w">        </span><span class="nt">properties</span><span class="p">:</span><span class="w"></span>
-<span class="w">          </span><span class="s">&quot;src&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;/littlefs/w-32-{{</span><span class="nv"> </span><span class="s">state_attr(&#39;weather.your_homename&#39;,&#39;forecast&#39;)[2][&#39;condition&#39;]</span><span class="nv"> </span><span class="s">}}.png&quot;</span><span class="w"></span>
+<span class="w">          </span><span class="s">&quot;src&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="p p-Indicator">&gt;</span><span class="w"></span>
+<span class="w">            </span><span class="no">{%- if not is_state(&#39;weather.your_homename&#39;,&#39;unavailable&#39;) %}</span><span class="w"></span>
+<span class="w">            </span><span class="no">L:/w-32-{{ state_attr(&#39;weather.your_homename&#39;,&#39;forecast&#39;)[2][&#39;condition&#39;] }}.png</span><span class="w"></span>
+<span class="w">            </span><span class="no">{%- endif %}</span><span class="w"></span>
 
 <span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">obj</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;p5b91&quot;</span><span class="w"> </span><span class="c1"># Forecast date +4d</span><span class="w"></span>
 <span class="w">        </span><span class="nt">properties</span><span class="p">:</span><span class="w"></span>
 <span class="w">          </span><span class="s">&quot;text&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="p p-Indicator">&gt;</span><span class="w"></span>
+<span class="w">            </span><span class="no">{%- if not is_state(&#39;weather.your_homename&#39;,&#39;unavailable&#39;) %}</span><span class="w"></span>
 <span class="w">            </span><span class="no">{%- set now = as_timestamp(strptime(state_attr(&#39;weather.your_homename&#39;,&#39;forecast&#39;)[3][&#39;datetime&#39;], &#39;%Y-%m-%dT%H:%M:%S%z&#39;, default=&#39;2020-01-00T00:00:00+00:00&#39;)) %}</span><span class="w"></span>
 <span class="w">            </span><span class="no">{%- set day = now | timestamp_custom(&quot;%w&quot;) %}</span><span class="w"></span>
 <span class="w">            </span><span class="no">{%- set days = [&quot;Monday&quot;, &quot;Tuesday&quot;, &quot;Wednesday&quot;, &quot;Thursday&quot;, &quot;Friday&quot;, &quot;Saturday&quot;, &quot;Sunday&quot;] %}</span><span class="w"></span>
 <span class="w">            </span><span class="no">{{ days[ day | int -1 ] }}{{- now | timestamp_custom(&quot; %d&quot;) }}</span><span class="w"></span>
+<span class="w">            </span><span class="no">{%- endif %}</span><span class="w"></span>
 
 <span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">obj</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;p5b92&quot;</span><span class="w"> </span><span class="c1"># Forecast temp min +4d</span><span class="w"></span>
 <span class="w">        </span><span class="nt">properties</span><span class="p">:</span><span class="w"></span>
-<span class="w">          </span><span class="s">&quot;text&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">state_attr(&#39;weather.your_homename&#39;,&#39;forecast&#39;)[3][&#39;templow&#39;]</span><span class="nv"> </span><span class="s">}}&quot;</span><span class="w"></span>
+<span class="w">          </span><span class="s">&quot;text&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">state_attr(&#39;weather.your_homename&#39;,&#39;forecast&#39;)[3][&#39;templow&#39;]</span><span class="nv"> </span><span class="s">if</span><span class="nv"> </span><span class="s">not</span><span class="nv"> </span><span class="s">is_state(&#39;weather.your_homename&#39;,&#39;unavailable&#39;)</span><span class="nv"> </span><span class="s">else</span><span class="nv"> </span><span class="s">&#39;-&#39;</span><span class="nv"> </span><span class="s">}}&quot;</span><span class="w"></span>
 
 <span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">obj</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;p5b93&quot;</span><span class="w"> </span><span class="c1"># Forecast temp max +4d</span><span class="w"></span>
 <span class="w">        </span><span class="nt">properties</span><span class="p">:</span><span class="w"></span>
-<span class="w">          </span><span class="s">&quot;text&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">state_attr(&#39;weather.your_homename&#39;,&#39;forecast&#39;)[3][&#39;temperature&#39;]</span><span class="nv"> </span><span class="s">}}&quot;</span><span class="w"></span>
+<span class="w">          </span><span class="s">&quot;text&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">state_attr(&#39;weather.your_homename&#39;,&#39;forecast&#39;)[3][&#39;temperature&#39;]</span><span class="nv"> </span><span class="s">if</span><span class="nv"> </span><span class="s">not</span><span class="nv"> </span><span class="s">is_state(&#39;weather.your_homename&#39;,&#39;unavailable&#39;)</span><span class="nv"> </span><span class="s">else</span><span class="nv"> </span><span class="s">&#39;-&#39;</span><span class="nv"> </span><span class="s">}}&quot;</span><span class="w"></span>
 
 <span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">obj</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;p5b94&quot;</span><span class="w"> </span><span class="c1"># Forecast condition +4d</span><span class="w"></span>
 <span class="w">        </span><span class="nt">properties</span><span class="p">:</span><span class="w"></span>
-<span class="w">          </span><span class="s">&quot;src&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;/littlefs/w-32-{{</span><span class="nv"> </span><span class="s">state_attr(&#39;weather.your_homename&#39;,&#39;forecast&#39;)[3][&#39;condition&#39;]</span><span class="nv"> </span><span class="s">}}.png&quot;</span><span class="w"></span>
+<span class="w">          </span><span class="s">&quot;src&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="p p-Indicator">&gt;</span><span class="w"></span>
+<span class="w">            </span><span class="no">{%- if not is_state(&#39;weather.your_homename&#39;,&#39;unavailable&#39;) %}</span><span class="w"></span>
+<span class="w">            </span><span class="no">L:/w-32-{{ state_attr(&#39;weather.your_homename&#39;,&#39;forecast&#39;)[3][&#39;condition&#39;] }}.png</span><span class="w"></span>
+<span class="w">            </span><span class="no">{%- endif %}</span><span class="w"></span>
 </code></pre></div>
 </td></tr></table>
 <div class="admonition note">
@@ -3524,7 +3608,7 @@ To control the fan we use a button matrix object which has exactly the same butt
   <small>
     
       Last update:
-      2022-01-11
+      2022-01-12
     
   </small>
 </div>
@@ -3581,10 +3665,10 @@ To control the fan we use a button matrix object which has exactly the same butt
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.instant", "navigation.tracking", "search.suggest", "search.highlight", "navigation.top"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../assets/javascripts/workers/search.b6ff8c07.min.js", "version": {"provider": "mike", "default": 0.6}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.instant", "navigation.tracking", "search.suggest", "search.highlight", "navigation.top"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../assets/javascripts/workers/search.22074ed6.min.js", "version": {"provider": "mike", "default": 0.6}}</script>
     
      
-      <script src="../../../assets/javascripts/bundle.5e13d264.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.1514a9a0.min.js"></script>
       
     
 <!-- <script src="../../../js/youtube.js"></script> -->
