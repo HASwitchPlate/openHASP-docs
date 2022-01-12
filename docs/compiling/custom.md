@@ -44,7 +44,7 @@ The `doc` variable is passed so you can add your JSON object too it. *(see below
 
 With `custom_topic_payload()` you can receive custom topic & payload messages.
 You can use the value of the topic and payload variables to set LVGL attributes or perform custom actions.</br>
-`source` indicates the module from wich the command is received. (`TAG_MQTT`, `TAG_CONS`, `TAG_TELNET`, `TAG_HTTP`, ...)
+`source` indicates the module from wich the command is received. (`TAG_MQTT`, `TAG_CONS`, `TAG_TELN`, `TAG_HTTP`, ...)
 
 ## Customize functions
 
@@ -138,7 +138,7 @@ void custom_get_sensors(JsonDocument& doc)
 
 ### Debug Output
 
-By including `#include "hasp_debug.h"` we can also use `LOG_*()` functions to print debug output to the console:
+By including `#include "hasp_debug.h"` we can also utilize `LOG_*()` functions to print debug output to the console:
 
 - LOG_VERBOSE(TAG_CUSTOM, message [, args])
 - LOG_NOTICE(TAG_CUSTOM, message [, args])
