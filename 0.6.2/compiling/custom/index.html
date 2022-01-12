@@ -1536,7 +1536,7 @@ The function is called every 30 seconds by default, but the teleperiod interval 
 The <code>doc</code> variable is passed so you can add your JSON object too it. <em>(see below)</em></p>
 <p>With <code>custom_topic_payload()</code> you can receive custom topic &amp; payload messages.
 You can use the value of the topic and payload variables to set LVGL attributes or perform custom actions.</br>
-<code>source</code> indicates the module from wich the command is received. (<code>TAG_MQTT</code>, <code>TAG_CONS</code>, <code>TAG_TELNET</code>, <code>TAG_HTTP</code>, ...)</p>
+<code>source</code> indicates the module from wich the command is received. (<code>TAG_MQTT</code>, <code>TAG_CONS</code>, <code>TAG_TELN</code>, <code>TAG_HTTP</code>, ...)</p>
 <h2 id="customize-functions">Customize functions<a class="headerlink" href="#customize-functions" title="Permanent link">~</a></h2>
 <p>In <code>src/my_custom.cpp</code> you add the code to execute for each of the functions declared above.</p>
 <h3 id="setup">Setup<a class="headerlink" href="#setup" title="Permanent link">~</a></h3>
@@ -1659,7 +1659,7 @@ You can add a simple Key-Value pair or a more complex JSON object if needed.</p>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
 <h3 id="debug-output">Debug Output<a class="headerlink" href="#debug-output" title="Permanent link">~</a></h3>
-<p>By including <code>#include "hasp_debug.h"</code> we can also use <code>LOG_*()</code> functions to print debug output to the console:</p>
+<p>By including <code>#include "hasp_debug.h"</code> we can also utilize <code>LOG_*()</code> functions to print debug output to the console:</p>
 <ul>
 <li>LOG_VERBOSE(TAG_CUSTOM, message [, args])</li>
 <li>LOG_NOTICE(TAG_CUSTOM, message [, args])</li>
