@@ -1245,15 +1245,15 @@ relevant **openHASP-custom-component config:**
         properties:
           "opacity": "{{ 0 if (is_state('input_select.fan_presets','unavailable') or is_state('input_select.fan_presets','unknown') or is_state('input_select.fan_presets','OFF')) else 255 }}"
           "speed": >
-            {% if is_state('openhasp.plate_test', '4') %}
+            {% if is_state('number.plate_test_page_number', '4') %}
             {% if is_state('input_select.fan_presets', 'Low') %}
-            {{ "4200" }}
+            {{ "7000" }}
             {%-elif is_state('input_select.fan_presets', 'Mid') %}
-            {{ "2000" }}
+            {{ "1700" }}
             {%-elif is_state('input_select.fan_presets', 'High') %}
-            {{ "1400" }}
-            {%-elif is_state('input_select.fan_presets', 'Turbo') %}
             {{ "800" }}
+            {%-elif is_state('input_select.fan_presets', 'Turbo') %}
+            {{ "250" }}
             {%-else %}
             {{ "0" }}
             {% endif %}
