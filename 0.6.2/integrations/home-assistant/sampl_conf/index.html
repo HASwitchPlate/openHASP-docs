@@ -3542,15 +3542,15 @@ To control the fan we use a button matrix object which has exactly the same butt
 <span class="w">        </span><span class="nt">properties</span><span class="p">:</span><span class="w"></span>
 <span class="w">          </span><span class="s">&quot;opacity&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">0</span><span class="nv"> </span><span class="s">if</span><span class="nv"> </span><span class="s">(is_state(&#39;input_select.fan_presets&#39;,&#39;unavailable&#39;)</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">is_state(&#39;input_select.fan_presets&#39;,&#39;unknown&#39;)</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">is_state(&#39;input_select.fan_presets&#39;,&#39;OFF&#39;))</span><span class="nv"> </span><span class="s">else</span><span class="nv"> </span><span class="s">255</span><span class="nv"> </span><span class="s">}}&quot;</span><span class="w"></span>
 <span class="w">          </span><span class="s">&quot;speed&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="p p-Indicator">&gt;</span><span class="w"></span>
-<span class="w">            </span><span class="no">{% if is_state(&#39;openhasp.plate_test&#39;, &#39;4&#39;) %}</span><span class="w"></span>
+<span class="w">            </span><span class="no">{% if is_state(&#39;number.plate_test_page_number&#39;, &#39;4&#39;) %}</span><span class="w"></span>
 <span class="w">            </span><span class="no">{% if is_state(&#39;input_select.fan_presets&#39;, &#39;Low&#39;) %}</span><span class="w"></span>
-<span class="w">            </span><span class="no">{{ &quot;4200&quot; }}</span><span class="w"></span>
+<span class="w">            </span><span class="no">{{ &quot;7000&quot; }}</span><span class="w"></span>
 <span class="w">            </span><span class="no">{%-elif is_state(&#39;input_select.fan_presets&#39;, &#39;Mid&#39;) %}</span><span class="w"></span>
-<span class="w">            </span><span class="no">{{ &quot;2000&quot; }}</span><span class="w"></span>
+<span class="w">            </span><span class="no">{{ &quot;1700&quot; }}</span><span class="w"></span>
 <span class="w">            </span><span class="no">{%-elif is_state(&#39;input_select.fan_presets&#39;, &#39;High&#39;) %}</span><span class="w"></span>
-<span class="w">            </span><span class="no">{{ &quot;1400&quot; }}</span><span class="w"></span>
-<span class="w">            </span><span class="no">{%-elif is_state(&#39;input_select.fan_presets&#39;, &#39;Turbo&#39;) %}</span><span class="w"></span>
 <span class="w">            </span><span class="no">{{ &quot;800&quot; }}</span><span class="w"></span>
+<span class="w">            </span><span class="no">{%-elif is_state(&#39;input_select.fan_presets&#39;, &#39;Turbo&#39;) %}</span><span class="w"></span>
+<span class="w">            </span><span class="no">{{ &quot;250&quot; }}</span><span class="w"></span>
 <span class="w">            </span><span class="no">{%-else %}</span><span class="w"></span>
 <span class="w">            </span><span class="no">{{ &quot;0&quot; }}</span><span class="w"></span>
 <span class="w">            </span><span class="no">{% endif %}</span><span class="w"></span>
@@ -3608,7 +3608,7 @@ To control the fan we use a button matrix object which has exactly the same butt
   <small>
     
       Last update:
-      2022-01-12
+      2022-01-13
     
   </small>
 </div>
