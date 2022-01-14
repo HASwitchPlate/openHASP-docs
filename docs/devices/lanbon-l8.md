@@ -142,10 +142,20 @@ Pin| Mode   | L8-HD      | Group | Default
 32 | Output | Mood Green | 5 | Low (Normal)
 33 | Output | Mood Blue  | 6 | Low (Normal)
 
+!!! note "Warning"
+    There are two versions of the dimmer configuration: `EU` and `AU`. The protocol used to command the dimmer module differs between the two!
+    Make sure that you have the correct type configured under your GPIO Output settings for pin `12`. Use the `AU` configuration for any 120V/US compatible dimmer modules.
+
 !!! tip
-    To configure the GPIOs at once for L8-HD send to topic `hasp/<nodename>/config` a message with payload:  
+    To configure the GPIOs at once for L8-HD send to topic `hasp/<nodename>/config/gpio` a message with payload:
+    EU version:
     ```json linenums="1"
-    {"gpio":{"config":[3211532,197658,263456,329249,0,0,0,0]}}
+    {"config":[3211532,197658,263456,329249,0,0,0,0]}
+    ```
+
+    AU/US version:
+    ```json linenums="1"
+    {"config":[3277068,197658,263456,329249,0,0,0,0]}
     ```
 
 ### Boiler version L8-HB
