@@ -92,6 +92,10 @@ openhasp:
                 message: I like {{ text }}
 ```
 
+!!! note
+    The Home Assistant Custom Component is not limited to setting `val` and `text` properties on UI objects!
+    There is nothing stopping you from using the full suite of template functions like [`state_attr`](https://www.home-assistant.io/docs/configuration/templating/#states) in your templates to drive more sophisticated behaviors. See the [Example Automations](./sampl_autom.md#dynamically-set-ui-element-dimensions) for more.
+
 ### Variable definitions
 
 **openhasp:** *(Required)*    
