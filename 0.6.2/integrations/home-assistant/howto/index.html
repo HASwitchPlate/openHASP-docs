@@ -1548,21 +1548,21 @@
 <h2 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">~</a></h2>
 <p>First prepare your plates to be integrated with Home Assistant (follow steps in order):</p>
 <ol>
-<li>Connect your plates to the <a href="../../../installation/wifi-setup/">network</a>. Static DHCP or fixed IP is not needed as communication only happes through MQTT.</li>
+<li>Connect your plates to the <a href="../../../installation/wifi-setup/">network</a>. Static DHCP or fixed IP is not needed as communication only happens through MQTT.</li>
 <li>Set the <a href="../../../configuration/gpio/">GPIO configuration</a> corresponding to your hardware (important for them to be detected as entities), save and reboot.</li>
 <li>Restart Home Assistant.</li>
 <li>Set the <a href="../../../configuration/mqtt/">MQTT server</a> settings and make sure each plate has a unique node name, save and reboot.</li>
 </ol>
 <p>The component will automatically discover the plates and you will see them appearing in Lovelace UI's <em>Configuration &gt; Devices &amp; Services &gt; openHASP</em>.</p>
 <p>When Home Assistant detects your plate, you will have to give it a name. In the examples below both name and node name is <code>plate35</code>. <br />
-You will be presented with options to set the backlight brightness level when the plate is idle and optionally you can set a path to a centrally located <code>pages.jsonl</code> file containing design for this plate - the component can send the contents of the file when the plate connects. From v0.6.3 of the component this file can also be a file with a <code>.json</code> extenstion. See the <em>JSON Files</em> section below.</p>
+You will be presented with options to set the backlight brightness level when the plate is idle and optionally you can set a path to a centrally located <code>pages.jsonl</code> file containing design for this plate - the component can send the contents of the file when the plate connects. From v0.6.3 of the component this file can also be a file with a <code>.json</code> extension. See the <em>JSON Files</em> section below.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>If you opt to store the <code>pages.jsonl</code> file on Home Assistant server, it will only be loaded on start of Home Assistant and reloaded on plate availability (becoming online). Optionally you should also check <a href="../../examples/example-offlinehandling/">how to handle the offline state</a> of the plate.</p>
 </div>
 <p>Currently you will get a warning that you need to add manual configuration for the objects in your <code>configuration.yaml</code>, that's no problem, read ahead.</p>
 <h3 id="example">Example<a class="headerlink" href="#example" title="Permanent link">~</a></h3>
-<p>To add an openHASP plate to your installation with a sample configuration, upload a <code>pages.jsonl</code> file with the folowing content to your plate first:</p>
+<p>To add an openHASP plate to your installation with a sample configuration, upload a <code>pages.jsonl</code> file with the following content to your plate first:</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
@@ -1572,7 +1572,7 @@ You will be presented with options to set the backlight brightness level when th
 <span class="p">{</span><span class="nt">&quot;page&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="nt">&quot;obj&quot;</span><span class="p">:</span><span class="s2">&quot;label&quot;</span><span class="p">,</span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="mi">175</span><span class="p">,</span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span><span class="nt">&quot;h&quot;</span><span class="p">:</span><span class="mi">30</span><span class="p">,</span><span class="nt">&quot;w&quot;</span><span class="p">:</span><span class="mi">62</span><span class="p">,</span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="s2">&quot;00.0°C&quot;</span><span class="p">,</span><span class="nt">&quot;align&quot;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="nt">&quot;bg_color&quot;</span><span class="p">:</span><span class="s2">&quot;#2C3E50&quot;</span><span class="p">,</span><span class="nt">&quot;text_color&quot;</span><span class="p">:</span><span class="s2">&quot;#FFFFFF&quot;</span><span class="p">}</span><span class="w"></span>
 </code></pre></div>
 </td></tr></table>
-<p>Assuming your plate's configured MQTT node name is <code>plate35</code>, add the following to your <code>configuration.yaml</code> file (Home Assistant will deliberatey ask for it when finished autodetection procedure):</p>
+<p>Assuming your plate's configured MQTT node name is <code>plate35</code>, add the following to your <code>configuration.yaml</code> file (Home Assistant will deliberately ask for it when finished autodetection procedure):</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -1619,7 +1619,7 @@ You will be presented with options to set the backlight brightness level when th
 <dt><strong>openhasp:</strong> <em>(Required)</em></dt>
 <dd>The platform identifier. Required once in the configuration.</dd>
 <dt><strong>plate35:</strong> <em>(Required)</em></dt>
-<dd>Your plate identifier slug. For each plate in your sytem, such an entry is required, has to be unique. It is generated automatically from the plate name you gave during discovery, which by default equals to the <em>HASP Node Name</em> set in the plate's <a href="../../../configuration/mqtt/">configuration</a>.</dd>
+<dd>Your plate identifier slug. For each plate in your system, such an entry is required, has to be unique. It is generated automatically from the plate name you gave during discovery, which by default equals to the <em>HASP Node Name</em> set in the plate's <a href="../../../configuration/mqtt/">configuration</a>.</dd>
 </dl>
 <dl>
 <dt><strong>objects:</strong> <em>(Optional)</em></dt>
@@ -1631,7 +1631,7 @@ You will be presented with options to set the backlight brightness level when th
 <dt><strong>event:</strong> <em>(Optional)</em></dt>
 <dd>List containing the events generated by the object when touched on the screen. These are object-specific and can be observed accurately with an MQTT client. Each event defines a list of services which will be processed in order (like actions list in an automation).  </dd>
 </dl>
-<p>In the example above, when object <code>p1b2</code> (which is a toggle button) generates the <code>on</code> event, <code>light.my_room</code> will be turned on by the service call <code>light.turn_on</code> as specified in the event config. And similarily when <code>off</code> event comes through MQTT, the light will be turned off by the corresponding service call.  </p>
+<p>In the example above, when object <code>p1b2</code> (which is a toggle button) generates the <code>on</code> event, <code>light.my_room</code> will be turned on by the service call <code>light.turn_on</code> as specified in the event config. And similarly when <code>off</code> event comes through MQTT, the light will be turned off by the corresponding service call.  </p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Any variable coming from the MQTT message can be used between curly brackets and passed to the service call. In the example above when object <code>p1b3</code> (which is a dropdown selector) generates the <code>changed</code> event, a persistent notification will appear in Home Assistant's Lovelace interface containing the selected text from the object, which was passed over from the MQTT message. See <a href="../../../design/objects/#events">object events</a> for more types of generated events.</p>
@@ -1696,7 +1696,7 @@ With the <code>entry_id</code> found in <em>.storage/core.config_entries</em> fi
 <dt><strong>openhasp.load_pages</strong></dt>
 <dd>Loads new design from <code>pages.jsonl</code> file from <em>full path</em> on Home Assistant server.</dd>
 </dl>
-<p>The file must be located in an authorised location defined by <a href="https://www.home-assistant.io/docs/configuration/basic/#allowlist_external_dirs" target="_blank">allowlist_external_dirs</a> (in case of hassio <code>/config/</code> is the directory where Home Assistant's configuration.yaml resides, so in case of a subdirectory called <code>openhasp</code> the full path would be e.g. <code>/config/openhasp/pages.jsonl</code>, and you need to add  <code>/config/openhasp/</code> to your <code>allowlist_external_dirs</code>).</p>
+<p>The file must be located in an authorized location defined by <a href="https://www.home-assistant.io/docs/configuration/basic/#allowlist_external_dirs" target="_blank">allowlist_external_dirs</a> (in case of hassio <code>/config/</code> is the directory where Home Assistant's configuration.yaml resides, so in case of a subdirectory called <code>openhasp</code> the full path would be e.g. <code>/config/openhasp/pages.jsonl</code>, and you need to add  <code>/config/openhasp/</code> to your <code>allowlist_external_dirs</code>).</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The contents of the file are loaded line by line thus <code>"page":X</code> has to be defined for each object.</p>
@@ -1728,7 +1728,7 @@ With the <code>entry_id</code> found in <em>.storage/core.config_entries</em> fi
 </div>
 </dd>
 </dl>
-<p>Check out the example confgurations and automations to learn how to use these services within Home Assistant.</p>
+<p>Check out the example configurations and automations to learn how to use these services within Home Assistant.</p>
 <hr />
 <h2 id="json-files">JSON Files<a class="headerlink" href="#json-files" title="Permanent link">~</a></h2>
 <p>From v0.6.3 pages file supplied in the plate config within home assistant can be a <code>.json</code>, files with this extension will be parsed differently and expect a JSON array containing objects or strings. Objects must be valid JSONL lines and strings can be used for comments. </p>
