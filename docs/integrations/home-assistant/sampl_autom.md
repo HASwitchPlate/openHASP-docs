@@ -308,7 +308,7 @@ Don't forget to adjust the size of the object to your screen if it's not 240x320
 ## Dynamically set UI element dimensions
 
 !!! note
-    This technique relies on [small changes in the openHasp device firmwar ](https://github.com/HASwitchPlate/openHASP/issues/278) that should be present in all builds of `0.7` _after_ 2021-01.
+    This technique relies on [small changes in the openHasp device firmware ](https://github.com/HASwitchPlate/openHASP/issues/278) that should be present in all builds of `0.7` _after_ 2021-01.
 
 openHasp devices report several device properties to the Custom Component... including `tftWidth` and `tftHeight`.
 These properties are exposed in home assistant as device attributes and can be used in template automations.
