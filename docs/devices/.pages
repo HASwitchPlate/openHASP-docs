@@ -1,5 +1,6 @@
 nav:
     - Adafruit Featherwing: featherwing.md
+    - AZ-Touch: az-touch.md
     - ESP32 TouchDown: esp32-touchdown.md
     - FreeTouchDeck: freetouchdeck.md
     - Lanbon L8: lanbon-l8.md
