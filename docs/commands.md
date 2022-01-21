@@ -71,7 +71,7 @@ Use the `json` command to send multiple commands as an array of strings in one p
 
 !!! example "Example"  
     ```json linenums="1"
-    json ['page 3','backlight {"state":"OFF","brightness":100}','idle off']
+    json ['page 3','backlight {"state":"ON","brightness":100}','idle off']
     ```
 
 This command will change to page 3, turn the backlight on at ~40% brightness and reset the idle timer.
