@@ -19,7 +19,7 @@
 
 The AZ-Touch MOD for ESP32 comes as kit with a touchscreen, wall enclosure, PCB and pinheaders.
 It includes either a 2.4" or 2.8" ILI9341 display with a XPT2046 resistive touchscreen controller.
-The PCB is pre-soldered *except* for the pinheaders, so [some soldering][5] is required.
+The PCB is pre-soldered *except* for the pinheaders, so [some soldering][5]{target=_blank} is required.
 
 | Pros                         | Cons
 |:-----                        |:----
@@ -30,8 +30,8 @@ The PCB is pre-soldered *except* for the pinheaders, so [some soldering][5] is r
 | Integrated piezo beeper
 | Breadboard area
 
-[:material-cart-variant: AZ-Touch MOD 2.4&quot;][14]{ .md-button .md-button--primary } &nbsp;
-[:material-cart-variant: AZ-Touch MOD 2.8&quot;][15]{ .md-button .md-button--primary }
+[:material-cart-variant: AZ-Touch MOD 2.4&quot;][14]{ .md-button .md-button--primary }{target=_blank} &nbsp;
+[:material-cart-variant: AZ-Touch MOD 2.8&quot;][15]{ .md-button .md-button--primary }{target=_blank}
 
 ### ESP32 dev boards
 
@@ -45,18 +45,18 @@ There are two ESP32 footprint options for soldering headers onto the PCB:
 
 The ESP32-DevKitC option is prefered because you can use more pins from the ESP32.
 
-| Board                   | [ESP32-DevKitC-V4][3] | [ESP32-DevKitC-VE][4]
+| Board                   | [ESP32-DevKitC-V4][3]{target=_blank} | [ESP32-DevKitC-VE][4]{target=_blank}
 |-------------------------|:-----------:|:-----------:|
 | MCU                     | ESP32-WROOM | ESP32-WROVER
 | Flash                   | 4 MB        | 8 MB
 | PSram                   | No          | 8 MB
-|  | [:material-cart-variant: Buy][3]{ .md-button .md-button--primary } | [:material-cart-variant: Buy][4]{ .md-button .md-button--primary }
+|  | [:material-cart-variant: Buy][3]{ .md-button .md-button--primary }{target=_blank} | [:material-cart-variant: Buy][4]{ .md-button .md-button--primary }{target=_blank}
 
 ### Documentation
 
-[:fontawesome-solid-file-pdf: Schematics][6]{ .md-button .md-button } &nbsp;
-[:fontawesome-regular-file-pdf: Datasheet][7]{ .md-button .md-button } &nbsp;
-[:fontawesome-regular-file-pdf: Assembly Guide][11]{ .md-button .md-button }
+[:fontawesome-solid-file-pdf: Schematics][6]{ .md-button .md-button }{target=_blank} &nbsp;
+[:fontawesome-regular-file-pdf: Datasheet][7]{ .md-button .md-button }{target=_blank} &nbsp;
+[:fontawesome-regular-file-pdf: Assembly Guide][11]{ .md-button .md-button }{target=_blank}
 
 
 ## AZ-Touch Feather
@@ -70,25 +70,25 @@ The ESP32-DevKitC option is prefered because you can use more pins from the ESP3
         </a>
 </div>
 
-The AZ-Touch Feather also uses a 2.8" TFT display, but the footprint on the PCB is only suitable for the [Adafruit Feather family][2] of MCUs. This AZ-Touch Feather kit can also be used to run openHASP with the HUZZAH32 or SparkFun Thing Plus ESP32-WROOM development boards.
+The AZ-Touch Feather also uses a 2.8" TFT display, but the footprint on the PCB is only suitable for the [Adafruit Feather family][2]{target=_blank} of MCUs. This AZ-Touch Feather kit can also be used to run openHASP with the HUZZAH32 or SparkFun Thing Plus ESP32-WROOM development boards.
 
-[:material-cart-variant: AZ-Touch Feather][9]{ .md-button .md-button--primary }
+[:material-cart-variant: AZ-Touch Feather][1]{ .md-button .md-button--primary }{target=_blank}
 
 ### Feather dev boards
 
-| Board                   | [HUZZAH32][9] | [SparkFun Thing Plus][10]
+| Board                   | [HUZZAH32][9]{target=_blank} | [SparkFun Thing Plus][10]{target=_blank}
 |-------------------------|:-----------:|:-----------:|
 | MCU                     | ESP32-WROOM | ESP32-WROOM
 | Flash                   | 4 MB        | 16 MB
 | PSram                   | No          | No
-|  | [:material-cart-variant: Buy][9]{ .md-button .md-button--primary } | [:material-cart-variant: Buy][10]{ .md-button .md-button--primary }
+|  | [:material-cart-variant: Buy][9]{ .md-button .md-button--primary }{target=_blank} | [:material-cart-variant: Buy][10]{ .md-button .md-button--primary }{target=_blank}
 
 
 ### Documentation
 
-[:fontawesome-solid-file-pdf: Schematics][11]{ .md-button .md-button } &nbsp;
-[:fontawesome-regular-file-pdf: Datasheet][12]{ .md-button .md-button } &nbsp;
-[:fontawesome-regular-file-pdf: Assembly Guide][13]{ .md-button .md-button }
+[:fontawesome-solid-file-pdf: Schematics][11]{ .md-button .md-button }{target=_blank} &nbsp;
+[:fontawesome-regular-file-pdf: Datasheet][12]{ .md-button .md-button }{target=_blank} &nbsp;
+[:fontawesome-regular-file-pdf: Assembly Guide][13]{ .md-button .md-button }{target=_blank}
 
 
 ## Product Video
@@ -124,9 +124,9 @@ The wall mounted enclosure measures 120mm x 80mm x 35mm (W x H x D).
 The ESP32 can be flashed over USB like any ESP32 development board.
 
 
-[1]: https://www.az-delivery.de/nl/collections/az-specials/products/az-touch-feather
+[1]: https://www.az-delivery.de/en/products/az-touch-feather
 [2]: https://learn.adafruit.com/adafruit-feather
-[3]: https://www.az-delivery.de/nl/products/esp-32-dev-kit-c-v4
+[3]: https://www.az-delivery.de/en/products/esp-32-dev-kit-c-v4
 [4]: https://www.amazon.com/Espressif-ESP32-DevKitC-VE-Development-Board/dp/B087TNPQCV
 [5]: https://www.az-delivery.de/en/blogs/azdelivery-blog-fur-arduino-und-raspberry-pi/az-touch-mod
 [6]: https://www.hwhardsoft.de/app/download/11868165697/AZ-Touch+MOD+schematic+V01-03-01.pdf
@@ -137,5 +137,5 @@ The ESP32 can be flashed over USB like any ESP32 development board.
 [11]: https://www.hwhardsoft.de/app/download/11963381497/AZ-Touch+Feather+Schematic+V01-01.pdf
 [12]: https://www.hwhardsoft.de/app/download/11963714197/Datasheet+AZ-Touch+Feather+Rev+A.pdf
 [13]: https://www.hwhardsoft.de/app/download/11963380797/Assembly+Instruction+AZ-Touch+Feather+rev+A.pdf
-[14]: https://www.az-delivery.de/nl/products/az-touch-wandgehauseset-mit-touchscreen-fur-esp8266-und-esp32
-[15]: https://www.az-delivery.de/nl/products/az-touch-wandgehauseset-mit-2-8-zoll-touchscreen-fur-esp8266-und-esp32
+[14]: https://www.az-delivery.de/en/products/az-touch-wandgehauseset-mit-touchscreen-fur-esp8266-und-esp32
+[15]: https://www.az-delivery.de/en/products/az-touch-wandgehauseset-mit-2-8-zoll-touchscreen-fur-esp8266-und-esp32
