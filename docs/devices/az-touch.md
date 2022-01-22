@@ -30,8 +30,8 @@ The PCB is pre-soldered *except* for the pinheaders, so [some soldering][5]{targ
 | Integrated piezo beeper
 | Breadboard area
 
-[:material-cart-variant: AZ-Touch MOD 2.4&quot;][14]{ .md-button .md-button--primary }{target=_blank} &nbsp;
-[:material-cart-variant: AZ-Touch MOD 2.8&quot;][15]{ .md-button .md-button--primary }{target=_blank}
+[:material-cart-variant: AZ-Touch MOD 2.4&quot;][14]{target=_blank .md-button .md-button--primary } &nbsp;
+[:material-cart-variant: AZ-Touch MOD 2.8&quot;][15]{target=_blank .md-button .md-button--primary }
 
 ### ESP32 dev boards
 
@@ -50,13 +50,13 @@ The ESP32-DevKitC option is prefered because you can use more pins from the ESP3
 | MCU                     | ESP32-WROOM | ESP32-WROVER
 | Flash                   | 4 MB        | 8 MB
 | PSram                   | No          | 8 MB
-|  | [:material-cart-variant: Buy][3]{ .md-button .md-button--primary }{target=_blank} | [:material-cart-variant: Buy][4]{ .md-button .md-button--primary }{target=_blank}
+|  | [:material-cart-variant: Buy][3]{target=_blank .md-button .md-button--primary } | [:material-cart-variant: Buy][4]{target=_blank .md-button .md-button--primary }
 
 ### Documentation
 
-[:fontawesome-solid-file-pdf: Schematics][6]{ .md-button .md-button }{target=_blank} &nbsp;
-[:fontawesome-regular-file-pdf: Datasheet][7]{ .md-button .md-button }{target=_blank} &nbsp;
-[:fontawesome-regular-file-pdf: Assembly Guide][11]{ .md-button .md-button }{target=_blank}
+[:fontawesome-solid-file-pdf: Schematics][6]{target=_blank .md-button .md-button } &nbsp;
+[:fontawesome-regular-file-pdf: Datasheet][7]{target=_blank .md-button .md-button } &nbsp;
+[:fontawesome-regular-file-pdf: Assembly Guide][11]{target=_blank .md-button .md-button }
 
 
 ## AZ-Touch Feather
@@ -72,7 +72,7 @@ The ESP32-DevKitC option is prefered because you can use more pins from the ESP3
 
 The AZ-Touch Feather also uses a 2.8" TFT display, but the footprint on the PCB is only suitable for the [Adafruit Feather family][2]{target=_blank} of MCUs. This AZ-Touch Feather kit can also be used to run openHASP with the HUZZAH32 or SparkFun Thing Plus ESP32-WROOM development boards.
 
-[:material-cart-variant: AZ-Touch Feather][1]{ .md-button .md-button--primary }{target=_blank}
+[:material-cart-variant: AZ-Touch Feather][1]{target=_blank .md-button .md-button--primary }
 
 ### Feather dev boards
 
@@ -81,14 +81,14 @@ The AZ-Touch Feather also uses a 2.8" TFT display, but the footprint on the PCB 
 | MCU                     | ESP32-WROOM | ESP32-WROOM
 | Flash                   | 4 MB        | 16 MB
 | PSram                   | No          | No
-|  | [:material-cart-variant: Buy][9]{ .md-button .md-button--primary }{target=_blank} | [:material-cart-variant: Buy][10]{ .md-button .md-button--primary }{target=_blank}
+|  | [:material-cart-variant: Buy][9]{target=_blank .md-button .md-button--primary } | [:material-cart-variant: Buy][10]{target=_blank .md-button .md-button--primary }
 
 
 ### Documentation
 
-[:fontawesome-solid-file-pdf: Schematics][11]{ .md-button .md-button }{target=_blank} &nbsp;
-[:fontawesome-regular-file-pdf: Datasheet][12]{ .md-button .md-button }{target=_blank} &nbsp;
-[:fontawesome-regular-file-pdf: Assembly Guide][13]{ .md-button .md-button }{target=_blank}
+[:fontawesome-solid-file-pdf: Schematics][11]{target=_blank .md-button .md-button } &nbsp;
+[:fontawesome-regular-file-pdf: Datasheet][12]{target=_blank .md-button .md-button } &nbsp;
+[:fontawesome-regular-file-pdf: Assembly Guide][13]{target=_blank .md-button .md-button }
 
 
 ## Product Video
