@@ -10,7 +10,7 @@ On the plate (named `plate_livingroom` in this example) you'd have two objects, 
 {"page":6,"id":15,"obj":"obj","x":3,"y":48,"w":200,"h":200,"parentid":10,"radius":6,"clip_corner":1,"hidden":1}
 {"page":6,"id":16,"obj":"img","x":0,"y":0,"w":200,"h":200,"parentid":15,"src":"","auto_size":1}
 ```
-The automation below takes care of unhiding them when a cover appears on the `sound_livingroom` media player, updating the picture when it changes and hiding it when the player drops the `entity_picture` attribute:
+The automation below takes care of unhiding them when a cover appears on the `sound_livingroom` media player, updating the picture when it changes and hiding them again when the player drops the `entity_picture` attribute (it's stopped or the played media doesn't have a corresponding picture):
 
 ```
 - id: openhasp-sound_livingroom-detect-mediaplayer-coverart
