@@ -804,8 +804,8 @@ relevant **openHASP-custom-component config:**
 
 ## Current weather and forecasts
 
-![screenshot](../../assets/images/screenshots/cc-sampl-weather-hours.png) 
-![screenshot](../../assets/images/screenshots/cc-sampl-weather-days.png)   
+![screenshot](../../assets/images/screenshots/cc-sampl-weather-hourss.png) 
+![screenshot](../../assets/images/screenshots/cc-sampl-weather-dayss.png)   
 
 This example implements two weather forecast screens which located on the same page, can be swiped left and right. On the top area the current weather is shown, on the bottom area the user can choose by swiping between next hours and next days forecast. This is achieved by a [tabview](../../../design/objects#tabview) object with invisible tabs. 
 
