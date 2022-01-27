@@ -12,7 +12,7 @@ On the plate (named `plate_livingroom` in this example) you'd have two objects, 
 ```
 The automation below takes care of unhiding them when a cover appears on the `sound_livingroom` media player, updating the picture when it changes and hiding them again when the player drops the `entity_picture` attribute (it's stopped or the played media doesn't have a corresponding picture):
 
-```
+```yaml linenums="1"
 - id: openhasp-sound_livingroom-detect-mediaplayer-coverart
   alias: openhasp-sound_livingroom-detect-mediaplayer-coverart
   trigger:
