@@ -59,10 +59,10 @@ jobs:
           out-file-path: "docs/assets/firmware"
 
       # Uncomment this action if dev alias needs to be present
-      # - name: Delete dev tag
-      #   run: |
-      #     mike delete "dev"
-      #   continue-on-error: true
+       - name: Delete dev tag
+         run: |
+           mike delete "dev"
+         continue-on-error: true
 
       - name: Set default
         run: |
@@ -98,7 +98,7 @@ jobs:
       - name: Deploy docs 0.7.0
         if: github.ref == 'refs/heads/0.7.0'
         run: |
-          mike deploy --update-aliases "0.7.0" dev --title="0.7.0-dev" --config-file "${GITHUB_WORKSPACE}/mkdocs.yml" --push --rebase
+          mike deploy --update-aliases "0.7.0" --title="0.7.0-dev" --config-file "${GITHUB_WORKSPACE}/mkdocs.yml" --push --rebase
 
       - name: List
         run: |
