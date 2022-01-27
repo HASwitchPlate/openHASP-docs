@@ -97,7 +97,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#backlight-on-dimmed-if-theres-any-light-in-the-room-off-otherwise" class="md-skip">
+        <a href="#display-of-the-current-album-cover-of-a-media-player" class="md-skip">
           Skip to content
         </a>
       
@@ -721,6 +721,13 @@
       Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#display-of-the-current-album-cover-of-a-media-player" class="md-nav__link">
+    Display of the current album cover of a media player
+  </a>
+  
+</li>
       
         <li class="md-nav__item">
   <a href="#backlight-on-dimmed-if-theres-any-light-in-the-room-off-otherwise" class="md-nav__link">
@@ -1407,6 +1414,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#display-of-the-current-album-cover-of-a-media-player" class="md-nav__link">
+    Display of the current album cover of a media player
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#backlight-on-dimmed-if-theres-any-light-in-the-room-off-otherwise" class="md-nav__link">
     Backlight ON (dimmed) if there's any light in the room, OFF otherwise
   </a>
@@ -1460,6 +1474,56 @@
 
   <h1>Example Automations</h1>
 
+<h2 id="display-of-the-current-album-cover-of-a-media-player">Display of the current album cover of a media player<a class="headerlink" href="#display-of-the-current-album-cover-of-a-media-player" title="Permanent link">~</a></h2>
+<p><img alt="screenshot" src="../../../assets/images/screenshots/cc_autom_cover.png" /></p>
+<p>Combined with a media player entity which supports <code>entity_picture</code> attribute, you can automate display of that using the <code>push_image</code> service of the Custom Component.</p>
+<p>On the plate (named <code>plate_livingroom</code> in this example) you'd have two objects, first a rectangular object with rounded corners, secod an image object placed inside of it. It's hidden by default so you could place this on top of your existing media player controls, and have it pop up only when there's a cover present. To look nice together use the <code>clip_corner</code> property:</p>
+<p><div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;page&quot;</span><span class="p">:</span><span class="mi">6</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">15</span><span class="p">,</span><span class="nt">&quot;obj&quot;</span><span class="p">:</span><span class="s2">&quot;obj&quot;</span><span class="p">,</span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="mi">48</span><span class="p">,</span><span class="nt">&quot;w&quot;</span><span class="p">:</span><span class="mi">200</span><span class="p">,</span><span class="nt">&quot;h&quot;</span><span class="p">:</span><span class="mi">200</span><span class="p">,</span><span class="nt">&quot;parentid&quot;</span><span class="p">:</span><span class="mi">10</span><span class="p">,</span><span class="nt">&quot;radius&quot;</span><span class="p">:</span><span class="mi">6</span><span class="p">,</span><span class="nt">&quot;clip_corner&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="nt">&quot;hidden&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">}</span><span class="w"></span>
+<span class="p">{</span><span class="nt">&quot;page&quot;</span><span class="p">:</span><span class="mi">6</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">16</span><span class="p">,</span><span class="nt">&quot;obj&quot;</span><span class="p">:</span><span class="s2">&quot;img&quot;</span><span class="p">,</span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="nt">&quot;w&quot;</span><span class="p">:</span><span class="mi">200</span><span class="p">,</span><span class="nt">&quot;h&quot;</span><span class="p">:</span><span class="mi">200</span><span class="p">,</span><span class="nt">&quot;parentid&quot;</span><span class="p">:</span><span class="mi">15</span><span class="p">,</span><span class="nt">&quot;src&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="nt">&quot;auto_size&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">}</span><span class="w"></span>
+</code></pre></div>
+The automation below takes care of unhiding them when a cover appears on the <code>sound_livingroom</code> media player, updating the picture when it changes and hiding it when the player drops the <code>entity_picture</code> attribute:</p>
+<div class="highlight"><pre><span></span><code>- id: openhasp-sound_livingroom-detect-mediaplayer-coverart
+  alias: openhasp-sound_livingroom-detect-mediaplayer-coverart
+  trigger:
+    - platform: state
+      entity_id: media_player.sound_livingroom
+  condition:
+    - condition: template
+      value_template: &gt;
+        {{ trigger.from_state.attributes.entity_picture !=
+           trigger.to_state.attributes.entity_picture }}
+  action:
+  - choose:
+    - conditions:
+      - condition: template
+        value_template: &quot;{{ state_attr(&#39;media_player.sound_livingroom&#39;,&#39;entity_picture&#39;) != None }}&quot;
+      sequence:
+      - service: openhasp.push_image
+        target:
+          entity_id: openhasp.plate_livingroom
+        data:
+          image: http://ip.of.your.ha:8123{{ state_attr(&#39;media_player.sound_livingroom&#39;,&#39;entity_picture&#39;) }}
+          obj: p6b16
+          width: 200
+          height: 200
+      - service: openhasp.command
+        target:
+          entity_id: openhasp.plate_livingroom
+        data:
+          keyword: p6b15.hidden
+          parameters: &#39;0&#39;
+    - conditions:
+      - condition: template
+        value_template: &quot;{{ state_attr(&#39;media_player.sound_livingroom&#39;,&#39;entity_picture&#39;) == None }}&quot;
+      sequence:
+      - service: openhasp.command
+        target:
+          entity_id: openhasp.plate_livingroom
+        data:
+          keyword: p6b15.hidden
+          parameters: &#39;1&#39;
+</code></pre></div>
+<hr />
 <h2 id="backlight-on-dimmed-if-theres-any-light-in-the-room-off-otherwise">Backlight ON (dimmed) if there's any light in the room, OFF otherwise<a class="headerlink" href="#backlight-on-dimmed-if-theres-any-light-in-the-room-off-otherwise" title="Permanent link">~</a></h2>
 <p>The night mode activates when all the lights are off and shutters are down below 25% (assuming it's dark enough for the backlight to be disturbing in such situation), the day mode activates otherwise. During the day, when the screen is after short idle, it dims to the level configured in Home Assistant, but never turns off. During the night, the screen turns off after the long idle period.</p>
 <p>This will act directly on the plate in a certain room, as it is triggered by entities located in that room. If you have multiple plates in various rooms, you can create separate automations for each.</p>
