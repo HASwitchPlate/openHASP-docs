@@ -1705,7 +1705,7 @@
                     if (versions[id]["aliases"].length > 0 && versions[id]["aliases"].includes("dev")) {
                         dev_version = "/" + versions[id].version + "/";
                     }
-                    if (window.location.pathname.includes(versions[id].title) && versions[id].title.includes(latest_version)) {
+                    if (window.location.pathname.includes(versions[id].title) && versions[id].title.includes("dev")) {
                         document.querySelector("div[data-md-component=announce]").innerHTML = "<div id='announce-msg'>This documentation is for the development version. We recommend you <a href='/openHASP-docs/latest/'>use the latest</a>.</div>";
                         return;
                     }
