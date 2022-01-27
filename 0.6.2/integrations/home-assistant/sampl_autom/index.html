@@ -1482,47 +1482,87 @@
 <span class="p">{</span><span class="nt">&quot;page&quot;</span><span class="p">:</span><span class="mi">6</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">16</span><span class="p">,</span><span class="nt">&quot;obj&quot;</span><span class="p">:</span><span class="s2">&quot;img&quot;</span><span class="p">,</span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="nt">&quot;w&quot;</span><span class="p">:</span><span class="mi">200</span><span class="p">,</span><span class="nt">&quot;h&quot;</span><span class="p">:</span><span class="mi">200</span><span class="p">,</span><span class="nt">&quot;parentid&quot;</span><span class="p">:</span><span class="mi">15</span><span class="p">,</span><span class="nt">&quot;src&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="nt">&quot;auto_size&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">}</span><span class="w"></span>
 </code></pre></div>
 The automation below takes care of unhiding them when a cover appears on the <code>sound_livingroom</code> media player, updating the picture when it changes and hiding them again when the player drops the <code>entity_picture</code> attribute (it's stopped or the played media doesn't have a corresponding picture):</p>
-<div class="highlight"><pre><span></span><code>- id: openhasp-sound_livingroom-detect-mediaplayer-coverart
-  alias: openhasp-sound_livingroom-detect-mediaplayer-coverart
-  trigger:
-    - platform: state
-      entity_id: media_player.sound_livingroom
-  condition:
-    - condition: template
-      value_template: &gt;
-        {{ trigger.from_state.attributes.entity_picture !=
-           trigger.to_state.attributes.entity_picture }}
-  action:
-  - choose:
-    - conditions:
-      - condition: template
-        value_template: &quot;{{ state_attr(&#39;media_player.sound_livingroom&#39;,&#39;entity_picture&#39;) != None }}&quot;
-      sequence:
-      - service: openhasp.push_image
-        target:
-          entity_id: openhasp.plate_livingroom
-        data:
-          image: http://ip.of.your.ha:8123{{ state_attr(&#39;media_player.sound_livingroom&#39;,&#39;entity_picture&#39;) }}
-          obj: p6b16
-          width: 200
-          height: 200
-      - service: openhasp.command
-        target:
-          entity_id: openhasp.plate_livingroom
-        data:
-          keyword: p6b15.hidden
-          parameters: &#39;0&#39;
-    - conditions:
-      - condition: template
-        value_template: &quot;{{ state_attr(&#39;media_player.sound_livingroom&#39;,&#39;entity_picture&#39;) == None }}&quot;
-      sequence:
-      - service: openhasp.command
-        target:
-          entity_id: openhasp.plate_livingroom
-        data:
-          keyword: p6b15.hidden
-          parameters: &#39;1&#39;
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">openhasp-sound_livingroom-detect-mediaplayer-coverart</span><span class="w"></span>
+<span class="w">  </span><span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">openhasp-sound_livingroom-detect-mediaplayer-coverart</span><span class="w"></span>
+<span class="w">  </span><span class="nt">trigger</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">platform</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">state</span><span class="w"></span>
+<span class="w">      </span><span class="nt">entity_id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">media_player.sound_livingroom</span><span class="w"></span>
+<span class="w">  </span><span class="nt">condition</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">condition</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">template</span><span class="w"></span>
+<span class="w">      </span><span class="nt">value_template</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">&gt;</span><span class="w"></span>
+<span class="w">        </span><span class="no">{{ trigger.from_state.attributes.entity_picture !=</span><span class="w"></span>
+<span class="w">           </span><span class="no">trigger.to_state.attributes.entity_picture }}</span><span class="w"></span>
+<span class="w">  </span><span class="nt">action</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">choose</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">conditions</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">condition</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">template</span><span class="w"></span>
+<span class="w">        </span><span class="nt">value_template</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">state_attr(&#39;media_player.sound_livingroom&#39;,&#39;entity_picture&#39;)</span><span class="nv"> </span><span class="s">!=</span><span class="nv"> </span><span class="s">None</span><span class="nv"> </span><span class="s">}}&quot;</span><span class="w"></span>
+<span class="w">      </span><span class="nt">sequence</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">service</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">openhasp.push_image</span><span class="w"></span>
+<span class="w">        </span><span class="nt">target</span><span class="p">:</span><span class="w"></span>
+<span class="w">          </span><span class="nt">entity_id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">openhasp.plate_livingroom</span><span class="w"></span>
+<span class="w">        </span><span class="nt">data</span><span class="p">:</span><span class="w"></span>
+<span class="w">          </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">http://ip.of.your.ha:8123{{ state_attr(&#39;media_player.sound_livingroom&#39;,&#39;entity_picture&#39;) }}</span><span class="w"></span>
+<span class="w">          </span><span class="nt">obj</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">p6b16</span><span class="w"></span>
+<span class="w">          </span><span class="nt">width</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">200</span><span class="w"></span>
+<span class="w">          </span><span class="nt">height</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">200</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">service</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">openhasp.command</span><span class="w"></span>
+<span class="w">        </span><span class="nt">target</span><span class="p">:</span><span class="w"></span>
+<span class="w">          </span><span class="nt">entity_id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">openhasp.plate_livingroom</span><span class="w"></span>
+<span class="w">        </span><span class="nt">data</span><span class="p">:</span><span class="w"></span>
+<span class="w">          </span><span class="nt">keyword</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">p6b15.hidden</span><span class="w"></span>
+<span class="w">          </span><span class="nt">parameters</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;0&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">conditions</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">condition</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">template</span><span class="w"></span>
+<span class="w">        </span><span class="nt">value_template</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">state_attr(&#39;media_player.sound_livingroom&#39;,&#39;entity_picture&#39;)</span><span class="nv"> </span><span class="s">==</span><span class="nv"> </span><span class="s">None</span><span class="nv"> </span><span class="s">}}&quot;</span><span class="w"></span>
+<span class="w">      </span><span class="nt">sequence</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">service</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">openhasp.command</span><span class="w"></span>
+<span class="w">        </span><span class="nt">target</span><span class="p">:</span><span class="w"></span>
+<span class="w">          </span><span class="nt">entity_id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">openhasp.plate_livingroom</span><span class="w"></span>
+<span class="w">        </span><span class="nt">data</span><span class="p">:</span><span class="w"></span>
+<span class="w">          </span><span class="nt">keyword</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">p6b15.hidden</span><span class="w"></span>
+<span class="w">          </span><span class="nt">parameters</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;1&#39;</span><span class="w"></span>
 </code></pre></div>
+</td></tr></table>
 <hr />
 <h2 id="backlight-on-dimmed-if-theres-any-light-in-the-room-off-otherwise">Backlight ON (dimmed) if there's any light in the room, OFF otherwise<a class="headerlink" href="#backlight-on-dimmed-if-theres-any-light-in-the-room-off-otherwise" title="Permanent link">~</a></h2>
 <p>The night mode activates when all the lights are off and shutters are down below 25% (assuming it's dark enough for the backlight to be disturbing in such situation), the day mode activates otherwise. During the day, when the screen is after short idle, it dims to the level configured in Home Assistant, but never turns off. During the night, the screen turns off after the long idle period.</p>
