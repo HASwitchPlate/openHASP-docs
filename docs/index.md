@@ -58,6 +58,15 @@ For support using openHASP please find us on Github, Discord or Home Assistant:
 [:material-discord: Discord Chat][5]{target=_blank .md-button .md-button--primary }
 [:material-home-assistant: Home Assistant Forum][6]{target=_blank .md-button .md-button--primary }
 
+### Donate
+
+The firmware is free to use, but you can show your appreciation and help us support more hardware configurations by donating to:
+
+[![Paypal donation](https://img.shields.io/badge/Paypal-donate-00457C?style=for-the-badge&logo=paypal)](https://www.paypal.com/donate/?business=E76SN28JLZCXU&currency_code=EUR) &nbsp; 
+[![Buy a coffee](https://img.shields.io/badge/Kofi-donate-FF5E5B?style=for-the-badge&logo=kofi)](https://ko-fi.com/openhasp) &nbsp; 
+[![Buy me a coffee](https://img.shields.io/badge/Buy_Me_a_Coffee-donate-FFDD00?style=for-the-badge&logo=buymeacoffee)](https://www.buymeacoffee.com/aktdCofU)
+
+
 
 [1]: https://github.com/HASwitchPlate/HASPone
 [2]: https://github.com/lvgl/lvgl
