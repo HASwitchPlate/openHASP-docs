@@ -1,3 +1,62 @@
+## Display of the current album cover of a media player
+
+![screenshot](../../assets/images/screenshots/cc_autom_cover.png)
+
+Combined with a media player entity which supports `entity_picture` attribute, you can automate display of that using the `push_image` service of the Custom Component.
+
+On the plate (named `plate_livingroom` in this example) you'd have two objects, first a rectangular object with rounded corners, secod an image object placed inside of it. It's hidden by default so you could place this on top of your existing media player controls, and have it pop up only when there's a cover present. To look nice together use the `clip_corner` property:
+
+```json
+{"page":6,"id":15,"obj":"obj","x":3,"y":48,"w":200,"h":200,"parentid":10,"radius":6,"clip_corner":1,"hidden":1}
+{"page":6,"id":16,"obj":"img","x":0,"y":0,"w":200,"h":200,"parentid":15,"src":"","auto_size":1}
+```
+The automation below takes care of unhiding them when a cover appears on the `sound_livingroom` media player, updating the picture when it changes and hiding it when the player drops the `entity_picture` attribute:
+
+```
+- id: openhasp-sound_livingroom-detect-mediaplayer-coverart
+  alias: openhasp-sound_livingroom-detect-mediaplayer-coverart
+  trigger:
+    - platform: state
+      entity_id: media_player.sound_livingroom
+  condition:
+    - condition: template
+      value_template: >
+        {{ trigger.from_state.attributes.entity_picture !=
+           trigger.to_state.attributes.entity_picture }}
+  action:
+  - choose:
+    - conditions:
+      - condition: template
+        value_template: "{{ state_attr('media_player.sound_livingroom','entity_picture') != None }}"
+      sequence:
+      - service: openhasp.push_image
+        target:
+          entity_id: openhasp.plate_livingroom
+        data:
+          image: http://ip.of.your.ha:8123{{ state_attr('media_player.sound_livingroom','entity_picture') }}
+          obj: p6b16
+          width: 200
+          height: 200
+      - service: openhasp.command
+        target:
+          entity_id: openhasp.plate_livingroom
+        data:
+          keyword: p6b15.hidden
+          parameters: '0'
+    - conditions:
+      - condition: template
+        value_template: "{{ state_attr('media_player.sound_livingroom','entity_picture') == None }}"
+      sequence:
+      - service: openhasp.command
+        target:
+          entity_id: openhasp.plate_livingroom
+        data:
+          keyword: p6b15.hidden
+          parameters: '1'
+```
+
+* * * * *
+
 ## Backlight ON (dimmed) if there's any light in the room, OFF otherwise
 
 The night mode activates when all the lights are off and shutters are down below 25% (assuming it's dark enough for the backlight to be disturbing in such situation), the day mode activates otherwise. During the day, when the screen is after short idle, it dims to the level configured in Home Assistant, but never turns off. During the night, the screen turns off after the long idle period.
