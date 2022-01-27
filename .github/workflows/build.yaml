@@ -59,10 +59,10 @@ jobs:
           out-file-path: "docs/assets/firmware"
 
       # Uncomment this action if dev alias needs to be present
-       - name: Delete dev tag
-         run: |
-           mike delete "dev"
-         continue-on-error: true
+      - name: Delete dev tag
+        run: |
+          mike delete "dev"
+        continue-on-error: true
 
       - name: Set default
         run: |
