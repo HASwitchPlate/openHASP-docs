@@ -90,6 +90,11 @@ jobs:
         run: |
           mike deploy --update-aliases "0.6.2" latest --title="0.6.2" --config-file "${GITHUB_WORKSPACE}/mkdocs.yml" --push --rebase
 
+      - name: Deploy docs 0.6.3
+        if: github.ref == 'refs/heads/0.6.3'
+        run: |
+          mike deploy --update-aliases "0.6.3" --title="0.6.3" --config-file "${GITHUB_WORKSPACE}/mkdocs.yml" --push --rebase
+
       - name: Deploy docs 0.7.0
         if: github.ref == 'refs/heads/0.7.0'
         run: |
