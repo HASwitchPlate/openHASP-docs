@@ -28,6 +28,8 @@ Only when a text value is included in a `jsonl` or `json` command, it needs to b
 ## JSON Object
 Some properties can be set or retrieved in JSON format too. The JSON object has several keys that have a boolean, integer or string data type.
 
+Example: `{"cover":"cover.my_room","position":"50"}`
+
 ## Colors
 Color values can be:
 
