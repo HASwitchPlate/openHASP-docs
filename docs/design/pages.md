@@ -68,7 +68,7 @@ See [commands documentation](../../commands/#jsonl) for the `jsonl` command. The
 
 ## Objects
 Each line in `pages.jsonl` creates **one object** on a page and has to be in the json format.  
-The order of the objects also dictates the *layer* on the page from bottom to top. So the last drawn object will be the topmpost.
+The order of the objects also dictates the *layer* on the page from bottom to top. So the last drawn object will be the topmost.
 
 Example Objects:
 
