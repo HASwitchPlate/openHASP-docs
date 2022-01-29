@@ -88,7 +88,7 @@ but only the `id` and `obj` properties are required to create an object:
 | ext_click_h | | 0..255       | no       | 0       | Extended horizontal clickable are on the left and right 
 | ext_click_v | | 0..255       | no       | 0       | Extended vertical clickable are on the top and bottom
 | parentid    | | 0..255       | no       | 0       | Set the object to be the child of another object.<br>`x` and `y` will be relative to the parent object. _Property inheritance can affect the appearance of the of the children (more info in [styling][12])_.
-| tag         | :material-new-box:{ .tag-small } | [string][10] | no       | n/a     | Arbitrary attribute data. Once set, it will be returned along with each event. For advanced scenarios (more info in example).
+| tag         | :material-new-box:{ .tag-small } | [string][10] | no       | n/a     | Arbitrary attribute data. Once set, it will be returned along with each event. For advanced scenarios (more info in an [example][17]).
 
 !!! tip
     Further customizable properties can be found in [styling][12].
@@ -747,3 +747,4 @@ You can use it as a background shape for other objects by putting its jsonl line
 [14]: ../styling/#text
 [15]: ../data-types/#variables
 [16]: https://lvgl.io/tools/imageconverter
+[17]: ../../integrations/home-assistant/sampl_conf/#using-tags
