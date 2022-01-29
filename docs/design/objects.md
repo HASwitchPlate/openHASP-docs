@@ -70,25 +70,25 @@ There are two ways to create an object on the screen:
 These are the common properties shared among all objects,
 but only the `id` and `obj` properties are required to create an object:
 
-| Property    | | Value        | Required | Default | Description
-|:------------|-|:------------:|:--------:|:-------:|:----
-| id          | | 1..254       | yes      | n/a     | ID of the object on this page. `0` for the page itself.
-| obj         | | [string][10] | yes      | n/a     | Name of the object type _(see below)_ 
-| page        | | 0..12        | no       | n/a     | ID of the page the object appears on _(see below)_
-| groupid     | | 0..15        | no       | 0 (none)| ID of the [GPIO group][3] the object belongs to
-| x           | | [int16][9]   | no       | 0       | Horizontal position on the page
-| y           | | [int16][9]   | no       | 0       | Vertical position on the page
-| w           | | [int16][9]   | no       | 0       | Width of the object
-| h           | | [int16][9]   | no       | 0       | Height of the object
-| hidden      | | [bool][2]    | no       | false   | Object is hidden
-| opacity     | | 0..255       | no       | 255     | How much the the object is opaque
-| action      | | [string][10] | no       | 0       | Command handled locally _(see below)_
-| swipe       | | [bool][2]    | no       | false   | Page navigation using swipe gestures _(see below)_
-| click       | | [bool][2]    | no       | true    | Object is touch/clickable _(also see [enabled][4])_
-| ext_click_h | | 0..255       | no       | 0       | Extended horizontal clickable are on the left and right 
-| ext_click_v | | 0..255       | no       | 0       | Extended vertical clickable are on the top and bottom
-| parentid    | | 0..255       | no       | 0       | Set the object to be the child of another object.<br>`x` and `y` will be relative to the parent object. _Property inheritance can affect the appearance of the of the children (more info in [styling][12])_.
-| tag         | :material-new-box:{ .tag-small } | [JSONobject][11] | no       | n/a     | Arbitrary attribute data. Once set, it will be returned along with each event. For advanced scenarios (more info in an [example][17]).
+| Property    | Value        | Default | Description
+|:------------|:------------:|:-------:|:----
+| id          | 1..254       | n/a     | _Required._ ID of the object on this page. `0` for the page itself.
+| obj         | [string][10] | n/a     | _Required._ Name of the object type _(see below)_ 
+| page        | 0..12        | n/a     | ID of the page the object appears on _(see below)_
+| groupid     | 0..15        | 0 (none)| ID of the [GPIO group][3] the object belongs to
+| x           | [int16][9]   | 0       | Horizontal position on the page
+| y           | [int16][9]   | 0       | Vertical position on the page
+| w           | [int16][9]   | 0       | Width of the object
+| h           | [int16][9]   | 0       | Height of the object
+| hidden      | [bool][2]    | false   | Object is hidden
+| opacity     | 0..255       | 255     | How much the the object is opaque
+| action      | [string][10] | 0       | Command handled locally _(see below)_
+| swipe       | [bool][2]    | false   | Page navigation using swipe gestures _(see below)_
+| click       | [bool][2]    | true    | Object is touch/clickable _(also see [enabled][4])_
+| ext_click_h | 0..255       | 0       | Extended horizontal clickable are on the left and right 
+| ext_click_v | 0..255       | 0       | Extended vertical clickable are on the top and bottom
+| parentid    | 0..255       | 0       | Set the object to be the child of another object.<br>`x` and `y` will be relative to the parent object. _Property inheritance can affect the appearance of the of the children (more info in [styling][12])_.
+| tag :material-new-box:{ .tag-small }        | [JSONobject][11] | n/a      | Arbitrary attribute data. Once set, it will be returned along with each event. For advanced scenarios (more info in an [example][17]).
 
 !!! tip
     Further customizable properties can be found in [styling][12].
