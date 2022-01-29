@@ -1305,3 +1305,592 @@ Note the condition in the Spinner configuration of the component:
 
 !!! note "Attribution" 
     Icons are copyright from [SVG Repo](https://www.svgrepo.com/){target=_blank}.
+
+*  *  *  *  *
+
+## Using tags 
+
+You can avoid too much code repetition when you have multiple similar objects on a page, doing the same thing with different entities, and you'd like to make accessible some advanced options too. Presenting everyting flat will overwhelm your user interface, so it would be better to just show the most used controls, and only display the advanced options in popups related to unique objects. [Tag](../../../design/objects#common-properties) property was made to ease this task.
+
+### Colored lights panel
+
+In the example below we have four coloured lights. Squeezing the ON/OFF button, the color picker and the brightness selector for all four lights on a single page can be challenging - and the result will likely be useless on a small touch screen. Instead, we'll just place the toggle buttons with descriptive labels on the page, and we'll only display the color picker and the brightness selector on demand, in this case when the user touches the descriptive coloured label.
+
+While dynamically drawing these objects we're setting the `tag` property for the color picker and the slider to the `entity_id` of the light we want to adjust, so that when we're interacting with them, the Custom Component can know which light it has to send the adjustments to.
+
+![screenshot1](../../assets/images/screenshots/cc-sampl-tags-color-1.png) 
+![screenshot2](../../assets/images/screenshots/cc-sampl-tags-color-2.png)      
+
+relevant **openHASP config:** (screen size 240x320, UI Theme: Hasp Light) 
+
+```json
+{"page":5,"id":1,"obj":"btn","x":0,"y":0,"w":240,"h":30,"text":"COLOURED LIGHTS","text_font":16,"bg_color":"#2C3E50","text_color":"#FFFFFF","radius":0,"border_side":0,"click":0}
+{"page":5,"id":2,"obj":"label","x":15,"y":40,"w":100,"h":60,"text":"I.","align":"center","border_width":1,"radius":8,"border_color":"#bdbdbd","bg_opa":255,"click":true}
+{"page":5,"id":3,"obj":"label","x":125,"y":40,"w":100,"h":60,"text":"II.","align":"center","border_width":1,"radius":8,"border_color":"#bdbdbd","bg_opa":255,"click":true}
+{"page":5,"id":4,"obj":"label","x":15,"y":165,"w":100,"h":60,"text":"III.","align":"center","border_width":1,"radius":8,"border_color":"#bdbdbd","bg_opa":255,"click":true}
+{"page":5,"id":5,"obj":"label","x":125,"y":165,"w":100,"h":60,"text":"IV.","align":"center","border_width":1,"radius":8,"border_color":"#bdbdbd","bg_opa":255,"click":true}
+
+{"page":5,"id":11,"obj":"btn","x":15,"y":90,"w":100,"h":60,"toggle":true,"text":"\uE335","text_font":32}
+{"page":5,"id":12,"obj":"btn","x":125,"y":90,"w":100,"h":60,"toggle":true,"text":"\uE335","text_font":32}
+{"page":5,"id":13,"obj":"btn","x":15,"y":220,"w":100,"h":60,"toggle":true,"text":"\uE335","text_font":32}
+{"page":5,"id":14,"obj":"btn","x":125,"y":220,"w":100,"h":60,"toggle":true,"text":"\uE335","text_font":32}
+```
+
+relevant **openHASP-custom-component config:** (read comments)
+```yaml
+      - obj: "p5b11" # toggle button for ON/OFF switching of light I.
+        properties:
+          "val": '{{ 1 if is_state("light.dmx_vbar_1", "on") else 0 }}'
+        event:
+          "down":
+            - service: homeassistant.toggle
+              entity_id: "light.dmx_vbar_1"
+
+      - obj: "p5b12" # toggle button for ON/OFF switching of light II.
+        properties:
+          "val": '{{ 1 if is_state("light.dmx_vbar_2", "on") else 0 }}'
+        event:
+          "down":
+            - service: homeassistant.toggle
+              entity_id: "light.dmx_vbar_2"
+
+      - obj: "p5b13" # toggle button for ON/OFF switching of light III.
+        properties:
+          "val": '{{ 1 if is_state("light.dmx_vbar_3", "on") else 0 }}'
+        event:
+          "down":
+            - service: homeassistant.toggle
+              entity_id: "light.dmx_vbar_3"
+
+      - obj: "p5b14" # toggle button for ON/OFF switching of light IV.
+        properties:
+          "val": '{{ 1 if is_state("light.dmx_vbar_4", "on") else 0 }}'
+        event:
+          "down":
+            - service: homeassistant.toggle
+              entity_id: "light.dmx_vbar_4"
+
+      - obj: "p5b2" # label showing the current color of light I.
+        properties:
+          "bg_color": >
+            {% if is_state('light.dmx_vbar_1','on') %}
+            {% set rgb = state_attr('light.dmx_vbar_1','rgb_color') %}
+            {{ "#%02x%02x%02x" | format(rgb[0],rgb[1],rgb[2]) }}
+            {% endif %}
+        event:
+          "down":
+            - service: light.turn_on
+              data:
+                entity_id: light.dmx_vbar_1
+            - service: openhasp.command # display the on-demand pop-up with color picker and brightness slider, tagged with the entity_id of light I.
+              target:
+                entity_id: openhasp.plate_test
+              data:
+                keyword: jsonl
+                parameters: >-
+                  {"page":5,"id":200,"obj":"obj","x":0,"y":0,"w":240,"h":320,"radius":0,"bg_grad_dir":0,"opacity":150,"bg_color":"black"}
+                  {"page":5,"id":210,"obj":"obj","parentid":200,"x":10,"y":15,"w":220,"h":270,"opacity":255,"click":0,"radius":10,"shadow_opa":255,"shadow_color":"black","shadow_width":20,"shadow_spread":0}
+                  {"page":5,"id":211,"obj":"label","parentid":210,"x":0,"y":8,"w":220,"h":20,"click":0,"align":"center","text":"Color settings for light I."}
+                  {"page":5,"id":201,"obj":"cpicker","parentid":210,"x":20,"y":35,"w":180,"h":180,"tag":"light.dmx_vbar_1","color":
+                  {% set rgb = state_attr('light.dmx_vbar_1','rgb_color') -%}
+                  "{{ "#%02x%02x%02x" | format(rgb[0],rgb[1],rgb[2]) }}"
+                  }
+                  {"page":5,"id":202,"obj":"slider","parentid":210,"x":20,"y":225,"w":180,"h":30,"min":1,"max":255,"tag":"light.dmx_vbar_1","val":
+                  {{- state_attr('light.dmx_vbar_1', 'brightness') -}}
+                  }
+
+      - obj: "p5b3" # label showing the current color of light II.
+        properties:
+          "bg_color": >
+            {% if is_state('light.dmx_vbar_2','on') %}
+            {% set rgb = state_attr('light.dmx_vbar_2','rgb_color') %}
+            {{ "#%02x%02x%02x" | format(rgb[0],rgb[1],rgb[2]) }}
+            {% endif %}
+        event:
+          "down":
+            - service: light.turn_on
+              data:
+                entity_id: light.dmx_vbar_2
+            - service: openhasp.command # display the on-demand pop-up with color picker and brightness slider, tagged with the entity_id of light II.
+              target:
+                entity_id: openhasp.plate_test
+              data:
+                keyword: jsonl
+                parameters: >-
+                  {"page":5,"id":200,"obj":"obj","x":0,"y":0,"w":240,"h":320,"radius":0,"bg_grad_dir":0,"opacity":150,"bg_color":"black"}
+                  {"page":5,"id":210,"obj":"obj","parentid":200,"x":10,"y":15,"w":220,"h":270,"opacity":255,"click":0,"radius":10,"shadow_opa":255,"shadow_color":"black","shadow_width":20,"shadow_spread":0}
+                  {"page":5,"id":211,"obj":"label","parentid":210,"x":0,"y":8,"w":220,"h":20,"click":0,"align":"center","text":"Color settings for light II."}
+                  {"page":5,"id":201,"obj":"cpicker","parentid":210,"x":20,"y":35,"w":180,"h":180,"tag":"light.dmx_vbar_2","color":
+                  {% set rgb = state_attr('light.dmx_vbar_2','rgb_color') -%}
+                  "{{ "#%02x%02x%02x" | format(rgb[0],rgb[1],rgb[2]) }}"
+                  }
+                  {"page":5,"id":202,"obj":"slider","parentid":210,"x":20,"y":225,"w":180,"h":30,"min":1,"max":255,"tag":"light.dmx_vbar_2","val":
+                  {{- state_attr('light.dmx_vbar_2', 'brightness') -}}
+                  }
+
+      - obj: "p5b4" # label showing the current color of light III.
+        properties:
+          "bg_color": >
+            {% if is_state('light.dmx_vbar_3','on') %}
+            {% set rgb = state_attr('light.dmx_vbar_3','rgb_color') %}
+            {{ "#%02x%02x%02x" | format(rgb[0],rgb[1],rgb[2]) }}
+            {% endif %}
+        event:
+          "down":
+            - service: light.turn_on
+              data:
+                entity_id: light.dmx_vbar_3
+            - service: openhasp.command # display the on-demand pop-up with color picker and brightness slider, tagged with the entity_id of light III.
+              target:
+                entity_id: openhasp.plate_test
+              data:
+                keyword: jsonl
+                parameters: >-
+                  {"page":5,"id":200,"obj":"obj","x":0,"y":0,"w":240,"h":320,"radius":0,"bg_grad_dir":0,"opacity":150,"bg_color":"black"}
+                  {"page":5,"id":210,"obj":"obj","parentid":200,"x":10,"y":15,"w":220,"h":270,"opacity":255,"click":0,"radius":10,"shadow_opa":255,"shadow_color":"black","shadow_width":20,"shadow_spread":0}
+                  {"page":5,"id":211,"obj":"label","parentid":210,"x":0,"y":8,"w":220,"h":20,"click":0,"align":"center","text":"Color settings for light III."}
+                  {"page":5,"id":201,"obj":"cpicker","parentid":210,"x":20,"y":35,"w":180,"h":180,"tag":"light.dmx_vbar_3","color":
+                  {% set rgb = state_attr('light.dmx_vbar_3','rgb_color') -%}
+                  "{{ "#%02x%02x%02x" | format(rgb[0],rgb[1],rgb[2]) }}"
+                  }
+                  {"page":5,"id":202,"obj":"slider","parentid":210,"x":20,"y":225,"w":180,"h":30,"min":1,"max":255,"tag":"light.dmx_vbar_3","val":
+                  {{- state_attr('light.dmx_vbar_3', 'brightness') -}}
+                  }
+
+      - obj: "p5b5" # label showing the current color of light IV.
+        properties:
+          "bg_color": >
+            {% if is_state('light.dmx_vbar_4','on') %}
+            {% set rgb = state_attr('light.dmx_vbar_4','rgb_color') %}
+            {{ "#%02x%02x%02x" | format(rgb[0],rgb[1],rgb[2]) }}
+            {% endif %}
+        event:
+          "down":
+            - service: light.turn_on
+              data:
+                entity_id: light.dmx_vbar_4
+            - service: openhasp.command # display the on-demand pop-up with color picker and brightness slider, tagged with the entity_id of light IV.
+              target:
+                entity_id: openhasp.plate_test
+              data:
+                keyword: jsonl
+                parameters: >-
+                  {"page":5,"id":200,"obj":"obj","x":0,"y":0,"w":240,"h":320,"radius":0,"bg_grad_dir":0,"opacity":150,"bg_color":"black"}
+                  {"page":5,"id":210,"obj":"obj","parentid":200,"x":10,"y":15,"w":220,"h":270,"opacity":255,"click":0,"radius":10,"shadow_opa":255,"shadow_color":"black","shadow_width":20,"shadow_spread":0}
+                  {"page":5,"id":211,"obj":"label","parentid":210,"x":0,"y":8,"w":220,"h":20,"click":0,"align":"center","text":"Color settings for light IV."}
+                  {"page":5,"id":201,"obj":"cpicker","parentid":210,"x":20,"y":35,"w":180,"h":180,"tag":"light.dmx_vbar_4","color":
+                  {% set rgb = state_attr('light.dmx_vbar_4','rgb_color') -%}
+                  "{{ "#%02x%02x%02x" | format(rgb[0],rgb[1],rgb[2]) }}"
+                  }
+                  {"page":5,"id":202,"obj":"slider","parentid":210,"x":20,"y":225,"w":180,"h":30,"min":1,"max":255,"tag":"light.dmx_vbar_4","val":
+                  {{- state_attr('light.dmx_vbar_4', 'brightness') -}}
+                  }
+
+      - obj: "p5b200" # the background of the popup. when touched directly, will close the popup by deleting its objects
+        event:
+          "down":
+            - service: openhasp.command
+              target:
+                entity_id: openhasp.plate_test
+              data:
+                keyword: p5b200.delete
+
+      - obj: "p5b201" # set the color of the light entity_id extracted from the tag set previously, when displayed, then delete the popup objects
+        event:
+          "changed":
+            - service: light.turn_on
+              data:
+                entity_id: "{{ tag }}"
+                rgb_color: "[{{ r }},{{ g }},{{ b }}]"
+          "up":
+            - service: openhasp.command
+              target:
+                entity_id: openhasp.plate_test
+              data:
+                keyword: p5b200.delete
+
+      - obj: "p5b202" # set the brightness of the light entity_id extracted from the tag set previously, when displayed, then delete the popup objects
+        event:
+          "changed":
+            - service: light.turn_on
+              data:
+                entity_id: "{{ tag }}"
+                brightness:  "{{ val }}"
+          "up":
+            - service: openhasp.command
+              target:
+                entity_id: openhasp.plate_test
+              data:
+                keyword: p5b200.delete
+```
+
+Without tags, the last 3 object definitions would have to be added for each light, and also it would be needed to be drawn separately for each light, initially invisible, then toggle visibility at each one. That would have resulted in a much bigger Custom Component configuration, and also plate design.
+
+### Shutter control panel
+
+In the second example, we have five windows with motorized shutters. In addition to the usual UP/STOP/DOWN buttons, the inhabitants want to have three shortcut positions for each shutter, and also a slider for free positioning. Useless to say that it's impossible to put all these on a page, and also it would be a pity to use up 5 pages just for these.
+
+We'll just put the most used, UP/STOP/DOWN buttons on the page (this already looks a bit much...) and we'll use a _long press_ event on the middle STOP button to show a pop-up with the extra required settings related to the desired shutter.
+
+The `tag` here will be a JSON object referencing both the `entity_id` and the position specific to the desired shutter, eg. `"tag":{"cover":"cover.bigroom_i","position":"15"}`, this will be set for the buttons and the slider appearing in the popup. Since the shutters are different sizes and types, the same intermediate physical position may correspond to different numeric values in Home Assistant.
+
+![screenshot3](../../assets/images/screenshots/cc-sampl-tags-covers-1.png)
+![screenshot4](../../assets/images/screenshots/cc-sampl-tags-covers-1.png)       
+
+relevant **openHASP config:** (screen size 240x320, UI Theme: Hasp Light) 
+
+```json
+{"page":2,"id":1,"obj":"btn","x":0,"y":0,"w":240,"h":30,"text":"MOTORIZED COVERS","text_font":16,"bg_color":"#2C3E50","text_color":"#FFFFFF","radius":0,"border_side":0,"click":0}
+{"page":2,"id":2,"obj":"label","x":7,"y":36,"w":42,"h":20,"text":"I.","align":"center"}
+{"page":2,"id":3,"obj":"label","x":53,"y":36,"w":42,"h":20,"text":"II.","align":"center"}
+{"page":2,"id":4,"obj":"label","x":99,"y":36,"w":42,"h":20,"text":"III.","align":"center"}
+{"page":2,"id":5,"obj":"label","x":145,"y":36,"w":42,"h":20,"text":"IV.","align":"center"}
+{"page":2,"id":6,"obj":"label","x":191,"y":36,"w":42,"h":20,"text":"V.","align":"center"}
+
+{"page":2,"id":11,"obj":"btn","x":7,"y":60,"w":42,"h":68,"toggle":false,"text":"\uE05D","text_font":32}
+{"page":2,"id":12,"obj":"btn","x":7,"y":136,"w":42,"h":68,"toggle":false,"text":"\uE4DB","text_font":32}
+{"page":2,"id":13,"obj":"btn","x":7,"y":212,"w":42,"h":68,"toggle":false,"text":"\uE045","text_font":32}
+
+{"page":2,"id":21,"obj":"btn","x":53,"y":60,"w":42,"h":68,"toggle":false,"text":"\uE05D","text_font":32}
+{"page":2,"id":22,"obj":"btn","x":53,"y":136,"w":42,"h":68,"toggle":false,"text":"\uE4DB","text_font":32}
+{"page":2,"id":23,"obj":"btn","x":53,"y":212,"w":42,"h":68,"toggle":false,"text":"\uE045","text_font":32}
+
+{"page":2,"id":31,"obj":"btn","x":99,"y":60,"w":42,"h":68,"toggle":false,"text":"\uE05D","text_font":32}
+{"page":2,"id":32,"obj":"btn","x":99,"y":136,"w":42,"h":68,"toggle":false,"text":"\uE4DB","text_font":32}
+{"page":2,"id":33,"obj":"btn","x":99,"y":212,"w":42,"h":68,"toggle":false,"text":"\uE045","text_font":32}
+
+{"page":2,"id":41,"obj":"btn","x":145,"y":60,"w":42,"h":68,"toggle":false,"text":"\uE05D","text_font":32}
+{"page":2,"id":42,"obj":"btn","x":145,"y":136,"w":42,"h":68,"toggle":false,"text":"\uE4DB","text_font":32}
+{"page":2,"id":43,"obj":"btn","x":145,"y":212,"w":42,"h":68,"toggle":false,"text":"\uE045","text_font":32}
+
+{"page":2,"id":51,"obj":"btn","x":191,"y":60,"w":42,"h":68,"toggle":false,"text":"\uE05D","text_font":32}
+{"page":2,"id":52,"obj":"btn","x":191,"y":136,"w":42,"h":68,"toggle":false,"text":"\uE4DB","text_font":32}
+{"page":2,"id":53,"obj":"btn","x":191,"y":212,"w":42,"h":68,"toggle":false,"text":"\uE045","text_font":32}
+```
+
+relevant **openHASP-custom-component config:** (read comments)
+
+```yaml
+      - obj: "p2b11" # shutter I. up button
+        properties:
+          "text_color": "{{ '#FFFF00' if is_state('cover.bigroom_i', 'opening') else '#FFFFFF' }}"
+          "text_opa": "{{ '80' if is_state_attr('cover.bigroom_i','current_position', 100) else '255' }}"
+        event:
+          "down":
+            - service: cover.open_cover
+              target:
+                entity_id: "cover.bigroom_i"
+      - obj: "p2b13" # shutter I. down button
+        properties:
+          "text_color": "{{ '#FFFF00' if is_state('cover.bigroom_i', 'closing') else '#FFFFFF' }}"
+          "text_opa": "{{ '80' if is_state_attr('cover.bigroom_i','current_position', 0) else '255' }}"
+        event:
+          "down":
+            - service: cover.close_cover
+              target:
+                entity_id: "cover.bigroom_i"
+      - obj: "p2b12" # shutter I. middle stop button
+        properties:
+          "text": >
+            {% if is_state('cover.bigroom_i', 'closing') %}
+            {{ "\uE4DB" | e }}
+            {%-elif is_state('cover.bigroom_i', 'opening') %}
+            {{ "\uE4DB" | e }}
+            {%-elif is_state('cover.bigroom_i', 'closed') %}
+            {{ "\uF11C" | e }}
+            {%-elif is_state('cover.bigroom_i', 'open') %}
+            {{ "\uF11E" | e }}
+            {% endif %}
+        event:
+          "down":
+            - service: cover.stop_cover
+              target:
+                entity_id: "cover.bigroom_i"
+          "long":
+            - service: openhasp.command # display the on-demand pop-up with extra setting objects, tagged with the entity_id and specific positions in JSON objects
+              target:
+                entity_id: openhasp.plate_bigroom
+              data:
+                keyword: jsonl
+                parameters: >-
+                  {"page":2,"id":200,"obj":"obj","x":0,"y":0,"w":240,"h":320,"radius":0,"bg_grad_dir":0,"opacity":150,"bg_color":"black"}
+                  {"page":2,"id":210,"obj":"obj","parentid":200,"x":5,"y":55,"w":230,"h":190,"opacity":255,"click":0,"radius":10,"shadow_opa":255,"shadow_color":"black","shadow_width":20,"shadow_spread":0}
+                  {"page":2,"id":211,"obj":"label","parentid":210,"x":10,"y":10,"w":210,"h":20,"click":0,"align":"center","text":"Position preset - I."}
+                  {"page":2,"id":201,"obj":"btn","parentid":210,"x":10,"y":110,"w":150,"h":60,"toggle":false,"text_font":24,"text":"Middle","tag":{"cover":"cover.bigroom_i","position":"15"}}
+                  {"page":2,"id":202,"obj":"btn","parentid":210,"x":10,"y":40,"w":70,"h":60,"toggle":false,"text_font":24,"text":"2/3","tag":{"cover":"cover.bigroom_i","position":"90"}}
+                  {"page":2,"id":203,"obj":"btn","parentid":210,"x":90,"y":40,"w":70,"h":60,"toggle":false,"text_font":24,"text":"1/3","tag":{"cover":"cover.bigroom_i","position":"54"}}
+                  {"page":2,"id":204,"obj":"slider","parentid":210,"x":180,"y":40,"w":30,"h":130,"min":1,"max":100,"pad_left2":"13","pad_right2":"13","tag":{"cover":"cover.bigroom_i","position":"50"},"val":
+                  {{- state_attr('cover.bigroom_i','current_position') -}}
+                  }
+
+      - obj: "p2b21" # shutter II.
+        properties:
+          "text_color": "{{ '#FFFF00' if is_state('cover.bigroom_ii', 'opening') else '#FFFFFF' }}"
+          "text_opa": "{{ '80' if is_state_attr('cover.bigroom_ii','current_position', 100) else '255' }}"
+        event:
+          "down":
+            - service: cover.open_cover
+              target:
+                entity_id: "cover.bigroom_ii"
+      - obj: "p2b23"
+        properties:
+          "text_color": "{{ '#FFFF00' if is_state('cover.bigroom_ii', 'closing') else '#FFFFFF' }}"
+          "text_opa": "{{ '80' if is_state_attr('cover.bigroom_ii','current_position', 0) else '255' }}"
+        event:
+          "down":
+            - service: cover.close_cover
+              target:
+                entity_id: "cover.bigroom_ii"
+      - obj: "p2b22"
+        properties:
+          "text": >
+            {% if is_state('cover.bigroom_ii', 'closing') %}
+            {{ "\uE4DB" | e }}
+            {%-elif is_state('cover.bigroom_ii', 'opening') %}
+            {{ "\uE4DB" | e }}
+            {%-elif is_state('cover.bigroom_ii', 'closed') %}
+            {{ "\uF11C" | e }}
+            {%-elif is_state('cover.bigroom_ii', 'open') %}
+            {{ "\uF11E" | e }}
+            {% endif %}
+        event:
+          "down":
+            - service: cover.stop_cover
+              target:
+                entity_id: "cover.bigroom_ii"
+          "long":
+            - service: openhasp.command # display the on-demand pop-up with extra setting objects, tagged with the entity_id and specific positions in JSON objects
+              target:
+                entity_id: openhasp.plate_bigroom
+              data:
+                keyword: jsonl
+                parameters: >-
+                  {"page":2,"id":200,"obj":"obj","x":0,"y":0,"w":240,"h":320,"radius":0,"bg_grad_dir":0,"opacity":150,"bg_color":"black"}
+                  {"page":2,"id":210,"obj":"obj","parentid":200,"x":5,"y":55,"w":230,"h":190,"opacity":255,"click":0,"radius":10,"shadow_opa":255,"shadow_color":"black","shadow_width":20,"shadow_spread":0}
+                  {"page":2,"id":211,"obj":"label","parentid":210,"x":10,"y":10,"w":210,"h":20,"click":0,"align":"center","text":"Position preset - II.","align":"center"}
+                  {"page":2,"id":201,"obj":"btn","parentid":210,"x":10,"y":110,"w":150,"h":60,"toggle":false,"text_font":24,"text":"Middle","tag":{"cover":"cover.bigroom_ii","position":"18"}}
+                  {"page":2,"id":202,"obj":"btn","parentid":210,"x":10,"y":40,"w":70,"h":60,"toggle":false,"text_font":24,"text":"2/3","tag":{"cover":"cover.bigroom_ii","position":"90"}}
+                  {"page":2,"id":203,"obj":"btn","parentid":210,"x":90,"y":40,"w":70,"h":60,"toggle":false,"text_font":24,"text":"1/3","tag":{"cover":"cover.bigroom_ii","position":"53"}}
+                  {"page":2,"id":204,"obj":"slider","parentid":210,"x":180,"y":40,"w":30,"h":130,"min":1,"max":100,"pad_left2":"13","pad_right2":"13","tag":{"cover":"cover.bigroom_ii","position":"50"},"val":
+                  {{- state_attr('cover.bigroom_ii','current_position') -}}
+                  }
+
+      - obj: "p2b31" # shutter III.
+        properties:
+          "text_color": "{{ '#FFFF00' if is_state('cover.bigroom_iii', 'opening') else '#FFFFFF' }}"
+          "text_opa": "{{ '80' if is_state_attr('cover.bigroom_iii','current_position', 100) else '255' }}"
+        event:
+          "down":
+            - service: cover.open_cover
+              target:
+                entity_id: "cover.bigroom_iii"
+      - obj: "p2b33"
+        properties:
+          "text_color": "{{ '#FFFF00' if is_state('cover.bigroom_iii', 'closing') else '#FFFFFF' }}"
+          "text_opa": "{{ '80' if is_state_attr('cover.bigroom_iii','current_position', 0) else '255' }}"
+        event:
+          "down":
+            - service: cover.close_cover
+              target:
+                entity_id: "cover.bigroom_iii"
+      - obj: "p2b32"
+        properties:
+          "text": >
+            {% if is_state('cover.bigroom_iii', 'closing') %}
+            {{ "\uE4DB" | e }}
+            {%-elif is_state('cover.bigroom_iii', 'opening') %}
+            {{ "\uE4DB" | e }}
+            {%-elif is_state('cover.bigroom_iii', 'closed') %}
+            {{ "\uF11C" | e }}
+            {%-elif is_state('cover.bigroom_iii', 'open') %}
+            {{ "\uF11E" | e }}
+            {% endif %}
+        event:
+          "down":
+            - service: cover.stop_cover
+              target:
+                entity_id: "cover.bigroom_iii"
+          "long":
+            - service: openhasp.command # display the on-demand pop-up with extra setting objects, tagged with the entity_id and specific positions in JSON objects
+              target:
+                entity_id: openhasp.plate_bigroom
+              data:
+                keyword: jsonl
+                parameters: >-
+                  {"page":2,"id":200,"obj":"obj","x":0,"y":0,"w":240,"h":320,"radius":0,"bg_grad_dir":0,"opacity":150,"bg_color":"black"}
+                  {"page":2,"id":210,"obj":"obj","parentid":200,"x":5,"y":55,"w":230,"h":190,"opacity":255,"click":0,"radius":10,"shadow_opa":255,"shadow_color":"black","shadow_width":20,"shadow_spread":0}
+                  {"page":2,"id":211,"obj":"label","parentid":210,"x":10,"y":10,"w":210,"h":20,"click":0,"align":"center","text":"Position preset - III."}
+                  {"page":2,"id":201,"obj":"btn","parentid":210,"x":10,"y":110,"w":150,"h":60,"toggle":false,"text_font":24,"text":"Middle","tag":{"cover":"cover.bigroom_iii","position":"17"}}
+                  {"page":2,"id":202,"obj":"btn","parentid":210,"x":10,"y":40,"w":70,"h":60,"toggle":false,"text_font":24,"text":"2/3","tag":{"cover":"cover.bigroom_iii","position":"90"}}
+                  {"page":2,"id":203,"obj":"btn","parentid":210,"x":90,"y":40,"w":70,"h":60,"toggle":false,"text_font":24,"text":"1/3","tag":{"cover":"cover.bigroom_iii","position":"53"}}
+                  {"page":2,"id":204,"obj":"slider","parentid":210,"x":180,"y":40,"w":30,"h":130,"min":1,"max":100,"pad_left2":"13","pad_right2":"13","tag":{"cover":"cover.bigroom_iii","position":"50"},"val":
+                  {{- state_attr('cover.bigroom_iii','current_position') -}}
+                  }
+
+      - obj: "p2b41" # shutter IV.
+        properties:
+          "text_color": "{{ '#FFFF00' if is_state('cover.bigroom_iv', 'opening') else '#FFFFFF' }}"
+          "text_opa": "{{ '80' if is_state_attr('cover.bigroom_iv','current_position', 100) else '255' }}"
+        event:
+          "down":
+            - service: cover.open_cover
+              target:
+                entity_id: "cover.bigroom_iv"
+      - obj: "p2b43"
+        properties:
+          "text_color": "{{ '#FFFF00' if is_state('cover.bigroom_iv', 'closing') else '#FFFFFF' }}"
+          "text_opa": "{{ '80' if is_state_attr('cover.bigroom_iv','current_position', 0) else '255' }}"
+        event:
+          "down":
+            - service: cover.close_cover
+              target:
+                entity_id: "cover.bigroom_iv"
+      - obj: "p2b42"
+        properties:
+          "text": >
+            {% if is_state('cover.bigroom_iv', 'closing') %}
+            {{ "\uE4DB" | e }}
+            {%-elif is_state('cover.bigroom_iv', 'opening') %}
+            {{ "\uE4DB" | e }}
+            {%-elif is_state('cover.bigroom_iv', 'closed') %}
+            {{ "\uF11C" | e }}
+            {%-elif is_state('cover.bigroom_iv', 'open') %}
+            {{ "\uF11E" | e }}
+            {% endif %}
+        event:
+          "down":
+            - service: cover.stop_cover
+              target:
+                entity_id: "cover.bigroom_iv"
+          "long":
+            - service: openhasp.command # display the on-demand pop-up with extra setting objects, tagged with the entity_id and specific positions in JSON objects
+              target:
+                entity_id: openhasp.plate_bigroom
+              data:
+                keyword: jsonl
+                parameters: >-
+                  {"page":2,"id":200,"obj":"obj","x":0,"y":0,"w":240,"h":320,"radius":0,"bg_grad_dir":0,"opacity":150,"bg_color":"black"}
+                  {"page":2,"id":210,"obj":"obj","parentid":200,"x":5,"y":55,"w":230,"h":190,"opacity":255,"click":0,"radius":10,"shadow_opa":255,"shadow_color":"black","shadow_width":20,"shadow_spread":0}
+                  {"page":2,"id":211,"obj":"label","parentid":210,"x":10,"y":10,"w":210,"h":20,"click":0,"align":"center","text":"Position preset - IV."}
+                  {"page":2,"id":201,"obj":"btn","parentid":210,"x":10,"y":110,"w":150,"h":60,"toggle":false,"text_font":24,"text":"Middle","tag":{"cover":"cover.bigroom_iv","position":"15"}}
+                  {"page":2,"id":202,"obj":"btn","parentid":210,"x":10,"y":40,"w":70,"h":60,"toggle":false,"text_font":24,"text":"2/3","tag":{"cover":"cover.bigroom_iv","position":"90"}}
+                  {"page":2,"id":203,"obj":"btn","parentid":210,"x":90,"y":40,"w":70,"h":60,"toggle":false,"text_font":24,"text":"1/3","tag":{"cover":"cover.bigroom_iv","position":"53"}}
+                  {"page":2,"id":204,"obj":"slider","parentid":210,"x":180,"y":40,"w":30,"h":130,"min":1,"max":100,"pad_left2":"13","pad_right2":"13","tag":{"cover":"cover.bigroom_iv","position":"50"},"val":
+                  {{- state_attr('cover.bigroom_iv','current_position') -}}
+                  }
+
+      - obj: "p2b51" # shutter V.
+        properties:
+          "text_color": "{{ '#FFFF00' if is_state('cover.bigroom_v', 'opening') else '#FFFFFF' }}"
+          "text_opa": "{{ '80' if is_state_attr('cover.bigroom_v','current_position', 100) else '255' }}"
+        event:
+          "down":
+            - service: cover.open_cover
+              target:
+                entity_id: "cover.bigroom_v"
+      - obj: "p2b53"
+        properties:
+          "text_color": "{{ '#FFFF00' if is_state('cover.bigroom_v', 'closing') else '#FFFFFF' }}"
+          "text_opa": "{{ '80' if is_state_attr('cover.bigroom_v','current_position', 0) else '255' }}"
+        event:
+          "down":
+            - service: cover.close_cover
+              target:
+                entity_id: "cover.bigroom_v"
+      - obj: "p2b52"
+        properties:
+          "text": >
+            {% if is_state('cover.bigroom_v', 'closing') %}
+            {{ "\uE4DB" | e }}
+            {%-elif is_state('cover.bigroom_v', 'opening') %}
+            {{ "\uE4DB" | e }}
+            {%-elif is_state('cover.bigroom_v', 'closed') %}
+            {{ "\uF11C" | e }}
+            {%-elif is_state('cover.bigroom_v', 'open') %}
+            {{ "\uF11E" | e }}
+            {% endif %}
+        event:
+          "down":
+            - service: cover.stop_cover
+              target:
+                entity_id: "cover.bigroom_v"
+          "long":
+            - service: openhasp.command # display the on-demand pop-up with extra setting objects, tagged with the entity_id and specific positions in JSON objects
+              target:
+                entity_id: openhasp.plate_bigroom
+              data:
+                keyword: jsonl
+                parameters: >-
+                  {"page":2,"id":200,"obj":"obj","x":0,"y":0,"w":240,"h":320,"radius":0,"bg_grad_dir":0,"opacity":150,"bg_color":"black"}
+                  {"page":2,"id":210,"obj":"obj","parentid":200,"x":5,"y":55,"w":230,"h":190,"opacity":255,"click":0,"radius":10,"shadow_opa":255,"shadow_color":"black","shadow_width":20,"shadow_spread":0}
+                  {"page":2,"id":211,"obj":"label","parentid":210,"x":10,"y":10,"w":210,"h":20,"click":0,"align":"center","text":"Position preset - V."}
+                  {"page":2,"id":201,"obj":"btn","parentid":210,"x":10,"y":110,"w":150,"h":60,"toggle":false,"text_font":24,"text":"Middle","tag":{"cover":"cover.bigroom_v","position":"17"}}
+                  {"page":2,"id":202,"obj":"btn","parentid":210,"x":10,"y":40,"w":70,"h":60,"toggle":false,"text_font":24,"text":"2/3","tag":{"cover":"cover.bigroom_v","position":"90"}}
+                  {"page":2,"id":203,"obj":"btn","parentid":210,"x":90,"y":40,"w":70,"h":60,"toggle":false,"text_font":24,"text":"1/3","tag":{"cover":"cover.bigroom_v","position":"55"}}
+                  {"page":2,"id":204,"obj":"slider","parentid":210,"x":180,"y":40,"w":30,"h":130,"min":1,"max":100,"pad_left2":"13","pad_right2":"13","tag":{"cover":"cover.bigroom_v","position":"19"},"val":
+                  {{- state_attr('cover.bigroom_v','current_position') -}}
+                  }
+
+      - obj: "p2b200" # the background of the popup. when touched directly, will close the popup by deleting its objects
+        event:
+          "down":
+            - service: openhasp.command
+              target:
+                entity_id: openhasp.plate_bigroom
+              data:
+                keyword: p2b200.delete
+
+
+      - obj: "p2b201" # set the shutter position for entity_id extracted from the JSON oject in tag set when displayed, then delete the popup objects
+        event:
+          "down":
+            - service: cover.set_cover_position
+              data:
+                entity_id: "{{ tag.cover }}"
+                position: "{{ tag.position }}"
+            - service: openhasp.command
+              target:
+                entity_id: openhasp.plate_bigroom
+              data:
+                keyword: p2b200.delete
+
+      - obj: "p2b202" # set the shutter position for entity_id extracted from the JSON oject in tag set when displayed, then delete the popup objects
+        event:
+          "down":
+            - service: cover.set_cover_position
+              data:
+                entity_id: "{{ tag.cover }}"
+                position: "{{ tag.position }}"
+            - service: openhasp.command
+              target:
+                entity_id: openhasp.plate_bigroom
+              data:
+                keyword: p2b200.delete
+
+      - obj: "p2b203" # set the shutter position for entity_id extracted from the JSON oject in tag set when displayed, then delete the popup objects
+        event:
+          "down":
+            - service: cover.set_cover_position
+              data:
+                entity_id: "{{ tag.cover }}"
+                position: "{{ tag.position }}"
+            - service: openhasp.command
+              target:
+                entity_id: openhasp.plate_bigroom
+              data:
+                keyword: p2b200.delete
+
+      - obj: "p2b204" # set the shutter position from the slider for entity_id extracted from the JSON oject in tag set when displayed, then delete the popup objects
+        event:
+          "up":
+            - service: cover.set_cover_position
+              data:
+                entity_id: "{{ tag.cover }}"
+                position: "{{ val | int }}"
+            - service: openhasp.command
+              target:
+                entity_id: openhasp.plate_bigroom
+              data:
+                keyword: p2b200.delete
+```
+Again - without tags, the last 5 object definitions would have to be added for each shutter, and also it would be needed to be drawn separately for each one, initially invisible, then toggle visibility at each one. That would have resulted in a much bigger Custom Component configuration, and also plate design.
