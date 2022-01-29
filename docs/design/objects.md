@@ -81,13 +81,13 @@ but only the `id` and `obj` properties are required to create an object:
 | w           | [int16][9]   | 0       | Width of the object
 | h           | [int16][9]   | 0       | Height of the object
 | hidden      | [bool][2]    | false   | Object is hidden
-| opacity     | 0..255       | 255     | How much the the object is opaque
+| opacity     | [uint8][9]   | 255     | How much the the object is opaque
 | action      | [string][10] | 0       | Command handled locally _(see below)_
 | swipe       | [bool][2]    | false   | Page navigation using swipe gestures _(see below)_
 | click       | [bool][2]    | true    | Object is touch/clickable _(also see [enabled][4])_
-| ext_click_h | 0..255       | 0       | Extended horizontal clickable are on the left and right 
-| ext_click_v | 0..255       | 0       | Extended vertical clickable are on the top and bottom
-| parentid    | 0..255       | 0       | Set the object to be the child of another object.<br>`x` and `y` will be relative to the parent object. _Property inheritance can affect the appearance of the of the children (more info in [styling][12])_.
+| ext_click_h | [uint8][9]   | 0       | Extended horizontal clickable are on the left and right 
+| ext_click_v | [uint8][9]   | 0       | Extended vertical clickable are on the top and bottom
+| parentid    | [uint8][9]   | 0       | Set the object to be the child of another object.<br>`x` and `y` will be relative to the parent object. _Property inheritance can affect the appearance of the of the children (more info in [styling][12])_.
 | tag :material-new-box:{ .tag-small }        | [JSONobject][11] | n/a      | Arbitrary attribute data. Once set, it will be included in each event message. For advanced scenarios (more info in an [example][17]).
 
 !!! tip
