@@ -1535,7 +1535,7 @@ We'll just put the most used, UP/STOP/DOWN buttons on the page (this already loo
 The `tag` here will be a JSON object referencing both the `entity_id` and the position specific to the desired shutter, eg. `"tag":{"cover":"cover.bigroom_i","position":"15"}`, this will be set for the buttons and the slider appearing in the popup. Since the shutters are different sizes and types, the same intermediate physical position may correspond to different numeric values in Home Assistant.
 
 ![screenshot3](../../assets/images/screenshots/cc-sampl-tags-covers-1.png)
-![screenshot4](../../assets/images/screenshots/cc-sampl-tags-covers-1.png)       
+![screenshot4](../../assets/images/screenshots/cc-sampl-tags-covers-2.png)       
 
 relevant **openHASP config:** (screen size 240x320, UI Theme: Hasp Light) 
 
