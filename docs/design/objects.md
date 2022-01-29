@@ -143,9 +143,9 @@ Possible events (depending on object type) are:
 
 These are the common methods shared among all objects,
 
-| Method   | Parameters | Description |
-|:---------|:----------:|:------------|
-| `clear`   :material-new-box:{ .tag-small } |            | Delete the children from the object
+| Method     | Parameters | Description |
+|:-----------|:----------:|:------------|
+| `clear`    |            | Delete the children from the object
 | `delete`   |            | Delete the object and its children from the page
 | `to_front` |            | Bring the object to the front on the page
 | `to_back`  |            | Send the object to the back on the page
@@ -495,7 +495,7 @@ Only these values are allowed, arbitrary numbers are not supported.
 Use [scale][8] properties to customize.
 
 
-## Tabview  :material-new-box:{ .tag-medium }  
+## Tabview
 **obj:`tabview`**
 
 ![lv_tabview](../assets/images/objects/lv_ex_tabview_1.png)
@@ -519,7 +519,7 @@ To change the currently visible tab, use the `val` attribute after all tabs have
 Read further down to learn now to add tabs to the tabview.
 
 
-## Tab  :material-new-box:{ .tag-medium }  
+## Tab
 **obj:`tab`**
 
 | Property | Value        | Default | Description
@@ -636,7 +636,7 @@ To change the color of a single label you can prefix the text with a `#RRGGBB` h
     ```
 
 
-## Messagebox  :material-new-box:{ .tag-medium }  
+## Messagebox
 **obj:`msgbox`**
 
 ![lv_msgbox](../assets/images/objects/lv_ex_msgbox_1.png)
@@ -660,7 +660,7 @@ The pop-up is centered on the screen.
     ```
 
 
-## Line  :material-new-box:{ .tag-medium }  
+## Line
 **obj:`line`**
 
 ![lv_line](../assets/images/objects/lv_ex_line_1.png)
@@ -679,7 +679,7 @@ The points parameter is a JSON array of [x,y] coordinates, for example `[[10,25]
     ```
 
 
-## Image  :material-new-box:{ .tag-medium }  
+## Image
 **obj:`img`**
 
 ![lv_img](../assets/images/objects/lv_ex_img_1.png)
