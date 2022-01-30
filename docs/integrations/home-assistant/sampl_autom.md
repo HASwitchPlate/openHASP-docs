@@ -304,7 +304,7 @@ _Note:_ You can also use the `path` directive in the component config to load th
 
 You can use this to protect and prolonge the lifetime of the LCD screens, thus being more green and generating less hazardous waste.
 
-Wall mounted LCD screns main problem is that they display the same picture 99.999% of the time. Even if somebody turns off backlight during the night or dark periods, the LCD screen keeps showing the same picture, seen by nobody. There are high chances that this will lead to screen [picture burn-in](https://github.com/HASwitchPlate/openHASP/issues/134){target=_blank} after a few years of operation.
+Wall mounted LCD screens' main problem is that they display the same picture 99.999% of the time. Even if somebody turns off backlight during the night or dark periods, the LCD screen keeps showing the same picture, seen by nobody. There are high chances that this will lead to screen [picture burn-in](https://github.com/HASwitchPlate/openHASP/issues/134){target=_blank} after a few years of operation.
 
 <h3>Pixel training</h3>
 
