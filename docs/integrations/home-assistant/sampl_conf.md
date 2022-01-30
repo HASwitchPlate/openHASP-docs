@@ -811,8 +811,8 @@ This example implements two weather forecast screens which located on the same p
 
 Since there's no weather integration in Home Assistant which can offer so much information at once, this can be achieved by installing multiple weather components. In our example we use two:
 
-- [Met.no](https://www.home-assistant.io/integrations/met/) (the one coming by default pre-installed) for next days forecast.
-- [OpenWeatherMap](https://www.home-assistant.io/integrations/openweathermap/) (available as standard integration to be activated) for next hours forecast. _You need to set the forecast mode to **onecall_hourly** to get forecasts for the day's next hours._
+- [Met.no](https://www.home-assistant.io/integrations/met/){target=_blank} (the one coming by default pre-installed) for next days forecast.
+- [OpenWeatherMap](https://www.home-assistant.io/integrations/openweathermap/){target=_blank} (available as standard integration to be activated) for next hours forecast. _You need to set the forecast mode to **onecall_hourly** to get forecasts for the day's next hours._
 
 The openHASP component grabs information from both weather sources and updates them on every change.   
 The various strings containing day names, day periods, weather conditions can be localized easily to any language within the configuration.
