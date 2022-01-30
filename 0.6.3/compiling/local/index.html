@@ -324,20 +324,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../installation/esp8266/" class="md-nav__link">
-        ESP8266
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../installation/wifi-setup/" class="md-nav__link">
         Wifi Setup
       </a>
@@ -1571,13 +1557,16 @@ This will automatically install all PlatformIO dependencies and the MCU compiler
 <p><img alt="PIO Installed" src="../../assets/images/compiling/pio_installed.png" /></p>
 <p>Restart Visual Studio Code when the PIO installation completes.</p>
 <h2 id="create-a-configuration">Create a configuration<a class="headerlink" href="#create-a-configuration" title="Permanent link">~</a></h2>
-<p>Copy <code>platformio_override-template.ini</code> to <code>platformio_override.ini</code> and uncomment the platforms for <code>esp32</code>and <code>esp8266</code>:</p>
+<p>Copy <code>platformio_override-template.ini</code> to <code>platformio_override.ini</code> and uncomment the platforms for <code>esp32</code>or <code>esp32s2</code>:</p>
 <div class="highlight"><pre><span></span><code>[platformio]
 extra_configs =
     ; Uncomment or edit the lines to show more User Setups in the PIO sidebar
+    ; user_setups/darwin_sdl/*.ini
     user_setups/esp32/*.ini
-    user_setups/esp8266/*.ini
+    user_setups/esp32s2/*.ini
+    ; user_setups/linux_sdl/*.ini
     ; user_setups/stm32f4xx/*.ini
+    ; user_setups/win32/*.ini
 </code></pre></div>
 <p>If you use <a href="../customize/">customization</a>, remove the comment from the line <code>-DUSE_CONFIG_OVERRIDE</code>:</p>
 <div class="highlight"><pre><span></span><code>[override]

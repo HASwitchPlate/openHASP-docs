@@ -324,20 +324,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../installation/esp8266/" class="md-nav__link">
-        ESP8266
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../installation/wifi-setup/" class="md-nav__link">
         Wifi Setup
       </a>
@@ -1588,13 +1574,16 @@ td:nth-child(3n+2) { white-space: nowrap; }
 <h1>Fonts</h1>
 
 <h2 id="built-in-fonts">Built-in Fonts<a class="headerlink" href="#built-in-fonts" title="Permanent link">~</a></h2>
-<p>The ESP8266 firmware only has 1 built-in font: Unscii with font size 8pt.</p>
-<p>The ESP32 firmware builds additionally contain the Roboto Condensed font in <em>four</em> font sizes depending on the display resolution:</p>
+<p>The ESP32 firmware includes these built-in fonts:</p>
 <ul>
+<li>Unscii with font size 8pt</li>
+<li>Roboto Condensed in <em>four</em> font sizes depending on the display resolution:<ul>
 <li>320x240: 12, 16, 24 and 32pt</li>
 <li>480x320: 16, 24, 32 and 48pt</li>
 </ul>
-<p>Including selected glyphs of Latin-1 character set and MaterialDesign icons below.</p>
+</li>
+</ul>
+<p>Each font contains selected glyphs of the <a href="#latin-1">Latin-1</a> character set and MaterialDesign icons below.</p>
 <p>The built-in fonts can be set by using the pointsize as parameter. For example:</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="err">p</span><span class="mi">4</span><span class="err">b</span><span class="mf">1.</span><span class="kc">te</span><span class="err">x</span><span class="kc">t</span><span class="err">_</span><span class="kc">f</span><span class="err">o</span><span class="kc">nt</span><span class="err">=</span><span class="mi">24</span><span class="w"></span>
@@ -1602,8 +1591,10 @@ td:nth-child(3n+2) { white-space: nowrap; }
 </code></pre></div>
 </td></tr></table>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>It is possible to create custom builds with built-in fonts of other sizes (choose any <em>four</em> of 12, 14, 16, 20, 22, 24, 26, 28, 32, 36, 38, 40, 44, 48) and supporting Latin-2 or Cyrillic character sets (even combined) by <a href="../../compiling/customize/">customizing</a> <code>user_config_override.h</code>.</p>
+<p class="admonition-title">Developer Note</p>
+<p>It is possible to create custom builds with built-in fonts of other sizes (choose any <em>four</em> of 12, 14, 16, 20, 22, 24, 26, 28, 32, 36, 38, 40, 44, 48) and
+supporting <a href="#latin-2">Latin-2</a>, <a href="#cyrillic">Cyrillic</a>, <a href="#greek">Greek</a> or <a href="#vietnamese">Vietnamese</a> character sets (even combined)
+by <a href="../../compiling/customize/">customizing</a> <code>user_config_override.h</code>.</p>
 </div>
 <h2 id="built-in-icons">Built-in Icons<a class="headerlink" href="#built-in-icons" title="Permanent link">~</a></h2>
 <p>The icons in the list below are included with the built-in font sizes.

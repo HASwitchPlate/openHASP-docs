@@ -324,20 +324,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../installation/esp8266/" class="md-nav__link">
-        ESP8266
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../installation/wifi-setup/" class="md-nav__link">
         Wifi Setup
       </a>
@@ -1470,9 +1456,11 @@ Click <code>platformio_override.ini</code> to open it, and to select your firmwa
 extra_configs =
     ; Uncomment or edit the lines to show more User Setups in the PIO sidebar
     ; user_setups/darwin_sdl/*.ini
-     user_setups/esp32/*.ini
-    ; user_setups/esp8266/*.ini
+    user_setups/esp32/*.ini
+    ; user_setups/esp32s2/*.ini
     ; user_setups/linux_sdl/*.ini
+    ; user_setups/stm32f4xx/*.ini
+    ; user_setups/win32/*.ini
 </code></pre></div>
 <p>If you use <a href="../customize/">customization</a>, remove the comment from the line <code>-DUSE_CONFIG_OVERRIDE</code> and make sure you have your own <code>user_config_override.h</code> in place: <br />
 (please consider before saving your wifi and mqtt credentials to an online cloud)</p>
@@ -1487,12 +1475,11 @@ build_flags =
     ; Comment unneeded environments or create extra
     ; arduitouch-esp32_ili9341
     ; d1-mini-esp32_ili9341
-    ; d1-mini-esp8266_ili9341
     ; d132-unoshield
     ; esp12e-st7735
     ; esp32dev-mrb3511
     ; esp32dev-ili9488
-     lanbon_l8
+    lanbon_l8
     ; lolin-d32-pro_ili9341
     ; my_custom_build
     ; nodemcu32s-raspi

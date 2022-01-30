@@ -11,11 +11,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://haswitchplate.github.io/openHASP-docs/0.6.3/0.6.3/commands.nl/</loc>
-         <lastmod>2022-01-30</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://haswitchplate.github.io/openHASP-docs/0.6.3/0.6.3/faq/</loc>
          <lastmod>2022-01-30</lastmod>
          <changefreq>daily</changefreq>
@@ -31,22 +26,7 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://haswitchplate.github.io/openHASP-docs/0.6.3/0.6.3/getting-started.nl/</loc>
-         <lastmod>2022-01-30</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://haswitchplate.github.io/openHASP-docs/0.6.3/0.6.3/index.nl/</loc>
-         <lastmod>2022-01-30</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://haswitchplate.github.io/openHASP-docs/0.6.3/0.6.3/license/</loc>
-         <lastmod>2022-01-30</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://haswitchplate.github.io/openHASP-docs/0.6.3/0.6.3/license.nl/</loc>
          <lastmod>2022-01-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -151,17 +131,7 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://haswitchplate.github.io/openHASP-docs/0.6.3/0.6.3/design/fonts.nl/</loc>
-         <lastmod>2022-01-30</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://haswitchplate.github.io/openHASP-docs/0.6.3/0.6.3/design/objects/</loc>
-         <lastmod>2022-01-30</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://haswitchplate.github.io/openHASP-docs/0.6.3/0.6.3/design/objects.nl/</loc>
          <lastmod>2022-01-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -171,17 +141,7 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://haswitchplate.github.io/openHASP-docs/0.6.3/0.6.3/design/pages.nl/</loc>
-         <lastmod>2022-01-30</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://haswitchplate.github.io/openHASP-docs/0.6.3/0.6.3/design/styling/</loc>
-         <lastmod>2022-01-30</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://haswitchplate.github.io/openHASP-docs/0.6.3/0.6.3/design/styling.nl/</loc>
          <lastmod>2022-01-30</lastmod>
          <changefreq>daily</changefreq>
     </url>

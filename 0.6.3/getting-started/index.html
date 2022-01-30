@@ -402,20 +402,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../installation/esp8266/" class="md-nav__link">
-        ESP8266
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../installation/wifi-setup/" class="md-nav__link">
         Wifi Setup
       </a>
@@ -1482,7 +1468,7 @@
 
 <h1>Getting Started</h1>
 
-<p>openHASP supports the ESP32, ESP8266 and STM32F4 families of microcontrollers.
+<p>openHASP currently supports the ESP32 family of microcontrollers.
 It needs a compatible micro-controller with drivers supporting the attached display, touch controller, storage and network.</p>
 <p>Below is a list of recommended development boards and a TFT touchscreen to get you up-and-running in no time.</p>
 <p><img alt="Plug-and-play" src="../assets/images/lolin-esp.png" title="ESP with Lolin 2.4&quot;" /></p>
@@ -1581,10 +1567,10 @@ table th:last-of-type {
 <p class="admonition-title">Note</p>
 <p><em>Due to the large number of possible hardware options a selection of 3 popular ESP development boards has been made for the precompiled binaries.</em></p>
 </div>
-<p>For new projects we recommend ESP32-WROVER boards with PSram and 8MB of flash.</p>
+<p>For new projects we recommend ESP32-WROVER boards with PSram and minimal 8MB of flash.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>Advanced users can build and compile custom configurations using PlatformIO <a href="../compiling/local/">locally</a> or <a href="../compiling/gitpod/">online with Gitpod</a>, however this is not currently supported.</p>
+<p>Advanced users can build and compile custom hardware configurations using PlatformIO <a href="../compiling/local/">locally</a> or <a href="../compiling/gitpod/">online with Gitpod</a>, however this is not currently supported.</p>
 </div>
 <h2 id="recommended-display">Recommended Display<a class="headerlink" href="#recommended-display" title="Permanent link">~</a></h2>
 <h3 id="lolin-tft-24">Lolin TFT 2.4"<a class="headerlink" href="#lolin-tft-24" title="Permanent link">~</a></h3>
@@ -1617,10 +1603,9 @@ no need to use any jumper cables:</p>
 <li>TTGO T7 V1.5 MINI32 ESP32 <em>(</em><em>only</em><em> solder the inner row of pin headers)</em></li>
 <li>LOLIN D32 Pro V2.0.0 <em>using an </em><em>additional</em><em> TFT cable</em></li>
 </ul>
-<p><strong>ESP8266:</strong></p>
+<p><strong>ESP32-S2:</strong></p>
 <ul>
-<li>Wemos D1 Mini ESP8266</li>
-<li>Lolin D1 Mini Pro ESP8266 V2.0.0</li>
+<li>Wemos S2 Mini ESP32-S2 <em>(</em><em>only</em><em> solder the outer row of pin headers)</em></li>
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
