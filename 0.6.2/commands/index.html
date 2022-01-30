@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://haswitchplate.github.io/openHASP-docs/0.6.2/0.6.2/commands/">
       
       <link rel="icon" href="../favicon.ico">
-      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.8">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.9">
     
     
       
@@ -23,7 +23,7 @@
       
     
      
-      <link rel="stylesheet" href="../assets/stylesheets/main.6e60f8b8.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.2b4465f4.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.e6a45f82.min.css">
@@ -1977,6 +1977,10 @@ These leds can then be controlled together using the <code>moodlight</code> comm
 <p class="admonition-title">Note</p>
 <p>If the GPIO is assigned to a group then objects and other GPIOs that share the same <code>groupid</code> will change state accordingly.</p>
 </div>
+<div class="admonition bug">
+<p class="admonition-title">Bug</p>
+<p>The <code>state</code> property currently only accepts unquoted boolean values of <code>true</code>/<code>false</code>, <code>0</code>/<code>1</code> to change the state, instead of the documented values.</p>
+</div>
 <h3 id="inputx">input[x] <span class="twemoji tag-medium"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 4c1.11 0 2 .89 2 2v12c0 1.11-.89 2-2 2H4c-1.11 0-2-.89-2-2V6c0-1.11.89-2 2-2h16M8.5 15V9H7.25v3.5L4.75 9H3.5v6h1.25v-3.5L7.3 15h1.2m5-4.74V9h-4v6h4v-1.25H11v-1.11h2.5v-1.26H11v-1.12h2.5m7 3.74V9h-1.25v4.5h-1.12V10h-1.25v3.5h-1.13V9H14.5v5a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1z"/></svg></span><a class="headerlink" href="#inputx" title="Permanent link">~</a></h3>
 <p>where <code>[x]</code> is number of the gpio pin (0-39)</p>
 <p><em>read-only</em></p>
@@ -2133,7 +2137,7 @@ To get the configuration, use the command <code>config/&lt;submodule&gt;</code>:
   <small>
     
       Last update:
-      2022-01-27
+      2022-01-31
     
   </small>
 </div>
