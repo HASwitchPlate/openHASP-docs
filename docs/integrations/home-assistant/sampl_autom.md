@@ -363,3 +363,177 @@ for automation `openhasp-moodlight-off`, add to actions:
 ```
 
 Don't forget to adjust the size of the object to your screen if it's not 240x320.
+
+## Dynamically set UI element dimensions
+
+!!! note
+    This technique relies on [small changes in the openHasp device firmware ](https://github.com/HASwitchPlate/openHASP/issues/278) that should be present in all builds of `0.7` _after_ 2021-01.
+
+openHasp devices report several device properties to the Custom Component... including `tftWidth` and `tftHeight`.
+These properties are exposed in home assistant as device attributes and can be used in template automations.
+
+Here is a modified version of the [Display clock and temperature](./sampl_conf.md#display-clock-and-temperature) example configuration that will use a "generic" `jsonl` file that has no hard-coded layout attributes: `x`, `y`, `w`, `h` and will appear the same on devices with different resolutions and screen orientations.
+
+Tell the openHasp device to create three text labels.
+As we are not specifying x/y coordinates, when the device _first_ powers on, all three labels will be drawn in the upper left corner with their default size/values.
+
+When `plate00` comes online and connects to the MQTT broker, the openHasp Custom Component will be invoked and the `yaml` below will be executed.
+The templates will be executed and the computed `x`, `y`, `w`, `h` values for each UI component will be sent to the plate.
+
+````json linenums="1"
+{
+    "page": 0,
+    "comment": "Default to page0 as the header and page/layout"
+}
+{
+    "id": 1,
+    "comment": "Time in the top left",
+    "obj": "label",
+    "text": "00:00",
+    "bg_color": "#2C3E50"
+}
+{
+    "id": 2,
+    "comment": "Temp in the middle",
+    "obj": "label",
+    "text": "00.0°C",
+    "bg_color": "#2C3E50"
+}
+{
+    "id": 3,
+    "comment": "Humidity in the top right",
+    "obj": "label",
+    "text": "00.0%",
+    "bg_color": "#2C3E50"
+}
+```
+
+Assuming that the above `jsonl` was deployed to a openHasp device named `plate00`, configure the Home Assistant Custom Component with `yaml` like this:
+
+```yaml linenums="1"
+# The top left corner is 0,0, X grows positive to the right and Y grows positive down
+plate00:
+  objects:
+    # Header: Time
+    - obj: "p0b1"
+      properties:
+        "align": "left"
+        "text": "{{ states('sensor.time') }}"
+        "mode": "loop"
+        ##
+        # Draw the labels with a 1% margin from the top and sides
+        "x": >-
+          {% set scnWd = state_attr('openhasp.plate00', 'tftWidth') | int %}
+          {% set hdrHorMargin = (scnWd*0.01) | int %}
+          {{hdrHorMargin}}          
+
+        "y": >-
+          {% set scnHt = state_attr('openhasp.plate00', 'tftHeight') | int %}
+          {% set hdrVrtMargin = (scnHt*0.01) | int %}
+          {{hdrVrtMargin}}          
+
+        # Width is 1/3 of the screen width after subtracting margins
+        ##
+        "w": >-
+          {% set numObj = 3 %}
+          {% set scnWd = state_attr('openhasp.plate00', 'tftWidth') | int %}
+          {% set hdrHorMargin = (scnWd*0.01) | int %}
+          {% set usableHdrWd = scnWd-(2*hdrHorMargin) %}
+          {% set hdrLblWd = (usableHdrWd/numObj) | int %}
+          {{hdrLblWd}}          
+
+        # Height is 10% of the screen, after margin
+        ##
+        "h": >-
+          {% set scnHt = state_attr('openhasp.plate00', 'tftHeight') | int %}
+          {% set hdrVrtMargin = (scnHt*0.01) | int %}
+          {% set hdrHt = (scnHt*0.1) | int %}
+          {% set hdrLblHt = hdrHt-hdrVrtMargin %}
+          {{hdrLblHt}}          
+
+    # Header: Temp
+    - obj: "p0b2"
+      properties:
+        "align": "center"
+        "text": "{{ states('sensor.room_temperature') }}°C"
+        "mode": "loop"
+        ##
+        # Draw the labels with a 1% margin from the top and sides
+        "x": >-
+          {% set numObj = 3 %}
+          {% set scnWd = state_attr('openhasp.plate00', 'tftWidth') | int %}
+          {% set hdrHorMargin = (scnWd*0.01) | int %}
+          {% set usableHdrWd = scnWd-(2*hdrHorMargin) %}
+          {% set hdrLblWd = (usableHdrWd/numObj) | int %}
+          {% set hdrHorMargin = (scnWd*0.01) | int %}
+          {{hdrHorMargin+hdrLblWd}}
+
+        "y": >-
+          {% set scnHt = state_attr('openhasp.plate00', 'tftHeight') | int %}
+          {% set hdrVrtMargin = (scnHt*0.01) | int %}
+          {{hdrVrtMargin}}          
+
+        # Width is 1/3 of the screen width after subtracting margins
+        ##
+        "w": >-
+          {% set numObj = 3 %}
+          {% set scnWd = state_attr('openhasp.plate00', 'tftWidth') | int %}
+          {% set hdrHorMargin = (scnWd*0.01) | int %}
+          {% set usableHdrWd = scnWd-(2*hdrHorMargin) %}
+          {% set hdrLblWd = (usableHdrWd/numObj) | int %}
+          {{hdrLblWd}}          
+
+        # Height is 10% of the screen, after margin
+        ##
+        "h": >-
+          {% set scnHt = state_attr('openhasp.plate00', 'tftHeight') | int %}
+          {% set hdrVrtMargin = (scnHt*0.01) | int %}
+          {% set hdrHt = (scnHt*0.1) | int %}
+          {% set hdrLblHt = hdrHt-hdrVrtMargin %}
+          {{hdrLblHt}}          
+
+    # Header: Humidity
+    - obj: "p0b3"
+      properties:
+        "align": "right"
+        "text": "{{ states('sensor.room_humidity') }}%"
+        "mode": "loop"
+        ##
+        # Draw the labels with a 1% margin from the top and sides
+        "x": >-
+          {% set numObj = 3 %}
+          {% set scnWd = state_attr('openhasp.plate00', 'tftWidth') | int %}
+          {% set hdrHorMargin = (scnWd*0.01) | int %}
+          {% set usableHdrWd = scnWd-(2*hdrHorMargin) %}
+          {% set hdrLblWd = (usableHdrWd/numObj) | int %}
+          {% set hdrHorMargin = (scnWd*0.01) | int %}
+          {{hdrHorMargin+(2*hdrLblWd)}}          
+
+        "y": >-
+          {% set scnHt = state_attr('openhasp.plate00', 'tftHeight') | int %}
+          {% set hdrVrtMargin = (scnHt*0.01) | int %}
+          {{hdrVrtMargin}}          
+
+        # Width is 1/3 of the screen width after subtracting margins
+        ##
+        "w": >-
+          {% set numObj = 3 %}
+          {% set scnWd = state_attr('openhasp.plate00', 'tftWidth') | int %}
+          {% set hdrHorMargin = (scnWd*0.01) | int %}
+          {% set usableHdrWd = scnWd-(2*hdrHorMargin) %}
+          {% set hdrLblWd = (usableHdrWd/numObj) | int %}
+          {{hdrLblWd}}          
+
+        # Height is 10% of the screen, after margin
+        ##
+        "h": >-
+          {% set scnHt = state_attr('openhasp.plate00', 'tftHeight') | int %}
+          {% set hdrVrtMargin = (scnHt*0.01) | int %}
+          {% set hdrHt = (scnHt*0.1) | int %}
+          {% set hdrLblHt = hdrHt-hdrVrtMargin %}
+          {{hdrLblHt}}
+```
+
+You should be able to shift  the screen orientation for `plate00` by 90 degrees and restart the device to apply your change.
+When the device boots back up and connects to MQTT, openHasp should report a different value for it's `tftHeight` and `tftWidth` which will cause Home Assistant to re-evaluate the templates.
+A few seconds after connecting to MQTT, `plate00` should have an updated layout that reflects it's new screen orientation.
