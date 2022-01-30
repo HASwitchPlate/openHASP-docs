@@ -210,6 +210,9 @@ Changes the state GPIO pin to `on` or `off`. If the pin is configured as a `LED`
 !!! note
     If the GPIO is assigned to a group then objects and other GPIOs that share the same `groupid` will change state accordingly.
 
+!!! bug
+    The `state` property currently only accepts unquoted boolean values of `true`/`false`, `0`/`1` to change the state, instead of the documented values.
+
 
 ### input[x] :material-new-box:{ .tag-medium }
 
