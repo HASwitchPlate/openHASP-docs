@@ -1,5 +1,5 @@
-site_url: https://haswitchplate.github.io/openHASP-docs/0.6.2/
-edit_uri: https://github.com/HASwitchPlate/openHASP-docs/edit/0.6.2/docs/
+site_url: https://haswitchplate.github.io/openHASP-docs/0.6.3/
+edit_uri: https://github.com/HASwitchPlate/openHASP-docs/edit/0.6.3/docs/
 
 repo_url: https://github.com/HASwitchPlate/openHASP
 repo_name: HASwitchPlate/openHASP
@@ -50,6 +50,7 @@ markdown_extensions:
   - pymdownx.highlight:
 #      linenums: true
   - pymdownx.details
+  - pymdownx.keys
   - pymdownx.snippets
   - pymdownx.superfences
   - pymdownx.tabbed:

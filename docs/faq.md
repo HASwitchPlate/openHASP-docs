@@ -23,27 +23,13 @@ The good news is the backlight is working, but a white screen is typical of a pr
     - Test with a multi-meter if there is a good connection from the ESP pins to the display pins
     - Try disconnecting the wires from the touch device and only test the display first
 
+
 ### :question: Error: The firmware binary is invalid (magic byte=FF, should be E9)
 
 ESPhome-Flasher does not recognize the openHASP *full* binary firmware correctly.
 It expects the firmware to be written to address `0x10000` and will throw a "magic byte error".
 
 The openHASP *full* binary is meant to be flashed to address `0x0` with ESPtool, Flash Download Tools or Tasmota-PyFlasher.
-
-### :question: The font looks tiny
-
-On ESP8266, the out-of-the box font is Unscii 8pt because this font takes up very little space in memory and on flash.
-This default font is just intended to get the device setup, then you can Upload your own .zi font.
-
-On ESP32, the default font is Roboto Condensed 12.
-
-
-### :question: How to use Fontawesome icons?
-
-Upload another .zi file named fontawesome*xx*.zi of the same point size as the normal text .zi font.
-e.g. If your custom font is `arial24.zi´, you should also add a `fontawesome24.zi` file.
-
-You can download `fontawesome.zip` from the [HMI Font Pack](https://github.com/fvanroie/HMI-Font-Pack/releases){target=_blank} repository.
 
 
 ### :question: Is there a file browser built-in?
@@ -63,6 +49,12 @@ Click on the File Editor button on the Main Webpage:
 ### :question: How to delete files from flash?
 
 Yes: *See: Is there a file browser built-in?*
+
+
+
+### :question: How to save changes in the File Editor to flash?
+
+Type ++ctrl+"S"++ on a PC or ++cmd+"S"++ on Mac.
 
 
 ### :question: Other question
