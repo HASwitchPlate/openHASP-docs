@@ -1,6 +1,6 @@
 <h1>Getting Started</h1>
 
-openHASP supports the ESP32, ESP8266 and STM32F4 families of microcontrollers.
+openHASP currently supports the ESP32 family of microcontrollers.
 It needs a compatible micro-controller with drivers supporting the attached display, touch controller, storage and network.
 
 Below is a list of recommended development boards and a TFT touchscreen to get you up-and-running in no time.
@@ -49,11 +49,11 @@ table th:last-of-type {
 !!! note
     *Due to the large number of possible hardware options a selection of 3 popular ESP development boards has been made for the precompiled binaries.*
 
-For new projects we recommend ESP32-WROVER boards with PSram and 8MB of flash.
+For new projects we recommend ESP32-WROVER boards with PSram and minimal 8MB of flash.
 
 
 !!! tip
-    Advanced users can build and compile custom configurations using PlatformIO [locally](compiling/local.md) or [online with Gitpod](compiling/gitpod.md), however this is not currently supported.
+    Advanced users can build and compile custom hardware configurations using PlatformIO [locally](compiling/local.md) or [online with Gitpod](compiling/gitpod.md), however this is not currently supported.
 
 
 ## Recommended Display
@@ -96,10 +96,9 @@ no need to use any jumper cables:
 - TTGO T7 V1.5 MINI32 ESP32 *(**only** solder the inner row of pin headers)*
 - LOLIN D32 Pro V2.0.0 *using an **additional** TFT cable*
 
-**ESP8266:**
+**ESP32-S2:**
 
-- Wemos D1 Mini ESP8266
-- Lolin D1 Mini Pro ESP8266 V2.0.0
+- Wemos S2 Mini ESP32-S2 *(**only** solder the outer row of pin headers)*
 
 !!! note
     If you have a Lolin TFT 2.4" Display and a compatible ESP development board, you have all the hardware that is needed.

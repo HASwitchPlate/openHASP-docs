@@ -36,19 +36,18 @@ Click on the demo screen to show the example configuration.
 
 ### Features
 
-| Feature                 | ESP8266 | ESP32   | STM32F4
-|-------------------------|---------|---------|----------
-| SPI display             | :white_check_mark: yes | :white_check_mark: yes | :white_check_mark: yes
-| Parallel display        | :x: no | :white_check_mark: yes | :white_check_mark: yes
-| PWM Screen dimming      | :white_check_mark: yes | :white_check_mark: yes | :white_check_mark: yes
-| Maximum Page Count      | 4       | 12 | 12
-| [Object Types / Widgets][7]| 21   | 21 | 21
-| Dynamic Objects         | :white_check_mark: yes | :white_check_mark: yes | :white_check_mark: yes
-| Theme Support           | yes     | yes     | yes
-| [Custom .zi V5 font][4]{target=_blank} | :white_check_mark: yes (latin1) | :white_check_mark: yes (latin1) | no
-| MDI Icons               | :white_check_mark: yes | :white_check_mark: yes | no
-| [PNG images][8]         | :x: no | :white_check_mark: yes | :white_check_mark: yes
-| Network                 | :white_check_mark: Wi-Fi | :white_check_mark: Wi-Fi | :white_check_mark: Ethernet
+| Feature                 | ESP32   | STM32F4
+|-------------------------|---------|---------
+| SPI display             | :white_check_mark: yes | :white_check_mark: yes
+| Parallel display        | :white_check_mark: yes | :white_check_mark: yes
+| PWM Screen dimming      | :white_check_mark: yes | :white_check_mark: yes
+| Maximum Page Count      | 12 | 12
+| [Object Types / Widgets][7]| 21   | 21
+| Dynamic Objects         | :white_check_mark: yes | :white_check_mark: yes
+| Theme Support           | yes     | yes
+| MDI Icons               | :white_check_mark: yes | no
+| [PNG images][8]         | :white_check_mark: yes | :white_check_mark: yes
+| Network                 | :white_check_mark: Wi-Fi | :white_check_mark: Ethernet
 
 ### Support
 
