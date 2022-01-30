@@ -105,7 +105,7 @@ You can still hide the object on select pages if needed. Objects on page 0 appea
 #### Actions  
 Action commands are supported only by _binary_ or _visual_ type of objects and they are performed locally on the plate. The following actions can be set for these objects:
 
-- `p1` to `p12` to switch to the corresponding page numbers directly (for ESP32; in case of ESP8266 it's only `p1` to `p4`)
+- `p1` to `p12` to switch to the corresponding page numbers directly
 - `prev` to switch to the previous page
 - `next` to switch to the next page
 - `back` to go back to the home page

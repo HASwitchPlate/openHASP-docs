@@ -53,15 +53,18 @@ Restart Visual Studio Code when the PIO installation completes.
 
 ## Create a configuration
 
-Copy `platformio_override-template.ini` to `platformio_override.ini` and uncomment the platforms for `esp32`and `esp8266`:
+Copy `platformio_override-template.ini` to `platformio_override.ini` and uncomment the platforms for `esp32`or `esp32s2`:
 
 ```
 [platformio]
 extra_configs =
-	; Uncomment or edit the lines to show more User Setups in the PIO sidebar
+    ; Uncomment or edit the lines to show more User Setups in the PIO sidebar
+    ; user_setups/darwin_sdl/*.ini
     user_setups/esp32/*.ini
-    user_setups/esp8266/*.ini
+    user_setups/esp32s2/*.ini
+    ; user_setups/linux_sdl/*.ini
     ; user_setups/stm32f4xx/*.ini
+    ; user_setups/win32/*.ini
 ```
 
 If you use [customization](customize.md), remove the comment from the line `-DUSE_CONFIG_OVERRIDE`:

@@ -24,14 +24,14 @@ td:nth-child(3n+2) { white-space: nowrap; }
 
 ## Built-in Fonts
 
-The ESP8266 firmware only has 1 built-in font: Unscii with font size 8pt.
+The ESP32 firmware includes these built-in fonts:
 
-The ESP32 firmware builds additionally contain the Roboto Condensed font in _four_ font sizes depending on the display resolution:
+- Unscii with font size 8pt
+- Roboto Condensed in _four_ font sizes depending on the display resolution:
+    - 320x240: 12, 16, 24 and 32pt
+    - 480x320: 16, 24, 32 and 48pt
 
-- 320x240: 12, 16, 24 and 32pt
-- 480x320: 16, 24, 32 and 48pt
-
-Including selected glyphs of Latin-1 character set and MaterialDesign icons below.
+Each font contains selected glyphs of the [Latin-1](#latin-1) character set and MaterialDesign icons below.
 
 The built-in fonts can be set by using the pointsize as parameter. For example:
 
@@ -40,8 +40,10 @@ p4b1.text_font=24
 p4b2.value_font=12
 ```
 
-!!! note
-    It is possible to create custom builds with built-in fonts of other sizes (choose any _four_ of 12, 14, 16, 20, 22, 24, 26, 28, 32, 36, 38, 40, 44, 48) and supporting Latin-2 or Cyrillic character sets (even combined) by [customizing](../compiling/customize.md) `user_config_override.h`.
+!!! note "Developer Note"
+    It is possible to create custom builds with built-in fonts of other sizes (choose any _four_ of 12, 14, 16, 20, 22, 24, 26, 28, 32, 36, 38, 40, 44, 48) and
+    supporting [Latin-2](#latin-2), [Cyrillic](#cyrillic), [Greek](#greek) or [Vietnamese](#vietnamese) character sets (even combined)
+    by [customizing](../compiling/customize.md) `user_config_override.h`.
 
 
 ## Built-in Icons

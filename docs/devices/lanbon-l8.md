@@ -173,7 +173,7 @@ Pin| Mode   | L8-HB      | Group | Default
     {"gpio":{"config":[197658,263456,329249,721179,14,27,0,0]}}
     ```
 
-!!! note
+!!! note "Developer Note"
     You can [build your own firmware](../compiling/customize.md) with GPIOs and many other parameters pre-configured in `user_config_override.h` as factory defaults for Lanbon L8.
 
 

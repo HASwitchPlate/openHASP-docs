@@ -27,11 +27,13 @@ Click `platformio_override.ini` to open it, and to select your firmware flavour 
 ```text
 [platformio]
 extra_configs =
-	; Uncomment or edit the lines to show more User Setups in the PIO sidebar
+    ; Uncomment or edit the lines to show more User Setups in the PIO sidebar
     ; user_setups/darwin_sdl/*.ini
-     user_setups/esp32/*.ini
-    ; user_setups/esp8266/*.ini
+    user_setups/esp32/*.ini
+    ; user_setups/esp32s2/*.ini
     ; user_setups/linux_sdl/*.ini
+    ; user_setups/stm32f4xx/*.ini
+    ; user_setups/win32/*.ini
 ```
 
 If you use [customization](customize.md), remove the comment from the line `-DUSE_CONFIG_OVERRIDE` and make sure you have your own `user_config_override.h` in place:   
@@ -52,12 +54,11 @@ extra_default_envs =
     ; Comment unneeded environments or create extra
     ; arduitouch-esp32_ili9341
     ; d1-mini-esp32_ili9341
-    ; d1-mini-esp8266_ili9341
     ; d132-unoshield
     ; esp12e-st7735
     ; esp32dev-mrb3511
     ; esp32dev-ili9488
-     lanbon_l8
+    lanbon_l8
     ; lolin-d32-pro_ili9341
     ; my_custom_build
     ; nodemcu32s-raspi
