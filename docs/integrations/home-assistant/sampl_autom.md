@@ -380,7 +380,7 @@ As we are not specifying x/y coordinates, when the device _first_ powers on, all
 When `plate00` comes online and connects to the MQTT broker, the openHasp Custom Component will be invoked and the `yaml` below will be executed.
 The templates will be executed and the computed `x`, `y`, `w`, `h` values for each UI component will be sent to the plate.
 
-````json linenums="1"
+```json linenums="1"
 {
     "page": 0,
     "comment": "Default to page0 as the header and page/layout"
