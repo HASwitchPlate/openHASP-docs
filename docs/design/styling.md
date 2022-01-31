@@ -9,7 +9,7 @@ Certain more complex objects are made up of several sub-parts, which can be styl
     Not all the suffixed properties are mentioned in this documentation, feel free to discover them yourself.    
     
     For example the _gauge_ object uses `line_width` to set the minor ticks thickness, `line_width1` for major ticks and `line_width2` for the thickness of the needle.       
-    Also a `toggle` `btn` can be made to show `text` `yellow` when toggled ON with `"obj":"btn","toggle":true,"text":"\uE335","text_color":"white","text_color2":"white","text_color1":"yellow","text_color3":"yellow"`
+    Also a `toggle` `btn` can be made to show `text` `yellow` when toggled ON with `"text_color":"white","text_color2":"white","text_color1":"yellow","text_color3":"yellow"`
 
 
 If objects are children of other objects (they have the [parentid][7] property set), property inheritance takes place. 
