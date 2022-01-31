@@ -8,14 +8,14 @@ Certain more complex objects are made up of several sub-parts, which can be styl
 !!! tip
     Not all the suffixed properties are mentioned in this documentation, feel free to discover them yourself.    
     
-    For example the _gauge_ object uses `line_width` to set the minor ticks thickness, `line_width1` for major ticks and `line_width2` for the thickness of the needle.       
-    Also a `toggle` `btn` can be made to show `text` `yellow` when toggled ON with `"text_color":"white","text_color2":"white","text_color1":"yellow","text_color3":"yellow"`
+    For example the _gauge_ object uses `line_width` to set the minor ticks thickness, `line_width1` for major ticks and `line_width2` for the thickness of the needle. Also a `toggle` `btn` can be made to show `text` `yellow` when toggled ON with `"text_color":"white","text_color2":"white","text_color1":"yellow","text_color3":"yellow"`
 
 
 If objects are children of other objects (they have the [parentid][7] property set), property inheritance takes place. 
 
 !!! Inheritance
-    Some properties (typically that are related to text and opacity) can be inherited from the parent object's styles. Inheritance is applied only if the given property is not set in the initial jsonl of the child object (at first draw). In this case, if the property is inheritable, the property's value will be searched in the parents too until an object specifies a value for the property. The parents will use their own state to detemine the value. So for example if a button is pressed, and the text color comes from here, the pressed text color will be used. ([source][8]{target=_blank}) Inheritance takes place at run time too.
+    Some properties (typically that are related to text and opacity) can be inherited from the parent object's styles. Inheritance is applied only if the given property is not set in the initial jsonl of the child object (at first draw). In this case, if the property is inheritable, the property's value will be searched in the parents too until an object specifies a value for the property. The parents will use their own state to detemine the value. So for example if a button is pressed, and the text color comes from here, the pressed text color will be used. ([source][8]{target=_blank}) Inheritance takes place at run time too.     
+    When a parent object is deleted, all childs will be deleted too.
 
 ## General
 
