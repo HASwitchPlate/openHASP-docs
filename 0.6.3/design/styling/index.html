@@ -1552,13 +1552,13 @@
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>Not all the suffixed properties are mentioned in this documentation, feel free to discover them yourself.    </p>
-<p>For example the <em>gauge</em> object uses <code>line_width</code> to set the minor ticks thickness, <code>line_width1</code> for major ticks and <code>line_width2</code> for the thickness of the needle.     <br />
-Also a <code>toggle</code> <code>btn</code> can be made to show <code>text</code> <code>yellow</code> when toggled ON with <code>"text_color":"white","text_color2":"white","text_color1":"yellow","text_color3":"yellow"</code></p>
+<p>For example the <em>gauge</em> object uses <code>line_width</code> to set the minor ticks thickness, <code>line_width1</code> for major ticks and <code>line_width2</code> for the thickness of the needle. Also a <code>toggle</code> <code>btn</code> can be made to show <code>text</code> <code>yellow</code> when toggled ON with <code>"text_color":"white","text_color2":"white","text_color1":"yellow","text_color3":"yellow"</code></p>
 </div>
 <p>If objects are children of other objects (they have the <a href="../objects/#common-properties">parentid</a> property set), property inheritance takes place. </p>
 <div class="admonition inheritance">
 <p class="admonition-title">Inheritance</p>
-<p>Some properties (typically that are related to text and opacity) can be inherited from the parent object's styles. Inheritance is applied only if the given property is not set in the initial jsonl of the child object (at first draw). In this case, if the property is inheritable, the property's value will be searched in the parents too until an object specifies a value for the property. The parents will use their own state to detemine the value. So for example if a button is pressed, and the text color comes from here, the pressed text color will be used. (<a href="https://docs.lvgl.io/master/overview/style.html?#inheritance" target="_blank">source</a>) Inheritance takes place at run time too.</p>
+<p>Some properties (typically that are related to text and opacity) can be inherited from the parent object's styles. Inheritance is applied only if the given property is not set in the initial jsonl of the child object (at first draw). In this case, if the property is inheritable, the property's value will be searched in the parents too until an object specifies a value for the property. The parents will use their own state to detemine the value. So for example if a button is pressed, and the text color comes from here, the pressed text color will be used. (<a href="https://docs.lvgl.io/master/overview/style.html?#inheritance" target="_blank">source</a>) Inheritance takes place at run time too.   <br />
+When a parent object is deleted, all childs will be deleted too.</p>
 </div>
 <h2 id="general">General<a class="headerlink" href="#general" title="Permanent link">~</a></h2>
 <p>General styling options.</p>
