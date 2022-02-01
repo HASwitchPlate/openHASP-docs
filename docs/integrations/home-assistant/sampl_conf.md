@@ -137,7 +137,38 @@ relevant **openHASP-custom-component config:**
         "text_color": "{% if states('sensor.room_temperature') |int <= 21  %}#4682B4{% elif 21 < states('sensor.room_temperature') |int <= 26 %}green{% else %}red{% endif %}"
 ```
 
+*  *  *  *  *
 
+## Variable sized icons
+
+![screenshot](../../assets/images/screenshots/cc-sampl-fan-speed-titlebar.png)
+
+Have a fan icon which changes its size depending on the speed of the fan, and goes off the screen when the fan is off.
+
+**openHASP config:**
+
+```json linenums="1"
+{"page":0,"id":1,"obj":"label","x":1,"y":1,"h":35,"w":35,"text":"\uE210","align":"left","bg_color":"#2C3E50","text_color":"yellow"}
+```
+
+relevant **openHASP-custom-component config:**
+
+```yaml linenums="1"
+      - obj: "p0b1"
+        properties:
+          "jsonl": >
+            {% if is_state('input_select.fan_speed', 'Low') %}
+            {"text_font":12,"x":6,"y":7}
+            {%-elif is_state('input_select.fan_speed', 'Medium') %}
+            {"text_font":16,"x":5,"y":6}
+            {%-elif is_state('input_select.fan_speed', 'Hign') %}
+            {"text_font":24,"x":1,"y":2}
+            {%-elif is_state('input_select.fan_speed', 'Turbo') %}
+            {"text_font":32,"x":-2,"y":-3}
+            {%-else %}
+            {"text_font":12,"x":-10,"y":-10}
+            {% endif %}
+```
 
 *  *  *  *  *
 
