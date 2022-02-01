@@ -716,6 +716,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#variable-sized-icons" class="md-nav__link">
+    Variable sized icons
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#light-brightness-and-color" class="md-nav__link">
     Light brightness and color
   </a>
@@ -1483,6 +1490,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#variable-sized-icons" class="md-nav__link">
+    Variable sized icons
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#light-brightness-and-color" class="md-nav__link">
     Light brightness and color
   </a>
@@ -1728,6 +1742,44 @@
 <span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">obj</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;p0b3&quot;</span><span class="w"></span>
 <span class="w">      </span><span class="nt">properties</span><span class="p">:</span><span class="w"></span>
 <span class="w">        </span><span class="s">&quot;text_color&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;{%</span><span class="nv"> </span><span class="s">if</span><span class="nv"> </span><span class="s">states(&#39;sensor.room_temperature&#39;)</span><span class="nv"> </span><span class="s">|int</span><span class="nv"> </span><span class="s">&lt;=</span><span class="nv"> </span><span class="s">21</span><span class="nv">  </span><span class="s">%}#4682B4{%</span><span class="nv"> </span><span class="s">elif</span><span class="nv"> </span><span class="s">21</span><span class="nv"> </span><span class="s">&lt;</span><span class="nv"> </span><span class="s">states(&#39;sensor.room_temperature&#39;)</span><span class="nv"> </span><span class="s">|int</span><span class="nv"> </span><span class="s">&lt;=</span><span class="nv"> </span><span class="s">26</span><span class="nv"> </span><span class="s">%}green{%</span><span class="nv"> </span><span class="s">else</span><span class="nv"> </span><span class="s">%}red{%</span><span class="nv"> </span><span class="s">endif</span><span class="nv"> </span><span class="s">%}&quot;</span><span class="w"></span>
+</code></pre></div>
+</td></tr></table>
+<hr />
+<h2 id="variable-sized-icons">Variable sized icons<a class="headerlink" href="#variable-sized-icons" title="Permanent link">~</a></h2>
+<p><img alt="screenshot" src="../../../assets/images/screenshots/cc-sampl-fan-speed-titlebar.png" /></p>
+<p>Have a fan icon which changes its size depending on the speed of the fan, and goes off the screen when the fan is off.</p>
+<p><strong>openHASP config:</strong></p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;page&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="nt">&quot;obj&quot;</span><span class="p">:</span><span class="s2">&quot;label&quot;</span><span class="p">,</span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="nt">&quot;h&quot;</span><span class="p">:</span><span class="mi">35</span><span class="p">,</span><span class="nt">&quot;w&quot;</span><span class="p">:</span><span class="mi">35</span><span class="p">,</span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="s2">&quot;\uE210&quot;</span><span class="p">,</span><span class="nt">&quot;align&quot;</span><span class="p">:</span><span class="s2">&quot;left&quot;</span><span class="p">,</span><span class="nt">&quot;bg_color&quot;</span><span class="p">:</span><span class="s2">&quot;#2C3E50&quot;</span><span class="p">,</span><span class="nt">&quot;text_color&quot;</span><span class="p">:</span><span class="s2">&quot;yellow&quot;</span><span class="p">}</span><span class="w"></span>
+</code></pre></div>
+</td></tr></table>
+<p>relevant <strong>openHASP-custom-component config:</strong></p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">obj</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;p0b1&quot;</span><span class="w"></span>
+<span class="w">        </span><span class="nt">properties</span><span class="p">:</span><span class="w"></span>
+<span class="w">          </span><span class="s">&quot;jsonl&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="p p-Indicator">&gt;</span><span class="w"></span>
+<span class="w">            </span><span class="no">{% if is_state(&#39;input_select.fan_speed&#39;, &#39;Low&#39;) %}</span><span class="w"></span>
+<span class="w">            </span><span class="no">{&quot;text_font&quot;:12,&quot;x&quot;:6,&quot;y&quot;:7}</span><span class="w"></span>
+<span class="w">            </span><span class="no">{%-elif is_state(&#39;input_select.fan_speed&#39;, &#39;Medium&#39;) %}</span><span class="w"></span>
+<span class="w">            </span><span class="no">{&quot;text_font&quot;:16,&quot;x&quot;:5,&quot;y&quot;:6}</span><span class="w"></span>
+<span class="w">            </span><span class="no">{%-elif is_state(&#39;input_select.fan_speed&#39;, &#39;Hign&#39;) %}</span><span class="w"></span>
+<span class="w">            </span><span class="no">{&quot;text_font&quot;:24,&quot;x&quot;:1,&quot;y&quot;:2}</span><span class="w"></span>
+<span class="w">            </span><span class="no">{%-elif is_state(&#39;input_select.fan_speed&#39;, &#39;Turbo&#39;) %}</span><span class="w"></span>
+<span class="w">            </span><span class="no">{&quot;text_font&quot;:32,&quot;x&quot;:-2,&quot;y&quot;:-3}</span><span class="w"></span>
+<span class="w">            </span><span class="no">{%-else %}</span><span class="w"></span>
+<span class="w">            </span><span class="no">{&quot;text_font&quot;:12,&quot;x&quot;:-10,&quot;y&quot;:-10}</span><span class="w"></span>
+<span class="w">            </span><span class="no">{% endif %}</span><span class="w"></span>
 </code></pre></div>
 </td></tr></table>
 <hr />
