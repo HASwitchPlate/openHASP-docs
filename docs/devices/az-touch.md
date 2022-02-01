@@ -73,8 +73,8 @@ The ESP32-DevKitC option is prefered because you can use more pins from the ESP3
 The AZ-Touch Feather also uses a 2.8" TFT display but the footprint on the PCB is only suitable for the [Adafruit Feather family][2]{target=_blank} of MCUs.
 This AZ-Touch Feather kit can also be used to run openHASP with the HUZZAH32 or SparkFun Thing Plus ESP32-WROOM development boards.
 
-**Unlike the AR-Touch MOD, the AZ-Touch Feather is a self-solder kit!**  You have to solder *all* components to the PCB yourself.
-For this reason, the AZ-Touch MOD is recommended over the AZ-Touch Feather.
+**Unlike the AZ-Touch MOD, the AZ-Touch Feather is a self-solder kit!**  You have to solder *all* components to the PCB yourself.
+For this reason the [AZ-Touch MOD](#az-touch-mod) is recommended over the AZ-Touch Feather.
 
 | Pros                         | Cons
 |:-----                        |:----
