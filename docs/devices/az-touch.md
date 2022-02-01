@@ -19,6 +19,7 @@
 
 The AZ-Touch MOD for ESP32 comes as kit with a touchscreen, wall enclosure, PCB and pinheaders.
 It includes either a 2.4" or 2.8" ILI9341 display with a XPT2046 resistive touchscreen controller.
+
 The PCB is pre-soldered *except* for the pinheaders, so [some soldering][5]{target=_blank} is required.
 
 | Pros                         | Cons
@@ -27,7 +28,6 @@ The PCB is pre-soldered *except* for the pinheaders, so [some soldering][5]{targ
 | Limited soldering required   | Resistive touchpanel
 | Choice of several ESP32 MCUs
 | 9 to 35V DC-DC power input
-| Integrated piezo beeper
 | Breadboard area
 
 [:material-cart-variant: AZ-Touch MOD 2.4&quot;][14]{target=_blank .md-button .md-button--primary } &nbsp;
@@ -65,16 +65,29 @@ The ESP32-DevKitC option is prefered because you can use more pins from the ESP3
         <a href="../../assets/images/devices/az-touch-feather-front.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-6" data-title="Assembled AZ-Touch Feather" data-footer="Copyright <a href='https://www.az-delivery.de/'>az-delivery.de,</a> All Rights Reserved - Used with permission">
             <img src="../../assets/images/devices/az-touch-feather-front.jpg" class="img-fluid">
         </a>
-        <a href="../../assets/images/devices/az-touch-feather-back.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-6" data-title="AZ-Touch Feather PCB" data-footer="Copyright <a href='https://www.az-delivery.de/'>az-delivery.de,</a> All Rights Reserved - Used with permission">
+        <a href="../../assets/images/devices/az-touch-feather-back.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-6" data-title="AZ-Touch Feather after soldering all components" data-footer="Copyright <a href='https://www.az-delivery.de/'>az-delivery.de,</a> All Rights Reserved - Used with permission">
             <img src="../../assets/images/devices/az-touch-feather-back.jpg" class="img-fluid">
         </a>
 </div>
 
-The AZ-Touch Feather also uses a 2.8" TFT display, but the footprint on the PCB is only suitable for the [Adafruit Feather family][2]{target=_blank} of MCUs. This AZ-Touch Feather kit can also be used to run openHASP with the HUZZAH32 or SparkFun Thing Plus ESP32-WROOM development boards.
+The AZ-Touch Feather also uses a 2.8" TFT display but the footprint on the PCB is only suitable for the [Adafruit Feather family][2]{target=_blank} of MCUs.
+This AZ-Touch Feather kit can also be used to run openHASP with the HUZZAH32 or SparkFun Thing Plus ESP32-WROOM development boards.
+
+**Unlike the AR-Touch MOD, the AZ-Touch Feather is a self-solder kit!**  You have to solder *all* components to the PCB yourself.
+For this reason, the AZ-Touch MOD is recommended over the AZ-Touch Feather.
+
+| Pros                         | Cons
+|:-----                        |:----
+| Versatile PCB options        | All components need soldering
+| Choice of several ESP32 MCUs | Bulky enclosure
+| 9 to 35V DC-DC power input   | Resistive touchpanel
+| Breadboard area
 
 [:material-cart-variant: AZ-Touch Feather][1]{target=_blank .md-button .md-button--primary }
 
 ### Feather dev boards
+
+We do not offer pre-built binaries for the AZ-Touch Feather yet but these dev boards *should* work:
 
 | Board                   | [HUZZAH32][9]{target=_blank} | [SparkFun Thing Plus][10]{target=_blank}
 |-------------------------|:-----------:|:-----------:|
@@ -107,8 +120,11 @@ The AZ-Touch Feather also uses a 2.8" TFT display, but the footprint on the PCB 
 
 ## Enclosure
 
-The AZ-Touch kits come with a nice wall mounting enclosure for the 2.4&quot; or 2.8&quot; touchscreen.
-It enables you to mount your project permanently in your living room, corridor or other exposed places. 
+Each AZ-Touch kit comes with a nice wall mounting enclosure for the 2.4&quot; or 2.8&quot; touchscreen.
+It enables you to mount your project permanently in your living room, corridor or other exposed places.
+
+The AZ-Touch MOD PCB comes partly assembled with only the pin headers requiring some minimal soldering skills.
+The AZ-Touch Feather contains loose components that you need to solder to the PCB yourself using the [Assembly Guide](#documentation_1).
 
 <div class="row justify-content-center">
         <a href="../../assets/images/devices/arduitouch-contents.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-6" data-title="AZ-Touch MOD Contents" data-footer="Copyright <a href='https://www.az-delivery.de/'>az-delivery.de,</a> All Rights Reserved - Used with permission">
