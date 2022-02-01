@@ -1244,33 +1244,20 @@ relevant **openHASP-custom-component config:**
       - obj: "p4b12"  # Spinner behind the PNG icon
         properties:
           "opacity": "{{ 0 if (is_state('input_select.fan_presets','unavailable') or is_state('input_select.fan_presets','unknown') or is_state('input_select.fan_presets','OFF')) else 255 }}"
-          "speed": >
+          "jsonl": >
             {% if is_state('number.plate_test_page_number', '4') %}
-            {% if is_state('input_select.fan_presets', 'Low') %}
-            {{ "7000" }}
-            {%-elif is_state('input_select.fan_presets', 'Mid') %}
-            {{ "1700" }}
-            {%-elif is_state('input_select.fan_presets', 'High') %}
-            {{ "800" }}
-            {%-elif is_state('input_select.fan_presets', 'Turbo') %}
-            {{ "250" }}
-            {%-else %}
-            {{ "0" }}
+            {% if is_state('input_select.fan_presets', 'Alap') %}
+            {"speed":7000,"line_color1":"#31de70"}
+            {%-elif is_state('input_select.fan_presets', 'Közép') %}
+            {"speed":1700,"line_color1":"#dede1f"}
+            {%-elif is_state('input_select.fan_presets', 'Magas') %}
+            {"speed":800,"line_color1":"#d6a11a"}
+            {%-elif is_state('input_select.fan_presets', 'Turbó') %}
+            {"speed":250,"line_color1":"#ff4a4a"}
             {% endif %}
-            {% else -%}{{ "0" }}{% endif %}
-          "line_color1": >
-            {% if is_state('input_select.fan_presets', 'Low') %}
-            {{ "#31de70" }}
-            {%-elif is_state('input_select.fan_presets', 'Mid') %}
-            {{ "#dede1f" }}
-            {%-elif is_state('input_select.fan_presets', 'High') %}
-            {{ "#d6a11a" }}
-            {%-elif is_state('input_select.fan_presets', 'Turbo') %}
-            {{ "#ff4a4a" }}
-            {%-else %}
-            {{ "#9f96b0" }}
+            {% else -%}
+            {"speed":0}
             {% endif %}
-
 
       - obj: "p4b54" # Scent Diffuser ON/OFF button
         properties:
