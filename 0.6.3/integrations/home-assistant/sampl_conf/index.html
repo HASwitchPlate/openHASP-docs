@@ -3595,33 +3595,20 @@ To control the fan we use a button matrix object which has exactly the same butt
 <span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">obj</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;p4b12&quot;</span><span class="w">  </span><span class="c1"># Spinner behind the PNG icon</span><span class="w"></span>
 <span class="w">        </span><span class="nt">properties</span><span class="p">:</span><span class="w"></span>
 <span class="w">          </span><span class="s">&quot;opacity&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">0</span><span class="nv"> </span><span class="s">if</span><span class="nv"> </span><span class="s">(is_state(&#39;input_select.fan_presets&#39;,&#39;unavailable&#39;)</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">is_state(&#39;input_select.fan_presets&#39;,&#39;unknown&#39;)</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">is_state(&#39;input_select.fan_presets&#39;,&#39;OFF&#39;))</span><span class="nv"> </span><span class="s">else</span><span class="nv"> </span><span class="s">255</span><span class="nv"> </span><span class="s">}}&quot;</span><span class="w"></span>
-<span class="w">          </span><span class="s">&quot;speed&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="p p-Indicator">&gt;</span><span class="w"></span>
+<span class="w">          </span><span class="s">&quot;jsonl&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="p p-Indicator">&gt;</span><span class="w"></span>
 <span class="w">            </span><span class="no">{% if is_state(&#39;number.plate_test_page_number&#39;, &#39;4&#39;) %}</span><span class="w"></span>
-<span class="w">            </span><span class="no">{% if is_state(&#39;input_select.fan_presets&#39;, &#39;Low&#39;) %}</span><span class="w"></span>
-<span class="w">            </span><span class="no">{{ &quot;7000&quot; }}</span><span class="w"></span>
-<span class="w">            </span><span class="no">{%-elif is_state(&#39;input_select.fan_presets&#39;, &#39;Mid&#39;) %}</span><span class="w"></span>
-<span class="w">            </span><span class="no">{{ &quot;1700&quot; }}</span><span class="w"></span>
-<span class="w">            </span><span class="no">{%-elif is_state(&#39;input_select.fan_presets&#39;, &#39;High&#39;) %}</span><span class="w"></span>
-<span class="w">            </span><span class="no">{{ &quot;800&quot; }}</span><span class="w"></span>
-<span class="w">            </span><span class="no">{%-elif is_state(&#39;input_select.fan_presets&#39;, &#39;Turbo&#39;) %}</span><span class="w"></span>
-<span class="w">            </span><span class="no">{{ &quot;250&quot; }}</span><span class="w"></span>
-<span class="w">            </span><span class="no">{%-else %}</span><span class="w"></span>
-<span class="w">            </span><span class="no">{{ &quot;0&quot; }}</span><span class="w"></span>
+<span class="w">            </span><span class="no">{% if is_state(&#39;input_select.fan_presets&#39;, &#39;Alap&#39;) %}</span><span class="w"></span>
+<span class="w">            </span><span class="no">{&quot;speed&quot;:7000,&quot;line_color1&quot;:&quot;#31de70&quot;}</span><span class="w"></span>
+<span class="w">            </span><span class="no">{%-elif is_state(&#39;input_select.fan_presets&#39;, &#39;Közép&#39;) %}</span><span class="w"></span>
+<span class="w">            </span><span class="no">{&quot;speed&quot;:1700,&quot;line_color1&quot;:&quot;#dede1f&quot;}</span><span class="w"></span>
+<span class="w">            </span><span class="no">{%-elif is_state(&#39;input_select.fan_presets&#39;, &#39;Magas&#39;) %}</span><span class="w"></span>
+<span class="w">            </span><span class="no">{&quot;speed&quot;:800,&quot;line_color1&quot;:&quot;#d6a11a&quot;}</span><span class="w"></span>
+<span class="w">            </span><span class="no">{%-elif is_state(&#39;input_select.fan_presets&#39;, &#39;Turbó&#39;) %}</span><span class="w"></span>
+<span class="w">            </span><span class="no">{&quot;speed&quot;:250,&quot;line_color1&quot;:&quot;#ff4a4a&quot;}</span><span class="w"></span>
 <span class="w">            </span><span class="no">{% endif %}</span><span class="w"></span>
-<span class="w">            </span><span class="no">{% else -%}{{ &quot;0&quot; }}{% endif %}</span><span class="w"></span>
-<span class="w">          </span><span class="s">&quot;line_color1&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="p p-Indicator">&gt;</span><span class="w"></span>
-<span class="w">            </span><span class="no">{% if is_state(&#39;input_select.fan_presets&#39;, &#39;Low&#39;) %}</span><span class="w"></span>
-<span class="w">            </span><span class="no">{{ &quot;#31de70&quot; }}</span><span class="w"></span>
-<span class="w">            </span><span class="no">{%-elif is_state(&#39;input_select.fan_presets&#39;, &#39;Mid&#39;) %}</span><span class="w"></span>
-<span class="w">            </span><span class="no">{{ &quot;#dede1f&quot; }}</span><span class="w"></span>
-<span class="w">            </span><span class="no">{%-elif is_state(&#39;input_select.fan_presets&#39;, &#39;High&#39;) %}</span><span class="w"></span>
-<span class="w">            </span><span class="no">{{ &quot;#d6a11a&quot; }}</span><span class="w"></span>
-<span class="w">            </span><span class="no">{%-elif is_state(&#39;input_select.fan_presets&#39;, &#39;Turbo&#39;) %}</span><span class="w"></span>
-<span class="w">            </span><span class="no">{{ &quot;#ff4a4a&quot; }}</span><span class="w"></span>
-<span class="w">            </span><span class="no">{%-else %}</span><span class="w"></span>
-<span class="w">            </span><span class="no">{{ &quot;#9f96b0&quot; }}</span><span class="w"></span>
+<span class="w">            </span><span class="no">{% else -%}</span><span class="w"></span>
+<span class="w">            </span><span class="no">{&quot;speed&quot;:0}</span><span class="w"></span>
 <span class="w">            </span><span class="no">{% endif %}</span><span class="w"></span>
-
 
 <span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">obj</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;p4b54&quot;</span><span class="w"> </span><span class="c1"># Scent Diffuser ON/OFF button</span><span class="w"></span>
 <span class="w">        </span><span class="nt">properties</span><span class="p">:</span><span class="w"></span>
