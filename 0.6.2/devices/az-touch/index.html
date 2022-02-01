@@ -1574,8 +1574,8 @@
 
 <h2 id="az-touch-mod">AZ-Touch MOD<a class="headerlink" href="#az-touch-mod" title="Permanent link">~</a></h2>
 <p>The AZ-Touch MOD for ESP32 comes as kit with a touchscreen, wall enclosure, PCB and pinheaders.
-It includes either a 2.4" or 2.8" ILI9341 display with a XPT2046 resistive touchscreen controller.
-The PCB is pre-soldered <em>except</em> for the pinheaders, so <a href="https://www.az-delivery.de/en/blogs/azdelivery-blog-fur-arduino-und-raspberry-pi/az-touch-mod" target="_blank">some soldering</a> is required.</p>
+It includes either a 2.4" or 2.8" ILI9341 display with a XPT2046 resistive touchscreen controller.</p>
+<p>The PCB is pre-soldered <em>except</em> for the pinheaders, so <a href="https://www.az-delivery.de/en/blogs/azdelivery-blog-fur-arduino-und-raspberry-pi/az-touch-mod" target="_blank">some soldering</a> is required.</p>
 <table>
 <thead>
 <tr>
@@ -1598,10 +1598,6 @@ The PCB is pre-soldered <em>except</em> for the pinheaders, so <a href="https://
 </tr>
 <tr>
 <td align="left">9 to 35V DC-DC power input</td>
-<td align="left"></td>
-</tr>
-<tr>
-<td align="left">Integrated piezo beeper</td>
 <td align="left"></td>
 </tr>
 <tr>
@@ -1661,14 +1657,44 @@ The PCB is designed to be compatible with serveral development boards.</p>
         <a href="../../assets/images/devices/az-touch-feather-front.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-6" data-title="Assembled AZ-Touch Feather" data-footer="Copyright <a href='https://www.az-delivery.de/'>az-delivery.de,</a> All Rights Reserved - Used with permission">
             <img src="../../assets/images/devices/az-touch-feather-front.jpg" class="img-fluid">
         </a>
-        <a href="../../assets/images/devices/az-touch-feather-back.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-6" data-title="AZ-Touch Feather PCB" data-footer="Copyright <a href='https://www.az-delivery.de/'>az-delivery.de,</a> All Rights Reserved - Used with permission">
+        <a href="../../assets/images/devices/az-touch-feather-back.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-6" data-title="AZ-Touch Feather after soldering all components" data-footer="Copyright <a href='https://www.az-delivery.de/'>az-delivery.de,</a> All Rights Reserved - Used with permission">
             <img src="../../assets/images/devices/az-touch-feather-back.jpg" class="img-fluid">
         </a>
 </div>
 
-<p>The AZ-Touch Feather also uses a 2.8" TFT display, but the footprint on the PCB is only suitable for the <a href="https://learn.adafruit.com/adafruit-feather" target="_blank">Adafruit Feather family</a> of MCUs. This AZ-Touch Feather kit can also be used to run openHASP with the HUZZAH32 or SparkFun Thing Plus ESP32-WROOM development boards.</p>
+<p>The AZ-Touch Feather also uses a 2.8" TFT display but the footprint on the PCB is only suitable for the <a href="https://learn.adafruit.com/adafruit-feather" target="_blank">Adafruit Feather family</a> of MCUs.
+This AZ-Touch Feather kit can also be used to run openHASP with the HUZZAH32 or SparkFun Thing Plus ESP32-WROOM development boards.</p>
+<p><strong>Unlike the AR-Touch MOD, the AZ-Touch Feather is a self-solder kit!</strong>  You have to solder <em>all</em> components to the PCB yourself.
+For this reason, the AZ-Touch MOD is recommended over the AZ-Touch Feather.</p>
+<table>
+<thead>
+<tr>
+<th align="left">Pros</th>
+<th align="left">Cons</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Versatile PCB options</td>
+<td align="left">All components need soldering</td>
+</tr>
+<tr>
+<td align="left">Choice of several ESP32 MCUs</td>
+<td align="left">Bulky enclosure</td>
+</tr>
+<tr>
+<td align="left">9 to 35V DC-DC power input</td>
+<td align="left">Resistive touchpanel</td>
+</tr>
+<tr>
+<td align="left">Breadboard area</td>
+<td align="left"></td>
+</tr>
+</tbody>
+</table>
 <p><a class="md-button md-button--primary" href="https://www.az-delivery.de/en/products/az-touch-feather" target="_blank"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 20c0 1.11-.89 2-2 2a2 2 0 0 1-2-2c0-1.11.89-2 2-2a2 2 0 0 1 2 2M7 18c-1.11 0-2 .89-2 2a2 2 0 0 0 2 2c1.11 0 2-.89 2-2s-.89-2-2-2m.2-3.37-.03.12c0 .14.11.25.25.25H19v2H7a2 2 0 0 1-2-2c0-.35.09-.68.24-.96l1.36-2.45L3 4H1V2h3.27l.94 2H20c.55 0 1 .45 1 1 0 .17-.05.34-.12.5l-3.58 6.47c-.34.61-1 1.03-1.75 1.03H8.1l-.9 1.63M8.5 11H10V9H7.56l.94 2M11 9v2h3V9h-3m3-1V6h-3v2h3m3.11 1H15v2h1l1.11-2m1.67-3H15v2h2.67l1.11-2M6.14 6l.94 2H10V6H6.14z"/></svg></span> AZ-Touch Feather</a></p>
 <h3 id="feather-dev-boards">Feather dev boards<a class="headerlink" href="#feather-dev-boards" title="Permanent link">~</a></h3>
+<p>We do not offer pre-built binaries for the AZ-Touch Feather yet but these dev boards <em>should</em> work:</p>
 <table>
 <thead>
 <tr>
@@ -1714,8 +1740,10 @@ The PCB is designed to be compatible with serveral development boards.</p>
 <p><code>GPIO15</code> of the ESP32 is used for PWM dimming of the AZ-Touch MOD display.</p>
 <p><code>GPIO13</code> of the ESP32 is used for PWM dimming of the AZ-Touch Feather display.</p>
 <h2 id="enclosure">Enclosure<a class="headerlink" href="#enclosure" title="Permanent link">~</a></h2>
-<p>The AZ-Touch kits come with a nice wall mounting enclosure for the 2.4&quot; or 2.8&quot; touchscreen.
-It enables you to mount your project permanently in your living room, corridor or other exposed places. </p>
+<p>Each AZ-Touch kit comes with a nice wall mounting enclosure for the 2.4&quot; or 2.8&quot; touchscreen.
+It enables you to mount your project permanently in your living room, corridor or other exposed places.</p>
+<p>The AZ-Touch MOD PCB comes partly assembled with only the pin headers requiring some minimal soldering skills.
+The AZ-Touch Feather contains loose components that you need to solder to the PCB yourself using the <a href="#documentation_1">Assembly Guide</a>.</p>
 <div class="row justify-content-center">
         <a href="../../assets/images/devices/arduitouch-contents.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-6" data-title="AZ-Touch MOD Contents" data-footer="Copyright <a href='https://www.az-delivery.de/'>az-delivery.de,</a> All Rights Reserved - Used with permission">
             <img src="../../assets/images/devices/arduitouch-contents.jpg" class="img-fluid">
@@ -1731,7 +1759,7 @@ It enables you to mount your project permanently in your living room, corridor o
   <small>
     
       Last update:
-      2022-01-31
+      2022-02-01
     
   </small>
 </div>
