@@ -89,6 +89,7 @@ but only the `id` and `obj` properties are required to create an object:
 | ext_click_v | [uint8][9]   | 0       | Extended vertical clickable are on the top and bottom
 | parentid    | [uint8][9]   | 0       | Set the object to be the child of another object.<br>`x` and `y` will be relative to the parent object. _Property inheritance can affect the appearance of the of the children (more info in [styling][12])_.
 | tag :material-new-box:{ .tag-small }        | [JSONobject][11] | n/a      | Arbitrary attribute data. Once set, it will be included in each event message. For advanced scenarios (more info in an [example][17]).
+| jsonl :material-new-box:{ .tag-small }      | [JSONobject][11] | n/a      | _Pseudo-property_ to set multiple properties of an existing object in one go with a JSON object.
 
 !!! tip
     Further customizable properties can be found in [styling][12].
