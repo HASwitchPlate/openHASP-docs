@@ -1777,7 +1777,7 @@
 <span class="w">            </span><span class="no">{&quot;text_font&quot;:24,&quot;x&quot;:1,&quot;y&quot;:2}</span><span class="w"></span>
 <span class="w">            </span><span class="no">{%-elif is_state(&#39;input_select.fan_speed&#39;, &#39;Turbo&#39;) %}</span><span class="w"></span>
 <span class="w">            </span><span class="no">{&quot;text_font&quot;:32,&quot;x&quot;:-2,&quot;y&quot;:-3}</span><span class="w"></span>
-<span class="w">            </span><span class="no">{%-else %}</span><span class="w"></span>
+<span class="w">            </span><span class="no">{%-elif is_state(&#39;input_select.fan_speed&#39;, &#39;OFF&#39;) %}</span><span class="w"></span>
 <span class="w">            </span><span class="no">{&quot;text_font&quot;:12,&quot;x&quot;:-10,&quot;y&quot;:-10}</span><span class="w"></span>
 <span class="w">            </span><span class="no">{% endif %}</span><span class="w"></span>
 </code></pre></div>
