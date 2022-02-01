@@ -165,7 +165,7 @@ relevant **openHASP-custom-component config:**
             {"text_font":24,"x":1,"y":2}
             {%-elif is_state('input_select.fan_speed', 'Turbo') %}
             {"text_font":32,"x":-2,"y":-3}
-            {%-else %}
+            {%-elif is_state('input_select.fan_speed', 'OFF') %}
             {"text_font":12,"x":-10,"y":-10}
             {% endif %}
 ```
