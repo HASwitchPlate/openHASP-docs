@@ -56,10 +56,6 @@ openHASP is building upon the existing work of the following open source develop
   Copyright© 2012 Adafruit Industries All rights reserved.
   Adafruit_GFX is distributed under the terms of the [BSD License][6]{target=_blank}
 
-- zi Font Engine
-  Copyright© 2020 fvanroie, netwize.be
-  [MIT License][1]{target=_blank}.
-
 - [PubSubClient](https://github.com/knolleary/pubsubclient){target=_blank}
   Copyright© 2008-2020 Nicholas O'Leary
   [MIT License][1]{target=_blank}.

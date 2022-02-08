@@ -1,5 +1,7 @@
 # AZ-Touch
 
+## AZ-Touch MOD
+
 <div class="row justify-content-center">
         <a href="../../assets/images/devices/az-touch-mod-24.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-6" data-title="AZ-Touch wall enclosure set with 2.4&quot; touchscreen" data-footer="Copyright <a href='https://www.az-delivery.de/'>az-delivery.de,</a> All Rights Reserved - Used with permission">
             <img src="../../assets/images/devices/az-touch-mod-24.jpg" class="img-fluid">
@@ -14,8 +16,6 @@
         <a href="../../assets/images/devices/az-touch-pcb-back.jpg" data-toggle="lightbox" data-gallery="example-gallery" rel="lightbox[vacation]" data-title="AZ-Touch Bottom PCB with MCU" data-footer="Copyright <a href='https://www.az-delivery.de/'>az-delivery.de,</a> All Rights Reserved - Used with permission"></a>
         <a href="../../assets/images/devices/az-touch-pcb-side.jpg" data-toggle="lightbox" data-gallery="example-gallery" rel="lightbox[vacation]" data-title="AZ-Touch PCB Side View" data-footer="Copyright <a href='https://www.az-delivery.de/'>az-delivery.de,</a> All Rights Reserved - Used with permission"></a>
 </div>
-
-## AZ-Touch MOD
 
 The AZ-Touch MOD for ESP32 comes as kit with a touchscreen, wall enclosure, PCB and pinheaders.
 It includes either a 2.4" or 2.8" ILI9341 display with a XPT2046 resistive touchscreen controller.
@@ -58,6 +58,12 @@ The ESP32-DevKitC option is prefered because you can use more pins from the ESP3
 [:fontawesome-regular-file-pdf: Datasheet][7]{target=_blank .md-button .md-button } &nbsp;
 [:fontawesome-regular-file-pdf: Assembly Guide][11]{target=_blank .md-button .md-button }
 
+### Product Video
+
+<div class="embed-responsive embed-responsive-16by9" style="max-width:560px; margin:auto;">
+    <iframe title="YouTube video player" src="https://www.youtube.com/embed/k7ngHp8WKIM?rel=0&controls=1" class="embed-responsive-item" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+    </iframe>
+</div>
 
 ## AZ-Touch Feather
 
@@ -104,13 +110,6 @@ We do not offer pre-built binaries for the AZ-Touch Feather yet but these dev bo
 [:fontawesome-regular-file-pdf: Assembly Guide][13]{target=_blank .md-button .md-button }
 
 
-## Product Video
-
-<div class="embed-responsive embed-responsive-16by9" style="max-width:560px; margin:auto;">
-    <iframe title="YouTube video player" src="https://www.youtube.com/embed/k7ngHp8WKIM?rel=0&controls=1" class="embed-responsive-item" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-    </iframe>
-</div>
-
 ## Backlight Control
 
 `GPIO15` of the ESP32 is used for PWM dimming of the AZ-Touch MOD display.
@@ -127,8 +126,11 @@ The AZ-Touch MOD PCB comes partly assembled with only the pin headers requiring 
 The AZ-Touch Feather contains loose components that you need to solder to the PCB yourself using the [Assembly Guide](#documentation_1).
 
 <div class="row justify-content-center">
-        <a href="../../assets/images/devices/arduitouch-contents.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-6" data-title="AZ-Touch MOD Contents" data-footer="Copyright <a href='https://www.az-delivery.de/'>az-delivery.de,</a> All Rights Reserved - Used with permission">
-            <img src="../../assets/images/devices/arduitouch-contents.jpg" class="img-fluid">
+        <a href="../../assets/images/devices/az-touch-mod-contents.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-6" data-title="AZ-Touch MOD Contents" data-footer="Copyright <a href='https://www.az-delivery.de/'>az-delivery.de,</a> All Rights Reserved - Used with permission">
+            <img src="../../assets/images/devices/az-touch-mod-contents.jpg" class="img-fluid">
+        </a>
+        <a href="../../assets/images/devices/az-touch-feather-contents.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-6" data-title="AZ-Touch Feather Contents" data-footer="Copyright <a href='https://www.az-delivery.de/'>az-delivery.de,</a> All Rights Reserved - Used with permission">
+            <img src="../../assets/images/devices/az-touch-feather-contents.jpg" class="img-fluid">
         </a>
 </div>
 

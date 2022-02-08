@@ -108,6 +108,9 @@ plugins:
   - git-revision-date
   - awesome-pages:
       strict: false
+  - redirects:
+      redirect_maps:
+          'discord.md': 'https://discord.gg/VCWyuhF'
   - table-reader
   # - i18n:
   #     default_language: en
