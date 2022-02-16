@@ -612,8 +612,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#use-the-custom-fonts" class="md-nav__link">
-    Use the custom fonts
+  <a href="#use-custom-fonts" class="md-nav__link">
+    Use Custom Fonts
   </a>
   
 </li>
@@ -1507,8 +1507,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#use-the-custom-fonts" class="md-nav__link">
-    Use the custom fonts
+  <a href="#use-custom-fonts" class="md-nav__link">
+    Use Custom Fonts
   </a>
   
 </li>
@@ -2247,7 +2247,7 @@ You can select custom ranges of Unicode characters and specify the bpp (bits-per
 <li>Give a name to the binary font. E.g. "arial_20"</li>
 <li>Specify the height in pixels</li>
 <li>Set the bpp (bits-per-pixel). Higher values result in a smoother (anti-aliased) font but will require more flash and memory.</li>
-<li>Choose a TTF, OTF or WOFF font file</li>
+<li>Choose a TTF, OTF or WOFF source font file</li>
 <li>Set a range of Unicode characters to include in your font or list the characters in the Symbols field</li>
 <li>Optionally choose another font too and specify the ranges and/or symbols for it as well. The characters will be merged into the final binary font.</li>
 <li>Click the Convert button to download the resulting <code>.bin</code> file.</li>
@@ -2255,13 +2255,13 @@ You can select custom ranges of Unicode characters and specify the bpp (bits-per
 <div class="row">
     <div class="col-md-12 col-md-offset-2">
         <form id="converterForm" enctype="multipart/form-data" name="font_conv" style="padding:12px;border-radius:4px;border-style:solid;border-width:2px;border-color:var(--md-primary-fg-color)">
-            <div class="form-group row"> <label for="name" class="col-md-3 form-label">Name</label>
+            <div class="form-group row"> <label for="name" class="col-md-2 form-label">Name</label>
                 <div class="col-md-8"> <input type="text" name="name" id="name" class="form-control" placeholder="E.g. arial_20"> </div>
             </div>
-            <div class="form-group row"> <label for="height" class="col-md-3 form-label">Size</label>
-                <div class="col-md-8"> <input type="number" name="height" id="height" class="form-control" placeholder="Height in px" value="20"> </div>
+            <div class="form-group row"> <label for="height" class="col-md-2 form-label">Size</label>
+                <div class="col-md-2"> <input type="number" name="height" id="height" class="form-control" placeholder="Height in px" value="20"> </div>
             </div>
-            <div class="form-group row"> <label for="bpp" class="col-md-3 form-label">Bpp</label>
+            <div class="form-group row"> <label for="bpp" class="col-md-2 form-label">Bpp</label>
                 <div class="col-md-8"> <select name="bpp" id="bpp" class="form-control">
                         <option value="1">1 bit-per-pixel</option>
                         <option value="2">2 bit-per-pixel</option>
@@ -2270,23 +2270,36 @@ You can select custom ranges of Unicode characters and specify the bpp (bits-per
                         <option value="8">8 bit-per-pixel</option>
                     </select> </div>
             </div>
-            <div class="form-group row"> <label for="bpp" class="col-md-3 form-label">Bpp</label>
+            <div class="form-group row"> <label for="compression" class="col-md-2 form-label"></label>
                 <div class="form-check col-md-8"> <input class="form-check-input" type="checkbox" value="" id="compression" checked> <label class="form-check-label" for="compression"> Enable font compression (reduces size)
                 </label> </div>
             </div>
+
+            <hr style="display:none;">
+            <div hidden style="display:none;"> <input class="form-check-input" type="radio" name="exampleRadios" id="subpixel1" value="none" checked> <label class="form-check-label" for="subpixel1"> No subpixel hinting </label> </div>
+            <div hidden style="display:none;" class="form-check"> <input class="form-check-input" type="checkbox" name="exampleRadios" id="subpixel2" value="horz"> <label class="form-check-label" for="subpixel2"> Horizontal subpixel hinting (may
+                    improve font quality, requires 6.1+) </label> </div>
+            <div hidden class="form-check" style="display:none;"> <input class="form-check-input" type="radio" name="exampleRadios" id="subpixel3" value="vert"> <label class="form-check-label" for="subpixel3">
+                    Vertical subpixel hinting </label> </div>
+            <hr style="display:none;">
+            <div style="display:none;" class="form-check"> <input class="form-check-input" type="checkbox" id="use_color_info" value="" style="vertical-align:top;"> <label class="form-check-label" for="use_color_info"> Try to use glyph
+                    color info from font to create grayscale icons.<br> <small>Since gray tones are emulated via
+                        transparency, result will be good on contrast background only.</small> </label> </div>
             <hr>
             <div class="font-controls" id="font-controls-clone-source">
-                <div class="form-group row"> <label class="col-md-3 form-label">TTF/WOFF/OTF file</label>
-                    <div class="col-md-9"> <input type="file" class="font_file form-control-file"> </div>
+                <div class="form-group row"> <label class="col-md-2 form-label">Source font</label>
+                    <div class="col-md-10"> <input type="file" class="font_file form-control-file" accept="font/*,.ttf,.otf,.woff"> </div>
                 </div>
-                <div class="form-group row"> <label class="col-md-3 form-label">Range</label>
-                    <div class="col-md-9"> <textarea rows="3" cols="40" class="font_range form-control" placeholder="Ranges and/or characters to include. E.g. 0x20-0x7F, 0x200, 450"></textarea>
+                <div class="form-group row"> <label class="col-md-2 form-label">Ranges & Codepoints</label>
+                    <div class="col-md-10"> <textarea rows="3" cols="40" class="font_range form-control" placeholder="Ranges and/or codepoints to include.
+E.g. 0x20-0x7F, 0x200, 450"></textarea>
                     </div>
                 </div>
-                <div class="form-group row"> <label class="col-md-3 form-label">Symbols</label>
-                    <div class="col-md-9">
-                        <textarea rows="3" cols="50" class="font_symbols form-control" placeholder="List of character to include. E.g. ABC0123ÁÉŐ"></textarea>
-                        <small>You can use both "Range" and "Symbols" or only one of them</small>
+                <div class="form-group row"> <label class="col-md-2 form-label">Symbols & Characters</label>
+                    <div class="col-md-10">
+                        <textarea rows="3" cols="50" class="font_symbols form-control" placeholder="List of symbols and/or characters to include.
+E.g. ABC0123ÁÉŐ"></textarea>
+                        <small>You can use both "Ranges" and "Symbols" or only one of them</small>
                     </div>
                 </div>
                 <hr>
@@ -2301,12 +2314,16 @@ You can select custom ranges of Unicode characters and specify the bpp (bits-per
     <script src="../converter/web.a9ad9337.js" type="text/javascript"></script>
 </div>
 
-<h3 id="use-the-custom-fonts">Use the custom fonts<a class="headerlink" href="#use-the-custom-fonts" title="Permanent link">~</a></h3>
+<h3 id="use-custom-fonts">Use Custom Fonts<a class="headerlink" href="#use-custom-fonts" title="Permanent link">~</a></h3>
 <ol>
-<li>Copy the resulting binary font file to the flash of the plate</li>
-<li>In a C file of your application declare the font as: extern lv_font_t my_font_name; or simply LV_FONT_DECLARE(my_font_name);</li>
-<li>Set the font in a style: style.text.font = &amp;my_font_name;</li>
+<li>Copy the resulting binary font file to the flash partition of your plate.</li>
+<li>In the jsonl code use <code>"text_font":"arial_20"</code> without the extention or use command <code>p1b2.text_font=arial_20</code></li>
 </ol>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+</div>
+<p>The entire binary font is cached into memory when it is first used.
+  PSram is <em>highly</em> recommended to use binary fonts.</p>
 <h2 id="character-sets">Character Sets<a class="headerlink" href="#character-sets" title="Permanent link">~</a></h2>
 <p>The characters are encoded in UTF-8. All character sets include the <a href="#ascii">Ascii</a> <code>0x20-0x7E</code> characters, the non-braking-space (NBSP) and 10 universal symbols.
 Each set contains roughly the same <em>extended</em> characters from its equivalent <a href="https://en.wikipedia.org/wiki/ISO/IEC_8859" target="_blank">iso-8859 standard</a>.
