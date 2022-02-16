@@ -136,8 +136,8 @@ How to use the font converter?
   2. In the jsonl code use `"text_font":"arial_20"` without the extention or use command `p1b2.text_font=arial_20`
 
 !!! warning
-  The entire binary font is cached into memory when it is first used.
-  PSram is *highly* recommended to use binary fonts.
+    The entire binary font is cached into memory when it is first used.
+    PSram is *highly* recommended to use binary fonts.
 
 
 ## Character Sets
