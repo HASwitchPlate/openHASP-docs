@@ -72,7 +72,7 @@ ArduinoJSON will correctly decode the text into it's UTF-8 representation while 
 ["p2b1.text=\uE64A Hello world!"]
 ```
 
-If the icon codepoint is larger than `0xFFFF` you need to convert the codepoint to its **[surrogate pair][1]** first!
+If the icon codepoint is larger than `0xFFFF` you need to convert the codepoint to its **[surrogate pair][1]{target=_blank}** first!
 Then include both UTF-16 surrogate characters in the payload like this:
 
 `jsonl` example:
@@ -106,6 +106,38 @@ How this is accomplished depends on the Home Automation tool:
   properties:
     "text": '{{ "\uE6E8" if is_state("light.x","on") else "\U0001F5E9" |e }}'
 ```
+
+
+
+## Custom Fonts
+
+With the online Font Converter tool you can create binary font files from any TTF, OTF or WOFF font.
+You can select custom ranges of Unicode characters and specify the bpp (bits-per-pixel).
+
+The font converter is designed to be compatible with LVGL. An offline version of the converter is also available [here][2]{target=_blank}.
+
+### Online Font Converter
+
+How to use the font converter?
+
+  1.  Give a name to the binary font. E.g. "arial_20"
+  2.  Specify the height in pixels
+  3.  Set the bpp (bits-per-pixel). Higher values result in a smoother (anti-aliased) font but will require more flash and memory.
+  4.  Choose a TTF, OTF or WOFF font file
+  5.  Set a range of Unicode characters to include in your font or list the characters in the Symbols field
+  6.  Optionally choose another font too and specify the ranges and/or symbols for it as well. The characters will be merged into the final binary font.
+  7.  Click the Convert button to download the resulting `.bin` file.
+
+{!design/converter/content.html!}
+
+### Use the custom fonts
+
+  1.  Copy the resulting binary font file to the flash of the plate
+  2.  In a C file of your application declare the font as: extern lv_font_t my_font_name; or simply LV_FONT_DECLARE(my_font_name);
+  3.  Set the font in a style: style.text.font = &my_font_name;
+
+
+
 
 ## Character Sets
 
@@ -670,11 +702,5 @@ Covers the Vietnamese (vi) language:
 &#x20AB;	<!-- 	₫	-->
 
 
-## External Fonts
-
-!!! warning "Deprecated"
-    You can also add a custom `.zi` font by uploading it to the internal flash.
-    Apply it as the default font on the Configuration > HASP Settings page.
-    To use it, set the pointsize parameter of the property to `0`.
-
 [1]: http://www.russellcottrell.com/greek/utilities/SurrogatePairCalculator.htm
+[2]: https://github.com/lvgl/lv_font_conv
