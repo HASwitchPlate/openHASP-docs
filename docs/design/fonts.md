@@ -130,13 +130,14 @@ How to use the font converter?
 
 {!design/converter/content.html!}
 
-### Use the custom fonts
+### Use Custom Fonts
 
-  1.  Copy the resulting binary font file to the flash of the plate
-  2.  In a C file of your application declare the font as: extern lv_font_t my_font_name; or simply LV_FONT_DECLARE(my_font_name);
-  3.  Set the font in a style: style.text.font = &my_font_name;
+  1. Copy the resulting binary font file to the flash partition of your plate.
+  2. In the jsonl code use `"text_font":"arial_20"` without the extention or use command `p1b2.text_font=arial_20`
 
-
+!!! warning
+  The entire binary font is cached into memory when it is first used.
+  PSram is *highly* recommended to use binary fonts.
 
 
 ## Character Sets
