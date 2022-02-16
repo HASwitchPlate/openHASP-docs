@@ -123,7 +123,7 @@ How to use the font converter?
   1.  Give a name to the binary font. E.g. "arial_20"
   2.  Specify the height in pixels
   3.  Set the bpp (bits-per-pixel). Higher values result in a smoother (anti-aliased) font but will require more flash and memory.
-  4.  Choose a TTF, OTF or WOFF font file
+  4.  Choose a TTF, OTF or WOFF source font file
   5.  Set a range of Unicode characters to include in your font or list the characters in the Symbols field
   6.  Optionally choose another font too and specify the ranges and/or symbols for it as well. The characters will be merged into the final binary font.
   7.  Click the Convert button to download the resulting `.bin` file.
