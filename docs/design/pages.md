@@ -55,16 +55,17 @@ Example 3: Insert a comment for an object.
 {"page":1,"id":3,"obj":"obj","x":40,"y":100,"w":160,"h":160,"radius":100,"opacity":100,"border_opa":160,"border_width":4,"comment":"touch-catcher"}
 ```
 
-!!! danger ""
+!!! danger "Warning"
     If the line is not valid json, the parsing of the rest of the file is also stopped.
 
 ## jsonl command
 
 See [commands documentation](../../commands/#jsonl) for the `jsonl` command. The payload of the command corresponds to what's exactly in one line of the `pages.jsonl` file above, with a minor exception: page numbers are not kept between the commands - you need to specfiy the page with each!
 
+<!-- Fixed in 0.6.3
 !!! warning
     Some integrations like the [custom component for Home Assistant](../../integrations/home-assistant/howto/) can store the `pages.jsonl` centrally for your plates, in such cases you have the to specify the page number for each object, as those files are actually parsed line by line using the `jsonl` command.
-
+-->
 
 ## Objects
 Each line in `pages.jsonl` creates **one object** on a page and has to be in the json format.  
@@ -90,8 +91,10 @@ You can have a maximum of 254 ids on each page. You don't have to use them in as
 Page number `0` refers to an object visible on all pages.   
 An id of `0` refers to the page itself instead of an object.   
 
+<!-- page 0 is always on top of other pages
 !!! tip
     If you add the objects on the page `0` last, you ensure that they will be always be visible on top of all other pages.
+-->
 
 See [objects documentation](../objects/) for details.
 
