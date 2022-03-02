@@ -120,5 +120,5 @@
                     href="https://docs.lvgl.io/latest/en/html/overview/font.html">Guide</a></li>
         </ul>
     </div>
-    <script src="../web.a9ad9337.js" type="text/javascript"></script>
+    <script src="../web.fd6fb7cb.js" type="text/javascript"></script>
 </div>
