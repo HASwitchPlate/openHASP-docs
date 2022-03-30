@@ -34,15 +34,15 @@ Pin| Function            |ESP32 Pin|Config Name|Display Pin |
 ---|---------------------| :---:   |-----------|------------|
 1  | 5V/3.3V power input | 5V/3.3V |           | VCC
 2  | Module Ground       | GND     |           | GND
-3  | Chip Select         | GPIO26  | TFT_CS    | CS
-4  | LCD Reset line      | GPIO15  | TFT_RST   | RESET
-5  | Data Command control| GPIO5   | TFT_DC    | DC
+3  | Chip Select         | GPIO14  | TFT_CS    | CS
+4  | LCD Reset line      | GPIO33  | TFT_RST   | RESET
+5  | Data Command control| GPIO27  | TFT_DC    | DC
 6  | Data Input          | GPIO23  | TFT_MOSI  | SDI(MOSI)
 7  | SPI Clock           | GPIO18  | TFT_SCLK  | SCK
 8  | Backlight           | GPIO21  | TFT_BCKL  | LED
 9  | Data Output (not used) | GPIO19 or N/C    | TFT_MISO  | SDO(MISO)
 10 | Touch SPI Clock     | GPIO18  | TFT_SCLK  | T_CLK
-11 | Touch Select        | GPIO17  | TOUCH_CS  | T_CS
+11 | Touch Select        | GPIO12  | TOUCH_CS  | T_CS
 12 | Touch Data Input    | GPIO23  | TFT_MOSI  | T_DIN
 13 | Touch Data Output   | GPIO19  | TFT_MISO  | T_DO
 14 | Touch Interrupt     | N/C     |           | T_IRQ
