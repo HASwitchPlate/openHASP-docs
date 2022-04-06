@@ -182,19 +182,16 @@ The color is returned as a hexadecimal value and as individual RGB channels.
 
 
 ### idle :material-new-box:{ .tag-medium }
-_accepted parameters:_ `off`
+_accepted parameters:_ `off`, `short` or `long`
 
-Clears the idle state of the device and publishes a `state/idle = OFF` status message.
+Sets the idle state of the device and publishes the new state via a `state/idle` status message.
 
-It resets the idle counter as if a touch event occurred on the device. This is helpful e.g. when you want to wake up the display when an external event has occurred, like a PIR motion sensor.
+`off` resets the idle counter as if a touch event occurred on the device. This is helpful e.g. when you want to wake up the display when an external event has occurred, like a PIR motion sensor.
 
-Calling the `idle` command without a parameter will return the current idle state `short`, `long` or `off` in the `state/idle` topic.
+`short` or `long` sets the idle timer to the number of seconds configured in the [Display Settings][4]. You can use this to force an idle state, for example at night or when leaving the house.
 
-<!--
-### wakeup
+Calling the `idle` command without a parameter will also return the current idle state `short`, `long` or `off` in the `state/idle` topic.
 
-!!! warning "Deprecated, use `idle off` instead"
--->
 
 ### output[x] :material-new-box:{ .tag-medium }
 
