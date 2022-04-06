@@ -518,6 +518,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#telemetery-period" class="md-nav__link">
+    Telemetery Period
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#syslog-server" class="md-nav__link">
     Syslog Server
   </a>
@@ -1419,6 +1426,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#telemetery-period" class="md-nav__link">
+    Telemetery Period
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#syslog-server" class="md-nav__link">
     Syslog Server
   </a>
@@ -1465,22 +1479,16 @@
 <h1 id="debug-settings">Debug Settings<a class="headerlink" href="#debug-settings" title="Permanent link">~</a></h1>
 <h2 id="web-ui">Web UI<a class="headerlink" href="#web-ui" title="Permanent link">~</a></h2>
 <p><img alt="Debug Settings" src="../../assets/images/settings/debug_settings.png" title="Debug Settings" /></p>
-<p>With the upload function you can upload 2 types of files
- * .jsonl
-    This file contains the layout for the pages
-    See 'pages' section for more information on this file
- * .zi
-    These are font files used in the Nextion/TJC HMI disp.</p>
 <h3 id="serial-speed">Serial Speed<a class="headerlink" href="#serial-speed" title="Permanent link">~</a></h3>
-<p>Select one of the built-in themes to select the general style for the HASP interface.
-With the Hue slider you can select the base color for the built-in theme.</p>
+<p>Set the baudrate to use for the serial logging and console.</p>
+<h3 id="telemetery-period">Telemetery Period<a class="headerlink" href="#telemetery-period" title="Permanent link">~</a></h3>
+<p>This is the interval in seconds with which openHASP will send automatic statusupdate messages to the <code>state/statusupdate</code> topic.</p>
 <h3 id="syslog-server">Syslog Server<a class="headerlink" href="#syslog-server" title="Permanent link">~</a></h3>
-<p>Enter the filename of the .jsonl you have uploaded to enables the layout on startup.</p>
+<p>Specify the hostname or IP address of the syslog server.</p>
 <h3 id="syslog-port">Syslog Port<a class="headerlink" href="#syslog-port" title="Permanent link">~</a></h3>
-<p>Select to what page the display should switch on startup.</p>
+<p>Specify the port of the syslog server.</p>
 <h3 id="syslog-protocol">Syslog Protocol<a class="headerlink" href="#syslog-protocol" title="Permanent link">~</a></h3>
-<p>Select the brightness level of the display on startup.
-<em>Please note that the display must support dim feature and GPIO for dim is set in display setup.</em></p>
+<p>Select the protocol used by your syslog backend.</p>
 <hr />
 <p>Click 'Save Settings' to save your settings to the device. A restart is required to make the settings active. Navigate back to the Main Menu and click Restart to activate the settings.</p>
 
