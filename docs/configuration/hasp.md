@@ -6,15 +6,6 @@ You can configure the general look and feel for the interface by uploading you f
 
 ![HASP Settings](../assets/images/settings/hasp_settings.png "HASP Settings")
 
-##### Upload
-
-With the upload function you can upload 2 types of files
- * .jsonl
-    This file contains the layout for the pages
-    See 'pages' section for more information on this file
- * .zi
-    These are font files used in the Nextion/TJC HMI disp.
-
 ##### UI Theme and Hue
 
 Select one of the built-in themes to select the general style for the HASP interface.
