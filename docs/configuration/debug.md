@@ -4,30 +4,25 @@
 
 ![Debug Settings](../assets/images/settings/debug_settings.png "Debug Settings")
 
-With the upload function you can upload 2 types of files
- * .jsonl
-    This file contains the layout for the pages
-    See 'pages' section for more information on this file
- * .zi
-    These are font files used in the Nextion/TJC HMI disp.
-
 ### Serial Speed
 
-Select one of the built-in themes to select the general style for the HASP interface.
-With the Hue slider you can select the base color for the built-in theme.
+Set the baudrate to use for the serial logging and console.
+
+### Telemetery Period
+
+This is the interval in seconds with which openHASP will send automatic statusupdate messages to the `state/statusupdate` topic.
 
 ### Syslog Server
 
-Enter the filename of the .jsonl you have uploaded to enables the layout on startup.
+Specify the hostname or IP address of the syslog server.
 
 ### Syslog Port
 
-Select to what page the display should switch on startup.
+Specify the port of the syslog server.
 
 ### Syslog Protocol
 
-Select the brightness level of the display on startup.
-*Please note that the display must support dim feature and GPIO for dim is set in display setup.*
+Select the protocol used by your syslog backend.
 
 ---
 
