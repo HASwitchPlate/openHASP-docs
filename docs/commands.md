@@ -129,7 +129,7 @@ Switches the backlight on or off, independent of the set dim level. Turning the 
 
 -->
 
-### backlight :material-new-box:{ .tag-medium }
+### backlight
 _accepted json keys:_
 
 - **state:** `on`/`off`, `true`/`false`, `0`/`1`, `yes`/`no`
@@ -193,7 +193,7 @@ Sets the idle state of the device and publishes the new state via a `state/idle`
 Calling the `idle` command without a parameter will also return the current idle state `short`, `long` or `off` in the `state/idle` topic.
 
 
-### output[x] :material-new-box:{ .tag-medium }
+### output[x]
 
 where `[x]` is number of the gpio pin (0-39)
 
@@ -208,7 +208,7 @@ Changes the state GPIO pin to `on` or `off`. If the pin is configured as a `LED`
     If the GPIO is assigned to a group then objects and other GPIOs that share the same `groupid` will change state accordingly.
 
 
-### input[x] :material-new-box:{ .tag-medium }
+### input[x]
 
 where `[x]` is number of the gpio pin (0-39)
 
@@ -247,6 +247,10 @@ You need to issue a soft reboot command to save the new calibration settings. If
 ### `discovery`
 
 Trigger the sending of the discovery payload.
+
+### `sensors` :material-new-box:{ .tag-medium }
+
+Trigger the sending of the sensor data.
 
 ### `factoryreset`
 
