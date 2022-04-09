@@ -59,8 +59,9 @@ jobs:
       - name: Release docs website and API reference
         run: |
           mike delete -f "dev"
-          mike deploy --push --update-aliases ${RELEASE_TAG_VERSION} dev
+          mike deploy --push --update-aliases "0.6.3" dev
           mike set-default --push dev
+          echo ${RELEASE_TAG_VERSION}
 
       - name: List
         run: |
