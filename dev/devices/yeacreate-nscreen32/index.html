@@ -1,0 +1,1729 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Open firmware for MCUs to drive a low-cost commodity touch display">
+      
+      
+        <meta name="author" content="Francis Van Roie">
+      
+      
+        <link rel="canonical" href="https://openhasp.haswitchplate.com/0.6.3/dev/devices/yeacreate-nscreen32/">
+      
+      <link rel="icon" href="../../favicon.ico">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.9">
+    
+    
+      
+        <title>YeaCreate Nscreen32 - openHASP</title>
+      
+    
+     
+      <link rel="stylesheet" href="../../assets/stylesheets/main.120efc48.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.9647289d.min.css">
+        
+      
+    
+<link rel="stylesheet" href="../../css/openhasp.css">
+<link rel="stylesheet" href="../../css/ekko-lightbox.min.css">
+<link rel="stylesheet" href="../../css/bootstrap4.min.css"> 
+     
+
+<!-- Jquery from Google CDN 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+<!-- Load Jquery UI -->
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+<!-- Handle jQuery plugin naming conflict between jQuery UI and Bootstrap 
+    https://stackoverflow.com/questions/13731400/jqueryui-tooltips-are-competing-with-twitter-bootstrap
+    -->
+
+<!--
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/pepper-grinder/jquery-ui.css">
+    -->
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+<!-- Bootstrap theme -->
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.11.0/build/css/themes/bootstrap.min.css" />
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+<script type="module" src="https://unpkg.com/esp-web-tools@3.6.0/dist/web/install-button.js?module"></script>
+<script src="../../js/installer.js"></script>
+
+
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="deep-orange">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#yeacreate-nscreen32" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-component="outdated" hidden>
+        <aside class="md-banner md-banner--warning">
+          
+        </aside>
+      </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="openHASP" class="md-header__button md-logo" aria-label="openHASP" data-md-component="logo">
+      
+  <img src="../../assets/images/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            openHASP
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              YeaCreate Nscreen32
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="deep-orange"  aria-label="Dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="cyan" data-md-color-accent="deep-orange"  aria-label="Light mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/HASwitchPlate/openHASP" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    HASwitchPlate/openHASP
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                      
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+    <label class="md-nav__title" for="__drawer">
+      <a href="../.." title="openHASP" class="md-nav__button md-logo" aria-label="openHASP" data-md-component="logo">
+        
+  <img src="../../assets/images/logo.png" alt="logo">
+
+      </a>
+      openHASP
+    </label> 
+    <div class="md-nav__source">
+        <a href="https://github.com/HASwitchPlate/openHASP" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    HASwitchPlate/openHASP
+  </div>
+</a>
+    </div>
+    
+    <ul class="md-nav__list" data-md-scrollfix>
+           
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+    
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/" class="md-nav__link">
+        Getting started
+      </a>
+    </li>
+  
+    
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Installation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Installation" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Installation
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../installation/esp32/" class="md-nav__link">
+        ESP32
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../installation/wifi-setup/" class="md-nav__link">
+        Wifi Setup
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../installation/firmware-update/" class="md-nav__link">
+        Firmware Update
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+    
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Configuration
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Configuration" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Configuration
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../configuration/hasp/" class="md-nav__link">
+        HASP Design
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../configuration/wifi/" class="md-nav__link">
+        Wifi Settings
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../configuration/http/" class="md-nav__link">
+        HTTP Settings
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../configuration/mqtt/" class="md-nav__link">
+        MQTT Settings
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../configuration/display/" class="md-nav__link">
+        Display Settings
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../configuration/gpio/" class="md-nav__link">
+        GPIO Settings
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../configuration/debug/" class="md-nav__link">
+        Debug Settings
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+    
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          Design
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Design" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Design
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../design/pages/" class="md-nav__link">
+        Pages
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../design/objects/" class="md-nav__link">
+        Objects
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../design/fonts/" class="md-nav__link">
+        Fonts
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../design/styling/" class="md-nav__link">
+        Styling Properties
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../design/data-types/" class="md-nav__link">
+        Data Types
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+    
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../commands/" class="md-nav__link">
+        Commands
+      </a>
+    </li>
+  
+    
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7">
+          Integrations
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Integrations" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Integrations
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_1" type="checkbox" id="__nav_7_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_1">
+          Home Assistant
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Home Assistant" data-md-level="2">
+        <label class="md-nav__title" for="__nav_7_1">
+          <span class="md-nav__icon md-icon"></span>
+          Home Assistant
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../integrations/home-assistant/howto/" class="md-nav__link">
+        How-To
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../integrations/home-assistant/sampl_conf/" class="md-nav__link">
+        Example Configurations
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../integrations/home-assistant/sampl_autom/" class="md-nav__link">
+        Example Automations
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_2" type="checkbox" id="__nav_7_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_2">
+          OpenHAB
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="OpenHAB" data-md-level="2">
+        <label class="md-nav__title" for="__nav_7_2">
+          <span class="md-nav__icon md-icon"></span>
+          OpenHAB
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../integrations/openhab/integration_openhab/" class="md-nav__link">
+        Installation and Example
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_3" type="checkbox" id="__nav_7_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_3">
+          Other examples
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Other examples" data-md-level="2">
+        <label class="md-nav__title" for="__nav_7_3">
+          <span class="md-nav__icon md-icon"></span>
+          Other examples
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../integrations/examples/example-pagination/" class="md-nav__link">
+        Page Navigation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../integrations/examples/example-widgets/" class="md-nav__link">
+        Widgets Demo
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../integrations/examples/example-dashui/" class="md-nav__link">
+        Dash UI
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../integrations/examples/example-lovelace/" class="md-nav__link">
+        Lovelace Entities
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../integrations/examples/example-fan/" class="md-nav__link">
+        Animated Fan
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../integrations/examples/example-offlinehandling/" class="md-nav__link">
+        Handle Offline State
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+    
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8">
+          Devices
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Devices" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          Devices
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../featherwing/" class="md-nav__link">
+        Adafruit Featherwing
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../az-touch/" class="md-nav__link">
+        AZ-Touch
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../esp32-touchdown/" class="md-nav__link">
+        ESP32 TouchDown
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../freetouchdeck/" class="md-nav__link">
+        FreeTouchDeck
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lanbon-l8/" class="md-nav__link">
+        Lanbon L8
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lilygo-lily-pi/" class="md-nav__link">
+        LILYGO Lily Pi
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../m5stack-core2/" class="md-nav__link">
+        M5stack core2
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../makerfabs-tft-touch/" class="md-nav__link">
+        Makerfabs TFT Touch
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../wt32-sc01/" class="md-nav__link">
+        Wireless-Tag WT32-SC01
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          YeaCreate Nscreen32
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        YeaCreate Nscreen32
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#features" class="md-nav__link">
+    Features
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#backlight-control" class="md-nav__link">
+    Backlight Control
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#documentation" class="md-nav__link">
+    Documentation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#product-video" class="md-nav__link">
+    Product Video
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hasp-build_flags" class="md-nav__link">
+    HASP build_flags
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+    
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" type="checkbox" id="__nav_9" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_9">
+          Displays
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Displays" data-md-level="1">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          Displays
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../displays/ILI9341_IPS/" class="md-nav__link">
+        ILI9341 IPS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../displays/lolin-tft-shield/" class="md-nav__link">
+        Lolin TFT Shield
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../displays/MHS4001/" class="md-nav__link">
+        MHS4001
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../displays/MRB3511/" class="md-nav__link">
+        MRB3511
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../displays/MSPxxxx/" class="md-nav__link">
+        MSP Series (Red PCB)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../displays/waveshare-rpi-lcd/" class="md-nav__link">
+        Waveshare RPi LCD (Rev C)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../displays/waveshare-tft-touch-shield/" class="md-nav__link">
+        Waveshare TFT Touch Shield
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+    
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gallery/" class="md-nav__link">
+        Gallery
+      </a>
+    </li>
+  
+    
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/" class="md-nav__link">
+        FAQ
+      </a>
+    </li>
+  
+    
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_12" type="checkbox" id="__nav_12" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_12">
+          Compiling
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Compiling" data-md-level="1">
+        <label class="md-nav__title" for="__nav_12">
+          <span class="md-nav__icon md-icon"></span>
+          Compiling
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../compiling/local/" class="md-nav__link">
+        Compiling locally
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../compiling/gitpod/" class="md-nav__link">
+        Compiling online with Gitpod
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../compiling/customize/" class="md-nav__link">
+        Customization
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../compiling/custom/" class="md-nav__link">
+        Custom Code
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+    
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../license/" class="md-nav__link">
+        License
+      </a>
+    </li>
+  
+ 
+    </ul>
+</nav>
+<nav>
+    <div class="md-social">
+  
+    
+    
+    <a href="https://github.com/HASwitchPlate/openHASP/discussions" target="_blank" rel="noopener" title="GitHub Discussions" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2Z"/></svg>
+    </a>
+  
+    
+    
+    <a href="https://discord.gg/VCWyuhF" target="_blank" rel="noopener" title="Discord Chat" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m22 24-5.25-5 .63 2H4.5A2.5 2.5 0 0 1 2 18.5v-15A2.5 2.5 0 0 1 4.5 1h15A2.5 2.5 0 0 1 22 3.5V24M12 6.8c-2.68 0-4.56 1.15-4.56 1.15 1.03-.92 2.83-1.45 2.83-1.45l-.17-.17c-1.69.03-3.22 1.2-3.22 1.2-1.72 3.59-1.61 6.69-1.61 6.69 1.4 1.81 3.48 1.68 3.48 1.68l.71-.9c-1.25-.27-2.04-1.38-2.04-1.38S9.3 14.9 12 14.9s4.58-1.28 4.58-1.28-.79 1.11-2.04 1.38l.71.9s2.08.13 3.48-1.68c0 0 .11-3.1-1.61-6.69 0 0-1.53-1.17-3.22-1.2l-.17.17s1.8.53 2.83 1.45c0 0-1.88-1.15-4.56-1.15m-2.07 3.79c.65 0 1.18.57 1.17 1.27 0 .69-.52 1.27-1.17 1.27-.64 0-1.16-.58-1.16-1.27 0-.7.51-1.27 1.16-1.27m4.17 0c.65 0 1.17.57 1.17 1.27 0 .69-.52 1.27-1.17 1.27-.64 0-1.16-.58-1.16-1.27 0-.7.51-1.27 1.16-1.27Z"/></svg>
+    </a>
+  
+    
+    
+    <a href="https://community.home-assistant.io/t/openhasp-an-mqtt-driven-touchscreen-scene-controller/300853" target="_blank" rel="noopener" title="Home Assistant Forum" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.8 13H20v8h-7v-3.33l2.79-2.79.71.12a2.1 2.1 0 1 0 0-4.2 2.1 2.1 0 0 0-2.1 2.1l.1.71-1.5 1.52V9.65c.66-.36 1.1-1.05 1.1-1.85A2.1 2.1 0 0 0 12 5.7a2.1 2.1 0 0 0-2.1 2.1c0 .8.44 1.49 1.1 1.85v5.48l-1.5-1.52.1-.71a2.1 2.1 0 0 0-2.1-2.1 2.1 2.1 0 0 0-2.1 2.1A2.1 2.1 0 0 0 7.5 15l.71-.12L11 17.67V21H4v-8H2.25c-.42 0-.83 0-.83-.21.01-.22.43-.64.86-1.07L11 3c.33-.33.67-.67 1-.67.33 0 .67.34 1 .67l4 4V6h2v3l2.78 2.78c.4.4.81.81.82 1.02 0 .2-.4.2-.8.2M7.5 12a.9.9 0 0 1 .9.9.9.9 0 0 1-.9.9.9.9 0 0 1-.9-.9.9.9 0 0 1 .9-.9m9 0c.5 0 .9.4.9.9s-.4.9-.9.9a.9.9 0 0 1-.9-.9.9.9 0 0 1 .9-.9M12 6.9c.5 0 .9.4.9.9s-.4.9-.9.9-.9-.4-.9-.9.4-.9.9-.9Z"/></svg>
+    </a>
+  
+</div>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#features" class="md-nav__link">
+    Features
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#backlight-control" class="md-nav__link">
+    Backlight Control
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#documentation" class="md-nav__link">
+    Documentation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#product-video" class="md-nav__link">
+    Product Video
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hasp-build_flags" class="md-nav__link">
+    HASP build_flags
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+  <a href="https://github.com/HASwitchPlate/openHASP-docs/edit/0.6.3/docs/devices/yeacreate-nscreen32.md" title="Edit this page" class="md-content__button md-icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
+  </a>
+
+
+
+<h1 id="yeacreate-nscreen32">YeaCreate Nscreen32<a class="headerlink" href="#yeacreate-nscreen32" title="Permanent link">~</a></h1>
+<div class="row justify-content-center">
+    <a href="../../assets/images/devices/nscreen32-1.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4" data-title="Nscreen32 Front" data-footer="Copyright &copy; 2017-2021 YeaCreate - All Rights Reserved.">
+        <img src="../../assets/images/devices/nscreen32-1.jpg" class="img-fluid">
+    </a>
+
+    <a href="../../assets/images/devices/nscreen32-2.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4" data-title="Nscreen32 Back" data-footer="Copyright &copy; 2017-2021 YeaCreate - All Rights Reserved.">
+        <img src="../../assets/images/devices/nscreen32-2.jpg" class="img-fluid">
+    </a>
+
+    <a href="../../assets/images/devices/nscreen32-3.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4" data-title="Nscreen32 Front" data-footer="Copyright &copy; 2017-2021 YeaCreate - All Rights Reserved.">
+        <img src="../../assets/images/devices/nscreen32-3.jpg" class="img-fluid">
+    </a>
+</div>
+
+<h2 id="features">Features<a class="headerlink" href="#features" title="Permanent link">~</a></h2>
+<p>The Nscreen32 uses an ESP32-WROVER-IE module with a large 4-inch capacitive touch display.
+The display is connected via an 8-bit parallel bus resulting in a fast performance.
+openHASP can take advantage of the 320x480 resolution to show a large custom user-interface.</p>
+<p>On the back there is an expansion port with 6 GPIOs (4 input only, RX &amp; TX) so you add inputs if needed.
+The development board can be powered via micro USB or the 5V-in JST connector.</p>
+<table>
+<thead>
+<tr>
+<th align="left">Pros</th>
+<th align="left">Cons</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">8-bit parallel display</td>
+<td align="left">No backlight control</td>
+</tr>
+<tr>
+<td align="left">16 MB flash + 8 MB PSram</td>
+<td align="left">Bright white power LED</td>
+</tr>
+<tr>
+<td align="left">Capacitive Touchscreen</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">Viewing angles</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">External antenna</td>
+<td align="left"></td>
+</tr>
+</tbody>
+</table>
+<p><a class="md-button md-button--primary" href="https://store.yeacreate.com/products/3" target="_blank"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 20c0 1.11-.89 2-2 2a2 2 0 0 1-2-2c0-1.11.89-2 2-2a2 2 0 0 1 2 2M7 18c-1.11 0-2 .89-2 2a2 2 0 0 0 2 2c1.11 0 2-.89 2-2s-.89-2-2-2m.2-3.37-.03.12c0 .14.11.25.25.25H19v2H7a2 2 0 0 1-2-2c0-.35.09-.68.24-.96l1.36-2.45L3 4H1V2h3.27l.94 2H20c.55 0 1 .45 1 1 0 .17-.05.34-.12.5l-3.58 6.47c-.34.61-1 1.03-1.75 1.03H8.1l-.9 1.63M8.5 11H10V9H7.56l.94 2M11 9v2h3V9h-3m3-1V6h-3v2h3m3.11 1H15v2h1l1.11-2m1.67-3H15v2h2.67l1.11-2M6.14 6l.94 2H10V6H6.14Z"/></svg></span> YeaCreate Store</a></p>
+<h2 id="backlight-control">Backlight Control<a class="headerlink" href="#backlight-control" title="Permanent link">~</a></h2>
+<p>Unfortunately, there is <a href="https://github.com/yeacreate-opensources/Nscreen_32/issues/2" target="_blank">no support for backlight control</a>. The display is always-on.</p>
+<p>With a small hack it is possible to control the backlight using a PNP transistor connected to <code>GPIO0</code>, <code>R8</code> and <code>3.3V</code>.</p>
+<div class="row justify-content-center">
+        <a href="../../assets/images/devices/nscreen32-hack.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-6" data-title="Yeacreate Nscreen32 backlight hack" data-footer="Image provided by arovak">
+            <img src="../../assets/images/devices/nscreen32-hack.jpg" class="img-fluid">
+        </a>
+</div>
+
+<h2 id="documentation">Documentation<a class="headerlink" href="#documentation" title="Permanent link">~</a></h2>
+<p>Some example projects and the schematics for the Nscreen32 can be found on the Yeacreate Github repository.</p>
+<p><a class="md-button" href="https://github.com/yeacreate-opensources/Nscreen_32" target="_blank"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2Z"/></svg></span> Github Repo</a> &nbsp;
+<a class="md-button" href="https://github.com/yeacreate-opensources/Nscreen_32/blob/master/documents/Schematic.pdf" target="_blank"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M320 464c8.8 0 16-7.2 16-16v-32h48v32c0 35.3-28.7 64-64 64H64c-35.35 0-64-28.7-64-64v-32h48v32c0 8.8 7.16 16 16 16h256zm-64-304c-17.7 0-32-14.3-32-32V48H64c-8.84 0-16 7.16-16 16v128H0V64C0 28.65 28.65 0 64 0h165.5c17 0 33.2 6.743 45.2 18.75l90.6 90.55c12 12 18.7 28.2 18.7 45.2V192h-48v-32h-80zM88 224c30.9 0 56 25.1 56 56s-25.1 56-56 56h-8v32c0 8.8-7.16 16-16 16s-16-7.2-16-16V240c0-8.8 7.16-16 16-16h24zm24 56c0-13.3-10.7-24-24-24h-8v48h8c13.3 0 24-10.7 24-24zm48-40c0-8.8 7.2-16 16-16h24c26.5 0 48 21.5 48 48v64c0 26.5-21.5 48-48 48h-24c-8.8 0-16-7.2-16-16V240zm32 112h8c8.8 0 16-7.2 16-16v-64c0-8.8-7.2-16-16-16h-8v96zm144-128c8.8 0 16 7.2 16 16s-7.2 16-16 16h-32v32h32c8.8 0 16 7.2 16 16s-7.2 16-16 16h-32v48c0 8.8-7.2 16-16 16s-16-7.2-16-16V240c0-8.8 7.2-16 16-16h48z"/></svg></span> Schematics</a></p>
+<h2 id="product-video">Product Video<a class="headerlink" href="#product-video" title="Permanent link">~</a></h2>
+<p>Nscreen32 is the first device to receive the LVGL Certified Board label:</p>
+<div class="embed-responsive embed-responsive-16by9" style="max-width:560px; margin:auto;">
+    <iframe title="YouTube video player" src="https://www.youtube.com/embed/9lDxJRI9BwM?rel=0&controls=1" class="embed-responsive-item" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+    </iframe>
+</div>
+
+<h2 id="hasp-build_flags">HASP build_flags<a class="headerlink" href="#hasp-build_flags" title="Permanent link">~</a></h2>
+<p>Specify the LCD Configuration to use and define the GPIOs in the environment build flags:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="na">build_flags</span><span class="w"> </span><span class="o">=</span><span class="w"></span>
+<span class="w">    </span><span class="na">${env.build_flags}</span><span class="w"></span>
+<span class="w">    </span><span class="na">${esp32.build_flags}</span><span class="w"></span>
+<span class="w">    </span><span class="na">${esp32.hspi}        ; Use VSPI hardware SPI bus</span><span class="w"></span>
+<span class="w">    </span><span class="na">-D HASP_MODEL</span><span class="o">=</span><span class="s">&quot;YeaCreate Nscreen32&quot;</span><span class="w"></span>
+
+<span class="c1">;region -- TFT_eSPI build options ------------------------</span><span class="w"></span>
+<span class="w">    </span><span class="na">-D USER_SETUP_LOADED</span><span class="o">=</span><span class="s">1</span><span class="w"></span>
+<span class="w">    </span><span class="na">-D ST7796_DRIVER</span><span class="o">=</span><span class="s">1</span><span class="w"></span>
+<span class="w">    </span><span class="na">-D ESP32_PARALLEL</span><span class="o">=</span><span class="s">1</span><span class="w"></span>
+<span class="w">    </span><span class="na">-D TFT_ROTATION</span><span class="o">=</span><span class="s">0 ; 0=0, 1=90, 2=180 or 3=270 degree</span><span class="w"></span>
+<span class="w">    </span><span class="na">-D TFT_WIDTH</span><span class="o">=</span><span class="s">320</span><span class="w"></span>
+<span class="w">    </span><span class="na">-D TFT_HEIGHT</span><span class="o">=</span><span class="s">480</span><span class="w"></span>
+<span class="w">    </span><span class="c1">; ESP32 pins used for the parallel interface TFT</span><span class="w"></span>
+<span class="w">    </span><span class="na">-D TFT_CS</span><span class="o">=</span><span class="s">33    ; Chip select control pin</span><span class="w"></span>
+<span class="w">    </span><span class="na">-D TFT_DC</span><span class="o">=</span><span class="s">15    ; Data Command control pin - must use a pin in the range 0-31 also named RS</span><span class="w"></span>
+<span class="w">    </span><span class="na">-D TFT_WR</span><span class="o">=</span><span class="s">4     ; Write strobe control pin - must use a pin in the range 0-31</span><span class="w"></span>
+<span class="w">    </span><span class="na">-D TFT_RD</span><span class="o">=</span><span class="s">2</span><span class="w"></span>
+<span class="w">    </span><span class="na">-D TFT_D0</span><span class="o">=</span><span class="s">12    ; Must use pins in the range 0-31 for the data bus</span><span class="w"></span>
+<span class="w">    </span><span class="na">-D TFT_D1</span><span class="o">=</span><span class="s">13    ; so a single register write sets/clears all bits</span><span class="w"></span>
+<span class="w">    </span><span class="na">-D TFT_D2</span><span class="o">=</span><span class="s">26</span><span class="w"></span>
+<span class="w">    </span><span class="na">-D TFT_D3</span><span class="o">=</span><span class="s">25</span><span class="w"></span>
+<span class="w">    </span><span class="na">-D TFT_D4</span><span class="o">=</span><span class="s">19</span><span class="w"></span>
+<span class="w">    </span><span class="na">-D TFT_D5</span><span class="o">=</span><span class="s">18</span><span class="w"></span>
+<span class="w">    </span><span class="na">-D TFT_D6</span><span class="o">=</span><span class="s">27</span><span class="w"></span>
+<span class="w">    </span><span class="na">-D TFT_D7</span><span class="o">=</span><span class="s">14</span><span class="w"></span>
+<span class="w">    </span><span class="na">-D TFT_RST</span><span class="o">=</span><span class="s">32   ; Reset pin</span><span class="w"></span>
+<span class="w">    </span><span class="c1">;-D TFT_BCKL=32  ;None, configurable via web UI (e.g. 2 for D4)</span><span class="w"></span>
+<span class="w">    </span><span class="na">-D SUPPORT_TRANSACTIONS</span><span class="w"></span>
+<span class="w">    </span><span class="na">-D TOUCH_DRIVER</span><span class="o">=</span><span class="s">911  ; GT911 Capacitive touch panel driver </span><span class="w"></span>
+<span class="w">    </span><span class="na">-D TOUCH_SDA</span><span class="o">=</span><span class="s">21</span><span class="w"></span>
+<span class="w">    </span><span class="na">-D TOUCH_SCL</span><span class="o">=</span><span class="s">22</span><span class="w"></span>
+<span class="w">    </span><span class="na">-D TOUCH_IRQ</span><span class="o">=</span><span class="s">5</span><span class="w"></span>
+<span class="w">    </span><span class="na">-D TOUCH_RST</span><span class="o">=</span><span class="s">23</span><span class="w"></span>
+<span class="w">    </span><span class="c1">;-D TOUCH_FREQUENCY=400000</span><span class="w"></span>
+<span class="w">    </span><span class="na">-D I2C_TOUCH_FREQUENCY</span><span class="o">=</span><span class="s">400000</span><span class="w"></span>
+<span class="w">    </span><span class="na">-D SPI_FREQUENCY</span><span class="o">=</span><span class="s">40000000</span><span class="w"></span>
+<span class="w">    </span><span class="na">-D SPI_READ_FREQUENCY</span><span class="o">=</span><span class="s">20000000</span><span class="w"></span>
+<span class="c1">;endregion</span><span class="w"></span>
+</code></pre></div>
+</td></tr></table>
+
+  <hr>
+<div class="md-source-file">
+  <small>
+    
+      Last update:
+      2022-01-08
+    
+  </small>
+</div>
+
+              
+            </article>
+          </div>
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" data-md-state="hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Back to top
+          </a>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+        
+        <a href="../wt32-sc01/" class="md-footer__link md-footer__link--prev" rel="prev">
+            <div class="md-footer__button md-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+                <div class="md-ellipsis">
+                    <span class="md-footer__direction">
+                  Previous
+                </span> Wireless-Tag WT32-SC01
+                </div>
+            </div>
+        </a>
+         
+        <a href="../../displays/ILI9341_IPS/" class="md-footer__link md-footer__link--next" rel="next">
+            <div class="md-footer__title">
+                <div class="md-ellipsis">
+                    <span class="md-footer__direction">
+                  Next
+                </span> ILI9341 IPS
+                </div>
+            </div>
+            <div class="md-footer__button md-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+        </a>
+        
+    </nav>
+    
+
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tracking", "search.suggest", "search.highlight", "navigation.top"], "search": "../../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "version": {"default": 0.6, "provider": "mike"}}</script>
+    
+     
+      <script src="../../assets/javascripts/bundle.6e54b5cd.min.js"></script>
+      
+    
+<!-- <script src="../../js/youtube.js"></script> -->
+<script src="../../js/ekko-lightbox.min.js"></script>
+<script>
+    $(document).on('click', '[data-toggle="lightbox"]', function(event) {
+        event.preventDefault();
+        $(this).ekkoLightbox();
+    });
+
+    // Open external links in new window -- doesn't work with mkdocs feature: navigation.instant
+    // $(document.links).filter(function() {
+    //     return this.hostname != window.location.hostname;
+    // }).attr('target', '_blank');
+
+    // Show warning banner when displaying old content versions
+    window.addEventListener("DOMContentLoaded", function() {
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", "/versions.json");
+        xhr.onload = function() {
+            if (xhr.status === 200) { //check if "OK" (200)
+                var versions = JSON.parse(this.responseText);
+                latest_version = ""
+                dev_version = ""
+                for (id in versions) {
+                    if (versions[id]["aliases"].length > 0 && versions[id]["aliases"].includes("latest")) {
+                        latest_version = "/" + versions[id].version + "/";
+                    }
+                    if (versions[id]["aliases"].length > 0 && versions[id]["aliases"].includes("dev")) {
+                        dev_version = "/" + versions[id].version + "/";
+                    }
+                    if (window.location.pathname.includes(versions[id].version) && versions[id].title.includes("dev")) {
+                        document.querySelector("div[data-md-component=announce]").innerHTML = "<div id='announce-msg'>This documentation is for the development version. We recommend you <a href='https://openhasp.haswitchplate.com/latest/'>use the latest</a>.</div>";
+                        return;
+                    }
+                }
+                if (!window.location.pathname.includes("latest/") && (latest_version.length > 0 && !window.location.pathname.includes(latest_version))) {
+                    if (!window.location.pathname.includes("dev/") && (dev_version.length > 0 && !window.location.pathname.includes(dev_version) && !window.location.pathname.includes("dev"))) {
+                        document.querySelector("div[data-md-component=announce]").innerHTML = "<div id='announce-msg'>This documentation is for a previous version. We recommend you <a href='https://openhasp.haswitchplate.com/latest/'>use the latest</a>.</div>";
+                    } else {
+                        document.querySelector("div[data-md-component=announce]").innerHTML = "<div id='announce-msg'>This documentation is for the development version. We recommend you <a href='https://openhasp.haswitchplate.com/latest/'>use the latest</a>.</div>";
+                    }
+                }
+            }
+        };
+        xhr.send();
+    });
+
+    window.onload = (event) => {
+        console.log('The page has fully loaded');
+        installerLoaded();
+        setModel();
+    };
+</script>
+
+  </body>
+</html>
