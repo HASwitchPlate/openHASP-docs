@@ -54,8 +54,9 @@ jobs:
 
       - name: Release docs website and API reference
         run: |
-          mike deploy --push --update-aliases ${RELEASE_TAG_VERSION} latest
-          mike set-default --push latest
+          mike delete -f "dev"
+          mike deploy --push --update-aliases ${RELEASE_TAG_VERSION} dev
+          mike set-default --push dev
 
       - name: List
         run: |
