@@ -67,11 +67,11 @@ jobs:
           mike alias "0.6.3" "dev"
 
       - name: Update latest tag
-      run: |
+        run: |
           mike alias "0.6.2" "latest"
 
       - name: Update default tag
-      run: |
+        run: |
           mike set-default "latest"
 
       - name: Deploy docs 0.5
