@@ -58,44 +58,6 @@ jobs:
           fileName: "*"
           out-file-path: "docs/assets/firmware"
 
-      - name: Update tags
-        run: |
-          mike delete "dev" "latest"
-
-      - name: Update dev tag
-        run: |
-          mike alias "0.6.3" "dev"
-
-      - name: Update latest tag
-        run: |
-          mike alias "0.6.2" "latest"
-
-      - name: Update default tag
-        run: |
-          mike set-default "latest"
-
-      - name: Deploy docs 0.5
-        if: github.ref == 'refs/heads/0.5'
-        run: |
-          mike deploy "0.5" --title="0.5.2" --config-file "${GITHUB_WORKSPACE}/mkdocs.yml" --push --rebase
-        # env:
-        #   CUSTOM_DOMAIN: docs.haswitchplate.com
-
-      - name: Deploy docs 0.6
-        if: github.ref == 'refs/heads/0.6'
-        run: |
-          mike deploy "0.6" --title="0.6.0" --config-file "${GITHUB_WORKSPACE}/mkdocs.yml" --push --rebase
-
-      - name: Deploy docs 0.6.1
-        if: github.ref == 'refs/heads/0.6.1'
-        run: |
-          mike deploy "0.6.1" --title="0.6.1" --config-file "${GITHUB_WORKSPACE}/mkdocs.yml" --push --rebase
-
-      - name: Deploy docs 0.6.2
-        if: github.ref == 'refs/heads/0.6.2'
-        run: |
-          mike deploy "0.6.2" --title="0.6.2" --config-file "${GITHUB_WORKSPACE}/mkdocs.yml" --push --rebase
-
       - name: Deploy docs 0.6.3
         if: github.ref == 'refs/heads/0.6.3'
         run: |
