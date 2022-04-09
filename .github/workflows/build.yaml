@@ -61,10 +61,13 @@ jobs:
       - name: Update tags
         run: |
           mike delete "dev" "latest"
+        continue-on-error: true
+
+      - name: Update tags
+        run: |
           mike alias "0.6.3" "dev"
           mike alias "0.6.2" "latest"
           mike set-default "latest"
-        continue-on-error: true
 
       - name: Deploy docs 0.5
         if: github.ref == 'refs/heads/0.5'
