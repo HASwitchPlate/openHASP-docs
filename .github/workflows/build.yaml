@@ -7,7 +7,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
 
+      - name: Set up Python
+        uses: actions/setup-python@v2
+  
       - name: Cache pip
         uses: actions/cache@v2
         with:
@@ -16,26 +21,10 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-pip-
 
-      - name: Set up Python
-        uses: actions/setup-python@v2
-
       - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip wheel
-          python -m pip install --upgrade setuptools==57.4.0
-          python -m pip install -r requirements.txt
-
-      - name: Build docs
-        run: |
-          mkdocs build
-
-      # - name: Validate generated HTML files
-      #   run: |
-      #     docker run -v $(pwd):/test --rm wjdp/htmltest --conf .htmltest.yml
-      # # On push to master or release branch, deploy docs
+        run: make dev
 
       - name: Set up git author
-        # if: github.ref == 'refs/heads/0.5' || startsWith(github.ref, 'refs/heads/release/v')
         run: |
           remote_repo="https://${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
           git config --global user.name "${GITHUB_ACTOR}"
@@ -58,10 +47,10 @@ jobs:
           fileName: "*"
           out-file-path: "docs/assets/firmware"
 
-      - name: Deploy docs 0.6.3
-        if: github.ref == 'refs/heads/0.6.3'
+      - name: Release docs website and API reference
         run: |
-          mike deploy "0.6.3" --title="0.6.3-dev" --config-file "${GITHUB_WORKSPACE}/mkdocs.yml" --push --rebase
+          poetry run mike deploy --push --update-aliases ${RELEASE_TAG_VERSION} latest
+          poetry run mike set-default --push latest
 
       - name: List
         run: |
