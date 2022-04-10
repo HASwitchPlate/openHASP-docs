@@ -10,6 +10,9 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Branch name
+        run: echo running on branch ${GITHUB_REF#refs/heads/}
+
       - name: Set up Python
         uses: actions/setup-python@v2
 
@@ -59,9 +62,10 @@ jobs:
       - name: Release docs website and API reference
         run: |
           mike delete -f "dev"
-          mike deploy --push --update-aliases "0.6.3" dev
-          mike set-default --push latest
+          mike deploy --push --update-aliases "${GITHUB_REF#refs/heads/}" "dev"
+        # mike set-default --push latest
           echo ${RELEASE_TAG_VERSION}
+          echo ${GITHUB_REF#refs/heads/}
 
       - name: List
         run: |
