@@ -63,9 +63,9 @@ jobs:
         run: |
           mike delete -f "dev"
           mike deploy --push --update-aliases "${GITHUB_REF#refs/heads/}" "dev"
-        # mike set-default --push latest
           echo ${RELEASE_TAG_VERSION}
           echo ${GITHUB_REF#refs/heads/}
+        # mike set-default --push latest
  
       - name: List
         run: |
