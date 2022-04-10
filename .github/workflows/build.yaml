@@ -33,15 +33,6 @@ jobs:
         run: |
           git fetch origin gh-pages --verbose
 
-      - name: Fetch Firmware
-        if: github.ref == 'refs/heads/0.6.2'
-        uses: robinraju/release-downloader@v1.2
-        with:
-          repository: "HASwitchPlate/openHASP"
-          tag: "v0.6.2"
-          fileName: "*"
-          out-file-path: "docs/assets/firmware"
-
       - name: Release docs from this branch
         run: |
           echo "Branchname: ${GITHUB_REF#refs/heads/}"
