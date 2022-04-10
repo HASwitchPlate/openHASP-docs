@@ -27,14 +27,18 @@ jobs:
           python -m pip install --upgrade setuptools==57.4.0
           python -m pip install -r requirements.txt
 
-      - name: Cache pip
+      - name: Get pip cache dir
+        id: pip-cache
+        run: |
+          echo "::set-output name=dir::$(pip cache dir)"
+      
+      - name: pip cache
         uses: actions/cache@v2
         with:
-          path: ~/.cache/pip
+          path: ${{ steps.pip-cache.outputs.dir }}
           key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
           restore-keys: |
             ${{ runner.os }}-pip-
-
 
       - name: Set up git author
         run: |
@@ -61,10 +65,9 @@ jobs:
 
       - name: Release docs website and API reference
         run: |
+          echo "Branchname: ${GITHUB_REF#refs/heads/}
           mike delete -f "dev"
           mike deploy --push --update-aliases "${GITHUB_REF#refs/heads/}" "dev"
-          echo ${RELEASE_TAG_VERSION}
-          echo ${GITHUB_REF#refs/heads/}
         # mike set-default --push latest
  
       - name: List
