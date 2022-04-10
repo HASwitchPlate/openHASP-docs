@@ -194,11 +194,11 @@ The switch supports several wiring configurations:
     </iframe>
 </div>
 
-<div style="margin:auto">
-<video width="360" height="640" controls>
+<p>
+<video width="360" height="640" controls style="margin:auto">
     <source src="../../assets/videos/cc_sampl_climate_control.mp4" type="video/mp4">Your browser does not support the video tag.
 </video>
-</div>
+</p>
 
 
 ## Gallery
