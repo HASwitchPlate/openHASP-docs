@@ -190,13 +190,15 @@ The switch supports several wiring configurations:
 ## Product Video
 
 <div class="embed-responsive embed-responsive-16by9" style="max-width:560px; margin:auto;">
-    <iframe title="YouTube video player" src="https://www.youtube.com/embed/Rce5yp4mhXI?rel=0&controls=1" class="embed-responsive-item" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+    <iframe title="YouTube video player" src="https://www.youtube.com/embed/QgE4WrgHrWg?rel=0&controls=1" class="embed-responsive-item" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
     </iframe>
 </div>
 
+<div style="margin:auto">
 <video width="360" height="640" controls>
     <source src="../../assets/videos/cc_sampl_climate_control.mp4" type="video/mp4">Your browser does not support the video tag.
 </video>
+</div>
 
 
 ## Gallery
