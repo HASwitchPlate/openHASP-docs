@@ -44,7 +44,7 @@ jobs:
 
       - name: Release docs from this branch
         run: |
-          echo "Branchname: ${GITHUB_REF#refs/heads/}""
+          echo "Branchname: ${GITHUB_REF#refs/heads/}"
           mike delete -f "dev"
           mike deploy --push --update-aliases "${GITHUB_REF#refs/heads/}" "dev"
         # mike set-default --push latest
