@@ -66,7 +66,7 @@ jobs:
         # mike set-default --push latest
           echo ${RELEASE_TAG_VERSION}
           echo ${GITHUB_REF#refs/heads/}
-
+ 
       - name: List
         run: |
           mike list
