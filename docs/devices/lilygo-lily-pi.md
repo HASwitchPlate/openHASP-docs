@@ -35,7 +35,7 @@ Some Rpi expansion boards *could* work on this PCB too depending on the pins use
 | 8 MB PSram
 | Capacitive Touchscreen
 
-The RTC and SD card are not supported by openHASP 0.6.2.
+The RTC and SD card are not supported by openHASP {{ openhasp.version }}.
 
 ## Models
 

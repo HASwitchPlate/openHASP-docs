@@ -70,6 +70,8 @@ markdown_extensions:
       base_path: docs
       
 extra:
+  openhasp:
+    version: 0.6.3
   # alternate:
   #   - name: Default (en)
   #     link: ./
@@ -107,6 +109,7 @@ extra:
 plugins:
   - search
   - git-revision-date
+  - markdownextradata: {}
   - awesome-pages:
       strict: false
   - table-reader

@@ -42,7 +42,7 @@ and the hardware is also open source. Due to the extensive documentation it was 
 | Battery connector |
 | Battery sensor    |
 
-The speaker and SD card are not supported by openHASP 0.6.2.
+The speaker and SD card are not supported by openHASP {{ openhasp.version }}.
 
 !!! info
     Any 3.7V (nominal voltage) LiPo will work, 2000mAh battery should suffice. Be sure to have the correct polarity.
