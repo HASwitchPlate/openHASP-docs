@@ -4,7 +4,7 @@
 
 Go to the [releases](https://github.com/HASwitchPlate/openHASP/releases){target=_blank} page on GitHub to download the latest openHASP binaries.
 
-Get the *full* binary file for your ESP32 device: *e.g.* d1-mini-esp32_ili9341_full_4MB_{< openhasp.version >}.bin
+Get the *full* binary file for your ESP32: *e.g.* `d1-mini-esp32_ili9341_full_4MB_v{< openhasp.version >}.bin`</br>
 You need to pick the correct binary files for your device!
 
 !!! note
