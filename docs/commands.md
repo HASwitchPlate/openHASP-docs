@@ -28,6 +28,7 @@ To start a batch script, use `run` command.
 
 If any of the following scripts is present on the filesystem, it will be run automatically according to the rules below:
 
+- `/boot.cmd` is executed when the plate has finished (re)booting
 - `/online.cmd` will be executed after connection to the network was successfull
 - `/offline.cmd` will be executed after connection to the WiFi is lost
 
