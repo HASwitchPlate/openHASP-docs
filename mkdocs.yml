@@ -109,10 +109,10 @@ extra:
 plugins:
   - search
   - git-revision-date
-  - markdownextradata: {}
   - awesome-pages:
       strict: false
   - table-reader
+  - markdownextradata: {}
   # - i18n:
   #     default_language: en
   #     languages:
