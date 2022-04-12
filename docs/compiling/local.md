@@ -30,12 +30,12 @@ If you already cloned openHASP without the submodules, you can fetch the submodu
 git submodule update --init --recursive
 ```
 
-To switch to a different branch (for example {{ openhasp.version }} release) use:
+To switch to a different branch (for example {< openhasp.version >} release) use:
 
 ```sh linenums="1"
 git clone --recursive https://github.com/HASwitchPlate/openHASP
 cd openHASP
-git checkout {{ openhasp.version }}
+git checkout {< openhasp.version >}
 git submodule update --init --recursive
 ```
 

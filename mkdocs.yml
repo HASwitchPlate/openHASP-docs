@@ -34,12 +34,12 @@ theme:
         icon: material/toggle-switch
         name: Light mode
   features:
-    - navigation.instant    # When this is enabled the $(document).ready(function() won't run from youtube.js!
+    - navigation.instant # When this is enabled the $(document).ready(function() won't run from youtube.js!
     - navigation.tracking
-#    - navigation.tabs
-#    - navigation.tabs.sticky
-#    - navigation.sections
-#    - navigation.expand
+    #    - navigation.tabs
+    #    - navigation.tabs.sticky
+    #    - navigation.sections
+    #    - navigation.expand
     - search.suggest
     - search.highlight
     - navigation.top
@@ -49,13 +49,13 @@ markdown_extensions:
   - attr_list
   - def_list
   - pymdownx.highlight:
-#      linenums: true
+  #      linenums: true
   - pymdownx.details
   - pymdownx.keys
   - pymdownx.snippets
   - pymdownx.superfences
   - pymdownx.tabbed:
-      alternate_style: true 
+      alternate_style: true
   - pymdownx.tilde
   - pymdownx.emoji:
       emoji_index: !!python/name:materialx.emoji.twemoji
@@ -68,7 +68,7 @@ markdown_extensions:
       toc_depth: 3
   - markdown_include.include:
       base_path: docs
-      
+
 extra:
   openhasp:
     version: 0.6.3
@@ -107,12 +107,19 @@ extra:
 # !!! The Navigation bar is built from the contents of the `.pages` files in each directory !!!
 
 plugins:
+  - table-reader
   - search
   - git-revision-date
   - awesome-pages:
       strict: false
-  - table-reader
-  - markdownextradata: {}
+  - markdownextradata:
+      jinja_options:
+        variable_start_string: "{<"
+        variable_end_string: ">}"
+        block_start_string: "{<%"
+        block_end_string: "%>}"
+        comment_start_string: "{<#"
+        comment_end_string: "#>}"
   # - i18n:
   #     default_language: en
   #     languages:
