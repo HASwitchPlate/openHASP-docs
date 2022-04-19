@@ -156,7 +156,7 @@ How this is accomplished depends on the Home Automation tool:
 ```
 
 !!! tip
-  For MDI icons, use this [modified cheatsheet](https://nagyrobi.github.io/MaterialDesign-Webfont/preview.html) to get the raw and the surrogate paired codepoints ready to use.
+    For MDI icons, use this [modified cheatsheet](https://nagyrobi.github.io/MaterialDesign-Webfont/preview.html) to get the raw and the surrogate paired codepoints ready to use. Note that the cheatsheet may not contain the very latest icons.
 
 
 ## Character Sets
