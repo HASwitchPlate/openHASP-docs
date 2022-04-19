@@ -22,7 +22,9 @@ td:nth-child(3n+2) { white-space: nowrap; }
 
 <h1>Fonts</h1>
 
-## Built-in Fonts
+## Built-in 
+
+### Fonts
 
 The ESP32 firmware includes these built-in fonts:
 
@@ -46,18 +48,66 @@ p4b2.value_font=12
     by [customizing](../compiling/customize.md) `user_config_override.h`.
 
 
-## Built-in Icons
+### Icons
 
 The icons in the list below are included with the built-in font sizes.
 Included are a range of arrows, navigation, climate, controls, devices, energy, lights, places, presence, security, sound, time and wireless icons.
 
 {{ read_csv("docs/assets/csv/icons.csv") }}
 
-### Encoding
+## Custom Fonts
+
+### Binary
+
+With the online Font Converter tool you can create binary font files from any TTF, OTF or WOFF font.
+You can select custom ranges of Unicode characters and specify the bpp (bits-per-pixel).
+
+The font converter is designed to be compatible with LVGL. An offline version of the converter is also available [here][2]{target=_blank}.
+
+#### Online Font Converter
+
+How to use the font converter?
+
+  1.  Give a name to the binary font. E.g. "arial_20"
+  2.  Specify the height in pixels
+  3.  Set the bpp (bits-per-pixel). Higher values result in a smoother (anti-aliased) font but will require more flash and memory.
+  4.  Choose a TTF, OTF or WOFF source font file
+  5.  Set a range of Unicode characters to include in your font or list the characters in the Symbols field
+  6.  Optionally choose another font too and specify the ranges and/or symbols for it as well. The characters will be merged into the final binary font.
+  7.  Click the Convert button to download the resulting `.bin` file.
+
+{!design/converter/content.html!}
+
+#### Usage
+
+  1. Upload the resulting binary font file to the flash partition of your plate.
+  2. In the jsonl code use `"text_font":"arial_20"` without the extension or use command `p1b2.text_font=arial_20`
+
+!!! warning
+    The entire binary font is cached into memory when it is first used.
+    PSram is *highly* recommended to use binary fonts.
+
+
+### TrueType
+
+You can use any TrueType font containing characters or icons. 
+
+  1. Upload any TTF (TrueType) font file to the flash partition of your plate. If you want to use other styles than Regular like Italic or Bold, make sure you use a font which provides separate, optimized versions for these. You can upload and use multiple font files, but within a property you can only select one font.
+  2. In the jsonl code use the filename of the font without the extension and the desired font size added to it. So for example to have a text rendered in Arial 20px, you upload _arial.ttf_ to the plate and use `"text_font":"arial20"` or command `p1b2.text_font=arial20`.
+
+!!! note
+  If you get an error when you upload the TTF file to the plate, make sure to use shorter filenames.
+
+!!! tip
+  You can use different fonts for different properties of the same objects, like `"text_font":"mdi32","value_font":"robotocondensed19"`.
+  To use MDI icons, get the latest [webfont build from their site](https://materialdesignicons.com/). From the unzipped archive you need the `.ttf`
+
+
+## Encoding
 
 The encoding of the icons depends on how they are sent to the plate:
 
-#### 1. As JSON payload
+### 1. As JSON payload
 
 To use an icon in a `json` or `jsonl` payload you need to prefix the UTF-8 character code with `\u`.
 ArduinoJSON will correctly decode the text into it's UTF-8 representation while parsing the JSON object:
@@ -85,13 +135,13 @@ Then include both UTF-16 surrogate characters in the payload like this:
 ["p2b1.text=\uDB81\uDC25 Hello world!"]
 ```
 
-#### 2. As raw payload
+### 2. As raw payload
 
 Raw payloads are directly passed to the LVGL text rendering engine without any conversion on the MCU.
 You need to make sure the string is properly encoded into UTF-8 **by the application sending the payload**!
 How this is accomplished depends on the Home Automation tool:
 
-##### Home Assistant
+#### Home Assistant
 
 - Code points up to `0xFFFF` should be encoded as `"\uE6E8"` in the template.</br>
   __Note:__ Use lowercase `\u` and exactly 4 hexadecimal digits.
@@ -107,37 +157,8 @@ How this is accomplished depends on the Home Automation tool:
     "text": '{{ "\uE6E8" if is_state("light.x","on") else "\U0001F5E9" |e }}'
 ```
 
-
-
-## Custom Fonts
-
-With the online Font Converter tool you can create binary font files from any TTF, OTF or WOFF font.
-You can select custom ranges of Unicode characters and specify the bpp (bits-per-pixel).
-
-The font converter is designed to be compatible with LVGL. An offline version of the converter is also available [here][2]{target=_blank}.
-
-### Online Font Converter
-
-How to use the font converter?
-
-  1.  Give a name to the binary font. E.g. "arial_20"
-  2.  Specify the height in pixels
-  3.  Set the bpp (bits-per-pixel). Higher values result in a smoother (anti-aliased) font but will require more flash and memory.
-  4.  Choose a TTF, OTF or WOFF source font file
-  5.  Set a range of Unicode characters to include in your font or list the characters in the Symbols field
-  6.  Optionally choose another font too and specify the ranges and/or symbols for it as well. The characters will be merged into the final binary font.
-  7.  Click the Convert button to download the resulting `.bin` file.
-
-{!design/converter/content.html!}
-
-### Use Custom Fonts
-
-  1. Copy the resulting binary font file to the flash partition of your plate.
-  2. In the jsonl code use `"text_font":"arial_20"` without the extention or use command `p1b2.text_font=arial_20`
-
-!!! warning
-    The entire binary font is cached into memory when it is first used.
-    PSram is *highly* recommended to use binary fonts.
+!!! tip
+  For MDI icons, use this [modified cheatsheet](https://nagyrobi.github.io/MaterialDesign-Webfont/preview.html) to get the raw and the surrogate paired codepoints ready to use.
 
 
 ## Character Sets
