@@ -6,10 +6,23 @@ You can adjust the appearance of objects by changing the foreground, background 
 Certain more complex objects are made up of several sub-parts, which can be styled separately. To access the properties of the parts use a number suffix appended to the property.
 
 !!! tip
+    A property without suffix usually applies to the default part of the object which for the btnmatix is the outline background.  _btn_, _btnmatrix_ and _tabview_ can handle very detailed syling depending on the state of the object with suffixed properties:
+    
+    - 0 = default styling
+    - 1 = styling for toggled state
+    - 2 = styling for pressed, not toggled state
+    - 3 = styling for pressed and toggled state
+    - 4 = styling for disabled not toggled state
+    - 5 = styling for disabled and toggled state
+ 
+    For example to set the `radius` of all the buttons in _btnmatrix_ you'd set a value for the property `radius0`.
+
+
+!!! tip
     Not all the suffixed properties are mentioned in this documentation, feel free to discover them yourself.    
     
     For example the _gauge_ object uses `line_width` to set the minor ticks thickness, `line_width1` for major ticks and `line_width2` for the thickness of the needle. Also a `toggle` `btn` can be made to show `text` `yellow` when toggled ON with `"text_color":"white","text_color2":"white","text_color1":"yellow","text_color3":"yellow"`
-
+    
 
 If objects are children of other objects (they have the [parentid][7] property set), property inheritance takes place. 
 
