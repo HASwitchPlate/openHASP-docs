@@ -24,8 +24,6 @@ td:nth-child(3n+2) { white-space: nowrap; }
 
 ## Built-in 
 
-### Fonts
-
 The ESP32 firmware includes these built-in fonts:
 
 - Unscii with font size 8pt
@@ -57,6 +55,20 @@ Included are a range of arrows, navigation, climate, controls, devices, energy, 
 
 ## Custom Fonts
 
+### TrueType
+
+You can use any TrueType font containing characters or icons. 
+
+  1. Upload any TTF (TrueType) font file to the flash partition of your plate. If you want to use other styles than Regular like Italic or Bold, make sure you use a font which provides separate, optimized versions for these. You can upload and use multiple font files, but within a property you can only select one font.
+  2. In the jsonl code use the filename of the font without the extension and the desired font size added to it. So for example to have a text rendered in Arial 20px, you upload _arial.ttf_ to the plate and use `"text_font":"arial20"` or command `p1b2.text_font=arial20`.
+
+!!! note
+    If you get an error when you upload the TTF file to the plate, make sure to use shorter filenames.
+
+!!! tip
+    You can use different fonts for different properties of the same objects, like `"text_font":"mdi32","value_font":"robotocondensed19"`.
+    To use MDI icons, get the latest [webfont build from their site](https://materialdesignicons.com/){target=_blank}. From the unzipped archive you need the `.ttf`
+
 ### Binary
 
 With the online Font Converter tool you can create binary font files from any TTF, OTF or WOFF font.
@@ -87,20 +99,6 @@ How to use the font converter?
     The entire binary font is cached into memory when it is first used.
     PSram is *highly* recommended to use binary fonts.
 
-
-### TrueType
-
-You can use any TrueType font containing characters or icons. 
-
-  1. Upload any TTF (TrueType) font file to the flash partition of your plate. If you want to use other styles than Regular like Italic or Bold, make sure you use a font which provides separate, optimized versions for these. You can upload and use multiple font files, but within a property you can only select one font.
-  2. In the jsonl code use the filename of the font without the extension and the desired font size added to it. So for example to have a text rendered in Arial 20px, you upload _arial.ttf_ to the plate and use `"text_font":"arial20"` or command `p1b2.text_font=arial20`.
-
-!!! note
-  If you get an error when you upload the TTF file to the plate, make sure to use shorter filenames.
-
-!!! tip
-  You can use different fonts for different properties of the same objects, like `"text_font":"mdi32","value_font":"robotocondensed19"`.
-  To use MDI icons, get the latest [webfont build from their site](https://materialdesignicons.com/). From the unzipped archive you need the `.ttf`
 
 
 ## Encoding
