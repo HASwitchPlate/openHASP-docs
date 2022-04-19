@@ -1553,6 +1553,19 @@
 <p>Certain more complex objects are made up of several sub-parts, which can be styled separately. To access the properties of the parts use a number suffix appended to the property.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
+<p>A property without suffix usually applies to the default part of the object which for the btnmatix is the outline background.  <em>btn</em>, <em>btnmatrix</em> and <em>tabview</em> can handle very detailed syling depending on the state of the object with suffixed properties:</p>
+<ul>
+<li>0 = default styling</li>
+<li>1 = styling for toggled state</li>
+<li>2 = styling for pressed, not toggled state</li>
+<li>3 = styling for pressed and toggled state</li>
+<li>4 = styling for disabled not toggled state</li>
+<li>5 = styling for disabled and toggled state</li>
+</ul>
+<p>For example to set the <code>radius</code> of all the buttons in <em>btnmatrix</em> you'd set a value for the property <code>radius0</code>.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
 <p>Not all the suffixed properties are mentioned in this documentation, feel free to discover them yourself.    </p>
 <p>For example the <em>gauge</em> object uses <code>line_width</code> to set the minor ticks thickness, <code>line_width1</code> for major ticks and <code>line_width2</code> for the thickness of the needle. Also a <code>toggle</code> <code>btn</code> can be made to show <code>text</code> <code>yellow</code> when toggled ON with <code>"text_color":"white","text_color2":"white","text_color1":"yellow","text_color3":"yellow"</code></p>
 </div>
@@ -2109,7 +2122,7 @@ When a parent object is deleted, all childs will be deleted too.</p>
   <small>
     
       Last update:
-      2022-04-12
+      2022-04-19
     
   </small>
 </div>
