@@ -6,7 +6,7 @@ You can adjust the appearance of objects by changing the foreground, background 
 Certain more complex objects are made up of several sub-parts, which can be styled separately. To access the properties of the parts use a number suffix appended to the property.
 
 !!! tip
-    A property without suffix usually applies to the default part of the object which for the btnmatix is the outline background.  _btn_, _btnmatrix_ and _tabview_ can handle very detailed syling depending on the state of the object with suffixed properties:
+    A property without suffix usually applies to the default part of the object.  _btn_, _btnmatrix_ and _tabview_ can handle very detailed syling depending on the state of the object with suffixed properties:
     
     - 0 = default styling
     - 1 = styling for toggled state
@@ -15,7 +15,7 @@ Certain more complex objects are made up of several sub-parts, which can be styl
     - 4 = styling for disabled not toggled state
     - 5 = styling for disabled and toggled state
  
-    For example to set the `radius` of all the buttons in _btnmatrix_ you'd set a value for the property `radius0`.
+    For example to set the `radius` of all the buttons in _btnmatrix_ you'd set a value for the property `radius0`. Using `radius` without a suffix will apply the property to the outline background of it.
 
 
 !!! tip
