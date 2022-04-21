@@ -1,10 +1,16 @@
 <h1>ILI9341 IPS Panel</h1>
 
-![Display image](../assets/images/displays/ILI9341_IPS.jpg)
+<div class="row justify-content-center">
+        <a href="../../assets/images/displays/ILI9341_IPS.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-6" data-title="2.4&quot; ILI9341 IPS Panel" data-footer="">
+            <img src="../../assets/images/displays/ILI9341_IPS.jpg" class="img-fluid">
+        </a>
+</div>
 
 A 240x320 IPS TFT display with an ILI9341 controller and XPT2046 touch controller.
 
 Improvement over TN versions of the display with amazing view angles.
+
+[:material-cart-variant: Buy][1]{target=_blank .md-button .md-button--primary }
 
 ## Pin Configuration
 
@@ -20,7 +26,7 @@ Pin| Function            |ESP32 Pin|Config Name|Display Pin |
 8  | Data Output         | GPIO19  | TFT_MISO  | MISO
 9  | Chip Select         | GPIO26  | TFT_CS    | CS1
 10 | Touch Select        | GPIO17  | TOUCH_CS  | CS2
-11 | Touch Interrupt     |         |           | 
+11 | Touch Interrupt     | N/C     | TOUCH_IRQ | PEN
 
 SPI MISO, MOSI and SCLK are shared between the touch controller and the LCD controller.
 
@@ -77,3 +83,5 @@ extra_scripts =
     ${env.extra_scripts}
     ${esp32.extra_scripts}
 ```
+
+[1]: https://www.aliexpress.com/item/1005002796624808.html
