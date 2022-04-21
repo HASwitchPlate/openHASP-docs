@@ -1,4 +1,4 @@
-# Also change the version in README.md
+# Also change the version in README.md and extra below
 site_url: https://openhasp.haswitchplate.com/0.6.3/
 edit_uri: https://github.com/HASwitchPlate/openHASP-docs/edit/0.6.3/docs/
 
@@ -10,6 +10,42 @@ site_description: "Open firmware for MCUs to drive a low-cost commodity touch di
 site_author: "Francis Van Roie"
 copyright: Copyright &copy; 2019 - 2021 Francis Van Roie and contributors
 
+extra:
+  openhasp:
+    version: 0.6.3
+    social:
+      - icon: material/github
+        link: https://github.com/HASwitchPlate/openHASP/discussions
+        name: GitHub Discussions
+      - icon: material/discord
+        link: https://discord.gg/VCWyuhF
+        name: Discord Chat
+      - icon: material/home-assistant
+        link: https://community.home-assistant.io/t/openhasp-an-mqtt-driven-touchscreen-scene-controller/300853
+        name: Home Assistant Forum
+  
+    version:
+      provider: mike
+      default: 0.6
+#   alternate:
+#     - name: Default (en)
+#       link: ./
+#       lang: en
+
+#     # Switch to English
+#     - name: English
+#       link: ./en/
+#       lang: en
+
+#     # Switch to Dutch
+#     - name: Nederlands
+#       link: ./nl/
+#       lang: nl
+# nav:
+#
+# !!! The Navigation bar is built from the contents of the `.pages` files in each directory !!!
+
+      
 theme:
   logo: "assets/images/logo.png"
   favicon: favicon.ico
@@ -68,43 +104,6 @@ markdown_extensions:
       toc_depth: 3
   - markdown_include.include:
       base_path: docs
-
-extra:
-  openhasp:
-    version: 0.6.3
-  # alternate:
-  #   - name: Default (en)
-  #     link: ./
-  #     lang: en
-
-  #   # Switch to English
-  #   - name: English
-  #     link: ./en/
-  #     lang: en
-
-  #   # Switch to Dutch
-  #   - name: Nederlands
-  #     link: ./nl/
-  #     lang: nl
-
-  social:
-    - icon: material/github
-      link: https://github.com/HASwitchPlate/openHASP/discussions
-      name: GitHub Discussions
-    - icon: material/discord
-      link: https://discord.gg/VCWyuhF
-      name: Discord Chat
-    - icon: material/home-assistant
-      link: https://community.home-assistant.io/t/openhasp-an-mqtt-driven-touchscreen-scene-controller/300853
-      name: Home Assistant Forum
-
-  version:
-    provider: mike
-    default: 0.6
-
-# nav:
-#
-# !!! The Navigation bar is built from the contents of the `.pages` files in each directory !!!
 
 plugins:
   - table-reader

@@ -96,18 +96,18 @@ LCD Pin |Function          |ESP32 Pin  |Config Name|Display Pin |
 ------|--------------------|-----------|-----------|------------|
 1     |Module Power 3.3V   |3.3V       |           |3.3V
 2     |Module Power 5v     |5V         |           |5V
-3     | Not connected      |           |           |NC
+3     | Not connected      |           |           |N/C
 4     |                    |           |           |5V
-5-10  | Not connected      |           |           |NC
-11    | Touch Interrupt    |NC         |           |TP_IRQ
+5-10  | Not connected      |           |           |N/C
+11    | Touch Interrupt    |N/C        |TOUCH_IRQ  |TP_IRQ
 12 (*)| LED Backlight PWM  |GPIO26     |TFT_BCKL   |LCD_LED
-13    | Not connected      |           |           |NC
+13    | Not connected      |           |           |N/C
 14    |Module Ground       |GND        |           |GND
-15-16 | Not connected      |           |           |NC
+15-16 | Not connected      |           |           |N/C
 17    |Module Power        |3.3V       |           |3.3V
 18    |Data Command control pin|GPIO4  |TFT_DC     |LCD_RS
 19    |SPI Master Out Slave In |GPIO13 |TFT_MOSI   |LCD/SI/TP_SI
-20    |Not connected       |           |           |NC
+20    |Not connected       |           |           |N/C
 21    |Touch Panel Slave Out|GPIO12    |TFT_MISO   |TP_SO
 22    |LCD Reset pin       |GPIO32     |TFT_RST    |RST
 23    |SPI Clock           |GPIO14     |TFT_SCLK   |LCD_SCK/TP_SCK
