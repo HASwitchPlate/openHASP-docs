@@ -19,7 +19,7 @@
     
     
       
-        <title>Flash STM32 - openHASP</title>
+        <title>Stm32 - openHASP</title>
       
     
      
@@ -97,11 +97,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#flash-stm32" class="md-skip">
-          Skip to content
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -130,7 +125,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Flash STM32
+              Stm32
             
           </span>
         </div>
@@ -1295,30 +1290,6 @@
   
   
   
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#experimental-mcus" class="md-nav__link">
-    Experimental MCUs
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#recommended-boards" class="md-nav__link">
-    Recommended Boards
-  </a>
-  
-</li>
-      
-    </ul>
   
 </nav>
                   </div>
@@ -1336,162 +1307,16 @@
 
 
 
-<h1 id="flash-stm32">Flash STM32<a class="headerlink" href="#flash-stm32" title="Permanent link">~</a></h1>
-<h2 id="experimental-mcus">Experimental MCUs<a class="headerlink" href="#experimental-mcus" title="Permanent link">~</a></h2>
-<h2 id="recommended-boards">Recommended Boards<a class="headerlink" href="#recommended-boards" title="Permanent link">~</a></h2>
-<style>
-table th:first-of-type {
-    width: 12%;
-}
-table th:nth-of-type(2) {
-    width: 22%;
-}
-table th:nth-of-type(3) {
-    width: 22%;
-}
-table th:nth-of-type(4) {
-    width: 22%;
-}
-table th:last-of-type {
-    width: 22%;
-}
-</style>
-<table>
-<thead>
-<tr>
-<th align="left">&nbsp;</th>
-<th align="center">Basic</th>
-<th align="center">Standard</th>
-<th align="center">Pro</th>
-<th align="center">Experimental</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left">MCU</td>
-<td align="center">ESP8266</td>
-<td align="center">ESP32-WROOM</td>
-<td align="center">ESP32-WROVER</td>
-<td align="center">STM32F4</td>
-</tr>
-<tr>
-<td align="left">CPU Freq.</td>
-<td align="center">80Mhz</td>
-<td align="center">240Mhz</td>
-<td align="center">240Mhz</td>
-<td align="center">168 MHz</td>
-</tr>
-<tr>
-<td align="left">Ram</td>
-<td align="center">80Kb</td>
-<td align="center">520Kb</td>
-<td align="center">520Kb</td>
-<td align="center">192Kb</td>
-</tr>
-<tr>
-<td align="left">PSRam</td>
-<td align="center">no</td>
-<td align="center">no</td>
-<td align="center">yes</td>
-<td align="center">no</td>
-</tr>
-<tr>
-<td align="left">Minimal Flash</td>
-<td align="center">4MB</td>
-<td align="center">4MB</td>
-<td align="center">4MB</td>
-<td align="center">512Kb</td>
-</tr>
-<tr>
-<td align="left">Display</td>
-<td align="center">ILI9341 SPI</td>
-<td align="center">ILI9341 SPI</td>
-<td align="center">ILI9341 SPI</td>
-<td align="center">ILI9341 FSMC</td>
-</tr>
-<tr>
-<td align="left">Touch</td>
-<td align="center">XPT2046 SPI</td>
-<td align="center">XPT2046 SPI</td>
-<td align="center">XPT2046 SPI</td>
-<td align="center">XPT2046 SPI</td>
-</tr>
-<tr>
-<td align="left">Network</td>
-<td align="center">Wi-Fi</td>
-<td align="center">Wi-Fi</td>
-<td align="center">Wi-Fi</td>
-<td align="center">Ethernet / Wi-Fi</td>
-</tr>
-<tr>
-<td align="left">Dev. Board*</td>
-<td align="center">[D1 mini ESP8266][3]{target=_blank}</td>
-<td align="center">[D1 mini ESP32][4]{target=_blank}</td>
-<td align="center">[TTGO T7 v1.5 Mini32][5]{target=_blank}</td>
-<td align="center">STM32F407VET/ZGT Black</td>
-</tr>
-<tr>
-<td align="left">Firmware</td>
-<td align="center"><a href="../installation/" target="_blank">Download</a></td>
-<td align="center"><a href="../installation/" target="_blank">Download</a></td>
-<td align="center"><a href="../installation/" target="_blank">Download</a></td>
-<td align="center"></td>
-</tr>
-</tbody>
-</table>
-<h4 id="stm32f407xxt-black-combo">STM32F407xxT Black Combo<a class="headerlink" href="#stm32f407xxt-black-combo" title="Permanent link">~</a></h4>
-<p>There are several cheap STM32F407xx Black boards available on the market with a TFT display header
-and accompanying 3.2" ILI9341 FSMC screen (320x240). This hardware is experimental and not fully supported.</p>
-<p><img alt="STM32F407VGT6_diymore-1" src="../../assets/images/boards/STM32F407VGT6_diymore-1.jpg" />
-<img alt="STM32F407VGT6_STM32F4XX_M-1" src="../../assets/images/boards/STM32F407VGT6_STM32F4XX_M-1.jpg" />
-<img alt="STM32F407VET6_STM32_F4VE_V2.0-1" src="../../assets/images/boards/STM32F407VET6_STM32_F4VE_V2.0-1.jpg" />
-<img alt="STM32F407ZET6-STM32F4XX-1" src="../../assets/images/boards/STM32F407ZET6-STM32F4XX-1.jpg" />
-<img alt="STM32F407ZGT6_Euse_M4_DEMO_Large-1" src="../../assets/images/boards/STM32F407ZGT6_Euse_M4_DEMO_Large-1.jpg" />
-<img alt="STM32F407VET6_Euse_M4_DEMO_Medium-1" src="../../assets/images/boards/STM32F407VET6_Euse_M4_DEMO_Medium-1.jpg" />
-    <figcaption>Selection of STM32F407 boards.</figcaption></p>
-<div class="admonition danger">
-<p class="admonition-title">Make sure to purchase a compatible screen, preferably from the same vendor.</p>
-</div>
-<p>There are multiple FSMC interfaces: e.g. One is marked <code>TFT</code>, another is marked <code>New-TFT</code> and
-a third has no markings.
-The pinout of each header &amp; display is different and are <strong>not</strong> interchangeable!</p>
-<p>You can however use jumper cables instead, but it won't be plug-and-plug anymore.</p>
-<p>The following boards are being tested:</p>
-<h4 id="stm32f407vet6-black-v21-with-512-kb-flash">STM32F407VET6 Black (v2.1) with 512 KB flash<a class="headerlink" href="#stm32f407vet6-black-v21-with-512-kb-flash" title="Permanent link">~</a></h4>
-<p><img alt="STM32F407VET6_STM32_F4VE_V2.0-1" src="../../assets/images/boards/STM32F407VET6_STM32_F4VE_V2.0-1.jpg" />
-  <img alt="STM32F407VET6_STM32_F4VE_V2.0-2" src="../../assets/images/boards/STM32F407VET6_STM32_F4VE_V2.0-2.jpg" />
-  <img alt="STM32F407VET6_STM32_F4VE_V2.0-3" src="../../assets/images/boards/STM32F407VET6_STM32_F4VE_V2.0-3.jpg" />
-    <figcaption>STM32F407VET6 Black (v2.0 and v2.1)</figcaption></p>
-<ul>
-<li>Purchase Links:<ul>
-<li><a href="https://www.aliexpress.com/item/32618222721.html" target="_blank">AliExpress</a></li>
-<li><a href="https://www.aliexpress.com/item/33013274704.html" target="_blank">AliExpress</a></li>
-<li><a href="https://www.aliexpress.com/item/1000006481553.html" target="_blank">AliExpress</a> (! V2.0 !)</li>
-</ul>
-</li>
-<li>Documentation can be found on <a href="https://github.com/mcauser/BLACK_F407VE" target="_blank">GitHub</a> </li>
-</ul>
-<h4 id="stm32f407zgt6-black-v30-with-1-mb-flash">STM32F407ZGT6 Black (V3.0) with 1 MB flash<a class="headerlink" href="#stm32f407zgt6-black-v30-with-1-mb-flash" title="Permanent link">~</a></h4>
-<p><img alt="STM32F407ZET6-STM32F4XX-1" src="../../assets/images/boards/STM32F407ZET6-STM32F4XX-1.jpg" />
-  <img alt="STM32F407ZET6-STM32F4XX-2" src="../../assets/images/boards/STM32F407ZET6-STM32F4XX-2.jpg" />
-  <img alt="STM32F407ZET6-STM32F4XX-3" src="../../assets/images/boards/STM32F407ZET6-STM32F4XX-3.jpg" />
-    <figcaption>STM32F407ZGT6 Black (v3.0)</figcaption></p>
-<ul>
-<li>Purchase Link: </li>
-<li>Documentation can be found on <a href="https://github.com/mcauser/BLACK_F407ZG" target="_blank">GitHub</a> </li>
-</ul>
-<div class="admonition warning">
-<p class="admonition-title">Attention</p>
-<p>The STM32F4 boards do not have network connectivity. You can use a compatible network adapter and configure it in PlatformIO.</p>
-</div>
-<p><sub>Images of STM32 boards are <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a> from https://stm32-base.org/</sub></p>
+  <h1>Stm32</h1>
+
+
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      2022-04-21
+      2022-04-23
     
   </small>
 </div>
