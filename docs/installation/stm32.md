@@ -1,3 +1,5 @@
+<!--
+
 # Flash STM32
 
 ## Experimental MCUs
@@ -85,3 +87,5 @@ The following boards are being tested:
     The STM32F4 boards do not have network connectivity. You can use a compatible network adapter and configure it in PlatformIO.
 
 <sub>Images of STM32 boards are [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/){target=_blank} from https://stm32-base.org/</sub>
+
+-->

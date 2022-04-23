@@ -1,3 +1,5 @@
+<!--
+
 <h1>Installation</h1>
 
 ## Download the firmware
@@ -81,3 +83,5 @@ Change `COM1` to the correct port on your computer and `4m` to the correct size 
 - Launch ST Link
 - Select the openHASP-0.2.0-stm32f407_devEbox_3.2_ili9341_fsmc.bin file
 - Flash the firmware to the board
+
+-->
