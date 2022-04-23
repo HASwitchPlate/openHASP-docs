@@ -97,11 +97,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#download-the-firmware" class="md-skip">
-          Skip to content
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -1334,55 +1329,6 @@
   
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#download-the-firmware" class="md-nav__link">
-    Download the firmware
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#install-the-firmware" class="md-nav__link">
-    Install the firmware
-  </a>
-  
-    <nav class="md-nav" aria-label="Install the firmware">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#flash-esp32" class="md-nav__link">
-    Flash ESP32
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#flash-esp8266" class="md-nav__link">
-    Flash ESP8266
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#stm32f407-devebox" class="md-nav__link">
-    STM32F407 devEbox
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -1399,83 +1345,16 @@
 
 
 
-<h1>Installation</h1>
+  <h1>Installation</h1>
 
-<h2 id="download-the-firmware">Download the firmware<a class="headerlink" href="#download-the-firmware" title="Permanent link">~</a></h2>
-<p>Go to the <a href="https://github.com/HASwitchPlate/openHASP/releases" target="_blank">releases</a> page on GitHub to download the latest openHASP binaries.</p>
-<p>There are currently 2 download options, pick the one appropriate for your hardware:</p>
-<ul>
-<li>openHASP-0.2.0-esp32_ili9341_spi.bin + boot files</li>
-<li>openHASP-0.2.0-esp8266_ili9341_spi.bin</li>
-</ul>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>If no precompiled firmware file is available for your board you can configure, compile and upload the firmware yourself using PlatformIO.</p>
-</div>
-<h2 id="install-the-firmware">Install the firmware<a class="headerlink" href="#install-the-firmware" title="Permanent link">~</a></h2>
-<h3 id="flash-esp32">Flash ESP32<a class="headerlink" href="#flash-esp32" title="Permanent link">~</a></h3>
-<p>When flashing the ESP32 for the first time, you need to install a bootloader, partition scheme and application loader:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>esptool.py --port <span class="s2">&quot;COM1&quot;</span> erase_flash
-esptool.py --port <span class="s2">&quot;COM1&quot;</span> write_flash 0x1000 bootloader_dio_40m.bin --flash_mode dio --flash_freq 40m
-esptool.py --port <span class="s2">&quot;COM1&quot;</span> write_flash 0x8000 partitions.bin
-esptool.py --port <span class="s2">&quot;COM1&quot;</span> write_flash 0xe000 boot_app0.bin
-</code></pre></div>
-</td></tr></table>
-<p>Change <code>COM1</code> to the correct port on your computer.</p>
-<p>then flash the actual firmware:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>esptool.py -p <span class="s2">&quot;COM1&quot;</span> --baud <span class="m">921600</span> write_flash 0x10000 d1-mini-esp32_ili9341_&lt;version&gt;.bin
-</code></pre></div>
-</td></tr></table>
-<p>or all previous steps in one long command line:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>esptool.py -p <span class="s2">&quot;COM1&quot;</span> --baud <span class="m">921600</span> --before default_reset --after hard_reset write_flash --flash_mode dio --flash_freq 40m --flash_size detect 0x1000 bootloader_dio_40m.bin 0x8000 partitions.bin 0xe000 boot_app0.bin 0x10000 d1-mini-esp32_ili9341_&lt;version&gt;.bin
-</code></pre></div>
-</td></tr></table>
-<h3 id="flash-esp8266">Flash ESP8266<a class="headerlink" href="#flash-esp8266" title="Permanent link">~</a></h3>
-<p>Unlike the ESP32, for ESP8266 you only need one single <code>.bin</code> file:</p>
-<h4 id="using-tasmotizer-windows">Using <a href="https://github.com/tasmota/tasmotizer" target="_blank">Tasmotizer</a> (Windows)<a class="headerlink" href="#using-tasmotizer-windows" title="Permanent link">~</a></h4>
-<h4 id="using-esp-toolpy">Using esp-tool.py<a class="headerlink" href="#using-esp-toolpy" title="Permanent link">~</a></h4>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>esptool.py -p <span class="s2">&quot;COM1&quot;</span> write_flash --flash_mode qio --flash_size 4m 0x0 d1-mini-esp8266_ili9341_&lt;version&gt;.bin
-</code></pre></div>
-</td></tr></table>
-<p>Change <code>COM1</code> to the correct port on your computer and <code>4m</code> to the correct size of the internal flash chip.</p>
-<hr />
-<h3 id="stm32f407-devebox">STM32F407 devEbox<a class="headerlink" href="#stm32f407-devebox" title="Permanent link">~</a></h3>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>There is no precompiled firmware file available for STM32F4 boards. You will need to configure, compile and upload the firmware yourself using PlatformIO.</p>
-</div>
-<h4 id="using-serial">Using Serial<a class="headerlink" href="#using-serial" title="Permanent link">~</a></h4>
-<ul>
-<li>Connect your serial TTL adapter RX and TX pins to PA9 and PA10 of the devEbox.</li>
-<li>Place the boot jumpers into programming mode</li>
-<li>Reset the board.</li>
-<li>Upload the firmware using:</li>
-</ul>
-<h4 id="using-dfu-usb">Using DFU (USB)<a class="headerlink" href="#using-dfu-usb" title="Permanent link">~</a></h4>
-<ul>
-<li>Connect your serial TTL adapter RX and TX pins to PA9 and PA10 of the devEbox.</li>
-<li>Place the boot jumpers into programming mode</li>
-<li>Reset the board.</li>
-<li>Upload the firmware using:</li>
-</ul>
-<h4 id="using-st-link-usb">Using ST Link (USB)<a class="headerlink" href="#using-st-link-usb" title="Permanent link">~</a></h4>
-<ul>
-<li>Install ST Link software</li>
-<li>Connect the devEbox using the USB port</li>
-<li>Launch ST Link</li>
-<li>Select the openHASP-0.2.0-stm32f407_devEbox_3.2_ili9341_fsmc.bin file</li>
-<li>Flash the firmware to the board</li>
-</ul>
+
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      2022-04-21
+      2022-04-23
     
   </small>
 </div>
@@ -1515,7 +1394,7 @@ esptool.py --port <span class="s2">&quot;COM1&quot;</span> write_flash 0xe000 bo
                 <div class="md-ellipsis">
                     <span class="md-footer__direction">
                   Next
-                </span> Flash STM32
+                </span> Stm32
                 </div>
             </div>
             <div class="md-footer__button md-icon">
