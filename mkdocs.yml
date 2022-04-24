@@ -13,20 +13,22 @@ copyright: Copyright &copy; 2019 - 2021 Francis Van Roie and contributors
 extra:
   openhasp:
     version: 0.6.3
-    social:
-      - icon: material/github
-        link: https://github.com/HASwitchPlate/openHASP/discussions
-        name: GitHub Discussions
-      - icon: material/discord
-        link: https://discord.gg/VCWyuhF
-        name: Discord Chat
-      - icon: material/home-assistant
-        link: https://community.home-assistant.io/t/openhasp-an-mqtt-driven-touchscreen-scene-controller/300853
-        name: Home Assistant Forum
-  
-    version:
-      provider: mike
-      default: 0.6
+
+  social:
+    - icon: material/github
+      link: https://github.com/HASwitchPlate/openHASP/discussions
+      name: GitHub Discussions
+    - icon: material/discord
+      link: https://discord.gg/VCWyuhF
+      name: Discord Chat
+    - icon: material/home-assistant
+      link: https://community.home-assistant.io/t/openhasp-an-mqtt-driven-touchscreen-scene-controller/300853
+      name: Home Assistant Forum
+
+  version:
+    provider: mike
+    default: 0.6
+
 #   alternate:
 #     - name: Default (en)
 #       link: ./
