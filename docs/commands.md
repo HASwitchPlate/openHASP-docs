@@ -5,9 +5,11 @@ Commands are not related to an object on the screen but can get or set global pr
 
 Commands can be issued via the Serial commandline, telnet commandline or MQTT.
 
-For MQTT, use the `hasp/<nodename>/command` topic with payload `<keyword> <parameter(s)>`
+For MQTT, you can use either:
+- `hasp/<nodename>/command` topic with payload `<keyword> <parameter(s)>`
+- `hasp/<nodename>/command/<keyword>` topic with payload `<parameter(s)>`
 
-## Batch processinng
+## Batch processing
 
 Commands can be processed in batch one after another from `.cmd` script files located in the flash storage of the plate.    
 General rules when creating `.cmd` batch scripts:

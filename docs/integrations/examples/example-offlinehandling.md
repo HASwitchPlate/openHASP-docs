@@ -1,7 +1,7 @@
 
 <h1>Handle offline state</h1>
 
-openHASP can detect the state when the plate is disconnected from the network. With [Group ID](../../../configuration/gpio/#group) object property combined with [batch processing](../../../commands/#batch-processinng), objects on the screen can act on locally connected devices without using the home automation system - letting you use only these devices when the network is down.
+openHASP can detect the state when the plate is disconnected from the network. With [Group ID](../../../configuration/gpio/#group) object property combined with [batch processing](../../../commands/#batch-processing), objects on the screen can act on locally connected devices without using the home automation system - letting you use only these devices when the network is down.
 
 <h2>Prerequisites</h2>
 
@@ -24,7 +24,7 @@ In the plate's web UI keep the default `/pages.jsonl` as Startup Layout. This wi
 {"page":1,"id":99,"obj":"label","x":0,"y":295,"w":240,"align":"center","text": "%hostname%","text_color":"#FFFFFF"}
 ```
 
-You can use [batch processing](../../../commands/#batch-processinng) and create scripts which run when the plate connects to the WiFi network or loses connection from it.
+You can use [batch processing](../../../commands/#batch-processing) and create scripts which run when the plate connects to the WiFi network or loses connection from it.
 
 `online.cmd` - batch script to run after connected to the WiFi network, it will clear the screen and load the pages with objects related to the home automation:
 
