@@ -467,9 +467,9 @@ Use [line][7] and [scale][8] properties to customize.
 | max            | [int16][9]      | 100     | maximum value of the indicator
 | val            | [int16][9]      | 0       | current value of the indicator
 | critical_value | [int16][9]      | 80      | scale color will be changed to scale_end_color after this value
-| angle          | 0-360      | 240     | angle between start and end of the scale
 | label_count    | [uint8][9]      |         | number of labels (and major ticks) of the scale
 | line_count     | [uint16][9]     | 31      | number of minor ticks of the entire scale
+| angle          | 0-360      | 240     | angle between start and end of the scale
 | rotation       | 0-360      | 0       | offset for the gauge's angles to rotate it
 | format         | [uint16][9]     | 0       | divider for major tick values
 
