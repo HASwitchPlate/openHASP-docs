@@ -80,10 +80,11 @@ but only the `id` and `obj` properties are required to create an object:
 | y        | | [int16][9]   | no       | 0       | Vertical position on the page
 | w        | | [int16][9]   | no       | 0       | Width of the object
 | h        | | [int16][9]   | no       | 0       | Height of the object
+| enabled  | | [bool][2]    | no       | true    | Object is touchable, if `false`, a _disabled_ style is applied
 | hidden   | | [bool][2]    | no       | false   | Object is hidden
 | opacity  | | 0..255       | no       | 255     | How much the the object is opaque
-| action   | | [string][10] | no       | 0       | Command handled locally _(see below)_
 | swipe    | | [bool][2]    | no       | false   | Page navigation using swipe gestures _(see below)_
+| action   | | [string][10] | no       | 0       | Command handled locally _(see below)_
 | click    | | [bool][2]    | no       | true    | Object is touch/clickable _(also see [enabled][4])_
 | ext_click_h | :material-new-box:{ .tag-small } | 0..255 | no       | 0       | Extended horizontal clickable are on the left and right 
 | ext_click_v | :material-new-box:{ .tag-small } | 0..255 | no       | 0       | Extended vertical clickable are on the top and bottom
