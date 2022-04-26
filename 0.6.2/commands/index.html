@@ -1845,9 +1845,11 @@
 <p>Commands are not related to an object on the screen but can get or set global properties or invoke system commands on the device.</p>
 <h2 id="issuing-commands">Issuing commands<a class="headerlink" href="#issuing-commands" title="Permanent link">~</a></h2>
 <p>Commands can be issued via the Serial commandline, telnet commandline or MQTT.</p>
-<p>For MQTT, you can use either:
-- <code>hasp/&lt;nodename&gt;/command</code> topic with payload <code>&lt;keyword&gt; &lt;parameter(s)&gt;</code>
-- <code>hasp/&lt;nodename&gt;/command/&lt;keyword&gt;</code> topic with payload <code>&lt;parameter(s)&gt;</code></p>
+<p>For MQTT, you can use either:</p>
+<ul>
+<li><code>hasp/&lt;nodename&gt;/command</code> topic with payload <code>&lt;keyword&gt; &lt;parameter(s)&gt;</code></li>
+<li><code>hasp/&lt;nodename&gt;/command/&lt;keyword&gt;</code> topic with payload <code>&lt;parameter(s)&gt;</code></li>
+</ul>
 <h2 id="batch-processing">Batch processing<a class="headerlink" href="#batch-processing" title="Permanent link">~</a></h2>
 <p>Commands can be processed in batch one after another from <code>.cmd</code> script files located in the flash storage of the plate.  <br />
 General rules when creating <code>.cmd</code> batch scripts:</p>
