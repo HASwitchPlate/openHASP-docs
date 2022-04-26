@@ -622,11 +622,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#batch-processinng" class="md-nav__link">
-    Batch processinng
+  <a href="#batch-processing" class="md-nav__link">
+    Batch processing
   </a>
   
-    <nav class="md-nav" aria-label="Batch processinng">
+    <nav class="md-nav" aria-label="Batch processing">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -700,7 +700,7 @@
         
           <li class="md-nav__item">
   <a href="#idle" class="md-nav__link">
-    idle 
+    idle
   </a>
   
 </li>
@@ -1596,11 +1596,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#batch-processinng" class="md-nav__link">
-    Batch processinng
+  <a href="#batch-processing" class="md-nav__link">
+    Batch processing
   </a>
   
-    <nav class="md-nav" aria-label="Batch processinng">
+    <nav class="md-nav" aria-label="Batch processing">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1674,7 +1674,7 @@
         
           <li class="md-nav__item">
   <a href="#idle" class="md-nav__link">
-    idle 
+    idle
   </a>
   
 </li>
@@ -1845,8 +1845,10 @@
 <p>Commands are not related to an object on the screen but can get or set global properties or invoke system commands on the device.</p>
 <h2 id="issuing-commands">Issuing commands<a class="headerlink" href="#issuing-commands" title="Permanent link">~</a></h2>
 <p>Commands can be issued via the Serial commandline, telnet commandline or MQTT.</p>
-<p>For MQTT, use the <code>hasp/&lt;nodename&gt;/command</code> topic with payload <code>&lt;keyword&gt; &lt;parameter(s)&gt;</code></p>
-<h2 id="batch-processinng">Batch processinng<a class="headerlink" href="#batch-processinng" title="Permanent link">~</a></h2>
+<p>For MQTT, you can use either:
+- <code>hasp/&lt;nodename&gt;/command</code> topic with payload <code>&lt;keyword&gt; &lt;parameter(s)&gt;</code>
+- <code>hasp/&lt;nodename&gt;/command/&lt;keyword&gt;</code> topic with payload <code>&lt;parameter(s)&gt;</code></p>
+<h2 id="batch-processing">Batch processing<a class="headerlink" href="#batch-processing" title="Permanent link">~</a></h2>
 <p>Commands can be processed in batch one after another from <code>.cmd</code> script files located in the flash storage of the plate.  <br />
 General rules when creating <code>.cmd</code> batch scripts:</p>
 <ul>
@@ -1963,8 +1965,8 @@ These leds can then be controlled together using the <code>moodlight</code> comm
 </td></tr></table>
 </div>
 <p>The color is returned as a hexadecimal value and as individual RGB channels.</p>
-<h3 id="idle">idle <span class="twemoji tag-medium"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 4c1.11 0 2 .89 2 2v12c0 1.11-.89 2-2 2H4c-1.11 0-2-.89-2-2V6c0-1.11.89-2 2-2h16M8.5 15V9H7.25v3.5L4.75 9H3.5v6h1.25v-3.5L7.3 15h1.2m5-4.74V9h-4v6h4v-1.25H11v-1.11h2.5v-1.26H11v-1.12h2.5m7 3.74V9h-1.25v4.5h-1.12V10h-1.25v3.5h-1.13V9H14.5v5a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1Z"/></svg></span><a class="headerlink" href="#idle" title="Permanent link">~</a></h3>
-<p><em>accepted parameters:</em> <code>off</code>, <code>short</code> or <code>long</code></p>
+<h3 id="idle">idle<a class="headerlink" href="#idle" title="Permanent link">~</a></h3>
+<p><em>accepted parameters:</em> <code>off</code>, <code>short</code><span class="twemoji tag-medium"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 4c1.11 0 2 .89 2 2v12c0 1.11-.89 2-2 2H4c-1.11 0-2-.89-2-2V6c0-1.11.89-2 2-2h16M8.5 15V9H7.25v3.5L4.75 9H3.5v6h1.25v-3.5L7.3 15h1.2m5-4.74V9h-4v6h4v-1.25H11v-1.11h2.5v-1.26H11v-1.12h2.5m7 3.74V9h-1.25v4.5h-1.12V10h-1.25v3.5h-1.13V9H14.5v5a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1Z"/></svg></span> or <code>long</code><span class="twemoji tag-medium"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 4c1.11 0 2 .89 2 2v12c0 1.11-.89 2-2 2H4c-1.11 0-2-.89-2-2V6c0-1.11.89-2 2-2h16M8.5 15V9H7.25v3.5L4.75 9H3.5v6h1.25v-3.5L7.3 15h1.2m5-4.74V9h-4v6h4v-1.25H11v-1.11h2.5v-1.26H11v-1.12h2.5m7 3.74V9h-1.25v4.5h-1.12V10h-1.25v3.5h-1.13V9H14.5v5a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1Z"/></svg></span></p>
 <p>Sets the idle state of the device and publishes the new state via a <code>state/idle</code> status message.</p>
 <p><code>off</code> resets the idle counter as if a touch event occurred on the device. This is helpful e.g. when you want to wake up the display when an external event has occurred, like a PIR motion sensor.</p>
 <p><code>short</code> or <code>long</code> sets the idle timer to the number of seconds configured in the <a href="../configuration/display#short-idle">Display Settings</a>. You can use this to force an idle state, for example at night or when leaving the house.</p>

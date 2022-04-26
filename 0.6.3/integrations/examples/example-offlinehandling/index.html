@@ -1343,7 +1343,7 @@
 
 <h1>Handle offline state</h1>
 
-<p>openHASP can detect the state when the plate is disconnected from the network. With <a href="../../../configuration/gpio/#group">Group ID</a> object property combined with <a href="../../../commands/#batch-processinng">batch processing</a>, objects on the screen can act on locally connected devices without using the home automation system - letting you use only these devices when the network is down.</p>
+<p>openHASP can detect the state when the plate is disconnected from the network. With <a href="../../../configuration/gpio/#group">Group ID</a> object property combined with <a href="../../../commands/#batch-processing">batch processing</a>, objects on the screen can act on locally connected devices without using the home automation system - letting you use only these devices when the network is down.</p>
 <h2>Prerequisites</h2>
 
 <p>In the use case presented below, the following assumptions are made:</p>
@@ -1366,7 +1366,7 @@
 <span class="p">{</span><span class="nt">&quot;page&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">99</span><span class="p">,</span><span class="nt">&quot;obj&quot;</span><span class="p">:</span><span class="s2">&quot;label&quot;</span><span class="p">,</span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="mi">295</span><span class="p">,</span><span class="nt">&quot;w&quot;</span><span class="p">:</span><span class="mi">240</span><span class="p">,</span><span class="nt">&quot;align&quot;</span><span class="p">:</span><span class="s2">&quot;center&quot;</span><span class="p">,</span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;%hostname%&quot;</span><span class="p">,</span><span class="nt">&quot;text_color&quot;</span><span class="p">:</span><span class="s2">&quot;#FFFFFF&quot;</span><span class="p">}</span><span class="w"></span>
 </code></pre></div>
 </td></tr></table>
-<p>You can use <a href="../../../commands/#batch-processinng">batch processing</a> and create scripts which run when the plate connects to the WiFi network or loses connection from it.</p>
+<p>You can use <a href="../../../commands/#batch-processing">batch processing</a> and create scripts which run when the plate connects to the WiFi network or loses connection from it.</p>
 <p><code>online.cmd</code> - batch script to run after connected to the WiFi network, it will clear the screen and load the pages with objects related to the home automation:</p>
 <div class="highlight"><pre><span></span><code>clearpage all
 run /pages_online.jsonl
