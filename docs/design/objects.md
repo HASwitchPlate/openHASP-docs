@@ -85,7 +85,7 @@ but only the `id` and `obj` properties are required to create an object:
 | opacity  | | 0..255       | no       | 255     | How much the the object is opaque
 | swipe    | | [bool][2]    | no       | false   | Page navigation using swipe gestures _(see below)_
 | action   | | [string][10] | no       | 0       | Command handled locally _(see below)_
-| click    | | [bool][2]    | no       | true    | Object is touch/clickable _(also see [enabled][4])_
+| click    | | [bool][2]    | no       | true    | Object is touch/clickable _(also see `enabled`)_
 | ext_click_h | :material-new-box:{ .tag-small } | 0..255 | no       | 0       | Extended horizontal clickable are on the left and right 
 | ext_click_v | :material-new-box:{ .tag-small } | 0..255 | no       | 0       | Extended vertical clickable are on the top and bottom
 | parentid | :material-new-box:{ .tag-small }    | 0..255 | no       | 0       | Set the object to be the child of another object.<br>`x` and `y` will be relative to the parent object. _Property inheritance can affect the appearance of the of the children (more info in [styling][12])_.
