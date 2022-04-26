@@ -7,9 +7,9 @@ Commands can be issued via the Serial commandline, telnet commandline or MQTT.
 
 For MQTT, you can use either:
 
-- `hasp/<nodename>/command` topic with payload `<keyword> <parameter(s)>`
+- `hasp/<nodename>/command` topic with payload `<keyword>=<parameter(s)>`
 - `hasp/<nodename>/command/<keyword>` topic with payload `<parameter(s)>`</br>
-  Leave the payload empty to get the current state withour changing it.
+  Leave the payload empty to get the current state without changing it.
 
 ## Batch processing
 
