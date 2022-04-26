@@ -5,9 +5,11 @@ Commands are not related to an object on the screen but can get or set global pr
 
 Commands can be issued via the Serial commandline, telnet commandline or MQTT.
 
-For MQTT, use the `hasp/<nodename>/command` topic with payload `<keyword> <parameter(s)>`
+For MQTT, you can use either:
+- `hasp/<nodename>/command` topic with payload `<keyword> <parameter(s)>`
+- `hasp/<nodename>/command/<keyword>` topic with payload `<parameter(s)>`
 
-## Batch processinng
+## Batch processing
 
 Commands can be processed in batch one after another from `.cmd` script files located in the flash storage of the plate.    
 General rules when creating `.cmd` batch scripts:
@@ -182,8 +184,8 @@ Calling the `moodlight` command without parameters (or sending an empty payload 
 The color is returned as a hexadecimal value and as individual RGB channels.
 
 
-### idle :material-new-box:{ .tag-medium }
-_accepted parameters:_ `off`, `short` or `long`
+### idle
+_accepted parameters:_ `off`, `short`:material-new-box:{ .tag-medium } or `long`:material-new-box:{ .tag-medium }
 
 Sets the idle state of the device and publishes the new state via a `state/idle` status message.
 
