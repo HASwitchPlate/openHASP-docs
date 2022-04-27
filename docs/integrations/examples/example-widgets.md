@@ -31,7 +31,7 @@ This is a real-world example of a `pages.jsonl` file. Upload it to your plate's 
 
 {"comment":"---------- Page 3 ----------"}
 {"page":3,"id":1,"obj":"cpicker","page":3,"x":20,"y":10,"w":200,"h":200}
-{"page":3,"id":2,"obj":"cpicker","page":3,"x":30,"y":230,"w":200,"h":30,"rect":true}
+{"page":3,"id":2,"obj":"cpicker","page":3,"x":30,"y":230,"w":200,"h":30}
 
 {"page":4,"comment":"---------- Page 4 ----------"}
 {"id":1,"obj":"tabview","btn_pos":1}
