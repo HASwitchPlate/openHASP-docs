@@ -23,9 +23,9 @@ To add an openHASP plate to your installation with the Dash UI sample configurat
 {"page":1,"id":6,"obj":"label","x":140,"y":35,"w":140,"text":"Humidity"}
 {"page":1,"id":7,"obj":"btn","x":0,"y":160,"w":240,"h":20,"text":"LIGHTS","bg_color":"#F1C40F","text_color":"#FFFFFF","radius":0,"border_side":0}
 {"page":1,"id":8,"obj":"label","x":20,"y":190,"w":140,"h":20,"text":"Ceiling Light"}
-{"page":1,"id":9,"obj":"switch","x":160,"y":190,"w":40,"h":20,"toggle":"TRUE"}
+{"page":1,"id":9,"obj":"switch","x":160,"y":190,"w":40,"h":20}
 {"page":1,"id":10,"obj":"label","x":20,"y":215,"w":140,"h":20,"text":"Wall Light"}
-{"page":1,"id":11,"obj":"switch","x":160,"y":215,"w":40,"h":20,"toggle":"TRUE"}
+{"page":1,"id":11,"obj":"switch","x":160,"y":215,"w":40,"h":20}
 {"page":1,"id":12,"obj":"label","x":20,"y":240,"w":200,"h":20,"text":"Ambient Light"}
 {"page":1,"id":13,"obj":"slider","x":30,"y":265,"w":200,"h":10}
 
