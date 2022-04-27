@@ -18,7 +18,7 @@ To add an openHASP plate to your installation with the Dash UI sample configurat
 {"page":1,"id":1,"obj":"btn","x":0,"y":0,"w":240,"h":30,"text":"LIVING ROOM","value_font":22,"bg_color":"#2C3E50","bg_grad_color":"#2C3E50","text_color":"#FFFFFF","radius":0,"border_side":0}
 {"page":1,"id":2,"obj":"arc","x":5,"y":45,"w":140,"h":100,"max":40,"border_side":0,"type":0,"rotation":0,"start_angle":180,"end_angle":0,"start_angle1":180,"value_font":12,"value_ofs_x":-19,"value_ofs_y":-4,"bg_opa":0}
 {"page":1,"id":3,"obj":"arc","x":130,"y":45,"w":140,"h":100,"max":100,"border_side":0,"type":0,"start_angle":180,"end_angle":0,"start_angle1":180,"value_font":12,"value_color":"#000000","value_ofs_x":-19,"value_ofs_y":-4,"bg_opa":0}
-{"page":1,"id":4,"obj":"btn","x":0,"y":120,"w":240,"h":20,"val":0,"text":"CO2 levels: ","radius":0,"border_side":0}
+{"page":1,"id":4,"obj":"label","x":0,"y":120,"w":240,"h":20,"align":"center","text":"CO2 levels: ","radius":0,"border_side":0}
 {"page":1,"id":5,"obj":"label","x":2,"y":35,"w":140,"text":"Temperature"}
 {"page":1,"id":6,"obj":"label","x":140,"y":35,"w":140,"text":"Humidity"}
 {"page":1,"id":7,"obj":"btn","x":0,"y":160,"w":240,"h":20,"text":"LIGHTS","bg_color":"#F1C40F","text_color":"#FFFFFF","radius":0,"border_side":0}
