@@ -2247,6 +2247,10 @@ Included are a range of arrows, navigation, climate, controls, devices, energy, 
 <p>You can use different fonts for different properties of the same objects, like <code>"text_font":"mdi32","value_font":"robotocondensed19"</code>.
 To use MDI icons, get the latest <a href="https://materialdesignicons.com/" target="_blank">webfont build from their site</a>. From the unzipped archive you need the <code>.ttf</code></p>
 </div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Use as few as possible separate TTF fonts in parrallel, because each of them is loaded in memory, which will exhaust faster. With the open source <a href="https://fontforge.org">FontForge</a> tool you can combine glyphs and icons from different fonts into one single TTF file and create your custom collection based on your needs.</p>
+</div>
 <h3 id="binary">Binary<a class="headerlink" href="#binary" title="Permanent link">~</a></h3>
 <p>With the online Font Converter tool you can create binary font files from any TTF, OTF or WOFF font.
 You can select custom ranges of Unicode characters and specify the bpp (bits-per-pixel).</p>
@@ -2913,7 +2917,7 @@ Includes all characters and symbols from the <a href="#ascii">Ascii range</a> ab
   <small>
     
       Last update:
-      2022-04-28
+      2022-04-29
     
   </small>
 </div>
