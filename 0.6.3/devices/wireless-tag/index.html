@@ -1081,8 +1081,29 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#features_1" class="md-nav__link">
+    Features
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#issues" class="md-nav__link">
+    Issues
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#dimensions" class="md-nav__link">
     Dimensions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flashing" class="md-nav__link">
+    Flashing
   </a>
   
 </li>
@@ -1466,8 +1487,29 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#features_1" class="md-nav__link">
+    Features
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#issues" class="md-nav__link">
+    Issues
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#dimensions" class="md-nav__link">
     Dimensions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flashing" class="md-nav__link">
+    Flashing
   </a>
   
 </li>
@@ -1597,12 +1639,37 @@ On the back there is an expansion port with GPIOs so you can expand the capabili
 
 <p>The Wireless-Tag WT-86-32-3ZW1 is a 86x86mm touchscreen with 4 relays that can be mounted in a standard 86x86mm wall-box.
 It is currently only available from Alibaba for around US $40 excluding shipping.</p>
+<h3 id="features_1">Features<a class="headerlink" href="#features_1" title="Permanent link">~</a></h3>
+<h3 id="issues">Issues<a class="headerlink" href="#issues" title="Permanent link">~</a></h3>
+<p>One issue we've noticed is temporary ghosting on the display reported by multiple users.
+When showing a UI with white, cyan or bright colors on a dark background, a dim ghost image of these bright colors can linger on the screen for some time after changing pages.</p>
+<p>If you notice this issue on your device, please report back in <a href="https://github.com/HASwitchPlate/openHASP/discussions/311">this Github discussion thread</a>.</p>
 <h3 id="dimensions">Dimensions<a class="headerlink" href="#dimensions" title="Permanent link">~</a></h3>
-<p>wt-86-32-zw1-dimensions.jpg</p>
+<div class="row justify-content-center">
+    <a href="../../assets/images/devices/wt-86-32-zw1-dimensions.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-10" data-title="WT-86-32-3ZW1 Dimensions" data-footer="">
+        <img src="../../assets/images/devices/wt-86-32-zw1-dimensions.jpg" class="img-fluid">
+    </a>
+</div>
+
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The size of the PSU unit does not fit a regular EU wall-box and mounting it in a US wall-box needs testing.</p>
 </div>
+<h3 id="flashing">Flashing<a class="headerlink" href="#flashing" title="Permanent link">~</a></h3>
+<p>All pins are conveniently broken out on the 2mm pitch female header. Make sure the USB port can deliver enough power.
+It is best to use a powered USB hub since most PC ports can not power the whole device.</p>
+<div class="row justify-content-center">
+    <a href="../../assets/images/devices/wt-86-32-zw1-back.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-5" data-title="WT-86-32-3ZW1 Back" data-footer="">
+        <img src="../../assets/images/devices/wt-86-32-zw1-back.jpg" class="img-fluid">
+    </a>
+    <a href="../../assets/images/devices/wt-86-32-zw1-flashing.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-5" data-title="WT-86-32-3ZW1 Pin diagram" data-footer="">
+        <img src="../../assets/images/devices/wt-86-32-zw1-flashing.jpg" class="img-fluid">
+    </a>
+</div>
+
+<div class="highlight"><pre><span></span><code>esptool.py --port COM6 erase_flash
+esptool.py --port COM6 write_flash 0x0 wt-86-32-3zw1_full_16MB_v0.6.3-dev_88a478d.bin --verify
+</code></pre></div>
 <h3 id="gallery_1">Gallery<a class="headerlink" href="#gallery_1" title="Permanent link">~</a></h3>
 <div class="row justify-content-center">
     <a href="../../assets/images/builds/wt32-sc01-1.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4" data-title="Wireless-Tag WT32-SC01" data-footer="Image by xHirschx">
