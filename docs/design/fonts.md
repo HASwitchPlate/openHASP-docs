@@ -69,6 +69,10 @@ You can use any TrueType font containing characters or icons.
     You can use different fonts for different properties of the same objects, like `"text_font":"mdi32","value_font":"robotocondensed19"`.
     To use MDI icons, get the latest [webfont build from their site](https://materialdesignicons.com/){target=_blank}. From the unzipped archive you need the `.ttf`
 
+!!! warning
+    Use as few as possible separate TTF fonts in parrallel, because each of them is loaded in memory, which will exhaust faster. With the open source [FontForge](https://fontforge.org) tool you can combine glyphs and icons from different fonts into one single TTF file and create your custom collection based on your needs.
+
+
 ### Binary
 
 With the online Font Converter tool you can create binary font files from any TTF, OTF or WOFF font.
