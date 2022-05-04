@@ -85,14 +85,44 @@ The development board is powered via USB Type-C. The basic version comes with on
 The Wireless-Tag WT-86-32-3ZW1 is a 86x86mm touchscreen with 4 relays that can be mounted in a standard 86x86mm wall-box.
 It is currently only available from Alibaba for around US $40 excluding shipping.
 
+### Features
+
+### Issues
+
+One issue we've noticed is temporary ghosting on the display reported by multiple users.
+When showing a UI with white, cyan or bright colors on a dark background, a dim ghost image of these bright colors can linger on the screen for some time after changing pages.
+
+If you notice this issue on your device, please report back in [this Github discussion thread](https://github.com/HASwitchPlate/openHASP/discussions/311).
 
 ### Dimensions
 
-wt-86-32-zw1-dimensions.jpg
+<div class="row justify-content-center">
+    <a href="../../assets/images/devices/wt-86-32-zw1-dimensions.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-10" data-title="WT-86-32-3ZW1 Dimensions" data-footer="">
+        <img src="../../assets/images/devices/wt-86-32-zw1-dimensions.jpg" class="img-fluid">
+    </a>
+</div>
 
 !!! note
     The size of the PSU unit does not fit a regular EU wall-box and mounting it in a US wall-box needs testing.
 
+### Flashing
+
+All pins are conveniently broken out on the 2mm pitch female header. Make sure the USB port can deliver enough power.
+It is best to use a powered USB hub since most PC ports can not power the whole device.
+
+<div class="row justify-content-center">
+    <a href="../../assets/images/devices/wt-86-32-zw1-back.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-5" data-title="WT-86-32-3ZW1 Back" data-footer="">
+        <img src="../../assets/images/devices/wt-86-32-zw1-back.jpg" class="img-fluid">
+    </a>
+    <a href="../../assets/images/devices/wt-86-32-zw1-flashing.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-5" data-title="WT-86-32-3ZW1 Pin diagram" data-footer="">
+        <img src="../../assets/images/devices/wt-86-32-zw1-flashing.jpg" class="img-fluid">
+    </a>
+</div>
+
+```bash
+esptool.py --port COM6 erase_flash
+esptool.py --port COM6 write_flash 0x0 wt-86-32-3zw1_full_16MB_v0.6.3-dev_88a478d.bin --verify
+```
 
 ### Gallery
 
