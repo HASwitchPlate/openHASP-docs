@@ -1640,6 +1640,32 @@ On the back there is an expansion port with GPIOs so you can expand the capabili
 <p>The Wireless-Tag WT-86-32-3ZW1 is a 86x86mm touchscreen with 4 relays that can be mounted in a standard 86x86mm wall-box.
 It is currently only available from Alibaba for around US $40 excluding shipping.</p>
 <h3 id="features_1">Features<a class="headerlink" href="#features_1" title="Permanent link">~</a></h3>
+<table>
+<thead>
+<tr>
+<th align="left">Pros</th>
+<th align="left">Cons</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">16 MB flash</td>
+<td align="left">Display ghosting</td>
+</tr>
+<tr>
+<td align="left">8 MB PSram</td>
+<td align="left">320 kB SRAM (ESP32-S2)</td>
+</tr>
+<tr>
+<td align="left">Price</td>
+<td align="left">Can't fit in EU workbox</td>
+</tr>
+<tr>
+<td align="left">Capacitive Touchscreen</td>
+<td align="left"></td>
+</tr>
+</tbody>
+</table>
 <h3 id="issues">Issues<a class="headerlink" href="#issues" title="Permanent link">~</a></h3>
 <p>One issue we've noticed is temporary ghosting on the display reported by multiple users.
 When showing a UI with white, cyan or bright colors on a dark background, a dim ghost image of these bright colors can linger on the screen for some time after changing pages.</p>
@@ -1688,7 +1714,7 @@ esptool.py --port COM6 write_flash 0x0 wt-86-32-3zw1_full_16MB_v0.6.3-dev_88a478
   <small>
     
       Last update:
-      2022-05-04
+      2022-05-07
     
   </small>
 </div>

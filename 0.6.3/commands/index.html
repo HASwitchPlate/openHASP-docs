@@ -1869,9 +1869,9 @@ General rules when creating <code>.cmd</code> batch scripts:</p>
 <h3 id="system-scripts">System scripts<a class="headerlink" href="#system-scripts" title="Permanent link">~</a></h3>
 <p>If any of the following scripts is present on the filesystem, it will be run automatically according to the rules below:</p>
 <ul>
-<li><code>/boot.cmd</code> is executed when the plate has finished (re)booting</li>
-<li><code>/online.cmd</code> will be executed after connection to the network was successfull</li>
-<li><code>/offline.cmd</code> will be executed after connection to the WiFi is lost</li>
+<li><code>L:/boot.cmd</code> is executed when the plate has finished (re)booting</li>
+<li><code>L:/online.cmd</code> will be executed after connection to the network was successfull</li>
+<li><code>L:/offline.cmd</code> will be executed after connection to the WiFi is lost</li>
 </ul>
 <p>This makes it possible to disable or hide buttons, load a special offline page, etc. See <a href="../integrations/examples/example-offlinehandling">example</a>.</p>
 <h2 id="global-commands">Global commands<a class="headerlink" href="#global-commands" title="Permanent link">~</a></h2>
@@ -2138,7 +2138,7 @@ To get the configuration, use the command <code>config/&lt;submodule&gt;</code>:
   <small>
     
       Last update:
-      2022-05-04
+      2022-05-07
     
   </small>
 </div>
