@@ -87,6 +87,14 @@ It is currently only available from Alibaba for around US $40 excluding shipping
 
 ### Features
 
+| Pros             | Cons
+|:-----            |:----
+| 16 MB flash      | Display ghosting
+| 8 MB PSram       | 320 kB SRAM (ESP32-S2)
+| Price            | Can't fit in EU workbox
+| Capacitive Touchscreen |
+
+
 ### Issues
 
 One issue we've noticed is temporary ghosting on the display reported by multiple users.

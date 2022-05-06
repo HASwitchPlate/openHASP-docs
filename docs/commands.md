@@ -32,9 +32,9 @@ To start a batch script, use `run` command.
 
 If any of the following scripts is present on the filesystem, it will be run automatically according to the rules below:
 
-- `/boot.cmd` is executed when the plate has finished (re)booting
-- `/online.cmd` will be executed after connection to the network was successfull
-- `/offline.cmd` will be executed after connection to the WiFi is lost
+- `L:/boot.cmd` is executed when the plate has finished (re)booting
+- `L:/online.cmd` will be executed after connection to the network was successfull
+- `L:/offline.cmd` will be executed after connection to the WiFi is lost
 
 This makes it possible to disable or hide buttons, load a special offline page, etc. See [example][5].
 
