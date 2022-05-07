@@ -469,8 +469,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#hasp-node-name" class="md-nav__link">
-    HASP Node Name
+  <a href="#plate-name" class="md-nav__link">
+    Plate Name
   </a>
   
 </li>
@@ -483,22 +483,22 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#mqtt-broker" class="md-nav__link">
-    MQTT Broker
+  <a href="#broker" class="md-nav__link">
+    Broker
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#mqtt-port" class="md-nav__link">
-    MQTT Port
+  <a href="#port" class="md-nav__link">
+    Port
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#mqtt-user-and-password" class="md-nav__link">
-    MQTT User and Password
+  <a href="#username-and-password" class="md-nav__link">
+    Username and Password
   </a>
   
 </li>
@@ -509,8 +509,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#commandline" class="md-nav__link">
-    Commandline
+  <a href="#command-line" class="md-nav__link">
+    Command Line
   </a>
   
 </li>
@@ -560,6 +560,20 @@
     <li class="md-nav__item">
       <a href="../debug/" class="md-nav__link">
         Debug Settings
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../factory_reset/" class="md-nav__link">
+        Factory Reset
       </a>
     </li>
   
@@ -1254,17 +1268,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../gallery/" class="md-nav__link">
-        Gallery
-      </a>
-    </li>
-  
-    
-
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../faq/" class="md-nav__link">
         FAQ
       </a>
@@ -1279,18 +1282,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_12" type="checkbox" id="__nav_12" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_11" type="checkbox" id="__nav_11" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_12">
+        <label class="md-nav__link" for="__nav_11">
           Compiling
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Compiling" data-md-level="1">
-        <label class="md-nav__title" for="__nav_12">
+        <label class="md-nav__title" for="__nav_11">
           <span class="md-nav__icon md-icon"></span>
           Compiling
         </label>
@@ -1426,8 +1429,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#hasp-node-name" class="md-nav__link">
-    HASP Node Name
+  <a href="#plate-name" class="md-nav__link">
+    Plate Name
   </a>
   
 </li>
@@ -1440,22 +1443,22 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#mqtt-broker" class="md-nav__link">
-    MQTT Broker
+  <a href="#broker" class="md-nav__link">
+    Broker
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#mqtt-port" class="md-nav__link">
-    MQTT Port
+  <a href="#port" class="md-nav__link">
+    Port
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#mqtt-user-and-password" class="md-nav__link">
-    MQTT User and Password
+  <a href="#username-and-password" class="md-nav__link">
+    Username and Password
   </a>
   
 </li>
@@ -1466,8 +1469,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#commandline" class="md-nav__link">
-    Commandline
+  <a href="#command-line" class="md-nav__link">
+    Command Line
   </a>
   
 </li>
@@ -1491,29 +1494,33 @@
 
 
 <h1 id="mqtt-settings">MQTT Settings<a class="headerlink" href="#mqtt-settings" title="Permanent link">~</a></h1>
-<p>All communication between <strong>HASP Open Display</strong> and your Home Automation service is done over MQTT. You will need an already working MQTT Broker.</p>
+<p>All communication between <strong>openHASP</strong> and your Home Automation service is done over MQTT. You will need a functional MQTT Broker.</p>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Learn more about the protocol on <a href="http://www.hivemq.com/mqtt-essentials/">MQTT Essentials</a></p>
+<p><strong>Tip:</strong> Learn more about the protocol on <a href="http://www.hivemq.com/mqtt-essentials/">MQTT Essentials</a></p>
 </div>
-<p><img alt="MQTT Settings" src="../../assets/images/settings/mqtt_settings.png" title="MQTT Settings" /></p>
+<div class="row justify-content-center">
+            <a href="../../assets/images/settings/mqtt_settings.png" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-8" data-title="MQTT Settings" data-footer="">
+                <img src="../../assets/images/settings/mqtt_settings.png" class="img-fluid img-thumbnail">
+            </a>
+</div>
+
 <h2 id="web-ui">Web UI<a class="headerlink" href="#web-ui" title="Permanent link">~</a></h2>
-<h3 id="hasp-node-name">HASP Node Name<a class="headerlink" href="#hasp-node-name" title="Permanent link">~</a></h3>
-<p>The <em>Node Name</em> is the unique identifier of your device on your MQTT Broker.</p>
-<p>For example, setting the <em>Node Name</em> to <strong>plate35</strong> will make the device listen and communicate on the main topic <strong>hasp/plate35/</strong></p>
+<h3 id="plate-name">Plate Name<a class="headerlink" href="#plate-name" title="Permanent link">~</a></h3>
+<p>The <em>Plate Name</em> is the unique identifier of your device on your MQTT Broker.</p>
+<p>For example, setting the <em>Plate Name</em> to <strong>plate35</strong> will make the device listen and communicate on the main topic <strong>hasp/plate35/</strong></p>
 <h3 id="group-name">Group Name<a class="headerlink" href="#group-name" title="Permanent link">~</a></h3>
 <p>The <em>Group Name</em> is the unique identifier for a <strong>Group</strong> of devices.</p>
 <p>For example, the default <em>Group Name</em> is <strong>plates</strong>. This will make all devices in this group listen on the main topic <strong>hasp/plates/</strong>
-This way you can send a command to all devices in the group at the same moment. Each devices will only respond on their own main <em>Node Name</em> topic.</p>
-<h3 id="mqtt-broker">MQTT Broker<a class="headerlink" href="#mqtt-broker" title="Permanent link">~</a></h3>
-<p>Set the IP or hostname of your MQTT Broker</p>
-<h3 id="mqtt-port">MQTT Port<a class="headerlink" href="#mqtt-port" title="Permanent link">~</a></h3>
-<p>Set the port for your MQTT Broker</p>
-<h3 id="mqtt-user-and-password">MQTT User and Password<a class="headerlink" href="#mqtt-user-and-password" title="Permanent link">~</a></h3>
+This way you can send a command to all devices in the group at the same moment. Each devices will only respond on their own main <em>Plate Name</em> topic.</p>
+<h3 id="broker">Broker<a class="headerlink" href="#broker" title="Permanent link">~</a></h3>
+<p>Set the IP or hostname of your MQTT Broker service.</p>
+<h3 id="port">Port<a class="headerlink" href="#port" title="Permanent link">~</a></h3>
+<p>Set the port for your MQTT Broker.</p>
+<h3 id="username-and-password">Username and Password<a class="headerlink" href="#username-and-password" title="Permanent link">~</a></h3>
 <p>Enter credentials if your <em>MQTT Broker</em> requires a Username and Password.</p>
 <hr />
 <p>Click 'Save Settings' to save your settings to the device. A restart is required to make the settings active. Navigate back to the Main Menu and click Restart to activate the settings.</p>
-<h2 id="commandline">Commandline<a class="headerlink" href="#commandline" title="Permanent link">~</a></h2>
+<h2 id="command-line">Command Line<a class="headerlink" href="#command-line" title="Permanent link">~</a></h2>
 <p>You can also configure the mqtt settings via the serial or telnet console:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
@@ -1533,7 +1540,7 @@ reboot
   <small>
     
       Last update:
-      2022-05-07
+      2022-05-08
     
   </small>
 </div>

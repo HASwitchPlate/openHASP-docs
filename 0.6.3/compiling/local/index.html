@@ -475,6 +475,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../configuration/factory_reset/" class="md-nav__link">
+        Factory Reset
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -1163,17 +1177,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../gallery/" class="md-nav__link">
-        Gallery
-      </a>
-    </li>
-  
-    
-
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../faq/" class="md-nav__link">
         FAQ
       </a>
@@ -1190,18 +1193,18 @@
     <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_12" type="checkbox" id="__nav_12" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_11" type="checkbox" id="__nav_11" checked>
       
       
       
       
-        <label class="md-nav__link" for="__nav_12">
+        <label class="md-nav__link" for="__nav_11">
           Compiling
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Compiling" data-md-level="1">
-        <label class="md-nav__title" for="__nav_12">
+        <label class="md-nav__title" for="__nav_11">
           <span class="md-nav__icon md-icon"></span>
           Compiling
         </label>
@@ -1536,7 +1539,7 @@ sudo apt install git python3-venv
 <p>Make sure to add the <code>--recursive</code> parameter when cloning the project from GitHub. Otherwise git will not download the required submodules in the <code>/lib</code> subdirectory. To clone the current development version (<em>main</em> branch):</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>git clone --recursive https://github.com/HASwitchPlate/openHASP
 </code></pre></div></td></tr></table></div>
-<p>If you already cloned openHASP without the submodules, you can fetch the submodules seperately using:</p>
+<p>If you already cloned openHASP without the <code>--recursive</code> parameter, you can fetch the submodules separately using:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>git submodule update --init --recursive
 </code></pre></div></td></tr></table></div>
 <p>To switch to a different branch (for example 0.6.3 release) use:</p>
@@ -1601,7 +1604,7 @@ variable (usually <code>C:\msys64\mingw64\bin</code>). See <a href="https://code
   <small>
     
       Last update:
-      2022-05-07
+      2022-05-08
     
   </small>
 </div>
