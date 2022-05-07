@@ -52,7 +52,7 @@ p2b4.border_color=#9f9
 
 ### Return values
 
-When retrieving the color of an object, both the HTML representation as the RGB values are returned seperately.
+When retrieving the color of an object, both the HTML representation as the RGB values are returned separately.
 
 The format will be a json object with components:
 

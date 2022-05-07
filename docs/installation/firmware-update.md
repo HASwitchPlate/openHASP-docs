@@ -18,5 +18,3 @@ When the ESP has previously been flashed via serial you can download and install
 ### OTA Upload
 
 When the ESP has previously been flashed via serial, subsequent updates can be performed Over-the-Air from within PlatformIO.
-
-## STM32F4xx Firmware Update

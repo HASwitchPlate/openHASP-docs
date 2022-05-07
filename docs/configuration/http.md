@@ -1,12 +1,23 @@
 # HTTP Settings
 
-To restrict access to the web user interface you can set a Username and Password.
+You can restrict access to the web user interface.
+
+!!! note ""
+    **Note:** All http communication is unencrypted and that this is only a simple security measure!
+
+<div class="row justify-content-center">
+            <a href="../../assets/images/settings/http_settings.png" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-8" data-title="HTTP Settings" data-footer="">
+                <img src="../../assets/images/settings/http_settings.png" class="img-fluid img-thumbnail">
+            </a>
+</div>
 
 ## Web UI
 
-![HTTP configuration](../assets/images/settings/http_settings.png)
+### Username and Password
+
+Enter the credentials required to access the web interface.
+
+---
 
 Click 'Save Settings' to activate immediately. If the username and/or password have been changed you need to enter the new values.
 
-!!! note
-    Please note that all http communication is unencrypted and that this is only a simple security measure

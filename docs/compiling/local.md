@@ -24,7 +24,7 @@ Make sure to add the `--recursive` parameter when cloning the project from GitHu
 git clone --recursive https://github.com/HASwitchPlate/openHASP
 ```
 
-If you already cloned openHASP without the submodules, you can fetch the submodules seperately using:
+If you already cloned openHASP without the `--recursive` parameter, you can fetch the submodules separately using:
 
 ```sh linenums="1"
 git submodule update --init --recursive

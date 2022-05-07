@@ -4,25 +4,38 @@ You can configure the general look and feel for the interface by uploading you f
 
 ## Web UI
 
-![HASP Settings](../assets/images/settings/hasp_settings.png "HASP Settings")
+<div class="row justify-content-center">
+            <a href="../../assets/images/settings/hasp_settings.png" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-8" data-title="Hasp Settings" data-footer="">
+                <img src="../../assets/images/settings/hasp_settings.png" class="img-fluid img-thumbnail">
+            </a>
+</div>
 
-##### UI Theme and Hue
+### UI Theme
 
 Select one of the built-in themes to select the general style for the HASP interface.
-With the Hue slider you can select the base color for the built-in theme.
 
-##### Startup layout
+### Primary Color
 
-Enter the filename of the .jsonl you have uploaded to enables the layout on startup.
+Select the base color for the built-in theme.
 
-##### Startup Page
+### Secondary Color
 
-Select to what page the display should switch on startup.
+Accent color for the theme.
 
-##### Startup brightness
+### Startup layout
+
+Enter the filename of the `.jsonl` you have uploaded to load the layout on startup.
+
+### Startup Page
+
+Select to the page number to display at startup.
+
+### Startup brightness
 
 Select the brightness level of the display on startup.
-*Please note that the display must support dim feature and GPIO for dim is set in display setup.*
+
+!!! note ""
+    **Note:** The display must support the dim feature and GPIO for dim is set in display setup.
 
 ---
 

@@ -1,33 +1,36 @@
 # MQTT Settings
 
-All communication between **HASP Open Display** and your Home Automation service is done over MQTT. You will need an already working MQTT Broker.
+All communication between **openHASP** and your Home Automation service is done over MQTT. You will need a functional MQTT Broker.
 
-!!! note
-    Learn more about the protocol on [MQTT Essentials](http://www.hivemq.com/mqtt-essentials/)
+!!! note ""
+    **Tip:** Learn more about the protocol on [MQTT Essentials](http://www.hivemq.com/mqtt-essentials/)
 
-![MQTT Settings](../assets/images/settings/mqtt_settings.png "MQTT Settings")
-
+<div class="row justify-content-center">
+            <a href="../../assets/images/settings/mqtt_settings.png" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-8" data-title="MQTT Settings" data-footer="">
+                <img src="../../assets/images/settings/mqtt_settings.png" class="img-fluid img-thumbnail">
+            </a>
+</div>
 
 ## Web UI
 
-### HASP Node Name
-The *Node Name* is the unique identifier of your device on your MQTT Broker.
+### Plate Name
+The *Plate Name* is the unique identifier of your device on your MQTT Broker.
 
-For example, setting the *Node Name* to **plate35** will make the device listen and communicate on the main topic **hasp/plate35/**
+For example, setting the *Plate Name* to **plate35** will make the device listen and communicate on the main topic **hasp/plate35/**
 
 ### Group Name
 The *Group Name* is the unique identifier for a **Group** of devices.
 
 For example, the default *Group Name* is **plates**. This will make all devices in this group listen on the main topic **hasp/plates/**
-This way you can send a command to all devices in the group at the same moment. Each devices will only respond on their own main *Node Name* topic.
+This way you can send a command to all devices in the group at the same moment. Each devices will only respond on their own main *Plate Name* topic.
 
-### MQTT Broker
-Set the IP or hostname of your MQTT Broker
+### Broker
+Set the IP or hostname of your MQTT Broker service.
 
-### MQTT Port
-Set the port for your MQTT Broker
+### Port
+Set the port for your MQTT Broker.
 
-### MQTT User and Password
+### Username and Password
 Enter credentials if your *MQTT Broker* requires a Username and Password.
 
 ---
@@ -35,7 +38,7 @@ Enter credentials if your *MQTT Broker* requires a Username and Password.
 Click 'Save Settings' to save your settings to the device. A restart is required to make the settings active. Navigate back to the Main Menu and click Restart to activate the settings.
 
 
-## Commandline
+## Command Line
 
 You can also configure the mqtt settings via the serial or telnet console:
 

@@ -6,3 +6,4 @@ nav:
     - display.md
     - gpio.md
     - debug.md
+    - factory_reset.md

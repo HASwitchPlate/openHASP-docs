@@ -8,7 +8,7 @@ nav:
     - integrations
     - devices
     - displays
-    - gallery.md
+#    - gallery.md
     - FAQ: faq.md
     - compiling
     - license.md

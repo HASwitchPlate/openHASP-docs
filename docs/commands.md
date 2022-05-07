@@ -174,7 +174,7 @@ These leds can then be controlled together using the `moodlight` command.
 - The `state` key accepts [boolean values][2] to turn the moodlight on or off
 - The `brightness` key can be set between `1` and `255` to dim the moodlight
 - The `color` key accepts [color values][1] to set the RGB channels at once
-- Individual `r`, `g` and `b` keys can also be used to set each channel seperately
+- Individual `r`, `g` and `b` keys can also be used to set each channel separately
 
 Calling the `moodlight` command without parameters (or sending an empty payload to the `hasp/<nodename>/command/moodlight` topic) returns the current state:
 

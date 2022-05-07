@@ -1,8 +1,15 @@
 # Debug Settings
 
-## Web UI
+openHASP logs valuable information during its operation to the serial port, telnet console or syslog server.
+Use these settings to configure the debug output.
 
-![Debug Settings](../assets/images/settings/debug_settings.png "Debug Settings")
+<div class="row justify-content-center">
+            <a href="../../assets/images/settings/debug_settings.png" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-8" data-title="Debug Settings" data-footer="">
+                <img src="../../assets/images/settings/debug_settings.png" class="img-fluid img-thumbnail">
+            </a>
+</div>
+
+## Web UI
 
 ### Serial Speed
 

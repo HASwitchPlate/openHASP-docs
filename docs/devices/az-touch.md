@@ -35,7 +35,7 @@ The PCB is pre-soldered *except* for the pinheaders, so [some soldering][5]{targ
 
 ### ESP32 dev boards
 
-The AZ-Touch MOD PCB kit does *not* come with an MCU and needs to be purchased seperately.
+The AZ-Touch MOD PCB kit does *not* come with an MCU and needs to be purchased separately.
 The PCB is designed to be compatible with serveral development boards.
 
 There are two ESP32 footprint options for soldering headers onto the PCB:
