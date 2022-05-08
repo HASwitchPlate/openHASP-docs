@@ -11,10 +11,9 @@ You can restrict access to the web user interface.
             </a>
 </div>
 
-## Web UI
+## Settings
 
-### Username and Password
-
+### Username and Password ### {: .param }
 Enter the credentials required to access the web interface.
 
 ---

@@ -34,25 +34,25 @@ openHASP is building upon the existing work of the following open source develop
   Copyright© 2019 Allen Derusha.
   HASwitchPlate is distributed under the terms of the [MIT License][1]{target=_blank}.
 
-- [LVGL](https://lvgl.io/){target=_blank} graphics library,
+- [LVGL](https://lvgl.io/){target=_blank},
   Copyright© 2021 LVGL Kft
   LVGL is distributed under the terms of the [MIT License][1]{target=_blank}.
 
-- [ArduinoJson](https://arduinojson.org/){target=_blank}
+- [ArduinoJson](https://arduinojson.org/){target=_blank},
   Copyright© 2014-2021 Benoit BLANCHON
   [MIT License][1]{target=_blank}.
 
 ### MCU
 
-- [TFT_eSPI](https://github.com/Bodmer/TFT_eSPI){target=_blank} display library,
-  Copyright© 2020 Bodmer ([https://github.com/Bodmer](https://github.com/Bodmer){target=_blank}) All rights reserved.
-  TFT_eSPI is distributed under the terms of the [FreeBSD License][6]{target=_blank}
-
-- [LovyanGFX](https://github.com/lovyan03/LovyanGFX){target=_blank} display library,
+- [LovyanGFX](https://github.com/lovyan03/LovyanGFX){target=_blank},
   Copyright© 2020 lovyan03 ([https://github.com/lovyan03](https://github.com/lovyan03){target=_blank}) All rights reserved.
   LovyanGFX is distributed under the terms of the [FreeBSD License][6]{target=_blank}
 
-- Portions from [Adafruit_GFX library](https://github.com/adafruit/Adafruit-GFX-Library){target=_blank},
+- [TFT_eSPI](https://github.com/Bodmer/TFT_eSPI){target=_blank},
+  Copyright© 2020 Bodmer ([https://github.com/Bodmer](https://github.com/Bodmer){target=_blank}) All rights reserved.
+  TFT_eSPI is distributed under the terms of the [FreeBSD License][6]{target=_blank}
+
+- [Adafruit_GFX library](https://github.com/adafruit/Adafruit-GFX-Library){target=_blank},
   Copyright© 2012 Adafruit Industries All rights reserved.
   Adafruit_GFX is distributed under the terms of the [BSD License][6]{target=_blank}
 

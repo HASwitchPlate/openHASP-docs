@@ -164,3 +164,8 @@ div[data-md-component=announce]>div#announce-msg>a {
     -webkit-mask-image: var(--md-admonition-icon--quote);
     mask-image: var(--md-admonition-icon--quote);
 }
+
+h3.param {
+    font-size: 0.818rem;
+    font-weight: 800;
+}

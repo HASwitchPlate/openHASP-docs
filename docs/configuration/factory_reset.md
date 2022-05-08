@@ -8,6 +8,8 @@ You can remove all files and configuration settings with this button:
             </a>
 </div>
 
+## Actions
+
 Click 'Reset All Settings' to erase the files on the internal flash, EEPROM and NVS user configurations.
 
 !!! warning

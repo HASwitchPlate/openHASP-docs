@@ -29,7 +29,7 @@ The good news is the backlight is working, but a white screen is typical of a pr
 ESPhome-Flasher does not recognize the openHASP *full* binary firmware correctly.
 It expects the firmware to be written to address `0x10000` and will throw a "magic byte error".
 
-The openHASP *full* binary is meant to be flashed to address `0x0` with ESPtool, Flash Download Tools or Tasmota-PyFlasher.
+The openHASP *full* binary is meant to be flashed to address `0x0` instead. Use ESPtool, Flash Download Tools or Tasmota-PyFlasher.
 
 
 ### :question: Is there a file browser built-in?

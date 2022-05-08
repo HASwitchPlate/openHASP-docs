@@ -11,27 +11,30 @@ All communication between **openHASP** and your Home Automation service is done 
             </a>
 </div>
 
-## Web UI
+## Settings
 
-### Plate Name
+### Plate Name ### {: .param }
 The *Plate Name* is the unique identifier of your device on your MQTT Broker.
 
 For example, setting the *Plate Name* to **plate35** will make the device listen and communicate on the main topic **hasp/plate35/**
 
-### Group Name
+### Group Name ### {: .param }
 The *Group Name* is the unique identifier for a **Group** of devices.
 
 For example, the default *Group Name* is **plates**. This will make all devices in this group listen on the main topic **hasp/plates/**
 This way you can send a command to all devices in the group at the same moment. Each devices will only respond on their own main *Plate Name* topic.
 
-### Broker
+### Broker ### {: .param }
 Set the IP or hostname of your MQTT Broker service.
 
-### Port
+### Port ### {: .param }
 Set the port for your MQTT Broker.
 
-### Username and Password
-Enter credentials if your *MQTT Broker* requires a Username and Password.
+### Username ### {: .param }
+Enter credentials if your *MQTT Broker* requires a Username.
+
+### Password ### {: .param }
+Enter credentials if your *MQTT Broker* requires a Password.
 
 ---
 

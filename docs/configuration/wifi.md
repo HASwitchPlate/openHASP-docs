@@ -8,14 +8,12 @@ When using a wireless network adapter, you need to configure the SSID to connect
             </a>
 </div>
 
-## Web UI
+## Settings
 
-### SSID
-
+### SSID ### {: .param }
 The name of the wireless network to connect to.
 
-### Password
-
+### Password ### {: .param }
 Optional password for the access point, if required.
 
 ---

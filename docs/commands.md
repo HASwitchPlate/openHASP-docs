@@ -306,22 +306,23 @@ Reports the status of the MCU. The response will be posted to the state topic.
 !!! example "Example"
     ```json linenums="1"
     "hasp/<platename>/state/statusupdate" => {
-        "node":"plate35",
-        "idle":"short",
-        "version":"0.5.1",
-        "uptime":1813,
-        "ssid":"network",
-        "rssi":-63,
-        "ip":"192.168.4.2",
-        "heapFree":125820,
-        "heapFrag":35,
-        "core":"v3.3.5-1-g85c43024c",
-        "canUpdate":"false",
-        "page":1,
-        "numPages":12,
-        "tftDriver":"ST7789",
-        "tftWidth":240,
-        "tftHeight":320
+        "node": "plate01",
+        "idle": "long",
+        "version": "0.6.3",
+        "uptime": 11027,
+        "ssid": "my_network",
+        "rssi": -60,
+        "ip": "192.168.0.133",
+        "mac": "7C:87:CE:E3:55:55",
+        "heapFree": 58756,
+        "heapFrag": 7,
+        "core": "v4.4.1",
+        "canUpdate": "false",
+        "page": 1,
+        "numPages": 12,
+        "tftDriver": "ILI9488",
+        "tftWidth": 480,
+        "tftHeight": 320
     }
     ```
 

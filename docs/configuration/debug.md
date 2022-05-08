@@ -9,26 +9,21 @@ Use these settings to configure the debug output.
             </a>
 </div>
 
-## Web UI
+## Settings
 
-### Serial Speed
-
+### Serial Port ### {: .param }
 Set the baudrate to use for the serial logging and console.
 
-### Telemetery Period
-
+### Telemetry Period ### {: .param }
 This is the interval in seconds with which openHASP will send automatic statusupdate messages to the `state/statusupdate` topic.
 
-### Syslog Server
-
+### Syslog Server ### {: .param }
 Specify the hostname or IP address of the syslog server.
 
-### Syslog Port
-
+### Syslog Port ### {: .param }
 Specify the port of the syslog server.
 
-### Syslog Protocol
-
+### Syslog Protocol ### {: .param }
 Select the protocol used by your syslog backend.
 
 ---
