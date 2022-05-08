@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://haswitchplate.github.io/openHASP-docs/0.6.1/0.6.1/compiling/local/">
       
       <link rel="icon" href="../../favicon.ico">
-      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.9">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.13">
     
     
       
@@ -23,10 +23,10 @@
       
     
      
-      <link rel="stylesheet" href="../../assets/stylesheets/main.120efc48.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.e411adfe.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.9647289d.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.cc9b2e1e.min.css">
         
       
     
@@ -1471,30 +1471,26 @@ The guide below will describe how to make your own build from source on your loc
 <li>on <a href="https://code.visualstudio.com/docs/setup/windows">Windows</a></li>
 </ul>
 <p>Additional packages on Linux:
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>sudo apt update
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>sudo apt update
 sudo apt install git python3-venv
-</code></pre></div>
-</td></tr></table></p>
+</code></pre></div></td></tr></table></div></p>
 <h2 id="clone-openhasp">Clone openHASP<a class="headerlink" href="#clone-openhasp" title="Permanent link">~</a></h2>
 <p>Make sure to add the <code>--recursive</code> parameter when cloning the project from GitHub. Otherwise git will not download the required submodules in the <code>/lib</code> subdirectory. To clone the current development version (<em>main</em> branch):</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>git clone --recursive https://github.com/HASwitchPlate/openHASP
-</code></pre></div>
-</td></tr></table>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>git clone --recursive https://github.com/HASwitchPlate/openHASP
+</code></pre></div></td></tr></table></div>
 <p>If you already cloned openHASP without the submodules, you can fetch the submodules seperately using:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>git submodule update --init --recursive
-</code></pre></div>
-</td></tr></table>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>git submodule update --init --recursive
+</code></pre></div></td></tr></table></div>
 <p>To switch to a different branch (for example 0.6.1 release) use:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>git clone --recursive https://github.com/HASwitchPlate/openHASP
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code>git clone --recursive https://github.com/HASwitchPlate/openHASP
 <span class="nb">cd</span> openHASP
 git checkout <span class="m">0</span>.6.1
 git submodule update --init --recursive
-</code></pre></div>
-</td></tr></table>
+</code></pre></div></td></tr></table></div>
 <h2 id="open-in-platformio">Open in PlatformIO<a class="headerlink" href="#open-in-platformio" title="Permanent link">~</a></h2>
 <p><img alt="Install PIO" src="../../assets/images/compiling/install_pio.png" /></p>
 <p>Open the project folder in <a href="https://code.visualstudio.com">Visual Studio Code</a>.
@@ -1504,31 +1500,29 @@ This will automatically install all PlatformIO dependencies and the MCU compiler
 <p>Restart Visual Studio Code when the PIO installation completes.</p>
 <h2 id="create-a-configuration">Create a configuration<a class="headerlink" href="#create-a-configuration" title="Permanent link">~</a></h2>
 <p>Copy <code>platformio_override-template.ini</code> to <code>platformio_override.ini</code> and uncomment the platforms for <code>esp32</code>and <code>esp8266</code>:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
 <span class="normal">4</span>
 <span class="normal">5</span>
-<span class="normal">6</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>[platformio]
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code>[platformio]
 extra_configs =
     ; Uncomment or edit the lines to show more User Setups in the PIO sidebar
     user_setups/esp32/*.ini
     user_setups/esp8266/*.ini
     ; user_setups/stm32f4xx/*.ini
-</code></pre></div>
-</td></tr></table>
+</code></pre></div></td></tr></table></div>
 <p>If you use <a href="../customize/">customization</a>, remove the comment from the line <code>-DUSE_CONFIG_OVERRIDE</code>:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
 <span class="normal">4</span>
-<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>[override]
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code>[override]
 ; -- Hasp config options --------------------------------------
 build_flags =
 ; -- Uncomment the next line to use the file include/user_config_override.h settings
     -DUSE_CONFIG_OVERRIDE
-</code></pre></div>
-</td></tr></table>
+</code></pre></div></td></tr></table></div>
 <p>Then Click on the "Refresh Project tasks" icon in PlatformIO to list all the configured environments.</p>
 <h2 id="compiling">Compiling<a class="headerlink" href="#compiling" title="Permanent link">~</a></h2>
 <h3 id="mcu-environments">MCU Environments<a class="headerlink" href="#mcu-environments" title="Permanent link">~</a></h3>
@@ -1536,22 +1530,19 @@ build_flags =
 <p>You can now run "Build" or "Build All" in PlatformIO to compile (all) the firmware.</p>
 <h3 id="native-linux-build">Native Linux build<a class="headerlink" href="#native-linux-build" title="Permanent link">~</a></h3>
 <p>For native linux_sdl builds, you also need:
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>sudo apt update
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>sudo apt update
 sudo apt install build-essential libsdl2-dev
-</code></pre></div>
-</td></tr></table></p>
+</code></pre></div></td></tr></table></div></p>
 <h3 id="native-macos-build">Native MacOS build<a class="headerlink" href="#native-macos-build" title="Permanent link">~</a></h3>
 <p>For native darwin_sdl builds, you also need <a href="https://brew.sh">Homebrew</a>:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>brew install gcc sdl2
-</code></pre></div>
-</td></tr></table>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>brew install gcc sdl2
+</code></pre></div></td></tr></table></div>
 <h3 id="native-windows-build">Native Windows build<a class="headerlink" href="#native-windows-build" title="Permanent link">~</a></h3>
 <p>For native windows_sdl builds, you also need MingW:</p>
 <p>Use <a href="https://www.msys2.org/">MSYS2</a></p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>pacman -S mingw-w64-x86_64-gcc mingw-w64-x86_64-SDL2
-</code></pre></div>
-</td></tr></table>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>pacman -S mingw-w64-x86_64-gcc mingw-w64-x86_64-SDL2
+</code></pre></div></td></tr></table></div>
 <p>Add the path to your Mingw-w64 <code>bin</code> folder to the Windows PATH environment
 variable (usually <code>C:\msys64\mingw64\bin</code>). See <a href="https://code.visualstudio.com/docs/cpp/config-mingw#_prerequisites">instruction, 4</a>.</p>
 <!--
@@ -1563,7 +1554,7 @@ variable (usually <code>C:\msys64\mingw64\bin</code>). See <a href="https://code
   <small>
     
       Last update:
-      2022-04-10
+      2022-05-08
     
   </small>
 </div>
@@ -1623,7 +1614,7 @@ variable (usually <code>C:\msys64\mingw64\bin</code>). See <a href="https://code
     <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tracking", "search.suggest", "search.highlight", "navigation.top"], "search": "../../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "version": {"default": 0.6, "provider": "mike"}}</script>
     
      
-      <script src="../../assets/javascripts/bundle.6e54b5cd.min.js"></script>
+      <script src="../../assets/javascripts/bundle.ed9748b7.min.js"></script>
       
     
 <!-- <script src="../../js/youtube.js"></script> -->

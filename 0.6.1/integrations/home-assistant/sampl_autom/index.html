@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://haswitchplate.github.io/openHASP-docs/0.6.1/0.6.1/integrations/home-assistant/sampl_autom/">
       
       <link rel="icon" href="../../../favicon.ico">
-      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.9">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.13">
     
     
       
@@ -23,10 +23,10 @@
       
     
      
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.120efc48.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.e411adfe.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.9647289d.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.cc9b2e1e.min.css">
         
       
     
@@ -1379,7 +1379,7 @@
 <h2 id="keep-backlight-on-dimmed-during-the-day-and-turn-it-off-during-the-night">Keep backlight ON (dimmed) during the day, and turn it OFF during the night<a class="headerlink" href="#keep-backlight-on-dimmed-during-the-day-and-turn-it-off-during-the-night" title="Permanent link">~</a></h2>
 <p>The night mode activates when sun goes down, and the day mode activates when the sun comes up. During the day, when the screen is after short idle, it dims to the level configured in Home Assistant, but never turns off. During the night, the screen turns off after the long idle period.</p>
 <p>Assuming your plate's configured MQTT <em>group name</em> is <code>plates</code>, this will affect <em>all</em> the plates in your system at once:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
 <span class="normal"> 4</span>
@@ -1409,7 +1409,7 @@
 <span class="normal">28</span>
 <span class="normal">29</span>
 <span class="normal">30</span>
-<span class="normal">31</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">openhasp-night</span><span class="w"></span>
+<span class="normal">31</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">openhasp-night</span><span class="w"></span>
 <span class="w">  </span><span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;openHASP</span><span class="nv"> </span><span class="s">Night</span><span class="nv"> </span><span class="s">mode&quot;</span><span class="w"></span>
 <span class="w">  </span><span class="nt">trigger</span><span class="p">:</span><span class="w"></span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">platform</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">numeric_state</span><span class="w"></span>
@@ -1440,14 +1440,13 @@
 <span class="w">      </span><span class="nt">data</span><span class="p">:</span><span class="w"></span>
 <span class="w">        </span><span class="nt">topic</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">hasp/plates/config/gui</span><span class="w"></span>
 <span class="w">        </span><span class="nt">payload</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;{&quot;idle2&quot;:0}&#39;</span><span class="w"></span>
-</code></pre></div>
-</td></tr></table>
+</code></pre></div></td></tr></table></div>
 <p>Note the condition which assures to avoid triggering the automations falsely when Home Assistant (re)starts (allows running the automation only when Home Assistant has been up for at least 2 minutes).</p>
 <hr />
 <h2 id="turn-on-moodlight-when-backlight-goes-off-and-back">Turn ON moodlight when backlight goes OFF (and back)<a class="headerlink" href="#turn-on-moodlight-when-backlight-goes-off-and-back" title="Permanent link">~</a></h2>
 <p>If your plate has moodlights, it is useful in dark situations, when you don't want to have the screen backlit on all the time as above, but have the mood light on instead. During the day mood light doesn't light.</p>
 <p>Put your <code>light.plate_my_room_moodlight</code> to a Lovelace card entity row and select a nice color for moodlight.</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
 <span class="normal"> 4</span>
@@ -1469,7 +1468,7 @@
 <span class="normal">20</span>
 <span class="normal">21</span>
 <span class="normal">22</span>
-<span class="normal">23</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">openhasp-moodlight-on</span><span class="w"></span>
+<span class="normal">23</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">openhasp-moodlight-on</span><span class="w"></span>
 <span class="w">  </span><span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;openHASP</span><span class="nv"> </span><span class="s">Moodlight</span><span class="nv"> </span><span class="s">ON</span><span class="nv"> </span><span class="s">when</span><span class="nv"> </span><span class="s">Backlight</span><span class="nv"> </span><span class="s">OFF&quot;</span><span class="w"></span>
 <span class="w">  </span><span class="nt">trigger</span><span class="p">:</span><span class="w"></span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">platform</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">state</span><span class="w"></span>
@@ -1492,12 +1491,11 @@
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">service</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">light.turn_off</span><span class="w"></span>
 <span class="w">      </span><span class="nt">target</span><span class="p">:</span><span class="w"></span>
 <span class="w">        </span><span class="nt">entity_id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">light.plate_my_room_moodlight</span><span class="w"></span>
-</code></pre></div>
-</td></tr></table>
+</code></pre></div></td></tr></table></div>
 <hr />
 <h2 id="return-to-home-page-after-some-idle-time">Return to home page after some idle time<a class="headerlink" href="#return-to-home-page-after-some-idle-time" title="Permanent link">~</a></h2>
 <p>Apart from the idle times controlling backlight levels, one may want to return to page 1 after a while. </p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
 <span class="normal"> 4</span>
@@ -1511,7 +1509,7 @@
 <span class="normal">12</span>
 <span class="normal">13</span>
 <span class="normal">14</span>
-<span class="normal">15</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">openhasp-back-to-page-1</span><span class="w"></span>
+<span class="normal">15</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">openhasp-back-to-page-1</span><span class="w"></span>
 <span class="w">  </span><span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;openHASP</span><span class="nv"> </span><span class="s">back</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">page</span><span class="nv"> </span><span class="s">1&quot;</span><span class="w"></span>
 <span class="w">  </span><span class="nt">trigger</span><span class="p">:</span><span class="w"></span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">platform</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">template</span><span class="w"></span>
@@ -1526,8 +1524,7 @@
 <span class="w">        </span><span class="nt">entity_id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">openhasp.plate_my_room</span><span class="w"></span>
 <span class="w">      </span><span class="nt">data</span><span class="p">:</span><span class="w"></span>
 <span class="w">        </span><span class="nt">page</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span><span class="w"></span>
-</code></pre></div>
-</td></tr></table>
+</code></pre></div></td></tr></table></div>
 <!--
 * * * * *
 
@@ -1536,19 +1533,18 @@
 It's possible to store the `pages.jsonl` plate design configuration files in a central location, namely your Home Assistant server. Practically you can do this by creating a directory where your `configuration.yaml` resides, say `hasp-lvgl` and you can drop your `pages.jsonl` files there for all your plates.
 
 You need to allow Home Assistant components to access this directory, this can be done in `configuration.yaml` with this directive (in case of hassio looks like this) :
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nt">homeassistant</span><span class="p">:</span><span class="w"></span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nt">homeassistant</span><span class="p">:</span><span class="w"></span>
 <span class="w">  </span><span class="nt">allowlist_external_dirs</span><span class="p">:</span><span class="w"> </span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/config/openhasp/</span><span class="w"></span>
-</code></pre></div>
-</td></tr></table>
+</code></pre></div></td></tr></table></div>
 
 With the [services](#custom-component/services) `openhasp.clear_page` and `openhasp.load_pages` you can clear one or all the pages of your plate, and reload their configuration from the server, respectively.
 
 For the example automation below i've created an [input_boolean](https://www.home-assistant.io/integrations/input_boolean/){target=_blank} named `load_pages_plate_my_room` in order to have a switch in Lovelace UI to trigger this manually.
 
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
 <span class="normal"> 4</span>
@@ -1568,7 +1564,7 @@ For the example automation below i've created an [input_boolean](https://www.hom
 <span class="normal">18</span>
 <span class="normal">19</span>
 <span class="normal">20</span>
-<span class="normal">21</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">openhasp-reload_pages</span><span class="w"></span>
+<span class="normal">21</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">openhasp-reload_pages</span><span class="w"></span>
 <span class="w">  </span><span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;openHASP</span><span class="nv"> </span><span class="s">reload</span><span class="nv"> </span><span class="s">pages&quot;</span><span class="w"></span>
 <span class="w">  </span><span class="nt">trigger</span><span class="p">:</span><span class="w"></span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">platform</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">state</span><span class="w"></span>
@@ -1589,21 +1585,19 @@ For the example automation below i've created an [input_boolean](https://www.hom
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">service</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">input_boolean.turn_off</span><span class="w"></span>
 <span class="w">      </span><span class="nt">data</span><span class="p">:</span><span class="w"></span>
 <span class="w">        </span><span class="nt">entity_id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">input_boolean.load_pages_plate_my_room</span><span class="w"></span>
-</code></pre></div>
-</td></tr></table>
+</code></pre></div></td></tr></table></div>
 
 If you omit the `openhasp.clear_page` service completely, the objects will be updated. It's important to know that they have to remain the same type (e.g. you can't update from a `label` type object to a `button` type object. If you need a change, you need to clear first.)
 
 If you omit lines `data:` and `page: 1`, all pages will be cleared.
 
 To trigger this automation when Home Assistant starts, you can use this in your automation:
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="w">  </span><span class="nt">trigger</span><span class="p">:</span><span class="w"></span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="w">  </span><span class="nt">trigger</span><span class="p">:</span><span class="w"></span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">platform</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">homeassistant</span><span class="w"></span>
 <span class="w">      </span><span class="nt">event</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">start</span><span class="w"></span>
-</code></pre></div>
-</td></tr></table>
+</code></pre></div></td></tr></table></div>
 _Note:_ You can also use the `path` directive in the component config to load the design configuration at Home Assistant start, but that won't clear the existing pages (it assumes the pages are empty). 
 
 -->
@@ -1616,7 +1610,7 @@ _Note:_ You can also use the `path` directive in the component config to load th
 <p>One way to reduce this is to "train" the pixels periodically with completely different other content.
 Assuming your group name is configured as <code>plates</code> in your 240x320 screens running openHASP, here is a possible solution to extend their life (all at once).</p>
 <p>The first automation runs for 1 minute by cycling an overlay with a full-screen base object every second through white, red, green, blue and black. It starts and remains turned off at Home Assistant start, to run it you need to turn it on using the service <code>automation.turn_on</code>.</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
 <span class="normal"> 4</span>
@@ -1665,7 +1659,7 @@ Assuming your group name is configured as <code>plates</code> in your 240x320 sc
 <span class="normal">47</span>
 <span class="normal">48</span>
 <span class="normal">49</span>
-<span class="normal">50</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">openhasp_antiburn</span><span class="w"></span>
+<span class="normal">50</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">openhasp_antiburn</span><span class="w"></span>
 <span class="w">  </span><span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;openHASP</span><span class="nv"> </span><span class="s">anti</span><span class="nv"> </span><span class="s">burn-in</span><span class="nv"> </span><span class="s">screen</span><span class="nv"> </span><span class="s">protection&quot;</span><span class="w"></span>
 <span class="w">  </span><span class="nt">initial_state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"></span>
 <span class="w">  </span><span class="nt">trigger</span><span class="p">:</span><span class="w"></span>
@@ -1715,10 +1709,9 @@ Assuming your group name is configured as <code>plates</code> in your 240x320 sc
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">service</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">automation.turn_off</span><span class="w"></span>
 <span class="w">      </span><span class="nt">target</span><span class="p">:</span><span class="w"></span>
 <span class="w">        </span><span class="nt">entity_id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">automation.openhasp_anti_burn_in_screen_protection</span><span class="w"></span>
-</code></pre></div>
-</td></tr></table>
+</code></pre></div></td></tr></table></div>
 <p>The second automation takes care to stop the looping colors when you touch the screen:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
 <span class="normal"> 4</span>
@@ -1736,7 +1729,7 @@ Assuming your group name is configured as <code>plates</code> in your 240x320 sc
 <span class="normal">16</span>
 <span class="normal">17</span>
 <span class="normal">18</span>
-<span class="normal">19</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">openhasp_antiburn_touch_stop</span><span class="w"></span>
+<span class="normal">19</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">openhasp_antiburn_touch_stop</span><span class="w"></span>
 <span class="w">  </span><span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;openHASP</span><span class="nv"> </span><span class="s">anti-burn-in</span><span class="nv"> </span><span class="s">stop</span><span class="nv"> </span><span class="s">when</span><span class="nv"> </span><span class="s">touched&quot;</span><span class="w"></span>
 <span class="w">  </span><span class="nt">initial_state</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;on&#39;</span><span class="w"></span>
 <span class="w">  </span><span class="nt">mode</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">restart</span><span class="w"></span>
@@ -1755,10 +1748,9 @@ Assuming your group name is configured as <code>plates</code> in your 240x320 sc
 <span class="w">      </span><span class="nt">data</span><span class="p">:</span><span class="w"></span>
 <span class="w">        </span><span class="nt">topic</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">hasp/plates/command/p0b99.delete</span><span class="w"></span>
 <span class="w">        </span><span class="nt">payload</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;&#39;</span><span class="w"></span>
-</code></pre></div>
-</td></tr></table>
+</code></pre></div></td></tr></table></div>
 <p>The third automation simply runs the first automation at 3 different times every night:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
 <span class="normal"> 4</span>
@@ -1771,7 +1763,7 @@ Assuming your group name is configured as <code>plates</code> in your 240x320 sc
 <span class="normal">11</span>
 <span class="normal">12</span>
 <span class="normal">13</span>
-<span class="normal">14</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">openhasp_antiburn_start_at_night</span><span class="w"></span>
+<span class="normal">14</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">openhasp_antiburn_start_at_night</span><span class="w"></span>
 <span class="w">  </span><span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;openHASP</span><span class="nv"> </span><span class="s">anti-burn-in</span><span class="nv"> </span><span class="s">start</span><span class="nv"> </span><span class="s">at</span><span class="nv"> </span><span class="s">night&quot;</span><span class="w"></span>
 <span class="w">  </span><span class="nt">initial_state</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;on&#39;</span><span class="w"></span>
 <span class="w">  </span><span class="nt">trigger</span><span class="p">:</span><span class="w"></span>
@@ -1785,24 +1777,22 @@ Assuming your group name is configured as <code>plates</code> in your 240x320 sc
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">service</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">automation.turn_on</span><span class="w"></span>
 <span class="w">      </span><span class="nt">target</span><span class="p">:</span><span class="w"></span>
 <span class="w">        </span><span class="nt">entity_id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">automation.openhasp_anti_burn_in_screen_protection</span><span class="w"></span>
-</code></pre></div>
-</td></tr></table>
+</code></pre></div></td></tr></table></div>
 <h3>Clear pixels when backlight off</h3>
 
 <p>Another way to reduce the chance of burn-in is to clear the contents of the screen while the backlight is turned off, as nobody sees the pixels anyway.
 Just add these actions to the <a href="#turn-on-moodlight-when-backlight-goes-off-and-back">first automation example</a> which draw an overlay with a black base object on page 0 when display is off, and deletes it when comes back on:</p>
 <p>for automation <code>openhasp-moodlight-on</code>, add to actions:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">service</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mqtt.publish</span><span class="w"></span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">service</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mqtt.publish</span><span class="w"></span>
 <span class="w">      </span><span class="nt">data</span><span class="p">:</span><span class="w"></span>
 <span class="w">        </span><span class="nt">topic</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">hasp/plates/command/jsonl</span><span class="w"></span>
 <span class="w">        </span><span class="nt">payload</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;{&quot;page&quot;:0,&quot;id&quot;:99,&quot;obj&quot;:&quot;obj&quot;,&quot;x&quot;:0,&quot;y&quot;:0,&quot;w&quot;:240,&quot;h&quot;:320,&quot;radius&quot;:0,&quot;hidden&quot;:0,&quot;bg_grad_dir&quot;:0,&quot;bg_color&quot;:&quot;black&quot;}&#39;</span><span class="w"></span>
-</code></pre></div>
-</td></tr></table>
+</code></pre></div></td></tr></table></div>
 <p>for automation <code>openhasp-moodlight-off</code>, add to actions:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
 <span class="normal"> 4</span>
@@ -1812,7 +1802,7 @@ Just add these actions to the <a href="#turn-on-moodlight-when-backlight-goes-of
 <span class="normal"> 8</span>
 <span class="normal"> 9</span>
 <span class="normal">10</span>
-<span class="normal">11</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">service</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">automation.turn_off</span><span class="w"></span>
+<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">service</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">automation.turn_off</span><span class="w"></span>
 <span class="w">      </span><span class="nt">target</span><span class="p">:</span><span class="w"></span>
 <span class="w">        </span><span class="nt">entity_id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">automation.openhasp_anti_burn_in_screen_protection</span><span class="w"></span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">service</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mqtt.publish</span><span class="w"></span>
@@ -1823,8 +1813,7 @@ Just add these actions to the <a href="#turn-on-moodlight-when-backlight-goes-of
 <span class="w">      </span><span class="nt">data</span><span class="p">:</span><span class="w"></span>
 <span class="w">        </span><span class="nt">topic</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">hasp/plates/command/p0b99.delete</span><span class="w"></span>
 <span class="w">        </span><span class="nt">payload</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;&#39;</span><span class="w"></span>
-</code></pre></div>
-</td></tr></table>
+</code></pre></div></td></tr></table></div>
 <p>Both methods can coexist.<br />
 Don't forget to adjust the size of the object to your screen if it's not 240x320.</p>
 
@@ -1833,7 +1822,7 @@ Don't forget to adjust the size of the object to your screen if it's not 240x320
   <small>
     
       Last update:
-      2022-04-10
+      2022-05-08
     
   </small>
 </div>
@@ -1893,7 +1882,7 @@ Don't forget to adjust the size of the object to your screen if it's not 240x320
     <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.instant", "navigation.tracking", "search.suggest", "search.highlight", "navigation.top"], "search": "../../../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "version": {"default": 0.6, "provider": "mike"}}</script>
     
      
-      <script src="../../../assets/javascripts/bundle.6e54b5cd.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.ed9748b7.min.js"></script>
       
     
 <!-- <script src="../../../js/youtube.js"></script> -->

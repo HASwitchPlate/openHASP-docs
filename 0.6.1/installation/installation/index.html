@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://haswitchplate.github.io/openHASP-docs/0.6.1/0.6.1/installation/installation/">
       
       <link rel="icon" href="../../favicon.ico">
-      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.9">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.13">
     
     
       
@@ -23,10 +23,10 @@
       
     
      
-      <link rel="stylesheet" href="../../assets/stylesheets/main.120efc48.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.e411adfe.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.9647289d.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.cc9b2e1e.min.css">
         
       
     
@@ -1343,31 +1343,27 @@
 <h2 id="install-the-firmware">Install the firmware<a class="headerlink" href="#install-the-firmware" title="Permanent link">~</a></h2>
 <h3 id="flash-esp32">Flash ESP32<a class="headerlink" href="#flash-esp32" title="Permanent link">~</a></h3>
 <p>When flashing the ESP32 for the first time, you need to install a bootloader, partition scheme and application loader:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>esptool.py --port <span class="s2">&quot;COM1&quot;</span> erase_flash
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code>esptool.py --port <span class="s2">&quot;COM1&quot;</span> erase_flash
 esptool.py --port <span class="s2">&quot;COM1&quot;</span> write_flash 0x1000 bootloader_dio_40m.bin --flash_mode dio --flash_freq 40m
 esptool.py --port <span class="s2">&quot;COM1&quot;</span> write_flash 0x8000 partitions.bin
 esptool.py --port <span class="s2">&quot;COM1&quot;</span> write_flash 0xe000 boot_app0.bin
-</code></pre></div>
-</td></tr></table>
+</code></pre></div></td></tr></table></div>
 <p>Change <code>COM1</code> to the correct port on your computer.</p>
 <p>then flash the actual firmware:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>esptool.py -p <span class="s2">&quot;COM1&quot;</span> --baud <span class="m">921600</span> write_flash 0x10000 d1-mini-esp32_ili9341_&lt;version&gt;.bin
-</code></pre></div>
-</td></tr></table>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>esptool.py -p <span class="s2">&quot;COM1&quot;</span> --baud <span class="m">921600</span> write_flash 0x10000 d1-mini-esp32_ili9341_&lt;version&gt;.bin
+</code></pre></div></td></tr></table></div>
 <p>or all previous steps in one long command line:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>esptool.py -p <span class="s2">&quot;COM1&quot;</span> --baud <span class="m">921600</span> --before default_reset --after hard_reset write_flash --flash_mode dio --flash_freq 40m --flash_size detect 0x1000 bootloader_dio_40m.bin 0x8000 partitions.bin 0xe000 boot_app0.bin 0x10000 d1-mini-esp32_ili9341_&lt;version&gt;.bin
-</code></pre></div>
-</td></tr></table>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>esptool.py -p <span class="s2">&quot;COM1&quot;</span> --baud <span class="m">921600</span> --before default_reset --after hard_reset write_flash --flash_mode dio --flash_freq 40m --flash_size detect 0x1000 bootloader_dio_40m.bin 0x8000 partitions.bin 0xe000 boot_app0.bin 0x10000 d1-mini-esp32_ili9341_&lt;version&gt;.bin
+</code></pre></div></td></tr></table></div>
 <h3 id="flash-esp8266">Flash ESP8266<a class="headerlink" href="#flash-esp8266" title="Permanent link">~</a></h3>
 <p>Unlike the ESP32, for ESP8266 you only need one single <code>.bin</code> file:</p>
 <h4 id="using-tasmotizer-windows">Using <a href="https://github.com/tasmota/tasmotizer" target="_blank">Tasmotizer</a> (Windows)<a class="headerlink" href="#using-tasmotizer-windows" title="Permanent link">~</a></h4>
 <h4 id="using-esp-toolpy">Using esp-tool.py<a class="headerlink" href="#using-esp-toolpy" title="Permanent link">~</a></h4>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>esptool.py -p <span class="s2">&quot;COM1&quot;</span> write_flash --flash_mode qio --flash_size 4m 0x0 d1-mini-esp8266_ili9341_&lt;version&gt;.bin
-</code></pre></div>
-</td></tr></table>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>esptool.py -p <span class="s2">&quot;COM1&quot;</span> write_flash --flash_mode qio --flash_size 4m 0x0 d1-mini-esp8266_ili9341_&lt;version&gt;.bin
+</code></pre></div></td></tr></table></div>
 <p>Change <code>COM1</code> to the correct port on your computer and <code>4m</code> to the correct size of the internal flash chip.</p>
 <hr />
 <h3 id="stm32f407-devebox">STM32F407 devEbox<a class="headerlink" href="#stm32f407-devebox" title="Permanent link">~</a></h3>
@@ -1403,7 +1399,7 @@ esptool.py --port <span class="s2">&quot;COM1&quot;</span> write_flash 0xe000 bo
   <small>
     
       Last update:
-      2022-04-10
+      2022-05-08
     
   </small>
 </div>
@@ -1463,7 +1459,7 @@ esptool.py --port <span class="s2">&quot;COM1&quot;</span> write_flash 0xe000 bo
     <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tracking", "search.suggest", "search.highlight", "navigation.top"], "search": "../../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "version": {"default": 0.6, "provider": "mike"}}</script>
     
      
-      <script src="../../assets/javascripts/bundle.6e54b5cd.min.js"></script>
+      <script src="../../assets/javascripts/bundle.ed9748b7.min.js"></script>
       
     
 <!-- <script src="../../js/youtube.js"></script> -->

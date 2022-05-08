@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://haswitchplate.github.io/openHASP-docs/0.6.1/0.6.1/commands/">
       
       <link rel="icon" href="../favicon.ico">
-      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.9">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.13">
     
     
       
@@ -23,10 +23,10 @@
       
     
      
-      <link rel="stylesheet" href="../assets/stylesheets/main.120efc48.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.e411adfe.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.9647289d.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.cc9b2e1e.min.css">
         
       
     
@@ -1784,9 +1784,8 @@ General rules when creating <code>.cmd</code> batch scripts:</p>
 don't send too many lines in a single payload, you can always sends multiple jsonl commands.</p>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="err">jso</span><span class="kc">nl</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;obj&quot;</span><span class="p">:</span><span class="s2">&quot;btn&quot;</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">14</span><span class="p">,</span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="mi">120</span><span class="p">,</span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="nt">&quot;w&quot;</span><span class="p">:</span><span class="mi">30</span><span class="p">,</span><span class="nt">&quot;h&quot;</span><span class="p">:</span><span class="mi">40</span><span class="p">,</span><span class="nt">&quot;text_font&quot;</span><span class="p">:</span><span class="s2">&quot;2&quot;</span><span class="p">,</span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="s2">&quot;Test&quot;</span><span class="p">,</span><span class="nt">&quot;text_color&quot;</span><span class="p">:</span><span class="s2">&quot;gray&quot;</span><span class="p">,</span><span class="nt">&quot;bg_opa&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="nt">&quot;border_width&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">}</span><span class="w"></span>
-</code></pre></div>
-</td></tr></table>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="err">jso</span><span class="kc">nl</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;obj&quot;</span><span class="p">:</span><span class="s2">&quot;btn&quot;</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">14</span><span class="p">,</span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="mi">120</span><span class="p">,</span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="nt">&quot;w&quot;</span><span class="p">:</span><span class="mi">30</span><span class="p">,</span><span class="nt">&quot;h&quot;</span><span class="p">:</span><span class="mi">40</span><span class="p">,</span><span class="nt">&quot;text_font&quot;</span><span class="p">:</span><span class="s2">&quot;2&quot;</span><span class="p">,</span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="s2">&quot;Test&quot;</span><span class="p">,</span><span class="nt">&quot;text_color&quot;</span><span class="p">:</span><span class="s2">&quot;gray&quot;</span><span class="p">,</span><span class="nt">&quot;bg_opa&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="nt">&quot;border_width&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">}</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
 </div>
 <p><em>For more details see <a href="../design/pages">Pages</a> and <a href="../design/objects">Objects</a>.</em></p>
 <h3 id="json">json<a class="headerlink" href="#json" title="Permanent link">~</a></h3>
@@ -1794,9 +1793,8 @@ don't send too many lines in a single payload, you can always sends multiple jso
 <p>Use the <code>json</code> command to send multiple commands as an array of strings in one payload.</p>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="err">jso</span><span class="kc">n</span><span class="w"> </span><span class="p">[</span><span class="err">&#39;page</span><span class="w"> </span><span class="mi">3</span><span class="err">&#39;</span><span class="p">,</span><span class="err">&#39;backligh</span><span class="kc">t</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;state&quot;</span><span class="p">:</span><span class="s2">&quot;OFF&quot;</span><span class="p">,</span><span class="nt">&quot;brightness&quot;</span><span class="p">:</span><span class="mi">100</span><span class="p">}</span><span class="err">&#39;</span><span class="p">,</span><span class="err">&#39;idle</span><span class="w"> </span><span class="err">o</span><span class="kc">ff</span><span class="err">&#39;</span><span class="p">]</span><span class="w"></span>
-</code></pre></div>
-</td></tr></table>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="err">jso</span><span class="kc">n</span><span class="w"> </span><span class="p">[</span><span class="err">&#39;page</span><span class="w"> </span><span class="mi">3</span><span class="err">&#39;</span><span class="p">,</span><span class="err">&#39;backligh</span><span class="kc">t</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;state&quot;</span><span class="p">:</span><span class="s2">&quot;OFF&quot;</span><span class="p">,</span><span class="nt">&quot;brightness&quot;</span><span class="p">:</span><span class="mi">100</span><span class="p">}</span><span class="err">&#39;</span><span class="p">,</span><span class="err">&#39;idle</span><span class="w"> </span><span class="err">o</span><span class="kc">ff</span><span class="err">&#39;</span><span class="p">]</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
 </div>
 <p>This command will change to page 3, turn the backlight on at ~40% brightness and reset the idle timer.</p>
 <h3 id="page">page<a class="headerlink" href="#page" title="Permanent link">~</a></h3>
@@ -1873,15 +1871,14 @@ A simple integer payload of <code>1..255</code> will adjust the brightness.</p>
 These leds can then be controlled together using the <code>moodlight</code> command.</p>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="err">moodligh</span><span class="kc">t</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;state&quot;</span><span class="p">:</span><span class="s2">&quot;off&quot;</span><span class="p">,</span><span class="nt">&quot;color&quot;</span><span class="p">:</span><span class="s2">&quot;green&quot;</span><span class="p">}</span><span class="w"></span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="err">moodligh</span><span class="kc">t</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;state&quot;</span><span class="p">:</span><span class="s2">&quot;off&quot;</span><span class="p">,</span><span class="nt">&quot;color&quot;</span><span class="p">:</span><span class="s2">&quot;green&quot;</span><span class="p">}</span><span class="w"></span>
 <span class="err">moodligh</span><span class="kc">t</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;state&quot;</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span><span class="nt">&quot;color&quot;</span><span class="p">:</span><span class="s2">&quot;#ff00e7&quot;</span><span class="p">}</span><span class="w"></span>
 <span class="err">moodligh</span><span class="kc">t</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;color&quot;</span><span class="p">:</span><span class="mi">12345</span><span class="p">}</span><span class="w"></span>
 <span class="err">moodligh</span><span class="kc">t</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;state&quot;</span><span class="p">:</span><span class="s2">&quot;on&quot;</span><span class="p">,</span><span class="nt">&quot;r&quot;</span><span class="p">:</span><span class="mi">255</span><span class="p">,</span><span class="nt">&quot;g&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="nt">&quot;b&quot;</span><span class="p">:</span><span class="mi">255</span><span class="p">}</span><span class="w"></span>
-</code></pre></div>
-</td></tr></table>
+</code></pre></div></td></tr></table></div>
 </div>
 <ul>
 <li>The <code>state</code> key accepts <a href="../design/data-types#boolean">boolean values</a> to turn the moodlight on or off</li>
@@ -1892,9 +1889,8 @@ These leds can then be controlled together using the <code>moodlight</code> comm
 <p>Calling the <code>moodlight</code> command without parameters (or sending an empty payload to the <code>hasp/&lt;nodename&gt;/command/moodlight</code> topic) returns the current state:</p>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="s2">&quot;state/moodlight&quot;</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;state&quot;</span><span class="p">:</span><span class="s2">&quot;ON&quot;</span><span class="p">,</span><span class="nt">&quot;brightness&quot;</span><span class="p">:</span><span class="mi">255</span><span class="p">,</span><span class="nt">&quot;color&quot;</span><span class="p">:</span><span class="s2">&quot;#ff0000&quot;</span><span class="p">,</span><span class="nt">&quot;r&quot;</span><span class="p">:</span><span class="mi">255</span><span class="p">,</span><span class="nt">&quot;g&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="nt">&quot;b&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">}</span><span class="w"></span>
-</code></pre></div>
-</td></tr></table>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="s2">&quot;state/moodlight&quot;</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;state&quot;</span><span class="p">:</span><span class="s2">&quot;ON&quot;</span><span class="p">,</span><span class="nt">&quot;brightness&quot;</span><span class="p">:</span><span class="mi">255</span><span class="p">,</span><span class="nt">&quot;color&quot;</span><span class="p">:</span><span class="s2">&quot;#ff0000&quot;</span><span class="p">,</span><span class="nt">&quot;r&quot;</span><span class="p">:</span><span class="mi">255</span><span class="p">,</span><span class="nt">&quot;g&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="nt">&quot;b&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">}</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
 </div>
 <p>The color is returned as a hexadecimal value and as individual RGB channels.</p>
 <h3 id="idle">idle <span class="twemoji tag-medium"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 4c1.11 0 2 .89 2 2v12c0 1.11-.89 2-2 2H4c-1.11 0-2-.89-2-2V6c0-1.11.89-2 2-2h16M8.5 15V9H7.25v3.5L4.75 9H3.5v6h1.25v-3.5L7.3 15h1.2m5-4.74V9h-4v6h4v-1.25H11v-1.11h2.5v-1.26H11v-1.12h2.5m7 3.74V9h-1.25v4.5h-1.12V10h-1.25v3.5h-1.13V9H14.5v5a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1Z"/></svg></span><a class="headerlink" href="#idle" title="Permanent link">~</a></h3>
@@ -1926,9 +1922,8 @@ These leds can then be controlled together using the <code>moodlight</code> comm
 <p>Returns a JSON object containing the current state of the input, either <code>on</code> or <code>off</code></p>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="err">i</span><span class="kc">n</span><span class="err">pu</span><span class="kc">t</span><span class="mi">4</span><span class="w"> </span><span class="err">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;state&quot;</span><span class="p">:</span><span class="s2">&quot;on&quot;</span><span class="p">}</span><span class="w"></span>
-</code></pre></div>
-</td></tr></table>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="err">i</span><span class="kc">n</span><span class="err">pu</span><span class="kc">t</span><span class="mi">4</span><span class="w"> </span><span class="err">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;state&quot;</span><span class="p">:</span><span class="s2">&quot;on&quot;</span><span class="p">}</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
 </div>
 <h2 id="system-commands">System Commands<a class="headerlink" href="#system-commands" title="Permanent link">~</a></h2>
 <h3 id="calibrate"><code>calibrate</code><a class="headerlink" href="#calibrate" title="Permanent link">~</a></h3>
@@ -1942,7 +1937,7 @@ This can be handy for bug reporting or documentation.</p>
 <p>Reports the status of the MCU. The response will be posted to the state topic.</p>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
 <span class="normal"> 4</span>
@@ -1959,7 +1954,7 @@ This can be handy for bug reporting or documentation.</p>
 <span class="normal">15</span>
 <span class="normal">16</span>
 <span class="normal">17</span>
-<span class="normal">18</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="s2">&quot;hasp/&lt;platename&gt;/state/statusupdate&quot;</span><span class="w"> </span><span class="err">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="normal">18</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="s2">&quot;hasp/&lt;platename&gt;/state/statusupdate&quot;</span><span class="w"> </span><span class="err">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="nt">&quot;node&quot;</span><span class="p">:</span><span class="s2">&quot;plate35&quot;</span><span class="p">,</span><span class="w"></span>
 <span class="w">    </span><span class="nt">&quot;idle&quot;</span><span class="p">:</span><span class="s2">&quot;short&quot;</span><span class="p">,</span><span class="w"></span>
 <span class="w">    </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="s2">&quot;0.5.1&quot;</span><span class="p">,</span><span class="w"></span>
@@ -1977,16 +1972,14 @@ This can be handy for bug reporting or documentation.</p>
 <span class="w">    </span><span class="nt">&quot;tftWidth&quot;</span><span class="p">:</span><span class="mi">240</span><span class="p">,</span><span class="w"></span>
 <span class="w">    </span><span class="nt">&quot;tftHeight&quot;</span><span class="p">:</span><span class="mi">320</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
-</code></pre></div>
-</td></tr></table>
+</code></pre></div></td></tr></table></div>
 </div>
 <h3 id="unzip"><code>unzip</code><a class="headerlink" href="#unzip" title="Permanent link">~</a></h3>
 <p>Unzip a file-packgage on the plate. You can upload <strong>uncompressed</strong> ZIP files to the flash space of your plate and unzip them locally. This is useful for cases when you need a lot of small files to be uploaded - putting them in an uncompressed zip allows to upload them in one go, and then extract them with a single command:</p>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>unzip /openhasp-weathericons-day.zip
-</code></pre></div>
-</td></tr></table>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>unzip /openhasp-weathericons-day.zip
+</code></pre></div></td></tr></table></div>
 </div>
 <h3 id="service"><code>service</code><a class="headerlink" href="#service" title="Permanent link">~</a></h3>
 <p>Start or stop some of the processes running on the plate.</p>
@@ -2064,7 +2057,7 @@ To get the configuration, use the command <code>config/&lt;submodule&gt;</code>:
   <small>
     
       Last update:
-      2022-04-10
+      2022-05-08
     
   </small>
 </div>
@@ -2124,7 +2117,7 @@ To get the configuration, use the command <code>config/&lt;submodule&gt;</code>:
     <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.tracking", "search.suggest", "search.highlight", "navigation.top"], "search": "../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "version": {"default": 0.6, "provider": "mike"}}</script>
     
      
-      <script src="../assets/javascripts/bundle.6e54b5cd.min.js"></script>
+      <script src="../assets/javascripts/bundle.ed9748b7.min.js"></script>
       
     
 <!-- <script src="../js/youtube.js"></script> -->
