@@ -1500,7 +1500,7 @@ It was created specifically to eliminate the proprietary hardware and take contr
 <h3 id="error-the-firmware-binary-is-invalid-magic-byteff-should-be-e9"><img alt="❓" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/2753.svg" title=":question:" /> Error: The firmware binary is invalid (magic byte=FF, should be E9)<a class="headerlink" href="#error-the-firmware-binary-is-invalid-magic-byteff-should-be-e9" title="Permanent link">~</a></h3>
 <p>ESPhome-Flasher does not recognize the openHASP <em>full</em> binary firmware correctly.
 It expects the firmware to be written to address <code>0x10000</code> and will throw a "magic byte error".</p>
-<p>The openHASP <em>full</em> binary is meant to be flashed to address <code>0x0</code> with ESPtool, Flash Download Tools or Tasmota-PyFlasher.</p>
+<p>The openHASP <em>full</em> binary is meant to be flashed to address <code>0x0</code> instead. Use ESPtool, Flash Download Tools or Tasmota-PyFlasher.</p>
 <h3 id="is-there-a-file-browser-built-in"><img alt="❓" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/2753.svg" title=":question:" /> Is there a file browser built-in?<a class="headerlink" href="#is-there-a-file-browser-built-in" title="Permanent link">~</a></h3>
 <p>Since v0.6.0 there is a native file browser included on ESP32.</p>
 <p>You can use it to upload, download and edit files on the flash partition of the ESP32.

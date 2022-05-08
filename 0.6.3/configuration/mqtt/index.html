@@ -461,11 +461,11 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#web-ui" class="md-nav__link">
-    Web UI
+  <a href="#settings" class="md-nav__link">
+    Settings
   </a>
   
-    <nav class="md-nav" aria-label="Web UI">
+    <nav class="md-nav" aria-label="Settings">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -497,8 +497,15 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#username-and-password" class="md-nav__link">
-    Username and Password
+  <a href="#username" class="md-nav__link">
+    Username
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#password" class="md-nav__link">
+    Password
   </a>
   
 </li>
@@ -1421,11 +1428,11 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#web-ui" class="md-nav__link">
-    Web UI
+  <a href="#settings" class="md-nav__link">
+    Settings
   </a>
   
-    <nav class="md-nav" aria-label="Web UI">
+    <nav class="md-nav" aria-label="Settings">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1457,8 +1464,15 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#username-and-password" class="md-nav__link">
-    Username and Password
+  <a href="#username" class="md-nav__link">
+    Username
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#password" class="md-nav__link">
+    Password
   </a>
   
 </li>
@@ -1504,20 +1518,22 @@
             </a>
 </div>
 
-<h2 id="web-ui">Web UI<a class="headerlink" href="#web-ui" title="Permanent link">~</a></h2>
-<h3 id="plate-name">Plate Name<a class="headerlink" href="#plate-name" title="Permanent link">~</a></h3>
+<h2 id="settings">Settings<a class="headerlink" href="#settings" title="Permanent link">~</a></h2>
+<h3 class="param" id="plate-name">Plate Name<a class="headerlink" href="#plate-name" title="Permanent link">~</a></h3>
 <p>The <em>Plate Name</em> is the unique identifier of your device on your MQTT Broker.</p>
 <p>For example, setting the <em>Plate Name</em> to <strong>plate35</strong> will make the device listen and communicate on the main topic <strong>hasp/plate35/</strong></p>
-<h3 id="group-name">Group Name<a class="headerlink" href="#group-name" title="Permanent link">~</a></h3>
+<h3 class="param" id="group-name">Group Name<a class="headerlink" href="#group-name" title="Permanent link">~</a></h3>
 <p>The <em>Group Name</em> is the unique identifier for a <strong>Group</strong> of devices.</p>
 <p>For example, the default <em>Group Name</em> is <strong>plates</strong>. This will make all devices in this group listen on the main topic <strong>hasp/plates/</strong>
 This way you can send a command to all devices in the group at the same moment. Each devices will only respond on their own main <em>Plate Name</em> topic.</p>
-<h3 id="broker">Broker<a class="headerlink" href="#broker" title="Permanent link">~</a></h3>
+<h3 class="param" id="broker">Broker<a class="headerlink" href="#broker" title="Permanent link">~</a></h3>
 <p>Set the IP or hostname of your MQTT Broker service.</p>
-<h3 id="port">Port<a class="headerlink" href="#port" title="Permanent link">~</a></h3>
+<h3 class="param" id="port">Port<a class="headerlink" href="#port" title="Permanent link">~</a></h3>
 <p>Set the port for your MQTT Broker.</p>
-<h3 id="username-and-password">Username and Password<a class="headerlink" href="#username-and-password" title="Permanent link">~</a></h3>
-<p>Enter credentials if your <em>MQTT Broker</em> requires a Username and Password.</p>
+<h3 class="param" id="username">Username<a class="headerlink" href="#username" title="Permanent link">~</a></h3>
+<p>Enter credentials if your <em>MQTT Broker</em> requires a Username.</p>
+<h3 class="param" id="password">Password<a class="headerlink" href="#password" title="Permanent link">~</a></h3>
+<p>Enter credentials if your <em>MQTT Broker</em> requires a Password.</p>
 <hr />
 <p>Click 'Save Settings' to save your settings to the device. A restart is required to make the settings active. Navigate back to the Main Menu and click Restart to activate the settings.</p>
 <h2 id="command-line">Command Line<a class="headerlink" href="#command-line" title="Permanent link">~</a></h2>
