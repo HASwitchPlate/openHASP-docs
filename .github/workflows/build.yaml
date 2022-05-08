@@ -36,7 +36,7 @@ jobs:
       - name: Release docs from this branch
         run: |
           echo "Branchname: ${GITHUB_REF#refs/heads/}"
-          mike deploy --push --update-aliases "${GITHUB_REF#refs/heads/}" --title "${GITHUB_REF#refs/heads/}"
+          mike deploy --push --rebase --update-aliases "${GITHUB_REF#refs/heads/}" --title "${GITHUB_REF#refs/heads/}"
  
       - name: List
         run: |
