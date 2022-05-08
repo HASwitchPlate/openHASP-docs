@@ -165,6 +165,12 @@ div[data-md-component=announce]>div#announce-msg>a {
     mask-image: var(--md-admonition-icon--quote);
 }
 
+
+/* custom titles */
+
+h1.hide {
+    display: none!important
+}
 h3.param {
     font-size: 0.818rem;
     font-weight: 800;
