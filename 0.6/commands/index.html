@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://haswitchplate.github.io/openHASP-docs/0.6/0.6/commands/">
       
       <link rel="icon" href="../favicon.ico">
-      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.9">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.13">
     
     
       
@@ -23,10 +23,10 @@
       
     
      
-      <link rel="stylesheet" href="../assets/stylesheets/main.120efc48.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.e411adfe.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.9647289d.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.cc9b2e1e.min.css">
         
       
     
@@ -1519,17 +1519,15 @@
 <p>Each line in the <code>jsonl</code> payload defines one object and has to be in the json format. If the payload exceeds the MQTT buffer of 2 kB it will be cut off to fit,
 don't send too many lines in a single payload, you can always sends multiple jsonl commands.</p>
 <p>Example:  <br />
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="err">jso</span><span class="kc">nl</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;obj&quot;</span><span class="p">:</span><span class="s2">&quot;btn&quot;</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">14</span><span class="p">,</span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="mi">120</span><span class="p">,</span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="nt">&quot;w&quot;</span><span class="p">:</span><span class="mi">30</span><span class="p">,</span><span class="nt">&quot;h&quot;</span><span class="p">:</span><span class="mi">40</span><span class="p">,</span><span class="nt">&quot;text_font&quot;</span><span class="p">:</span><span class="s2">&quot;2&quot;</span><span class="p">,</span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="s2">&quot;Test&quot;</span><span class="p">,</span><span class="nt">&quot;text_color&quot;</span><span class="p">:</span><span class="s2">&quot;gray&quot;</span><span class="p">,</span><span class="nt">&quot;bg_opa&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="nt">&quot;border_width&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">}</span><span class="w"></span>
-</code></pre></div>
-</td></tr></table></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="err">jso</span><span class="kc">nl</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;obj&quot;</span><span class="p">:</span><span class="s2">&quot;btn&quot;</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">14</span><span class="p">,</span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="mi">120</span><span class="p">,</span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="nt">&quot;w&quot;</span><span class="p">:</span><span class="mi">30</span><span class="p">,</span><span class="nt">&quot;h&quot;</span><span class="p">:</span><span class="mi">40</span><span class="p">,</span><span class="nt">&quot;text_font&quot;</span><span class="p">:</span><span class="s2">&quot;2&quot;</span><span class="p">,</span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="s2">&quot;Test&quot;</span><span class="p">,</span><span class="nt">&quot;text_color&quot;</span><span class="p">:</span><span class="s2">&quot;gray&quot;</span><span class="p">,</span><span class="nt">&quot;bg_opa&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="nt">&quot;border_width&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">}</span><span class="w"></span>
+</code></pre></div></td></tr></table></div></p>
 <p><em>For more details see <a href="../design/pages">Pages</a> and <a href="../design/objects">Objects</a>.</em></p>
 <h2 id="json">json<a class="headerlink" href="#json" title="Permanent link">~</a></h2>
 <p><em>accepted parameters:</em> json array of strings</p>
 <p>Use the <code>json</code> command to send multiple commands as an array of strings in one payload.</p>
 <p>Example:  <br />
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="err">jso</span><span class="kc">n</span><span class="w"> </span><span class="p">[</span><span class="err">&#39;page</span><span class="w"> </span><span class="mi">3</span><span class="err">&#39;</span><span class="p">,</span><span class="err">&#39;backligh</span><span class="kc">t</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;state&quot;</span><span class="p">:</span><span class="s2">&quot;OFF&quot;</span><span class="p">,</span><span class="nt">&quot;brightness&quot;</span><span class="p">:</span><span class="mi">100</span><span class="p">}</span><span class="err">&#39;</span><span class="p">,</span><span class="err">&#39;idle</span><span class="w"> </span><span class="err">o</span><span class="kc">ff</span><span class="err">&#39;</span><span class="p">]</span><span class="w"></span>
-</code></pre></div>
-</td></tr></table></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="err">jso</span><span class="kc">n</span><span class="w"> </span><span class="p">[</span><span class="err">&#39;page</span><span class="w"> </span><span class="mi">3</span><span class="err">&#39;</span><span class="p">,</span><span class="err">&#39;backligh</span><span class="kc">t</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;state&quot;</span><span class="p">:</span><span class="s2">&quot;OFF&quot;</span><span class="p">,</span><span class="nt">&quot;brightness&quot;</span><span class="p">:</span><span class="mi">100</span><span class="p">}</span><span class="err">&#39;</span><span class="p">,</span><span class="err">&#39;idle</span><span class="w"> </span><span class="err">o</span><span class="kc">ff</span><span class="err">&#39;</span><span class="p">]</span><span class="w"></span>
+</code></pre></div></td></tr></table></div></p>
 <p>This command will change to page 3, turn the backlight on at ~40% brightness and reset the idle timer.</p>
 <h2 id="page">page<a class="headerlink" href="#page" title="Permanent link">~</a></h2>
 <p><em>accepted parameters:</em> <code>[1-12]</code>, <code>prev</code>, <code>next</code> or <code>back</code></p>
@@ -1601,15 +1599,14 @@ A simple integer payload of <code>1..255</code> will adjust the brightness.</p>
 </ul>
 <p>An RGB moodlight can be controlled by configuring 3 <a href="../configuration/gpio">GPIO pins</a> as type <code>Mood Red</code>, <code>Mood Green</code> and <code>Mood blue</code>.
 These leds can then be controlled together using the <code>moodlight</code> command.</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="err">moodligh</span><span class="kc">t</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;state&quot;</span><span class="p">:</span><span class="s2">&quot;off&quot;</span><span class="p">,</span><span class="nt">&quot;color&quot;</span><span class="p">:</span><span class="s2">&quot;green&quot;</span><span class="p">}</span><span class="w"></span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="err">moodligh</span><span class="kc">t</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;state&quot;</span><span class="p">:</span><span class="s2">&quot;off&quot;</span><span class="p">,</span><span class="nt">&quot;color&quot;</span><span class="p">:</span><span class="s2">&quot;green&quot;</span><span class="p">}</span><span class="w"></span>
 <span class="err">moodligh</span><span class="kc">t</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;state&quot;</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span><span class="nt">&quot;color&quot;</span><span class="p">:</span><span class="s2">&quot;#ff00e7&quot;</span><span class="p">}</span><span class="w"></span>
 <span class="err">moodligh</span><span class="kc">t</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;color&quot;</span><span class="p">:</span><span class="mi">12345</span><span class="p">}</span><span class="w"></span>
 <span class="err">moodligh</span><span class="kc">t</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;state&quot;</span><span class="p">:</span><span class="s2">&quot;on&quot;</span><span class="p">,</span><span class="nt">&quot;r&quot;</span><span class="p">:</span><span class="mi">255</span><span class="p">,</span><span class="nt">&quot;g&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="nt">&quot;b&quot;</span><span class="p">:</span><span class="mi">255</span><span class="p">}</span><span class="w"></span>
-</code></pre></div>
-</td></tr></table>
+</code></pre></div></td></tr></table></div>
 <ul>
 <li>The <code>state</code> key accepts <a href="../design/data-types#boolean">boolean values</a> to turn the moodlight on or off</li>
 <li>The <code>brightness</code> key can be set between <code>1</code> and <code>255</code> to dim the moodlight</li>
@@ -1617,9 +1614,8 @@ These leds can then be controlled together using the <code>moodlight</code> comm
 <li>Individual <code>r</code>, <code>g</code> and <code>b</code> keys can also be used to set each channel seperately</li>
 </ul>
 <p>Calling the <code>moodlight</code> command without parameters (or sending an empty payload to the <code>hasp/&lt;nodename&gt;/command/moodlight</code> topic) returns the current state:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="s2">&quot;state/moodlight&quot;</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;state&quot;</span><span class="p">:</span><span class="s2">&quot;ON&quot;</span><span class="p">,</span><span class="nt">&quot;brightness&quot;</span><span class="p">:</span><span class="mi">255</span><span class="p">,</span><span class="nt">&quot;color&quot;</span><span class="p">:</span><span class="s2">&quot;#ff0000&quot;</span><span class="p">,</span><span class="nt">&quot;r&quot;</span><span class="p">:</span><span class="mi">255</span><span class="p">,</span><span class="nt">&quot;g&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="nt">&quot;b&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">}</span><span class="w"></span>
-</code></pre></div>
-</td></tr></table>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="s2">&quot;state/moodlight&quot;</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;state&quot;</span><span class="p">:</span><span class="s2">&quot;ON&quot;</span><span class="p">,</span><span class="nt">&quot;brightness&quot;</span><span class="p">:</span><span class="mi">255</span><span class="p">,</span><span class="nt">&quot;color&quot;</span><span class="p">:</span><span class="s2">&quot;#ff0000&quot;</span><span class="p">,</span><span class="nt">&quot;r&quot;</span><span class="p">:</span><span class="mi">255</span><span class="p">,</span><span class="nt">&quot;g&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="nt">&quot;b&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">}</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
 <p>The color is returned as a hexadecimal value and as individual RGB channels.</p>
 <h2 id="idle">idle <span class="twemoji tag-medium"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 4c1.11 0 2 .89 2 2v12c0 1.11-.89 2-2 2H4c-1.11 0-2-.89-2-2V6c0-1.11.89-2 2-2h16M8.5 15V9H7.25v3.5L4.75 9H3.5v6h1.25v-3.5L7.3 15h1.2m5-4.74V9h-4v6h4v-1.25H11v-1.11h2.5v-1.26H11v-1.12h2.5m7 3.74V9h-1.25v4.5h-1.12V10h-1.25v3.5h-1.13V9H14.5v5a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1Z"/></svg></span><a class="headerlink" href="#idle" title="Permanent link">~</a></h2>
 <p><em>accepted parameters:</em> <code>off</code></p>
@@ -1650,9 +1646,8 @@ These leds can then be controlled together using the <code>moodlight</code> comm
 <p>where <code>[x]</code> is number of the gpio pin (0-39)</p>
 <p><em>read-only</em></p>
 <p>Returns a JSON object containing the current state of the input, either <code>on</code> or <code>off</code></p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="err">i</span><span class="kc">n</span><span class="err">pu</span><span class="kc">t</span><span class="mi">4</span><span class="w"> </span><span class="err">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;state&quot;</span><span class="p">:</span><span class="s2">&quot;on&quot;</span><span class="p">}</span><span class="w"></span>
-</code></pre></div>
-</td></tr></table>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="err">i</span><span class="kc">n</span><span class="err">pu</span><span class="kc">t</span><span class="mi">4</span><span class="w"> </span><span class="err">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;state&quot;</span><span class="p">:</span><span class="s2">&quot;on&quot;</span><span class="p">}</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
 <h2 id="system-commands">System Commands<a class="headerlink" href="#system-commands" title="Permanent link">~</a></h2>
 <div class="admonition danger">
 <p class="admonition-title"><code>calibrate</code></p>
@@ -1669,7 +1664,7 @@ This can be handy for bug reporting or documentation.</p>
 <p class="admonition-title"><code>statusupdate</code></p>
 </div>
 <p>Reports the status of the MCU. The response will be posted to the state topic. For example:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
 <span class="normal"> 4</span>
@@ -1686,7 +1681,7 @@ This can be handy for bug reporting or documentation.</p>
 <span class="normal">15</span>
 <span class="normal">16</span>
 <span class="normal">17</span>
-<span class="normal">18</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="w">    </span><span class="s2">&quot;hasp/&lt;platename&gt;/state/statusupdate&quot;</span><span class="w"> </span><span class="err">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="normal">18</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="w">    </span><span class="s2">&quot;hasp/&lt;platename&gt;/state/statusupdate&quot;</span><span class="w"> </span><span class="err">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">        </span><span class="nt">&quot;node&quot;</span><span class="p">:</span><span class="s2">&quot;plate35&quot;</span><span class="p">,</span><span class="w"></span>
 <span class="w">        </span><span class="nt">&quot;idle&quot;</span><span class="p">:</span><span class="s2">&quot;short&quot;</span><span class="p">,</span><span class="w"></span>
 <span class="w">        </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="s2">&quot;0.5.1&quot;</span><span class="p">,</span><span class="w"></span>
@@ -1704,8 +1699,7 @@ This can be handy for bug reporting or documentation.</p>
 <span class="w">        </span><span class="nt">&quot;tftWidth&quot;</span><span class="p">:</span><span class="mi">240</span><span class="p">,</span><span class="w"></span>
 <span class="w">        </span><span class="nt">&quot;tftHeight&quot;</span><span class="p">:</span><span class="mi">320</span><span class="w"></span>
 <span class="w">    </span><span class="p">}</span><span class="w"></span>
-</code></pre></div>
-</td></tr></table>
+</code></pre></div></td></tr></table></div>
 <div class="admonition danger">
 <p class="admonition-title"><code>reboot</code> or <code>restart</code></p>
 </div>
@@ -1758,14 +1752,14 @@ This can be handy for bug reporting or documentation.</p>
 <p>You can get or set the configuration of an openHASP submodule in json format.
 To get the configuration, use the command <code>config/&lt;submodule&gt;</code>. 
 The result will be published to <code>hasp/&lt;nodename&gt;/state/config</code>. Passwords will be omitted from the result.</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
 <span class="normal">4</span>
 <span class="normal">5</span>
 <span class="normal">6</span>
 <span class="normal">7</span>
-<span class="normal">8</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="err">co</span><span class="kc">nf</span><span class="err">ig/wi</span><span class="kc">f</span><span class="err">i</span><span class="w"></span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="err">co</span><span class="kc">nf</span><span class="err">ig/wi</span><span class="kc">f</span><span class="err">i</span><span class="w"></span>
 <span class="err">co</span><span class="kc">nf</span><span class="err">ig/mq</span><span class="kc">tt</span><span class="w"></span>
 <span class="err">co</span><span class="kc">nf</span><span class="err">ig/h</span><span class="kc">tt</span><span class="err">p</span><span class="w"></span>
 <span class="err">co</span><span class="kc">nf</span><span class="err">ig/md</span><span class="kc">ns</span><span class="w"></span>
@@ -1773,8 +1767,7 @@ The result will be published to <code>hasp/&lt;nodename&gt;/state/config</code>.
 <span class="err">co</span><span class="kc">nf</span><span class="err">ig/gui</span><span class="w"></span>
 <span class="err">co</span><span class="kc">nf</span><span class="err">ig/debug</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;tele&quot;</span><span class="p">:</span><span class="mi">300</span><span class="p">}</span><span class="w"></span>
 <span class="err">co</span><span class="kc">nf</span><span class="err">ig/gpio</span><span class="w"></span>
-</code></pre></div>
-</td></tr></table>
+</code></pre></div></td></tr></table></div>
 <p>To update the configuration simply issue the same command <code>config/&lt;submodule&gt;</code> with updated json payload.</p>
 
   <hr>
@@ -1782,7 +1775,7 @@ The result will be published to <code>hasp/&lt;nodename&gt;/state/config</code>.
   <small>
     
       Last update:
-      2022-04-10
+      2022-05-08
     
   </small>
 </div>
@@ -1842,7 +1835,7 @@ The result will be published to <code>hasp/&lt;nodename&gt;/state/config</code>.
     <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tracking", "search.suggest", "search.highlight", "navigation.top"], "search": "../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "version": {"default": 0.5, "provider": "mike"}}</script>
     
      
-      <script src="../assets/javascripts/bundle.6e54b5cd.min.js"></script>
+      <script src="../assets/javascripts/bundle.ed9748b7.min.js"></script>
       
     
 <!-- <script src="../js/youtube.js"></script> -->

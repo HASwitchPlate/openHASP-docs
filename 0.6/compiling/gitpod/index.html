@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://haswitchplate.github.io/openHASP-docs/0.6/0.6/compiling/gitpod/">
       
       <link rel="icon" href="../../favicon.ico">
-      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.9">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.13">
     
     
       
@@ -23,10 +23,10 @@
       
     
      
-      <link rel="stylesheet" href="../../assets/stylesheets/main.120efc48.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.e411adfe.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.9647289d.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.cc9b2e1e.min.css">
         
       
     
@@ -1340,36 +1340,34 @@ If you don't want to install an IDE (Integrated Development Environment) like Pl
 <h2 id="choose-the-version-you-need">Choose the version you need<a class="headerlink" href="#choose-the-version-you-need" title="Permanent link">~</a></h2>
 <p>A copy of <code>platformio_override-template.ini</code> to <code>platformio_override.ini</code> will be readily prepared for you.<br />
 Click <code>platformio_override.ini</code> to open it, and to select your firmware flavour for your hardware uncomment in the <code>extra_configs</code> section the platform of your hadware, for example for ESP32:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
 <span class="normal">4</span>
 <span class="normal">5</span>
 <span class="normal">6</span>
-<span class="normal">7</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>[platformio]
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code>[platformio]
 extra_configs =
     ; Uncomment or edit the lines to show more User Setups in the PIO sidebar
     ; user_setups/darwin_sdl/*.ini
      user_setups/esp32/*.ini
     ; user_setups/esp8266/*.ini
     ; user_setups/linux_sdl/*.ini
-</code></pre></div>
-</td></tr></table>
+</code></pre></div></td></tr></table></div>
 <p>If you use <a href="../customize/">customization</a>, remove the comment from the line <code>-DUSE_CONFIG_OVERRIDE</code> and make sure you have your own <code>user_config_override.h</code> in place: <br />
 (please consider before saving your wifi and mqtt credentials to an online cloud)</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
 <span class="normal">4</span>
-<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>[override]
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code>[override]
 ; -- Hasp config options --------------------------------------
 build_flags =
 ; -- Uncomment the next line to use the file include/user_config_override.h settings
     -DUSE_CONFIG_OVERRIDE
-</code></pre></div>
-</td></tr></table>
+</code></pre></div></td></tr></table></div>
 <p>And finally select your supported hardware from the <code>extra_default_envs</code> section by uncommenting the corresponding line. For example to build firmware for Lanbon L8, you should remove that comment only:</p>
-<p><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
 <span class="normal"> 4</span>
@@ -1383,7 +1381,7 @@ build_flags =
 <span class="normal">12</span>
 <span class="normal">13</span>
 <span class="normal">14</span>
-<span class="normal">15</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>extra_default_envs =
+<span class="normal">15</span></pre></div></td><td class="code"><div><pre><span></span><code>extra_default_envs =
     ; Comment unneeded environments or create extra
     ; arduitouch-esp32_ili9341
     ; d1-mini-esp32_ili9341
@@ -1398,8 +1396,7 @@ build_flags =
     ; nodemcu32s-raspi
     ; wt32-sc01
     ; ttgo_esp32_poe-ili9341
-</code></pre></div>
-</td></tr></table>
+</code></pre></div></td></tr></table></div>
 Save the file by pressing <code>Ctrl + S</code> or selecting <code>Save</code> from the top-left menu.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -1419,7 +1416,7 @@ Save the file by pressing <code>Ctrl + S</code> or selecting <code>Save</code> f
   <small>
     
       Last update:
-      2022-04-10
+      2022-05-08
     
   </small>
 </div>
@@ -1479,7 +1476,7 @@ Save the file by pressing <code>Ctrl + S</code> or selecting <code>Save</code> f
     <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tracking", "search.suggest", "search.highlight", "navigation.top"], "search": "../../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "version": {"default": 0.5, "provider": "mike"}}</script>
     
      
-      <script src="../../assets/javascripts/bundle.6e54b5cd.min.js"></script>
+      <script src="../../assets/javascripts/bundle.ed9748b7.min.js"></script>
       
     
 <!-- <script src="../../js/youtube.js"></script> -->
