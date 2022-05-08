@@ -1,4 +1,4 @@
-<h1>License</h1>
+# License
 
 ## MIT License
 
