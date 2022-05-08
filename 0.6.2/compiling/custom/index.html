@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://haswitchplate.github.io/openHASP-docs/0.6.2/0.6.2/compiling/custom/">
       
       <link rel="icon" href="../../favicon.ico">
-      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.11">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.13">
     
     
       
@@ -23,10 +23,10 @@
       
     
      
-      <link rel="stylesheet" href="../../assets/stylesheets/main.8c5ef100.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.e411adfe.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.9647289d.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.cc9b2e1e.min.css">
         
       
     
@@ -1557,7 +1557,7 @@ You can use the value of the topic and payload variables to set LVGL attributes 
 <p>In <code>src/my_custom.cpp</code> you add the code to execute for each of the functions declared above.</p>
 <h3 id="setup">Setup<a class="headerlink" href="#setup" title="Permanent link">~</a></h3>
 <p>We keep a variable for tracking the last blink time.</p>
-<table class="highlighttable"><tr><th colspan="2" class="filename"><div class="highlight"><span class="filename">my_custom.h</span></div></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">my_custom.h</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
 <span class="normal"> 4</span>
@@ -1573,7 +1573,7 @@ You can use the value of the topic and payload variables to set LVGL attributes 
 <span class="normal">14</span>
 <span class="normal">15</span>
 <span class="normal">16</span>
-<span class="normal">17</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;hasplib.h&quot;</span><span class="cp"></span>
+<span class="normal">17</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;hasplib.h&quot;</span><span class="cp"></span>
 
 <span class="cp">#if defined(HASP_USE_CUSTOM) &amp;&amp; true </span><span class="c1">// &lt;-- set this to true in your code</span>
 
@@ -1590,12 +1590,11 @@ You can use the value of the topic and payload variables to set LVGL attributes 
 <span class="w">    </span><span class="n">pinMode</span><span class="p">(</span><span class="n">LED_BUILTIN</span><span class="p">,</span><span class="w"> </span><span class="n">OUTPUT</span><span class="p">);</span><span class="w"></span>
 <span class="w">    </span><span class="n">randomSeed</span><span class="p">(</span><span class="n">millis</span><span class="p">());</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
-</code></pre></div>
-</td></tr></table>
+</code></pre></div></td></tr></table></div>
 <h3 id="loops">Loops<a class="headerlink" href="#loops" title="Permanent link">~</a></h3>
 <p>Next, check the time past since the last blink.
 This should execute very fast, do not use <code>delay()</code> or any blocking code.
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 9</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 9</span>
 <span class="normal">10</span>
 <span class="normal">11</span>
 <span class="normal">12</span>
@@ -1607,7 +1606,7 @@ This should execute very fast, do not use <code>delay()</code> or any blocking c
 <span class="normal">18</span>
 <span class="normal">19</span>
 <span class="normal">20</span>
-<span class="normal">21</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">custom_loop</span><span class="p">()</span><span class="w"></span>
+<span class="normal">21</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">custom_loop</span><span class="p">()</span><span class="w"></span>
 <span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="c1">// Non-blocking code here!</span>
 <span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">blink_speed</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="p">(</span><span class="n">millis</span><span class="p">()</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">last_blink</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">blink_speed</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
@@ -1620,10 +1619,9 @@ This should execute very fast, do not use <code>delay()</code> or any blocking c
 <span class="w">        </span><span class="n">last_blink</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">millis</span><span class="p">();</span><span class="w"></span>
 <span class="w">    </span><span class="p">}</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
-</code></pre></div>
-</td></tr></table></p>
+</code></pre></div></td></tr></table></div></p>
 <p>We don't execute code at fixed intervals, so leave these functions blank:
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">29</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">29</span>
 <span class="normal">30</span>
 <span class="normal">31</span>
 <span class="normal">32</span>
@@ -1631,7 +1629,7 @@ This should execute very fast, do not use <code>delay()</code> or any blocking c
 <span class="normal">34</span>
 <span class="normal">35</span>
 <span class="normal">36</span>
-<span class="normal">37</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">custom_every_second</span><span class="p">()</span><span class="w"></span>
+<span class="normal">37</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">custom_every_second</span><span class="p">()</span><span class="w"></span>
 <span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="c1">// Unused</span>
 <span class="p">}</span><span class="w"></span>
@@ -1640,11 +1638,10 @@ This should execute very fast, do not use <code>delay()</code> or any blocking c
 <span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="c1">// Unused</span>
 <span class="p">}</span><span class="w"></span>
-</code></pre></div>
-</td></tr></table></p>
+</code></pre></div></td></tr></table></div></p>
 <h3 id="declare-pins">Declare pins<a class="headerlink" href="#declare-pins" title="Permanent link">~</a></h3>
 <p>We need to tell the firmware which custom pins we have used:
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">18</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">18</span>
 <span class="normal">19</span>
 <span class="normal">20</span>
 <span class="normal">21</span>
@@ -1653,18 +1650,17 @@ This should execute very fast, do not use <code>delay()</code> or any blocking c
 <span class="normal">24</span>
 <span class="normal">25</span>
 <span class="normal">26</span>
-<span class="normal">27</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kt">bool</span><span class="w"> </span><span class="nf">custom_pin_in_use</span><span class="p">(</span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">pin</span><span class="p">)</span><span class="w"></span>
+<span class="normal">27</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kt">bool</span><span class="w"> </span><span class="nf">custom_pin_in_use</span><span class="p">(</span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">pin</span><span class="p">)</span><span class="w"></span>
 <span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="k">switch</span><span class="p">(</span><span class="n">pin</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="nl">LED_BUILTIN</span><span class="p">:</span><span class="w">  </span><span class="c1">// Custom LED pin</span>
-<span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="mi">6</span><span class="o">:</span><span class="w">  </span><span class="c1">// Custom Input pin</span>
+<span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="no">LED_BUILTIN</span><span class="p">:</span><span class="w">  </span><span class="c1">// Custom LED pin</span>
+<span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="mi">6</span><span class="p">:</span><span class="w">  </span><span class="c1">// Custom Input pin</span>
 <span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span><span class="w"></span>
 <span class="w">        </span><span class="k">default</span><span class="o">:</span><span class="w"></span>
 <span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span><span class="w"></span>
 <span class="w">    </span><span class="p">}</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
-</code></pre></div>
-</td></tr></table></p>
+</code></pre></div></td></tr></table></div></p>
 <h3 id="report-sensors">Report Sensors<a class="headerlink" href="#report-sensors" title="Permanent link">~</a></h3>
 <p>Here we can add data to the <code>sensors</code> MQTT messages that are sent periodically.
 You can add a simple Key-Value pair or a more complex JSON object if needed.</p>
@@ -1684,24 +1680,23 @@ You can add a simple Key-Value pair or a more complex JSON object if needed.</p>
 </ul>
 <h3 id="mqtt-output">MQTT Output<a class="headerlink" href="#mqtt-output" title="Permanent link">~</a></h3>
 <p>Use <code>dispatch_state_subtopic(topic, payload)</code> to send an MQTT message and payload to <code>hasp/&lt;plate&gt;/state/topic</code>.</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
 <span class="normal">4</span>
-<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">custom_every_5seconds</span><span class="p">()</span><span class="w"></span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">custom_every_5seconds</span><span class="p">()</span><span class="w"></span>
 <span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="n">LOG_VERBOSE</span><span class="p">(</span><span class="n">TAG_CUSTOM</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;%d seconds have passsed...&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">);</span><span class="w"></span>
 <span class="w">    </span><span class="n">dispatch_state_subtopic</span><span class="p">(</span><span class="s">&quot;my_topic&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;{</span><span class="se">\&quot;</span><span class="s">test</span><span class="se">\&quot;</span><span class="s">:123}&quot;</span><span class="p">);</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
-</code></pre></div>
-</td></tr></table>
+</code></pre></div></td></tr></table></div>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      2022-04-28
+      2022-05-08
     
   </small>
 </div>
@@ -1761,7 +1756,7 @@ You can add a simple Key-Value pair or a more complex JSON object if needed.</p>
     <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tracking", "search.suggest", "search.highlight", "navigation.top"], "search": "../../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "version": {"default": 0.6, "provider": "mike"}}</script>
     
      
-      <script src="../../assets/javascripts/bundle.748e2769.min.js"></script>
+      <script src="../../assets/javascripts/bundle.ed9748b7.min.js"></script>
       
     
 <!-- <script src="../../js/youtube.js"></script> -->

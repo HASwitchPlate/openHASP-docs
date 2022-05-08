@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://haswitchplate.github.io/openHASP-docs/0.6.2/0.6.2/design/fonts/">
       
       <link rel="icon" href="../../favicon.ico">
-      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.11">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.13">
     
     
       
@@ -23,10 +23,10 @@
       
     
      
-      <link rel="stylesheet" href="../../assets/stylesheets/main.8c5ef100.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.e411adfe.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.9647289d.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.cc9b2e1e.min.css">
         
       
     
@@ -1598,11 +1598,10 @@ td:nth-child(3n+2) { white-space: nowrap; }
 </ul>
 <p>Including selected glyphs of Latin-1 character set and MaterialDesign icons below.</p>
 <p>The built-in fonts can be set by using the pointsize as parameter. For example:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="err">p</span><span class="mi">4</span><span class="err">b</span><span class="mf">1.</span><span class="kc">te</span><span class="err">x</span><span class="kc">t</span><span class="err">_</span><span class="kc">f</span><span class="err">o</span><span class="kc">nt</span><span class="err">=</span><span class="mi">24</span><span class="w"></span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="err">p</span><span class="mi">4</span><span class="err">b</span><span class="mf">1.</span><span class="kc">te</span><span class="err">x</span><span class="kc">t</span><span class="err">_</span><span class="kc">f</span><span class="err">o</span><span class="kc">nt</span><span class="err">=</span><span class="mi">24</span><span class="w"></span>
 <span class="err">p</span><span class="mi">4</span><span class="err">b</span><span class="mf">2.</span><span class="err">value_</span><span class="kc">f</span><span class="err">o</span><span class="kc">nt</span><span class="err">=</span><span class="mi">12</span><span class="w"></span>
-</code></pre></div>
-</td></tr></table>
+</code></pre></div></td></tr></table></div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>It is possible to create custom builds with built-in fonts of other sizes (choose any <em>four</em> of 12, 14, 16, 20, 22, 24, 26, 28, 32, 36, 38, 40, 44, 48) and supporting Latin-2 or Cyrillic character sets (even combined) by <a href="../../compiling/customize/">customizing</a> <code>user_config_override.h</code>.</p>
@@ -2166,23 +2165,19 @@ Included are a range of arrows, navigation, climate, controls, devices, energy, 
 <p>To use an icon in a <code>json</code> or <code>jsonl</code> payload you need to prefix the UTF-8 character code with <code>\u</code>.
 ArduinoJSON will correctly decode the text into it's UTF-8 representation while parsing the JSON object:</p>
 <p><code>jsonl</code> example:
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;page&quot;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="nt">&quot;obj&quot;</span><span class="p">:</span><span class="s2">&quot;label&quot;</span><span class="p">,</span><span class="nt">&quot;w&quot;</span><span class="p">:</span><span class="mi">150</span><span class="p">,</span><span class="nt">&quot;h&quot;</span><span class="p">:</span><span class="mi">50</span><span class="p">,</span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="s2">&quot;\uE64A Hello world!&quot;</span><span class="p">}</span><span class="w"></span>
-</code></pre></div>
-</td></tr></table></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">{</span><span class="nt">&quot;page&quot;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="nt">&quot;obj&quot;</span><span class="p">:</span><span class="s2">&quot;label&quot;</span><span class="p">,</span><span class="nt">&quot;w&quot;</span><span class="p">:</span><span class="mi">150</span><span class="p">,</span><span class="nt">&quot;h&quot;</span><span class="p">:</span><span class="mi">50</span><span class="p">,</span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="s2">&quot;\uE64A Hello world!&quot;</span><span class="p">}</span><span class="w"></span>
+</code></pre></div></td></tr></table></div></p>
 <p><code>json</code> example:
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">[</span><span class="s2">&quot;p2b1.text=\uE64A Hello world!&quot;</span><span class="p">]</span><span class="w"></span>
-</code></pre></div>
-</td></tr></table></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">[</span><span class="s2">&quot;p2b1.text=\uE64A Hello world!&quot;</span><span class="p">]</span><span class="w"></span>
+</code></pre></div></td></tr></table></div></p>
 <p>If the icon codepoint is larger than <code>0xFFFF</code> you need to convert the codepoint to its <strong><a href="http://www.russellcottrell.com/greek/utilities/SurrogatePairCalculator.htm">surrogate pair</a></strong> first!
 Then include both UTF-16 surrogate characters in the payload like this:</p>
 <p><code>jsonl</code> example:
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;page&quot;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="nt">&quot;obj&quot;</span><span class="p">:</span><span class="s2">&quot;label&quot;</span><span class="p">,</span><span class="nt">&quot;w&quot;</span><span class="p">:</span><span class="mi">150</span><span class="p">,</span><span class="nt">&quot;h&quot;</span><span class="p">:</span><span class="mi">50</span><span class="p">,</span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;\uDB81\uDC25 Hello world!&quot;</span><span class="p">}</span><span class="w"></span>
-</code></pre></div>
-</td></tr></table></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">{</span><span class="nt">&quot;page&quot;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="nt">&quot;obj&quot;</span><span class="p">:</span><span class="s2">&quot;label&quot;</span><span class="p">,</span><span class="nt">&quot;w&quot;</span><span class="p">:</span><span class="mi">150</span><span class="p">,</span><span class="nt">&quot;h&quot;</span><span class="p">:</span><span class="mi">50</span><span class="p">,</span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;\uDB81\uDC25 Hello world!&quot;</span><span class="p">}</span><span class="w"></span>
+</code></pre></div></td></tr></table></div></p>
 <p><code>json</code> example:
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">[</span><span class="s2">&quot;p2b1.text=\uDB81\uDC25 Hello world!&quot;</span><span class="p">]</span><span class="w"></span>
-</code></pre></div>
-</td></tr></table></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">[</span><span class="s2">&quot;p2b1.text=\uDB81\uDC25 Hello world!&quot;</span><span class="p">]</span><span class="w"></span>
+</code></pre></div></td></tr></table></div></p>
 <h4 id="2-as-raw-payload">2. As raw payload<a class="headerlink" href="#2-as-raw-payload" title="Permanent link">~</a></h4>
 <p>Raw payloads are directly passed to the LVGL text rendering engine without any conversion on the MCU.
 You need to make sure the string is properly encoded into UTF-8 <strong>by the application sending the payload</strong>!
@@ -2201,13 +2196,12 @@ How this is accomplished depends on the Home Automation tool:</p>
 <p>At the end of the template you <em>must</em> indicate that Home Assistant needs encoded the string before sending it by appending <code>|e</code> <em>(pipe symbol + <code>e</code>)</em> at the end.</p>
 </li>
 </ul>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">obj</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;p1b2&quot;</span><span class="w">  </span><span class="c1"># light-switch toggle button</span><span class="w"></span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">obj</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;p1b2&quot;</span><span class="w">  </span><span class="c1"># light-switch toggle button</span><span class="w"></span>
 <span class="w">  </span><span class="nt">properties</span><span class="p">:</span><span class="w"></span>
 <span class="w">    </span><span class="s">&quot;text&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&#39;{{</span><span class="nv"> </span><span class="s">&quot;\uE6E8&quot;</span><span class="nv"> </span><span class="s">if</span><span class="nv"> </span><span class="s">is_state(&quot;light.x&quot;,&quot;on&quot;)</span><span class="nv"> </span><span class="s">else</span><span class="nv"> </span><span class="s">&quot;\U0001F5E9&quot;</span><span class="nv"> </span><span class="s">|e</span><span class="nv"> </span><span class="s">}}&#39;</span><span class="w"></span>
-</code></pre></div>
-</td></tr></table>
+</code></pre></div></td></tr></table></div>
 <h2 id="character-sets">Character Sets<a class="headerlink" href="#character-sets" title="Permanent link">~</a></h2>
 <p>The characters are encoded in UTF-8. All character sets include the <a href="#ascii">Ascii</a> <code>0x20-0x7E</code> characters, the non-braking-space (NBSP) and 10 universal symbols.
 Each set contains roughly the same <em>extended</em> characters from its equivalent <a href="https://en.wikipedia.org/wiki/ISO/IEC_8859" target="_blank">iso-8859 standard</a>.
@@ -2742,7 +2736,7 @@ To use it, set the pointsize parameter of the property to <code>0</code>.</p>
   <small>
     
       Last update:
-      2022-04-28
+      2022-05-08
     
   </small>
 </div>
@@ -2802,7 +2796,7 @@ To use it, set the pointsize parameter of the property to <code>0</code>.</p>
     <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tracking", "search.suggest", "search.highlight", "navigation.top"], "search": "../../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "version": {"default": 0.6, "provider": "mike"}}</script>
     
      
-      <script src="../../assets/javascripts/bundle.748e2769.min.js"></script>
+      <script src="../../assets/javascripts/bundle.ed9748b7.min.js"></script>
       
     
 <!-- <script src="../../js/youtube.js"></script> -->
