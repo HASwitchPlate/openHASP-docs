@@ -1,6 +1,6 @@
 # openHASP {< openhasp.version >} documentation
 
-[Click here](https://openhasp.haswitchplate.com/{< openhasp.version >}/) to access the manual in a human readable form.
+[Click here](https://openhasp.haswitchplate.com/0.6.3/) to access the manual in a human readable form.
 
 ## Testing
 
