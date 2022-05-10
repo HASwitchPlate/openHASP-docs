@@ -33,7 +33,7 @@ This behaviour can be changed by setting 'Follow Redirects' to either 'Strict' o
 
 ### Arduino OTA
 
-When you are [developing locally](../compiling/local.md) it can be usefull to update a plate *Over-The-Air* using Arduino OTA.
+When you are [developing locally](../compiling/local.md) it can be useful to update a plate *Over-The-Air* using Arduino OTA.
 The Arduino OTA service is not enabled in the official releases.
 
 For this option to work, the firmware has to be compiled with `HASP_USE_ARDUINOOTA=1` enabled in `include/user_config_override.h`.
