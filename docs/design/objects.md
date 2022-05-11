@@ -39,29 +39,29 @@ There are two ways to create an object on the screen:
 
 ## Cheatsheet
 
-| obj       | Type     | Description
-|:----------|:---------|:-----------
-| btn       | Binary   | [Button](#button)
-| switch    | Toggle   | [Switch](#switch)
-| checkbox  | Toggle   | [Checkbox](#checkbox)
-| label     | Visual   | [Label](#text-label)
-| led       | Visual   | [LED](#led-indicator)
-| spinner   | Visual   | [Spinner](#spinner)
-| obj       | Visual   | [Base Object](#base-object)
-| line      | Visual   | [Line](#line)
-| img       | Visual   | [Image](#image)
-| dropdown  | Selector | [Dropdown List](#dropdown-list)
-| roller    | Selector | [Roller](#roller)
-| btnmatrix | Selector | [Button Matrix](#button-matrix)
-| msgbox    | Selector | [Messagebox](#messagebox)
-| tabview   | Selector | [Tabview](#tabview)
-| tab       | Selector | [Tab](#tab)
-| cpicker   | Selector | [Color picker](#color-picker)
-| bar       | Range    | [Progress Bar](#progress-bar)
-| slider    | Range    | [Slider](#slider)
-| arc       | Range    | [Arc](#arc)
-| linemeter | Range    | [Line Meter](#line-meter)
-| gauge     | Range    | [Gauge](#gauge)
+| obj       | Type     | Description                      | Extra Parts :material-new-box:{ .tag-small }
+|:----------|:---------|:---------------------------------|:-----------
+| btn       | Binary   | [Button](#button)                |
+| switch    | Toggle   | [Switch](#switch)                | indicator, knob
+| checkbox  | Toggle   | [Checkbox](#checkbox)            | indicator
+| label     | Visual   | [Label](#text-label)             |
+| led       | Visual   | [LED](#led-indicator)            |
+| spinner   | Visual   | [Spinner](#spinner)              | indicator
+| obj       | Visual   | [Base Object](#base-object)      |
+| line      | Visual   | [Line](#line)                    |
+| img       | Visual   | [Image](#image)                  |
+| cpicker   | Selector | [Color picker](#color-picker)    | knob
+| roller    | Selector | [Roller](#roller)                | selected
+| dropdown  | Selector | [Dropdown List](#dropdown-list)  | selected, items, scrollbar
+| btnmatrix | Selector | [Button Matrix](#button-matrix)  | items
+| msgbox    | Selector | [Messagebox](#messagebox)        | items, items_bg
+| tabview   | Selector | [Tabview](#tabview)              | items, items_bg, indicator, selected
+| tab       | Selector | [Tab](#tab)                      |
+| bar       | Range    | [Progress Bar](#progress-bar)    | indicator
+| slider    | Range    | [Slider](#slider)                | indicator, knob
+| arc       | Range    | [Arc](#arc)                      | indicator, knob
+| linemeter | Range    | [Line Meter](#line-meter)        |
+| gauge     | Range    | [Gauge](#gauge)                  | indicator, ticks
 
 ## Common Parameters
 

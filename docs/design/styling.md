@@ -1,22 +1,34 @@
 
 # Styling Properties
 
-You can adjust the appearance of objects by changing the foreground, background and/or border color of each object. Some objects allow for more complex styling, effectively changing their appearance or their sub-components.     
+You can adjust the appearance of objects by changing the foreground, background and/or border color of each object.
+Some objects allow for more complex styling, effectively changing the appearance of their sub-components.     
 
-Certain more complex objects are made up of several sub-parts, which can be styled separately. To access the properties of the parts use a number suffix appended to the property.
+## Suffixes
 
-!!! tip
-    A property without suffix usually applies to the default part of the object.  _btn_, _btnmatrix_ and _tabview_ can handle very detailed syling depending on the state of the object with suffixed properties:
-    
-    - 0 = default styling
-    - 1 = styling for toggled state
-    - 2 = styling for pressed, not toggled state
-    - 3 = styling for pressed and toggled state
-    - 4 = styling for disabled not toggled state
-    - 5 = styling for disabled and toggled state
- 
-    For example to set the `radius` of all the buttons in _btnmatrix_ you'd set a value for the property `radius0`. Using `radius` without a suffix will apply the property to the outline background of it.
+The styling properties below support an optional two-digit suffix to indicate which **part** and/or **state** of the object the property applies to.
+A styling property without suffix will be applied to the **default state** of the **main part** of the object *(i.e. the background)*.
 
+Very detailed styling can be applied to each part depending on the state of the object:
+
+### Parts
+
+All objects have at least a main part.
+Several objects are made up of additional parts which can each be styled separately.
+To access the properties of the parts use a two-digit suffix appended to the styling properties below.
+
+The part indexes are:
+
+- 00 = main part of the object *(i.e. the background)*
+- 10 = the indicator, highlighting the the current value
+- 20 = the knob which can be used the change the value
+- 30 = the background of the items/buttons
+- 40 = the items/buttons
+- 50 = the selected item
+- 60 = major ticks of the gauge object
+- 70 = the text cursor
+- 80 = the scrollbar
+- 90 = other special part, not listed above
 
 !!! tip
     Not all the suffixed properties are mentioned in this documentation, feel free to discover them yourself.    
@@ -24,11 +36,26 @@ Certain more complex objects are made up of several sub-parts, which can be styl
     For example the _gauge_ object uses `line_width` to set the minor ticks thickness, `line_width1` for major ticks and `line_width2` for the thickness of the needle. Also a `toggle` `btn` can be made to show `text` `yellow` when toggled ON with `"text_color":"white","text_color2":"white","text_color1":"yellow","text_color3":"yellow"`
     
 
+### States
+
+The state indexes:
+
+- 00 = default styling
+- 01 = styling for toggled state
+- 02 = styling for pressed, not toggled state
+- 03 = styling for pressed and toggled state
+- 04 = styling for disabled not toggled state
+- 05 = styling for disabled and toggled state
+
+For example to set the `radius` of all the buttons in _btnmatrix_ you'd set a value for the property `radius0`. Using `radius` without a suffix will apply the property to the outline background of it.
+
+### Inheritance
+
 If objects are children of other objects (they have the [parentid][7] property set), property inheritance takes place. 
 
-!!! Inheritance
-    Some properties (typically that are related to text and opacity) can be inherited from the parent object's styles. Inheritance is applied only if the given property is not set in the initial jsonl of the child object (at first draw). In this case, if the property is inheritable, the property's value will be searched in the parents too until an object specifies a value for the property. The parents will use their own state to detemine the value. So for example if a button is pressed, and the text color comes from here, the pressed text color will be used. ([source][8]{target=_blank}) Inheritance takes place at run time too.     
-    When a parent object is deleted, all childs will be deleted too.
+Some properties (typically that are related to text and opacity) can be inherited from the parent object's styles. Inheritance is applied only if the given property is not set in the initial jsonl of the child object (at first draw). In this case, if the property is inheritable, the property's value will be searched in the parents too until an object specifies a value for the property. The parents will use their own state to detemine the value. So for example if a button is pressed, and the text color comes from here, the pressed text color will be used. ([source][8]{target=_blank}) Inheritance takes place at run time too.     
+
+When a parent object is deleted, all children will be deleted too.
 
 ## General
 
@@ -36,8 +63,8 @@ General styling options.
 
 | Property     | Value      | Default | Description
 |:-------------|:----------:|:-------:|:-----------
-| radius       | [uint16][3]| depends<BR>on theme | The radius of the rounded corners of the object:<BR>0 = square corners<BR>100 = pill shaped object (true circle if object has same width and height)
-| clip_corner  | [bool][2] | false   | Enable to clip off the overflowed content on the rounded (`radius` > `0`) corners of the object
+| radius       | [uint16][3]| depends<BR>on theme | The radius of the rounded corners of the object:<BR>0 = no radius i.e. square corners<BR>65535 = pill shaped object (true circle if object has same width and height)
+| clip_corner  | [bool][2] | false   | Enable to clip off the overflowed content on the rounded (`radius > 0`) corners of the object
 
 
 ## Background
@@ -50,8 +77,8 @@ The color and gradient used for drawing the background of an object.
 | bg_color       |[color][1]| The background color
 | bg_grad_color  |[color][1]| The background gradient color
 | bg_grad_dir    | [0..2]   | 0 = none *(=default)*<br>1 = horizontal<br>2 = vertical
-| bg_grad_stop   | [uint8][3]     | Specifies where the gradient should stop.<br>0 = at left/top most position<br>255= at right/bottom most position *(=default)*
-| bg_main_stop   | [uint8][3]     | Specifies where should the gradient start<br>0 = at left/top most position *(=default)*<br>255= at right/bottom most position
+| bg_grad_stop   | [uint8][3]     | Specifies where the gradient should stop.<br>0 = at left/top most position<br>128 = in the center<br>255 = at right/bottom most position *(=default)*
+| bg_main_stop   | [uint8][3]     | Specifies where should the gradient start<br>0 = at left/top most position *(=default)*<br>128 = in the center<br>255 = at right/bottom most position
 
 To adjust the background style of a page use `pXb0` where `X` is the page number.
 
@@ -66,6 +93,17 @@ The border is drawn on top of the background. It has radius rounding.
 | border_width | [uint8][3]     | Set the width of the border
 | border_side  | [uint8][3]     | Specifies which sides of the border to draw.<br>0 = none<br>1 = bottom<br>2 = top<br>4 = left<br>8 = right<br>15 = full<br>A sum of these values is also possible to select specific sides.
 | border_post  | [bool][2]| If `true` the border will be drawn after all children have been drawn.
+
+## Outline
+
+The outline is similar to border but is drawn outside of the object.
+
+| Property     |  Type     | Description
+| :---         |  :---:    | :---
+| outline_color|[color][1] | Specifies the color of the outline
+| outline_opa  | [uint8][3]| Specifies opacity of the outline
+| outline_width| [uint8][3]| Set the width of the outline
+| outline_pad  | [int16][3]| The space between the object and the outline. (default=0)
 
 ## Padding and Margin
 
@@ -137,9 +175,6 @@ Properties for [line](../objects/#line), [line meter](../objects/#line-meter) ob
 | line_color             | [color][1]    | Color of the line
 | line_opa               | [uint8][3]    | Opacity level of the line [0-255]
 | line_width             | [int16][3]    | Width of a scale line in the active region (also see `scale_end_line_width` below), or gauge minor ticks thickness
-| line_width1            | [int16][3]    | Gauge major ticks thickness
-| line_color             | [color][1]    | Starting color of the gauge minor ticks
-| line_color1            | [color][1]    | Starting color of the gauge major ticks
 | line_rounded           | [bool][2]     | `true` = draw rounded line endings. Default = `false`
 | line_dash_width        | [int16][3]    | Width of dash. Dashing is drawn only for horizontal or vertical lines. `0` = disable dash (= default)
 | line_dash_gap          | [int16][3]    | Gap between two dash line. Dashing is drawn only for horizontal or vertical lines. `0` = disable dash (= default)
@@ -151,39 +186,12 @@ The properties for styling the scale of [line meter](../objects/#line-meter), [g
 | Property               |  Type         | Description
 | :---                   |  :---:        | :---
 | scale_grad_color       | [color][1]    | Gradient to this color on the scale lines, or gauge minor ticks
-| scale_grad_color1      | [color][1]    | Gradient to this color on the gauge major ticks
 | scale_end_color        | [color][1]    | Color of the scale lines in the end region, or gauge minor ticks / critical area
-| scale_end_color1       | [color][1]    | Color of the gauge major ticks in the critical area
 | scale_width            | [int16][3]    | Width of the scale in the normal region, or length of gauge minor ticks
-| scale_width1           | [int16][3]    | Length of the gauge major ticks
 | scale_border_width     | [int16][3]    | Width of a border drawn on the outer side of the scale in the normal region
 | scale_end_line_width   | [int16][3]    | Width of a scale line in the end region
 | scale_end_border_width | [int16][3]    | Width of a border drawn on the outer side of the scale in the end region
 
-## Needle
-
-The properties for styling the needle of [gauge](../objects/#gauge) objects.
-
-| Property               |  Type      | Description
-| :---                   |   :---:    | :---
-| line_width2            | [int16][3] | Width of the needle line
-| line_rounded2          | [bool][2]  | `true` = draw rounded needle ending. Default = `false`
-| line_color2            | [color][1] | Color of the needle line
-| line_opa2              | [uint8][3] | Opacity level of the needle line [0-255]
-| bg_color2              | [color][1] | Color of the needle central circle
-| bg_opa2                | [uint8][3] | Opacity level of the needle central circle [0-255]
-
-## Arc
-
-The properties for styling the arc of [arc](../objects/#arc) objects.
-
-| Property               |  Type      | Description
-| :---                   |   :---:    | :---
-| line_width             | [int16][9] | Width of the arc background (default 20)
-| line_color             | [color][1] | Color of the arc background
-| line_width1            | [int16][9] | Width of the arc indicator (default 20)
-| line_color1            | [color][1] | Color of the arc indicator
-  
 ## Image
 
 | Property      |  Type    | Description
@@ -193,10 +201,6 @@ The properties for styling the arc of [arc](../objects/#arc) objects.
 | image_recolor_opa | [uint8][3] | Specifies opacity of the overlay color mask
 
 <!--
-
-## Outline
-
-n/a
 
 ## Pattern
 
