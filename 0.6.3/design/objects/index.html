@@ -1799,7 +1799,7 @@ tbody tr:nth-child(even) {
 <th align="left">obj</th>
 <th align="left">Type</th>
 <th align="left">Description</th>
-<th align="left">Extra Parts <span class="twemoji tag-small"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 4c1.11 0 2 .89 2 2v12c0 1.11-.89 2-2 2H4c-1.11 0-2-.89-2-2V6c0-1.11.89-2 2-2h16M8.5 15V9H7.25v3.5L4.75 9H3.5v6h1.25v-3.5L7.3 15h1.2m5-4.74V9h-4v6h4v-1.25H11v-1.11h2.5v-1.26H11v-1.12h2.5m7 3.74V9h-1.25v4.5h-1.12V10h-1.25v3.5h-1.13V9H14.5v5a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1Z"/></svg></span></th>
+<th align="left"><a href="../styling/#parts">Extra Parts <span class="twemoji tag-small"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 4c1.11 0 2 .89 2 2v12c0 1.11-.89 2-2 2H4c-1.11 0-2-.89-2-2V6c0-1.11.89-2 2-2h16M8.5 15V9H7.25v3.5L4.75 9H3.5v6h1.25v-3.5L7.3 15h1.2m5-4.74V9h-4v6h4v-1.25H11v-1.11h2.5v-1.26H11v-1.12h2.5m7 3.74V9h-1.25v4.5h-1.12V10h-1.25v3.5h-1.13V9H14.5v5a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1Z"/></svg></span></a></th>
 </tr>
 </thead>
 <tbody>
@@ -2313,19 +2313,19 @@ Besides the common properties listed above, each object type can have specific p
 <td><code>1</code> = on, <code>0</code> = off</td>
 </tr>
 <tr>
-<td>bg_color1</td>
+<td>bg_color10</td>
 <td><a href="../data-types/#colors">color</a></td>
 <td>0</td>
 <td>changes indicator color</td>
 </tr>
 <tr>
-<td>bg_color2</td>
+<td>bg_color20</td>
 <td><a href="../data-types/#colors">color</a></td>
 <td>0</td>
 <td>changes knob color</td>
 </tr>
 <tr>
-<td>radius2</td>
+<td>radius20</td>
 <td><a href="../data-types/#integer">int16</a></td>
 <td>depends<BR>on theme</td>
 <td>changes knob corner radius (also see <a href="#common-properties">radius</a>)</td>
@@ -2546,13 +2546,13 @@ based on the font and text.</p>
 <td>end angle of the arc background (see note)</td>
 </tr>
 <tr>
-<td>start_angle1</td>
+<td>start_angle10</td>
 <td>0-360</td>
 <td></td>
 <td>start angle of the arc indicator (see note)</td>
 </tr>
 <tr>
-<td>end_angle1</td>
+<td>end_angle10</td>
 <td>0-360</td>
 <td></td>
 <td>end angle of the arc indicator (see note)</td>
@@ -2566,12 +2566,12 @@ based on the font and text.</p>
 </div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>To adjust the size of the knob, use <code>pad_top2</code>, <code>pad_bottom2</code>, <code>pad_left2</code>, <code>pad_right2</code> <a href="../styling/#padding-and-margin">styling</a> properties. If you increase the knob beyond the margins of the object, you also need to increase <code>pad_top</code>, <code>pad_bottom</code>, <code>pad_left</code>, <code>pad_right</code> for the arc itself.  <br />
+<p>To adjust the size of the knob, use <code>pad_top20</code>, <code>pad_bottom20</code>, <code>pad_left20</code>, <code>pad_right20</code> <a href="../styling/#padding-and-margin">styling</a> properties. If you increase the knob beyond the margins of the object, you also need to increase <code>pad_top</code>, <code>pad_bottom</code>, <code>pad_left</code>, <code>pad_right</code> for the arc itself.  <br />
 Check out <a href="../styling/#value">value styling</a> to display a textual value in the middle of the arc.     </p>
 </div>
 <details class="example">
 <summary>Example <code>jsonl</code></summary>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">{</span><span class="nt">&quot;page&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">9</span><span class="p">,</span><span class="nt">&quot;obj&quot;</span><span class="p">:</span><span class="s2">&quot;arc&quot;</span><span class="p">,</span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="mi">20</span><span class="p">,</span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="mi">75</span><span class="p">,</span><span class="nt">&quot;w&quot;</span><span class="p">:</span><span class="mi">200</span><span class="p">,</span><span class="nt">&quot;h&quot;</span><span class="p">:</span><span class="mi">200</span><span class="p">,</span><span class="nt">&quot;min&quot;</span><span class="p">:</span><span class="mi">15</span><span class="p">,</span><span class="nt">&quot;max&quot;</span><span class="p">:</span><span class="mi">35</span><span class="p">,</span><span class="nt">&quot;border_side&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="nt">&quot;rotation&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="nt">&quot;start_angle&quot;</span><span class="p">:</span><span class="mi">135</span><span class="p">,</span><span class="nt">&quot;end_angle&quot;</span><span class="p">:</span><span class="mi">45</span><span class="p">,</span><span class="nt">&quot;start_angle1&quot;</span><span class="p">:</span><span class="mi">135</span><span class="p">,</span><span class="nt">&quot;end_angle1&quot;</span><span class="p">:</span><span class="mi">45</span><span class="p">,</span><span class="nt">&quot;adjustable&quot;</span><span class="p">:</span><span class="kc">true</span><span class="p">}</span><span class="w"></span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">{</span><span class="nt">&quot;page&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">9</span><span class="p">,</span><span class="nt">&quot;obj&quot;</span><span class="p">:</span><span class="s2">&quot;arc&quot;</span><span class="p">,</span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="mi">20</span><span class="p">,</span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="mi">75</span><span class="p">,</span><span class="nt">&quot;w&quot;</span><span class="p">:</span><span class="mi">200</span><span class="p">,</span><span class="nt">&quot;h&quot;</span><span class="p">:</span><span class="mi">200</span><span class="p">,</span><span class="nt">&quot;min&quot;</span><span class="p">:</span><span class="mi">15</span><span class="p">,</span><span class="nt">&quot;max&quot;</span><span class="p">:</span><span class="mi">35</span><span class="p">,</span><span class="nt">&quot;border_side&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="nt">&quot;rotation&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="nt">&quot;start_angle&quot;</span><span class="p">:</span><span class="mi">135</span><span class="p">,</span><span class="nt">&quot;end_angle&quot;</span><span class="p">:</span><span class="mi">45</span><span class="p">,</span><span class="nt">&quot;start_angle10&quot;</span><span class="p">:</span><span class="mi">135</span><span class="p">,</span><span class="nt">&quot;end_angle10&quot;</span><span class="p">:</span><span class="mi">45</span><span class="p">,</span><span class="nt">&quot;adjustable&quot;</span><span class="p">:</span><span class="kc">true</span><span class="p">}</span><span class="w"></span>
 </code></pre></div></td></tr></table></div>
 </details>
 <p>While pressing and dragging the <code>arc</code> object the following events are sent: <code>down</code> (old value), <code>changed</code> (repeatedly until released) and <code>up</code> (value at the moment of releasing it):</p>
@@ -2971,7 +2971,7 @@ To add other objects to these tabs, set the <code>parentid</code> when creating 
 <span class="p">{</span><span class="nt">&quot;page&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">51</span><span class="p">,</span><span class="nt">&quot;obj&quot;</span><span class="p">:</span><span class="s2">&quot;tab&quot;</span><span class="p">,</span><span class="nt">&quot;parentid&quot;</span><span class="p">:</span><span class="mi">14</span><span class="p">,</span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="s2">&quot;Tab 1&quot;</span><span class="p">}</span><span class="w"></span>
 <span class="p">{</span><span class="nt">&quot;page&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">52</span><span class="p">,</span><span class="nt">&quot;obj&quot;</span><span class="p">:</span><span class="s2">&quot;tab&quot;</span><span class="p">,</span><span class="nt">&quot;parentid&quot;</span><span class="p">:</span><span class="mi">14</span><span class="p">,</span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="s2">&quot;Tab 2&quot;</span><span class="p">}</span><span class="w"></span>
 <span class="p">{</span><span class="nt">&quot;page&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">53</span><span class="p">,</span><span class="nt">&quot;obj&quot;</span><span class="p">:</span><span class="s2">&quot;tab&quot;</span><span class="p">,</span><span class="nt">&quot;parentid&quot;</span><span class="p">:</span><span class="mi">14</span><span class="p">,</span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="s2">&quot;Tab 3&quot;</span><span class="p">}</span><span class="w"></span>
-<span class="p">{</span><span class="nt">&quot;page&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">61</span><span class="p">,</span><span class="nt">&quot;obj&quot;</span><span class="p">:</span><span class="s2">&quot;switch&quot;</span><span class="p">,</span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="mi">20</span><span class="p">,</span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="mi">10</span><span class="p">,</span><span class="nt">&quot;w&quot;</span><span class="p">:</span><span class="mi">60</span><span class="p">,</span><span class="nt">&quot;h&quot;</span><span class="p">:</span><span class="mi">30</span><span class="p">,</span><span class="nt">&quot;parentid&quot;</span><span class="p">:</span><span class="mi">51</span><span class="p">,</span><span class="nt">&quot;radius&quot;</span><span class="p">:</span><span class="mi">25</span><span class="p">,</span><span class="nt">&quot;radius2&quot;</span><span class="p">:</span><span class="mi">25</span><span class="p">}</span><span class="w"></span>
+<span class="p">{</span><span class="nt">&quot;page&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">61</span><span class="p">,</span><span class="nt">&quot;obj&quot;</span><span class="p">:</span><span class="s2">&quot;switch&quot;</span><span class="p">,</span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="mi">20</span><span class="p">,</span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="mi">10</span><span class="p">,</span><span class="nt">&quot;w&quot;</span><span class="p">:</span><span class="mi">60</span><span class="p">,</span><span class="nt">&quot;h&quot;</span><span class="p">:</span><span class="mi">30</span><span class="p">,</span><span class="nt">&quot;parentid&quot;</span><span class="p">:</span><span class="mi">51</span><span class="p">,</span><span class="nt">&quot;radius&quot;</span><span class="p">:</span><span class="mi">25</span><span class="p">,</span><span class="nt">&quot;radius20&quot;</span><span class="p">:</span><span class="mi">25</span><span class="p">}</span><span class="w"></span>
 <span class="p">{</span><span class="nt">&quot;page&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">71</span><span class="p">,</span><span class="nt">&quot;obj&quot;</span><span class="p">:</span><span class="s2">&quot;dropdown&quot;</span><span class="p">,</span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="mi">15</span><span class="p">,</span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="mi">10</span><span class="p">,</span><span class="nt">&quot;w&quot;</span><span class="p">:</span><span class="mi">110</span><span class="p">,</span><span class="nt">&quot;h&quot;</span><span class="p">:</span><span class="mi">30</span><span class="p">,</span><span class="nt">&quot;parentid&quot;</span><span class="p">:</span><span class="mi">52</span><span class="p">,</span><span class="nt">&quot;options&quot;</span><span class="p">:</span><span class="s2">&quot;Apple\nBanana\nOrange\nMelon&quot;</span><span class="p">}</span><span class="w"></span>
 <span class="p">{</span><span class="nt">&quot;page&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">81</span><span class="p">,</span><span class="nt">&quot;obj&quot;</span><span class="p">:</span><span class="s2">&quot;checkbox&quot;</span><span class="p">,</span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="mi">15</span><span class="p">,</span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="mi">10</span><span class="p">,</span><span class="nt">&quot;w&quot;</span><span class="p">:</span><span class="mi">110</span><span class="p">,</span><span class="nt">&quot;h&quot;</span><span class="p">:</span><span class="mi">30</span><span class="p">,</span><span class="nt">&quot;parentid&quot;</span><span class="p">:</span><span class="mi">53</span><span class="p">,</span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="s2">&quot; Nice tabview&quot;</span><span class="p">}</span><span class="w"> </span>
 </code></pre></div></td></tr></table></div>
@@ -3073,7 +3073,7 @@ To add other objects to these tabs, set the <code>parentid</code> when creating 
 <td>The width of the background circle</td>
 </tr>
 <tr>
-<td>line_width1</td>
+<td>line_width10</td>
 <td><a href="../data-types/#integer">int16</a></td>
 <td>20</td>
 <td>The width of the spinning segment</td>
@@ -3085,7 +3085,7 @@ To add other objects to these tabs, set the <code>parentid</code> when creating 
 <td>color of the background circle</td>
 </tr>
 <tr>
-<td>line_color1</td>
+<td>line_color10</td>
 <td><a href="../data-types/#colors">color</a></td>
 <td>depends<BR>on theme</td>
 <td>color of the spinning segment</td>
@@ -3377,7 +3377,7 @@ The pop-up is centered on the screen.</p>
   <small>
     
       Last update:
-      2022-05-11
+      2022-05-12
     
   </small>
 </div>
