@@ -20,7 +20,7 @@ To access the properties of the parts use a two-digit suffix appended to the sty
 The part indexes are:
 
 - 00 = main part of the object *(i.e. the background)*
-- 10 = the indicator, highlighting the the current value
+- 10 = the indicator or needle, highlighting the the current value
 - 20 = the knob which can be used the change the value
 - 30 = the background of the items/buttons
 - 40 = the items/buttons

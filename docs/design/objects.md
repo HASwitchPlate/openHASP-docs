@@ -39,7 +39,7 @@ There are two ways to create an object on the screen:
 
 ## Cheatsheet
 
-| obj       | Type     | Description                      | Extra Parts :material-new-box:{ .tag-small }
+| obj       | Type     | Description                      | [Extra Parts :material-new-box:{ .tag-small }][18]
 |:----------|:---------|:---------------------------------|:-----------
 | btn       | Binary   | [Button](#button)                |
 | switch    | Toggle   | [Switch](#switch)                | indicator, knob
@@ -243,9 +243,9 @@ Toggle OFF:
 | Property   | Value      | Default | Description
 |------------|------------|---------|---------------
 | val        | [bool][2]  | 0       | `1` = on, `0` = off
-| bg_color1  | [color][1] | 0       | changes indicator color
-| bg_color2  | [color][1] | 0       | changes knob color
-| radius2    | [int16][9]      | depends<BR>on theme | changes knob corner radius (also see [radius](#common-properties))
+| bg_color10 | [color][1] | 0       | changes indicator color
+| bg_color20 | [color][1] | 0       | changes knob color
+| radius20   | [int16][9]      | depends<BR>on theme | changes knob corner radius (also see [radius](#common-properties))
 
 ??? example "Example `jsonl`"
     ```json linenums="1"
@@ -341,18 +341,18 @@ While pressing and dragging the `slider` object the following events are sent: `
 
 ![lv_arc](../assets/images/objects/lv_ex_arc_1.png)
 
-| Property  | Value      | Default | Description
-|-----------|------------|---------|--------------
-| min       | [int16][9] | 0       | minimum value of the indicator
-| max       | [int16][9] | 100     | maximum value of the indicator
-| val       | [int16][9] | 0       | current value of the indicator
-| rotation  | [int16][9] | 0       | offset to the 0 degree position
-| type      | 0-2        | 0       | `0` = normal, `1` = symmetrical, `2` = reverse
-| adjustable| [bool][2]  | false   | Add knob that the user can operate to change the value
-|start_angle| 0-360      |         | start angle of the arc background (see note)
-| end_angle | 0-360      |         | end angle of the arc background (see note)
-|start_angle1| 0-360     |         | start angle of the arc indicator (see note)
-| end_angle1 | 0-360     |         | end angle of the arc indicator (see note)
+| Property    | Value      | Default | Description
+|-------------|------------|---------|--------------
+| min         | [int16][9] | 0       | minimum value of the indicator
+| max         | [int16][9] | 100     | maximum value of the indicator
+| val         | [int16][9] | 0       | current value of the indicator
+| rotation    | [int16][9] | 0       | offset to the 0 degree position
+| type        | 0-2        | 0       | `0` = normal, `1` = symmetrical, `2` = reverse
+| adjustable  | [bool][2]  | false   | Add knob that the user can operate to change the value
+| start_angle | 0-360      |         | start angle of the arc background (see note)
+| end_angle   | 0-360      |         | end angle of the arc background (see note)
+|start_angle10| 0-360      |         | start angle of the arc indicator (see note)
+| end_angle10 | 0-360      |         | end angle of the arc indicator (see note)
 
 
 !!! note
@@ -360,12 +360,12 @@ While pressing and dragging the `slider` object the following events are sent: `
     `min`, `max` and `val` also support negative values.
 
 !!! tip
-    To adjust the size of the knob, use `pad_top2`, `pad_bottom2`, `pad_left2`, `pad_right2` [styling][13] properties. If you increase the knob beyond the margins of the object, you also need to increase `pad_top`, `pad_bottom`, `pad_left`, `pad_right` for the arc itself.    
+    To adjust the size of the knob, use `pad_top20`, `pad_bottom20`, `pad_left20`, `pad_right20` [styling][13] properties. If you increase the knob beyond the margins of the object, you also need to increase `pad_top`, `pad_bottom`, `pad_left`, `pad_right` for the arc itself.    
     Check out [value styling][6] to display a textual value in the middle of the arc.     
 
 ??? example "Example `jsonl`"
     ```json linenums="1"
-    {"page":1,"id":9,"obj":"arc","x":20,"y":75,"w":200,"h":200,"min":15,"max":35,"border_side":0,"type":0,"rotation":0,"start_angle":135,"end_angle":45,"start_angle1":135,"end_angle1":45,"adjustable":true}
+    {"page":1,"id":9,"obj":"arc","x":20,"y":75,"w":200,"h":200,"min":15,"max":35,"border_side":0,"type":0,"rotation":0,"start_angle":135,"end_angle":45,"start_angle10":135,"end_angle10":45,"adjustable":true}
     ```
 
 While pressing and dragging the `arc` object the following events are sent: `down` (old value), `changed` (repeatedly until released) and `up` (value at the moment of releasing it):
@@ -538,7 +538,7 @@ To add other objects to these tabs, set the `parentid` when creating those objec
     {"page":1,"id":51,"obj":"tab","parentid":14,"text":"Tab 1"}
     {"page":1,"id":52,"obj":"tab","parentid":14,"text":"Tab 2"}
     {"page":1,"id":53,"obj":"tab","parentid":14,"text":"Tab 3"}
-    {"page":1,"id":61,"obj":"switch","x":20,"y":10,"w":60,"h":30,"parentid":51,"radius":25,"radius2":25}
+    {"page":1,"id":61,"obj":"switch","x":20,"y":10,"w":60,"h":30,"parentid":51,"radius":25,"radius20":25}
     {"page":1,"id":71,"obj":"dropdown","x":15,"y":10,"w":110,"h":30,"parentid":52,"options":"Apple\nBanana\nOrange\nMelon"}
     {"page":1,"id":81,"obj":"checkbox","x":15,"y":10,"w":110,"h":30,"parentid":53,"text":" Nice tabview"} 
     ```
@@ -584,16 +584,16 @@ While pressing and dragging the `cpicker` object the following events are sent: 
 
 ![lv_spinner](../assets/images/objects/lv_ex_spinner_1.png)
 
-| Property    | Value      | Default | Description
-|-------------|------------|---------|--------------
-| speed       | [int16][9] | 1000    | The time for 1 turn in ms
-| direction   | [int16][9] | 0       | `0` = clockwise, `1` = counter-clockwise
-| angle       | 0-360      | 60      | The length of the spinning segment in degrees
-| type        | 0-2        | 0       | `0` = slow down on the top, `1` = slow down and stretch, `2` = constant speed no stretch
-| line_width  | [int16][9] | 20    | The width of the background circle
-| line_width1 | [int16][9] | 20    | The width of the spinning segment
-| line_color  | [color][1] | depends<BR>on theme | color of the background circle
-| line_color1 | [color][1] | depends<BR>on theme | color of the spinning segment
+| Property     | Value      | Default | Description
+|--------------|------------|---------|--------------
+| speed        | [int16][9] | 1000    | The time for 1 turn in ms
+| direction    | [int16][9] | 0       | `0` = clockwise, `1` = counter-clockwise
+| angle        | 0-360      | 60      | The length of the spinning segment in degrees
+| type         | 0-2        | 0       | `0` = slow down on the top, `1` = slow down and stretch, `2` = constant speed no stretch
+| line_width   | [int16][9] | 20    | The width of the background circle
+| line_width10 | [int16][9] | 20    | The width of the spinning segment
+| line_color   | [color][1] | depends<BR>on theme | color of the background circle
+| line_color10 | [color][1] | depends<BR>on theme | color of the spinning segment
 
 !!! tip
     Check out background, border, and line [styling][12] to adjust other aspects of the appearance.
@@ -750,3 +750,4 @@ You can use it as a background shape for other objects by putting its jsonl line
 [15]: ../data-types/#variables
 [16]: https://lvgl.io/tools/imageconverter
 [17]: ../../integrations/home-assistant/sampl_conf/#using-tags
+[18]: ../styling/#parts
