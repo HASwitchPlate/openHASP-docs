@@ -30,10 +30,8 @@ The part indexes are:
 - 80 = the scrollbar
 - 90 = other special part, not listed above
 
-!!! tip
-    Not all the suffixed properties are mentioned in this documentation, feel free to discover them yourself.    
-    
-    For example the _gauge_ object uses `line_width` to set the minor ticks thickness, `line_width1` for major ticks and `line_width2` for the thickness of the needle. Also a `toggle` `btn` can be made to show `text` `yellow` when toggled ON with `"text_color":"white","text_color2":"white","text_color1":"yellow","text_color3":"yellow"`
+!!! tip  
+    For example the _gauge_ object uses `line_width` to set the minor ticks thickness, `line_width60` for major ticks and `line_width10` for the thickness of the needle.
     
 
 ### States
@@ -47,7 +45,10 @@ The state indexes:
 - 04 = styling for disabled not toggled state
 - 05 = styling for disabled and toggled state
 
-For example to set the `radius` of all the buttons in _btnmatrix_ you'd set a value for the property `radius0`. Using `radius` without a suffix will apply the property to the outline background of it.
+For example to set the `radius` of all the buttons in _btnmatrix_ you'd set a value for the property `radius30`. Using `radius` without a suffix will apply the property to the outline background of it.
+
+A `toggle` `btn` can be made to show `text` `yellow` when toggled ON with `"text_color":"white","text_color01":"yellow"`
+    
 
 ### Inheritance
 

@@ -16,7 +16,7 @@ This is a real-world example of a `pages.jsonl` file. Upload it to your plate's 
 {"id":1,"obj":"btn","x":10,"y":45,"w":220,"h":55,"toggle":true,"text":"Touch me \uE96B","text_font":32}
 {"id":2,"obj":"checkbox","x":10,"y":100,"w":220,"h":55,"text":" My Checkbox"}
 {"id":3,"obj":"label","x":10,"y":10,"w":220,"h":30,"text":"\uE75A My Label","align":1,"padh":50}
-{"id":4,"obj":"switch","x":125,"y":220,"w":100,"h":55,"radius":40,"radius2":40}
+{"id":4,"obj":"switch","x":125,"y":220,"w":100,"h":55,"radius":40,"radius20":40}
 {"id":5,"obj":"led","x":22,"y":220,"w":55,"h":55}
 {"id":6,"obj":"dropdown","x":10,"y":160,"w":130,"options":"\uE40A Apples\n\uE40A Oranges\n\uE40A Bananas"}
 {"id":7,"obj":"spinner","x":160,"y":140,"w":70,"h":70}

@@ -52,9 +52,9 @@ The state of a digital input can only be `on` or `off` and will set all group me
 ??? example "Example `jsonl`"
     To act on the relays directly from the switch objects on the screen, try this very simple [pages.jsonl](../design/pages.md):
     ```json linenums="1"
-    {"page":1,"id":1,"obj":"switch","x":30,"y":40,"w":180,"h":75,"radius":40,"radius2":40,"groupid":1}
-    {"page":1,"id":2,"obj":"switch","x":30,"y":122,"w":180,"h":75,"radius":40,"radius2":40,"groupid":2}
-    {"page":1,"id":3,"obj":"switch","x":30,"y":205,"w":180,"h":75,"radius":40,"radius2":40,"groupid":3}
+    {"page":1,"id":1,"obj":"switch","x":30,"y":40,"w":180,"h":75,"radius":40,"radius20":40,"groupid":1}
+    {"page":1,"id":2,"obj":"switch","x":30,"y":122,"w":180,"h":75,"radius":40,"radius20":40,"groupid":2}
+    {"page":1,"id":3,"obj":"switch","x":30,"y":205,"w":180,"h":75,"radius":40,"radius20":40,"groupid":3}
     ```
     ![lanbon-3-switch-display](../assets/images/screenshots/lanbon-3-switch-display.png)
 

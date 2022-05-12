@@ -631,8 +631,8 @@ relevant **openHASP config:** (screen size 240x320)
 ```json linenums="1"
 {"page":3,"id":10,"obj":"obj","x":5,"y":35,"w":230,"h":250,"click":0}
 {"page":3,"id":10,"obj":"obj","x":5,"y":35,"w":230,"h":250,"click":0}
-{"page":3,"id":20,"obj":"arc","x":5,"y":37,"w":230,"h":230,"min":170,"max":300,"val":250,"border_side":0,"type":0,"rotation":0,"start_angle":135,"end_angle":45,"adjustable":"true","line_width":21,"line_width1":21,"line_color1":"#34bdeb","bg_opa":0,"pad_top2":5,"pad_bottom2":5,"pad_left2":5,"pad_right2":5,"pad_top":5,"pad_bottom":5,"pad_left":5,"pad_right":5}
-{"page":3,"id":21,"obj":"gauge","x":28,"y":28,"w":175,"h":175,"parentid":20,"min":170,"max":300,"val":224,"format":1,"critical_value":301,"label_count":14,"line_count":27,"border_width":0,"pad_top":2,"pad_bottom":2,"pad_left":2,"pad_right":2,"value_str":"°C","value_ofs_y":55,"value_font":16,"bg_opa":0,"line_width2":3,"line_rounded2":1,"line_color":"#348feb","line_color1":"#348feb","scale_grad_color":"#eb4934","scale_grad_color1":"#eb4934","scale_end_color1":"#eb4934"}
+{"page":3,"id":20,"obj":"arc","x":5,"y":37,"w":230,"h":230,"min":170,"max":300,"val":250,"border_side":0,"type":0,"rotation":0,"start_angle":135,"end_angle":45,"adjustable":"true","line_width":21,"line_width10":21,"line_color10":"#34bdeb","bg_opa":0,"pad_top20":5,"pad_bottom20":5,"pad_left20":5,"pad_right20":5,"pad_top":5,"pad_bottom":5,"pad_left":5,"pad_right":5}
+{"page":3,"id":21,"obj":"gauge","x":28,"y":28,"w":175,"h":175,"parentid":20,"min":170,"max":300,"val":224,"format":1,"critical_value":301,"label_count":14,"line_count":27,"border_width":0,"pad_top":2,"pad_bottom":2,"pad_left":2,"pad_right":2,"value_str":"°C","value_ofs_y":55,"value_font":16,"bg_opa":0,"line_width10":3,"line_rounded10":1,"line_color":"#348feb","line_color60":"#348feb","scale_grad_color":"#eb4934","scale_grad_color60":"#eb4934","scale_end_color60":"#eb4934"}
 {"page":3,"id":22,"obj":"obj","x":85,"y":85,"w":60,"h":60,"parentid":20,"click":0,"radius":30,"border_width":2,"border_opa":200}
 {"page":3,"id":23,"obj":"label","x":80,"y":100,"w":70,"h":30,"parentid":20,"text":"22.4","text_font":24,"align":"center"}
 {"page":3,"id":24,"obj":"obj","x":145,"y":245,"w":60,"h":30,"click":0,"radius":5}
@@ -642,7 +642,7 @@ relevant **openHASP config:** (screen size 240x320)
 {"page":3,"id":31,"obj":"tab","parentid":30}
 {"page":3,"id":32,"obj":"tab","parentid":30}
 {"page":3,"id":33,"obj":"tab","parentid":30}
-{"page":3,"id":41,"obj":"switch","x":35,"y":10,"w":60,"h":30,"parentid":31,"radius":25,"radius2":25}
+{"page":3,"id":41,"obj":"switch","x":35,"y":10,"w":60,"h":30,"parentid":31,"radius":25,"radius20":25}
 {"page":3,"id":42,"obj":"dropdown","x":15,"y":10,"w":110,"h":30,"parentid":32,"options":"fan_modes","direction":"1","radius":5}
 {"page":3,"id":43,"obj":"dropdown","x":15,"y":10,"w":110,"h":30,"parentid":33,"options":"hvac_modes","direction":"1","radius":5}
 ```
@@ -655,7 +655,7 @@ relevant **openHASP-custom-component config:**
           "val": "{{ state_attr('climate.thermostat_1','temperature') * 10 | int if not (is_state('climate.thermostat_1','unavailable')) }}"
           "min": "{{ state_attr('climate.thermostat_1','min_temp') * 10 | int if not (is_state('climate.thermostat_1','unavailable')) }}"
           "max": "{{ state_attr('climate.thermostat_1','max_temp') * 10 | int if not (is_state('climate.thermostat_1','unavailable')) }}"
-          "line_color1": >
+          "line_color10": >
             {% if is_state('climate.thermostat_1', 'cool') %}
             {{ "#346beb" }}
             {%-elif is_state('climate.thermostat_1', 'heat_cool') %}
@@ -1237,7 +1237,7 @@ relevant **openHASP config:** (screen size 240x320, UI Theme: Hasp Light)
 {"page":4,"id":10,"obj":"obj","x":5,"y":35,"w":230,"h":250,"click":0}
 {"page":4,"id":2,"obj":"label","x":10,"y":40,"w":105,"h":20,"text":"Fresh air flow","align":"center","border_width":0}
 {"page":4,"id":3,"obj":"label","x":125,"y":40,"w":105,"h":20,"text":"Scent intensity","align":"center","border_width":0}
-{"page":4,"id":12,"obj":"spinner","x":36,"y":84,"w":56,"h":56,"bg_opa":0,"border_width":0,"line_width":0,"line_width1":19,"line_color1":"#34eb77","type":2,"angle":160,"speed":3000}
+{"page":4,"id":12,"obj":"spinner","x":36,"y":84,"w":56,"h":56,"bg_opa":0,"border_width":0,"line_width":0,"line_width10":19,"line_color10":"#34eb77","type":2,"angle":160,"speed":3000}
 {"page":4,"id":13,"obj":"img","x":14,"y":75,"src":"L:/g64.png","auto_size":1,"w":100,"h":74}
 {"page":4,"id":14,"obj":"img","x":130,"y":78,"src":"L:/perfume3.png","auto_size":1,"w":60,"h":68}
 {"page":4,"id":40,"obj":"btnmatrix","x":5,"y":130,"w":110,"h":113,"parentid":10,"options":["Low","Mid","\n","High","Turbo","\n","OFF"],"toggle":1,"one_check":1,"bg_opa":0,"pad_inner":5,"border_width":0,"pad_top":0,"pad_bottom":0,"pad_left":0,"pad_right":0}
@@ -1278,13 +1278,13 @@ relevant **openHASP-custom-component config:**
           "jsonl": >
             {% if is_state('number.plate_test_page_number', '4') %}
             {% if is_state('input_select.fan_presets', 'Alap') %}
-            {"speed":7000,"line_color1":"#31de70"}
+            {"speed":7000,"line_color10":"#31de70"}
             {%-elif is_state('input_select.fan_presets', 'Közép') %}
-            {"speed":1700,"line_color1":"#dede1f"}
+            {"speed":1700,"line_color10":"#dede1f"}
             {%-elif is_state('input_select.fan_presets', 'Magas') %}
-            {"speed":800,"line_color1":"#d6a11a"}
+            {"speed":800,"line_color10":"#d6a11a"}
             {%-elif is_state('input_select.fan_presets', 'Turbó') %}
-            {"speed":250,"line_color1":"#ff4a4a"}
+            {"speed":250,"line_color10":"#ff4a4a"}
             {% endif %}
             {% else -%}
             {"speed":0}
@@ -1637,7 +1637,7 @@ relevant **openHASP-custom-component config:** (read comments)
                   {"page":2,"id":201,"obj":"btn","parentid":210,"x":10,"y":110,"w":150,"h":60,"toggle":false,"text_font":24,"text":"Middle","tag":{"cover":"cover.bigroom_i","position":"15"}}
                   {"page":2,"id":202,"obj":"btn","parentid":210,"x":10,"y":40,"w":70,"h":60,"toggle":false,"text_font":24,"text":"2/3","tag":{"cover":"cover.bigroom_i","position":"90"}}
                   {"page":2,"id":203,"obj":"btn","parentid":210,"x":90,"y":40,"w":70,"h":60,"toggle":false,"text_font":24,"text":"1/3","tag":{"cover":"cover.bigroom_i","position":"54"}}
-                  {"page":2,"id":204,"obj":"slider","parentid":210,"x":180,"y":40,"w":30,"h":130,"min":1,"max":100,"pad_left2":"13","pad_right2":"13","tag":{"cover":"cover.bigroom_i","position":"50"},"val":
+                  {"page":2,"id":204,"obj":"slider","parentid":210,"x":180,"y":40,"w":30,"h":130,"min":1,"max":100,"pad_left20":"13","pad_right20":"13","tag":{"cover":"cover.bigroom_i","position":"50"},"val":
                   {{- state_attr('cover.bigroom_i','current_position') -}}
                   }
 
@@ -1689,7 +1689,7 @@ relevant **openHASP-custom-component config:** (read comments)
                   {"page":2,"id":201,"obj":"btn","parentid":210,"x":10,"y":110,"w":150,"h":60,"toggle":false,"text_font":24,"text":"Middle","tag":{"cover":"cover.bigroom_ii","position":"18"}}
                   {"page":2,"id":202,"obj":"btn","parentid":210,"x":10,"y":40,"w":70,"h":60,"toggle":false,"text_font":24,"text":"2/3","tag":{"cover":"cover.bigroom_ii","position":"90"}}
                   {"page":2,"id":203,"obj":"btn","parentid":210,"x":90,"y":40,"w":70,"h":60,"toggle":false,"text_font":24,"text":"1/3","tag":{"cover":"cover.bigroom_ii","position":"53"}}
-                  {"page":2,"id":204,"obj":"slider","parentid":210,"x":180,"y":40,"w":30,"h":130,"min":1,"max":100,"pad_left2":"13","pad_right2":"13","tag":{"cover":"cover.bigroom_ii","position":"50"},"val":
+                  {"page":2,"id":204,"obj":"slider","parentid":210,"x":180,"y":40,"w":30,"h":130,"min":1,"max":100,"pad_left20":"13","pad_right20":"13","tag":{"cover":"cover.bigroom_ii","position":"50"},"val":
                   {{- state_attr('cover.bigroom_ii','current_position') -}}
                   }
 
@@ -1741,7 +1741,7 @@ relevant **openHASP-custom-component config:** (read comments)
                   {"page":2,"id":201,"obj":"btn","parentid":210,"x":10,"y":110,"w":150,"h":60,"toggle":false,"text_font":24,"text":"Middle","tag":{"cover":"cover.bigroom_iii","position":"17"}}
                   {"page":2,"id":202,"obj":"btn","parentid":210,"x":10,"y":40,"w":70,"h":60,"toggle":false,"text_font":24,"text":"2/3","tag":{"cover":"cover.bigroom_iii","position":"90"}}
                   {"page":2,"id":203,"obj":"btn","parentid":210,"x":90,"y":40,"w":70,"h":60,"toggle":false,"text_font":24,"text":"1/3","tag":{"cover":"cover.bigroom_iii","position":"53"}}
-                  {"page":2,"id":204,"obj":"slider","parentid":210,"x":180,"y":40,"w":30,"h":130,"min":1,"max":100,"pad_left2":"13","pad_right2":"13","tag":{"cover":"cover.bigroom_iii","position":"50"},"val":
+                  {"page":2,"id":204,"obj":"slider","parentid":210,"x":180,"y":40,"w":30,"h":130,"min":1,"max":100,"pad_left20":"13","pad_right20":"13","tag":{"cover":"cover.bigroom_iii","position":"50"},"val":
                   {{- state_attr('cover.bigroom_iii','current_position') -}}
                   }
 
@@ -1793,7 +1793,7 @@ relevant **openHASP-custom-component config:** (read comments)
                   {"page":2,"id":201,"obj":"btn","parentid":210,"x":10,"y":110,"w":150,"h":60,"toggle":false,"text_font":24,"text":"Middle","tag":{"cover":"cover.bigroom_iv","position":"15"}}
                   {"page":2,"id":202,"obj":"btn","parentid":210,"x":10,"y":40,"w":70,"h":60,"toggle":false,"text_font":24,"text":"2/3","tag":{"cover":"cover.bigroom_iv","position":"90"}}
                   {"page":2,"id":203,"obj":"btn","parentid":210,"x":90,"y":40,"w":70,"h":60,"toggle":false,"text_font":24,"text":"1/3","tag":{"cover":"cover.bigroom_iv","position":"53"}}
-                  {"page":2,"id":204,"obj":"slider","parentid":210,"x":180,"y":40,"w":30,"h":130,"min":1,"max":100,"pad_left2":"13","pad_right2":"13","tag":{"cover":"cover.bigroom_iv","position":"50"},"val":
+                  {"page":2,"id":204,"obj":"slider","parentid":210,"x":180,"y":40,"w":30,"h":130,"min":1,"max":100,"pad_left20":"13","pad_right20":"13","tag":{"cover":"cover.bigroom_iv","position":"50"},"val":
                   {{- state_attr('cover.bigroom_iv','current_position') -}}
                   }
 
@@ -1845,7 +1845,7 @@ relevant **openHASP-custom-component config:** (read comments)
                   {"page":2,"id":201,"obj":"btn","parentid":210,"x":10,"y":110,"w":150,"h":60,"toggle":false,"text_font":24,"text":"Middle","tag":{"cover":"cover.bigroom_v","position":"17"}}
                   {"page":2,"id":202,"obj":"btn","parentid":210,"x":10,"y":40,"w":70,"h":60,"toggle":false,"text_font":24,"text":"2/3","tag":{"cover":"cover.bigroom_v","position":"90"}}
                   {"page":2,"id":203,"obj":"btn","parentid":210,"x":90,"y":40,"w":70,"h":60,"toggle":false,"text_font":24,"text":"1/3","tag":{"cover":"cover.bigroom_v","position":"55"}}
-                  {"page":2,"id":204,"obj":"slider","parentid":210,"x":180,"y":40,"w":30,"h":130,"min":1,"max":100,"pad_left2":"13","pad_right2":"13","tag":{"cover":"cover.bigroom_v","position":"19"},"val":
+                  {"page":2,"id":204,"obj":"slider","parentid":210,"x":180,"y":40,"w":30,"h":130,"min":1,"max":100,"pad_left20":"13","pad_right20":"13","tag":{"cover":"cover.bigroom_v","position":"19"},"val":
                   {{- state_attr('cover.bigroom_v','current_position') -}}
                   }
 

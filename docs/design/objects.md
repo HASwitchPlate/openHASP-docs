@@ -603,7 +603,7 @@ While pressing and dragging the `cpicker` object the following events are sent: 
 
 ??? example "Example `jsonl`"
     ```json linenums="1"
-    {"page":1,"id":15,"obj":"spinner","x":180,"y":50,"w":36,"h":36,"bg_opa":0,"border_width":0,"line_width":6,"line_width1":6,"angle":80,"line_color":"white","line_color1":"green"}
+    {"page":1,"id":15,"obj":"spinner","x":180,"y":50,"w":36,"h":36,"bg_opa":0,"border_width":0,"line_width":6,"line_width10":6,"angle":80,"line_color":"white","line_color10":"green"}
     ```
 
 ## LED Indicator
