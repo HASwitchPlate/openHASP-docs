@@ -46,7 +46,7 @@ jobs:
         run: |
           echo "Branchname: ${GITHUB_REF#refs/heads/}"
           mike delete -f "dev"
-          mike deploy --push --rebase --title="${GITHUB_REF#refs/heads/}-rc1" --update-aliases "${GITHUB_REF#refs/heads/}" "dev"
+          mike deploy --push --rebase --title="${GITHUB_REF#refs/heads/}-rc2" --update-aliases "${GITHUB_REF#refs/heads/}" "dev"
         # mike set-default --push latest
  
       - name: List
