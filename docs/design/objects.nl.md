@@ -388,7 +388,7 @@ When the item is changed both `val` and `text` of the newly selected item are se
 ## Roller
 **obj:`roller`**
 
-<iframe width=320 height=240 scrolling="no" style="display: block; border-style:none;" src="https://haswitchplate.github.io/openHASP-docs/lv_ex_roller_1/index.html?w=320&h=240"></iframe><p></p>
+<iframe width=320 height=240 scrolling="no" style="display: block; border-style:none;" src="https://www.openhasp.com/lv_ex_roller_1/index.html?w=320&h=240"></iframe><p></p>
 
 
 | Property | Value      | Default | Description
