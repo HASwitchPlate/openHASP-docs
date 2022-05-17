@@ -1,16 +1,19 @@
+# Home
+
 <img src="assets/images/logo.png" style="width:10rem" class="float-left"></img>
 <span style="font-family: 'Lato', 'Arial', helvetica;  font-size: 350%; font-weight: bold">openHASP<span>
 
 <div class="clearfix">Control your home-automation devices from a customizable touchscreen UI connected via MQTT.</div>
 
-openHASP is a re-implementation of the popular HASwitchPlate sketch created by aderusha.
-While the [HASPone][1]{target=_blank} project uses a Wemos D1 mini and requires a Nextion/TJC HMI display, this rewrite removes the Nextion/TJC requirement by using the [Light and Versatile Graphics Library][2]{target=_blank} on the MCU to drive a commodity display.
+*openHASP is a re-implementation of the popular HASwitchPlate sketch created by aderusha.
+The [HASPone][1]{target=_blank} project uses a Wemos D1 mini and requires a Nextion/TJC HMI display.*
 
-This project also adds ESP32 and STM32F4 support to take advantage of the additional hardware capabilities.
+*This project is a complete rewrite and implements the [Light and Versatile Graphics Library][2]{target=_blank} on the MCU to drive a commodity display.
+openHASP uses an ESP32 to take advantage of the additional hardware capabilities.*
 
 ### Demo Screens
 
-Click on the demo screen to show the example configuration.
+Click on the demo screen to show the example configuration:
 
 [![screenshot](assets/images/screenshots/demo_switches_covers.png)](integrations/home-assistant/sampl_conf/#some-basic-controls) &nbsp; 
 [![screenshot](assets/images/screenshots/cc-sampl-weather-hours.png)](integrations/home-assistant/sampl_conf/#current-weather-and-forecasts) &nbsp;     
@@ -34,29 +37,25 @@ Click on the demo screen to show the example configuration.
 </div>
 <div class="clearfix"></div>
 
-### Features
-
-| Feature                 | ESP8266 | ESP32   | STM32F4
-|-------------------------|---------|---------|----------
-| SPI display             | :white_check_mark: yes | :white_check_mark: yes | :white_check_mark: yes
-| Parallel display        | :x: no | :white_check_mark: yes | :white_check_mark: yes
-| PWM Screen dimming      | :white_check_mark: yes | :white_check_mark: yes | :white_check_mark: yes
-| Maximum Page Count      | 4       | 12 | 12
-| [Object Types / Widgets][7]| 21   | 21 | 21
-| Dynamic Objects         | :white_check_mark: yes | :white_check_mark: yes | :white_check_mark: yes
-| Theme Support           | yes     | yes     | yes
-| [Custom .zi V5 font][4]{target=_blank} | :white_check_mark: yes (latin1) | :white_check_mark: yes (latin1) | no
-| MDI Icons               | :white_check_mark: yes | :white_check_mark: yes | no
-| [PNG images][8]         | :x: no | :white_check_mark: yes | :white_check_mark: yes
-| Network                 | :white_check_mark: Wi-Fi | :white_check_mark: Wi-Fi | :white_check_mark: Ethernet
-
 ### Support
 
-For support using openHASP please find us on Github, Discord or Home Assistant:
+For support using openHASP you can find us on Github, Discord or Home Assistant:
 
 [:material-github: Github Discussions][3]{target=_blank .md-button .md-button--primary }
 [:material-discord: Discord Chat][5]{target=_blank .md-button .md-button--primary }
 [:material-home-assistant: Home Assistant Forum][6]{target=_blank .md-button .md-button--primary }
+
+### Donate
+
+The firmware is opensource and free to use!
+
+If you like this project you can show your appreciation by making a small donation.
+This will help with ofssetting the cost of the different hardware devices we support.
+
+[![Paypal donation](https://img.shields.io/badge/Paypal-donate-00457C?style=for-the-badge&logo=paypal)](https://www.paypal.com/donate/?business=E76SN28JLZCXU&currency_code=EUR) &nbsp; 
+[![Buy a coffee](https://img.shields.io/badge/Kofi-donate-FF5E5B?style=for-the-badge&logo=kofi)](https://ko-fi.com/openhasp) &nbsp; 
+[![Buy me a coffee](https://img.shields.io/badge/Buy_Me_a_Coffee-donate-FFDD00?style=for-the-badge&logo=buymeacoffee)](https://www.buymeacoffee.com/aktdCofU)
+
 
 
 [1]: https://github.com/HASwitchPlate/HASPone
