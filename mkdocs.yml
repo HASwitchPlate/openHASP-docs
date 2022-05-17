@@ -24,6 +24,9 @@ extra:
     - icon: material/home-assistant
       link: https://community.home-assistant.io/t/openhasp-an-mqtt-driven-touchscreen-scene-controller/300853
       name: Home Assistant Forum
+    - name: Donate
+      link: https://ko-fi.com/openhasp
+      icon: octicons/heart-fill-24
 
   version:
     provider: mike
