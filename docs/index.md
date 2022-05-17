@@ -58,6 +58,7 @@ This will help with ofssetting the cost of the different hardware devices we sup
 
 
 
+
 [1]: https://github.com/HASwitchPlate/HASPone
 [2]: https://github.com/lvgl/lvgl
 [3]: https://github.com/HASwitchPlate/openHASP/discussions
