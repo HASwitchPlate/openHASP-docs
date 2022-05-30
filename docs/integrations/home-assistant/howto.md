@@ -35,7 +35,7 @@ You have the option to install the custom component using HACS or via manual dow
         The [download][2]{target=_blank} link points to the actual _development code_ in the _master_ branch. 
 
 !!! warning
-    You have to use component version consistently with the firmware version on your plates. For example, if your plates are at firmware version 0.6.x, you also need to use component version 0.6.x to ensure interoperability. Home Assistant will show a warning if it finds a version mismatch. Note that you can only have one version of the component installed at a time so a mix of plate versions cannot be deployed.
+    You have to use component version consistently with the firmware version on your plates. For example, if your plates are at firmware version 0.6, you also need to use component version 0.6 to ensure interoperability. Home Assistant will show a warning if it finds a version mismatch. Note that you can only have one version of the component installed at a time so a mix of plate versions cannot be deployed.
 
 ## Configuration 
 
