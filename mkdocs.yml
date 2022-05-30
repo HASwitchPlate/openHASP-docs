@@ -30,7 +30,7 @@ extra:
 
   version:
     provider: mike
-    default: 0.6
+    default: 0.6.3
 
 #   alternate:
 #     - name: Default (en)
