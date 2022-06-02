@@ -1,6 +1,3 @@
-!!! note
-    Some examples below may generate errors during Home Assistant startup. Log messages like `Error while processing template` or `Template variable error: 'None' has no attribute 'last_changed'` etc. can be caused by the fact that openHASP component loads faster than the other integrations you have set up, from where you want to pull data. Because the data required by openHASP component is not yet available, an error is generated. But as soon as Home Assistant finishes loading everything, and all the data you've configured is available, things will be normal. Nevertheless the log should be checked regularly to find repetitive problems.
-
 ## Display clock and temperature
 
 ![screenshot](../../assets/images/screenshots/cc_sampl_clocktemp.png)
@@ -81,9 +78,9 @@ Jsonl and Home Assistant configuration:
       - obj: "p1b3" # dropdown
         properties:
           "options": >
-            {% if not (is_state('input_select.my_dropdown_selections','unavailable')) %}{%for item in state_attr('input_select.my_dropdown_selections','options')%}{{item+"\n"|e}}{%-if not loop.last%}{%-endif%}{%-endfor%}{% endif %}
+            {% if (state_attr('input_select.my_dropdown_selections','options') != none and states('input_select.my_dropdown_selections') not in ['unavailable', 'unknown']) %}{%for item in state_attr('input_select.my_dropdown_selections','options')%}{{item+"\n"|e}}{%-if not loop.last%}{%-endif%}{%-endfor%}{% endif %}
           "val": >
-            {% if not (is_state('input_select.my_dropdown_selections','unavailable')) %}{%for item in state_attr('input_select.my_dropdown_selections','options')%}
+            {% if (state_attr('input_select.my_dropdown_selections','options') != none and states('input_select.my_dropdown_selections') not in ['unavailable', 'unknown']) %}{%for item in state_attr('input_select.my_dropdown_selections','options')%}
             {{loop.index -1 if item == states('input_select.my_dropdown_selections') }}
             {%-endfor%}{% endif %}
         event:
@@ -431,17 +428,17 @@ relevant **openHASP-custom-component config:**
       - obj: "p6b15" # sources list
         properties:
           "options": >
-            {% if not (is_state('media_player.sound_my_room1','unavailable')) %}
+            {% if (state_attr('media_player.sound_my_room1','source_list') != none and states('media_player.sound_my_room1') not in ['unavailable', 'unknown']) %}
             {{"(no source)\n"|e}}
             {%- for source in state_attr('media_player.sound_my_room1','source_list') -%}
             {{source+"\n"|e}}{%-if not loop.last%}{%-endif%}{%-endfor%}{%-endif %}
           "val": >
-            {% if not (is_state('media_player.sound_my_room1','unavailable')) %}
+            {% if states('media_player.sound_my_room1') not in ['unavailable', 'unknown'] %}
             {% if state_attr('media_player.sound_my_room1','source') == None %}0{% else %}
             {%for source in state_attr('media_player.sound_my_room1','source_list')%}
             {{loop.index if source == state_attr('media_player.sound_my_room1','source') }}
             {%-endfor%}{%-endif %}{%-endif %}
-          "click": "{{ 'false' if (is_state('media_player.sound_my_room1','unavailable') or is_state('media_player.sound_my_room1','unknown')) else 'true' }}"
+          "click": "{{ 'false' if states('media_player.sound_my_room1') in ['unavailable', 'unknown'] else 'true' }}"
         event:
           "changed":
             - service: media_player.select_source
@@ -452,14 +449,14 @@ relevant **openHASP-custom-component config:**
       - obj: "p6b16" # sound modes list
         properties:
           "options": >
-            {% if not (is_state('media_player.sound_my_room1','unavailable')) %}
+            {% if (state_attr('media_player.sound_my_room1','sound_mode_list') != none and states('media_player.sound_my_room1') not in ['unavailable', 'unknown']) %}
             {%-for soundmode in state_attr('media_player.sound_my_room1','sound_mode_list')-%}
             {{soundmode+"\n"|e}}{%-if not loop.last%}{%-endif%}{%-endfor%}{%-endif %}
           "val": >
-            {% if not (is_state('media_player.sound_my_room1','unavailable')) %}{%for source in state_attr('media_player.sound_my_room1','sound_mode_list')%}
+            {% if states('media_player.sound_my_room1') not in ['unavailable', 'unknown'] %}{%for source in state_attr('media_player.sound_my_room1','sound_mode_list')%}
             {{loop.index -1 if source == state_attr('media_player.sound_my_room1','sound_mode') }}
             {%-endfor%}{% endif %}
-          "click": "{{ 'false' if (is_state('media_player.sound_my_room1','unavailable') or is_state('media_player.sound_my_room1','unknown')) else 'true' }}"
+          "click": "{{ 'false' if states('media_player.sound_my_room1') in ['unavailable', 'unknown'] else 'true' }}"
         event:
           "changed":
             - service: media_player.select_sound_mode
@@ -480,7 +477,7 @@ relevant **openHASP-custom-component config:**
             {%-else %}
             {{ "\uE40A" | e }}
             {%-endif %}
-          "text_opa": "{{ '80' if (is_state('media_player.sound_my_room1','unavailable') or is_state('media_player.sound_my_room1','unknown')) else '255' }}"
+          "text_opa": "{{ '80' if states('media_player.sound_my_room1') in ['unavailable', 'unknown'] else '255' }}"
         event:
           "down":
             - service: media_player.media_play_pause
@@ -493,7 +490,7 @@ relevant **openHASP-custom-component config:**
 
       - obj: "p6b17" # prev
         properties:
-          "text_opa": "{{ '80' if (is_state('media_player.sound_my_room1','unavailable') or is_state('media_player.sound_my_room1','unknown')) else '255' }}"
+          "text_opa": "{{ '80' if states('media_player.sound_my_room1') in ['unavailable', 'unknown'] else '255' }}"
         event:
           "down":
             - service: media_player.media_previous_track
@@ -502,7 +499,7 @@ relevant **openHASP-custom-component config:**
 
       - obj: "p6b19" # next
         properties:
-          "text_opa": "{{ '80' if (is_state('media_player.sound_my_room1','unavailable') or is_state('media_player.sound_my_room1','unknown')) else '255' }}"
+          "text_opa": "{{ '80' if states('media_player.sound_my_room1') in ['unavailable', 'unknown'] else '255' }}"
         event:
           "down":
             - service: media_player.media_next_track
@@ -511,8 +508,11 @@ relevant **openHASP-custom-component config:**
 
       - obj: "p6b20" # volume slider
         properties:
-          "val": "{{ state_attr('media_player.sound_my_room1','volume_level') * 100 | int }}"
-          "click": "{{ 'false' if (is_state('media_player.sound_my_room1','unavailable') or is_state('media_player.sound_my_room1','unknown')) else 'true' }}"
+          "val": >
+            {% if (state_attr('media_player.sound_my_room1','volume_level') != none and states('media_player.sound_my_room1') not in ['unavailable', 'unknown']) %}
+            {{ state_attr('media_player.sound_my_room1','volume_level') * 100 | int(default=80) }}
+            {%-endif %}
+          "click": "{{ 'false' if states('media_player.sound_my_room1') in ['unavailable', 'unknown'] else 'true' }}"
         event:
           "changed":
             - service: media_player.volume_set
@@ -528,7 +528,7 @@ relevant **openHASP-custom-component config:**
       - obj: "p6b21" # power
         properties:
           "text_color": "{{ '#B00000' if states('media_player.sound_my_room1') == 'off' else '#FFFFFF' }}"
-          "text_opa": "{{ '80' if (is_state('media_player.sound_my_room1','unavailable') or is_state('media_player.sound_my_room1','unknown')) else '255' }}"
+          "text_opa": "{{ '80' if states('media_player.sound_my_room1') in ['unavailable', 'unknown'] else '255' }}"
         event:
           "down":
             - service: media_player.toggle
@@ -545,7 +545,7 @@ relevant **openHASP-custom-component config:**
             {%-else %}
             {{ "\uE457" | e }}
             {%-endif %}
-          "text_opa": "{{ '80' if (is_state('media_player.sound_my_room1','unavailable') or is_state('media_player.sound_my_room1','unknown')) else '255' }}"
+          "text_opa": "{{ '80' if states('media_player.sound_my_room1') in ['unavailable', 'unknown'] else '255' }}"
         event:
           "down":
             - service: media_player.repeat_set
@@ -568,7 +568,7 @@ relevant **openHASP-custom-component config:**
             {%-else %}
             {{ "\uE49E" | e }}
             {%-endif %}
-          "text_opa": "{{ '80' if (is_state('media_player.sound_my_room1','unavailable') or is_state('media_player.sound_my_room1','unknown')) else '255' }}"
+          "text_opa": "{{ '80' if states('media_player.sound_my_room1') in ['unavailable', 'unknown'] else '255' }}"
         event:
           "down":
             - service: media_player.shuffle_set
@@ -589,7 +589,7 @@ relevant **openHASP-custom-component config:**
             {%-else %}
             {{ "\uE57E" | e }}
             {%-endif %}
-          "text_opa": "{{ '80' if (is_state('media_player.sound_my_room1','unavailable') or is_state('media_player.sound_my_room1','unknown')) else '255' }}"
+          "text_opa": "{{ '80' if states('media_player.sound_my_room1') in ['unavailable', 'unknown'] else '255' }}"
         event:
           "down":
             - service: media_player.volume_mute
@@ -652,10 +652,21 @@ relevant **openHASP-custom-component config:**
 ```yaml linenums="1"
       - obj: "p3b20"  # arc slider
         properties:
-          "val": "{{ state_attr('climate.thermostat_1','temperature') * 10 | int if not (is_state('climate.thermostat_1','unavailable')) }}"
-          "min": "{{ state_attr('climate.thermostat_1','min_temp') * 10 | int if not (is_state('climate.thermostat_1','unavailable')) }}"
-          "max": "{{ state_attr('climate.thermostat_1','max_temp') * 10 | int if not (is_state('climate.thermostat_1','unavailable')) }}"
-          "line_color10": >
+          "val": >
+            {% if state_attr('climate.thermostat_1','temperature') is not none %}
+            {{ state_attr('climate.thermostat_1','temperature') | int * 10 }}
+            {%- endif %}
+          "min": >
+            {% if state_attr('climate.thermostat_1','min_temp') is not none %}
+            {{ state_attr('climate.thermostat_1','min_temp') | int * 10 }}
+            {%- endif %}
+          "max": >
+            {% if state_attr('climate.thermostat_1','max_temp') is not none %}
+            {{ state_attr('climate.thermostat_1','max_temp') | int * 10 }}
+            {%- endif %}
+          "opacity": "{{ 60 if (is_state('climate.thermostat_1','unavailable') or is_state('climate.thermostat_1','unknown')) else 255 }}"
+          "click": "{{ 'false' if (is_state('climate.thermostat_1','unavailable') or is_state('climate.thermostat_1','unknown')) else 'true' }}"
+          "line_color1": >
             {% if is_state('climate.thermostat_1', 'cool') %}
             {{ "#346beb" }}
             {%-elif is_state('climate.thermostat_1', 'heat_cool') %}
@@ -685,39 +696,71 @@ relevant **openHASP-custom-component config:**
 
       - obj: "p3b21"  # gauge current temp
         properties:
-          "val": "{{ state_attr('climate.thermostat_1','current_temperature') * 10 | int if not (is_state('climate.thermostat_1','unavailable')) }}"
-          "min": "{{ state_attr('climate.thermostat_1','min_temp') * 10 | int if not (is_state('climate.thermostat_1','unavailable')) }}"
-          "max": "{{ state_attr('climate.thermostat_1','max_temp') * 10 | int if not (is_state('climate.thermostat_1','unavailable')) }}"
-          "critical_value": "{{ (state_attr('climate.thermostat_1','max_temp') * 10 | int + 1) if not (is_state('climate.thermostat_1','unavailable')) }}"
-          "label_count": "{{ (state_attr('climate.thermostat_1','max_temp') | int - state_attr('climate.thermostat_1','min_temp') | int + 1) if not (is_state('climate.thermostat_1','unavailable')) }}"
-          "line_count": "{{ ((state_attr('climate.thermostat_1','max_temp') | int - state_attr('climate.thermostat_1','min_temp') | int) * 2 + 1) if not (is_state('climate.thermostat_1','unavailable')) }}"
+          "val": >
+            {% if not (is_state('sensor.ble_atlaghomerseklet','unavailable') or is_state('sensor.ble_atlaghomerseklet','unknown')) %}
+            {{ states('sensor.ble_atlaghomerseklet') | float (default=0) * 10 }}
+            {%- endif %}
+          "min": >
+            {% if state_attr('climate.thermostat_1','min_temp') is not none %}
+            {{ state_attr('climate.thermostat_1','min_temp') | int * 10 }}
+            {%- endif %}
+          "max": >
+            {% if state_attr('climate.thermostat_1','max_temp') is not none %}
+            {{ state_attr('climate.thermostat_1','max_temp') | int * 10 }}
+            {%- endif %}
+          "critical_value": >
+            {% if state_attr('climate.thermostat_1','max_temp') is not none %}
+            {{ state_attr('climate.thermostat_1','max_temp') | int * 10 + 1 }}
+            {%- endif %}
+          "label_count": >
+            {% if state_attr('climate.thermostat_1','max_temp') is not none %}
+            {{ state_attr('climate.thermostat_1','max_temp') | int - state_attr('climate.thermostat_1','min_temp') | int + 1 }}
+            {%- endif %}
+          "line_count": >
+            {% if state_attr('climate.thermostat_1','max_temp') is not none %}
+            {{ (state_attr('climate.thermostat_1','max_temp') | int - state_attr('climate.thermostat_1','min_temp') | int) * 2 + 1 }}
+            {%- endif %}
+          "opacity": "{{ 60 if (is_state('climate.thermostat_1','unavailable') or is_state('climate.thermostat_1','unknown')) else 255 }}"
 
       - obj: "p3b23"  # label current temp (and +/- with short/long touch)
         properties:
-          "text": "{{ state_attr('climate.thermostat_1','current_temperature') if not (is_state('climate.thermostat_1','unavailable')) }}"
+          "text": >
+            {% if (is_state('sensor.temp_room_1','unavailable') or is_state('sensor.temp_room_1','unknown')) %}
+            {{ "--.-" }}
+            {%-else %}
+            {{ states('sensor.temp_room_1') | round(1,default=0) }}
+            {%- endif %}
+          "click": "{{ 'false' if (is_state('climate.thermostat_1','unavailable') or is_state('climate.thermostat_1','unknown')) else 'true' }}"
+          "opacity": "{{ 60 if (is_state('climate.thermostat_1','unavailable') or is_state('climate.thermostat_1','unknown')) else 255 }}"
         event:
           "up":
             - service: climate.set_temperature
               target:
                 entity_id: climate.thermostat_1
               data:
-                temperature: "{{ state_attr('climate.thermostat_1','temperature') + state_attr('climate.thermostat_1','target_temp_step') | float(default=0)}}" 
+                temperature: "{{ state_attr('climate.thermostat_1','temperature') + state_attr('climate.thermostat_1','target_temp_step') | float(default=1)}}" 
           "long":
             - service: climate.set_temperature
               target:
                 entity_id: climate.thermostat_1
               data:
-                temperature: "{{ state_attr('climate.thermostat_1','temperature') - state_attr('climate.thermostat_1','target_temp_step') | float(default=0)}}" 
+                temperature: "{{ state_attr('climate.thermostat_1','temperature') - state_attr('climate.thermostat_1','target_temp_step') | float(default=1)}}" 
 
 
       - obj: "p3b25"  # label target temp
         properties:
-          "text": "{{ state_attr('climate.thermostat_1','temperature') if not (is_state('climate.thermostat_1','unavailable')) }}"
+          "text": >
+            {% if state_attr('climate.thermostat_1','temperature') is not none %}
+            {{ state_attr('climate.thermostat_1','temperature') }}
+            {%- endif %}
+          "opacity": "{{ 60 if (is_state('climate.thermostat_1','unavailable') or is_state('climate.thermostat_1','unknown')) else 255 }}"
 
 
       - obj: "p3b41"  # on/off switch
         properties:
           "val": "{{ 0 if (is_state('climate.thermostat_1', 'off') or is_state('climate.thermostat_1', 'unavailable')) else 1 }}"
+          "click": "{{ 'false' if (is_state('climate.thermostat_1','unavailable') or is_state('climate.thermostat_1','unknown')) else 'true' }}"
+          "opacity": "{{ 60 if (is_state('climate.thermostat_1','unavailable') or is_state('climate.thermostat_1','unknown')) else 255 }}"
         event:
           "down":
             - service_template: >
@@ -748,7 +791,7 @@ relevant **openHASP-custom-component config:**
       - obj: "p3b42"  # dropdown with fan_modes
         properties:
           "options": >
-            {% if not (is_state('climate.thermostat_1','unavailable')) %}{%for mode in state_attr('climate.thermostat_1','fan_modes')%}
+            {% if state_attr('climate.thermostat_1','fan_modes') is not none %}{%for mode in state_attr('climate.thermostat_1','fan_modes')%}
             {%- if mode == 'auto' -%}
             Automatic{{"\n"|e}}
             {%- elif mode == 'low' -%}
@@ -761,6 +804,7 @@ relevant **openHASP-custom-component config:**
             Turbo{{"\n"|e}}
             {%- endif -%}
             {%-if not loop.last%}{%-endif%}{%-endfor%}{% endif %}
+          "click": "{{ 'false' if (is_state('climate.thermostat_1','unavailable') or is_state('climate.thermostat_1','unknown')) else 'true' }}"
           "val": >
             {% if not (is_state('climate.thermostat_1','unavailable')) %}{%for mode in state_attr('climate.thermostat_1','fan_modes')%}
             {{loop.index -1 if mode == state_attr('climate.thermostat_1','fan_mode') }}
@@ -787,7 +831,7 @@ relevant **openHASP-custom-component config:**
       - obj: "p3b43"  # dropdown with hvac_modes
         properties:
           "options": >
-            {% if not (is_state('climate.thermostat_1','unavailable')) %}{%for mode in state_attr('climate.thermostat_1','hvac_modes')%}
+            {% if state_attr('climate.thermostat_1','hvac_modes') is not none %}{%for mode in state_attr('climate.thermostat_1','hvac_modes')%}
             {%- if mode == 'off' -%}
             Off{{"\n"|e}}
             {%- elif mode == 'heat' -%}
@@ -804,6 +848,7 @@ relevant **openHASP-custom-component config:**
             On{{"\n"|e}}
             {%- endif -%}
             {%-if not loop.last%}{%-endif%}{%-endfor%}{% endif %}
+          "click": "{{ 'false' if (is_state('climate.thermostat_1','unavailable') or is_state('climate.thermostat_1','unknown')) else 'true' }}"
           "val": >
             {% if not (is_state('climate.thermostat_1','unavailable')) %}{%for mode in state_attr('climate.thermostat_1','hvac_modes')%}
             {{loop.index -1 if mode == states('climate.thermostat_1') }}
@@ -1258,7 +1303,7 @@ relevant **openHASP-custom-component config:**
           "toggle": '{{ 1 if (not states("input_select.fan_presets") in state_attr("input_select.fan_presets","options")) or (is_state("input_select.fan_presets","unavailable")) -}}'
 
           "val": >
-            {% if not (is_state('input_select.fan_presets','unavailable')) -%}
+            {% if state_attr("input_select.fan_presets","options") is not none -%}
             {% if not states('input_select.fan_presets') in state_attr('input_select.fan_presets','options') -%}-1{% else -%}
             {% for source in state_attr('input_select.fan_presets','options') -%}
             {{loop.index - 1 if source == states('input_select.fan_presets') }}
@@ -1274,7 +1319,7 @@ relevant **openHASP-custom-component config:**
 
       - obj: "p4b12"  # Spinner behind the PNG icon
         properties:
-          "opacity": "{{ 0 if (is_state('input_select.fan_presets','unavailable') or is_state('input_select.fan_presets','unknown') or is_state('input_select.fan_presets','OFF')) else 255 }}"
+          "opacity": "{{ 0 if states('input_select.fan_presets') in ['unavailable', 'unknown', 'OFF'] else 255 }}"
           "jsonl": >
             {% if is_state('number.plate_test_page_number', '4') %}
             {% if is_state('input_select.fan_presets', 'Alap') %}
@@ -1293,7 +1338,7 @@ relevant **openHASP-custom-component config:**
       - obj: "p4b54" # Scent Diffuser ON/OFF button
         properties:
           "val": '{{ 1 if is_state("fan.scent_diffuser_intensity", "on") else 0 }}'
-          "enabled": "{{ 'false' if (is_state('fan.scent_diffuser_intensity','unavailable') or is_state('fan.scent_diffuser_intensity','unknown')) else 'true' }}"
+          "enabled": "{{ 'false' if states('input_select.fan_presets') in ['unavailable', 'unknown'] else 'true' }}"
         event:
           "down":
             - service: fan.toggle
@@ -1303,7 +1348,7 @@ relevant **openHASP-custom-component config:**
       - obj: "p4b51" # Scent Diffuser intensity slider
         properties:
           "val": "{{ state_attr('fan.scent_diffuser_intensity','percentage') }}"
-          "enabled": "{{ 'false' if (is_state('fan.scent_diffuser_intensity','unavailable') or is_state('fan.scent_diffuser_intensity','unknown')) else 'true' }}"
+          "enabled": "{{ 'false' if states('input_select.fan_presets') in ['unavailable', 'unknown'] else 'true' }}"
         event:
           "up":
             - service: fan.set_percentage
@@ -1314,7 +1359,7 @@ relevant **openHASP-custom-component config:**
 
       - obj: "p4b53" # Scent Diffuser intensity number label
         properties:
-          "text": "{{ '--' if (is_state('fan.scent_diffuser_intensity','unavailable') or is_state('fan.scent_diffuser_intensity','unknown')) else state_attr('fan.scent_diffuser_intensity','percentage') }}"
+          "text": "{{ '--' if states('input_select.fan_presets') in ['unavailable', 'unknown'] else state_attr('fan.scent_diffuser_intensity','percentage') }}"
           "opacity": "{{ 255 if is_state('fan.scent_diffuser_intensity', 'on') else 95 }}"
 ```
 
@@ -1912,3 +1957,7 @@ relevant **openHASP-custom-component config:** (read comments)
                 keyword: p2b200.delete
 ```
 Again - without tags, the last 5 object definitions would have to be added for each shutter, and also it would be needed to be drawn separately for each one, initially invisible, then toggle visibility at each one. That would have resulted in a much bigger Custom Component configuration, and also plate design.
+
+!!! note
+    Some examples below may generate errors during Home Assistant startup. Log messages like `Error while processing template` or `Template variable error: 'None' has no attribute 'last_changed'` etc. can be caused by the fact that openHASP component loads faster than the other integrations you have set up, from where you want to pull data. Because the data required by openHASP component is not yet available, an error is generated. But as soon as Home Assistant finishes loading everything, and all the data you've configured is available, things will be normal. Nevertheless the log should be checked regularly to find repetitive problems.
+
