@@ -36,12 +36,11 @@
 <link rel="stylesheet" href="../../css/bootstrap4.min.css"> 
      
 
-<!-- Jquery from Google CDN 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
-<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<!-- Jquery from Google CDN -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 <!-- Load Jquery UI -->
-<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
 <!-- Handle jQuery plugin naming conflict between jQuery UI and Bootstrap 
     https://stackoverflow.com/questions/13731400/jqueryui-tooltips-are-competing-with-twitter-bootstrap
     -->
@@ -57,8 +56,7 @@
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
 
-<script type="module" src="https://unpkg.com/esp-web-tools@3.6.0/dist/web/install-button.js?module"></script>
-<script src="../../js/installer.js"></script>
+<script type="module" src="https://unpkg.com/esp-web-tools@3.3.0/dist/web/install-button.js?module"></script>
 
 
     
@@ -1808,41 +1806,31 @@ Only when a text value is included in a <code>jsonl</code> or <code>json</code> 
         var xhr = new XMLHttpRequest();
         xhr.open("GET", "/versions.json");
         xhr.onload = function() {
-            if (xhr.status === 200) { //check if "OK" (200)
-                var versions = JSON.parse(this.responseText);
-                latest_version = ""
-                dev_version = ""
-                for (id in versions) {
-                    if (versions[id]["aliases"].length > 0 && versions[id]["aliases"].includes("latest")) {
-                        latest_version = "/" + versions[id].version + "/";
-                    }
-                    if (versions[id]["aliases"].length > 0 && versions[id]["aliases"].includes("dev")) {
-                        dev_version = "/" + versions[id].version + "/";
-                    }
+            var versions = JSON.parse(this.responseText);
+            latest_version = ""
+            dev_version = ""
+            for (id in versions) {
+                if (versions[id]["aliases"].length > 0 && versions[id]["aliases"].includes("latest")) {
+                    latest_version = "/" + versions[id].version + "/";
                 }
-                if (!window.location.pathname.includes("latest/") && (latest_version.length > 0 && !window.location.pathname.includes(latest_version))) {
-                    if (!window.location.pathname.includes("dev/") && (dev_version.length > 0 && !window.location.pathname.includes(dev_version))) {
-                        document.querySelector("div[data-md-component=announce]").innerHTML = "<div id='announce-msg'>This documentation is for a previous version. We recommend you <a href='/openHASP-docs/latest/'>use the latest</a>.</div>";
-                    } else {
-                        document.querySelector("div[data-md-component=announce]").innerHTML = "<div id='announce-msg'>This documentation is for the development version. We recommend you <a href='/openHASP-docs/latest/'>use the latest</a>.</div>";
-
-                    }
+                if (versions[id]["aliases"].length > 0 && versions[id]["aliases"].includes("dev")) {
+                    dev_version = "/" + versions[id].version + "/";
+                }
+            }
+            if (!window.location.pathname.includes("latest/") && (latest_version.length > 0 && !window.location.pathname.includes(latest_version))) {
+                if (!window.location.pathname.includes("dev/") && (dev_version.length > 0 && !window.location.pathname.includes(dev_version))) {
+                    document.querySelector("div[data-md-component=announce]").innerHTML = "<div id='announce-msg'>This documentation is for the development version. We recommend you <a href='https://www.openhasp.com/latest/'>use the latest</a>.</div>";
+                } else {
+                    document.querySelector("div[data-md-component=announce]").innerHTML = "<div id='announce-msg'>This documentation is for a previous version. We recommend you <a href='https://www.openhasp.com/latest/'>use the latest</a>.</div>";
                 }
             }
         };
         xhr.send();
     });
-
-    window.onload = (event) => {
-        console.log('The page has fully loaded');
-        installerLoaded();
-        setModel();
-    };
 </script>
 <!-- Cloudflare Web Analytics -->
 <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "d4bec0b78f6840c1afe0d7d21896a2e9"}'></script>
 <!-- End Cloudflare Web Analytics -->
-
 
   </body>
 </html>
