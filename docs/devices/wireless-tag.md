@@ -135,14 +135,14 @@ esptool.py --port COM6 write_flash 0x0 wt-86-32-3zw1_full_16MB_v0.6.3-dev_88a478
 ### Gallery
 
 <div class="row justify-content-center">
-    <a href="../../assets/images/builds/wt32-sc01-1.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4" data-title="Wireless-Tag WT32-SC01" data-footer="Image by xHirschx">
-        <img src="../../assets/images/builds/wt32-sc01-1.jpg" class="img-fluid">
+    <a href="../../assets/images/builds/wt-86-32-zw1-home.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4" data-title="Wireless-Tag WT-86-32-3ZW1" data-footer="Image by codewise-nicolas">
+        <img src="../../assets/images/builds/wt-86-32-zw1-home.jpg" class="img-fluid">
     </a>
-    <a href="../../assets/images/builds/wt32-sc01-2.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4" data-title="Wireless-Tag WT32-SC01" data-footer="Image by xHirschx">
-        <img src="../../assets/images/builds/wt32-sc01-2.jpg" class="img-fluid">
+    <a href="../../assets/images/builds/wt-86-32-zw1-thermostat.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4" data-title="Wireless-Tag WT-86-32-3ZW1" data-footer="Image by codewise-nicolas">
+        <img src="../../assets/images/builds/wt-86-32-zw1-thermostat.jpg" class="img-fluid">
     </a>
-    <a href="../../assets/images/builds/wt32-sc01-3.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4" data-title="Wireless-Tag WT32-SC01">
-        <img src="../../assets/images/builds/wt32-sc01-3.jpg" class="img-fluid">
+    <a href="../../assets/images/builds/wt-86-32-zw1-security.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4" data-title="Wireless-Tag WT-86-32-3ZW1" data-footer="Image by codewise-nicolas">
+        <img src="../../assets/images/builds/wt-86-32-zw1-security.jpg" class="img-fluid">
     </a>
 </div>
 
