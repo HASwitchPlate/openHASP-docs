@@ -3,7 +3,7 @@ The [openHASP Custom Component][1]{target=_blank} simplifies synchronization of 
 We call _plate_ any device running openHASP in your system.
 
 !!! note
-    Before going forward make sure you have installed the MQTT add-on in Home Assistant and the option `Enable Discovery` is indeed enabled in the MQTT add-on settings.
+    Before going forward make sure you have installed the MQTT add-on in Home Assistant and the option `Enable Discovery` is indeed enabled in the MQTT integration service.
     A working MQTT add-on with discovery enabled is a prerequisite for using the openHASP custom component.
 
 
