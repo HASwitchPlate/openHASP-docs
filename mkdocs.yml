@@ -18,7 +18,7 @@ extra:
     - icon: material/github
       link: https://github.com/HASwitchPlate/openHASP/discussions
       name: GitHub Discussions
-    - icon: material/discord
+    - icon: custom/discord
       link: https://discord.gg/VCWyuhF
       name: Discord Chat
     - icon: material/home-assistant

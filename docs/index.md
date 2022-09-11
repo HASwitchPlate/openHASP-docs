@@ -42,7 +42,7 @@ Click on the demo screen to show the example configuration:
 For support using openHASP you can find us on Github, Discord or Home Assistant:
 
 [:material-github: Github Discussions][3]{target=_blank .md-button .md-button--primary }
-[:material-discord: Discord Chat][5]{target=_blank .md-button .md-button--primary }
+[:custom-discord: Discord Chat][5]{target=_blank .md-button .md-button--primary }
 [:material-home-assistant: Home Assistant Forum][6]{target=_blank .md-button .md-button--primary }
 
 ### Donate
