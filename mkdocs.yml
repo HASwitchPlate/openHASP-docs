@@ -27,6 +27,9 @@ extra:
     - name: Donate
       link: https://ko-fi.com/openhasp
       icon: octicons/heart-fill-24
+    - name: Twitter
+      link: https://twitter.com/hashtag/openhasp
+      icon: material/twitter
 
   version:
     provider: mike
