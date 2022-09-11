@@ -42,13 +42,19 @@ jobs:
           fileName: "*"
           out-file-path: "docs/assets/firmware"
 
-      - name: Release docs from this branch
+      - name: Delete latest alias
+        run: |
+          mike delete --rebase -f "latest"
+
+      - name: Build docs from this branch
         run: |
           echo "Branchname: ${GITHUB_REF#refs/heads/}"
-          mike delete -f "latest" --rebase
           mike deploy --rebase --title="${GITHUB_REF#refs/heads/}" --update-aliases "${GITHUB_REF#refs/heads/}" "latest"
-          mike set-default --push latest
 
+      - name: Push docs from this branch
+        run: |
+          mike set-default --push latest
+        
       - name: List
         run: |
           mike list
