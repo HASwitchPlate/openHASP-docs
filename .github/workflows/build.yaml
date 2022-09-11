@@ -49,8 +49,8 @@ jobs:
       - name: Build docs from this branch
         run: |
           echo "Branchname: ${GITHUB_REF#refs/heads/}"
-          mike deploy --rebase --title="${GITHUB_REF#refs/heads/}" --update-aliases "${GITHUB_REF#refs/heads/}" "latest"
-
+          mike deploy --rebase "${GITHUB_REF#refs/heads/}"
+          
       - name: Push docs from this branch
         run: |
           mike set-default --push latest
