@@ -62,7 +62,7 @@ Type ++ctrl+"S"++ on a PC or ++cmd+"S"++ on Mac.
 For support using openHASP please find us on Github, Discord or Home Assistant:
 
 [:material-github: Github Discussions][1]{target=_blank .md-button .md-button--primary }
-[:material-discord: Discord Chat][2]{target=_blank .md-button .md-button--primary }
+[:custom-discord: Discord Chat][2]{target=_blank .md-button .md-button--primary }
 [:material-home-assistant: Home Assistant Forum][3]{target=_blank .md-button .md-button--primary }
 
 [1]: https://github.com/HASwitchPlate/openHASP/discussions
