@@ -17,13 +17,13 @@
 
 The SC01 Plus uses an ESP32-S3-WROVER module with a 3.5-inch capacitive touch display.
 openHASP can take advantage of the 320x480 resolution to show a large custom user-interface.
-On the back there is an expansion port with GPIOs so you can expand the capabilities as needed.
+On the back there are some ports with GPIOs so you can expand the capabilities as needed.
 
 | Pros                   | Cons
 |:-----                  |:----
 | 480x320 8-bit Display  | Flashing the initial bootloader
-| 2 MB PSram             | JST 1.25mm Expension headers
-| Capacitive Touchscreen | Serual Flashing tool recommended
+| 2 MB PSram             | Serial Flashing tool recommended
+| Capacitive Touchscreen | JST 1.25mm Expansion headers
 | IPS Viewing angles     |
 | Sleek design           |
 

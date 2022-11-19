@@ -25,10 +25,9 @@
 - L8-HB: Boiler switch - load up to 16A
 - L8-HT: Thermostat switch - not tested!
 
-!!! note
+!!! warning
     Choose a model that works with *Apple HomeKit* because those are WiFi versions with the internal antenna connected to the ESP32.
 
-!!! warning
     Do **NOT** buy a version that is powered by *Tuya Smart Life* because the internal antenna is connected to the Tuya chip.
     Those devices will have very bad WiFi reception of the ESP32!
 
@@ -38,7 +37,7 @@
 - EU model: 86mm x 86mm
 - US model: 120mm x 74mm
 
-Both models are rated at AC 100-250V ~50-60Hz, the form factor can be a design choice regardless of the continental area.
+All models are rated at AC 100-250V ~50-60Hz, the form factor can be a design choice regardless of the continental area.
 
 <div class="row justify-content-center">
         <a href="../../assets/images/devices/lanbon-l8-dimensions-us.png" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-6" data-title="Lanbon L8 - US dimensions" data-footer="">
@@ -50,7 +49,7 @@ Both models are rated at AC 100-250V ~50-60Hz, the form factor can be a design c
         </a>
 </div>
 
-Both models have the same recessed housing sliding in the wall, sized 50x50mm, with rounded corners creating a diameter of about 59mm. This makes them suitable for both EU and US wall fixtures. The EU model fits in a properly deployed, standard 60mm round wall box and can be fixed with two side screws (use the screws which belong to the box instead of the ones shipped with the device), the US model fits in the standard rectangular box and can be fixed through the oval holes located 3 1/4" apart. The depth of the wall box has to be at least 35-40mm because some room is needed for the wires coming out straight of the device.
+The models have the same recessed housing sliding into the wall, sized 50x50mm, with rounded corners creating a diameter of about 59mm. This makes them suitable for both EU and US wall fixtures. The EU model fits in a properly deployed, standard 60mm round wall box and can be fixed with two side screws (use the screws which belong to the box instead of the ones shipped with the device), the US model fits in the standard rectangular box and can be fixed through the oval holes located 3 1/4" apart. The depth of the wall box has to be at least 35-40mm because some room is needed for the wires coming out straight of the device.
 
 
 #### Bezel Color
