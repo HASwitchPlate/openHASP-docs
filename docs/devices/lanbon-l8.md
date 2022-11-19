@@ -26,11 +26,11 @@
 - L8-HT: Thermostat switch - not tested!
 
 !!! note
-    Choose a model that works with *Amazon Echo*, *Google Home* or *Apple HomeKit* because those are WiFi versions.
+    Choose a model that works with *Apple HomeKit* because those are WiFi versions with the internal antenna connected to the ESP32.
 
 !!! warning
-    Do **NOT** buy the Tuya Smart Life versions because they will have *very* bad WiFi reception!
-    The internal antenna is connected to the Tuya chip only and not to the ESP32.
+    Do **NOT** buy a version that is powered by *Tuya Smart Life* because the internal antenna is connected to the Tuya chip.
+    Those devices will have very bad WiFi reception of the ESP32!
 
 
 #### Form factor
