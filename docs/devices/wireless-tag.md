@@ -1,5 +1,35 @@
 # Wireless-Tag
 
+## SC01 Plus
+
+<div class="row justify-content-center">
+        <a href="../../assets/images/devices/sc01-plus-front.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-6" data-title="SC01 Plus Front" data-footer="">
+            <img src="../../assets/images/devices/sc01-plus-front.jpg" class="img-fluid">
+        </a>
+
+        <a href="../../assets/images/devices/sc01-plus-back.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-6" data-title="SC01 Plus Back" data-footer="">
+            <img src="../../assets/images/devices/sc01-plus-back.jpg" class="img-fluid">
+        </a>
+</div>
+
+
+### Features
+
+The SC01 Plus uses an ESP32-S3-WROVER module with a 3.5-inch capacitive touch display.
+openHASP can take advantage of the 320x480 resolution to show a large custom user-interface.
+On the back there is an expansion port with GPIOs so you can expand the capabilities as needed.
+
+| Pros                   | Cons
+|:-----                  |:----
+| 480x320 8-bit Display  | Flashing the initial bootloader
+| 2 MB PSram             | JST 1.25mm Expension headers
+| Capacitive Touchscreen | Serual Flashing tool recommended
+| IPS Viewing angles     |
+| Sleek design           |
+
+The development board is powered via USB Type-C.
+
+
 ## WT32-SC01
 
 <div class="row justify-content-center">
