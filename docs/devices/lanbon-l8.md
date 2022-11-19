@@ -25,6 +25,13 @@
 - L8-HB: Boiler switch - load up to 16A
 - L8-HT: Thermostat switch - not tested!
 
+!!! Tip
+    Choose a model that works with Amazon Echo, Google Home or Apple HomeKit because these are all WiFi versions.
+
+!!! warning
+    Do **NOT** buy the Tuya Smart Life versions because they will have *very* bad WiFi reception!
+
+
 #### Form factor
 
 - EU model: 86mm x 86mm
