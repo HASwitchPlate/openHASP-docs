@@ -1,6 +1,6 @@
-# openHASP 0.6.3 documentation
+# openHASP 0.7.0 documentation
 
-[Click here](https://www.openhasp.com/0.6.3/) to access the manual in a human readable form.
+[Click here](https://www.openhasp.com/0.7.0/) to access the manual in a human readable form.
 
 ## Testing
 

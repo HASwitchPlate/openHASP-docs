@@ -1,6 +1,6 @@
 # Also change the version in README.md and extra below
-site_url: https://www.openhasp.com/0.6.3/
-edit_uri: https://github.com/HASwitchPlate/openHASP-docs/edit/0.6.3/docs/
+site_url: https://www.openhasp.com/0.7.0/
+edit_uri: https://github.com/HASwitchPlate/openHASP-docs/edit/0.7.0/docs/
 
 repo_url: https://github.com/HASwitchPlate/openHASP
 repo_name: HASwitchPlate/openHASP
@@ -8,11 +8,11 @@ repo_name: HASwitchPlate/openHASP
 site_name: "openHASP"
 site_description: "Open firmware for MCUs to drive a low-cost commodity touch display"
 site_author: "Francis Van Roie"
-copyright: Copyright &copy; 2019 - 2021 Francis Van Roie and contributors
+copyright: Copyright &copy; 2019-2023 Francis Van Roie and contributors
 
 extra:
   openhasp:
-    version: 0.6.3
+    version: 0.7.0-dev
 
   social:
     - icon: material/github
