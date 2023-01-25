@@ -30,7 +30,7 @@ tbody tr:nth-child(even) {
 
 </style>
 
-<h1>Objects</h1>
+# Objects
 
 There are two ways to create an object on the screen:
 

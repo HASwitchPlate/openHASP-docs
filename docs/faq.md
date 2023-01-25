@@ -1,4 +1,4 @@
-<h1>Frequently Asked Questions</h1>
+# Frequently Asked Questions
 
 ### :question: What is the difference between openHASP and HASPone
 
