@@ -43,6 +43,7 @@ jobs:
           out-file-path: "docs/assets/firmware"
 
       - name: Delete latest alias
+        if: github.ref == 'refs/heads/0.6.3'
         run: |
           mike delete --rebase -f "latest"
 

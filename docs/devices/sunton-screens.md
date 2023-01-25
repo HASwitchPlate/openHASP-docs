@@ -74,6 +74,3 @@ Note that some of the screens have **TWO** versions, **Resistive** and **Capacit
 **RESISTIVE**: After first boot, Run a `Calibration` via the web ui -> Display Setup -> Calibrate
 
 Then on the screen, touch the indicated points.
-
-!!!warning 
-    Screens may not yet support rotation (for example 4.3" currently does not - Dec 31, 2022)
