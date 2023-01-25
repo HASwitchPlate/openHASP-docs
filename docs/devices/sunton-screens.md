@@ -1,9 +1,5 @@
 # Sunton Screens
 
-!!!Warning
-    **BETA - Under development still - Some features may not work, or have bugs**
-
-
 These are great "all-in-one" device that have integrated ESP32/ESP32-S3 chips, many with PSRAM.  Sizes from 1.9" to a whopping 7" display and built in touch.
 
 Available via the Sunton store on Aliexpress.
