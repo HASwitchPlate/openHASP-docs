@@ -62,8 +62,8 @@ jobs:
         if: github.ref == 'refs/heads/0.7.0'
         run: |
           echo "Branchname: ${GITHUB_REF#refs/heads/}"
-          mike deploy --rebase --update-aliases --title="${GITHUB_REF#refs/heads/}-dev" "${GITHUB_REF#refs/heads/}"
-       
+          mike deploy --rebase --push --update-aliases --title="${GITHUB_REF#refs/heads/}-dev" "${GITHUB_REF#refs/heads/}"
+   
       - name: List
         run: |
           mike list
