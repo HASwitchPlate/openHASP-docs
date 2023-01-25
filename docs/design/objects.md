@@ -105,15 +105,14 @@ If the `page` parameter is not present, the object is placed on the same page as
 You can still hide the object on select pages if needed. Objects on page 0 appear on **top** of any objects on the underlying page.
 
 #### Actions  
-Action commands are supported only by _binary_ or _visual_ type of objects and they are performed locally on the plate. The following actions can be set for these objects:
+Action commands are supported only by _binary_ or _visual_ type of objects and they are performed locally on the plate. Actions can be of most any [command](../commands.md):
 
-- `p1` to `p12` to switch to the corresponding page numbers directly
-- `prev` to switch to the previous page
-- `next` to switch to the next page
-- `back` to go back to the home page
+`action` has the format of `{"action": {"<btn event>": "<command>"}`
+
+***btn events:** are found in [events](#events). examples are `up`, `down` etc.
 
 Check out the [example](../integrations/examples/example-pagination.md) for how to implement actions.  
-You can change the target pages using `prev`, `back` and `next` [page attributes](../pages/#page-attributes) operation on the page object`pXb0`.  
+You can change the target pages using `prev`, `back` and `next` [page attributes](../pages/#page-attributes) operation on the page object `pXb0`.  
 
 #### Swipe <a name="swipe"></a>
 Objects and page area (`p0bY`) support `swipe` property. Enabling this will process `left`, `right` and `down` swipes on the object as `next`, `prev` and `back` page changes, respectively. The start of the swipe needs to be on the element which has this property enabled for the feature to activate.  
