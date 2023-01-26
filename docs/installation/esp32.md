@@ -2,7 +2,7 @@
 
 ## Online Installation
 
-With Chrome or Edge you can flash the ESP32 directly from within the browser window using the [openHASP Web installer](https://install.openhasp.com){target=_blank}.
+With Chrome or Edge you can flash the ESP32 directly from within the browser window using the [openHASP Web installer](https://install.openhasp.com){target=_blank}. for releases, Dev/Beta use [openHASP Web installer Nightly](https://nightly.openhasp.com){target=_blank}. 
 If you have another browser then use the offline flash tools below to download and flash the ESP32.
 
 ## Download Firmware
@@ -18,7 +18,7 @@ You need to pick the correct binary files for your device:
 
 
 !!! note
-    You can also download the *nightly* openHASP development .zip files from the [Actions tab](https://github.com/HASwitchPlate/openHASP/actions){target=_blank} on Github.
+    You can also download the *nightly* openHASP development .zip files from the [Actions tab](https://github.com/HASwitchPlate/openHASP/actions){target=_blank} on Github. Select one of the latest "workflows" and scroll down to find zip files.
 
 
 ## Flash ESP32

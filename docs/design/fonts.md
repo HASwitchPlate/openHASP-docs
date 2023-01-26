@@ -27,9 +27,7 @@ td:nth-child(3n+2) { white-space: nowrap; }
 The ESP32 firmware includes these built-in fonts:
 
 - Unscii with font size 8pt
-- Roboto Condensed in _four_ font sizes depending on the display resolution:
-    - 320x240: 12, 16, 24 and 32pt
-    - 480x320: 16, 24, 32 and 48pt
+- Roboto Condensed ttf (any size can be set as of _0.7.0_)
 
 Each font contains selected glyphs of the [Latin-1](#latin-1) character set and MaterialDesign icons below.
 
@@ -38,13 +36,11 @@ The built-in fonts can be set by using the pointsize as parameter. For example:
 ```json linenums="1"
 p4b1.text_font=24
 p4b2.value_font=12
+p4b3.text_font=64
 ```
 
-!!! note "Developer Note"
-    It is possible to create custom builds with built-in fonts of other sizes (choose any _four_ of 12, 14, 16, 20, 22, 24, 26, 28, 32, 36, 38, 40, 44, 48) and
-    supporting [Latin-2](#latin-2), [Cyrillic](#cyrillic), [Greek](#greek) or [Vietnamese](#vietnamese) character sets (even combined)
-    by [customizing](../compiling/customize.md) `user_config_override.h`.
-
+!!! note
+    On Devices that do not have PSRAM, you may notice that changing pages/drawing new pages may take a bit longer on version _0.7.0+_.
 
 ### Icons
 
@@ -56,6 +52,9 @@ Included are a range of arrows, navigation, climate, controls, devices, energy, 
 ## Custom Fonts
 
 ### TrueType
+
+!!!Warning
+    **You should only load TTF fonts on a device that has PSRAM**
 
 You can use any TrueType font containing characters or icons. 
 
