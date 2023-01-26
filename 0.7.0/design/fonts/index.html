@@ -1708,23 +1708,19 @@ td:nth-child(3n+2) { white-space: nowrap; }
 <p>The ESP32 firmware includes these built-in fonts:</p>
 <ul>
 <li>Unscii with font size 8pt</li>
-<li>Roboto Condensed in <em>four</em> font sizes depending on the display resolution:<ul>
-<li>320x240: 12, 16, 24 and 32pt</li>
-<li>480x320: 16, 24, 32 and 48pt</li>
-</ul>
-</li>
+<li>Roboto Condensed ttf (any size can be set as of <em>0.7.0</em>)</li>
 </ul>
 <p>Each font contains selected glyphs of the <a href="#latin-1">Latin-1</a> character set and MaterialDesign icons below.</p>
 <p>The built-in fonts can be set by using the pointsize as parameter. For example:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="err">p</span><span class="mi">4</span><span class="err">b</span><span class="mf">1.</span><span class="kc">te</span><span class="err">x</span><span class="kc">t</span><span class="err">_</span><span class="kc">f</span><span class="err">o</span><span class="kc">nt</span><span class="err">=</span><span class="mi">24</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="err">p</span><span class="mi">4</span><span class="err">b</span><span class="mf">1.</span><span class="kc">te</span><span class="err">x</span><span class="kc">t</span><span class="err">_</span><span class="kc">f</span><span class="err">o</span><span class="kc">nt</span><span class="err">=</span><span class="mi">24</span>
 <span class="err">p</span><span class="mi">4</span><span class="err">b</span><span class="mf">2.</span><span class="err">value_</span><span class="kc">f</span><span class="err">o</span><span class="kc">nt</span><span class="err">=</span><span class="mi">12</span>
+<span class="err">p</span><span class="mi">4</span><span class="err">b</span><span class="mf">3.</span><span class="kc">te</span><span class="err">x</span><span class="kc">t</span><span class="err">_</span><span class="kc">f</span><span class="err">o</span><span class="kc">nt</span><span class="err">=</span><span class="mi">64</span>
 </code></pre></div></td></tr></table></div>
 <div class="admonition note">
-<p class="admonition-title">Developer Note</p>
-<p>It is possible to create custom builds with built-in fonts of other sizes (choose any <em>four</em> of 12, 14, 16, 20, 22, 24, 26, 28, 32, 36, 38, 40, 44, 48) and
-supporting <a href="#latin-2">Latin-2</a>, <a href="#cyrillic">Cyrillic</a>, <a href="#greek">Greek</a> or <a href="#vietnamese">Vietnamese</a> character sets (even combined)
-by <a href="../../compiling/customize/">customizing</a> <code>user_config_override.h</code>.</p>
+<p class="admonition-title">Note</p>
+<p>On Devices that do not have PSRAM, you may notice that changing pages/drawing new pages may take a bit longer on version <em>0.7.0+</em>.</p>
 </div>
 <h3 id="icons">Icons<a class="headerlink" href="#icons" title="Permanent link">~</a></h3>
 <p>The icons in the list below are included with the built-in font sizes.
@@ -2281,6 +2277,10 @@ Included are a range of arrows, navigation, climate, controls, devices, energy, 
 </table>
 <h2 id="custom-fonts">Custom Fonts<a class="headerlink" href="#custom-fonts" title="Permanent link">~</a></h2>
 <h3 id="truetype">TrueType<a class="headerlink" href="#truetype" title="Permanent link">~</a></h3>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><strong>You should only load TTF fonts on a device that has PSRAM</strong></p>
+</div>
 <p>You can use any TrueType font containing characters or icons. </p>
 <ol>
 <li>Upload any TTF (TrueType) font file to the flash partition of your plate. If you want to use other styles than Regular like Italic or Bold, make sure you use a font which provides separate, optimized versions for these. You can upload and use multiple font files, but within a property you can only select one font.</li>

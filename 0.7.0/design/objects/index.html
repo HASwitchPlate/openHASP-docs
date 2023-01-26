@@ -2118,15 +2118,11 @@ You can have a maximum of 254 ids on each page. You don't have to use them in as
 <p><code>"page":0</code> indicates that the object is visible on <strong>all</strong> pages. It can be used for example to specify a static menu bar.
 You can still hide the object on select pages if needed. Objects on page 0 appear on <strong>top</strong> of any objects on the underlying page.</p>
 <h4 id="actions">Actions<a class="headerlink" href="#actions" title="Permanent link">~</a></h4>
-<p>Action commands are supported only by <em>binary</em> or <em>visual</em> type of objects and they are performed locally on the plate. The following actions can be set for these objects:</p>
-<ul>
-<li><code>p1</code> to <code>p12</code> to switch to the corresponding page numbers directly</li>
-<li><code>prev</code> to switch to the previous page</li>
-<li><code>next</code> to switch to the next page</li>
-<li><code>back</code> to go back to the home page</li>
-</ul>
+<p>Action commands are supported only by <em>binary</em> or <em>visual</em> type of objects and they are performed locally on the plate. Actions can be of most any <a href="../../commands/">command</a>:</p>
+<p><code>action</code> has the format of <code>{"action": {"&lt;btn event&gt;": "&lt;command&gt;"}</code></p>
+<p><strong>*btn events:</strong> are found in <a href="#events">events</a>. examples are <code>up</code>, <code>down</code> etc.</p>
 <p>Check out the <a href="../../integrations/examples/example-pagination/">example</a> for how to implement actions.<br />
-You can change the target pages using <code>prev</code>, <code>back</code> and <code>next</code> <a href="../pages/#page-attributes">page attributes</a> operation on the page object<code>pXb0</code>.  </p>
+You can change the target pages using <code>prev</code>, <code>back</code> and <code>next</code> <a href="../pages/#page-attributes">page attributes</a> operation on the page object <code>pXb0</code>.  </p>
 <h4 id="swipe">Swipe <a name="swipe"></a><a class="headerlink" href="#swipe" title="Permanent link">~</a></h4>
 <p>Objects and page area (<code>p0bY</code>) support <code>swipe</code> property. Enabling this will process <code>left</code>, <code>right</code> and <code>down</code> swipes on the object as <code>next</code>, <code>prev</code> and <code>back</code> page changes, respectively. The start of the swipe needs to be on the element which has this property enabled for the feature to activate.  </p>
 <div class="admonition note">
