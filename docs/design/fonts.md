@@ -27,9 +27,12 @@ td:nth-child(3n+2) { white-space: nowrap; }
 The ESP32 firmware includes these built-in fonts:
 
 - Unscii with font size 8pt
-- Roboto Condensed ttf (any size can be set as of _0.7.0_)
+- Roboto Condensed in font sizes 12, 16, 24 and 32pt
+- Roboto Condensed [TrueType font](#truetype), i.e. any size can be set as of _0.7.0_
 
-Each font contains selected glyphs of the [Latin-1](#latin-1) character set and MaterialDesign icons below.
+The default font in pre-compiled binaries is Roboto-Condensed-Regular with [Ascii range](#ascii),
+[Cyrillic](#cyrillic), [Latin-1](#latin-1), [Latin-1](#latin-1), [Greek](@greek) and [Viernamese](#vietnamese)
+character sets. It also includes 146 [MaterialDesign icons](#icons) listed below.
 
 The built-in fonts can be set by using the pointsize as parameter. For example:
 
@@ -58,8 +61,8 @@ Included are a range of arrows, navigation, climate, controls, devices, energy, 
 
 You can use any TrueType font containing characters or icons. 
 
-  1. Upload any TTF (TrueType) font file to the flash partition of your plate. If you want to use other styles than Regular like Italic or Bold, make sure you use a font which provides separate, optimized versions for these. You can upload and use multiple font files, but within a property you can only select one font.
-  2. In the jsonl code use the filename of the font without the extension and the desired font size added to it. So for example to have a text rendered in Arial 20px, you upload _arial.ttf_ to the plate and use `"text_font":"arial20"` or command `p1b2.text_font=arial20`.
+  1. Upload any `.ttf` (in lowercase) TrueType font file to the flash partition of your plate. If you want to use other styles than Regular like Italic or Bold, make sure you use a font which provides separate, optimized versions for these. You can upload and use multiple font files, but within a property you can only select one font.
+  2. In the jsonl code use the filename of the font without the extension and the desired font size added to it. So for example to have a text rendered in Arial 20px, you upload `arial.ttf` to the plate and use `"text_font":"arial20"` or command `p1b2.text_font=arial20`.
 
 !!! note
     If you get an error when you upload the TTF file to the plate, make sure to use shorter filenames.
@@ -95,12 +98,15 @@ How to use the font converter?
 
 #### Usage
 
-  1. Upload the resulting binary font file to the flash partition of your plate.
+  1. Upload the resulting `arial_20.bin` binary font file to the flash partition of your plate.
   2. In the jsonl code use `"text_font":"arial_20"` without the extension or use command `p1b2.text_font=arial_20`
 
 !!! warning
     The entire binary font is cached into memory when it is first used.
     PSram is *highly* recommended to use binary fonts.
+
+!!! note
+    If both a `arial_20.bin` and `arial.ttf` file are present, the binary file is prefered over the TrueType file.
 
 
 
@@ -191,7 +197,6 @@ Includes all ASCII 0x20-0x7E characters extended with a non-breaking space and 1
 
 ### Latin 1
 
-This is the default character set of the pre-compiled firmware binary files.     
 Includes all characters and symbols from the [Ascii range](#ascii) above.
 
 Covers Northern, Western and Southern European languages: English (en), French (fr), Spanish (es), Portuguese (pt), Italian (it), Dutch (nl), German (de), Danish (da), Swedish (sv), Norwegian (no), Finnish (fi), Albanian (sq), Turkish (tr)
@@ -276,7 +281,6 @@ Covers Northern, Western and Southern European languages: English (en), French (
 
 ### Latin 2
 
-Needs compiling with [customization](../../compiling/customize/).
 Includes all characters and symbols from the [Ascii range](#ascii) above.
 
 Covers Central and Eastern European languages: Czech (cs), Hungarian (hu), Polish (pl), Romanian (ro), Croatian (hr), Slovak (sk), Slovenian (sl), Sorbian (sb)
@@ -403,7 +407,6 @@ Covers Central and Eastern European languages: Czech (cs), Hungarian (hu), Polis
 
 ### Cyrillic
 
-Needs compiling with [customization](../../compiling/customize/).
 Includes all characters and symbols from the [Ascii range](#ascii) above.
 
 Covers the Slavic languages that use a Cyrillic alphabet, including Belarusian, Bulgarian, Macedonian, Russian, Serbian, and Ukrainian 
@@ -508,7 +511,6 @@ Covers the Slavic languages that use a Cyrillic alphabet, including Belarusian, 
 
 ### Greek
 
-Needs compiling with [customization](../../compiling/customize/).
 Includes all characters and symbols from the [Ascii range](#ascii) above.
 
 Covers the Greek (el) language:
@@ -583,7 +585,6 @@ Covers the Greek (el) language:
 
 ### Vietnamese
 
-Needs compiling with [customization](../../compiling/customize/).
 Includes all characters and symbols from the [Ascii range](#ascii) above.
 
 Covers the Vietnamese (vi) language:

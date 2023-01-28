@@ -57,7 +57,7 @@ Also available via web installer at <a target="_blank" href="https://nightly.ope
 
 or the latest found under <a target="_blank" href="https://github.com/HASwitchPlate/openHASP/actions">Github Actions</a>, click on the latest action, and look under the `Assets` sections for zip files containing builds binary files.
 
-### Recommended method (as of Dec 2022)
+### Recommended method
 
    1. Use the `Nightly` build website to initially flash the device.
 
