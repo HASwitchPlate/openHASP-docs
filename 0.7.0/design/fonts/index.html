@@ -1711,19 +1711,19 @@ td:nth-child(3n+2) { white-space: nowrap; }
 <li>Roboto Condensed in font sizes 12, 16, 24 and 32pt</li>
 <li>Roboto Condensed <a href="#truetype">TrueType font</a>, i.e. any size can be set as of <em>0.7.0</em></li>
 </ul>
-<p>The default font in pre-compiled binaries is Roboto-Condensed-Regular with <a href="#ascii">Ascii range</a>,
-<a href="#cyrillic">Cyrillic</a>, <a href="#latin-1">Latin-1</a>, <a href="#latin-1">Latin-1</a>, <a href="@greek">Greek</a> and <a href="#vietnamese">Viernamese</a>
-character sets. It also includes 146 <a href="#icons">MaterialDesign icons</a> listed below.</p>
+<p>The default font in pre-compiled binaries is Roboto-Condensed-Regular which includes these character sets:
+<a href="#ascii">Ascii</a>, <a href="#cyrillic">Cyrillic</a>, <a href="#latin-1">Latin-1</a>, <a href="#latin-2">Latin-2</a>, <a href="#greek">Greek</a> <em>and</em> <a href="#vietnamese">Viernamese</a>.
+It also includes 146 <a href="#icons">MaterialDesign icons</a> listed below.</p>
 <p>The built-in fonts can be set by using the pointsize as parameter. For example:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="err">p</span><span class="mi">4</span><span class="err">b</span><span class="mf">1.</span><span class="kc">te</span><span class="err">x</span><span class="kc">t</span><span class="err">_</span><span class="kc">f</span><span class="err">o</span><span class="kc">nt</span><span class="err">=</span><span class="mi">24</span>
 <span class="err">p</span><span class="mi">4</span><span class="err">b</span><span class="mf">2.</span><span class="err">value_</span><span class="kc">f</span><span class="err">o</span><span class="kc">nt</span><span class="err">=</span><span class="mi">12</span>
-<span class="err">p</span><span class="mi">4</span><span class="err">b</span><span class="mf">3.</span><span class="kc">te</span><span class="err">x</span><span class="kc">t</span><span class="err">_</span><span class="kc">f</span><span class="err">o</span><span class="kc">nt</span><span class="err">=</span><span class="mi">64</span>
+<span class="err">p</span><span class="mi">4</span><span class="err">b</span><span class="mf">3.</span><span class="kc">te</span><span class="err">x</span><span class="kc">t</span><span class="err">_</span><span class="kc">f</span><span class="err">o</span><span class="kc">nt</span><span class="err">=</span><span class="mi">64</span><span class="w">             </span><span class="err">&lt;</span><span class="mi">--</span><span class="w"> </span><span class="err">Uses</span><span class="w"> </span><span class="kc">t</span><span class="err">he</span><span class="w"> </span><span class="err">TrueType</span><span class="w"> </span><span class="kc">f</span><span class="err">o</span><span class="kc">nt</span>
 </code></pre></div></td></tr></table></div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>On Devices that do not have PSRAM, you may notice that changing pages/drawing new pages may take a bit longer on version <em>0.7.0+</em>.</p>
+<p>On Devices that do not have PSRAM, you may notice that changing pages/drawing new pages may take a bit longer on version <em>0.7.0</em>.</p>
 </div>
 <h3 id="icons">Icons<a class="headerlink" href="#icons" title="Permanent link">~</a></h3>
 <p>The icons in the list below are included with the built-in font sizes.
@@ -2460,7 +2460,6 @@ All character sets also contain about 130 standard Material Design Icons for hom
 &#x20AC;
 &#x2022;</p>
 <h3 id="latin-1">Latin 1<a class="headerlink" href="#latin-1" title="Permanent link">~</a></h3>
-<p>Includes all characters and symbols from the <a href="#ascii">Ascii range</a> above.</p>
 <p>Covers Northern, Western and Southern European languages: English (en), French (fr), Spanish (es), Portuguese (pt), Italian (it), Dutch (nl), German (de), Danish (da), Swedish (sv), Norwegian (no), Finnish (fi), Albanian (sq), Turkish (tr)</p>
 <p>&#x00A1;
 &#x00BF;
@@ -2539,7 +2538,6 @@ All character sets also contain about 130 standard Material Design Icons for hom
 &#x017E;
 &#x1E9E;</p>
 <h3 id="latin-2">Latin 2<a class="headerlink" href="#latin-2" title="Permanent link">~</a></h3>
-<p>Includes all characters and symbols from the <a href="#ascii">Ascii range</a> above.</p>
 <p>Covers Central and Eastern European languages: Czech (cs), Hungarian (hu), Polish (pl), Romanian (ro), Croatian (hr), Slovak (sk), Slovenian (sl), Sorbian (sb)</p>
 <p>&#x00C1;
 &#x00C2;
@@ -2650,7 +2648,6 @@ All character sets also contain about 130 standard Material Design Icons for hom
 &#x021A;
 &#x021B;</p>
 <h3 id="cyrillic">Cyrillic<a class="headerlink" href="#cyrillic" title="Permanent link">~</a></h3>
-<p>Includes all characters and symbols from the <a href="#ascii">Ascii range</a> above.</p>
 <p>Covers the Slavic languages that use a Cyrillic alphabet, including Belarusian, Bulgarian, Macedonian, Russian, Serbian, and Ukrainian </p>
 <p>&#x0400;
 &#x0401;
@@ -2749,7 +2746,6 @@ All character sets also contain about 130 standard Material Design Icons for hom
 &#x045E;
 &#x045F;</p>
 <h3 id="greek">Greek<a class="headerlink" href="#greek" title="Permanent link">~</a></h3>
-<p>Includes all characters and symbols from the <a href="#ascii">Ascii range</a> above.</p>
 <p>Covers the Greek (el) language:</p>
 <p>&#x0386;
 &#x0388;
@@ -2819,7 +2815,6 @@ All character sets also contain about 130 standard Material Design Icons for hom
 &#x03CD;
 &#x03CE;</p>
 <h3 id="vietnamese">Vietnamese<a class="headerlink" href="#vietnamese" title="Permanent link">~</a></h3>
-<p>Includes all characters and symbols from the <a href="#ascii">Ascii range</a> above.</p>
 <p>Covers the Vietnamese (vi) language:</p>
 <p>&#xC1;
 &#xC0;
@@ -2962,7 +2957,7 @@ All character sets also contain about 130 standard Material Design Icons for hom
   <small>
     
       Last update:
-      2023-01-28
+      2023-01-29
     
   </small>
 </div>

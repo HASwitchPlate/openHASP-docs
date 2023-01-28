@@ -104,7 +104,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#installation" class="md-skip">
+        <a href="#home-assistant" class="md-skip">
           Skip to content
         </a>
       
@@ -705,6 +705,13 @@
       Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    Installation
+  </a>
+  
+</li>
       
         <li class="md-nav__item">
   <a href="#configuration" class="md-nav__link">
@@ -1470,6 +1477,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    Installation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#configuration" class="md-nav__link">
     Configuration
   </a>
@@ -1550,14 +1564,16 @@
 
 
 
-<p>The <a href="https://github.com/HASwitchPlate/openHASP-custom-component" target="_blank">openHASP Custom Component</a> simplifies synchronization of objects on one or more openHASP plates with Home Assistant entities. You can map any service supported by any entity in Home Assistant to any object event in openHASP, moreover, you can set any property of any object in openHASP to any value from Home Assistant. This powerful concept gives you full freedom to create a completely customized, hardware-based control user interface for your home automation.</p>
+<h1 id="home-assistant">Home Assistant<a class="headerlink" href="#home-assistant" title="Permanent link">~</a></h1>
+<p>The <a href="https://github.com/HASwitchPlate/openHASP-custom-component" target="_blank">openHASP Custom Component</a> simplifies synchronization of objects on one or more openHASP plates with Home Assistant entities. You can map any service supported by any entity in Home Assistant to any object event in openHASP.
+Moreover, you can set any property of any object in openHASP to any value from Home Assistant. This powerful concept gives you full freedom to create a completely customized, hardware-based control user interface for your home automation.</p>
 <p>We call <em>plate</em> any device running openHASP in your system.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Before going forward make sure you have installed the MQTT add-on in Home Assistant and the option <code>Enable Discovery</code> is indeed enabled in the MQTT integration service.
 A working MQTT add-on with discovery enabled is a prerequisite for using the openHASP custom component.</p>
 </div>
-<h1 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">~</a></h1>
+<h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">~</a></h2>
 <p>You have the option to install the custom component using HACS or via manual download:</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Using HACS</label><label for="__tabbed_1_2">Manual Install</label></div>
 <div class="tabbed-content">
@@ -1862,7 +1878,7 @@ With the <code>entry_id</code> found in <em>.storage/core.config_entries</em> fi
   <small>
     
       Last update:
-      2023-01-28
+      2023-01-29
     
   </small>
 </div>
