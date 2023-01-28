@@ -18,7 +18,7 @@ Make sure you have your plate connected to the network and to your MQTT boker, a
 
 ## Code
 
-To add an openhasp plate to your installation with Jaffa Sunrise sample configuration, upload a `pages.jsonl` file with the folowing content to your plate:
+To add an openHASP plate to your installation with Jaffa Sunrise sample configuration, upload a `pages.jsonl` file with the folowing content to your plate:
 
 - in the plate's web UI select `Mono` UI theme and reboot,
 - upload a `pages.jsonl` file with the folowing content to your plate and reboot:

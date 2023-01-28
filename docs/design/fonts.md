@@ -30,20 +30,20 @@ The ESP32 firmware includes these built-in fonts:
 - Roboto Condensed in font sizes 12, 16, 24 and 32pt
 - Roboto Condensed [TrueType font](#truetype), i.e. any size can be set as of _0.7.0_
 
-The default font in pre-compiled binaries is Roboto-Condensed-Regular with [Ascii range](#ascii),
-[Cyrillic](#cyrillic), [Latin-1](#latin-1), [Latin-1](#latin-1), [Greek](@greek) and [Viernamese](#vietnamese)
-character sets. It also includes 146 [MaterialDesign icons](#icons) listed below.
+The default font in pre-compiled binaries is Roboto-Condensed-Regular which includes these character sets:
+[Ascii](#ascii), [Cyrillic](#cyrillic), [Latin-1](#latin-1), [Latin-2](#latin-2), [Greek](#greek) *and* [Viernamese](#vietnamese).
+It also includes 146 [MaterialDesign icons](#icons) listed below.
 
 The built-in fonts can be set by using the pointsize as parameter. For example:
 
 ```json linenums="1"
 p4b1.text_font=24
 p4b2.value_font=12
-p4b3.text_font=64
+p4b3.text_font=64             <-- Uses the TrueType font
 ```
 
 !!! note
-    On Devices that do not have PSRAM, you may notice that changing pages/drawing new pages may take a bit longer on version _0.7.0+_.
+    On Devices that do not have PSRAM, you may notice that changing pages/drawing new pages may take a bit longer on version _0.7.0_.
 
 ### Icons
 
@@ -197,8 +197,6 @@ Includes all ASCII 0x20-0x7E characters extended with a non-breaking space and 1
 
 ### Latin 1
 
-Includes all characters and symbols from the [Ascii range](#ascii) above.
-
 Covers Northern, Western and Southern European languages: English (en), French (fr), Spanish (es), Portuguese (pt), Italian (it), Dutch (nl), German (de), Danish (da), Swedish (sv), Norwegian (no), Finnish (fi), Albanian (sq), Turkish (tr)
 
 &#x00A1;
@@ -280,8 +278,6 @@ Covers Northern, Western and Southern European languages: English (en), French (
 
 
 ### Latin 2
-
-Includes all characters and symbols from the [Ascii range](#ascii) above.
 
 Covers Central and Eastern European languages: Czech (cs), Hungarian (hu), Polish (pl), Romanian (ro), Croatian (hr), Slovak (sk), Slovenian (sl), Sorbian (sb)
 
@@ -407,8 +403,6 @@ Covers Central and Eastern European languages: Czech (cs), Hungarian (hu), Polis
 
 ### Cyrillic
 
-Includes all characters and symbols from the [Ascii range](#ascii) above.
-
 Covers the Slavic languages that use a Cyrillic alphabet, including Belarusian, Bulgarian, Macedonian, Russian, Serbian, and Ukrainian 
 
 &#x0400;
@@ -511,8 +505,6 @@ Covers the Slavic languages that use a Cyrillic alphabet, including Belarusian, 
 
 ### Greek
 
-Includes all characters and symbols from the [Ascii range](#ascii) above.
-
 Covers the Greek (el) language:
 
 &#x0386;
@@ -584,8 +576,6 @@ Covers the Greek (el) language:
 &#x03CE;
 
 ### Vietnamese
-
-Includes all characters and symbols from the [Ascii range](#ascii) above.
 
 Covers the Vietnamese (vi) language:
 
