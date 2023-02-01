@@ -116,7 +116,32 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://www.openhasp.com/0.7.0/0.7.0/design/objects/btnmatrix/</loc>
+         <lastmod>2023-02-01</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://www.openhasp.com/0.7.0/0.7.0/design/objects/checkbox/</loc>
+         <lastmod>2023-02-01</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://www.openhasp.com/0.7.0/0.7.0/design/objects/cpicker/</loc>
+         <lastmod>2023-02-01</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://www.openhasp.com/0.7.0/0.7.0/design/objects/dropdown/</loc>
+         <lastmod>2023-02-01</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://www.openhasp.com/0.7.0/0.7.0/design/objects/gauge/</loc>
+         <lastmod>2023-02-01</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://www.openhasp.com/0.7.0/0.7.0/design/objects/img/</loc>
          <lastmod>2023-02-01</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -126,12 +151,52 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://www.openhasp.com/0.7.0/0.7.0/design/objects/led/</loc>
+         <lastmod>2023-02-01</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://www.openhasp.com/0.7.0/0.7.0/design/objects/line/</loc>
+         <lastmod>2023-02-01</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://www.openhasp.com/0.7.0/0.7.0/design/objects/linemeter/</loc>
+         <lastmod>2023-02-01</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://www.openhasp.com/0.7.0/0.7.0/design/objects/msgbox/</loc>
+         <lastmod>2023-02-01</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://www.openhasp.com/0.7.0/0.7.0/design/objects/obj/</loc>
+         <lastmod>2023-02-01</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://www.openhasp.com/0.7.0/0.7.0/design/objects/roller/</loc>
+         <lastmod>2023-02-01</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://www.openhasp.com/0.7.0/0.7.0/design/objects/slider/</loc>
          <lastmod>2023-02-01</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://www.openhasp.com/0.7.0/0.7.0/design/objects/spinner/</loc>
+         <lastmod>2023-02-01</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://www.openhasp.com/0.7.0/0.7.0/design/objects/switch/</loc>
+         <lastmod>2023-02-01</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://www.openhasp.com/0.7.0/0.7.0/design/objects/tabview/</loc>
          <lastmod>2023-02-01</lastmod>
          <changefreq>daily</changefreq>
     </url>
