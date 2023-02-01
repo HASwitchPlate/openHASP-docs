@@ -1,8 +1,5 @@
 nav:
     - Adafruit Featherwing: featherwing.md
-    - AZ-Delivery:
-        - AZ-Touch MOD: hardware/az-touch/mod/
-        - AZ-Touch Feather: hardware/az-touch/feather/
     - ESP32 TouchDown: esp32-touchdown.md
     - FreeTouchDeck: freetouchdeck.md
     - Lanbon L8: lanbon-l8.md

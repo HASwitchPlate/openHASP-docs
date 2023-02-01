@@ -2,7 +2,7 @@
 # Checkbox
 **obj:`checkbox`**
 
-![lv_checkbox](../lv_ex_checkbox_1.png)
+![lv_checkbox](../images/lv_ex_checkbox_1.png)
 
 | Property | Value      | Default    | Description
 |----------|------------|------------|--------------

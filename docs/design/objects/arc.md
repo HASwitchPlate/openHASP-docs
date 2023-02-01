@@ -1,8 +1,7 @@
-
 # Arc
 **obj:`arc`**
 
-![lv_arc](../lv_ex_arc_1.png)
+![lv_arc](../images/lv_ex_arc_1.png)
 
 | Property    | Value      | Default | Description
 |-------------|------------|---------|--------------

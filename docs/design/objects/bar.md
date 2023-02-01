@@ -2,7 +2,7 @@
 # Progress Bar
 **obj:`bar`**
 
-![lv_bar](../lv_ex_bar_1.png)
+![lv_bar](../images/lv_ex_bar_1.png)
 
 | Property | Value      | Default | Description
 |----------|------------|---------|---------------

@@ -1,7 +1,7 @@
 # Switch
 **obj:`switch`**
 
-![lv_switch](../lv_ex_switch_1.png)
+![lv_switch](../images/lv_ex_switch_1.png)
 
 | Property   | Value      | Default | Description
 |------------|------------|---------|---------------

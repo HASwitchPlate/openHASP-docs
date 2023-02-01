@@ -1,7 +1,7 @@
 # Button
 **obj:`btn`**
 
-![lv_btn](../lv_ex_btn_1.png)
+![lv_btn](../images/lv_ex_btn_1.png)
 
 | Property | Value      | Default | Description
 |----------|------------|---------|--------------
