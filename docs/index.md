@@ -1,4 +1,10 @@
-# Home
+---
+hide:
+  - navigation
+  - toc
+---
+
+<h1></h1>
 
 <img src="assets/images/logo.png" style="width:10rem" class="float-left"></img>
 <span style="font-family: 'Lato', 'Arial', helvetica;  font-size: 350%; font-weight: bold">openHASP<span>

@@ -1,0 +1,9 @@
+nav:
+    - Objects: index.md
+    - label.md
+    - btn.md
+    - switch.md
+    - checkbox.md
+    - bar.md
+    - slider.md
+    - arc.md

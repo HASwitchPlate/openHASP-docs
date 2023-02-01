@@ -27,9 +27,9 @@ extra:
     - name: Donate
       link: https://ko-fi.com/openhasp
       icon: octicons/heart-fill-24
-    - name: Twitter
-      link: https://twitter.com/hashtag/openhasp
-      icon: material/twitter
+    # - name: Twitter
+    #   link: https://twitter.com/hashtag/openhasp
+    #   icon: material/twitter
 
   version:
     provider: mike
@@ -53,7 +53,7 @@ extra:
 #
 # !!! The Navigation bar is built from the contents of the `.pages` files in each directory !!!
 
-      
+
 theme:
   logo: "assets/images/logo.png"
   favicon: favicon.ico
@@ -78,15 +78,20 @@ theme:
         icon: material/toggle-switch
         name: Light mode
   features:
+    - content.action.edit
+    - content.action.view
     - navigation.instant # When this is enabled the $(document).ready(function() won't run from youtube.js!
     - navigation.tracking
-    #    - navigation.tabs
-    #    - navigation.tabs.sticky
-    #    - navigation.sections
-    #    - navigation.expand
+    - navigation.tabs
+    # - navigation.tabs.sticky
+    # - navigation.sections   # sub sections don't get an arrow, but are integrated into the nav menu
+    # - navigation.expand     # sub section arrows are expanded by default
     - search.suggest
     - search.highlight
     - navigation.top
+    # - navigation.path
+    # - toc.integrate 
+    # - navigation.indexes # incompatible with toc.integrate 
 
 markdown_extensions:
   - admonition

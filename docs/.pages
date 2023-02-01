@@ -1,14 +1,10 @@
 nav:
     - Home: index.md
-    - getting-started.md
-    - installation
-    - configuration
+    - Installation: setup
+    - hardware
     - design
     - commands.md
     - integrations
-    - devices
-    - displays
 #    - gallery.md
-    - FAQ: faq.md
     - compiling
     - license.md

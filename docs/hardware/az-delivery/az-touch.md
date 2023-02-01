@@ -1,0 +1,115 @@
+# AZ-Delivery
+
+## AZ-Touch MOD
+
+<div class="row justify-content-center">
+        <a href="../az-touch-mod-24.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-6" data-title="AZ-Touch wall enclosure set with 2.4&quot; touchscreen" data-footer="Copyright <a href='https://www.az-delivery.de/'>az-delivery.de,</a> All Rights Reserved - Used with permission">
+            <img src="../az-touch-mod-24.jpg" class="img-fluid">
+        </a>
+        <a href="../az-touch-mod-28.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-6" data-title="AZ-Touch wall enclosure set with 2.8&quot; touchscreen" data-footer="Copyright <a href='https://www.az-delivery.de/'>az-delivery.de,</a> All Rights Reserved - Used with permission">
+            <img src="../az-touch-mod-28.jpg" class="img-fluid">
+        </a>
+</div>
+<div>
+        <a href="../az-touch-pcb-front.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-6" data-title="Assembled AZ-Touch PCB" data-footer="Copyright <a href='https://www.az-delivery.de/'>az-delivery.de,</a> All Rights Reserved - Used with permission">more images...</a>
+        <a href="../az-touch-pcb-back.jpg" data-toggle="lightbox" data-gallery="example-gallery" rel="lightbox[work]" data-title="AZ-Touch Top PCB with headers" data-footer="Copyright <a href='https://www.az-delivery.de/'>az-delivery.de,</a> All Rights Reserved - Used with permission"></a>
+        <a href="../az-touch-pcb-back.jpg" data-toggle="lightbox" data-gallery="example-gallery" rel="lightbox[vacation]" data-title="AZ-Touch Bottom PCB with MCU" data-footer="Copyright <a href='https://www.az-delivery.de/'>az-delivery.de,</a> All Rights Reserved - Used with permission"></a>
+        <a href="../az-touch-pcb-side.jpg" data-toggle="lightbox" data-gallery="example-gallery" rel="lightbox[vacation]" data-title="AZ-Touch PCB Side View" data-footer="Copyright <a href='https://www.az-delivery.de/'>az-delivery.de,</a> All Rights Reserved - Used with permission"></a>
+</div>
+
+The AZ-Touch MOD for ESP32 comes as kit with a touchscreen, wall enclosure, PCB and pinheaders.
+It includes either a 2.4" or 2.8" ILI9341 display with a XPT2046 resistive touchscreen controller.
+
+The PCB is pre-soldered *except* for the pinheaders, so [some soldering][5]{target=_blank} is required.
+
+| Pros                         | Cons
+|:-----                        |:----
+| Versatile PCB options        | Bulky enclosure
+| Limited soldering required   | Resistive touchpanel
+| Choice of several ESP32 MCUs
+| 9 to 35V DC-DC power input
+| Breadboard area
+
+[:material-cart-variant: AZ-Touch MOD 2.4&quot;][14]{target=_blank .md-button .md-button--primary } &nbsp;
+[:material-cart-variant: AZ-Touch MOD 2.8&quot;][15]{target=_blank .md-button .md-button--primary }
+
+### ESP32 dev boards
+
+The AZ-Touch MOD PCB kit does *not* come with an MCU and needs to be purchased separately.
+The PCB is designed to be compatible with serveral development boards.
+
+There are two ESP32 footprint options for soldering headers onto the PCB:
+
+1. ESP32-DevKitC footprint with `2x19` pins
+2. Wemos D1 mini footprint with `2x8` pins
+
+The ESP32-DevKitC option is prefered because you can use more pins from the ESP32.
+
+| Board                   | [ESP32-DevKitC-V4][3]{target=_blank} | [ESP32-DevKitC-VE][4]{target=_blank}
+|-------------------------|:-----------:|:-----------:|
+| MCU                     | ESP32-WROOM | ESP32-WROVER
+| Flash                   | 4 MB        | 8 MB
+| PSram                   | No          | 8 MB
+|  | [:material-cart-variant: Buy][3]{target=_blank .md-button .md-button--primary } | [:material-cart-variant: Buy][4]{target=_blank .md-button .md-button--primary }
+
+### Documentation
+
+[:fontawesome-solid-file-pdf: Schematics][6]{target=_blank .md-button .md-button } &nbsp;
+[:fontawesome-regular-file-pdf: Datasheet][7]{target=_blank .md-button .md-button } &nbsp;
+[:fontawesome-regular-file-pdf: Assembly Guide][11]{target=_blank .md-button .md-button }
+
+### Product Video
+
+<div class="embed-responsive embed-responsive-16by9" style="max-width:560px; margin:auto;">
+    <iframe title="YouTube video player" src="https://www.youtube.com/embed/k7ngHp8WKIM?rel=0&controls=1" class="embed-responsive-item" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+    </iframe>
+</div>
+
+
+## Backlight Control
+
+`GPIO15` of the ESP32 is used for PWM dimming of the AZ-Touch MOD display.
+
+`GPIO13` of the ESP32 is used for PWM dimming of the AZ-Touch Feather display.
+
+
+## Enclosure
+
+Each AZ-Touch kit comes with a nice wall mounting enclosure for the 2.4&quot; or 2.8&quot; touchscreen.
+It enables you to mount your project permanently in your living room, corridor or other exposed places.
+
+The AZ-Touch MOD PCB comes partly assembled with only the pin headers requiring some minimal soldering skills.
+The AZ-Touch Feather contains loose components that you need to solder to the PCB yourself using the [Assembly Guide](#documentation_1).
+
+<div class="row justify-content-center">
+        <a href="../az-touch-mod-contents.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-6" data-title="AZ-Touch MOD Contents" data-footer="Copyright <a href='https://www.az-delivery.de/'>az-delivery.de,</a> All Rights Reserved - Used with permission">
+            <img src="../az-touch-mod-contents.jpg" class="img-fluid">
+        </a>
+        <a href="../az-touch-feather-contents.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-6" data-title="AZ-Touch Feather Contents" data-footer="Copyright <a href='https://www.az-delivery.de/'>az-delivery.de,</a> All Rights Reserved - Used with permission">
+            <img src="../az-touch-feather-contents.jpg" class="img-fluid">
+        </a>
+</div>
+
+The wall mounted enclosure measures 120mm x 80mm x 35mm (W x H x D).
+
+
+## Flashing
+
+The ESP32 can be flashed over USB like any ESP32 development board.
+
+
+[1]: https://www.az-delivery.de/en/products/az-touch-feather
+[2]: https://learn.adafruit.com/adafruit-feather
+[3]: https://www.az-delivery.de/en/products/esp-32-dev-kit-c-v4
+[4]: https://www.amazon.com/Espressif-ESP32-DevKitC-VE-Development-Board/dp/B087TNPQCV
+[5]: https://www.az-delivery.de/en/blogs/azdelivery-blog-fur-arduino-und-raspberry-pi/az-touch-mod
+[6]: https://www.hwhardsoft.de/app/download/11868165697/AZ-Touch+MOD+schematic+V01-03-01.pdf
+[7]: https://www.hwhardsoft.de/app/download/11868164297/Datasheet+AZ-Touch+MOD+Rev+B.pdf
+[8]: https://www.hwhardsoft.de/app/download/11467519097/Assembly+Instruction+ArduiTouch+ESP+rev+D.pdf
+[9]: https://www.adafruit.com/product/3591
+[10]: https://www.sparkfun.com/products/15663
+[11]: https://www.hwhardsoft.de/app/download/11963381497/AZ-Touch+Feather+Schematic+V01-01.pdf
+[12]: https://www.hwhardsoft.de/app/download/11963714197/Datasheet+AZ-Touch+Feather+Rev+A.pdf
+[13]: https://www.hwhardsoft.de/app/download/11963380797/Assembly+Instruction+AZ-Touch+Feather+rev+A.pdf
+[14]: https://www.az-delivery.de/en/products/az-touch-wandgehauseset-mit-touchscreen-fur-esp8266-und-esp32
+[15]: https://www.az-delivery.de/en/products/az-touch-wandgehauseset-mit-2-8-zoll-touchscreen-fur-esp8266-und-esp32

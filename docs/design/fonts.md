@@ -1,3 +1,7 @@
+---
+icon: material/format-font
+---
+
 <style type="text/css">
 .md-typeset table:not([class]) td
 {
@@ -50,7 +54,7 @@ p4b3.text_font=64             <-- Uses the TrueType font
 The icons in the list below are included with the built-in font sizes.
 Included are a range of arrows, navigation, climate, controls, devices, energy, lights, places, presence, security, sound, time and wireless icons.
 
-{{ read_csv("docs/assets/csv/icons.csv") }}
+{{ read_csv("docs/design/icons.csv") }}
 
 ## Custom Fonts
 
@@ -170,7 +174,7 @@ How this is accomplished depends on the Home Automation tool:
 
 ## Character Sets
 
-The characters are encoded in UTF-8. All character sets include the [Ascii](#ascii) `0x20-0x7E` characters, the non-braking-space (NBSP) and 10 universal symbols.
+The characters are encoded in UTF-8. All character sets include the [Ascii](#ascii) `0x20-0x7E` characters, the non-braking-space (`NBSP`) and 12 universal symbols.
 Each set contains roughly the same *extended* characters from its equivalent [iso-8859 standard](https://en.wikipedia.org/wiki/ISO/IEC_8859){target=_blank}.
 All character sets also contain about 130 standard Material Design Icons for home automation use.
 
@@ -193,6 +197,8 @@ Includes all ASCII 0x20-0x7E characters extended with a non-breaking space and 1
 &#x00F7;
 &#x20AC;
 &#x2022;
+&#x2030;
+&#x2031;
 
 
 ### Latin 1

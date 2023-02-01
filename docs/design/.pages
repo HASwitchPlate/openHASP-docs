@@ -1,6 +1,6 @@
 nav:
     - pages.md
-    - objects.md
-    - fonts.md
+    - objects
+    - Fonts: fonts.md
     - styling.md
     - data-types.md

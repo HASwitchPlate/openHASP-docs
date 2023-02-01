@@ -1,0 +1,14 @@
+nav:
+    - Adafruit Featherwing: featherwing.md
+    - AZ-Delivery:
+        - AZ-Touch MOD: hardware/az-touch/mod/
+        - AZ-Touch Feather: hardware/az-touch/feather/
+    - ESP32 TouchDown: esp32-touchdown.md
+    - FreeTouchDeck: freetouchdeck.md
+    - Lanbon L8: lanbon-l8.md
+    - LILYGO Lily Pi: lilygo-lily-pi.md
+    - M5stack core2: m5stack-core2.md
+    - Makerfabs TFT Touch: makerfabs-tft-touch.md
+    - Wireless-Tag: wireless-tag.md
+    - YeaCreate Nscreen32: yeacreate-nscreen32.md
+    - Sunton Screens: sunton-screens.md

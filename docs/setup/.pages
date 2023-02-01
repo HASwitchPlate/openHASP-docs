@@ -1,0 +1,8 @@
+nav:
+    - index.md
+    - esp32.md
+    - firmware-update.md
+    - wifi-setup.md
+    - configuration
+    - FAQ: faq.md
+    - License: license.md
