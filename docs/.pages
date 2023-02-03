@@ -1,10 +1,9 @@
 nav:
     - Home: index.md
-    - Installation: setup
     - hardware
+    - Installation: setup
     - design
-    - commands.md
     - integrations
+    - commands.md
 #    - gallery.md
     - compiling
-    - license.md

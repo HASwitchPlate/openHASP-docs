@@ -1,4 +1,5 @@
 nav:
+    - file-editor.md
     - pages.md
     - objects
     - Fonts: fonts.md

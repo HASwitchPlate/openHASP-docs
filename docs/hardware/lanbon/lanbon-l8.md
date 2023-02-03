@@ -1,20 +1,20 @@
 # Lanbon L8
 
 <div class="row justify-content-center">
-        <a href="../lanbon-l8-us-white.png" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-3" data-title="Lanbon L8 - US white" data-footer="">
-            <img src="../lanbon-l8-us-white.png" class="img-fluid">
+        <a href="../images/lanbon-l8-us-white.png" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-3" data-title="Lanbon L8 - US white" data-footer="">
+            <img src="../images/lanbon-l8-us-white.png" class="img-fluid">
         </a>
 
-        <a href="../lanbon-l8-us-black.png" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-3" data-title="Lanbon L8 - US black" data-footer="">
-            <img src="../lanbon-l8-us-black.png" class="img-fluid">
+        <a href="../images/lanbon-l8-us-black.png" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-3" data-title="Lanbon L8 - US black" data-footer="">
+            <img src="../images/lanbon-l8-us-black.png" class="img-fluid">
         </a>
 
-        <a href="../lanbon-l8-eu-white.png" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-3" data-title="Lanbon L8 - EU white" data-footer="">
-            <img src="../lanbon-l8-eu-white.png" class="img-fluid">
+        <a href="../images/lanbon-l8-eu-white.png" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-3" data-title="Lanbon L8 - EU white" data-footer="">
+            <img src="../images/lanbon-l8-eu-white.png" class="img-fluid">
         </a>
 
-        <a href="../lanbon-l8-eu-black.png" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-3" data-title="Lanbon L8 - EU black" data-footer="">
-            <img src="../lanbon-l8-eu-black.png" class="img-fluid">
+        <a href="../images/lanbon-l8-eu-black.png" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-3" data-title="Lanbon L8 - EU black" data-footer="">
+            <img src="../images/lanbon-l8-eu-black.png" class="img-fluid">
         </a>
 </div>
 
@@ -40,12 +40,12 @@
 All models are rated at AC 100-250V ~50-60Hz, the form factor can be a design choice regardless of the continental area.
 
 <div class="row justify-content-center">
-        <a href="../lanbon-l8-dimensions-us.png" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-6" data-title="Lanbon L8 - US dimensions" data-footer="">
-            <img src="../lanbon-l8-dimensions-us.png" class="img-fluid">
+        <a href="../images/lanbon-l8-dimensions-us.png" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-6" data-title="Lanbon L8 - US dimensions" data-footer="">
+            <img src="../images/lanbon-l8-dimensions-us.png" class="img-fluid">
         </a>
 
-        <a href="../lanbon-l8-dimensions-eu.png" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-6" data-title="Lanbon L8 - EU dimensions" data-footer="">
-            <img src="../lanbon-l8-dimensions-eu.png" class="img-fluid">
+        <a href="../images/lanbon-l8-dimensions-eu.png" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-6" data-title="Lanbon L8 - EU dimensions" data-footer="">
+            <img src="../images/lanbon-l8-dimensions-eu.png" class="img-fluid">
         </a>
 </div>
 
@@ -85,14 +85,14 @@ The models have the same recessed housing sliding into the wall, sized 50x50mm, 
 
 ## Contents
 
-![Display image](../lanbon-l8-contents.png)
+![Display image](../images/lanbon-l8-contents.png)
 
 ## Flashing
 
 !!! warning "Disclaimer"
     Never connect high-voltage when the panel is not properly secured in place.
 
-![Display image](../lanbon-l8-pcb.png)
+![Display image](../images/lanbon-l8-pcb.png)
 
 You can follow this [flashing guide](https://blakadder.com/lanbon-L8-custom-firmware/) on [blakadder.com](https://blakadder.com) or [this discussion post](https://github.com/HASwitchPlate/openHASP/discussions/76) with instructions and photos to flash the firmware without having to open the device.
 
@@ -188,7 +188,7 @@ Pin| Mode   | L8-HB      | Group | Default
 
 The switch supports several wiring configurations:
 
-![Display image](../lanbon-l8-wiring.png)
+![Display image](../images/lanbon-l8-wiring.png)
 
 !!! danger "Warning"
     Always follow the instructions from the installation guide and local safety regulations.
@@ -211,14 +211,14 @@ The switch supports several wiring configurations:
 ## Gallery
 
 <div class="row justify-content-center">
-    <a href="../lanbon-l8-covers.png" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4" data-title="Lanbon L8 Switch" data-footer="Lanbon L8 in operation as a 5-cover commander">
-        <img src="../lanbon-l8-covers.png" class="img-fluid">
+    <a href="../images/lanbon-l8-covers.png" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4" data-title="Lanbon L8 Switch" data-footer="Lanbon L8 in operation as a 5-cover commander">
+        <img src="../images/lanbon-l8-covers.png" class="img-fluid">
     </a>
-    <a href="../lanbon-l8-lovelace.png" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4" data-title="Lanbon L8 Switch" data-footer="Lanbon L8 in operation as sensors and switches panel">
-        <img src="../lanbon-l8-lovelace.png" class="img-fluid">
+    <a href="../images/lanbon-l8-lovelace.png" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4" data-title="Lanbon L8 Switch" data-footer="Lanbon L8 in operation as sensors and switches panel">
+        <img src="../images/lanbon-l8-lovelace.png" class="img-fluid">
     </a>
-    <a href="../lanbon-l8.png" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4" data-title="Lanbon L8 Switch" data-footer="Customized Lanbon L8 Switchplate">
-        <img src="../lanbon-l8.png" class="img-fluid">
+    <a href="../images/lanbon-l8.png" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4" data-title="Lanbon L8 Switch" data-footer="Customized Lanbon L8 Switchplate">
+        <img src="../images/lanbon-l8.png" class="img-fluid">
     </a>
 </div>
 

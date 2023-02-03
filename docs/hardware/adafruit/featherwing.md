@@ -1,11 +1,11 @@
 # Adafruit Featherwing
 
 <div class="row justify-content-center">
-    <a href="../featherwing24.png" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-6" data-title="<a href='https://learn.adafruit.com/3d-printed-case-for-adafruit-feather/tft-feather-wing'>Adafruit Featherwing 2.4&quot;</a>" data-footer="Original image by <a href='https://learn.adafruit.com/assets/40718'>Ruiz Brothers</a> - LICENSE: <a href='https://creativecommons.org/licenses/by-sa/3.0/'>Attribution-ShareAlike Creative Commons</a>">
-        <img src="../featherwing24.png" class="img-fluid">
+    <a href="../images/featherwing24.png" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-6" data-title="<a href='https://learn.adafruit.com/3d-printed-case-for-adafruit-feather/tft-feather-wing'>Adafruit Featherwing 2.4&quot;</a>" data-footer="Original image by <a href='https://learn.adafruit.com/assets/40718'>Ruiz Brothers</a> - LICENSE: <a href='https://creativecommons.org/licenses/by-sa/3.0/'>Attribution-ShareAlike Creative Commons</a>">
+        <img src="../images/featherwing24.png" class="img-fluid">
     </a>
-    <a href="../featherwing35.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-6" data-title="<a href='https://learn.adafruit.com/touch-deck-diy-tft-customized-control-pad/assemble-the-touch-deck'>Adafruit Featherwing 3.5&quot;</a>" data-footer="Original image by <a href='https://learn.adafruit.com/assets/100822'>John Park</a> - LICENSE: <a href='http://creativecommons.org/licenses/by-nc-sa/3.0/'>Attribution-NonCommercial-ShareAlike Creative Commons</a>">
-        <img src="../featherwing35.jpg" class="img-fluid">
+    <a href="../images/featherwing35.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-6" data-title="<a href='https://learn.adafruit.com/touch-deck-diy-tft-customized-control-pad/assemble-the-touch-deck'>Adafruit Featherwing 3.5&quot;</a>" data-footer="Original image by <a href='https://learn.adafruit.com/assets/100822'>John Park</a> - LICENSE: <a href='http://creativecommons.org/licenses/by-nc-sa/3.0/'>Attribution-NonCommercial-ShareAlike Creative Commons</a>">
+        <img src="../images/featherwing35.jpg" class="img-fluid">
     </a>
 </div>
 
@@ -22,14 +22,14 @@ The TFT Featherwing comes in 2 sizes:
 ### HUZZAH32
 
 <div class="row justify-content-center">
-    <a href="../feather_3405_iso_ORIG.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4" data-title="<a href='https://learn.adafruit.com/3d-printed-case-for-adafruit-feather/tft-feather-wing'>TFT Feather Wing Enclosure</a>" data-footer="Original image by <a href='https://learn.adafruit.com/users/adafruit2'>lady ada</a> - All rights reserved">
-        <img src="../feather_3405_iso_ORIG.jpg" class="img-fluid">
+    <a href="../images/feather_3405_iso_ORIG.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4" data-title="<a href='https://learn.adafruit.com/3d-printed-case-for-adafruit-feather/tft-feather-wing'>TFT Feather Wing Enclosure</a>" data-footer="Original image by <a href='https://learn.adafruit.com/users/adafruit2'>lady ada</a> - All rights reserved">
+        <img src="../images/feather_3405_iso_ORIG.jpg" class="img-fluid">
     </a>
-    <a href="../feather_3591_iso_ORIG.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4" data-title="<a href='https://learn.adafruit.com/3d-printed-case-for-adafruit-feather/tft-feather-wing'>TFT Feather Wing Enclosure</a>" data-footer="Original image by <a href='https://learn.adafruit.com/users/adafruit2'>lady ada</a> - All rights reserved">
-        <img src="../feather_3591_iso_ORIG.jpg" class="img-fluid">
+    <a href="../images/feather_3591_iso_ORIG.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4" data-title="<a href='https://learn.adafruit.com/3d-printed-case-for-adafruit-feather/tft-feather-wing'>TFT Feather Wing Enclosure</a>" data-footer="Original image by <a href='https://learn.adafruit.com/users/adafruit2'>lady ada</a> - All rights reserved">
+        <img src="../images/feather_3591_iso_ORIG.jpg" class="img-fluid">
     </a>
-    <a href="../feather_3619_iso_ORIG.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4" data-title="<a href='https://learn.adafruit.com/3d-printed-case-for-adafruit-feather/tft-feather-wing'>TFT Feather Wing Enclosure</a>" data-footer="Original image by <a href='https://learn.adafruit.com/users/adafruit2'>lady ada</a> - All rights reserved">
-        <img src="../feather_3619_iso_ORIG.jpg" class="img-fluid">
+    <a href="../images/feather_3619_iso_ORIG.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4" data-title="<a href='https://learn.adafruit.com/3d-printed-case-for-adafruit-feather/tft-feather-wing'>TFT Feather Wing Enclosure</a>" data-footer="Original image by <a href='https://learn.adafruit.com/users/adafruit2'>lady ada</a> - All rights reserved">
+        <img src="../images/feather_3619_iso_ORIG.jpg" class="img-fluid">
     </a>
 </div>
 
@@ -58,8 +58,8 @@ There is a `Lite` pin which is not connected to any pads but you can connect it 
 You can connect it to a PWM output pin, like `GPIO 21`:
 
 <div class="row justify-content-center">
-            <a href="../featherwing35-backlight.png" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-8" data-title="Backlight Control" data-footer="Original image by altersis">
-                <img src="../featherwing35-backlight.png" class="img-fluid">
+            <a href="../images/featherwing35-backlight.png" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-8" data-title="Backlight Control" data-footer="Original image by altersis">
+                <img src="../images/featherwing35-backlight.png" class="img-fluid">
             </a>
 </div>
 
@@ -89,11 +89,11 @@ Check out these enclosures, the designs are available on Thingiverse:
 - [3.5" TFT Featherwing Touch Deck](https://www.thingiverse.com/thing:4803265){target=_blank}
 
 <div class="row justify-content-center">
-    <a href="../3d_printing_done-assembly.gif" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4" data-title="<a href='https://learn.adafruit.com/3d-printed-case-for-adafruit-feather/tft-feather-wing'>TFT Feather Wing Enclosure</a>" data-footer="Original image by <a href='https://learn.adafruit.com/assets/40717'>Ruiz Brothers</a> - LICENSE: <a href='https://creativecommons.org/licenses/by-sa/3.0/'>Attribution-ShareAlike Creative Commons</a>">
-        <img src="../3d_printing_done-assembly.gif" class="img-fluid">
+    <a href="../images/3d_printing_done-assembly.gif" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4" data-title="<a href='https://learn.adafruit.com/3d-printed-case-for-adafruit-feather/tft-feather-wing'>TFT Feather Wing Enclosure</a>" data-footer="Original image by <a href='https://learn.adafruit.com/assets/40717'>Ruiz Brothers</a> - LICENSE: <a href='https://creativecommons.org/licenses/by-sa/3.0/'>Attribution-ShareAlike Creative Commons</a>">
+        <img src="../images/3d_printing_done-assembly.gif" class="img-fluid">
     </a>
-    <a href="../3d_printing_touchdeck.gif" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4" data-title="<a href='https://learn.adafruit.com/touch-deck-diy-tft-customized-control-pad/assemble-the-touch-deck'>Adafruit Featherwing 3.5&quot; Touch Deck</a>" data-footer="Original image by <a href='https://learn.adafruit.com/assets/100924'>John Park</a> - LICENSE: <a href='http://creativecommons.org/licenses/by-nc-sa/3.0/'>Attribution-NonCommercial-ShareAlike Creative Commons</a>">
-        <img src="../3d_printing_touchdeck.gif" class="img-fluid">
+    <a href="../images/3d_printing_touchdeck.gif" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4" data-title="<a href='https://learn.adafruit.com/touch-deck-diy-tft-customized-control-pad/assemble-the-touch-deck'>Adafruit Featherwing 3.5&quot; Touch Deck</a>" data-footer="Original image by <a href='https://learn.adafruit.com/assets/100924'>John Park</a> - LICENSE: <a href='http://creativecommons.org/licenses/by-nc-sa/3.0/'>Attribution-NonCommercial-ShareAlike Creative Commons</a>">
+        <img src="../images/3d_printing_touchdeck.gif" class="img-fluid">
     </a>
 </div>
 

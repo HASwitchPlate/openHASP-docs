@@ -1,11 +1,11 @@
 # Lolin TFT 2.4" Touch Shield
 
 <div class="row justify-content-center">
-        <a href="../lolin-tft-shield-front.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-6" data-title="TFT 2.4&quot; Touch Shield" data-footer="">
-            <img src="../lolin-tft-shield-front.jpg" class="img-fluid">
+        <a href="../images/lolin-tft-shield-front.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-6" data-title="TFT 2.4&quot; Touch Shield" data-footer="">
+            <img src="../images/lolin-tft-shield-front.jpg" class="img-fluid">
         </a>
-        <a href="../lolin-tft-shield-back.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-6" data-title="TFT 2.4&quot; Touch Shield" data-footer="">
-            <img src="../lolin-tft-shield-back.jpg" class="img-fluid">
+        <a href="../images/lolin-tft-shield-back.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-6" data-title="TFT 2.4&quot; Touch Shield" data-footer="">
+            <img src="../images/lolin-tft-shield-back.jpg" class="img-fluid">
         </a>
 </div>
 
@@ -61,15 +61,15 @@ The Lolin TFT 2.4" headers are plug-and-play compatible with these development b
 
 ## Backlight Control
 
-To use PWM dimming on the Lolin TFT 2.4" you must connect the TFT-LED pin to either D1 or D2.
-**D1 is recommended** for backlight control and configured by default in the firmware.
+To use PWM dimming on the Lolin TFT 2.4" you must bridge the center TFT-LED pin to the D1 solder pad next to it.
+This pin is configured by default in the firmware.
 
-![TFT-LED PWM dimming](../tft-led-pwm.png)
+![TFT-LED PWM dimming](../images/tft-led-pwm.png)
 
 !!! warning
     Do *not* use D3 for backlight control because it is already in use for touch!</br>
-    Do *not* use D4 for backlight control because it is already in use for PSram on the ESP32-WROVER,
-    also the D1-mini has D4 connected to the on-board LED and boot fails if pulled LOW
+    Do *not* use D4 for backlight control because it is already in use for PSram on the ESP32-WROVER.</br>
+    The D1-mini has D4 connected to the on-board LED and boot fails if pulled LOW.
 
 
 ## Documentation
@@ -80,7 +80,7 @@ To use PWM dimming on the Lolin TFT 2.4" you must connect the TFT-LED pin to eit
 
 ## Dimensions
 
-![PCB Dimensions](lolin-24-tft-shield-dimensions.jpg)
+![PCB Dimensions](../images/lolin-24-tft-shield-dimensions.jpg)
 
 
 [1]: https://www.aliexpress.com/item/32815530502.html

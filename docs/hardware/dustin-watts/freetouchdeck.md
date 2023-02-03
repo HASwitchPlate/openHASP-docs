@@ -1,16 +1,16 @@
 # FreeTouchDeck
 
 <div class="row justify-content-center">
-        <a href="../freetouchdeck.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-6" data-title="FreeTouchDeck in 3D printed case" data-footer="Original image by Dustin Watts - Used with permission">
-            <img src="../freetouchdeck.jpg" class="img-fluid">
+        <a href="../images/freetouchdeck.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-6" data-title="FreeTouchDeck in 3D printed case" data-footer="Original image by Dustin Watts - Used with permission">
+            <img src="../images/freetouchdeck.jpg" class="img-fluid">
         </a>
 
-        <a href="../freetouchdeck-side.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-6" data-title="FreeTouchDeck in 3D printed case" data-footer="Original image by Dustin Watts - Used with permission">
-            <img src="../freetouchdeck-side.jpg" class="img-fluid">
+        <a href="../images/freetouchdeck-side.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-6" data-title="FreeTouchDeck in 3D printed case" data-footer="Original image by Dustin Watts - Used with permission">
+            <img src="../images/freetouchdeck-side.jpg" class="img-fluid">
         </a>
 </div>
 <div>
-        <a href="../freetouchdeck-bare.jpg" data-toggle="lightbox" data-gallery="example-gallery" rel="lightbox[work]" data-title="FreeTouchDeck PCB combiner with display" data-footer="Original image by Dustin Watts - Used with permission">more images...</a>
+        <a href="../images/freetouchdeck-bare.jpg" data-toggle="lightbox" data-gallery="example-gallery" rel="lightbox[work]" data-title="FreeTouchDeck PCB combiner with display" data-footer="Original image by Dustin Watts - Used with permission">more images...</a>
 </div>
 
 ## Features
@@ -47,16 +47,16 @@ You can find a 3D printable case on [Thingiverse](https://www.thingiverse.com/th
 and [Github](https://github.com/DustinWatts/FreeTouchDeck/tree/master/case/ESP32_TFT_Combiner_Case){target=_blank}.
 
 <div class="row justify-content-center">
-        <a href="../freetouchdeck-case1.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4" data-title="FreeTouchDeck in 3D printed case" data-footer="Original image by Dustin Watts - Used with permission">
-            <img src="../freetouchdeck-case1.jpg" class="img-fluid">
+        <a href="../images/freetouchdeck-case1.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4" data-title="FreeTouchDeck in 3D printed case" data-footer="Original image by Dustin Watts - Used with permission">
+            <img src="../images/freetouchdeck-case1.jpg" class="img-fluid">
         </a>
 
-        <a href="../freetouchdeck-case2.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4" data-title="FreeTouchDeck in 3D printed case" data-footer="Original image by Dustin Watts - Used with permission">
-            <img src="../freetouchdeck-case2.jpg" class="img-fluid">
+        <a href="../images/freetouchdeck-case2.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4" data-title="FreeTouchDeck in 3D printed case" data-footer="Original image by Dustin Watts - Used with permission">
+            <img src="../images/freetouchdeck-case2.jpg" class="img-fluid">
         </a>
 
-        <a href="../freetouchdeck-case3.png" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4" data-title="FreeTouchDeck in 3D printed case" data-footer="Original image by Dustin Watts - Used with permission">
-            <img src="../freetouchdeck-case3.png" class="img-fluid">
+        <a href="../images/freetouchdeck-case3.png" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4" data-title="FreeTouchDeck in 3D printed case" data-footer="Original image by Dustin Watts - Used with permission">
+            <img src="../images/freetouchdeck-case3.png" class="img-fluid">
         </a>
 </div>
 
@@ -75,8 +75,8 @@ The PCB Combiner is fully [Open Source Hardware](https://github.com/DustinWatts/
 - Schematics
 - PCB layout
 
-<a href="../freetouchdeck-pcb.png" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4" data-title="FreeTouchDeck PCB Combiner" data-footer="Original image by Dustin Watts - Used with permission">
-    <img src="../freetouchdeck-pcb.png" class="img-fluid">
+<a href="../images/freetouchdeck-pcb.png" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4" data-title="FreeTouchDeck PCB Combiner" data-footer="Original image by Dustin Watts - Used with permission">
+    <img src="../images/freetouchdeck-pcb.png" class="img-fluid">
 </a>
 
 ## HASP build_flags

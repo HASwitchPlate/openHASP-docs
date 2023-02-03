@@ -1,11 +1,11 @@
 # Lilygo Lily Pi
 
 <div class="row justify-content-center">
-        <a href="../lily-pi-front.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-6" data-title="LILYGO® Lily Pi" data-footer="">
-            <img src="../lily-pi-front.jpg" class="img-fluid">
+        <a href="../images/lily-pi-front.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-6" data-title="LILYGO® Lily Pi" data-footer="">
+            <img src="../images/lily-pi-front.jpg" class="img-fluid">
         </a>
-        <a href="../lily-pi-side.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-6" data-title="LILYGO® Lily Pi" data-footer="">
-            <img src="../lily-pi-side.jpg" class="img-fluid">
+        <a href="../images/lily-pi-side.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-6" data-title="LILYGO® Lily Pi" data-footer="">
+            <img src="../images/lily-pi-side.jpg" class="img-fluid">
         </a>
 </div>
 
@@ -59,11 +59,11 @@ The GPIO that controls the backlight is `GPIO12`.
 
 The Lily Pi comes with the following information cards describing all the GPIOs used:
 <div class="row justify-content-center">
-        <a href="../lily-pi-gpio-left.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-6" data-title="LILYGO® Lily Pi" data-footer="">
-            <img src="../lily-pi-gpio-left.jpg" class="img-fluid">
+        <a href="../images/lily-pi-gpio-left.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-6" data-title="LILYGO® Lily Pi" data-footer="">
+            <img src="../images/lily-pi-gpio-left.jpg" class="img-fluid">
         </a>
-        <a href="../lily-pi-gpio-right.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-6" data-title="LILYGO® Lily Pi" data-footer="">
-            <img src="../lily-pi-gpio-right.jpg" class="img-fluid">
+        <a href="../images/lily-pi-gpio-right.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-6" data-title="LILYGO® Lily Pi" data-footer="">
+            <img src="../images/lily-pi-gpio-right.jpg" class="img-fluid">
         </a>
 </div>
 
