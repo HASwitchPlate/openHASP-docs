@@ -2,502 +2,507 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://www.openhasp.com/0.7.0/0.7.0/</loc>
-         <lastmod>2023-02-03</lastmod>
+         <lastmod>2023-02-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.openhasp.com/0.7.0/0.7.0/commands/</loc>
-         <lastmod>2023-02-03</lastmod>
+         <lastmod>2023-02-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.openhasp.com/0.7.0/0.7.0/gallery/</loc>
-         <lastmod>2023-02-03</lastmod>
+         <lastmod>2023-02-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.openhasp.com/0.7.0/0.7.0/assets/buy/waveshare-tft-touch-shield/</loc>
-         <lastmod>2023-02-03</lastmod>
+         <lastmod>2023-02-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.openhasp.com/0.7.0/0.7.0/assets/buy/wishlist/</loc>
-         <lastmod>2023-02-03</lastmod>
+         <lastmod>2023-02-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.openhasp.com/0.7.0/0.7.0/assets/users/icons/</loc>
-         <lastmod>2023-02-03</lastmod>
+         <lastmod>2023-02-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.openhasp.com/0.7.0/0.7.0/assets/videos/videos/</loc>
-         <lastmod>2023-02-03</lastmod>
+         <lastmod>2023-02-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.openhasp.com/0.7.0/0.7.0/compiling/custom/</loc>
-         <lastmod>2023-02-03</lastmod>
+         <lastmod>2023-02-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.openhasp.com/0.7.0/0.7.0/compiling/customize/</loc>
-         <lastmod>2023-02-03</lastmod>
+         <lastmod>2023-02-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.openhasp.com/0.7.0/0.7.0/compiling/gitpod/</loc>
-         <lastmod>2023-02-03</lastmod>
+         <lastmod>2023-02-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.openhasp.com/0.7.0/0.7.0/compiling/local/</loc>
-         <lastmod>2023-02-03</lastmod>
+         <lastmod>2023-02-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.openhasp.com/0.7.0/0.7.0/design/characters/</loc>
-         <lastmod>2023-02-03</lastmod>
+         <lastmod>2023-02-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.openhasp.com/0.7.0/0.7.0/design/convert/</loc>
-         <lastmod>2023-02-03</lastmod>
+         <lastmod>2023-02-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.openhasp.com/0.7.0/0.7.0/design/data-types/</loc>
-         <lastmod>2023-02-03</lastmod>
+         <lastmod>2023-02-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.openhasp.com/0.7.0/0.7.0/design/file-editor/</loc>
-         <lastmod>2023-02-03</lastmod>
+         <lastmod>2023-02-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.openhasp.com/0.7.0/0.7.0/design/fonts-mdi/</loc>
-         <lastmod>2023-02-03</lastmod>
+         <lastmod>2023-02-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.openhasp.com/0.7.0/0.7.0/design/fonts/</loc>
-         <lastmod>2023-02-03</lastmod>
+         <lastmod>2023-02-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.openhasp.com/0.7.0/0.7.0/design/pages/</loc>
-         <lastmod>2023-02-03</lastmod>
+         <lastmod>2023-02-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.openhasp.com/0.7.0/0.7.0/design/styling/</loc>
-         <lastmod>2023-02-03</lastmod>
+         <lastmod>2023-02-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.openhasp.com/0.7.0/0.7.0/design/converter/</loc>
-         <lastmod>2023-02-03</lastmod>
+         <lastmod>2023-02-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.openhasp.com/0.7.0/0.7.0/design/objects/</loc>
-         <lastmod>2023-02-03</lastmod>
+         <lastmod>2023-02-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.openhasp.com/0.7.0/0.7.0/design/objects/arc/</loc>
-         <lastmod>2023-02-03</lastmod>
+         <lastmod>2023-02-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.openhasp.com/0.7.0/0.7.0/design/objects/bar/</loc>
-         <lastmod>2023-02-03</lastmod>
+         <lastmod>2023-02-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.openhasp.com/0.7.0/0.7.0/design/objects/btn/</loc>
-         <lastmod>2023-02-03</lastmod>
+         <lastmod>2023-02-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.openhasp.com/0.7.0/0.7.0/design/objects/btnmatrix/</loc>
-         <lastmod>2023-02-03</lastmod>
+         <lastmod>2023-02-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.openhasp.com/0.7.0/0.7.0/design/objects/checkbox/</loc>
-         <lastmod>2023-02-03</lastmod>
+         <lastmod>2023-02-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.openhasp.com/0.7.0/0.7.0/design/objects/cpicker/</loc>
-         <lastmod>2023-02-03</lastmod>
+         <lastmod>2023-02-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.openhasp.com/0.7.0/0.7.0/design/objects/dropdown/</loc>
-         <lastmod>2023-02-03</lastmod>
+         <lastmod>2023-02-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.openhasp.com/0.7.0/0.7.0/design/objects/gauge/</loc>
-         <lastmod>2023-02-03</lastmod>
+         <lastmod>2023-02-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.openhasp.com/0.7.0/0.7.0/design/objects/img/</loc>
-         <lastmod>2023-02-03</lastmod>
+         <lastmod>2023-02-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.openhasp.com/0.7.0/0.7.0/design/objects/label/</loc>
-         <lastmod>2023-02-03</lastmod>
+         <lastmod>2023-02-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.openhasp.com/0.7.0/0.7.0/design/objects/led/</loc>
-         <lastmod>2023-02-03</lastmod>
+         <lastmod>2023-02-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.openhasp.com/0.7.0/0.7.0/design/objects/line/</loc>
-         <lastmod>2023-02-03</lastmod>
+         <lastmod>2023-02-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.openhasp.com/0.7.0/0.7.0/design/objects/linemeter/</loc>
-         <lastmod>2023-02-03</lastmod>
+         <lastmod>2023-02-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.openhasp.com/0.7.0/0.7.0/design/objects/msgbox/</loc>
-         <lastmod>2023-02-03</lastmod>
+         <lastmod>2023-02-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.openhasp.com/0.7.0/0.7.0/design/objects/obj/</loc>
-         <lastmod>2023-02-03</lastmod>
+         <lastmod>2023-02-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.openhasp.com/0.7.0/0.7.0/design/objects/roller/</loc>
-         <lastmod>2023-02-03</lastmod>
+         <lastmod>2023-02-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.openhasp.com/0.7.0/0.7.0/design/objects/slider/</loc>
-         <lastmod>2023-02-03</lastmod>
+         <lastmod>2023-02-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.openhasp.com/0.7.0/0.7.0/design/objects/spinner/</loc>
-         <lastmod>2023-02-03</lastmod>
+         <lastmod>2023-02-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.openhasp.com/0.7.0/0.7.0/design/objects/switch/</loc>
-         <lastmod>2023-02-03</lastmod>
+         <lastmod>2023-02-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.openhasp.com/0.7.0/0.7.0/design/objects/tabview/</loc>
-         <lastmod>2023-02-03</lastmod>
+         <lastmod>2023-02-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.openhasp.com/0.7.0/0.7.0/hardware/</loc>
-         <lastmod>2023-02-03</lastmod>
+         <lastmod>2023-02-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.openhasp.com/0.7.0/0.7.0/hardware/adafruit/featherwing/</loc>
-         <lastmod>2023-02-03</lastmod>
+         <lastmod>2023-02-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.openhasp.com/0.7.0/0.7.0/hardware/az-delivery/az-touch/</loc>
-         <lastmod>2023-02-03</lastmod>
+         <lastmod>2023-02-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.openhasp.com/0.7.0/0.7.0/hardware/az-delivery/feather/</loc>
-         <lastmod>2023-02-03</lastmod>
+         <lastmod>2023-02-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.openhasp.com/0.7.0/0.7.0/hardware/dustin-watts/esp32-touchdown/</loc>
-         <lastmod>2023-02-03</lastmod>
+         <lastmod>2023-02-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.openhasp.com/0.7.0/0.7.0/hardware/dustin-watts/freetouchdeck/</loc>
-         <lastmod>2023-02-03</lastmod>
+         <lastmod>2023-02-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.openhasp.com/0.7.0/0.7.0/hardware/generic/ILI9341_IPS/</loc>
-         <lastmod>2023-02-03</lastmod>
+         <lastmod>2023-02-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.openhasp.com/0.7.0/0.7.0/hardware/generic/MHS4001/</loc>
-         <lastmod>2023-02-03</lastmod>
+         <lastmod>2023-02-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.openhasp.com/0.7.0/0.7.0/hardware/generic/MRB3511/</loc>
-         <lastmod>2023-02-03</lastmod>
+         <lastmod>2023-02-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.openhasp.com/0.7.0/0.7.0/hardware/generic/MSPxxxx/</loc>
-         <lastmod>2023-02-03</lastmod>
+         <lastmod>2023-02-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.openhasp.com/0.7.0/0.7.0/hardware/lanbon/lanbon-l8/</loc>
-         <lastmod>2023-02-03</lastmod>
+         <lastmod>2023-02-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.openhasp.com/0.7.0/0.7.0/hardware/lilygo/lily-pi/</loc>
-         <lastmod>2023-02-03</lastmod>
+         <lastmod>2023-02-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.openhasp.com/0.7.0/0.7.0/hardware/lolin/lolin-tft-shield/</loc>
-         <lastmod>2023-02-03</lastmod>
+         <lastmod>2023-02-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.openhasp.com/0.7.0/0.7.0/hardware/m5stack/core2/</loc>
-         <lastmod>2023-02-03</lastmod>
+         <lastmod>2023-02-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.openhasp.com/0.7.0/0.7.0/hardware/makerfabs/esp32-s3-parallel-tft-touch/</loc>
-         <lastmod>2023-02-03</lastmod>
+         <lastmod>2023-02-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.openhasp.com/0.7.0/0.7.0/hardware/makerfabs/esp32-s3-spi-tft-touch/</loc>
-         <lastmod>2023-02-03</lastmod>
+         <lastmod>2023-02-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.openhasp.com/0.7.0/0.7.0/hardware/makerfabs/esp32-tft-touch/</loc>
-         <lastmod>2023-02-03</lastmod>
+         <lastmod>2023-02-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.openhasp.com/0.7.0/0.7.0/hardware/sunton/esp32-1732s019/</loc>
-         <lastmod>2023-02-03</lastmod>
+         <lastmod>2023-02-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.openhasp.com/0.7.0/0.7.0/hardware/sunton/esp32-2432s028/</loc>
-         <lastmod>2023-02-03</lastmod>
+         <lastmod>2023-02-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.openhasp.com/0.7.0/0.7.0/hardware/sunton/esp32-3248s035/</loc>
-         <lastmod>2023-02-03</lastmod>
+         <lastmod>2023-02-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.openhasp.com/0.7.0/0.7.0/hardware/sunton/esp32-4827s043/</loc>
-         <lastmod>2023-02-03</lastmod>
+         <lastmod>2023-02-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.openhasp.com/0.7.0/0.7.0/hardware/sunton/esp32-8048s050/</loc>
-         <lastmod>2023-02-03</lastmod>
+         <lastmod>2023-02-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.openhasp.com/0.7.0/0.7.0/hardware/sunton/esp32-8048s070/</loc>
-         <lastmod>2023-02-03</lastmod>
+         <lastmod>2023-02-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.openhasp.com/0.7.0/0.7.0/hardware/waveshare/waveshare-rpi-lcd/</loc>
-         <lastmod>2023-02-03</lastmod>
+         <lastmod>2023-02-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.openhasp.com/0.7.0/0.7.0/hardware/waveshare/waveshare-tft-touch-shield/</loc>
-         <lastmod>2023-02-03</lastmod>
+         <lastmod>2023-02-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.openhasp.com/0.7.0/0.7.0/hardware/wireless-tag/wireless-tag/</loc>
-         <lastmod>2023-02-03</lastmod>
+         <lastmod>2023-02-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.openhasp.com/0.7.0/0.7.0/hardware/wireless-tag/wt-86-32-3zw1/</loc>
-         <lastmod>2023-02-03</lastmod>
+         <lastmod>2023-02-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.openhasp.com/0.7.0/0.7.0/hardware/wireless-tag/wt32-sc01-plus/</loc>
-         <lastmod>2023-02-03</lastmod>
+         <lastmod>2023-02-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.openhasp.com/0.7.0/0.7.0/hardware/wireless-tag/wt32-sc01/</loc>
-         <lastmod>2023-02-03</lastmod>
+         <lastmod>2023-02-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.openhasp.com/0.7.0/0.7.0/hardware/yeacreate/nscreen32/</loc>
-         <lastmod>2023-02-03</lastmod>
+         <lastmod>2023-02-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.openhasp.com/0.7.0/0.7.0/integrations/examples/example-dashui/</loc>
-         <lastmod>2023-02-03</lastmod>
+         <lastmod>2023-02-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.openhasp.com/0.7.0/0.7.0/integrations/examples/example-fan/</loc>
-         <lastmod>2023-02-03</lastmod>
+         <lastmod>2023-02-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.openhasp.com/0.7.0/0.7.0/integrations/examples/example-lovelace/</loc>
-         <lastmod>2023-02-03</lastmod>
+         <lastmod>2023-02-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.openhasp.com/0.7.0/0.7.0/integrations/examples/example-offlinehandling/</loc>
-         <lastmod>2023-02-03</lastmod>
+         <lastmod>2023-02-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.openhasp.com/0.7.0/0.7.0/integrations/examples/example-pagination/</loc>
-         <lastmod>2023-02-03</lastmod>
+         <lastmod>2023-02-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.openhasp.com/0.7.0/0.7.0/integrations/examples/example-widgets/</loc>
-         <lastmod>2023-02-03</lastmod>
+         <lastmod>2023-02-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.openhasp.com/0.7.0/0.7.0/integrations/examples/surprise/</loc>
-         <lastmod>2023-02-03</lastmod>
+         <lastmod>2023-02-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.openhasp.com/0.7.0/0.7.0/integrations/home-assistant/howto/</loc>
-         <lastmod>2023-02-03</lastmod>
+         <lastmod>2023-02-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.openhasp.com/0.7.0/0.7.0/integrations/home-assistant/sampl_autom/</loc>
-         <lastmod>2023-02-03</lastmod>
+         <lastmod>2023-02-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.openhasp.com/0.7.0/0.7.0/integrations/home-assistant/sampl_conf/</loc>
-         <lastmod>2023-02-03</lastmod>
+         <lastmod>2023-02-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://www.openhasp.com/0.7.0/0.7.0/integrations/node-red/</loc>
+         <lastmod>2023-02-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.openhasp.com/0.7.0/0.7.0/integrations/openhab/integration_openhab/</loc>
-         <lastmod>2023-02-03</lastmod>
+         <lastmod>2023-02-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.openhasp.com/0.7.0/0.7.0/setup/</loc>
-         <lastmod>2023-02-03</lastmod>
+         <lastmod>2023-02-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.openhasp.com/0.7.0/0.7.0/setup/esp32/</loc>
-         <lastmod>2023-02-03</lastmod>
+         <lastmod>2023-02-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.openhasp.com/0.7.0/0.7.0/setup/faq/</loc>
-         <lastmod>2023-02-03</lastmod>
+         <lastmod>2023-02-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.openhasp.com/0.7.0/0.7.0/setup/firmware-update/</loc>
-         <lastmod>2023-02-03</lastmod>
+         <lastmod>2023-02-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.openhasp.com/0.7.0/0.7.0/setup/license/</loc>
-         <lastmod>2023-02-03</lastmod>
+         <lastmod>2023-02-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.openhasp.com/0.7.0/0.7.0/setup/wifi-setup/</loc>
-         <lastmod>2023-02-03</lastmod>
+         <lastmod>2023-02-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.openhasp.com/0.7.0/0.7.0/setup/configuration/debug/</loc>
-         <lastmod>2023-02-03</lastmod>
+         <lastmod>2023-02-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.openhasp.com/0.7.0/0.7.0/setup/configuration/display/</loc>
-         <lastmod>2023-02-03</lastmod>
+         <lastmod>2023-02-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.openhasp.com/0.7.0/0.7.0/setup/configuration/factory_reset/</loc>
-         <lastmod>2023-02-03</lastmod>
+         <lastmod>2023-02-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.openhasp.com/0.7.0/0.7.0/setup/configuration/ftp/</loc>
-         <lastmod>2023-02-03</lastmod>
+         <lastmod>2023-02-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.openhasp.com/0.7.0/0.7.0/setup/configuration/gpio/</loc>
-         <lastmod>2023-02-03</lastmod>
+         <lastmod>2023-02-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.openhasp.com/0.7.0/0.7.0/setup/configuration/hasp/</loc>
-         <lastmod>2023-02-03</lastmod>
+         <lastmod>2023-02-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.openhasp.com/0.7.0/0.7.0/setup/configuration/http/</loc>
-         <lastmod>2023-02-03</lastmod>
+         <lastmod>2023-02-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.openhasp.com/0.7.0/0.7.0/setup/configuration/mqtt/</loc>
-         <lastmod>2023-02-03</lastmod>
+         <lastmod>2023-02-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.openhasp.com/0.7.0/0.7.0/setup/configuration/wifi/</loc>
-         <lastmod>2023-02-03</lastmod>
+         <lastmod>2023-02-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.openhasp.com/0.7.0/0.7.0/setup/installation/esp8266/</loc>
-         <lastmod>2023-02-03</lastmod>
+         <lastmod>2023-02-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.openhasp.com/0.7.0/0.7.0/setup/installation/installation/</loc>
-         <lastmod>2023-02-03</lastmod>
+         <lastmod>2023-02-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.openhasp.com/0.7.0/0.7.0/setup/installation/stm32/</loc>
-         <lastmod>2023-02-03</lastmod>
+         <lastmod>2023-02-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
