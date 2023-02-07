@@ -1,20 +1,18 @@
-# AZ-Delivery
-
-## AZ-Touch MOD
+# AZ-Touch MOD
 
 <div class="row justify-content-center">
-        <a href="../az-touch-mod-24.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-6" data-title="AZ-Touch wall enclosure set with 2.4&quot; touchscreen" data-footer="Copyright <a href='https://www.az-delivery.de/'>az-delivery.de,</a> All Rights Reserved - Used with permission">
-            <img src="../az-touch-mod-24.jpg" class="img-fluid">
+        <a href="../images/az-touch-mod-24.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-6" data-title="AZ-Touch wall enclosure set with 2.4&quot; touchscreen" data-footer="Copyright <a href='https://www.az-delivery.de/'>az-delivery.de,</a> All Rights Reserved - Used with permission">
+            <img src="../images/az-touch-mod-24.jpg" class="img-fluid">
         </a>
-        <a href="../az-touch-mod-28.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-6" data-title="AZ-Touch wall enclosure set with 2.8&quot; touchscreen" data-footer="Copyright <a href='https://www.az-delivery.de/'>az-delivery.de,</a> All Rights Reserved - Used with permission">
-            <img src="../az-touch-mod-28.jpg" class="img-fluid">
+        <a href="../images/az-touch-mod-28.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-6" data-title="AZ-Touch wall enclosure set with 2.8&quot; touchscreen" data-footer="Copyright <a href='https://www.az-delivery.de/'>az-delivery.de,</a> All Rights Reserved - Used with permission">
+            <img src="../images/az-touch-mod-28.jpg" class="img-fluid">
         </a>
 </div>
 <div>
-        <a href="../az-touch-pcb-front.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-6" data-title="Assembled AZ-Touch PCB" data-footer="Copyright <a href='https://www.az-delivery.de/'>az-delivery.de,</a> All Rights Reserved - Used with permission">more images...</a>
-        <a href="../az-touch-pcb-back.jpg" data-toggle="lightbox" data-gallery="example-gallery" rel="lightbox[work]" data-title="AZ-Touch Top PCB with headers" data-footer="Copyright <a href='https://www.az-delivery.de/'>az-delivery.de,</a> All Rights Reserved - Used with permission"></a>
-        <a href="../az-touch-pcb-back.jpg" data-toggle="lightbox" data-gallery="example-gallery" rel="lightbox[vacation]" data-title="AZ-Touch Bottom PCB with MCU" data-footer="Copyright <a href='https://www.az-delivery.de/'>az-delivery.de,</a> All Rights Reserved - Used with permission"></a>
-        <a href="../az-touch-pcb-side.jpg" data-toggle="lightbox" data-gallery="example-gallery" rel="lightbox[vacation]" data-title="AZ-Touch PCB Side View" data-footer="Copyright <a href='https://www.az-delivery.de/'>az-delivery.de,</a> All Rights Reserved - Used with permission"></a>
+        <a href="../images/az-touch-pcb-front.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-6" data-title="Assembled AZ-Touch PCB" data-footer="Copyright <a href='https://www.az-delivery.de/'>az-delivery.de,</a> All Rights Reserved - Used with permission">more images...</a>
+        <a href="../images/az-touch-pcb-back.jpg" data-toggle="lightbox" data-gallery="example-gallery" rel="lightbox[work]" data-title="AZ-Touch Top PCB with headers" data-footer="Copyright <a href='https://www.az-delivery.de/'>az-delivery.de,</a> All Rights Reserved - Used with permission"></a>
+        <a href="../images/az-touch-pcb-back.jpg" data-toggle="lightbox" data-gallery="example-gallery" rel="lightbox[vacation]" data-title="AZ-Touch Bottom PCB with MCU" data-footer="Copyright <a href='https://www.az-delivery.de/'>az-delivery.de,</a> All Rights Reserved - Used with permission"></a>
+        <a href="../images/az-touch-pcb-side.jpg" data-toggle="lightbox" data-gallery="example-gallery" rel="lightbox[vacation]" data-title="AZ-Touch PCB Side View" data-footer="Copyright <a href='https://www.az-delivery.de/'>az-delivery.de,</a> All Rights Reserved - Used with permission"></a>
 </div>
 
 The AZ-Touch MOD for ESP32 comes as kit with a touchscreen, wall enclosure, PCB and pinheaders.
@@ -33,7 +31,7 @@ The PCB is pre-soldered *except* for the pinheaders, so [some soldering][5]{targ
 [:material-cart-variant: AZ-Touch MOD 2.4&quot;][14]{target=_blank .md-button .md-button--primary } &nbsp;
 [:material-cart-variant: AZ-Touch MOD 2.8&quot;][15]{target=_blank .md-button .md-button--primary }
 
-### ESP32 dev boards
+## ESP32 dev boards
 
 The AZ-Touch MOD PCB kit does *not* come with an MCU and needs to be purchased separately.
 The PCB is designed to be compatible with serveral development boards.
@@ -52,13 +50,20 @@ The ESP32-DevKitC option is prefered because you can use more pins from the ESP3
 | PSram                   | No          | 8 MB
 |  | [:material-cart-variant: Buy][3]{target=_blank .md-button .md-button--primary } | [:material-cart-variant: Buy][4]{target=_blank .md-button .md-button--primary }
 
-### Documentation
+
+## Backlight Control
+
+`GPIO15` of the ESP32 is used for PWM dimming of the AZ-Touch MOD display.
+
+
+## Documentation
 
 [:fontawesome-solid-file-pdf: Schematics][6]{target=_blank .md-button .md-button } &nbsp;
 [:fontawesome-regular-file-pdf: Datasheet][7]{target=_blank .md-button .md-button } &nbsp;
 [:fontawesome-regular-file-pdf: Assembly Guide][11]{target=_blank .md-button .md-button }
 
-### Product Video
+
+## Product Video
 
 <div class="embed-responsive embed-responsive-16by9" style="max-width:560px; margin:auto;">
     <iframe title="YouTube video player" src="https://www.youtube.com/embed/k7ngHp8WKIM?rel=0&controls=1" class="embed-responsive-item" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
@@ -79,14 +84,10 @@ Each AZ-Touch kit comes with a nice wall mounting enclosure for the 2.4&quot; or
 It enables you to mount your project permanently in your living room, corridor or other exposed places.
 
 The AZ-Touch MOD PCB comes partly assembled with only the pin headers requiring some minimal soldering skills.
-The AZ-Touch Feather contains loose components that you need to solder to the PCB yourself using the [Assembly Guide](#documentation_1).
 
 <div class="row justify-content-center">
-        <a href="../az-touch-mod-contents.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-6" data-title="AZ-Touch MOD Contents" data-footer="Copyright <a href='https://www.az-delivery.de/'>az-delivery.de,</a> All Rights Reserved - Used with permission">
-            <img src="../az-touch-mod-contents.jpg" class="img-fluid">
-        </a>
-        <a href="../az-touch-feather-contents.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-6" data-title="AZ-Touch Feather Contents" data-footer="Copyright <a href='https://www.az-delivery.de/'>az-delivery.de,</a> All Rights Reserved - Used with permission">
-            <img src="../az-touch-feather-contents.jpg" class="img-fluid">
+        <a href="../images/az-touch-mod-contents.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-6" data-title="AZ-Touch MOD Contents" data-footer="Copyright <a href='https://www.az-delivery.de/'>az-delivery.de,</a> All Rights Reserved - Used with permission">
+            <img src="../images/az-touch-mod-contents.jpg" class="img-fluid">
         </a>
 </div>
 

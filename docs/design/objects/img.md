@@ -2,7 +2,7 @@
 # Image
 **obj:`img`**
 
-![lv_img](../images/lv_ex_img_1.png)
+![lv_img](./images/lv_ex_img_1.png)
 
 | Property | Value        | Default | Description
 |----------|--------------|---------|--------------------------
@@ -31,7 +31,26 @@ Either PNG or BIN image files are supported, from flash:
 - Use the online [LVGL Image Converter][16]{target=_blank} to create BIN files. Set the output format to *Binary* or *Binary RGB565*.
 
 
-??? example "Example `jsonl`"
+???+ example "Example `jsonl`"
     ```json linenums="1"
     {"page":1,"id":34,"obj":"img","src":"L:/image.png","auto_size":0,"w":50}
     ```
+   
+[1]: ../../data-types/#colors
+[2]: ../../data-types/#boolean
+[3]: ../../../configuration/gpio/#groupid
+[4]: ../../styling/#general
+[5]: ../../styling/#image
+[6]: ../../styling/#value
+[7]: ../../styling/#line
+[8]: ../../styling/#scale
+[9]: ../../data-types/#integer
+[10]: ../../data-types/#string
+[11]: ../../data-types/#json-object
+[12]: ../../styling/
+[13]: ../../styling/#padding-and-margin
+[14]: ../../styling/#text
+[15]: ../../data-types/#variables
+[16]: https://lvgl.io/tools/imageconverter
+[17]: ../../../integrations/home-assistant/sampl_conf/#using-tags
+[18]: ../../styling/#parts

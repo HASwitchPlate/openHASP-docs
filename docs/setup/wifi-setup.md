@@ -3,8 +3,8 @@
 At first boot, when no Wi-Fi setup is found, the device will create an initial Access Point for configuring the device.
 If the touchscreen is properly connected it will display a QR code, along with a temporary SSID and password, to connect to the device.
 
-![](../oobe_setup.png)
-![](../wifi_setup.png)
+![](./images/oobe_setup.png)
+![](./images/wifi_setup.png)
 
 !!! tip "Advanced Users"
     To skip this step, Wi-Fi credentials can be saved into the .bin file when you compile the firmware yourself using [customization](../compiling/customize.md). 

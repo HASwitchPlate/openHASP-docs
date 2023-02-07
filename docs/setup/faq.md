@@ -32,31 +32,6 @@ It expects the firmware to be written to address `0x10000` and will throw a "mag
 The openHASP *full* binary is meant to be flashed to address `0x0` instead. Use ESPtool, Flash Download Tools or Tasmota-PyFlasher.
 
 
-### :question: Is there a file browser built-in?
-
-Since v0.6.0 there is a native file browser included on ESP32.
-
-You can use it to upload, download and edit files on the flash partition of the ESP32.
-Using that webpage, you can right-click and delete files:
-
-![HTTP configuration](assets/images/faq/faq_file_delete.png "Delete file")
-
-Click on the File Editor button on the Main Webpage:
-
-![HTTP configuration](assets/images/faq/faq_file_browser.png "File Browser")
-
-
-### :question: How to delete files from flash?
-
-Yes: *See: Is there a file browser built-in?*
-
-
-
-### :question: How to save changes in the File Editor to flash?
-
-Type ++ctrl+"S"++ on a PC or ++cmd+"S"++ on Mac.
-
-
 ### :question: Other question
 
 For support using openHASP please find us on Github, Discord or Home Assistant:

@@ -2,7 +2,7 @@
 
 You can attach external devices like buttons, switches, relays, lights or LEDs using the GPIO pins of the ESP. The _Devices_ section of the documentation contains pin descriptions and ways to set them up for specific hardware configurations.
 
-When integrated with [Home Assistant](../integrations/home-assistant/howto.md), the configured GPIOs will be added automatically during discovery as appropriate entities in the system.
+When integrated with [Home Assistant](../../integrations/home-assistant/howto.md), the configured GPIOs will be added automatically during discovery as appropriate entities in the system.
 
 <div class="row justify-content-center">
             <a href="../gpio_settings.png" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-8" data-title="GPIO Settings" data-footer="">
@@ -56,7 +56,7 @@ The state of a digital input can only be `on` or `off` and will set all group me
     {"page":1,"id":2,"obj":"switch","x":30,"y":122,"w":180,"h":75,"radius":40,"radius20":40,"groupid":2}
     {"page":1,"id":3,"obj":"switch","x":30,"y":205,"w":180,"h":75,"radius":40,"radius20":40,"groupid":3}
     ```
-    ![lanbon-3-switch-display](../assets/images/screenshots/lanbon-3-switch-display.png)
+    ![lanbon-3-switch-display](../../assets/images/screenshots/lanbon-3-switch-display.png)
 
 ### Default state
 
@@ -110,7 +110,7 @@ and to minimum when the switch is turned off.
 !!! note "Idle State"
     The input pins do *not* affect the idle state of the device. Only interacting with the touchscreen automatically resets the idle state.
 
-    If you want a GPIO pin to wakeup the device then you should monitor its mqtt topic and use the [`idle`](../../commands#idle) and [`backlight`](../../commands#backlight) commands appropriately.
+    If you want a GPIO pin to wakeup the device then you should monitor its mqtt topic and use the [`idle`](../../commands#idle) and [`backlight`](../../design/commands#backlight) commands appropriately.
 
 ## Output Pin
 
@@ -162,7 +162,7 @@ When a led is controlled by a range object (slider, arc slider, roller, drop-dow
 - Mood Green
 - Mood Blue
 
-Assigns the pin to an RGB channel of the moodlight. The three RGB channels can be controlled together using the [`moodlight`](../../commands#moodlight) command.
+Assigns the pin to an RGB channel of the moodlight. The three RGB channels can be controlled together using the [`moodlight`](../../design/commands#moodlight) command.
 
 #### Relays:
 - Light Relay
@@ -180,7 +180,7 @@ The various relay types (Light, Power) denote only the device class you want the
     Attaching devices to mains power can be dangerous!
     Configuring gpios is done on your **own responsibility**.
     Be sure to test any system thoroughly using low voltages first.
-    By using the firmware you accept the [License](../../license).
+    By using the firmware you accept the [License](../../setup/license).
 
 Use the hasp/<platename>/command/output[x] topic (where x is the pin number) with an empty payload to query the current state of the relay.
 

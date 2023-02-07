@@ -1,9 +1,3 @@
----
-hide:
-  - navigation
-  - toc
----
-
 <h1></h1>
 
 <img src="assets/images/logo.png" style="width:10rem" class="float-left"></img>

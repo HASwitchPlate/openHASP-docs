@@ -1,21 +1,21 @@
 # Waveshare TFT Touch Shield
 
 <div class="row justify-content-center">
-        <a href="../waveshare-touch-shield-28-front.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4" data-title="Waveshare 2.8&quot; TFT Touch Shield" data-footer="Copyright © 2021, Waveshare, All Rights Reserved - Used with permission"">
-            <img src="../waveshare-touch-shield-28-front.jpg" class="img-fluid">
+        <a href="../images/waveshare-touch-shield-28-front.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4" data-title="Waveshare 2.8&quot; TFT Touch Shield" data-footer="Copyright © 2021, Waveshare, All Rights Reserved - Used with permission"">
+            <img src="../images/waveshare-touch-shield-28-front.jpg" class="img-fluid">
         </a>
-        <a href="../waveshare-touch-shield-35-front.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4" data-title="Waveshare 3.5&quot; TFT Touch Shield" data-footer="Copyright © 2021, Waveshare, All Rights Reserved - Used with permission"">
-            <img src="../waveshare-touch-shield-35-front.jpg" class="img-fluid">
+        <a href="../images/waveshare-touch-shield-35-front.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4" data-title="Waveshare 3.5&quot; TFT Touch Shield" data-footer="Copyright © 2021, Waveshare, All Rights Reserved - Used with permission"">
+            <img src="../images/waveshare-touch-shield-35-front.jpg" class="img-fluid">
         </a>
-        <a href="../waveshare-touch-shield-40-front.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4" data-title="Waveshare 4&quot; TFT Touch Shield" data-footer="Copyright © 2021, Waveshare, All Rights Reserved - Used with permission"">
-            <img src="../waveshare-touch-shield-40-front.jpg" class="img-fluid">
+        <a href="../images/waveshare-touch-shield-40-front.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4" data-title="Waveshare 4&quot; TFT Touch Shield" data-footer="Copyright © 2021, Waveshare, All Rights Reserved - Used with permission"">
+            <img src="../images/waveshare-touch-shield-40-front.jpg" class="img-fluid">
         </a>
 </div>
 <div>
-        <a href="../waveshare-touch-shield-28-profile.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4" data-title="Waveshare 2.8&quot; TFT Touch Shield" data-footer="Copyright © 2021, Waveshare, All Rights Reserved - Used with permission"">more images...</a>
-        <a href="../waveshare-touch-shield-28-side.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4" data-title="Waveshare 2.8&quot; TFT Touch Shield" data-footer="Copyright © 2021, Waveshare, All Rights Reserved - Used with permission""></a>
-        <a href="../waveshare-touch-shield-35-side.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4" data-title="Waveshare 3.5&quot; TFT Touch Shield" data-footer="Copyright © 2021, Waveshare, All Rights Reserved - Used with permission""></a>
-        <a href="../waveshare-touch-shield-40-side.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4" data-title="Waveshare 4&quot; TFT Touch Shield" data-footer="Copyright © 2021, Waveshare, All Rights Reserved - Used with permission""></a>
+        <a href="../images/waveshare-touch-shield-28-profile.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4" data-title="Waveshare 2.8&quot; TFT Touch Shield" data-footer="Copyright © 2021, Waveshare, All Rights Reserved - Used with permission"">more images...</a>
+        <a href="../images/waveshare-touch-shield-28-side.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4" data-title="Waveshare 2.8&quot; TFT Touch Shield" data-footer="Copyright © 2021, Waveshare, All Rights Reserved - Used with permission""></a>
+        <a href="../images/waveshare-touch-shield-35-side.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4" data-title="Waveshare 3.5&quot; TFT Touch Shield" data-footer="Copyright © 2021, Waveshare, All Rights Reserved - Used with permission""></a>
+        <a href="../images/waveshare-touch-shield-40-side.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4" data-title="Waveshare 4&quot; TFT Touch Shield" data-footer="Copyright © 2021, Waveshare, All Rights Reserved - Used with permission""></a>
 </div>
 
 
@@ -42,7 +42,7 @@ There are 3 models of this TFT shield:
 # | {!assets/buy/waveshare-tft-touch-shield.md!}
 -->
 
-{!assets/buy/waveshare-tft-touch-shield-table.html!}
+{!./waveshare-tft-touch-shield-table.html!}
 
 ## Backlight Control
 
@@ -78,8 +78,8 @@ Then move all 3 DIP switches to the `ON` position with a tiny screwdriver.
 The 2.8" model has 3 solder jumpers `SB1`, `SB2` and `SB3` that need to be bridged instead!
 
 <div class="row justify-content-center">
-    <a href="../waveshare-touch-shield-40-dimensions.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-6" data-title="SPI Dip Switches" data-footer="Copyright © 2021, Waveshare, All Rights Reserved - Used with permission">
-        <img src="../waveshare-touch-shield-40-dimensions.jpg" class="img-fluid">
+    <a href="../images/waveshare-touch-shield-40-dimensions.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-6" data-title="SPI Dip Switches" data-footer="Copyright © 2021, Waveshare, All Rights Reserved - Used with permission">
+        <img src="../images/waveshare-touch-shield-40-dimensions.jpg" class="img-fluid">
     </a>
 </div>
 

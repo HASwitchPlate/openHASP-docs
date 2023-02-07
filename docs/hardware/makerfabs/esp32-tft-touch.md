@@ -1,18 +1,18 @@
-# Makerfabs ESP32 TFT Touch
+# ESP32 TFT Touch with Camera
 
 <div class="row justify-content-center">
-        <a href="../makerfabs-front.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-6" data-title="ESP32 3.5&quot; TFT Touch with Camera - Front" data-footer="Copyright &copy; 2021, Makerfabs, All Rights Reserved">
-            <img src="../makerfabs-front.jpg" class="img-fluid">
+        <a href="../images/makerfabs-front.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-6" data-title="ESP32 3.5&quot; TFT Touch with Camera - Front" data-footer="Copyright &copy; 2021, Makerfabs, All Rights Reserved">
+            <img src="../images/makerfabs-front.jpg" class="img-fluid">
         </a>
 
-        <a href="../makerfabs-back.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-6" data-title="ESP32 3.5&quot; TFT Touch with Camera - Back" data-footer="Copyright &copy; 2021, Makerfabs, All Rights Reserved">
-            <img src="../makerfabs-back.jpg" class="img-fluid">
+        <a href="../images/makerfabs-back.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-6" data-title="ESP32 3.5&quot; TFT Touch with Camera - Back" data-footer="Copyright &copy; 2021, Makerfabs, All Rights Reserved">
+            <img src="../images/makerfabs-back.jpg" class="img-fluid">
         </a>
 </div>
 <div>
-        <a href="../makerfabs-side-front.jpg" data-toggle="lightbox" data-gallery="example-gallery" rel="lightbox[work]" data-title="Makerfabs ESP32 TFT Touch" data-footer="Copyright &copy; 2021, Makerfabs, All Rights Reserved">more images...</a>
-        <a href="../makerfabs-side-back.jpg" data-toggle="lightbox" data-gallery="example-gallery" rel="lightbox[vacation]" data-title="Makerfabs ESP32 TFT Touch" data-footer="Copyright &copy; 2021, Makerfabs, All Rights Reserved"></a>
-        <a href="../makerfabs-sensors.jpg" data-toggle="lightbox" data-gallery="example-gallery" rel="lightbox[vacation]" data-title="Makerfabs ESP32 TFT Touch" data-footer="Copyright &copy; 2021, Makerfabs, All Rights Reserved"></a>
+        <a href="../images/makerfabs-side-front.jpg" data-toggle="lightbox" data-gallery="example-gallery" rel="lightbox[work]" data-title="Makerfabs ESP32 TFT Touch" data-footer="Copyright &copy; 2021, Makerfabs, All Rights Reserved">more images...</a>
+        <a href="../images/makerfabs-side-back.jpg" data-toggle="lightbox" data-gallery="example-gallery" rel="lightbox[vacation]" data-title="Makerfabs ESP32 TFT Touch" data-footer="Copyright &copy; 2021, Makerfabs, All Rights Reserved"></a>
+        <a href="../images/makerfabs-sensors.jpg" data-toggle="lightbox" data-gallery="example-gallery" rel="lightbox[vacation]" data-title="Makerfabs ESP32 TFT Touch" data-footer="Copyright &copy; 2021, Makerfabs, All Rights Reserved"></a>
 </div>
 
 
@@ -24,7 +24,7 @@ which makes it a very suitable platform for any ESP32 project. There is a versio
 At the back sits an ESP32-WROVER module with 16MB of flash and 8MB of PSram.
 There is also an SD-card slot, USB-C connector and expansion port with 14 GPIOs.
 
-### Models
+## Models
 
 | Model                   | 3.2" Resistive | 3.5" Resistive | 3.5" Capacitive
 |-------------------------|:-------:|:-------:|:--------:
@@ -72,12 +72,12 @@ More information can be found in the Makerfabs Wiki and there are plenty of exam
 All 3 models have the option to add a protective acrylic case for only $2.90 extra:
 
 <div class="row justify-content-center">
-        <a href="../makerfabs-case-front.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-6" data-title="ESP32 3.5&quot; TFT Touch with Camera - Front" data-footer="Copyright &copy; 2021, Makerfabs, All Rights Reserved">
-            <img src="../makerfabs-case-front.jpg" class="img-fluid">
+        <a href="../images/makerfabs-case-front.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-6" data-title="ESP32 3.5&quot; TFT Touch with Camera - Front" data-footer="Copyright &copy; 2021, Makerfabs, All Rights Reserved">
+            <img src="../images/makerfabs-case-front.jpg" class="img-fluid">
         </a>
 
-        <a href="../makerfabs-case-back.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-6" data-title="ESP32 3.5&quot; TFT Touch with Camera - Back" data-footer="Copyright &copy; 2021, Makerfabs, All Rights Reserved">
-            <img src="../makerfabs-case-back.jpg" class="img-fluid">
+        <a href="../images/makerfabs-case-back.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-6" data-title="ESP32 3.5&quot; TFT Touch with Camera - Back" data-footer="Copyright &copy; 2021, Makerfabs, All Rights Reserved">
+            <img src="../images/makerfabs-case-back.jpg" class="img-fluid">
         </a>
 </div>
 

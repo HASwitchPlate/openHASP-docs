@@ -32,8 +32,8 @@ You need to pick the correct binary files for your device:
 
 Before starting the flash process you have to put the ESP into *flash mode*:
 
-1. Connect `GPIO0` to `GND` before booting the devide
-2. Power-on or reset the ESP while `GPIO0` is connected to `GND`
+1. Connect `GPIO0` to `GND` before booting the device
+2. Power-on or reset the ESP32 while `GPIO0` is connected to `GND`
 3. Start the flash process
 
 The actual procedure to flash the ESP32 depends on the tool used. Click on the tab below that matches your flash tool.

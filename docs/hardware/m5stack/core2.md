@@ -1,12 +1,12 @@
 # M5Stack core2
 
 <div class="row justify-content-center">
-        <a href="../m5stack-core2-front.png" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-6" data-title="M5stack core2 Front" data-footer="">
-            <img src="../m5stack-core2-front.png" class="img-fluid">
+        <a href="../images/m5stack-core2-front.png" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-6" data-title="M5stack core2 Front" data-footer="">
+            <img src="../images/m5stack-core2-front.png" class="img-fluid">
         </a>
 
-        <a href="../m5stack-core2-back.png" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-6" data-title="M5stack core2 Back" data-footer="">
-            <img src="../m5stack-core2-back.png" class="img-fluid">
+        <a href="../images/m5stack-core2-back.png" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-6" data-title="M5stack core2 Back" data-footer="">
+            <img src="../images/m5stack-core2-back.png" class="img-fluid">
         </a>
 </div>
 
@@ -48,8 +48,8 @@ Available from:
 
 ## Schematic
 
-<a href="../m5stack-core2-schematic.png" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-6" data-title="M5stack core2 Schematic" data-footer="">
-    <img src="../m5stack-core2-schematic.png" class="img-fluid">
+<a href="../images/m5stack-core2-schematic.png" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-6" data-title="M5stack core2 Schematic" data-footer="">
+    <img src="../images/m5stack-core2-schematic.png" class="img-fluid">
 </a>
 [:fontawesome-regular-file-pdf: Schematics][5]{target=_blank .md-button}
 

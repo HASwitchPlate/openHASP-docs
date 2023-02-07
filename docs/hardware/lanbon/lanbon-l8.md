@@ -1,20 +1,20 @@
 # Lanbon L8
 
 <div class="row justify-content-center">
-        <a href="../lanbon-l8-us-white.png" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-3" data-title="Lanbon L8 - US white" data-footer="">
-            <img src="../lanbon-l8-us-white.png" class="img-fluid">
+        <a href="../images/lanbon-l8-us-white.png" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-3" data-title="Lanbon L8 - US white" data-footer="">
+            <img src="../images/lanbon-l8-us-white.png" class="img-fluid">
         </a>
 
-        <a href="../lanbon-l8-us-black.png" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-3" data-title="Lanbon L8 - US black" data-footer="">
-            <img src="../lanbon-l8-us-black.png" class="img-fluid">
+        <a href="../images/lanbon-l8-us-black.png" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-3" data-title="Lanbon L8 - US black" data-footer="">
+            <img src="../images/lanbon-l8-us-black.png" class="img-fluid">
         </a>
 
-        <a href="../lanbon-l8-eu-white.png" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-3" data-title="Lanbon L8 - EU white" data-footer="">
-            <img src="../lanbon-l8-eu-white.png" class="img-fluid">
+        <a href="../images/lanbon-l8-eu-white.png" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-3" data-title="Lanbon L8 - EU white" data-footer="">
+            <img src="../images/lanbon-l8-eu-white.png" class="img-fluid">
         </a>
 
-        <a href="../lanbon-l8-eu-black.png" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-3" data-title="Lanbon L8 - EU black" data-footer="">
-            <img src="../lanbon-l8-eu-black.png" class="img-fluid">
+        <a href="../images/lanbon-l8-eu-black.png" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-3" data-title="Lanbon L8 - EU black" data-footer="">
+            <img src="../images/lanbon-l8-eu-black.png" class="img-fluid">
         </a>
 </div>
 
@@ -40,12 +40,12 @@
 All models are rated at AC 100-250V ~50-60Hz, the form factor can be a design choice regardless of the continental area.
 
 <div class="row justify-content-center">
-        <a href="../lanbon-l8-dimensions-us.png" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-6" data-title="Lanbon L8 - US dimensions" data-footer="">
-            <img src="../lanbon-l8-dimensions-us.png" class="img-fluid">
+        <a href="../images/lanbon-l8-dimensions-us.png" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-6" data-title="Lanbon L8 - US dimensions" data-footer="">
+            <img src="../images/lanbon-l8-dimensions-us.png" class="img-fluid">
         </a>
 
-        <a href="../lanbon-l8-dimensions-eu.png" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-6" data-title="Lanbon L8 - EU dimensions" data-footer="">
-            <img src="../lanbon-l8-dimensions-eu.png" class="img-fluid">
+        <a href="../images/lanbon-l8-dimensions-eu.png" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-6" data-title="Lanbon L8 - EU dimensions" data-footer="">
+            <img src="../images/lanbon-l8-dimensions-eu.png" class="img-fluid">
         </a>
 </div>
 
@@ -85,14 +85,14 @@ The models have the same recessed housing sliding into the wall, sized 50x50mm, 
 
 ## Contents
 
-![Display image](../lanbon-l8-contents.png)
+![Display image](./images/lanbon-l8-contents.png)
 
 ## Flashing
 
 !!! warning "Disclaimer"
     Never connect high-voltage when the panel is not properly secured in place.
 
-![Display image](../lanbon-l8-pcb.png)
+![Display image](./images/lanbon-l8-pcb.png)
 
 You can follow this [flashing guide](https://blakadder.com/lanbon-L8-custom-firmware/) on [blakadder.com](https://blakadder.com) or [this discussion post](https://github.com/HASwitchPlate/openHASP/discussions/76) with instructions and photos to flash the firmware without having to open the device.
 
@@ -103,7 +103,7 @@ Steps:
 3. Connect RX, TX, IO0, GND and 5V pins to the female pinheader:
 4. Because there is no `RESET` pin, you need to powercycle the board with `IO0` connected to `GND` to activate flash mode
 
-Once the serial connections are made, flash the [Lanbon-L8 ESP32 binary](../installation/esp32.md) like on any other device.
+Once the serial connections are made, flash the [Lanbon-L8 ESP32 binary](../../setup/esp32.md) like on any other device.
 
 ## GPIO Settings
 
@@ -131,13 +131,13 @@ Pin| Mode   | L8-HS      | Group | Default
 
 
 ??? example "Example `jsonl`"
-    To create a page displaying the local relays as switches, try this very simple [pages.jsonl](../design/pages.md):
+    To create a page displaying the local relays as switches, try this very simple [pages.jsonl](../../design/pages.md):
     ```json linenums="1"
     {"page":1,"id":1,"obj":"switch","x":30,"y":40,"w":180,"h":75,"radius":40,"radius20":40,"groupid":1}
     {"page":1,"id":2,"obj":"switch","x":30,"y":122,"w":180,"h":75,"radius":40,"radius20":40,"groupid":2}
     {"page":1,"id":3,"obj":"switch","x":30,"y":205,"w":180,"h":75,"radius":40,"radius20":40,"groupid":3}
     ```
-    ![lanbon-3-switch-display](../assets/images/screenshots/lanbon-3-switch-display.png)
+    ![lanbon-3-switch-display](./images/lanbon-3-switch-display.png)
 
 
 ### Dimmer version L8-HD
@@ -181,14 +181,14 @@ Pin| Mode   | L8-HB      | Group | Default
     ```
 
 !!! note "Developer Note"
-    You can [build your own firmware](../compiling/customize.md) with GPIOs and many other parameters pre-configured in `user_config_override.h` as factory defaults for Lanbon L8.
+    You can [build your own firmware](../../compiling/customize.md) with GPIOs and many other parameters pre-configured in `user_config_override.h` as factory defaults for Lanbon L8.
 
 
 ## Wiring Diagrams
 
 The switch supports several wiring configurations:
 
-![Display image](../lanbon-l8-wiring.png)
+![Display image](./images/lanbon-l8-wiring.png)
 
 !!! danger "Warning"
     Always follow the instructions from the installation guide and local safety regulations.
@@ -211,14 +211,14 @@ The switch supports several wiring configurations:
 ## Gallery
 
 <div class="row justify-content-center">
-    <a href="../lanbon-l8-covers.png" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4" data-title="Lanbon L8 Switch" data-footer="Lanbon L8 in operation as a 5-cover commander">
-        <img src="../lanbon-l8-covers.png" class="img-fluid">
+    <a href="../images/lanbon-l8-covers.png" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4" data-title="Lanbon L8 Switch" data-footer="Lanbon L8 in operation as a 5-cover commander">
+        <img src="../images/lanbon-l8-covers.png" class="img-fluid">
     </a>
-    <a href="../lanbon-l8-lovelace.png" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4" data-title="Lanbon L8 Switch" data-footer="Lanbon L8 in operation as sensors and switches panel">
-        <img src="../lanbon-l8-lovelace.png" class="img-fluid">
+    <a href="../images/lanbon-l8-lovelace.png" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4" data-title="Lanbon L8 Switch" data-footer="Lanbon L8 in operation as sensors and switches panel">
+        <img src="../images/lanbon-l8-lovelace.png" class="img-fluid">
     </a>
-    <a href="../lanbon-l8.png" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4" data-title="Lanbon L8 Switch" data-footer="Customized Lanbon L8 Switchplate">
-        <img src="../lanbon-l8.png" class="img-fluid">
+    <a href="../images/lanbon-l8.png" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4" data-title="Lanbon L8 Switch" data-footer="Customized Lanbon L8 Switchplate">
+        <img src="../images/lanbon-l8.png" class="img-fluid">
     </a>
 </div>
 

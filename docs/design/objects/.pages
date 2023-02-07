@@ -1,9 +1,22 @@
 nav:
     - Objects: index.md
-    - label.md
-    - btn.md
-    - switch.md
-    - checkbox.md
-    - bar.md
-    - slider.md
     - arc.md
+    - Bar: bar.md
+    - btn.md
+    - btnmatrix.md
+    - checkbox.md
+    - cpicker.md
+    - dropdown.md
+    - gauge.md
+    - img.md
+    - Label: label.md
+    - led.md
+    - line.md
+    - linemeter.md
+    - msgbox.md
+    - obj.md
+    - roller.md
+    - slider.md
+    - spinner.md
+    - switch.md
+    - tabview.md

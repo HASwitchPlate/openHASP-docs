@@ -1,11 +1,11 @@
 <h1>Waveshare RPi LCD (Rev C)</h1>
 
 <div class="row justify-content-center">
-        <a href="../waveshare-rpi-40-front.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4" data-title="WaveShare 4.0&quot; RPi LCD (Rev C)" data-footer="Copyright © 2021, Waveshare, All Rights Reserved - Used with permission">
-            <img src="../waveshare-rpi-40-front.jpg" class="img-fluid">
+        <a href="../images/waveshare-rpi-40-front.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4" data-title="WaveShare 4.0&quot; RPi LCD (Rev C)" data-footer="Copyright © 2021, Waveshare, All Rights Reserved - Used with permission">
+            <img src="../images/waveshare-rpi-40-front.jpg" class="img-fluid">
         </a>
-        <a href="../waveshare-rpi-40-back.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4" data-title="WaveShare 4.0&quot; RPi LCD (Rev C)" data-footer="Copyright © 2021, Waveshare, All Rights Reserved - Used with permission">
-            <img src="../waveshare-rpi-40-back.jpg" class="img-fluid">
+        <a href="../images/waveshare-rpi-40-back.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4" data-title="WaveShare 4.0&quot; RPi LCD (Rev C)" data-footer="Copyright © 2021, Waveshare, All Rights Reserved - Used with permission">
+            <img src="../images/waveshare-rpi-40-back.jpg" class="img-fluid">
         </a>
 </div>
 
@@ -13,7 +13,7 @@
 
 The Waveshare RPi LCD (Rev C) display comes in 3.5" and 4.0" sizes:
 
-{!displays/waveshare-rpi-lcd-table.html!}
+{!./waveshare-rpi-lcd-table.html!}
 
 
 
@@ -22,8 +22,8 @@ The Waveshare RPi LCD (Rev C) display comes in 3.5" and 4.0" sizes:
 By default the display is always on. To enable backlight dimming, you can connect the pads marked by the red arrow using a 0R resistor or a direct solder connection:
 
 <div class="row justify-content-center">
-    <a href="../waveshare-rpi-35-backlight.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-6" data-title="WaveShare 3.5&quot; RPi LCD (Rev C) Backlight Jumper" data-footer="Copyright © 2021, Waveshare, All Rights Reserved - Used with permission">
-            <img src="../waveshare-rpi-35-backlight.jpg" class="img-fluid">
+    <a href="../images/waveshare-rpi-35-backlight.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-6" data-title="WaveShare 3.5&quot; RPi LCD (Rev C) Backlight Jumper" data-footer="Copyright © 2021, Waveshare, All Rights Reserved - Used with permission">
+            <img src="../images/waveshare-rpi-35-backlight.jpg" class="img-fluid">
     </a>
 </div>
 
@@ -42,11 +42,11 @@ The ESP32 One is plug-and-play compatible with the Waveshare RPi LCD (Rev C) 3.5
 This board has 4 MB flash and 8 MB PSRAM.
 
 <div class="row justify-content-center">
-    <a href="../waveshare-esp32-one-front.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4" data-title="WaveShare ESP32 One" data-footer="Copyright © 2021, Waveshare, All Rights Reserved - Used with permission">
-                <img src="../waveshare-esp32-one-front.jpg" class="img-fluid">
+    <a href="../images/waveshare-esp32-one-front.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4" data-title="WaveShare ESP32 One" data-footer="Copyright © 2021, Waveshare, All Rights Reserved - Used with permission">
+                <img src="../images/waveshare-esp32-one-front.jpg" class="img-fluid">
     </a>
-    <a href="../waveshare-esp32-one-pinout.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4" data-title="WaveShare ESP32 One Pinout" data-footer="Copyright © 2021, Waveshare, All Rights Reserved - Used with permission">
-                <img src="../waveshare-esp32-one-pinout.jpg" class="img-fluid">
+    <a href="../images/waveshare-esp32-one-pinout.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4" data-title="WaveShare ESP32 One Pinout" data-footer="Copyright © 2021, Waveshare, All Rights Reserved - Used with permission">
+                <img src="../images/waveshare-esp32-one-pinout.jpg" class="img-fluid">
     </a>
 </div>
 

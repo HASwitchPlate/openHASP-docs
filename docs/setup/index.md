@@ -5,7 +5,7 @@ It needs a compatible micro-controller with drivers supporting the attached disp
 
 Below is a list of recommended development boards and a TFT touchscreen to get you up-and-running in no time.
 
-![Plug-and-play](assets/images/lolin-esp.png "ESP with Lolin 2.4&quot;")
+![Plug-and-play](../assets/images/lolin-esp.png "ESP with Lolin 2.4&quot;")
 
 ## Recommended Boards
 
@@ -53,13 +53,13 @@ For new projects we recommend ESP32-WROVER boards with PSram and minimal 8MB of 
 
 
 !!! tip
-    Advanced users can build and compile custom hardware configurations using PlatformIO [locally](compiling/local.md) or [online with Gitpod](compiling/gitpod.md), however this is not currently supported.
+    Advanced users can build and compile custom hardware configurations using PlatformIO [locally](../compiling/local.md) or [online with Gitpod](../compiling/gitpod.md), however this is not currently supported.
 
 
 ## Recommended Display
 ### Lolin TFT 2.4"
 
-![TFT-LED PWM dimming](assets/images/lolin24tft.png)
+![TFT-LED PWM dimming](../assets/images/lolin24tft.png)
 
 ILI9341 SPI touchscreens with backlight dimming via PWM are quite cheap to get.
 An ILI9341 TFT display with SPI is required when using a pre-built binary.
@@ -75,7 +75,7 @@ Therefor the Lolin TFT 2.4 Touch Shield is used as the development display of ch
 To use PWM dimming on the Lolin TFT 2.4" you must connect the TFT-LED pin to either D1, D2 or D4.
 **D1 is recommended** for backlight control and configured by default.
 
-![TFT-LED PWM dimming](assets/images/tft-led-pwm.png)
+![TFT-LED PWM dimming](../assets/images/tft-led-pwm.png)
 
 !!! warning "Do *not* use D3 for backlight control because it is already in use for touch!"
 
@@ -85,7 +85,7 @@ To use PWM dimming on the Lolin TFT 2.4" you must connect the TFT-LED pin to eit
 
 ### Compatible ESP boards
 
-![TFT-LED PWM dimming](assets/images/esp_boards.png)
+![TFT-LED PWM dimming](../assets/images/esp_boards.png)
 
 The Lolin TFT 2.4" header is **plug-and-play** compatible with these development boards,
 no need to use any jumper cables:
@@ -102,7 +102,7 @@ no need to use any jumper cables:
 
 !!! note
     If you have a Lolin TFT 2.4" Display and a compatible ESP development board, you have all the hardware that is needed.
-    In that case you can skip ahead to the [Firmware Installation](installation/esp32.md).
+    In that case you can skip ahead to the [Firmware Installation](esp32.md).
 
 ## Alternative SPI Display
 
@@ -118,6 +118,6 @@ You will need to connect [the GPIO pins](displays/MSPxxxx.md) using jumper wires
 
 Some manufacturers offer IoT devices which are ready to go with openHASP:
 
-- [ESP32-Touchdown](devices/esp32-touchdown.md)
-- [FreeTouchDeck](devices/freetouchdeck.md)
-- [Lanbon L8](devices/lanbon-l8.md)
+- [ESP32-Touchdown](../hardware/dustin-watts/esp32-touchdown.md)
+- [FreeTouchDeck](../hardware/dustin-watts/freetouchdeck.md)
+- [Lanbon L8](../hardware/lanbon/lanbon-l8.md)

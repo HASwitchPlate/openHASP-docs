@@ -1,3 +1,5 @@
+collapse_single_pages: true
+title: Hardware
 nav:
     - index.md
     - Adafruit: adafruit

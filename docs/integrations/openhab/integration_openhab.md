@@ -1,3 +1,7 @@
+---
+title: openHAB
+---
+
 # Installation and Example
 
 <h2>Page Layout</h2>

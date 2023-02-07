@@ -1,19 +1,19 @@
 # ESP32 TouchDown
 
 <div class="row justify-content-center">
-        <a href="../esp32-touchdown.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-6" data-title="ESP32 TouchDown" data-footer="Original image by Dustin Watts - Used with permission">
-            <img src="../esp32-touchdown.jpg" class="img-fluid">
+        <a href="../images/esp32-touchdown.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-6" data-title="ESP32 TouchDown" data-footer="Original image by Dustin Watts - Used with permission">
+            <img src="../images/esp32-touchdown.jpg" class="img-fluid">
         </a>
 
-        <a href="../esp32-touchdown-color_wheel.png" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-6" data-title="ESP32 TouchDown" data-footer="Original image by Dustin Watts - Used with permission">
-            <img src="../esp32-touchdown-color_wheel.png" class="img-fluid">
+        <a href="../images/esp32-touchdown-color_wheel.png" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-6" data-title="ESP32 TouchDown" data-footer="Original image by Dustin Watts - Used with permission">
+            <img src="../images/esp32-touchdown-color_wheel.png" class="img-fluid">
         </a>
 </div>
 <div>
-        <a href="../esp32-touchdown-usbc.jpg" data-toggle="lightbox" data-gallery="example-gallery" rel="lightbox[work]" data-title="ESP32 TouchDown" data-footer="Original image by Dustin Watts - Used with permission">more images...</a>
-        <a href="../esp32-touchdown-speaker.jpg" data-toggle="lightbox" data-gallery="example-gallery" rel="lightbox[vacation]" data-title="ESP32 TouchDown" data-footer="Original image by Dustin Watts - Used with permission"></a>
-        <a href="../esp32-touchdown-sdcard.jpg" data-toggle="lightbox" data-gallery="example-gallery" rel="lightbox[vacation]" data-title="ESP32 TouchDown" data-footer="Original image by Dustin Watts - Used with permission"></a>
-        <a href="../esp32-touchdown-features.png" data-toggle="lightbox" data-gallery="example-gallery" rel="lightbox[vacation]" data-title="ESP32 TouchDown" data-footer="Original image by Dustin Watts - Used with permission"></a>
+        <a href="../images/esp32-touchdown-usbc.jpg" data-toggle="lightbox" data-gallery="example-gallery" rel="lightbox[work]" data-title="ESP32 TouchDown" data-footer="Original image by Dustin Watts - Used with permission">more images...</a>
+        <a href="../images/esp32-touchdown-speaker.jpg" data-toggle="lightbox" data-gallery="example-gallery" rel="lightbox[vacation]" data-title="ESP32 TouchDown" data-footer="Original image by Dustin Watts - Used with permission"></a>
+        <a href="../images/esp32-touchdown-sdcard.jpg" data-toggle="lightbox" data-gallery="example-gallery" rel="lightbox[vacation]" data-title="ESP32 TouchDown" data-footer="Original image by Dustin Watts - Used with permission"></a>
+        <a href="../images/esp32-touchdown-features.png" data-toggle="lightbox" data-gallery="example-gallery" rel="lightbox[vacation]" data-title="ESP32 TouchDown" data-footer="Original image by Dustin Watts - Used with permission"></a>
 </div>
 
 
@@ -64,7 +64,7 @@ Available from:</br>
 
 To enable backlight control, make sure the solder jumper pad is in position 2-1:
 
-![Backlight Control](../assets/images/devices/esp32-touchdown-backlight.png)
+![Backlight Control](./images/esp32-touchdown-backlight.png)
 
 ## 3D Printed Cases
 
@@ -87,7 +87,7 @@ The ESP32 TouchDown is fully [Open Source Hardware](https://github.com/DustinWat
 - PCB layout
 - Datasheets
 
-![PCB Dimensions](../assets/images/devices/esp32-touchdown-dimensions.png)
+![PCB Dimensions](./images/esp32-touchdown-dimensions.png)
 
 ## HASP build_flags
 

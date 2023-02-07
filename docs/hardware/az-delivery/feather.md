@@ -1,13 +1,11 @@
-# AZ-Delivery
-
-## AZ-Touch Feather
+# AZ-Touch Feather
 
 <div class="row justify-content-center">
-        <a href="../az-touch-feather-front.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-6" data-title="Assembled AZ-Touch Feather" data-footer="Copyright <a href='https://www.az-delivery.de/'>az-delivery.de,</a> All Rights Reserved - Used with permission">
-            <img src="../az-touch-feather-front.jpg" class="img-fluid">
+        <a href="../images/az-touch-feather-front.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-6" data-title="Assembled AZ-Touch Feather" data-footer="Copyright <a href='https://www.az-delivery.de/'>az-delivery.de,</a> All Rights Reserved - Used with permission">
+            <img src="../images/az-touch-feather-front.jpg" class="img-fluid">
         </a>
-        <a href="../az-touch-feather-back.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-6" data-title="AZ-Touch Feather after soldering all components" data-footer="Copyright <a href='https://www.az-delivery.de/'>az-delivery.de,</a> All Rights Reserved - Used with permission">
-            <img src="../az-touch-feather-back.jpg" class="img-fluid">
+        <a href="../images/az-touch-feather-back.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-6" data-title="AZ-Touch Feather after soldering all components" data-footer="Copyright <a href='https://www.az-delivery.de/'>az-delivery.de,</a> All Rights Reserved - Used with permission">
+            <img src="../images/az-touch-feather-back.jpg" class="img-fluid">
         </a>
 </div>
 
@@ -26,7 +24,7 @@ For this reason the [AZ-Touch MOD](#az-touch-mod) is recommended over the AZ-Tou
 
 [:material-cart-variant: AZ-Touch Feather][1]{target=_blank .md-button .md-button--primary }
 
-### Feather dev boards
+## Feather dev boards
 
 We do not offer pre-built binaries for the AZ-Touch Feather yet but these dev boards *should* work:
 
@@ -38,7 +36,7 @@ We do not offer pre-built binaries for the AZ-Touch Feather yet but these dev bo
 |  | [:material-cart-variant: Buy][9]{target=_blank .md-button .md-button--primary } | [:material-cart-variant: Buy][10]{target=_blank .md-button .md-button--primary }
 
 
-### Documentation
+## Documentation
 
 [:fontawesome-solid-file-pdf: Schematics][11]{target=_blank .md-button .md-button } &nbsp;
 [:fontawesome-regular-file-pdf: Datasheet][12]{target=_blank .md-button .md-button } &nbsp;
@@ -46,8 +44,6 @@ We do not offer pre-built binaries for the AZ-Touch Feather yet but these dev bo
 
 
 ## Backlight Control
-
-`GPIO15` of the ESP32 is used for PWM dimming of the AZ-Touch MOD display.
 
 `GPIO13` of the ESP32 is used for PWM dimming of the AZ-Touch Feather display.
 
@@ -57,15 +53,11 @@ We do not offer pre-built binaries for the AZ-Touch Feather yet but these dev bo
 Each AZ-Touch kit comes with a nice wall mounting enclosure for the 2.4&quot; or 2.8&quot; touchscreen.
 It enables you to mount your project permanently in your living room, corridor or other exposed places.
 
-The AZ-Touch MOD PCB comes partly assembled with only the pin headers requiring some minimal soldering skills.
 The AZ-Touch Feather contains loose components that you need to solder to the PCB yourself using the [Assembly Guide](#documentation_1).
 
 <div class="row justify-content-center">
-        <a href="../az-touch-mod-contents.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-6" data-title="AZ-Touch MOD Contents" data-footer="Copyright <a href='https://www.az-delivery.de/'>az-delivery.de,</a> All Rights Reserved - Used with permission">
-            <img src="../az-touch-mod-contents.jpg" class="img-fluid">
-        </a>
-        <a href="../az-touch-feather-contents.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-6" data-title="AZ-Touch Feather Contents" data-footer="Copyright <a href='https://www.az-delivery.de/'>az-delivery.de,</a> All Rights Reserved - Used with permission">
-            <img src="../az-touch-feather-contents.jpg" class="img-fluid">
+        <a href="../images/az-touch-feather-contents.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-6" data-title="AZ-Touch Feather Contents" data-footer="Copyright <a href='https://www.az-delivery.de/'>az-delivery.de,</a> All Rights Reserved - Used with permission">
+            <img src="../images/az-touch-feather-contents.jpg" class="img-fluid">
         </a>
 </div>
 
