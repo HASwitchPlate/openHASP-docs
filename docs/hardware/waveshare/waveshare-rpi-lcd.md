@@ -1,4 +1,8 @@
-<h1>Waveshare RPi LCD (Rev C)</h1>
+---
+title: Waveshare RPi LCD
+---
+
+# Waveshare RPi LCD (Rev C)
 
 <div class="row justify-content-center">
         <a href="../images/waveshare-rpi-40-front.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4" data-title="WaveShare 4.0&quot; RPi LCD (Rev C)" data-footer="Copyright © 2021, Waveshare, All Rights Reserved - Used with permission">
@@ -13,7 +17,7 @@
 
 The Waveshare RPi LCD (Rev C) display comes in 3.5" and 4.0" sizes:
 
-{!./waveshare-rpi-lcd-table.html!}
+{!hardware/waveshare/waveshare-rpi-lcd-table.html!}
 
 
 

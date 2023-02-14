@@ -31,11 +31,11 @@ td:nth-child(3n+2) { white-space: nowrap; }
 The ESP32 firmware includes these built-in fonts:
 
 - Unscii with font size 8pt
-- Roboto Condensed in font sizes 12, 16, 24 and 32pt
-- Roboto Condensed [TrueType font](#truetype), i.e. any size can be set as of _0.7.0_
+- :material-new-box:{ .tag-small } Roboto Condensed __only__ in these fixed font sizes 12, 16, 24 and 32pt
+- :material-new-box:{ .tag-small } Roboto Condensed [TrueType font](#truetype), i.e. any size can be set as of _0.7.0_
 
 The default font in pre-compiled binaries is Roboto-Condensed-Regular which includes these character sets:
-[Ascii](#ascii), [Cyrillic](#cyrillic), [Latin-1](#latin-1), [Latin-2](#latin-2), [Greek](#greek) *and* [Viernamese](#vietnamese).
+[Ascii](#ascii), [Cyrillic](#cyrillic):material-new-box:{ .tag-small }, [Latin-1](#latin-1), [Latin-2](#latin-2):material-new-box:{ .tag-small }, [Greek](#greek):material-new-box:{ .tag-small } *and* [Viernamese](#vietnamese):material-new-box:{ .tag-small }.
 It also includes 146 [MaterialDesign icons](#icons) listed below.
 
 The built-in fonts can be set by using the pointsize as parameter. For example:
@@ -58,7 +58,7 @@ Included are a range of arrows, navigation, climate, controls, devices, energy, 
 
 ## Custom Fonts
 
-### TrueType
+### TrueType :material-new-box:{ .tag-small }
 
 !!!Warning
     **You should only load TTF fonts on a device that has PSRAM**

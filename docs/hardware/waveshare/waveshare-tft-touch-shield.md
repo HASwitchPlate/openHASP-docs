@@ -42,7 +42,7 @@ There are 3 models of this TFT shield:
 # | {!assets/buy/waveshare-tft-touch-shield.md!}
 -->
 
-{!./waveshare-tft-touch-shield-table.html!}
+{!hardware/waveshare/waveshare-tft-touch-shield-table.html!}
 
 ## Backlight Control
 

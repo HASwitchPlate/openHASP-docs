@@ -39,7 +39,7 @@ There are two ways to create an object on the screen:
 
 ## Cheatsheet
 
-| obj       | Type     | Description                      | [Extra Parts :material-new-box:{ .tag-small }][18]
+| obj       | Type     | Description                      | [Extra Parts][18]
 |:----------|:---------|:---------------------------------|:-----------
 | btn       | Binary   | [Button](#button)                |
 | switch    | Toggle   | [Switch](#switch)                | indicator, knob
@@ -84,13 +84,13 @@ but only the `id` and `obj` properties are required to create an object:
 | hidden      | [bool][2]    | false   | Object is hidden
 | opacity     | [uint8][9]   | 255     | How much the the object is opaque
 | swipe       | [bool][2]    | false   | Page navigation using swipe gestures _(see below)_
-| action      | [string][10] | 0       | Command handled locally _(see below)_
+| action :material-new-box:{ .tag-small }     | [JSONobject][11] | null    | Command handled locally _(see below)_
 | click       | [bool][2]    | true    | Object is touch/clickable _(also see `enabled`)_
 | ext_click_h | [uint8][9]   | 0       | Extended horizontal clickable are on the left and right 
 | ext_click_v | [uint8][9]   | 0       | Extended vertical clickable are on the top and bottom
 | parentid    | [uint8][9]   | 0       | Set the object to be the child of another object.<br>`x` and `y` will be relative to the parent object. _Property inheritance can affect the appearance of the of the children (more info in [styling][12])_.
-| tag :material-new-box:{ .tag-small }        | [JSONobject][11] | n/a      | Arbitrary attribute data. Once set, it will be included in each event message. For advanced scenarios (more info in an [example][17]).
-| jsonl :material-new-box:{ .tag-small }      | [JSONobject][11] | n/a      | _Pseudo-property_ to set multiple properties of an existing object in one go with a JSON object.
+| tag         | [JSONobject][11] | n/a      | Arbitrary attribute data. Once set, it will be included in each event message. For advanced scenarios (more info in an [example][17]).
+| jsonl       | [JSONobject][11] | n/a      | _Pseudo-property_ to set multiple properties of an existing object in one go with a JSON object.
 
 !!! tip
     Further customizable properties can be found in [styling][12].
@@ -104,7 +104,7 @@ If the `page` parameter is not present, the object is placed on the same page as
 `"page":0` indicates that the object is visible on **all** pages. It can be used for example to specify a static menu bar.
 You can still hide the object on select pages if needed. Objects on page 0 appear on **top** of any objects on the underlying page.
 
-#### Actions  
+#### Actions :material-new-box:{ .tag-small }
 Action commands are supported only by _binary_ or _visual_ type of objects and they are performed locally on the plate. Actions can be of most any [command](../commands.md):
 
 `action` has the format of `{"action": {"<btn event>": "<command>"}`
@@ -529,7 +529,7 @@ Read further down to learn now to add tabs to the tabview.
 | text     | [string][10] | "Tab"   | The name of tab button
 
 Set the parent object (which `tabview` the tabs belong to) by referencing the `parentid` when creating the tab.
-To add other objects to these tabs, set the `parentid` when creating those objects to the _id of the tab_ you wamt them to appear on.
+To add other objects to these tabs, set the `parentid` when creating those objects to the _id of the tab_ you want them to appear on.
 
 ???+ example "Example `jsonl`"
     ```json linenums="1"
@@ -734,7 +734,7 @@ You can use it as a background shape for other objects by putting its jsonl line
    
 [1]: ../data-types/#colors
 [2]: ../data-types/#boolean
-[3]: ../../configuration/gpio/#groupid
+[3]: ../../setup/configuration/gpio/#groupid
 [4]: ../styling/#general
 [5]: ../styling/#image
 [6]: ../styling/#value

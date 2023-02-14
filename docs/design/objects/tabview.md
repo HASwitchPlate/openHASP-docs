@@ -33,7 +33,7 @@ Read further down to learn now to add tabs to the tabview.
 | text     | [string][10] | "Tab"   | The name of tab button
 
 Set the parent object (which `tabview` the tabs belong to) by referencing the `parentid` when creating the tab.
-To add other objects to these tabs, set the `parentid` when creating those objects to the _id of the tab_ you wamt them to appear on.
+To add other objects to these tabs, set the `parentid` when creating those objects to the _id of the tab_ you want them to appear on.
 
 ???+ example "Example `jsonl`"
     ```json linenums="1"

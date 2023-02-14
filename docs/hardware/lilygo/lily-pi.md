@@ -1,4 +1,4 @@
-# Lilygo Lily Pi
+# LilyGO® Lily Pi
 
 <div class="row justify-content-center">
         <a href="../images/lily-pi-front.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-6" data-title="LILYGO® Lily Pi" data-footer="">
@@ -70,7 +70,7 @@ The Lily Pi comes with the following information cards describing all the GPIOs 
 
 ## Flashing
 
-The Lilygo Lily Pi can easily be flashed over USB like any ESP32 development board.
+The LilyGO Lily Pi can easily be flashed over USB like any ESP32 development board.
 
 ## Dimensions
 

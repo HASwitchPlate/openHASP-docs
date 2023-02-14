@@ -51,10 +51,10 @@ You have the option to install the custom component using HACS or via manual dow
 
 First prepare your plates to be integrated with Home Assistant (follow steps in order):
 
-1. Connect your plates to the [network](../../installation/wifi-setup.md). Static DHCP or fixed IP is not needed as communication only happens through MQTT.
-2. Set the [GPIO configuration](../../configuration/gpio.md) corresponding to your hardware (important for them to be detected as entities), save and reboot.
+1. Connect your plates to the [network](../../setup/wifi-setup.md). Static DHCP or fixed IP is not needed as communication only happens through MQTT.
+2. Set the [GPIO configuration](../../setup/configuration/gpio.md) corresponding to your hardware (important for them to be detected as entities), save and reboot.
 3. Restart Home Assistant.
-4. Set the [MQTT server](../../configuration/mqtt.md) settings and make sure each plate has a unique node name, save and reboot.
+4. Set the [MQTT server](../../setup/configuration/mqtt.md) settings and make sure each plate has a unique node name, save and reboot.
 
 The component will automatically discover the plates and you will see them appearing in Lovelace UI's _Configuration > Devices & Services > openHASP_.
 
@@ -112,7 +112,7 @@ openhasp:
 :   The platform identifier. Required once in the configuration.
 
 **plate35:** *(Required)*    
-:   Your plate identifier slug. For each plate in your system, such an entry is required, has to be unique. It is generated automatically from the plate name you gave during discovery, which by default equals to the _HASP Node Name_ set in the plate's [configuration](../../configuration/mqtt.md).
+:   Your plate identifier slug. For each plate in your system, such an entry is required, has to be unique. It is generated automatically from the plate name you gave during discovery, which by default equals to the _HASP Node Name_ set in the plate's [configuration](../../setup/configuration/mqtt.md).
 
 <!--
 **path:** *(path) (Optional)*     
