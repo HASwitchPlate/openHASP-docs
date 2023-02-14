@@ -21,7 +21,7 @@
         <link rel="next" href="../sampl_conf/">
       
       <link rel="icon" href="../../../favicon.ico">
-      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.11">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.12">
     
     
       
@@ -740,7 +740,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../hardware/generic/ILI9341_IPS/" class="md-nav__link">
+      <a href="../../../ili9341_ips.md" class="md-nav__link">
         ILI9341 IPS
       </a>
     </li>
@@ -782,7 +782,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../hardware/generic/MSPxxxx/" class="md-nav__link">
+      <a href="../../../hardware/generic/msp-series/" class="md-nav__link">
         MSP Series (Red PCB)
       </a>
     </li>
@@ -1018,22 +1018,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../hardware/sunton/esp32-8048s050/" class="md-nav__link">
-        ESP32-8048S050
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../hardware/sunton/esp32-8048s070/" class="md-nav__link">
-        ESP32-8048S070
+      <a href="../../../hardware/sunton/esp32-8048s0xx/" class="md-nav__link">
+        ESP32-8048S0xx
       </a>
     </li>
   
@@ -1081,7 +1067,7 @@
   
     <li class="md-nav__item">
       <a href="../../../hardware/waveshare/waveshare-rpi-lcd/" class="md-nav__link">
-        Waveshare rpi lcd
+        Waveshare RPi LCD
       </a>
     </li>
   
@@ -1763,7 +1749,7 @@
   
     <li class="md-nav__item">
       <a href="../../../design/objects/linemeter/" class="md-nav__link">
-        Linemeter
+        Line Meter
       </a>
     </li>
   
@@ -2598,10 +2584,10 @@ A working MQTT add-on with discovery enabled is a prerequisite for using the ope
 <h2 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">~</a></h2>
 <p>First prepare your plates to be integrated with Home Assistant (follow steps in order):</p>
 <ol>
-<li>Connect your plates to the <a href="../../installation/wifi-setup.md">network</a>. Static DHCP or fixed IP is not needed as communication only happens through MQTT.</li>
-<li>Set the <a href="../../configuration/gpio.md">GPIO configuration</a> corresponding to your hardware (important for them to be detected as entities), save and reboot.</li>
+<li>Connect your plates to the <a href="../../../setup/wifi-setup/">network</a>. Static DHCP or fixed IP is not needed as communication only happens through MQTT.</li>
+<li>Set the <a href="../../../setup/configuration/gpio/">GPIO configuration</a> corresponding to your hardware (important for them to be detected as entities), save and reboot.</li>
 <li>Restart Home Assistant.</li>
-<li>Set the <a href="../../configuration/mqtt.md">MQTT server</a> settings and make sure each plate has a unique node name, save and reboot.</li>
+<li>Set the <a href="../../../setup/configuration/mqtt/">MQTT server</a> settings and make sure each plate has a unique node name, save and reboot.</li>
 </ol>
 <p>The component will automatically discover the plates and you will see them appearing in Lovelace UI's <em>Configuration &gt; Devices &amp; Services &gt; openHASP</em>.</p>
 <p>When Home Assistant detects your plate, you will have to give it a name. In the examples below both name and node name is <code>plate35</code>. <br />
@@ -2672,7 +2658,7 @@ There is nothing stopping you from using the full suite of template functions li
 <dt><strong>openhasp:</strong> <em>(Required)</em></dt>
 <dd>The platform identifier. Required once in the configuration.</dd>
 <dt><strong>plate35:</strong> <em>(Required)</em></dt>
-<dd>Your plate identifier slug. For each plate in your system, such an entry is required, has to be unique. It is generated automatically from the plate name you gave during discovery, which by default equals to the <em>HASP Node Name</em> set in the plate's <a href="../../configuration/mqtt.md">configuration</a>.</dd>
+<dd>Your plate identifier slug. For each plate in your system, such an entry is required, has to be unique. It is generated automatically from the plate name you gave during discovery, which by default equals to the <em>HASP Node Name</em> set in the plate's <a href="../../../setup/configuration/mqtt/">configuration</a>.</dd>
 </dl>
 <dl>
 <dt><strong>objects:</strong> <em>(Optional)</em></dt>
@@ -2860,7 +2846,7 @@ With the <code>entry_id</code> found in <em>.storage/core.config_entries</em> fi
   <small>
     
       Last update:
-      2023-02-07
+      2023-02-14
     
   </small>
 </div>
@@ -2927,7 +2913,7 @@ With the <code>entry_id</code> found in <em>.storage/core.config_entries</em> fi
     <script id="__config" type="application/json">{"base": "../../..", "features": ["content.action.edit", "content.action.view", "navigation.instant", "navigation.tracking", "navigation.tabs", "search.suggest", "search.highlight", "navigation.top"], "search": "../../../assets/javascripts/workers/search.db81ec45.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"default": "0.6.3", "provider": "mike"}}</script>
     
      
-      <script src="../../../assets/javascripts/bundle.6df46069.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.4b2c34cd.min.js"></script>
       
     
 <!-- <script src="../../../js/youtube.js"></script> -->

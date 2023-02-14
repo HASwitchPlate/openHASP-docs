@@ -21,7 +21,7 @@
         <link rel="next" href="arc/">
       
       <link rel="icon" href="../../favicon.ico">
-      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.11">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.12">
     
     
       
@@ -740,7 +740,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../hardware/generic/ILI9341_IPS/" class="md-nav__link">
+      <a href="../../ili9341_ips.md" class="md-nav__link">
         ILI9341 IPS
       </a>
     </li>
@@ -782,7 +782,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../hardware/generic/MSPxxxx/" class="md-nav__link">
+      <a href="../../hardware/generic/msp-series/" class="md-nav__link">
         MSP Series (Red PCB)
       </a>
     </li>
@@ -1018,22 +1018,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../hardware/sunton/esp32-8048s050/" class="md-nav__link">
-        ESP32-8048S050
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../hardware/sunton/esp32-8048s070/" class="md-nav__link">
-        ESP32-8048S070
+      <a href="../../hardware/sunton/esp32-8048s0xx/" class="md-nav__link">
+        ESP32-8048S0xx
       </a>
     </li>
   
@@ -1081,7 +1067,7 @@
   
     <li class="md-nav__item">
       <a href="../../hardware/waveshare/waveshare-rpi-lcd/" class="md-nav__link">
-        Waveshare rpi lcd
+        Waveshare RPi LCD
       </a>
     </li>
   
@@ -1989,7 +1975,7 @@
   
     <li class="md-nav__item">
       <a href="linemeter/" class="md-nav__link">
-        Linemeter
+        Line Meter
       </a>
     </li>
   
@@ -2829,7 +2815,7 @@ tbody tr:nth-child(even) {
 <th align="left">obj</th>
 <th align="left">Type</th>
 <th align="left">Description</th>
-<th align="left"><a href="../styling/#parts">Extra Parts <span class="twemoji tag-small"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 4c1.11 0 2 .89 2 2v12c0 1.11-.89 2-2 2H4c-1.11 0-2-.89-2-2V6c0-1.11.89-2 2-2h16M8.5 15V9H7.25v3.5L4.75 9H3.5v6h1.25v-3.5L7.3 15h1.2m5-4.74V9h-4v6h4v-1.25H11v-1.11h2.5v-1.26H11v-1.12h2.5m7 3.74V9h-1.25v4.5h-1.12V10h-1.25v3.5h-1.13V9H14.5v5a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1Z"/></svg></span></a></th>
+<th align="left"><a href="../styling/#parts">Extra Parts</a></th>
 </tr>
 </thead>
 <tbody>
@@ -2997,7 +2983,7 @@ but only the <code>id</code> and <code>obj</code> properties are required to cre
 <td align="left">groupid</td>
 <td align="center">0..15</td>
 <td align="center">0 (none)</td>
-<td align="left">ID of the <a href="../../configuration/gpio/#groupid">GPIO group</a> the object belongs to</td>
+<td align="left">ID of the <a href="../../setup/configuration/gpio/#groupid">GPIO group</a> the object belongs to</td>
 </tr>
 <tr>
 <td align="left">x</td>
@@ -3048,9 +3034,9 @@ but only the <code>id</code> and <code>obj</code> properties are required to cre
 <td align="left">Page navigation using swipe gestures <em>(see below)</em></td>
 </tr>
 <tr>
-<td align="left">action</td>
-<td align="center"><a href="../data-types/#string">string</a></td>
-<td align="center">0</td>
+<td align="left">action <span class="twemoji tag-small"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 4c1.11 0 2 .89 2 2v12c0 1.11-.89 2-2 2H4c-1.11 0-2-.89-2-2V6c0-1.11.89-2 2-2h16M8.5 15V9H7.25v3.5L4.75 9H3.5v6h1.25v-3.5L7.3 15h1.2m5-4.74V9h-4v6h4v-1.25H11v-1.11h2.5v-1.26H11v-1.12h2.5m7 3.74V9h-1.25v4.5h-1.12V10h-1.25v3.5h-1.13V9H14.5v5a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1Z"/></svg></span></td>
+<td align="center"><a href="../data-types/#json-object">JSONobject</a></td>
+<td align="center">null</td>
 <td align="left">Command handled locally <em>(see below)</em></td>
 </tr>
 <tr>
@@ -3078,13 +3064,13 @@ but only the <code>id</code> and <code>obj</code> properties are required to cre
 <td align="left">Set the object to be the child of another object.<br><code>x</code> and <code>y</code> will be relative to the parent object. <em>Property inheritance can affect the appearance of the of the children (more info in <a href="../styling/">styling</a>)</em>.</td>
 </tr>
 <tr>
-<td align="left">tag <span class="twemoji tag-small"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 4c1.11 0 2 .89 2 2v12c0 1.11-.89 2-2 2H4c-1.11 0-2-.89-2-2V6c0-1.11.89-2 2-2h16M8.5 15V9H7.25v3.5L4.75 9H3.5v6h1.25v-3.5L7.3 15h1.2m5-4.74V9h-4v6h4v-1.25H11v-1.11h2.5v-1.26H11v-1.12h2.5m7 3.74V9h-1.25v4.5h-1.12V10h-1.25v3.5h-1.13V9H14.5v5a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1Z"/></svg></span></td>
+<td align="left">tag</td>
 <td align="center"><a href="../data-types/#json-object">JSONobject</a></td>
 <td align="center">n/a</td>
 <td align="left">Arbitrary attribute data. Once set, it will be included in each event message. For advanced scenarios (more info in an <a href="../../integrations/home-assistant/sampl_conf/#using-tags">example</a>).</td>
 </tr>
 <tr>
-<td align="left">jsonl <span class="twemoji tag-small"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 4c1.11 0 2 .89 2 2v12c0 1.11-.89 2-2 2H4c-1.11 0-2-.89-2-2V6c0-1.11.89-2 2-2h16M8.5 15V9H7.25v3.5L4.75 9H3.5v6h1.25v-3.5L7.3 15h1.2m5-4.74V9h-4v6h4v-1.25H11v-1.11h2.5v-1.26H11v-1.12h2.5m7 3.74V9h-1.25v4.5h-1.12V10h-1.25v3.5h-1.13V9H14.5v5a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1Z"/></svg></span></td>
+<td align="left">jsonl</td>
 <td align="center"><a href="../data-types/#json-object">JSONobject</a></td>
 <td align="center">n/a</td>
 <td align="left"><em>Pseudo-property</em> to set multiple properties of an existing object in one go with a JSON object.</td>
@@ -3101,7 +3087,7 @@ You can have a maximum of 254 ids on each page. You don't have to use them in as
 <p>If the <code>page</code> parameter is not present, the object is placed on the same page as the <em>previous object</em>. If <code>page</code> is not specified for the first object either, the <em>current page</em> being displayed is used.</p>
 <p><code>"page":0</code> indicates that the object is visible on <strong>all</strong> pages. It can be used for example to specify a static menu bar.
 You can still hide the object on select pages if needed. Objects on page 0 appear on <strong>top</strong> of any objects on the underlying page.</p>
-<h4 id="actions">Actions<a class="headerlink" href="#actions" title="Permanent link">~</a></h4>
+<h4 id="actions">Actions <span class="twemoji tag-small"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 4c1.11 0 2 .89 2 2v12c0 1.11-.89 2-2 2H4c-1.11 0-2-.89-2-2V6c0-1.11.89-2 2-2h16M8.5 15V9H7.25v3.5L4.75 9H3.5v6h1.25v-3.5L7.3 15h1.2m5-4.74V9h-4v6h4v-1.25H11v-1.11h2.5v-1.26H11v-1.12h2.5m7 3.74V9h-1.25v4.5h-1.12V10h-1.25v3.5h-1.13V9H14.5v5a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1Z"/></svg></span><a class="headerlink" href="#actions" title="Permanent link">~</a></h4>
 <p>Action commands are supported only by <em>binary</em> or <em>visual</em> type of objects and they are performed locally on the plate. Actions can be of most any <a href="../commands.md">command</a>:</p>
 <p><code>action</code> has the format of <code>{"action": {"&lt;btn event&gt;": "&lt;command&gt;"}</code></p>
 <p><strong>*btn events:</strong> are found in <a href="#events">events</a>. examples are <code>up</code>, <code>down</code> etc.</p>
@@ -3984,7 +3970,7 @@ To adjust the text size of the tab names, use the <code>text_font40</code> <a hr
 </tbody>
 </table>
 <p>Set the parent object (which <code>tabview</code> the tabs belong to) by referencing the <code>parentid</code> when creating the tab.
-To add other objects to these tabs, set the <code>parentid</code> when creating those objects to the <em>id of the tab</em> you wamt them to appear on.</p>
+To add other objects to these tabs, set the <code>parentid</code> when creating those objects to the <em>id of the tab</em> you want them to appear on.</p>
 <details class="example" open="open">
 <summary>Example <code>jsonl</code></summary>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
@@ -4403,7 +4389,7 @@ The pop-up is centered on the screen.</p>
   <small>
     
       Last update:
-      2023-02-07
+      2023-02-14
     
   </small>
 </div>
@@ -4470,7 +4456,7 @@ The pop-up is centered on the screen.</p>
     <script id="__config" type="application/json">{"base": "../..", "features": ["content.action.edit", "content.action.view", "navigation.instant", "navigation.tracking", "navigation.tabs", "search.suggest", "search.highlight", "navigation.top"], "search": "../../assets/javascripts/workers/search.db81ec45.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"default": "0.6.3", "provider": "mike"}}</script>
     
      
-      <script src="../../assets/javascripts/bundle.6df46069.min.js"></script>
+      <script src="../../assets/javascripts/bundle.4b2c34cd.min.js"></script>
       
     
 <!-- <script src="../../js/youtube.js"></script> -->

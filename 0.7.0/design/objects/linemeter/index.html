@@ -21,11 +21,11 @@
         <link rel="next" href="../msgbox/">
       
       <link rel="icon" href="../../../favicon.ico">
-      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.11">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.12">
     
     
       
-        <title>Linemeter - openHASP</title>
+        <title>Line Meter - openHASP</title>
       
     
      
@@ -103,6 +103,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#line-meter" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -135,7 +140,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Linemeter
+              Line Meter
             
           </span>
         </div>
@@ -735,7 +740,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../hardware/generic/ILI9341_IPS/" class="md-nav__link">
+      <a href="../../../ili9341_ips.md" class="md-nav__link">
         ILI9341 IPS
       </a>
     </li>
@@ -777,7 +782,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../hardware/generic/MSPxxxx/" class="md-nav__link">
+      <a href="../../../hardware/generic/msp-series/" class="md-nav__link">
         MSP Series (Red PCB)
       </a>
     </li>
@@ -1013,22 +1018,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../hardware/sunton/esp32-8048s050/" class="md-nav__link">
-        ESP32-8048S050
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../hardware/sunton/esp32-8048s070/" class="md-nav__link">
-        ESP32-8048S070
+      <a href="../../../hardware/sunton/esp32-8048s0xx/" class="md-nav__link">
+        ESP32-8048S0xx
       </a>
     </li>
   
@@ -1076,7 +1067,7 @@
   
     <li class="md-nav__item">
       <a href="../../../hardware/waveshare/waveshare-rpi-lcd/" class="md-nav__link">
-        Waveshare rpi lcd
+        Waveshare RPi LCD
       </a>
     </li>
   
@@ -1767,9 +1758,11 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Linemeter
+        Line Meter
       </a>
       
     </li>
@@ -2336,6 +2329,8 @@
   
   
   
+    
+  
   
 </nav>
                   </div>
@@ -2367,14 +2362,80 @@
 
 
 
-
+<h1 id="line-meter">Line Meter<a class="headerlink" href="#line-meter" title="Permanent link">~</a></h1>
+<p><strong>obj:<code>linemeter</code></strong></p>
+<p><img alt="lv_lmeter" src="../images/lv_ex_linemeter_1.png" /></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>min</td>
+<td><a href="../../data-types/#integer">int16</a></td>
+<td>0</td>
+<td>minimum value of the indicator</td>
+</tr>
+<tr>
+<td>max</td>
+<td><a href="../../data-types/#integer">int16</a></td>
+<td>100</td>
+<td>maximum value of the indicator</td>
+</tr>
+<tr>
+<td>val</td>
+<td><a href="../../data-types/#integer">int16</a></td>
+<td>0</td>
+<td>current value of the indicator</td>
+</tr>
+<tr>
+<td>angle</td>
+<td>0-360</td>
+<td>240</td>
+<td>angle between start and end of the scale</td>
+</tr>
+<tr>
+<td>line_count</td>
+<td><a href="../../data-types/#integer">uint16</a></td>
+<td>31</td>
+<td>tick count of the scale</td>
+</tr>
+<tr>
+<td>rotation</td>
+<td>0-360</td>
+<td>0</td>
+<td>offset for the scale angles to rotate it</td>
+</tr>
+<tr>
+<td>type</td>
+<td>0-1</td>
+<td>0</td>
+<td><code>0</code> = indicator lines are activated clock-wise<br><code>1</code> = indicator lines are activated counter-clock-wise</td>
+</tr>
+</tbody>
+</table>
+<p>Use <a href="../../styling/#line">line</a> and <a href="../../styling/#scale">scale</a> properties to customize.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code>min</code>, <code>max</code> and <code>val</code> also support negative values.</p>
+</div>
+<details class="example" open="open">
+<summary>Example <code>jsonl</code></summary>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">{</span><span class="nt">&quot;page&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">12</span><span class="p">,</span><span class="nt">&quot;obj&quot;</span><span class="p">:</span><span class="s2">&quot;linemeter&quot;</span><span class="p">,</span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="mi">20</span><span class="p">,</span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="mi">70</span><span class="p">,</span><span class="nt">&quot;w&quot;</span><span class="p">:</span><span class="mi">200</span><span class="p">,</span><span class="nt">&quot;h&quot;</span><span class="p">:</span><span class="mi">200</span><span class="p">,</span><span class="nt">&quot;value_str&quot;</span><span class="p">:</span><span class="s2">&quot;Temp&quot;</span><span class="p">,</span><span class="nt">&quot;val&quot;</span><span class="p">:</span><span class="mi">75</span><span class="p">,</span><span class="nt">&quot;line_count&quot;</span><span class="p">:</span><span class="mi">35</span><span class="p">,</span><span class="nt">&quot;line_rounded&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+</details>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      2023-02-07
+      2023-02-14
     
   </small>
 </div>
@@ -2441,7 +2502,7 @@
     <script id="__config" type="application/json">{"base": "../../..", "features": ["content.action.edit", "content.action.view", "navigation.instant", "navigation.tracking", "navigation.tabs", "search.suggest", "search.highlight", "navigation.top"], "search": "../../../assets/javascripts/workers/search.db81ec45.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"default": "0.6.3", "provider": "mike"}}</script>
     
      
-      <script src="../../../assets/javascripts/bundle.6df46069.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.4b2c34cd.min.js"></script>
       
     
 <!-- <script src="../../../js/youtube.js"></script> -->
