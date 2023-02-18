@@ -1,12 +1,12 @@
-# SC01 Plus
+# WT32-SC01 Plus
 
 <div class="row justify-content-center">
-        <a href="../sc01-plus-front.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-6" data-title="SC01 Plus Front" data-footer="">
-            <img src="../sc01-plus-front.jpg" class="img-fluid">
+        <a href="../images/sc01-plus-front.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-6" data-title="SC01 Plus Front" data-footer="">
+            <img src="../images/sc01-plus-front.jpg" class="img-fluid">
         </a>
 
-        <a href="../sc01-plus-back.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-6" data-title="SC01 Plus Back" data-footer="">
-            <img src="../sc01-plus-back.jpg" class="img-fluid">
+        <a href="../images/sc01-plus-back.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-6" data-title="SC01 Plus Back" data-footer="">
+            <img src="../images/sc01-plus-back.jpg" class="img-fluid">
         </a>
 </div>
 
@@ -26,6 +26,13 @@ On the back there are some ports with GPIOs so you can expand the capabilities a
 | Sleek design           |
 
 The development board is powered via USB Type-C.
+
+## Video
+
+<div class="embed-responsive embed-responsive-16by9" style="max-width:560px; margin:auto;">
+    <iframe title="YouTube video player" src="https://www.youtube.com/embed/6_-QRzNybXs?rel=0&controls=1" class="embed-responsive-item" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+    </iframe>
+</div>
 
 
 [1]: https://lcsc.com/product-detail/Development-Boards-Development-Kits_Wireless-tag-WT32-SC01_C555472.html

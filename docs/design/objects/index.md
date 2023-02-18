@@ -157,7 +157,7 @@ Example commands:
 p1b5.delete
 p1b3.to_front
 ```
-<H2>Object Types</H2>
+## Object Types
 
 Each object type is an ID that indicates which object type that line represents.
 Besides the common properties listed above, each object type can have specific properties.

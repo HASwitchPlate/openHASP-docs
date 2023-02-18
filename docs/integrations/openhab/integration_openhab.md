@@ -1,10 +1,12 @@
 ---
-title: openHAB
+title: openHAB Integration
+hide:
+  - toc
 ---
 
-# Installation and Example
+# openHAB Integration
 
-<h2>Page Layout</h2>
+## Page Layout
 
 ![Screenshot](../../assets/images/screenshots/demo_jaffa1.png)
 ![Screenshot](../../assets/images/screenshots/demo_jaffa2.png)

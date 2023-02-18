@@ -1,6 +1,6 @@
 <!--
 
-<h1>Installation</h1>
+# Installation
 
 ## Download the firmware
 

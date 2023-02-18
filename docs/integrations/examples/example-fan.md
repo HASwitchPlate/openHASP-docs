@@ -1,11 +1,16 @@
-<h1>Animated fan status</h1>
+---
+hide:
+  - toc
+---
 
-<h2>Layout</h2>
+# Animated fan status
+
+## Layout
 
 ![Animated screenshot](../../assets/images/screenshots/fan-anim.gif)
 
 
-<h2>Code</h2>
+## Code
 
 To add an openHASP plate to your installation with a sample design to control and reflect the status of a fan:
 
