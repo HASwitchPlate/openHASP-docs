@@ -12,27 +12,27 @@
         <meta name="author" content="Francis Van Roie">
       
       
-        <link rel="canonical" href="https://www.openhasp.com/0.7.0/0.7.0/hardware/generic/MHS4001/">
+        <link rel="canonical" href="https://www.openhasp.com/0.7.0/0.7.0/hardware/generic/ili9341-ips/">
       
       
         <link rel="prev" href="../../dustin-watts/freetouchdeck/">
       
       
-        <link rel="next" href="../MRB3511/">
+        <link rel="next" href="../mhs4001/">
       
       <link rel="icon" href="../../../favicon.ico">
-      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.12">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.13">
     
     
       
-        <title>MHS4001 - openHASP</title>
+        <title>ILI9341 IPS - openHASP</title>
       
     
      
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.0d440cfe.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ffa9267a.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.2505c338.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.a0c5b2b5.min.css">
       
       
 
@@ -104,7 +104,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#pin-configuration" class="md-skip">
+        <a href="#ili9341-ips-panel" class="md-skip">
           Skip to content
         </a>
       
@@ -113,7 +113,7 @@
       
     </div>
     
-      <div data-md-component="outdated" hidden>
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
         
       </div>
     
@@ -140,7 +140,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              MHS4001
+              ILI9341 IPS
             
           </span>
         </div>
@@ -209,7 +209,7 @@
         <a href="https://github.com/HASwitchPlate/openHASP" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
   </div>
   <div class="md-source__repository">
     HASwitchPlate/openHASP
@@ -228,7 +228,7 @@
           
             
 <nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
-  <div class="md-tabs__inner md-grid">
+  <div class="md-grid">
     <ul class="md-tabs__list">
       
         
@@ -376,7 +376,7 @@
         <a href="https://github.com/HASwitchPlate/openHASP" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
   </div>
   <div class="md-source__repository">
     HASwitchPlate/openHASP
@@ -742,20 +742,6 @@
               
   
   
-  
-    <li class="md-nav__item">
-      <a href="../../../ili9341_ips.md" class="md-nav__link">
-        ILI9341 IPS
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
     
   
   
@@ -764,14 +750,16 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          MHS4001
+          ILI9341 IPS
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        MHS4001
+        ILI9341 IPS
       </a>
       
         
@@ -779,6 +767,8 @@
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
+  
+    
   
   
     <label class="md-nav__title" for="__toc">
@@ -795,15 +785,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#lcd-configuration" class="md-nav__link">
-    LCD Configuration
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#hasp-build_flags" class="md-nav__link">
-    HASP build_flags
+  <a href="#custom-build" class="md-nav__link">
+    Custom build
   </a>
   
 </li>
@@ -823,7 +806,21 @@
   
   
     <li class="md-nav__item">
-      <a href="../MRB3511/" class="md-nav__link">
+      <a href="../mhs4001/" class="md-nav__link">
+        MHS4001
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mrb3511/" class="md-nav__link">
         MRB3511
       </a>
     </li>
@@ -1183,20 +1180,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../wireless-tag/wireless-tag/" class="md-nav__link">
-        Wireless-Tag
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../wireless-tag/wt-86-32-3zw1/" class="md-nav__link">
         WT-86-32-3ZW1
       </a>
@@ -1212,7 +1195,7 @@
   
     <li class="md-nav__item">
       <a href="../../wireless-tag/wt32-sc01-plus/" class="md-nav__link">
-        SC01 Plus
+        WT32-SC01 Plus
       </a>
     </li>
   
@@ -2086,7 +2069,7 @@
   
     <li class="md-nav__item">
       <a href="../../../integrations/openhab/integration_openhab/" class="md-nav__link">
-        openHAB
+        openHAB Integration
       </a>
     </li>
   
@@ -2370,6 +2353,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -2385,15 +2370,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#lcd-configuration" class="md-nav__link">
-    LCD Configuration
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#hasp-build_flags" class="md-nav__link">
-    HASP build_flags
+  <a href="#custom-build" class="md-nav__link">
+    Custom build
   </a>
   
 </li>
@@ -2413,7 +2391,7 @@
                   
 
   
-    <a href="https://github.com/HASwitchPlate/openHASP-docs/edit/0.7.0/docs/hardware/generic/MHS4001.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/HASwitchPlate/openHASP-docs/edit/0.7.0/docs/hardware/generic/ili9341-ips.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"/></svg>
     </a>
@@ -2422,26 +2400,30 @@
     
       
     
-    <a href="https://github.com/HASwitchPlate/openHASP-docs/raw/0.7.0/docs/hardware/generic/MHS4001.md" title="View source of this page" class="md-content__button md-icon">
+    <a href="https://github.com/HASwitchPlate/openHASP-docs/raw/0.7.0/docs/hardware/generic/ili9341-ips.md" title="View source of this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.15 8.15 0 0 1-1.23-2Z"/></svg>
     </a>
   
 
 
+<h1 id="ili9341-ips-panel">ILI9341 IPS Panel<a class="headerlink" href="#ili9341-ips-panel" title="Permanent link">~</a></h1>
+<div class="row justify-content-center">
+        <a href="../images/ili9341_ips.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-6" data-title="2.4&quot; ILI9341 IPS Panel" data-footer="">
+            <img src="../images/ili9341_ips.jpg" class="img-fluid">
+        </a>
+</div>
 
-  <h1>MHS4001</h1>
-
-<h1>MHS4001</h1>
-
-<p>6 GPIOs are required to drive the SPI display. One additional GPIO is needed for the XPT2046 touch sensor. Including the Vcc and Gnd pins, a total of 12 connections need to be made to the MCU:</p>
+<p>A 240x320 IPS TFT display with an ILI9341 controller and XPT2046 touch controller.</p>
+<p>Improvement over TN versions of the display with amazing view angles.</p>
+<p><a class="md-button md-button--primary" href="https://www.aliexpress.com/item/1005002796624808.html" target="_blank"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 20c0 1.11-.89 2-2 2a2 2 0 0 1-2-2c0-1.11.89-2 2-2a2 2 0 0 1 2 2M7 18c-1.11 0-2 .89-2 2a2 2 0 0 0 2 2c1.11 0 2-.89 2-2s-.89-2-2-2m.2-3.37-.03.12c0 .14.11.25.25.25H19v2H7a2 2 0 0 1-2-2c0-.35.09-.68.24-.96l1.36-2.45L3 4H1V2h3.27l.94 2H20c.55 0 1 .45 1 1 0 .17-.05.34-.12.5l-3.58 6.47c-.34.61-1 1.03-1.75 1.03H8.1l-.9 1.63M8.5 11H10V9H7.56l.94 2M11 9v2h3V9h-3m3-1V6h-3v2h3m3.11 1H15v2h1l1.11-2m1.67-3H15v2h2.67l1.11-2M6.14 6l.94 2H10V6H6.14Z"/></svg></span> Buy</a></p>
 <h2 id="pin-configuration">Pin Configuration<a class="headerlink" href="#pin-configuration" title="Permanent link">~</a></h2>
 <table>
 <thead>
 <tr>
 <th>Pin</th>
 <th>Function</th>
-<th>ESP32 Pin</th>
+<th align="center">ESP32 Pin</th>
 <th>Config Name</th>
 <th>Display Pin</th>
 </tr>
@@ -2449,143 +2431,87 @@
 <tbody>
 <tr>
 <td>1</td>
-<td>Module Power 3.3V</td>
-<td>3.3V</td>
+<td>Module Ground</td>
+<td align="center">GND</td>
 <td></td>
-<td>3.3V</td>
+<td>GND</td>
 </tr>
 <tr>
 <td>2</td>
-<td>Module Power 5v</td>
-<td>5V</td>
+<td>Module Power 3.3v</td>
+<td align="center">3V3</td>
 <td></td>
-<td>5V</td>
+<td>VCC</td>
 </tr>
 <tr>
 <td>3</td>
-<td>Not connected</td>
-<td></td>
-<td></td>
-<td>NC</td>
+<td>SPI Clock</td>
+<td align="center">GPIO18</td>
+<td>TFT_SCLK</td>
+<td>CLK</td>
 </tr>
 <tr>
 <td>4</td>
-<td><s>LED Backlight PWM <em>5V</em></s></td>
-<td></td>
-<td><s>TFT_BCKL</s></td>
-<td>5V</td>
+<td>Data Input</td>
+<td align="center">GPIO23</td>
+<td>TFT_MOSI</td>
+<td>MOSI</td>
 </tr>
 <tr>
-<td>5-10</td>
-<td>Not connected</td>
-<td></td>
-<td></td>
-<td>NC</td>
+<td>5</td>
+<td>LCD Reset line</td>
+<td align="center">GPIO15</td>
+<td>TFT_RST</td>
+<td>RES</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Data Command control</td>
+<td align="center">GPIO5</td>
+<td>TFT_DC</td>
+<td>DC</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Backlight</td>
+<td align="center">GPIO21</td>
+<td>TFT_BCKL</td>
+<td>BLK</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Data Output</td>
+<td align="center">GPIO19</td>
+<td>TFT_MISO</td>
+<td>MISO</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Chip Select</td>
+<td align="center">GPIO26</td>
+<td>TFT_CS</td>
+<td>CS1</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Touch Select</td>
+<td align="center">GPIO17</td>
+<td>TOUCH_CS</td>
+<td>CS2</td>
 </tr>
 <tr>
 <td>11</td>
 <td>Touch Interrupt</td>
-<td>NC</td>
-<td></td>
-<td>TP_IRQ</td>
-</tr>
-<tr>
-<td>12-13</td>
-<td>Not connected</td>
-<td></td>
-<td></td>
-<td>NC</td>
-</tr>
-<tr>
-<td>14</td>
-<td>Module Ground</td>
-<td>GND</td>
-<td></td>
-<td>GND</td>
-</tr>
-<tr>
-<td>15-16</td>
-<td>Not connected</td>
-<td></td>
-<td></td>
-<td>NC</td>
-</tr>
-<tr>
-<td>17</td>
-<td>Module Power</td>
-<td>3.3V</td>
-<td></td>
-<td>3.3V</td>
-</tr>
-<tr>
-<td>18</td>
-<td>Data Command control pin</td>
-<td>GPIO4</td>
-<td>TFT_DC</td>
-<td>LCD_RS</td>
-</tr>
-<tr>
-<td>19</td>
-<td>SPI Master Out Slave In</td>
-<td>GPIO23</td>
-<td>TFT_MOSI</td>
-<td>LCD/SI/TP_SI</td>
-</tr>
-<tr>
-<td>20</td>
-<td>Not connected</td>
-<td></td>
-<td></td>
-<td>NC</td>
-</tr>
-<tr>
-<td>21</td>
-<td>Touch Panel Slave Out</td>
-<td>GPIO19</td>
-<td>TFT_MISO</td>
-<td>TP_SO</td>
-</tr>
-<tr>
-<td>22</td>
-<td>LCD Reset pin</td>
-<td>GPIO32</td>
-<td>TFT_RST</td>
-<td>RST</td>
-</tr>
-<tr>
-<td>23</td>
-<td>SPI Clock</td>
-<td>GPIO18</td>
-<td>TFT_SCLK</td>
-<td>LCD_SCK/TP_SCK</td>
-</tr>
-<tr>
-<td>24</td>
-<td>Chip select control pin</td>
-<td>GPIO15</td>
-<td>TFT_CS</td>
-<td>LCD_CS</td>
-</tr>
-<tr>
-<td>25</td>
-<td>Module Ground</td>
-<td>GND</td>
-<td></td>
-<td>GND</td>
-</tr>
-<tr>
-<td>26</td>
-<td>Touch Chip Select</td>
-<td>GPIO22</td>
-<td>TOUCH_CS</td>
-<td>TP_CS</td>
+<td align="center">N/C</td>
+<td>TOUCH_IRQ</td>
+<td>PEN</td>
 </tr>
 </tbody>
 </table>
-<p><s>By default, pin 4 is normally connected to 5V. This turns the display backlight LED on all time. In order to control the backlight you can drive pin 4 of the display using a PNP transistor. The electronics circuit needed is not part of this diagram.</s></p>
 <p>SPI MISO, MOSI and SCLK are shared between the touch controller and the LCD controller.</p>
-<h2 id="lcd-configuration">LCD Configuration<a class="headerlink" href="#lcd-configuration" title="Permanent link">~</a></h2>
-<p>The <code>lcd_config.ini</code> file specifies the different properties of the display, except for the actual pin configuration:</p>
+<h2 id="custom-build">Custom build<a class="headerlink" href="#custom-build" title="Permanent link">~</a></h2>
+<p>Define a custom environment in <code>platformio_override.ini</code> and add a new <code>esp32_ili9341_spi</code> entry under <code>extra_default_envs =</code> </p>
+<p>If you've wired pins differently, change the values below.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -2596,39 +2522,87 @@
 <span class="normal"> 8</span>
 <span class="normal"> 9</span>
 <span class="normal">10</span>
-<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="na">raspberrypi</span><span class="w"> </span><span class="o">=</span>
-<span class="w">    </span><span class="na">-D RPI_DISPLAY_TYPE</span><span class="o">=</span><span class="s">1</span>
-<span class="w">    </span><span class="na">-D ST7796_DRIVER</span><span class="o">=</span><span class="s">1</span>
-<span class="w">    </span><span class="na">-D TFT_WIDTH</span><span class="o">=</span><span class="s">320</span>
-<span class="w">    </span><span class="na">-D TFT_HEIGHT</span><span class="o">=</span><span class="s">480</span>
-<span class="w">    </span><span class="na">-D TFT_ROTATION</span><span class="o">=</span><span class="s">0</span><span class="w"> </span><span class="c1">; 0=0, 1=90, 2=180 or 3=270 degree</span>
-<span class="w">    </span><span class="na">-D SPI_FREQUENCY</span><span class="o">=</span><span class="s">80000000</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1">;-- ILI9341 SPI version ------------------------</span>
+<span class="k">[env:esp32_ili9341_spi]</span>
+<span class="na">platform</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">espressif32</span>
+<span class="na">platform_packages</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">framework-arduinoespressif32</span>
+<span class="na">framework</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">arduino</span>
+<span class="na">board</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">esp32dev</span>
+<span class="na">monitor_port</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">COM4</span>
+<span class="na">upload_port</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">${env:esp32_ili9341_spi.monitor_port}</span>
+<span class="na">monitor_filters</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">esp32_exception_decoder</span>
+<span class="na">board_build.partitions</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">user_setups/esp32_partition_app1300k_spiffs1216k.csv</span>
+
+<span class="na">build_flags</span><span class="w"> </span><span class="o">=</span>
+<span class="w">    </span><span class="na">${env.build_flags}</span>
+<span class="w">    </span><span class="na">${esp32.build_flags}</span>
+<span class="w">    </span><span class="na">-D ILI9341_DRIVER</span><span class="o">=</span><span class="s">1</span>
+<span class="w">    </span><span class="na">-D TFT_WIDTH</span><span class="o">=</span><span class="s">240</span>
+<span class="w">    </span><span class="na">-D TFT_HEIGHT</span><span class="o">=</span><span class="s">320</span>
+<span class="w">    </span><span class="na">-D TFT_ROTATION</span><span class="o">=</span><span class="s">0</span><span class="w"> </span><span class="c1">; see TFT_ROTATION values</span>
+<span class="w">    </span><span class="na">-D INVERT_COLORS</span><span class="o">=</span><span class="s">1</span><span class="w">  </span><span class="c1">; to fix colors</span>
+<span class="w">    </span><span class="na">-D SPI_FREQUENCY</span><span class="o">=</span><span class="s">60000000</span>
 <span class="w">    </span><span class="na">-D SPI_TOUCH_FREQUENCY</span><span class="o">=</span><span class="s">2500000</span>
+<span class="w">    </span><span class="na">-D SPI_READ_FREQUENCY</span><span class="o">=</span><span class="s">20000000</span>
 <span class="w">    </span><span class="na">-D USER_SETUP_LOADED</span><span class="o">=</span><span class="s">1</span>
-<span class="w">    </span><span class="na">-D TOUCH_DRIVER</span><span class="o">=</span><span class="s">2046</span><span class="w"> </span><span class="c1">; XPT2046 Resistive touch panel driver</span>
+<span class="w">    </span><span class="na">-D TOUCH_DRIVER</span><span class="o">=</span><span class="s">2046</span><span class="w">     </span><span class="c1">; XPT2046 Resistive SPI touch panel driver</span>
 <span class="w">    </span><span class="na">-D SUPPORT_TRANSACTIONS</span>
-</code></pre></div></td></tr></table></div>
-<h2 id="hasp-build_flags">HASP build_flags<a class="headerlink" href="#hasp-build_flags" title="Permanent link">~</a></h2>
-<p>Specify the LCD Configuration to use and define the 7 GPIOs in the environment build flags:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="na">build_flags</span><span class="w"> </span><span class="o">=</span>
-<span class="w">    </span><span class="na">${flags.esp32_flags}</span>
-<span class="c1">; -- TFT_eSPI build options ------------------------</span>
-<span class="w">    </span><span class="na">${lcd.raspberrypi}</span>
-<span class="w">    </span><span class="na">${esp32.vspi}        ; Use VSPI hardware SPI bus</span>
-<span class="w">    </span><span class="na">-D TFT_CS</span><span class="o">=</span><span class="s">15</span>
-<span class="w">    </span><span class="na">-D TFT_DC</span><span class="o">=</span><span class="s">4</span>
-<span class="w">    </span><span class="na">-D TFT_RST</span><span class="o">=</span><span class="s">32</span>
-<span class="w">    </span><span class="na">-D TFT_BCKL</span><span class="o">=</span><span class="s">-1</span><span class="w">       </span><span class="c1">; None</span>
-<span class="w">    </span><span class="na">-D TOUCH_CS</span><span class="o">=</span><span class="s">22</span>
+<span class="w">    </span><span class="na">${esp32.vspi}        ; Use VSPI hardware SPI bus</span><span class="o">:</span><span class="w"> </span>
+<span class="w">                         </span><span class="c1">; TFT_MISO=19 | TFT_MOSI=23 | TFT_SCLK=18</span>
+<span class="w">                         </span><span class="c1">; MISO    = 8 | MOSI    = 4 | CLK     = 3</span>
+<span class="c1">; wiring recommendations, change pins according to your wiring</span>
+<span class="w">    </span><span class="na">-D TFT_DC</span><span class="o">=</span><span class="s">5</span><span class="w">          </span><span class="c1">; DC,  lcd pin 3</span>
+<span class="w">    </span><span class="na">-D TFT_RST</span><span class="o">=</span><span class="s">15</span><span class="w">        </span><span class="c1">; RES, lcd pin 5</span>
+<span class="w">    </span><span class="na">-D TFT_BCKL</span><span class="o">=</span><span class="s">-1</span><span class="w">       </span><span class="c1">; BLK, lcd pin 7 (configurable via web UI (e.g. 21))</span>
+<span class="w">    </span><span class="na">-D TFT_CS</span><span class="o">=</span><span class="s">26</span><span class="w">         </span><span class="c1">; CS1, lcd pin 9</span>
+<span class="w">    </span><span class="na">-D TOUCH_CS</span><span class="o">=</span><span class="s">17</span><span class="w">       </span><span class="c1">; CS2, lcd pin 10  </span>
+
+<span class="na">lib_deps</span><span class="w"> </span><span class="o">=</span>
+<span class="w">    </span><span class="na">${env.lib_deps}</span>
+<span class="w">    </span><span class="na">${esp32.lib_deps}</span>
+
+<span class="na">lib_ignore</span><span class="w"> </span><span class="o">=</span>
+<span class="w">    </span><span class="na">${env.lib_ignore}</span>
+<span class="w">    </span><span class="na">${esp32.lib_ignore}</span>
+
+<span class="na">extra_scripts</span><span class="w"> </span><span class="o">=</span>
+<span class="w">    </span><span class="na">${env.extra_scripts}</span>
+<span class="w">    </span><span class="na">${esp32.extra_scripts}</span>
 </code></pre></div></td></tr></table></div>
 
   <hr>
@@ -2636,7 +2610,7 @@
   <small>
     
       Last update:
-      2023-02-14
+      2023-02-18
     
   </small>
 </div>
@@ -2677,12 +2651,12 @@
             </div>
         </a>
          
-        <a href="../MRB3511/" class="md-footer__link md-footer__link--next" rel="next">
+        <a href="../mhs4001/" class="md-footer__link md-footer__link--next" rel="next">
             <div class="md-footer__title">
                 <div class="md-ellipsis">
                     <span class="md-footer__direction">
                   Next
-                </span> MRB3511
+                </span> MHS4001
                 </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -2700,10 +2674,10 @@
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["content.action.edit", "content.action.view", "navigation.instant", "navigation.tracking", "navigation.tabs", "search.suggest", "search.highlight", "navigation.top"], "search": "../../../assets/javascripts/workers/search.db81ec45.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"default": "0.6.3", "provider": "mike"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["content.action.edit", "content.action.view", "navigation.instant", "navigation.tracking", "navigation.tabs", "search.suggest", "search.highlight", "navigation.top"], "search": "../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"default": "0.6.3", "provider": "mike"}}</script>
     
      
-      <script src="../../../assets/javascripts/bundle.4b2c34cd.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.2a6f1dda.min.js"></script>
       
     
 <!-- <script src="../../../js/youtube.js"></script> -->
