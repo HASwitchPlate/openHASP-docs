@@ -180,7 +180,7 @@ The various relay types (Light, Power) denote only the device class you want the
     Attaching devices to mains power can be dangerous!
     Configuring gpios is done on your **own responsibility**.
     Be sure to test any system thoroughly using low voltages first.
-    By using the firmware you accept the [License](../../setup/license).
+    By using the firmware you accept the [License](../../firmware/license).
 
 Use the hasp/<platename>/command/output[x] topic (where x is the pin number) with an empty payload to query the current state of the relay.
 

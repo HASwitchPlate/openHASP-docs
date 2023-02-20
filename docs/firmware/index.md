@@ -53,7 +53,7 @@ For new projects we recommend ESP32-WROVER boards with PSram and minimal 8MB of 
 
 
 !!! tip
-    Advanced users can build and compile custom hardware configurations using PlatformIO [locally](../compiling/local.md) or [online with Gitpod](../compiling/gitpod.md), however this is not currently supported.
+    Advanced users can build and compile custom hardware configurations using PlatformIO [locally](compiling/local.md) or [online with Gitpod](compiling/gitpod.md), however this is not currently supported.
 
 
 ## Recommended Display

@@ -34,6 +34,9 @@ The development board is powered via USB Type-C.
     </iframe>
 </div>
 
+## Cases
+
+A 3D-printable case can be found on: https://www.printables.com/model/381026-wt32-sc01-plus-desk-case#preview
 
 [1]: https://lcsc.com/product-detail/Development-Boards-Development-Kits_Wireless-tag-WT32-SC01_C555472.html
 [2]: https://www.seeedstudio.com/ESP32-Development-board-WT32-SC01-p-4735.html

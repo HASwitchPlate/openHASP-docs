@@ -83,8 +83,8 @@ but only the `id` and `obj` properties are required to create an object:
 | enabled     | [bool][2]    | true    | Object is touchable, if `false`, a _disabled_ style is applied
 | hidden      | [bool][2]    | false   | Object is hidden
 | opacity     | [uint8][9]   | 255     | How much the the object is opaque
-| swipe       | [bool][2]    | false   | Page navigation using swipe gestures _(see below)_
-| action :material-new-box:{ .tag-small }     | [JSONobject][11] | null    | Command handled locally _(see below)_
+| swipe :material-new-box:{ .tag-small }  | [JSONobject][11] | null    | Swipe gestures handled locally _(see below)_
+| action :material-new-box:{ .tag-small } | [JSONobject][11] | null    | Touch command handled locally _(see below)_
 | click       | [bool][2]    | true    | Object is touch/clickable _(also see `enabled`)_
 | ext_click_h | [uint8][9]   | 0       | Extended horizontal clickable are on the left and right 
 | ext_click_v | [uint8][9]   | 0       | Extended vertical clickable are on the top and bottom
@@ -105,17 +105,21 @@ If the `page` parameter is not present, the object is placed on the same page as
 You can still hide the object on select pages if needed. Objects on page 0 appear on **top** of any objects on the underlying page.
 
 #### Actions :material-new-box:{ .tag-small }
-Action commands are supported only by _binary_ or _visual_ type of objects and they are performed locally on the plate. Actions can be of most any [command](../commands.md):
+Action commands are supported only by _binary_ or _visual_ type of objects and they are performed locally on the plate. Actions can be of most any [command](../../commands.md):
 
 `action` has the format of `{"action": {"<btn event>": "<command>"}`
 
 ***btn events:** are found in [events](#events). examples are `up`, `down` etc.
 
-Check out the [example](../integrations/examples/example-pagination.md) for how to implement actions.  
+Check out the [example](../../integrations/examples/example-pagination.md) for how to implement actions.  
 You can change the target pages using `prev`, `back` and `next` [page attributes](../pages/#page-attributes) operation on the page object `pXb0`.  
 
 #### Swipe <a name="swipe"></a>
-Objects and page area (`p0bY`) support `swipe` property. Enabling this will process `left`, `right` and `down` swipes on the object as `next`, `prev` and `back` page changes, respectively. The start of the swipe needs to be on the element which has this property enabled for the feature to activate.  
+Objects and page area (`pXb0`) support  the`swipe` property. Enabling this will process `left`, `right`, `up` and/or `down` swipes on the object. The start of the swipe needs to be on the element which has this property enabled for the feature to activate.
+
+- The default is `"swipe":null` or swipe gestures disabled.
+- To enable the default swipe gestures use `"swipe":1`. This will change the page to `next`, `prev` and `back` on `left`, `right` and `down` swipes, respectively. It is a shorthand for `"swipe":{"down":"page back","left":"page next","right":"page prev"}`.
+- You can customize the gesture to execure different commands if needed.
 
 !!! Note
     Page id `p0b0` is not valid to set this property as it has to be set on real elements. 
@@ -734,7 +738,7 @@ You can use it as a background shape for other objects by putting its jsonl line
    
 [1]: ../data-types/#colors
 [2]: ../data-types/#boolean
-[3]: ../../setup/configuration/gpio/#groupid
+[3]: ../../firmware/configuration/gpio/#groupid
 [4]: ../styling/#general
 [5]: ../styling/#image
 [6]: ../styling/#value

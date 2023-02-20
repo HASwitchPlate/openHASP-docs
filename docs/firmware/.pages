@@ -5,4 +5,5 @@ nav:
     - wifi-setup.md
     - configuration
     - FAQ: faq.md
+    - compiling
     - License: license.md

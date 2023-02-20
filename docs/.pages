@@ -2,14 +2,14 @@ nav:
     - Home:
         - Overview: index.md
         - Hardware Support: /0.7.0/hardware/
-        - Firmware Installation: /0.7.0/setup/
+        - Firmware Installation: /0.7.0/firmware/
         - Design Pages: /0.7.0/design/file-editor/
         - Objects: /0.7.0/design/objects/
         - Home Automation: /0.7.0/integrations/home-assistant/howto/
         - Commands: /0.7.0/commands/
-        - Developer Corner: /0.7.0/compiling/local/
+        - Developement: /0.7.0/firmware/compiling/local/
     - hardware
-    - Installation: setup
+    - firmware
     - design
     - integrations
     - commands.md
