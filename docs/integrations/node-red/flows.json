@@ -1,28 +1,3 @@
-# Node-RED
-
-You can integrate an openHASP plate in Node-RED by subscribing and publishing to its MQTT topics.
-
-The following is an example of how to use Node-RED to read PIN numbers from an alarm button matrix on page 12, and display those numbers back to the screen on p12b2.
-
-First we define p12b1 as the matrix, and p12b2 as the area where to re-display the PIN.  Add the following to `pages_online.jsonl`
-
-```json
-{"comment":" ----------- Page 12 layout ------------"}
-
-{"page":12,"id":1,"obj":"btnmatrix","x":10,"y":40,"w":220,"h":220,"options":["1","2","3","\n","4","5","6","\n","7","8","9","\n","Home","0","Away"],"toggle":false,"one_check":false}
-{"page":12,"id":2,"obj":"label","x":104,"y":22,"h":30,"w":40,"text":"    ","text_color":"white","align":0,"bg_color":"#2C3E50"}
-
-```
-
-
-![Button Matrix](./media/buttonmatrix.jpg)
-
-![Node-RED Flow Visualised](./media/node-red-alarm.jpg)
-
-
-The following jsonl is for 13 Lanbon L8 panels and can be imported
-
-```json
 [
     {
         "id": "0b80aa53cbe8e6e2",
@@ -1171,4 +1146,3 @@ The following jsonl is for 13 Lanbon L8 panels and can be imported
         "enableGlobalContextStore": true
     }
 ]
-```
