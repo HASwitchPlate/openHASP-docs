@@ -2,7 +2,7 @@
 # Image
 **obj:`img`**
 
-![lv_img](./images/lv_ex_img_1.png)
+![lv_img](images/lv_ex_img_1.png)
 
 | Property | Value        | Default | Description
 |----------|--------------|---------|--------------------------

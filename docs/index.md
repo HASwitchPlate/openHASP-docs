@@ -1,6 +1,6 @@
 <h1></h1>
 
-<img src="assets/images/logo.png" style="width:10rem" class="float-left"></img>
+<img src="assets/images/logo.svg" style="width:8rem;margin:1rem" class="float-left"></img>
 <span style="font-family: 'Lato', 'Arial', helvetica;  font-size: 350%; font-weight: bold">openHASP<span>
 
 <div class="clearfix">Control your home-automation devices from a customizable touchscreen UI connected via MQTT.</div>
@@ -15,12 +15,12 @@ openHASP uses an ESP32 to take advantage of the additional hardware capabilities
 
 Click on the demo screen to show the example configuration:
 
-[![screenshot](assets/images/screenshots/demo_switches_covers.png)](integrations/home-assistant/sampl_conf/#some-basic-controls) &nbsp; 
-[![screenshot](assets/images/screenshots/cc-sampl-weather-hours.png)](integrations/home-assistant/sampl_conf/#current-weather-and-forecasts) &nbsp;     
-[![screenshot](assets/images/screenshots/demo_mediaplayer.png)](integrations/home-assistant/sampl_conf/#media-player) &nbsp; 
-[![Screenshot](assets/images/screenshots/dashui-060.png)](integrations/examples/example-dashui.md) &nbsp;     
-[![Screenshot](assets/images/screenshots/demo_jaffa1.png)](integrations/openhab/integration_openhab.md) &nbsp; 
-[![screenshot](assets/images/screenshots/demo_climate.png)](integrations/home-assistant/sampl_conf/#generic-thermostatclimate) &nbsp;     
+[![screenshot](examples/images/demo_switches_covers.png)](integrations/home-assistant/sampl_conf/#some-basic-controls) &nbsp; 
+[![screenshot](integrations/home-assistant/images/cc-sampl-weather-hours.png)](integrations/home-assistant/sampl_conf/#current-weather-and-forecasts) &nbsp;     
+[![screenshot](examples/images/demo_mediaplayer.png)](integrations/home-assistant/sampl_conf/#media-player) &nbsp; 
+[![Screenshot](examples/images/dashui-060.png)](examples/dashui.md) &nbsp;     
+[![Screenshot](integrations/openhab/images/demo_jaffa1.png)](integrations/openhab/integration_openhab.md) &nbsp; 
+[![screenshot](examples/images/demo_climate.png)](integrations/home-assistant/sampl_conf/#generic-thermostatclimate) &nbsp;     
 
 ### Quotes
 

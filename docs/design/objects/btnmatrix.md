@@ -1,7 +1,7 @@
 # Button Matrix
 **obj:`btnmatrix`**
 
-![lv_btnmatrix](./images/lv_ex_btnmatrix_1.png)
+![lv_btnmatrix](images/lv_ex_btnmatrix_1.png)
 
 | Property | Value            | Default  | Description
 |----------|------------------|----------|--------------

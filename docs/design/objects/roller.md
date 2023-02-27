@@ -1,7 +1,7 @@
 # Roller
 **obj:`roller`**
 
-![lv_dropdown](./images/lv_ex_roller_1.png)
+![lv_dropdown](images/lv_ex_roller_1.png)
 
 | Property | Value      | Default | Description
 |----------|------------|---------|--------------------------

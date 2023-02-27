@@ -1,7 +1,7 @@
 # Slider
 **obj:`slider`**
 
-![lv_slider](./images/lv_ex_slider_1.png)
+![lv_slider](images/lv_ex_slider_1.png)
 
 | Property | Value      | Default | Description
 |----------|------------|---------|---------------

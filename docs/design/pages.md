@@ -128,7 +128,7 @@ The corresponding command is `p1b0.prev=5`.
 
 `back` acts like a _level up_ action, so you can jump back to the home or menu page where you came from using `page back`. You can create a hierarchy of pages and menus this way.
 
-Check out the [example](../integrations/examples/example-pagination.md) for how to implement a simple pagination bar.   
+Check out the [example](../examples/pagination.md) for how to implement a simple pagination bar.   
 
 
 

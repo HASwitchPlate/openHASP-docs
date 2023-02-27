@@ -2,7 +2,7 @@
 # Messagebox
 **obj:`msgbox`**
 
-![lv_msgbox](./images/lv_ex_msgbox_1.png)
+![lv_msgbox](images/lv_ex_msgbox_1.png)
 
 | Property   | Value           | Default | Description
 |------------|-----------------|---------|--------------------------

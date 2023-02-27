@@ -1,7 +1,7 @@
 # Line Meter
 **obj:`linemeter`**
 
-![lv_lmeter](./images/lv_ex_linemeter_1.png)
+![lv_lmeter](images/lv_ex_linemeter_1.png)
 
 | Property       | Value      | Default | Description
 |----------------|------------|---------|---------------

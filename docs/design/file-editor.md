@@ -5,7 +5,7 @@ You can use it to upload, download and edit files on the flash partition of the 
 
 Click on the File Editor button on the Main Webpage:
 
-![File Editor](./images/file_browser.png "File Editor")
+![File Editor](images/file_browser.png "File Editor")
 
 
 ## Upload Files
@@ -29,4 +29,4 @@ To save changes in the File Editor to flash type ++ctrl+"S"++ on a PC or ++cmd+"
 
 Right-click on any file in the list and select Delete from the pop-up menu to remove that file from the ESP32 filesystem.
 
-![Delete file](./images/file_delete.png "Delete file")
+![Delete file](images/file_delete.png "Delete file")

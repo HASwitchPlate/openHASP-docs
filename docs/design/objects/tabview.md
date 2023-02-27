@@ -3,7 +3,7 @@
 ## Tabview
 **obj:`tabview`**
 
-![lv_tabview](./images/lv_ex_tabview_1.png)
+![lv_tabview](images/lv_ex_tabview_1.png)
 
 A tabview is an object that can hold multiple tab objects.
 You first create the `tabview` object and then add `tab` objects to it.

@@ -1,6 +1,6 @@
 ## Display of the current album cover of a media player
 
-![screenshot](../../assets/images/screenshots/cc_autom_cover.png)
+![screenshot](images/cc_autom_cover.png)
 
 Combined with a media player entity which supports `entity_picture` attribute, you can automate display of that using the `push_image` service of the Custom Component.
 

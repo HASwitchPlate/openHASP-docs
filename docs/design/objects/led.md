@@ -1,7 +1,7 @@
 # LED Indicator
 **obj:`led`**
 
-![lv_led](./images/lv_ex_led_1.png)
+![lv_led](images/lv_ex_led_1.png)
 
 | Property   | Value      | Default | Description
 |------------|------------|---------|---------------

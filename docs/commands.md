@@ -414,5 +414,5 @@ To update the configuration simply issue the same command `config/<submodule>` w
 [2]: ../design/data-types#boolean
 [3]: ../configuration/gpio
 [4]: ../configuration/display#short-idle
-[5]: ../integrations/examples/example-offlinehandling
+[5]: ../examples/offlinehandling
 [6]: ../integrations/home-assistant/sampl_autom#prevent-burn-in-of-the-lcd-screen

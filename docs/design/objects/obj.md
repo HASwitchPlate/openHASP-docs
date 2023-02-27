@@ -1,7 +1,7 @@
 # Base Object
 **obj:`obj`**
 
-![lv_base_object](./images/lv_ex_base_object_1.png)
+![lv_base_object](images/lv_ex_base_object_1.png)
 
 The Base Object can be directly used as a simple, empty widget. It is nothing more then a (rounded) rectangle.
 

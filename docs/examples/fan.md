@@ -7,7 +7,7 @@ hide:
 
 ## Layout
 
-![Animated screenshot](../../assets/images/screenshots/fan-anim.gif)
+![Animated screenshot](images/fan-anim.gif)
 
 
 ## Code

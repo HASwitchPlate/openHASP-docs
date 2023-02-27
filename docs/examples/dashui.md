@@ -1,4 +1,3 @@
-
 ---
 hide:
   - toc
@@ -8,7 +7,7 @@ hide:
 
 ## Layout
 
-![screenshot](../../assets/images/screenshots/dashui-060.png)
+![screenshot](images/dashui-060.png)
 
 ## Code
 

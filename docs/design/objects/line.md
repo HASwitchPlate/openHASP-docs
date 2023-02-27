@@ -1,7 +1,7 @@
 # Line
 **obj:`line`**
 
-![lv_line](./images/lv_ex_line_1.png)
+![lv_line](images/lv_ex_line_1.png)
 
 | Property | Value        | Default | Description
 |----------|--------------|---------|--------------------------

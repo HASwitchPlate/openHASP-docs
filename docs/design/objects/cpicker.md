@@ -1,7 +1,7 @@
 # Color picker
 **obj:`cpicker`**
 
-![lv_cpicker](./images/lv_ex_cpicker_1.png)
+![lv_cpicker](images/lv_ex_cpicker_1.png)
 
 | Property | Value      | Default | Description
 |----------|------------|---------|--------------

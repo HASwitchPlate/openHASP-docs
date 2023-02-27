@@ -8,10 +8,10 @@ hide:
 
 ## Page Layout
 
-![screenshot](../../assets/images/screenshots/demo-widgets-1.png)
-![screenshot](../../assets/images/screenshots/demo-widgets-2.png)
-![screenshot](../../assets/images/screenshots/demo-widgets-3.png)
-![screenshot](../../assets/images/screenshots/demo-widgets-4.png)
+![screenshot](images/demo-widgets-1.png)
+![screenshot](images/demo-widgets-2.png)
+![screenshot](images/demo-widgets-3.png)
+![screenshot](images/demo-widgets-4.png)
 
 ## Code
 

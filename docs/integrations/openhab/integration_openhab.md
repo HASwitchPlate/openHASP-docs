@@ -8,9 +8,9 @@ hide:
 
 ## Page Layout
 
-![Screenshot](../../assets/images/screenshots/demo_jaffa1.png)
-![Screenshot](../../assets/images/screenshots/demo_jaffa2.png)
-![Screenshot](../../assets/images/screenshots/demo_jaffa3.png)
+![Screenshot](images/demo_jaffa1.png)
+![Screenshot](images/demo_jaffa2.png)
+![Screenshot](images/demo_jaffa3.png)
 
 We call _plate_ any device running openHASP in your system.
 

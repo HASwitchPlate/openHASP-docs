@@ -55,7 +55,7 @@ extra:
 
 
 theme:
-  logo: "assets/images/logo.png"
+  logo: "assets/images/logo.svg"
   favicon: favicon.ico
   icon:
     repo: fontawesome/brands/github

@@ -7,7 +7,7 @@ hide:
 
 ## Layout
 
-![Screenshot](../../assets/images/screenshots/demo_lovelace_entities.png)
+![Screenshot](images/demo_lovelace_entities.png)
 
 
 ## Code

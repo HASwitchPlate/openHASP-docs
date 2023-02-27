@@ -1,7 +1,7 @@
 # Spinner
 **obj:`spinner`**
 
-![lv_spinner](./images/lv_ex_spinner_1.png)
+![lv_spinner](images/lv_ex_spinner_1.png)
 
 | Property     | Value      | Default | Description
 |--------------|------------|---------|--------------

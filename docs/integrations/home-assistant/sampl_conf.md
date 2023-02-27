@@ -1,6 +1,6 @@
 ## Display clock and temperature
 
-![screenshot](../../assets/images/screenshots/cc_sampl_clocktemp.png)
+![screenshot](images/cc_sampl_clocktemp.png)
 
 The easiest example is to display the state of a clock and a temperature sensor from Home Assistant, using _label_ objects in openHASP.
 
@@ -51,7 +51,7 @@ Jsonl and Home Assistant configuration:
 
 #### Toggle a light (or any switchable entity with on/off states)
 
-![screenshot](../../assets/images/screenshots/cc_sampl_lightswitch.png)
+![screenshot](images/cc_sampl_lightswitch.png)
 
 ```json linenums="1"
 {"page":1,"id":2,"obj":"btn","x":10,"y":40,"w":105,"h":90,"toggle":true,"text":"\uE335","text_font":32,"align":1}
@@ -138,7 +138,7 @@ relevant **openHASP-custom-component config:**
 
 ## Variable sized icons
 
-![screenshot](../../assets/images/screenshots/cc-sampl-fan-speed-titlebar.png)
+![screenshot](images/cc-sampl-fan-speed-titlebar.png)
 
 Have a fan icon which changes its size depending on the speed of the fan, and goes off the screen when the fan is off.
 
@@ -171,7 +171,7 @@ relevant **openHASP-custom-component config:**
 
 ## Light brightness and color
 
-![screenshot](../../assets/images/screenshots/cc_sampl_rgb.png)
+![screenshot](images/cc_sampl_rgb.png)
 
 Have a light in Home Assistant controlled by openHASP. In our example we use Lanbon L8's moodlight which has both brightness and color - we use a [slider](../../../design/objects#slider) object for the brightness, and a [cpicker](../../../design/objects#color-picker) object for color.
 
@@ -225,7 +225,7 @@ When somebody changes the color of the picker object on the page, the light in H
 
 ## Cover with state feedback
 
-![screenshot](../../assets/images/screenshots/cc_sampl_cover.png)  
+![screenshot](images/cc_sampl_cover.png)  
 
 
 The icon on the up and down buttons change color when covers move and set opacity when reached to limit. UI theme set to `Hasp Light` in plate's web interface. 
@@ -321,7 +321,7 @@ relevant **openHASP-custom-component config:**
 
 ## Covers like in Lovelace
 
-![screenshot](../../assets/images/screenshots/cc_sampl_cover_lovelacee.png)  
+![screenshot](images/cc_sampl_cover_lovelacee.png)  
 
 The icon behaves like in Lovelace. UI theme set to `Hasp Light` in plate's web interface.
 
@@ -330,7 +330,7 @@ The icon behaves like in Lovelace. UI theme set to `Hasp Light` in plate's web i
 Your browser does not support the video tag.
 </video>
 
-Check out the [Lovelace-like entities](../examples/example-lovelace.md) for similar placement.  
+Check out the [Lovelace-like entities](../../examples/lovelace.md) for similar placement.  
 
 relevant **openHASP config:** (screen size 240x320, UI Theme: Hasp Light) 
 
@@ -387,7 +387,7 @@ relevant **openHASP-custom-component config:**
 
 ## Media player
 
-![screenshot](../../assets/images/screenshots/cc_sampl_mediaplayer.png)  
+![screenshot](images/cc_sampl_mediaplayer.png)  
 
 The labels with artist and title are scrolling, the progressbar fills if the media player provides duration and playback position. The dropdown lists containing the available sources and sound modes of the player get populated automatically by the values existing on the player in Home Assistant, and also the actually selected source is in sync with it.
 
@@ -608,7 +608,7 @@ Note that the `val` value of the slider is multiplied and divided by 100 when re
 
 ## Generic thermostat/climate
 
-![screenshot](../../assets/images/screenshots/cc_sampl_climate.png)  
+![screenshot](images/cc_sampl_climate.png)  
 
 This example is a bit more complex in the aspect that it uses several objects put on top of each other, and grouped toghether using the `parentid` parameter.  Special attention goes to an invisible [tabview](../../../design/objects#tabview) (exteding over the label dispaying the target temperarture) which allows for swiping between an on/off switch and dropdowns for setting the hvac and fan modes.
 
@@ -880,8 +880,8 @@ relevant **openHASP-custom-component config:**
 
 ## Current weather and forecasts
 
-![screenshot](../../assets/images/screenshots/cc-sampl-weather-hourss.png) 
-![screenshot](../../assets/images/screenshots/cc-sampl-weather-dayss.png)   
+![screenshot](images/cc-sampl-weather-hourss.png) 
+![screenshot](images/cc-sampl-weather-dayss.png)   
 
 This example implements two weather forecast screens which located on the same page, can be swiped left and right. On the top area the current weather is shown, on the bottom area the user can choose by swiping between next hours and next days forecast. This is achieved by a [tabview](../../../design/objects#tabview) object with invisible tabs. 
 
@@ -1261,7 +1261,7 @@ relevant **openHASP-custom-component config:**
 
 ## Fan and scent diffuser
 
-![screenshot](../../assets/images/screenshots/cc-sampl-fan-diffuser.png)
+![screenshot](images/cc-sampl-fan-diffuser.png)
 
 This example shows how a transparent PNG image can be combined with a moving spinner object, to create the impression of a spinning fan.
 In Home Assistant this fan appears as a `select` component with the available presets as `Low`,`Mid`,`High`,`Turbo`,`OFF` selectable options. The scent diffuser appears as a standard `fan` component where the intensity can be set by percentage.     
@@ -1381,8 +1381,8 @@ In the example below we have four coloured lights. Squeezing the ON/OFF button, 
 
 While dynamically drawing these objects we're setting the `tag` property for the color picker and the slider to the `entity_id` of the light we want to adjust, so that when we're interacting with them, the Custom Component can know which light it has to send the adjustments to.
 
-![screenshot1](../../assets/images/screenshots/cc-sampl-tags-color-1.png) 
-![screenshot2](../../assets/images/screenshots/cc-sampl-tags-color-2.png)      
+![screenshot1](images/cc-sampl-tags-color-1.png) 
+![screenshot2](images/cc-sampl-tags-color-2.png)      
 
 relevant **openHASP config:** (screen size 240x320, UI Theme: Hasp Light) 
 
@@ -1597,8 +1597,8 @@ We'll just put the most used, UP/STOP/DOWN buttons on the page (this already loo
 
 The `tag` here will be a JSON object referencing both the `entity_id` and the position specific to the desired shutter, eg. `"tag":{"cover":"cover.bigroom_i","position":"15"}`, this will be set for the buttons and the slider appearing in the popup. Since the shutters are different sizes and types, the same intermediate physical position may correspond to different numeric values in Home Assistant.
 
-![screenshot3](../../assets/images/screenshots/cc-sampl-tags-covers-1.png)
-![screenshot4](../../assets/images/screenshots/cc-sampl-tags-covers-2.png)       
+![screenshot3](images/cc-sampl-tags-covers-1.png)
+![screenshot4](images/cc-sampl-tags-covers-2.png)       
 
 relevant **openHASP config:** (screen size 240x320, UI Theme: Hasp Light) 
 

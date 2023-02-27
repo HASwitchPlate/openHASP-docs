@@ -1,7 +1,7 @@
 # Text Label
 **obj:`label`**
 
-![lv_label](./images/lv_ex_label_1.png)
+![lv_label](images/lv_ex_label_1.png)
 
 | Property | Value      | Default    | Description
 |----------|------------|------------|--------------

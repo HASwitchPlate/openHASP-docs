@@ -1,7 +1,7 @@
 # Dropdown List
 **obj:`dropdown`**
 
-![lv_dropdown](./images/lv_ex_dropdown_1.png)
+![lv_dropdown](images/lv_ex_dropdown_1.png)
 
 | Property   | Value      | Default | Description
 |------------|------------|---------|--------------------------

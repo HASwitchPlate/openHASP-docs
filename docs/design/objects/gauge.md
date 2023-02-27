@@ -1,7 +1,7 @@
 # Gauge
 **obj:`gauge`**
 
-![lv_gauge](./images/lv_ex_gauge_1.png)
+![lv_gauge](images/lv_ex_gauge_1.png)
 
 | Property       | Value      | Default | Description
 |----------------|------------|---------|---------------

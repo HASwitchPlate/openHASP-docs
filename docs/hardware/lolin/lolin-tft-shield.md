@@ -64,7 +64,7 @@ The Lolin TFT 2.4" headers are plug-and-play compatible with these development b
 To use PWM dimming on the Lolin TFT 2.4" you must bridge the center TFT-LED pin to the D1 solder pad next to it.
 This pin is configured by default in the firmware.
 
-![TFT-LED PWM dimming](./images/tft-led-pwm.png)
+![TFT-LED PWM dimming](images/tft-led-pwm.png)
 
 !!! warning
     Do *not* use D3 for backlight control because it is already in use for touch!</br>
@@ -80,7 +80,7 @@ This pin is configured by default in the firmware.
 
 ## Dimensions
 
-![PCB Dimensions](./images/lolin-24-tft-shield-dimensions.jpg)
+![PCB Dimensions](images/lolin-24-tft-shield-dimensions.jpg)
 
 
 [1]: https://www.aliexpress.com/item/32815530502.html
