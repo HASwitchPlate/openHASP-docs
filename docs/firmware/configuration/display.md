@@ -3,8 +3,8 @@
 Configure the overal settings of the display driver.
 
 <div class="row justify-content-center">
-            <a href="../gui_settings.png" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-8" data-title="Display Settings" data-footer="">
-                <img src="../gui_settings.png" class="img-fluid img-thumbnail">
+            <a href="../images/gui_settings.png" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-8" data-title="Display Settings" data-footer="">
+                <img src="../images/gui_settings.png" class="img-fluid img-thumbnail">
             </a>
 </div>
 

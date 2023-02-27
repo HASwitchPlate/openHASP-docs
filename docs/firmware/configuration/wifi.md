@@ -3,8 +3,8 @@
 When using a wireless network adapter, you need to configure the SSID to connect.
 
 <div class="row justify-content-center">
-            <a href="../wifi_settings.png" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-8" data-title="Wifi Settings" data-footer="">
-                <img src="../wifi_settings.png" class="img-fluid img-thumbnail">
+            <a href="../images/wifi_settings.png" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-8" data-title="Wifi Settings" data-footer="">
+                <img src="../images/wifi_settings.png" class="img-fluid img-thumbnail">
             </a>
 </div>
 

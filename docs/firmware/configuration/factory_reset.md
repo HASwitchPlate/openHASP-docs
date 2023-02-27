@@ -3,8 +3,8 @@
 You can remove all files and configuration settings with this button:
 
 <div class="row justify-content-center">
-            <a href="../factory_reset.png" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-8" data-title="Factory Reset" data-footer="">
-                <img src="../factory_reset.png" class="img-fluid img-thumbnail">
+            <a href="../images/factory_reset.png" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-8" data-title="Factory Reset" data-footer="">
+                <img src="../images/factory_reset.png" class="img-fluid img-thumbnail">
             </a>
 </div>
 

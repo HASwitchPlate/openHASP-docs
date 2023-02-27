@@ -6,8 +6,8 @@ All communication between **openHASP** and your Home Automation service is done 
     **Tip:** Learn more about the protocol on [MQTT Essentials](http://www.hivemq.com/mqtt-essentials/)
 
 <div class="row justify-content-center">
-            <a href="../mqtt_settings.png" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-8" data-title="MQTT Settings" data-footer="">
-                <img src="../mqtt_settings.png" class="img-fluid img-thumbnail">
+            <a href="../images/mqtt_settings.png" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-8" data-title="MQTT Settings" data-footer="">
+                <img src="../images/mqtt_settings.png" class="img-fluid img-thumbnail">
             </a>
 </div>
 

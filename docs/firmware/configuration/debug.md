@@ -4,8 +4,8 @@ openHASP logs valuable information during its operation to the serial port, teln
 Use these settings to configure the debug output.
 
 <div class="row justify-content-center">
-            <a href="../debug_settings.png" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-8" data-title="Debug Settings" data-footer="">
-                <img src="../debug_settings.png" class="img-fluid img-thumbnail">
+            <a href="../images/debug_settings.png" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-8" data-title="Debug Settings" data-footer="">
+                <img src="../images/debug_settings.png" class="img-fluid img-thumbnail">
             </a>
 </div>
 

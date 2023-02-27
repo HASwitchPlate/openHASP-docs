@@ -3,11 +3,11 @@
 You can restrict access to the web user interface.
 
 !!! note ""
-    **Note:** All http communication is unencrypted and that this is only a simple security measure!
+    **Note:** All HTTP communication is unencrypted and setting credentials is only a simple security measure!
 
 <div class="row justify-content-center">
-            <a href="../http_settings.png" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-8" data-title="HTTP Settings" data-footer="">
-                <img src="../http_settings.png" class="img-fluid img-thumbnail">
+            <a href="../images/http_settings.png" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-8" data-title="HTTP Settings" data-footer="">
+                <img src="../images/http_settings.png" class="img-fluid img-thumbnail">
             </a>
 </div>
 
