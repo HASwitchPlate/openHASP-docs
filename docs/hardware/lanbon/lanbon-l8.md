@@ -85,14 +85,14 @@ The models have the same recessed housing sliding into the wall, sized 50x50mm, 
 
 ## Contents
 
-![Display image](./images/lanbon-l8-contents.png)
+![Display image](images/lanbon-l8-contents.png)
 
 ## Flashing
 
 !!! warning "Disclaimer"
     Never connect high-voltage when the panel is not properly secured in place.
 
-![Display image](./images/lanbon-l8-pcb.png)
+![Display image](images/lanbon-l8-pcb.png)
 
 You can follow this [flashing guide](https://blakadder.com/lanbon-L8-custom-firmware/) on [blakadder.com](https://blakadder.com) or [this discussion post](https://github.com/HASwitchPlate/openHASP/discussions/76) with instructions and photos to flash the firmware without having to open the device.
 
@@ -103,7 +103,7 @@ Steps:
 3. Connect RX, TX, IO0, GND and 5V pins to the female pinheader:
 4. Because there is no `RESET` pin, you need to powercycle the board with `IO0` connected to `GND` to activate flash mode
 
-Once the serial connections are made, flash the [Lanbon-L8 ESP32 binary](../../setup/esp32.md) like on any other device.
+Once the serial connections are made, flash the [Lanbon-L8 ESP32 binary](../../firmware/esp32.md) like on any other device.
 
 ## GPIO Settings
 
@@ -137,7 +137,7 @@ Pin| Mode   | L8-HS      | Group | Default
     {"page":1,"id":2,"obj":"switch","x":30,"y":122,"w":180,"h":75,"radius":40,"radius20":40,"groupid":2}
     {"page":1,"id":3,"obj":"switch","x":30,"y":205,"w":180,"h":75,"radius":40,"radius20":40,"groupid":3}
     ```
-    ![lanbon-3-switch-display](./images/lanbon-3-switch-display.png)
+    ![lanbon-3-switch-display](images/lanbon-3-switch-display.png)
 
 
 ### Dimmer version L8-HD
@@ -181,14 +181,14 @@ Pin| Mode   | L8-HB      | Group | Default
     ```
 
 !!! note "Developer Note"
-    You can [build your own firmware](../../compiling/customize.md) with GPIOs and many other parameters pre-configured in `user_config_override.h` as factory defaults for Lanbon L8.
+    You can [build your own firmware](../../firmware/compiling/customize.md) with GPIOs and many other parameters pre-configured in `user_config_override.h` as factory defaults for Lanbon L8.
 
 
 ## Wiring Diagrams
 
 The switch supports several wiring configurations:
 
-![Display image](./images/lanbon-l8-wiring.png)
+![Display image](images/lanbon-l8-wiring.png)
 
 !!! danger "Warning"
     Always follow the instructions from the installation guide and local safety regulations.

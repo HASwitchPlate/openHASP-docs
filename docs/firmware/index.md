@@ -75,7 +75,7 @@ Therefor the Lolin TFT 2.4 Touch Shield is used as the development display of ch
 To use PWM dimming on the Lolin TFT 2.4" you must connect the TFT-LED pin to either D1, D2 or D4.
 **D1 is recommended** for backlight control and configured by default.
 
-![TFT-LED PWM dimming](../assets/images/tft-led-pwm.png)
+![TFT-LED PWM dimming](../hardware/lolin/images/tft-led-pwm.png)
 
 !!! warning "Do *not* use D3 for backlight control because it is already in use for touch!"
 
@@ -112,7 +112,7 @@ Any common ILI9341 320x240 4-wire SPI touchscreen with XPT2046 Resistive Touch d
 - 2.8" SKU: [MSP2807](http://www.lcdwiki.com/2.8inch_SPI_Module_ILI9341_SKU:MSP2807){target=_blank}
 - 3.2" SKU: [MSP3218](http://www.lcdwiki.com/3.2inch_SPI_Module_ILI9341_SKU:MSP3218){target=_blank}
 
-You will need to connect [the GPIO pins](displays/MSPxxxx.md) using jumper wires.
+You will need to connect [the GPIO pins](../hardware/generic/msp-series.md) using jumper wires.
 
 ## Ready-made devices
 

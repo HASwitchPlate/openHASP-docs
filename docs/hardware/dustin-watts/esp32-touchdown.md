@@ -64,7 +64,7 @@ Available from:</br>
 
 To enable backlight control, make sure the solder jumper pad is in position 2-1:
 
-![Backlight Control](./images/esp32-touchdown-backlight.png)
+![Backlight Control](images/esp32-touchdown-backlight.png)
 
 ## 3D Printed Cases
 
@@ -87,7 +87,7 @@ The ESP32 TouchDown is fully [Open Source Hardware](https://github.com/DustinWat
 - PCB layout
 - Datasheets
 
-![PCB Dimensions](./images/esp32-touchdown-dimensions.png)
+![PCB Dimensions](images/esp32-touchdown-dimensions.png)
 
 ## HASP build_flags
 

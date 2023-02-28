@@ -26,18 +26,18 @@ There is also an SD-card slot, USB-C connectors and two expansion ports.
 
 ## Models
 
-| Model                   | 3.5" Parallel   | 4.3" Parallel
-|-------------------------|:-------:|:-------:|
-| SKU                     | [ESP32S335D][1]{target=_blank} | [E32S3RGB43][2]{target=_blank}
-| Flash                   | 16 MB   | 16 MB
-| PSram                   | 2 MB    | 8 MB
-| Display                 | 3.5" 480x320 | 4.3" IPS
-| Resolution              | 480x320 | 800x480
-| Touch Screen            | Capacitive | Capacitive
-| SD Card                 | :white_check_mark: yes | :white_check_mark: yes
-| Real Time Clock         | :x: no   | :white_check_mark: yes
-| [Screen dimming][11]    | :white_check_mark: yes | :white_check_mark: `GPIO2`
-| | [:material-cart-variant: Buy][1]{target=_blank .md-button .md-button--primary } | [:material-cart-variant: Buy][2]{target=_blank .md-button .md-button--primary }
+| Model                   | 3.5" Parallel | 4.0" Parallel | 4.3" Parallel
+|-------------------------|:-------:|:-------:|:-------:|
+| SKU                     | [ESP32S335D][1]{target=_blank} | [E32S3RGB40][2]{target=_blank} | [E32S3RGB43][3]{target=_blank}
+| Flash                   | 16 MB   | 16 MB   | 16 MB
+| PSram                   | 2 MB    | 8 MB    | 8 MB
+| Display                 | 3.5" 480x320 | 4.0" IPS | 4.3" IPS
+| Resolution              | 480x320 | 480x480 | 800x480
+| Touch Screen            | Capacitive | Capacitive | Capacitive
+| SD Card                 | :white_check_mark: yes | :white_check_mark: yes | :white_check_mark: yes
+| Real Time Clock         | :x: no   | :x: no   | :white_check_mark: yes
+| [Screen dimming][11]    | :white_check_mark: `GPIO45` | :white_check_mark: `GPIO2` | :white_check_mark: `GPIO2`
+| | [:material-cart-variant: Buy][1]{target=_blank .md-button .md-button--primary } | [:material-cart-variant: Buy][2]{target=_blank .md-button .md-button--primary } | [:material-cart-variant: Buy][3]{target=_blank .md-button .md-button--primary }
 
 Also available on [:material-cart-variant: Tindie][10]{target=_blank .md-button .md-button--primary }
 
@@ -57,6 +57,13 @@ The backlight can be controlled by PWM on pin `GPIO02` of the 4.3".
 
 <div class="embed-responsive embed-responsive-16by9" style="max-width:560px; margin:auto;">
     <iframe title="YouTube video player" src="https://www.youtube.com/embed/ZWtTmmne6Bo?rel=0&controls=1" class="embed-responsive-item" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+    </iframe>
+</div>
+
+### ESP32-S3 Parallel TFT with Touch 4.0"
+
+<div class="embed-responsive embed-responsive-16by9" style="max-width:560px; margin:auto;">
+    <iframe title="YouTube video player" src="https://www.youtube.com/embed/L5ttJ9GTVLc?rel=0&controls=1" class="embed-responsive-item" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
     </iframe>
 </div>
 
@@ -81,10 +88,11 @@ We don't have any 3D printable enclosure yet to share here.
 If you have a case for this board, please let us know so we can share it here.
 
 
-[1]: https://www.makerfabs.com/esp32-s3-parallel-tft-with-touch-4-3-inch.html
-[2]: https://www.makerfabs.com/esp32-s3-parallel-tft-with-touch-ili9488.html
+[1]: https://www.makerfabs.com/esp32-s3-parallel-tft-with-touch-ili9488.html
+[2]: https://www.makerfabs.com/esp32-s3-parallel-tft-with-touch-4-inch.html
+[3]: https://www.makerfabs.com/esp32-s3-parallel-tft-with-touch-4-3-inch.html
 [4]: https://www.makerfabs.com/esp32-touch-indoor-environment-expansion.html
-[5]: https://github.com/Makerfabs/ESP32-S3-Parallel-TFT-with-Touch-4.3inch
+[5]: https://github.com/Makerfabs/
 [6]: https://www.makerfabs.com/wiki/index.php?title=ESP32_TFT_LCD_with_Camera(3.5%27%27)
 [7]: https://www.tindie.com/stores/makerfabs/items/
 [8]: https://www.tindie.com/stores/makerfabs/items/

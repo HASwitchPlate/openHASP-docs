@@ -1,6 +1,6 @@
 # ILI9341 TFT Panel
 
-![Display image](./images/msp2807.png)
+![Display image](images/msp2807.png)
 
 Models:
 

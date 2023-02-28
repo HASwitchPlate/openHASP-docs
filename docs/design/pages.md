@@ -10,7 +10,7 @@ You can create the file with your favourite text editor and upload it *(and othe
 ## pages.jsonl
 
 The location of this file is `/pages.jsonl` in the root of the flash filesystem. 
-It uses the [JSON Lines format](http://www.jsonlines.org){target=_blank} with one json object per line. 
+It uses the [JSON Lines format](https://jsonlines.org/){target=_blank} with one json object per line. 
 Each line should contain exactly **one** valid json object and end with a line-break `\n` *(not a comma)*.
 
 The jsonl lines are interpreted line-by-line.

@@ -15,7 +15,7 @@ hide:
 To add an openHASP plate to your installation with a sample design to control and reflect the status of a fan:
 
 - in the plate's web UI select `Hasp Light` UI theme and reboot,
-- upload the [fan icon](../../assets/users/noun_Fan_35097_140.png) to your plate,
+- upload the [fan icon](../assets/users/noun_Fan_35097_140.png) to your plate,
 - upload a `pages.jsonl` file with the folowing content to your plate and reboot:
 
 ```json linenums="1"

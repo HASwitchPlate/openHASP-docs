@@ -87,7 +87,7 @@ All 3 models have the option to add a protective acrylic case for only $2.90 ext
 [3]: https://www.makerfabs.com/esp32-3.5-inch-tft-touch-capacitive-with-camera.html
 [4]: https://www.makerfabs.com/esp32-touch-indoor-environment-expansion.html
 [5]: https://github.com/Makerfabs/Project_Touch-Screen-Camera
-[6]: https://www.makerfabs.com/wiki/index.php?title=ESP32_TFT_LCD_with_Camera(3.5%27%27)
+[6]: https://wiki.makerfabs.com/ESP32_3.5_TFT_Touch_with_Camera.html
 [7]: https://www.tindie.com/products/makerfabs/esp32-32-tft-touch-with-camera/
 [8]: https://www.tindie.com/products/makerfabs/esp32-35-tft-touchresistive-with-camera/
 [9]: https://www.tindie.com/products/makerfabs/esp32-35-tft-touchcapacitive-with-camera/
