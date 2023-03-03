@@ -4,6 +4,9 @@ title: T-Display-S3
 
 # LilyGO® T-Display-S3
 
+!!! warning
+    The configuration for this board is under development and not finilized yet.
+
 LILYGO® T-Display-S3 ESP32-S3 1.9" ST7789 LCD Display Development Board WIFI Bluetooth5.0 Wireless Module 170*320 Resolution
 
 T-Display-S3 is a development board whose main control chip is ESP32-S3. It is equipped with a 1.9" LCD color screen and two programmable buttons. Communication using the I8080 interface Retains the same layout design as T-Display. You can directly use ESP32S3 for USB communication or programming.
@@ -81,5 +84,6 @@ Please visit the Waveshare Wiki pages for more information, schematics and demo 
     </div>
 </div>
 
-<!-- Basic -->
+<!-- 1=Basic, 2=Touch -->
 [1]: https://s.click.aliexpress.com/e/_Ddlt8Al
+[2]: https://s.click.aliexpress.com/e/_DDptFa5

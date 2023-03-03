@@ -4,4 +4,4 @@ nav:
     - Home Assistant: home-assistant
     - Node-RED: node-red
     - OpenHAB: openhab
-    - Other examples: examples
+    - More Examples: ../examples/pagination

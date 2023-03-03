@@ -1,24 +1,31 @@
 # ESP32-S3 Parallel TFT with Touch
 
+!!! warning
+    The configuration for this board is under development and not finilized yet.
+
 <div class="row justify-content-center">
-        <a href="../images/makerfabs-front.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-6" data-title="ESP32 3.5&quot; TFT Touch with Camera - Front" data-footer="Copyright &copy; 2021, Makerfabs, All Rights Reserved">
-            <img src="../images/makerfabs-front.jpg" class="img-fluid">
+        <a href="../images/ESP32-S3-TFT-with-Touch-3.5-800x600.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4" data-title="ESP32-S3 Parallel TFT with Touch 3.5&quot; ILI9488" data-footer="Copyright &copy; 2023, Makerfabs, All Rights Reserved">
+            <img src="../images/ESP32-S3-TFT-with-Touch-3.5-800x600.jpg" class="img-fluid">
         </a>
 
-        <a href="../images/makerfabs-back.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-6" data-title="ESP32 3.5&quot; TFT Touch with Camera - Back" data-footer="Copyright &copy; 2021, Makerfabs, All Rights Reserved">
-            <img src="../images/makerfabs-back.jpg" class="img-fluid">
+        <a href="../images/ESP32-S3-TFT-with-Touch-4.0-800x600.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4" data-title="ESP32-S3 Parallel TFT with Touch 4.0&quot; 480*480 ST7701" data-footer="Copyright &copy; 2023, Makerfabs, All Rights Reserved">
+            <img src="../images/ESP32-S3-TFT-with-Touch-4.0-800x600.jpg" class="img-fluid">
+        </a>       
+
+        <a href="../images/ESP32-S3-TFT-with-Touch-4.3-800x600.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4" data-title="ESP32-S3 Parallel TFT with Touch 4.3&quot;" data-footer="Copyright &copy; 2023, Makerfabs, All Rights Reserved">
+            <img src="../images/ESP32-S3-TFT-with-Touch-4.3-800x600.jpg" class="img-fluid">
         </a>
 </div>
 <div>
-        <a href="../images/makerfabs-side-front.jpg" data-toggle="lightbox" data-gallery="example-gallery" rel="lightbox[work]" data-title="Makerfabs ESP32 TFT Touch" data-footer="Copyright &copy; 2021, Makerfabs, All Rights Reserved">more images...</a>
-        <a href="../images/makerfabs-side-back.jpg" data-toggle="lightbox" data-gallery="example-gallery" rel="lightbox[vacation]" data-title="Makerfabs ESP32 TFT Touch" data-footer="Copyright &copy; 2021, Makerfabs, All Rights Reserved"></a>
-        <a href="../images/makerfabs-sensors.jpg" data-toggle="lightbox" data-gallery="example-gallery" rel="lightbox[vacation]" data-title="Makerfabs ESP32 TFT Touch" data-footer="Copyright &copy; 2021, Makerfabs, All Rights Reserved"></a>
+        <a href="../images/makerfabs-side-front.jpg" data-toggle="lightbox" data-gallery="example-gallery" rel="lightbox[work]" data-title="Makerfabs ESP32 TFT Touch" data-footer="Copyright &copy; 2023, Makerfabs, All Rights Reserved">more images...</a>
+        <a href="../images/makerfabs-side-back.jpg" data-toggle="lightbox" data-gallery="example-gallery" rel="lightbox[vacation]" data-title="Makerfabs ESP32 TFT Touch" data-footer="Copyright &copy; 2023, Makerfabs, All Rights Reserved"></a>
+        <a href="../images/makerfabs-sensors.jpg" data-toggle="lightbox" data-gallery="example-gallery" rel="lightbox[vacation]" data-title="Makerfabs ESP32 TFT Touch" data-footer="Copyright &copy; 2023, Makerfabs, All Rights Reserved"></a>
 </div>
 
 
 ## Features
 
-The Makerfabs ESP32-S3 Parallel TFT Touch development board incorporates a 3.5” or 4.3” capacitive touch display
+The Makerfabs ESP32-S3 Parallel TFT Touch development board incorporates a 3.5”, 4.0” or 4.3” capacitive touch display
 which makes it a very suitable platform for any openHASP project.
 
 At the back sits an ESP32-S3-WROOM module with 16MB of flash and PSram.

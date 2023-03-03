@@ -1,3 +1,7 @@
+---
+title: Lily Pi
+---
+
 # LilyGO® Lily Pi
 
 <div class="row justify-content-center">
