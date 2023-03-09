@@ -1,13 +1,13 @@
-<h1>Widgets Demo</h1>
+# Widgets Demo
 
-<h2>Page Layout</h2>
+## Page Layout
 
 ![screenshot](../../assets/images/screenshots/demo-widgets-1.png)
 ![screenshot](../../assets/images/screenshots/demo-widgets-2.png)
 ![screenshot](../../assets/images/screenshots/demo-widgets-3.png)
 ![screenshot](../../assets/images/screenshots/demo-widgets-4.png)
 
-<h2>Code</h2>
+## Code
 
 This is a real-world example of a `pages.jsonl` file. Upload it to your plate's flash memory and restart the plate:
 

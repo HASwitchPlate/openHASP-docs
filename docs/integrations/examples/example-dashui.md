@@ -1,11 +1,10 @@
+# Dash UI
 
-<h1>Dash UI</h1>
-
-<h2>Layout</h2>
+## Layout
 
 ![screenshot](../../assets/images/screenshots/dashui-060.png)
 
-<h2>Code</h2>
+## Code
 
 To add an openHASP plate to your installation with the Dash UI sample configuration:
 

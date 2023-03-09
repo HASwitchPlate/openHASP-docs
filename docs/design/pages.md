@@ -1,4 +1,4 @@
-<h1>Pages</h1>
+# Pages
 
 The layout of the pages can be defined in several ways:
 

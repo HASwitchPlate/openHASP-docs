@@ -1,4 +1,4 @@
-<h1>ILI9341 TFT Panel</h1>
+# ILI9341 TFT Panel
 
 ![Display image](../assets/images/displays/msp2807.png)
 

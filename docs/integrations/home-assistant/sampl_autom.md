@@ -306,7 +306,7 @@ You can use this to protect and prolonge the lifetime of the LCD screens, thus b
 
 Wall mounted LCD screens' main problem is that they display the same picture 99.999% of the time. Even if somebody turns off backlight during the night or dark periods, the LCD screen keeps showing the same picture, seen by nobody. There are high chances that this will lead to screen [picture burn-in](https://github.com/HASwitchPlate/openHASP/issues/134){target=_blank} after a few years of operation.
 
-<h3>Pixel training</h3>
+### Pixel training
 
 One way to reduce this is to "train" the pixels periodically with completely different other content.
 Assuming your group name is configured as `plates` in your screens running openHASP, here is a possible solution to extend their life (all at once). The cycle runs for 30 seconds each time, can be stopped by touching. The trigger runs this 6 times each night.
@@ -335,7 +335,7 @@ Assuming your group name is configured as `plates` in your screens running openH
         payload: '1'
 ```
 
-<h3>Clear pixels when backlight off</h3>
+### Clear pixels when backlight off
 
 Another way to reduce the chance of burn-in is to clear the contents of the screen while the backlight is turned off, as nobody sees the pixels anyway.
 Just add these actions to the [first automation example](#turn-on-moodlight-when-backlight-goes-off-and-back) which draw an overlay with a black base object on page 0 when display is off, and deletes it when comes back on:

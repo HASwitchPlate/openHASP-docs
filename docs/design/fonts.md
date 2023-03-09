@@ -20,7 +20,7 @@ td:nth-child(3n+2) { white-space: nowrap; }
 </style>
 
 
-<h1>Fonts</h1>
+# Fonts
 
 ## Built-in 
 

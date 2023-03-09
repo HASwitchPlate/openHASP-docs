@@ -1,8 +1,8 @@
-<h1>Surprise</h1>
+# Surprise
 
 No screenshot available. To see the result, test the code!
 
-<h2>Code</h2>
+## Code
 
 Strictly for geeks:
 

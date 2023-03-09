@@ -1,4 +1,4 @@
-<h1>Waveshare RPi LCD (Rev C)</h1>
+# Waveshare RPi LCD (Rev C)
 
 <div class="row justify-content-center">
         <a href="../../assets/images/displays/waveshare-rpi-40-front.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4" data-title="WaveShare 4.0&quot; RPi LCD (Rev C)" data-footer="Copyright © 2021, Waveshare, All Rights Reserved - Used with permission">

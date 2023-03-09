@@ -1,4 +1,4 @@
-<h1>Getting Started</h1>
+# Getting Started
 
 openHASP currently supports the ESP32 family of microcontrollers.
 It needs a compatible micro-controller with drivers supporting the attached display, touch controller, storage and network.

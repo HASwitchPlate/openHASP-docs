@@ -1,5 +1,4 @@
-
-<h1>Simple page navigation</h1>
+# Simple page navigation
 
 ![pagination](https://user-images.githubusercontent.com/1550668/115120975-aa96c480-9fb0-11eb-9bda-95abcc16ec8e.png)
 

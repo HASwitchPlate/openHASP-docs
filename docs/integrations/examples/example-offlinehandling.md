@@ -1,16 +1,15 @@
-
-<h1>Handle offline state</h1>
+# Handle offline state
 
 openHASP can detect the state when the plate is disconnected from the network. With [Group ID](../../../configuration/gpio/#group) object property combined with [batch processing](../../../commands/#batch-processing), objects on the screen can act on locally connected devices without using the home automation system - letting you use only these devices when the network is down.
 
-<h2>Prerequisites</h2>
+## Prerequisites
 
 In the use case presented below, the following assumptions are made:
 
 - you have a plate with 2 local relays (configured on [output GPIOs](../../../configuration/gpio/#output-pin) as lights), each relay added to a different group (Group 1 and 2 respectively).
 - you want to have 2 toggle buttons on the screen acting directly on these relays when the plate is not yet, or disconnected from the WiFi network. No page navigation is needed as no other objects related to the home automation services have to be displayed. The buttons have the `groupid` property set to 1 and 2 respectively.
 
-<h2>Configuration</h2>
+## Configuration
 
 In the plate's web UI keep the default `/pages.jsonl` as Startup Layout. This will load immediately after plate boot, before the plate is connected to the network. If your network is not available after boot, this page configuration will be on screen while the plate keeps connecting in the background.
 
@@ -57,7 +56,7 @@ run /pages_offline.jsonl
 
 ```
 
-<h2>Testing</h2>
+## Testing
 
 - Reboot the plate. First only the buttons related to local relays are shown, these act the relays. After the plate connects to the network, screen is cleared and home automation-related pages are loaded.
 - Kill the WiFi network. Plate detects the disconnection from the network, thus screen is cleared and only the buttons related to local relays are shown, relays can be turned on and off.

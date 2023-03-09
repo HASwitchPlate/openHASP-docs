@@ -1,4 +1,4 @@
-<h1>ILI9341 IPS Panel</h1>
+# ILI9341 IPS Panel
 
 <div class="row justify-content-center">
         <a href="../../assets/images/displays/ILI9341_IPS.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-6" data-title="2.4&quot; ILI9341 IPS Panel" data-footer="">

@@ -1,12 +1,11 @@
+# Lovelace-like entities
 
-<h1>Lovelace-like entities</h1>
-
-<h2>Layout</h2>
+## Layout
 
 ![Screenshot](../../assets/images/screenshots/demo_lovelace_entities.png)
 
 
-<h2>Code</h2>
+## Code
 
 To add an openHASP plate to your installation with a sample design looking a bit like Home Assistant's Lovelace UI:
 
