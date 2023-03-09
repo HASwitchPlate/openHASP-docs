@@ -2,6 +2,9 @@
 title: T7-S3 v1.1
 ---
 
+!!! warning
+    The configuration for this board is under development and not finilized yet.
+
 # LilyGO® T7 S3 ESP32-S3
 
 <div class="row justify-content-center">
