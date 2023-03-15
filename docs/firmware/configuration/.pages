@@ -6,5 +6,6 @@ nav:
     - ftp.md
     - display.md
     - gpio.md
+    - time.md
     - debug.md
     - factory_reset.md
