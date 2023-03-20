@@ -1,7 +1,7 @@
 # File Editor
 
-Since v0.6.0 there is a native file browser included on ESP32.
-You can use it to upload, download and edit files on the flash partition of the ESP32.
+There is a file browser included in the web UI of the plate.
+You can use it to upload, edit, download and delete files on the flash partition of the ESP32.
 
 Click on the File Editor button on the Main Webpage:
 
