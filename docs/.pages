@@ -12,6 +12,6 @@ nav:
     - firmware
     - design
     - integrations
-    - commands.md
+    - commands
     - examples
 #    - gallery.md
