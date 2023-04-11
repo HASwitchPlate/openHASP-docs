@@ -1,4 +1,4 @@
-# WT32-SC01 Plus
+# WT32-SC01 Plus :material-new-box:{ .tag-large }
 
 <div class="row justify-content-center">
         <a href="../images/sc01-plus-front.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-6" data-title="SC01 Plus Front" data-footer="">
