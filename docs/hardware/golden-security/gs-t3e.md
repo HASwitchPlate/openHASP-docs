@@ -1,16 +1,12 @@
 # GS-T3E :material-new-box:{ .tag-large }
 
 <div class="row justify-content-center">
-        <a href="../images/gs-t3e.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4" data-title="GS-T3E front" data-footer="">
-            <img src="../images/gs-t3e.jpg" class="img-fluid">
+        <a href="../images/gs-t3e-left.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-6" data-title="GS-T3E front" data-footer="">
+            <img src="../images/gs-t3e-left.jpg" class="img-fluid">
         </a>
 
-        <a href="../images/gs-t3e-front.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4" data-title="GS-T3E front" data-footer="">
-            <img src="../images/gs-t3e-front.jpg" class="img-fluid">
-        </a>
-
-        <a href="../images/gs-t3e-alt.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4" data-title="GS-T3E front" data-footer="">
-            <img src="../images/gs-t3e-alt.jpg" class="img-fluid">
+        <a href="../images/gs-t3e-right.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-6" data-title="GS-T3E front" data-footer="">
+            <img src="../images/gs-t3e-right.jpg" class="img-fluid">
         </a>
 </div>
 
@@ -74,7 +70,10 @@ The CN model has not been tested yet.
 ## Packaging
 
 <div class="row justify-content-center">
-        <a href="../images/gs-t3e-contents.png" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-8" data-title="GS-T3E packaging" data-footer="">
+        <a href="../images/gs-t3e-box.png" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-5" data-title="GS-T3E packaging" data-footer="">
+            <img src="../images/gs-t3e-box.png" class="img-fluid">
+        </a>
+        <a href="../images/gs-t3e-contents.png" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-5" data-title="GS-T3E Contents" data-footer="">
             <img src="../images/gs-t3e-contents.png" class="img-fluid">
         </a>
 </div>
@@ -110,9 +109,9 @@ Once the serial connections are made, flash the [GS-T3E ESP32 binary](../../firm
 
 Pin| Mode   | GS-T3E     | Group | Default
 ---|--------|------------|-------|----
-45 | Output | Relay      | 1 | Low (Normal)
-46 | Output | Relay      | 2 | Low (Normal)
-44 | Output | Relay      | 3 | Low (Normal)
+45 | Output | Relay L1   | 1 | Low (Normal)
+46 | Output | Relay L2   | 2 | Low (Normal)
+44 | Output | Relay L3   | 3 | Low (Normal)
 
 
 !!! tip
@@ -142,7 +141,7 @@ Pin| Mode   | GS-T3E     | Group | Default
 The switch supports this wiring configuration:
 
 <div class="row justify-content-center">
-        <a href="../images/gs-t3e-wiring.png" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-8" data-title="GS-T3E wiring" data-footer="">
+        <a href="../images/gs-t3e-wiring.png" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-5" data-title="GS-T3E wiring" data-footer="">
             <img src="../images/gs-t3e-wiring.png" class="img-fluid">
         </a>
 </div>
@@ -165,13 +164,17 @@ The switch supports this wiring configuration:
 ## Gallery
 
 <div class="row justify-content-center">
-    <a href="../images/gs-t3e-back.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4" data-title="GS-T3E Smart Switch" data-footer="Lanbon L8 in operation as a 5-cover commander">
+    <a href="../images/gs-t3e.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-3" data-title="GS-T3E front" data-footer="">
+        <img src="../images/gs-t3e.jpg" class="img-fluid">
+    </a>
+
+    <a href="../images/gs-t3e-back.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-3" data-title="GS-T3E Smart Switch" data-footer="Lanbon L8 in operation as a 5-cover commander">
         <img src="../images/gs-t3e-back.jpg" class="img-fluid">
     </a>
-    <a href="../images/gs-t3e-side.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4" data-title="GS-T3E Smart Switch" data-footer="Lanbon L8 in operation as sensors and switches panel">
+    <a href="../images/gs-t3e-side.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-3" data-title="GS-T3E Smart Switch" data-footer="Lanbon L8 in operation as sensors and switches panel">
         <img src="../images/gs-t3e-side.jpg" class="img-fluid">
     </a>
-    <a href="../images/gs-t3e-demo.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4" data-title="GS-T3E Smart Switch" data-footer="Customized Lanbon L8 Switchplate">
+    <a href="../images/gs-t3e-demo.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-3" data-title="GS-T3E Smart Switch" data-footer="Customized Lanbon L8 Switchplate">
         <img src="../images/gs-t3e-demo.jpg" class="img-fluid">
     </a>
 </div>
