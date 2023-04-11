@@ -39,6 +39,11 @@ table th:last-child {
 
 /* Highlite color for new and deprecated tags */
 
+.tag-large {
+    color: var(--md-accent-fg-color);
+    font-size: 1.5rem;
+}
+
 .tag-medium {
     color: var(--md-accent-fg-color);
     font-size: 1.2rem;
