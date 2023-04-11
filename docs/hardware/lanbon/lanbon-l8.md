@@ -73,6 +73,8 @@ The models have the same recessed housing sliding into the wall, sized 50x50mm, 
 | Energy monitor |
 | Standard wallmount form factor both EU and US |
 
+[:material-cart-variant: Buy][1]{target=_blank .md-button .md-button--primary }
+
 !!! note "Note 1"
     An earlier revision V1.14 (20191203) of the PCB had an analog temperature sensor onboard.
     It was removed from V1.15 (20200521) of the PCB. You are likely *not* to get it when buying a recent switch.
@@ -277,3 +279,5 @@ build_flags =
     -D RELAY_3=37
 ;endregion
 ```
+
+[1]: https://www.drzzs.com/shop/magic-panel-openhasp/

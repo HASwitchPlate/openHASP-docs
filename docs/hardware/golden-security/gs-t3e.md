@@ -1,11 +1,15 @@
 # GS-T3E :material-new-box:{ .tag-large }
 
 <div class="row justify-content-center">
-        <a href="../images/gs-t3e-front.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-6" data-title="GS-T3E front" data-footer="">
+        <a href="../images/gs-t3e.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4" data-title="GS-T3E front" data-footer="">
+            <img src="../images/gs-t3e.jpg" class="img-fluid">
+        </a>
+
+        <a href="../images/gs-t3e-front.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4" data-title="GS-T3E front" data-footer="">
             <img src="../images/gs-t3e-front.jpg" class="img-fluid">
         </a>
 
-        <a href="../images/gs-t3e-alt.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-6" data-title="GS-T3E front" data-footer="">
+        <a href="../images/gs-t3e-alt.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4" data-title="GS-T3E front" data-footer="">
             <img src="../images/gs-t3e-alt.jpg" class="img-fluid">
         </a>
 </div>
@@ -28,6 +32,12 @@ Specify that you want the new device with PCB revision v2.3 when ordering from k
 
 - EU model: 86mm x 86mm
 - CN model: info not available
+
+<div class="row justify-content-center">
+    <a href="../images/gs-t3e-dimensions-eu.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-8" data-title="GS-T3E EU dimensions" data-footer="">
+        <img src="../images/gs-t3e-dimensions-eu.jpg" class="img-fluid">
+    </a>
+</div>
 
 Maximum load is 200W per gang, 600W in total EU version.
 
@@ -54,6 +64,7 @@ The CN model has not been tested yet.
 | Built-in PSU |
 | Standard wallmount form factor both EU and UK |
 
+[:material-cart-variant: Buy][1]{target=_blank .md-button .md-button--primary }
 
 !!! note
     openHASP does **not** support the proprietary Tuya chip, but you can still flash the firmware
@@ -164,3 +175,5 @@ The switch supports this wiring configuration:
         <img src="../images/gs-t3e-demo.jpg" class="img-fluid">
     </a>
 </div>
+
+[1]: https://www.alibaba.com/product-detail/2022-new-arrival-smart-wifi-switch_1600573806214.html
