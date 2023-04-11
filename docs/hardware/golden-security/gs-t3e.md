@@ -53,7 +53,7 @@ The CN model has not been tested yet.
 
 | Pros           | Cons
 |:-----          |:----
-| 8 MB flash     | Tuya device with ZS3L Tuya chip on pcb (unused)
+| 8 MB flash     | Tuya device with ZS3L Tuya chip on PCB (unused)
 | 16 MB PSram    | Flash header pins not populated
 | 480x480 HD IPS LCD |
 | Capactitive touch |
@@ -84,8 +84,8 @@ The CN model has not been tested yet.
     Never connect high-voltage when the panel is not properly secured in place.
 
 <div class="row justify-content-center">
-        <a href="../images/gs-t3e-pcb.png" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-8" data-title="GS-T3E PCB" data-footer="">
-            <img src="../images/gs-t3e-pcb.png" class="img-fluid">
+        <a href="../images/gs-t3e-pcb.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-5" data-title="GS-T3E PCB" data-footer="">
+            <img src="../images/gs-t3e-pcb.jpg" class="img-fluid">
         </a>
 </div>
 
