@@ -21,18 +21,18 @@
         <link rel="next" href="../installation/">
       
       <link rel="icon" href="../../../favicon.ico">
-      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.6">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.14">
     
     
       
-        <title>Flash ESP8266 - openHASP</title>
+        <title>Esp8266 - openHASP</title>
       
     
      
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.ded33207.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.85bb2934.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.a0c5b2b5.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.a6bdf11c.min.css">
       
       
 
@@ -103,11 +103,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#flash-esp8266" class="md-skip">
-          Skip to content
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -140,32 +135,38 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Flash ESP8266
+              Esp8266
             
           </span>
         </div>
       </div>
     </div>
     
-      <form class="md-header__option" data-md-component="palette">
-        
+      
+        <form class="md-header__option" data-md-component="palette">
           
-          <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="deep-orange"  aria-label="Dark mode"  type="radio" name="__palette" id="__palette_1">
+            
+            
+            
+            <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="deep-orange"  aria-label="Dark mode"  type="radio" name="__palette" id="__palette_1">
+            
+              <label class="md-header__button md-icon" title="Dark mode" for="__palette_2" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+              </label>
+            
           
-            <label class="md-header__button md-icon" title="Dark mode" for="__palette_2" hidden>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
-            </label>
+            
+            
+            
+            <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="cyan" data-md-color-accent="deep-orange"  aria-label="Light mode"  type="radio" name="__palette" id="__palette_2">
+            
+              <label class="md-header__button md-icon" title="Light mode" for="__palette_1" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+              </label>
+            
           
-        
-          
-          <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="cyan" data-md-color-accent="deep-orange"  aria-label="Light mode"  type="radio" name="__palette" id="__palette_2">
-          
-            <label class="md-header__button md-icon" title="Light mode" for="__palette_1" hidden>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
-            </label>
-          
-        
-      </form>
+        </form>
+      
     
     
     
@@ -2529,43 +2530,6 @@
   
   
   
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#download-the-firmware" class="md-nav__link">
-    Download the firmware
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#install-the-firmware" class="md-nav__link">
-    Install the firmware
-  </a>
-  
-    <nav class="md-nav" aria-label="Install the firmware">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#flash-esp8266_1" class="md-nav__link">
-    Flash ESP8266
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
   
 </nav>
                   </div>
@@ -2596,41 +2560,16 @@
   
 
 
-<h1 id="flash-esp8266">Flash ESP8266<a class="headerlink" href="#flash-esp8266" title="Permanent link">~</a></h1>
-<p>The performance of the ESP8266 will be slow due to its low memory and CPU frequency.
-It is okay for getting started, for small project where speed is not needed or when you have one at hand.</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>ESP8266 support will be removed in a future update. Please migrate to the ESP32.</p>
-</div>
-<h2 id="download-the-firmware">Download the firmware<a class="headerlink" href="#download-the-firmware" title="Permanent link">~</a></h2>
-<p>Go to the <a href="https://github.com/HASwitchPlate/openHASP/releases" target="_blank">releases</a> page on GitHub to download the latest openHASP binaries.</p>
-<p>Pick the one appropriate for ESP8266:</p>
-<ul>
-<li>d1-mini-esp8266_ili9341_v0.6.0.bin</li>
-</ul>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>You can also download the <em>nightly</em> openHASP firmware.zip file from the <a href="https://github.com/HASwitchPlate/openHASP/actions" target="_blank">Actions tab</a> on Github.</p>
-</div>
-<h2 id="install-the-firmware">Install the firmware<a class="headerlink" href="#install-the-firmware" title="Permanent link">~</a></h2>
-<h3 id="flash-esp8266_1">Flash ESP8266<a class="headerlink" href="#flash-esp8266_1" title="Permanent link">~</a></h3>
-<p>For ESP8266 you only need one single <code>.bin</code> file:</p>
-<h4 id="using-tasmotizer">Using <a href="https://github.com/tasmota/tasmotizer" target="_blank">Tasmotizer</a><a class="headerlink" href="#using-tasmotizer" title="Permanent link">~</a></h4>
-<h4 id="using-esp-toolpy">Using esp-tool.py<a class="headerlink" href="#using-esp-toolpy" title="Permanent link">~</a></h4>
-<p>When flashing the ESP8266 for the first time, it is best to erase the flash before uploading the new firmware:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>esptool.py<span class="w"> </span>-p<span class="w"> </span><span class="s2">&quot;COM1&quot;</span><span class="w"> </span>erase_flash
-esptool.py<span class="w"> </span>-p<span class="w"> </span><span class="s2">&quot;COM1&quot;</span><span class="w"> </span>write_flash<span class="w"> </span>--flash_mode<span class="w"> </span>qio<span class="w"> </span>0x0<span class="w"> </span>d1-mini-esp8266_ili9341_v0.6.0.bin
-</code></pre></div></td></tr></table></div>
-<p>Change <code>COM1</code> to the correct port on your computer and <code>4m</code> to the correct size of the internal flash chip.</p>
+  <h1>Esp8266</h1>
+
+
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      2023-04-16
+      2023-05-20
     
   </small>
 </div>
@@ -2697,7 +2636,7 @@ esptool.py<span class="w"> </span>-p<span class="w"> </span><span class="s2">&qu
     <script id="__config" type="application/json">{"base": "../../..", "features": ["content.action.edit", "content.action.view", "navigation.instant", "navigation.tracking", "navigation.tabs", "search.suggest", "search.highlight", "navigation.top"], "search": "../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"default": "0.6.3", "provider": "mike"}}</script>
     
      
-      <script src="../../../assets/javascripts/bundle.51198bba.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.b4d07000.min.js"></script>
       
     
 <!-- <script src="../../../js/youtube.js"></script> -->
