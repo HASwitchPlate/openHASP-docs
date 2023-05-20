@@ -95,11 +95,7 @@ Steps to flash via USB:
 
 1. Disengage the panel from high-voltage power
 2. Detach the panel from the PSU power supply
-3. Connect Micro USB cable
-    - GND <--> GND
-    - 5V <--> 5V
-    - RX <--> RX &nbsp; *(not reversed!)*
-    - TX <--> TX &nbsp; *(not reversed!)*
+3. Connect a Micro USB cable
 4. Connect `IO0` to `GND` to activate flash mode!
 5. Press the `KEY` button to powercycle (`RESET`) the board
 
