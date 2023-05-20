@@ -89,19 +89,34 @@ The CN model has not been tested yet.
         </a>
 </div>
 
-Steps:
+Device can be flashed by either using the USB port or the flash header pins and a FTDI serial programmer device.
+
+Steps to flash via USB:
 
 1. Disengage the panel from high-voltage power
 2. Detach the panel from the PSU power supply
-3. Connect RX, TX, GND and 5V pins to the flash pinheader:
+3. Connect Micro USB cable
     - GND <--> GND
     - 5V <--> 5V
     - RX <--> RX &nbsp; *(not reversed!)*
     - TX <--> TX &nbsp; *(not reversed!)*
-4. Connect `IO0` to `GND` to activate flash mode
+4. Connect `IO0` to `GND` to activate flash mode!
 5. Press the `KEY` button to powercycle (`RESET`) the board
 
-Once the serial connections are made, flash the [GS-T3E ESP32 binary](../../firmware/esp32.md) like on any other device.
+
+Steps to flash via UART:
+
+1. Disengage the panel from high-voltage power
+2. Detach the panel from the PSU power supply
+3. Connect jumper wires:
+    - GND <--> GND
+    - 5V <--> 5V
+    - RX <--> RX &nbsp; *(not reversed!)*
+    - TX <--> TX &nbsp; *(not reversed!)*
+4. Connect `IO0` to `GND` to activate flash mode!
+5. Press the `KEY` button to powercycle (`RESET`) the board
+
+Once the connections are made, flash the [GS-T3E ESP32 binary](../../firmware/esp32.md) like on any other device.
 
 ## GPIO Settings
 
