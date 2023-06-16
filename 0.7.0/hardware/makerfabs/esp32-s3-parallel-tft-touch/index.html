@@ -21,7 +21,7 @@
         <link rel="next" href="../esp32-s3-spi-tft-touch/">
       
       <link rel="icon" href="../../../favicon.ico">
-      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.14">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.16">
     
     
       
@@ -29,10 +29,10 @@
       
     
      
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.85bb2934.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.26e3688c.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.a6bdf11c.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ecc896b0.min.css">
       
       
 
@@ -2854,8 +2854,10 @@ There is also an SD-card slot, USB-C connectors and two expansion ports.</p>
 <p>Also available on <a class="md-button md-button--primary" href="https://www.tindie.com/stores/makerfabs/items/" target="_blank"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 20c0 1.11-.89 2-2 2a2 2 0 0 1-2-2c0-1.11.89-2 2-2a2 2 0 0 1 2 2M7 18c-1.11 0-2 .89-2 2a2 2 0 0 0 2 2c1.11 0 2-.89 2-2s-.89-2-2-2m.2-3.37-.03.12c0 .14.11.25.25.25H19v2H7a2 2 0 0 1-2-2c0-.35.09-.68.24-.96l1.36-2.45L3 4H1V2h3.27l.94 2H20c.55 0 1 .45 1 1 0 .17-.05.34-.12.5l-3.58 6.47c-.34.61-1 1.03-1.75 1.03H8.1l-.9 1.63M8.5 11H10V9H7.56l.94 2M11 9v2h3V9h-3m3-1V6h-3v2h3m3.11 1H15v2h1l1.11-2m1.67-3H15v2h2.67l1.11-2M6.14 6l.94 2H10V6H6.14Z"/></svg></span> Tindie</a></p>
 <p>The real-time clock and SD card are not supported by openHASP 0.7.0-rc4.</p>
 <h2 id="backlight-control">Backlight Control<a class="headerlink" href="#backlight-control" title="Permanent link">~</a></h2>
-<p>The backlight can be controlled by PWM on pin <code>GPIO45</code> of the 3.5".</p>
-<p>The backlight can be controlled by PWM on pin <code>GPIO02</code> of the 4.3".</p>
+<p>The backlight of the 3.5" model can be controlled by PWM on pin <code>GPIO45</code>.</p>
+<p>The backlight on the 4.0" model is always on and can not be controlled.</p>
+<p>The backlight of the 4.3" model can be controlled by PWM on pin <code>GPIO02</code> if the PCB is v1.3 only.
+With PCB v2.0 the backlight can not be adjusted and the screen is always on.</p>
 <h2 id="video">Video<a class="headerlink" href="#video" title="Permanent link">~</a></h2>
 <h3 id="esp32-s3-parallel-tft-with-touch-35-ili9488">ESP32-S3 Parallel TFT with Touch 3.5'' ILI9488<a class="headerlink" href="#esp32-s3-parallel-tft-with-touch-35-ili9488" title="Permanent link">~</a></h3>
 <div class="embed-responsive embed-responsive-16by9" style="max-width:560px; margin:auto;">
@@ -2889,7 +2891,7 @@ If you have a case for this board, please let us know so we can share it here.</
   <small>
     
       Last update:
-      2023-05-20
+      2023-06-16
     
   </small>
 </div>
@@ -2956,7 +2958,7 @@ If you have a case for this board, please let us know so we can share it here.</
     <script id="__config" type="application/json">{"base": "../../..", "features": ["content.action.edit", "content.action.view", "navigation.instant", "navigation.tracking", "navigation.tabs", "search.suggest", "search.highlight", "navigation.top"], "search": "../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"default": "0.6.3", "provider": "mike"}}</script>
     
      
-      <script src="../../../assets/javascripts/bundle.b4d07000.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.a51614de.min.js"></script>
       
     
 <!-- <script src="../../../js/youtube.js"></script> -->

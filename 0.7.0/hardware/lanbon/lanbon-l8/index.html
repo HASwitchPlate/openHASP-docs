@@ -21,7 +21,7 @@
         <link rel="next" href="../../lilygo/lilygo-lily-pi/">
       
       <link rel="icon" href="../../../favicon.ico">
-      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.14">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.16">
     
     
       
@@ -29,10 +29,10 @@
       
     
      
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.85bb2934.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.26e3688c.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.a6bdf11c.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ecc896b0.min.css">
       
       
 
@@ -2909,10 +2909,11 @@ and use the other Lanbon L8 features just fine.</p>
 <ol>
 <li>Disengage the high-voltage power</li>
 <li>Detach the panel from the PSU power supply</li>
-<li>Connect RX, TX, IO0, GND and 5V pins to the female pinheader:</li>
-<li>Because there is no <code>RESET</code> pin, you need to powercycle the board with <code>IO0</code> connected to <code>GND</code> to activate flash mode</li>
+<li>Connect <code>RX</code>, <code>TX</code>, <code>IO0</code>, <code>GND</code> and <code>5V</code> pins to the female pinheader:</li>
+<li>Because there is no <code>RESET</code> pin, you need to powercycle the board while <code>IO0</code> is connected to <code>GND</code> to activate flash mode</li>
 </ol>
-<p>Once the serial connections are made, flash the <a href="../../../firmware/esp32/">Lanbon-L8 ESP32 binary</a> like on any other device.</p>
+<p>Make sure you have a USB to serial adapter than can provide sufficient power <strong>on the 5V pin</strong>.
+Once the serial connections are made, flash the <a href="../../../firmware/esp32/">Lanbon-L8 ESP32 binary</a> like on any other device.</p>
 <h2 id="gpio-settings">GPIO Settings<a class="headerlink" href="#gpio-settings" title="Permanent link">~</a></h2>
 <h3 id="3-gang-version-l8-hs">3-gang version L8-HS<a class="headerlink" href="#3-gang-version-l8-hs" title="Permanent link">~</a></h3>
 <table>
@@ -3227,7 +3228,7 @@ Consult a licensed electrician when changing your electrical wiring.</br></p>
   <small>
     
       Last update:
-      2023-05-20
+      2023-06-16
     
   </small>
 </div>
@@ -3294,7 +3295,7 @@ Consult a licensed electrician when changing your electrical wiring.</br></p>
     <script id="__config" type="application/json">{"base": "../../..", "features": ["content.action.edit", "content.action.view", "navigation.instant", "navigation.tracking", "navigation.tabs", "search.suggest", "search.highlight", "navigation.top"], "search": "../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"default": "0.6.3", "provider": "mike"}}</script>
     
      
-      <script src="../../../assets/javascripts/bundle.b4d07000.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.a51614de.min.js"></script>
       
     
 <!-- <script src="../../../js/youtube.js"></script> -->
