@@ -53,9 +53,12 @@ The real-time clock and SD card are not supported by openHASP {< openhasp.versio
 
 ## Backlight Control
 
-The backlight can be controlled by PWM on pin `GPIO45` of the 3.5".
+The backlight of the 3.5" model can be controlled by PWM on pin `GPIO45`.
 
-The backlight can be controlled by PWM on pin `GPIO02` of the 4.3".
+The backlight on the 4.0" model is always on and can not be controlled.
+
+The backlight of the 4.3" model can be controlled by PWM on pin `GPIO02` if the PCB is v1.3 only.
+With PCB v2.0 the backlight can not be adjusted and the screen is always on.
 
 
 ## Video
