@@ -100,10 +100,11 @@ Steps:
 
 1. Disengage the high-voltage power
 2. Detach the panel from the PSU power supply
-3. Connect RX, TX, IO0, GND and 5V pins to the female pinheader:
-4. Because there is no `RESET` pin, you need to powercycle the board with `IO0` connected to `GND` to activate flash mode
+3. Connect `RX`, `TX`, `IO0`, `GND` and `5V` pins to the female pinheader:
+4. Because there is no `RESET` pin, you need to powercycle the board while `IO0` is connected to `GND` to activate flash mode
 
-Once the serial connections are made, flash the [Lanbon-L8 ESP32 binary](../installation/esp32.md) like on any other device.
+Make sure you have a USB to serial adapter than can provide sufficient power **on the 5V pin**.
+Once the serial connections are made, flash the [Lanbon-L8 ESP32 binary](../../firmware/esp32.md) like on any other device.
 
 ## GPIO Settings
 
