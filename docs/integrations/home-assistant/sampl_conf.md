@@ -1042,14 +1042,14 @@ relevant **openHASP-custom-component config:**
             {%- if not is_state('weather.openweathermap','unavailable') %}
             {%- set update = states('sensor.date') %}
             {%- set midnight = now().replace(hour=0, minute=0, second=0, microsecond=0).timestamp() %}
-            {%- set event = as_timestamp(strptime(state_attr('weather.openweathermap','forecast')[1]['datetime'], '%Y-%m-%dT%H:%M:%S%z', default='2020-01-00T00:00:00+00:00')) %}
+            {%- set event = as_timestamp(strptime(state_attr('weather.openweathermap','forecast')[1]['datetime'], '%Y-%m-%dT%H:%M:%S%z', default='2020-01-01T00:00:00+00:00')) %}
             {%- set delta = ((event - midnight) // 86400) | int %}
             {%- if delta == 0 %}
             Today
             {%- elif delta == 1 %}
             Tomorrow
             {%- endif %}
-            {{- event | timestamp_custom(" %-I %p") }}
+            {{ event | timestamp_custom(" %-I %p") }}
             {%- endif %}
 
       - obj: "p5b22" # Forecast temp +1h
@@ -1067,7 +1067,7 @@ relevant **openHASP-custom-component config:**
         properties:
           "text": >
             {%- if not is_state('weather.openweathermap','unavailable') %}
-            {%- set hour = as_timestamp(strptime(state_attr('weather.openweathermap','forecast')[3]['datetime'], '%Y-%m-%dT%H:%M:%S%z', default='2020-01-00T00:00:00+00:00')) | timestamp_custom("%-H") | int %}
+            {%- set hour = as_timestamp(strptime(state_attr('weather.openweathermap','forecast')[3]['datetime'], '%Y-%m-%dT%H:%M:%S%z', default='2020-01-01T00:00:00+00:00')) | timestamp_custom("%-H") | int %}
             {%- if 4 <= hour < 6 %}
             Dawning
             {%- elif 6 <= hour < 9 %}
@@ -1101,14 +1101,14 @@ relevant **openHASP-custom-component config:**
             {%- if not is_state('weather.openweathermap','unavailable') %}
             {%- set update = states('sensor.date') %}
             {%- set midnight = now().replace(hour=0, minute=0, second=0, microsecond=0).timestamp() %}
-            {%- set event = as_timestamp(strptime(state_attr('weather.openweathermap','forecast')[6]['datetime'], '%Y-%m-%dT%H:%M:%S%z', default='2020-01-00T00:00:00+00:00')) %}
+            {%- set event = as_timestamp(strptime(state_attr('weather.openweathermap','forecast')[6]['datetime'], '%Y-%m-%dT%H:%M:%S%z', default='2020-01-01T00:00:00+00:00')) %}
             {%- set delta = ((event - midnight) // 86400) | int %}
             {%- if delta == 0 %}
             Today
             {%- elif delta == 1 %}
             Tomorrow
             {%- endif %}
-            {{- event | timestamp_custom(" %-I %p") }}
+            {{ event | timestamp_custom(" %-I %p") }}
             {%- endif %}
 
       - obj: "p5b42" # Forecast temp +4h
@@ -1128,14 +1128,14 @@ relevant **openHASP-custom-component config:**
             {%- if not is_state('weather.openweathermap','unavailable') %}
             {%- set update = states('sensor.date') %}
             {%- set midnight = now().replace(hour=0, minute=0, second=0, microsecond=0).timestamp() %}
-            {%- set event = as_timestamp(strptime(state_attr('weather.openweathermap','forecast')[12]['datetime'], '%Y-%m-%dT%H:%M:%S%z', default='2020-01-00T00:00:00+00:00')) %}
+            {%- set event = as_timestamp(strptime(state_attr('weather.openweathermap','forecast')[12]['datetime'], '%Y-%m-%dT%H:%M:%S%z', default='2020-01-01T00:00:00+00:00')) %}
             {%- set delta = ((event - midnight) // 86400) | int %}
             {%- if delta == 0 %}
             Today
             {%- elif delta == 1 %}
             Tomorrow
             {%- endif %}
-            {{- event | timestamp_custom(" %-I %p") }}
+            {{ event | timestamp_custom(" %-I %p") }}
             {%- endif %}
 
       - obj: "p5b52" # Forecast temp +8h
@@ -1153,10 +1153,10 @@ relevant **openHASP-custom-component config:**
         properties:
           "text": >
             {%- if not is_state('weather.your_homename','unavailable') %}
-            {%- set now = as_timestamp(strptime(state_attr('weather.your_homename','forecast')[0]['datetime'], '%Y-%m-%dT%H:%M:%S%z', default='2020-01-00T00:00:00+00:00')) %}
-            {%- set day = now | timestamp_custom("%w") %}
+            {%- set now1 = as_timestamp(strptime(state_attr('weather.your_homename','forecast')[0]['datetime'], '%Y-%m-%dT%H:%M:%S%z', default='2020-01-01T00:00:00+00:00')) %}
+            {%- set day = now1 | timestamp_custom("%w") %}
             {%- set days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"] %}
-            {{ days[ day | int -1 ] }}{{- now | timestamp_custom(" %d") }}
+            {{ days[ day | int -1 ] }}{{ now1 | timestamp_custom(" %d") }}
             {%- endif %}
 
       - obj: "p5b62" # Forecast temp min +1d
@@ -1178,10 +1178,10 @@ relevant **openHASP-custom-component config:**
         properties:
           "text": >
             {%- if not is_state('weather.your_homename','unavailable') %}
-            {%- set now = as_timestamp(strptime(state_attr('weather.your_homename','forecast')[1]['datetime'], '%Y-%m-%dT%H:%M:%S%z', default='2020-01-00T00:00:00+00:00')) %}
-            {%- set day = now | timestamp_custom("%w") %}
+            {%- set now1 = as_timestamp(strptime(state_attr('weather.your_homename','forecast')[1]['datetime'], '%Y-%m-%dT%H:%M:%S%z', default='2020-01-01T00:00:00+00:00')) %}
+            {%- set day = now1 | timestamp_custom("%w") %}
             {%- set days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"] %}
-            {{ days[ day | int -1 ] }}{{- now | timestamp_custom(" %d") }}
+            {{ days[ day | int -1 ] }}{{ now1 | timestamp_custom(" %d") }}
             {%- endif %}
 
       - obj: "p5b72" # Forecast temp min +2d
@@ -1203,10 +1203,10 @@ relevant **openHASP-custom-component config:**
         properties:
           "text": >
             {%- if not is_state('weather.your_homename','unavailable') %}
-            {%- set now = as_timestamp(strptime(state_attr('weather.your_homename','forecast')[2]['datetime'], '%Y-%m-%dT%H:%M:%S%z', default='2020-01-00T00:00:00+00:00')) %}
-            {%- set day = now | timestamp_custom("%w") %}
+            {%- set now1 = as_timestamp(strptime(state_attr('weather.your_homename','forecast')[2]['datetime'], '%Y-%m-%dT%H:%M:%S%z', default='2020-01-01T00:00:00+00:00')) %}
+            {%- set day = now1 | timestamp_custom("%w") %}
             {%- set days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"] %}
-            {{ days[ day | int -1 ] }}{{- now | timestamp_custom(" %d") }}
+            {{ days[ day | int -1 ] }}{{ now1 | timestamp_custom(" %d") }}
             {%- endif %}
 
       - obj: "p5b82" # Forecast temp min +3d
@@ -1228,10 +1228,10 @@ relevant **openHASP-custom-component config:**
         properties:
           "text": >
             {%- if not is_state('weather.your_homename','unavailable') %}
-            {%- set now = as_timestamp(strptime(state_attr('weather.your_homename','forecast')[3]['datetime'], '%Y-%m-%dT%H:%M:%S%z', default='2020-01-00T00:00:00+00:00')) %}
-            {%- set day = now | timestamp_custom("%w") %}
+            {%- set now1 = as_timestamp(strptime(state_attr('weather.your_homename','forecast')[3]['datetime'], '%Y-%m-%dT%H:%M:%S%z', default='2020-01-01T00:00:00+00:00')) %}
+            {%- set day = now1 | timestamp_custom("%w") %}
             {%- set days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"] %}
-            {{ days[ day | int -1 ] }}{{- now | timestamp_custom(" %d") }}
+            {{ days[ day | int -1 ] }}{{ now1 | timestamp_custom(" %d") }}
             {%- endif %}
 
       - obj: "p5b92" # Forecast temp min +4d
