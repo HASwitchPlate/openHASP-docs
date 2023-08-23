@@ -1,0 +1,7 @@
+nav:
+    - file-editor.md
+    - pages.md
+    - objects
+    - Fonts: fonts.md
+    - styling.md
+    - data-types.md

@@ -1,0 +1,7 @@
+collapse_single_pages: true
+title: Integrations
+nav:
+    - Home Assistant: home-assistant
+    - Node-RED: node-red
+    - OpenHAB: openhab
+    - More Examples: ../examples/pagination

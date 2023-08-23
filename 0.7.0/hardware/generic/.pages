@@ -1,0 +1,5 @@
+nav:
+    - ILI9341 IPS: ili9341-ips.md
+    - MHS4001: mhs4001.md
+    - MRB3511: mrb3511.md
+    - MSP Series (Red PCB): msp-series.md

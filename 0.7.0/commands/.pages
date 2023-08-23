@@ -1,0 +1,6 @@
+nav:
+    - mqtt.md
+    - Global Commands: global.md
+    - System Commands: system.md
+    - Batch Processing: scripts.md
+    - Configuration Settings: configuration.md

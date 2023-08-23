@@ -1,0 +1,11 @@
+nav:
+    - hasp.md
+    - wifi.md
+    - mqtt.md
+    - http.md
+    - ftp.md
+    - display.md
+    - gpio.md
+    - time.md
+    - debug.md
+    - factory_reset.md

@@ -1,0 +1,4 @@
+nav:
+    - Flash ESP32: esp32.md
+    - Wifi Setup: wifi-setup.md
+    - Firmware Update: firmware-update.md

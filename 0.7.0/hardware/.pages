@@ -1,0 +1,19 @@
+collapse_single_pages: true
+title: Hardware
+nav:
+    - index.md
+    - Adafruit: adafruit
+    - AZ-Delivery: az-delivery
+    - Dustin Watts: dustin-watts
+    - Generic: generic
+    - Golden Security: golden-security
+    - Lanbon: lanbon
+    - LilyGO & TTGO: lilygo
+    - Lolin: lolin
+    - M5Stack: m5stack
+    - Makerfabs: makerfabs
+    - Seeed Studio: seeed-studio
+    - Sunton: sunton
+    - Waveshare: waveshare
+    - Wireless-Tag: wireless-tag
+    - YeaCreate: yeacreate
