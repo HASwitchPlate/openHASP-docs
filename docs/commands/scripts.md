@@ -20,5 +20,8 @@ If any of the following scripts is present on the filesystem, it will be run aut
 - `L:/boot.cmd` is executed when the plate has finished (re)booting
 - `L:/online.cmd` will be executed after connection to the network was successfull
 - `L:/offline.cmd` will be executed after connection to the WiFi is lost
+- `L:/idle-off.cmd` will be executed after idle state change to off (wakeup)
+- `L:/idle-short.cmd` will be executed after idle state change to short 
+- `L:/idle-long.cmd` will be executed after idle state change to long
 
-This makes it possible to disable or hide buttons, load a special offline page, etc. See [example][5].
+This makes it possible to disable or hide buttons, load a special offline page, dimming background, etc. See [example][5].
