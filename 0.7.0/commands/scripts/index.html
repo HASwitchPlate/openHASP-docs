@@ -2608,15 +2608,18 @@ General rules when creating <code>.cmd</code> batch scripts:</p>
 <li><code>L:/boot.cmd</code> is executed when the plate has finished (re)booting</li>
 <li><code>L:/online.cmd</code> will be executed after connection to the network was successfull</li>
 <li><code>L:/offline.cmd</code> will be executed after connection to the WiFi is lost</li>
+<li><code>L:/idle-off.cmd</code> will be executed after idle state change to off (wakeup)</li>
+<li><code>L:/idle-short.cmd</code> will be executed after idle state change to short </li>
+<li><code>L:/idle-long.cmd</code> will be executed after idle state change to long</li>
 </ul>
-<p>This makes it possible to disable or hide buttons, load a special offline page, etc. See [example][5].</p>
+<p>This makes it possible to disable or hide buttons, load a special offline page, dimming background, etc. See [example][5].</p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      2023-08-23
+      2023-08-26
     
   </small>
 </div>
