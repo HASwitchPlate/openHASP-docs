@@ -6,7 +6,7 @@ hide:
 
 ![pagination](https://user-images.githubusercontent.com/1550668/115120975-aa96c480-9fb0-11eb-9bda-95abcc16ec8e.png)
 
-Pagination can be executed locally using the `action` attribute of the objects.  
+Pagination can be executed locally using the `action` attribute of the objects.
 The `jsonl` lines below will setup 3 buttons to the bottom of a 240x320 screen which will navigate back and forth between the pages:
 
 ```json linenums="1"
@@ -44,4 +44,14 @@ To limit page navigation only to page numbers between 1 and 6:
 {"page":1,"id":0,"prev":6}
 {"page":6,"id":0,"next":1}
 ```
+
+You can create a main menu on page 1 like this:
+```json linenums="1"
+{"id":1,"obj":"btn","action": "p2","x":10,"y":5,"w":200,"h":40,"text":"Doors+Windows","text_font":32}
+{"id":2,"obj":"btn","action": "p3","x":10,"y":65,"w":200,"h":40,"text":"Weather","text_font":32}
+{"id":3,"obj":"btn","action": "p4","x":10,"y":140,"w":200,"h":40,"text":"Lights","text_font":32}
+```
+
+If you press on the Button Weather it jumps to page 3 (`"action": "p3"`)
+
 
