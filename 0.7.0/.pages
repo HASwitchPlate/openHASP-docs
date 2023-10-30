@@ -7,7 +7,7 @@ nav:
         - Objects: /0.7.0/design/objects/
         - Home Automation: /0.7.0/integrations/home-assistant/howto/
         - Commands: /0.7.0/commands/
-        - Developement: /0.7.0/firmware/compiling/local/
+        - Development: /0.7.0/firmware/compiling/local/
     - hardware
     - firmware
     - design
