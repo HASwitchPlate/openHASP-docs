@@ -7,7 +7,7 @@ repo_name: HASwitchPlate/openHASP
 site_name: "openHASP"
 site_description: "Open firmware for MCUs to drive a low-cost commodity touch display"
 site_author: "Francis Van Roie"
-copyright: Copyright &copy; 2019 - 2022 Francis Van Roie and contributors
+copyright: Copyright &copy; 2019 - 2023 Francis Van Roie and contributors
 
 theme:
   logo: "assets/images/logo.png"
