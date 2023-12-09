@@ -12,7 +12,7 @@ copyright: Copyright &copy; 2019-2023 Francis Van Roie and contributors
 
 extra:
   openhasp:
-    version: 0.7.0-rc4
+    version: 0.7.0-rc9
 
   social:
     - icon: material/github
@@ -33,7 +33,7 @@ extra:
 
   version:
     provider: mike
-    default: 0.6.3
+    default: 0.7.0
 
 #   alternate:
 #     - name: Default (en)
