@@ -1,0 +1,5 @@
+nav:
+    - ESP32: esp32.md
+    - ESP8266: esp8266.md
+    - Wifi Setup: wifi-setup.md
+    - firmware-update.md
