@@ -50,19 +50,19 @@ jobs:
         if: github.ref == 'refs/heads/0.6.3'
         run: |
           echo "Branchname: ${GITHUB_REF#refs/heads/}"
-          mike deploy --rebase --update-aliases --title="${GITHUB_REF#refs/heads/}" "${GITHUB_REF#refs/heads/}" "latest"
+          mike deploy --rebase --update-aliases --title="${GITHUB_REF#refs/heads/}" "${GITHUB_REF#refs/heads/}"
 
-      - name: Push docs from this branch
-        if: github.ref == 'refs/heads/0.6.3'
-        run: |
-          mike set-default --push latest
-  
       - name: Build docs from this branch
         if: github.ref == 'refs/heads/0.7.0'
         run: |
           echo "Branchname: ${GITHUB_REF#refs/heads/}"
-          mike deploy --rebase --update-aliases --title="${GITHUB_REF#refs/heads/}-dev" "${GITHUB_REF#refs/heads/}"
-       
+          mike deploy --rebase --update-aliases --title="${GITHUB_REF#refs/heads/}-dev" "${GITHUB_REF#refs/heads/}" "latest"
+
+      - name: Push docs from this branch
+        if: github.ref == 'refs/heads/0.7.0'
+        run: |
+          mike set-default --push latest
+  
       - name: List
         run: |
           mike list
