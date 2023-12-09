@@ -7,7 +7,7 @@ repo_name: HASwitchPlate/openHASP
 site_name: "openHASP"
 site_description: "Open firmware for MCUs to drive a low-cost commodity touch display"
 site_author: "Francis Van Roie"
-copyright: Copyright &copy; 2019 - 2021 Francis Van Roie and contributors
+copyright: Copyright &copy; 2019 - 2023 Francis Van Roie and contributors
 
 theme:
   logo: "assets/images/logo.png"
@@ -83,7 +83,7 @@ extra:
     - icon: material/github
       link: https://github.com/HASwitchPlate/openHASP/discussions
       name: GitHub Discussions
-    - icon: material/discord
+    - icon: custom/discord
       link: https://discord.gg/VCWyuhF
       name: Discord Chat
     - icon: material/home-assistant
@@ -92,7 +92,7 @@ extra:
 
   version:
     provider: mike
-    default: 0.6
+    default: 0.7.0
 
 # nav:
 #
