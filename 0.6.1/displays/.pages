@@ -1,0 +1,7 @@
+nav:
+    - ILI9341_IPS.md
+    - Lolin TFT Shield: lolin-tft-shield.md
+    - MHS4001.md
+    - MRB3511.md
+    - MSP Series (Red PCB): MSPxxxx.md
+    - Waveshare_RPi_LCD_Rev_C.md

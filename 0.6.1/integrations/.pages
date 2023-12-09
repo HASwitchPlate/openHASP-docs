@@ -1,0 +1,4 @@
+nav:
+    - Home Assistant: home-assistant
+    - OpenHAB: openhab
+    - Other examples: examples
