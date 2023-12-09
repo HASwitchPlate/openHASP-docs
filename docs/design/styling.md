@@ -110,7 +110,7 @@ The outline is similar to border but is drawn outside of the object.
 
 Padding sets the space on the inner sides of the edges. It means "I don't want my children too close to my sides, so keep this space". Padding inner sets the "gap" between the children. Margin sets the space on the outer side of the edges. It means "I want this space around me".
 
-Objects use them to set spacing. See the documentation of the [objects](../objects/) for the details.
+Objects use them to set spacing. See the documentation of the [objects](objects.md) for the details.
 
 | Property      | Type  | Description
 | :---          | :---: | :---
@@ -169,7 +169,7 @@ Value is an arbitrary text label drawn on top of an object. It can be a lightwei
 
 ## Line
 
-Properties for [line](../objects/#line), [line meter](../objects/#line-meter) objects.
+Properties for [line](objects.md#line), [line meter](objects.md#line-meter) objects.
 
 | Property               |  Type         | Description
 | :---                   |  :---:        | :---
@@ -182,7 +182,7 @@ Properties for [line](../objects/#line), [line meter](../objects/#line-meter) ob
 
 ## Scale
 
-The properties for styling the scale of [line meter](../objects/#line-meter), [gauge](../objects/#gauge) objects.
+The properties for styling the scale of [line meter](objects.md#line-meter), [gauge](objects.md#gauge) objects.
 
 | Property               |  Type         | Description
 | :---                   |  :---:        | :---
@@ -213,11 +213,11 @@ n/a
 
 -->
 
-[1]: ../data-types/#colors
-[2]: ../data-types/#boolean
-[3]: ../data-types/#integer
-[4]: ../data-types/#string
-[5]: ../data-types/#json-object
-[6]: ../fonts/
-[7]: ../objects/#common-properties
+[1]: data-types.md#colors
+[2]: data-types.md#boolean
+[3]: data-types.md#integer
+[4]: data-types.md#string
+[5]: data-types.md#json-object
+[6]: fonts.md
+[7]: objects.md#common-properties
 [8]: https://docs.lvgl.io/master/overview/style.html?#inheritance

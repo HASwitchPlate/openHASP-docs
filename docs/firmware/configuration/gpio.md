@@ -110,7 +110,7 @@ and to minimum when the switch is turned off.
 !!! note "Idle State"
     The input pins do *not* affect the idle state of the device. Only interacting with the touchscreen automatically resets the idle state.
 
-    If you want a GPIO pin to wakeup the device then you should monitor its mqtt topic and use the [`idle`](../../commands#idle) and [`backlight`](../../design/commands#backlight) commands appropriately.
+    If you want a GPIO pin to wakeup the device then you should monitor its mqtt topic and use the [`idle`](../../commands/global.md#idle) and [`backlight`](../../commands/global.md#backlight) commands appropriately.
 
 ## Output Pin
 
@@ -162,7 +162,7 @@ When a led is controlled by a range object (slider, arc slider, roller, drop-dow
 - Mood Green
 - Mood Blue
 
-Assigns the pin to an RGB channel of the moodlight. The three RGB channels can be controlled together using the [`moodlight`](../../design/commands#moodlight) command.
+Assigns the pin to an RGB channel of the moodlight. The three RGB channels can be controlled together using the [`moodlight`](../../commands/global.md#moodlight) command.
 
 #### Relays:
 - Light Relay
@@ -180,7 +180,7 @@ The various relay types (Light, Power) denote only the device class you want the
     Attaching devices to mains power can be dangerous!
     Configuring gpios is done on your **own responsibility**.
     Be sure to test any system thoroughly using low voltages first.
-    By using the firmware you accept the [License](../../firmware/license).
+    By using the firmware you accept the [License](../../firmware/license.md).
 
 Use the hasp/<platename>/command/output[x] topic (where x is the pin number) with an empty payload to query the current state of the relay.
 

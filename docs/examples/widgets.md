@@ -61,5 +61,5 @@ This is a real-world example of a `pages.jsonl` file. Upload it to your plate's 
 Upload [this logo](https://raw.githubusercontent.com/HASwitchPlate/openHASP-docs/0.6/docs/assets/images/logo-medium.png) to the plate to see the `img` object.
 
 !!! note
-    Your MCU needs to have [on-board PSram](../../hardware/#devices-recommendations) in order for the `img` object to be properly displayed.
+    Your MCU needs to have [on-board PSram](../hardware/index.md#devices-recommendations) in order for the `img` object to be properly displayed.
 

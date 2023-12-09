@@ -15,12 +15,12 @@ openHASP uses an ESP32 to take advantage of the additional hardware capabilities
 
 Click on the demo screen to show the example configuration:
 
-[![screenshot](examples/images/demo_switches_covers.png)](integrations/home-assistant/sampl_conf/#some-basic-controls) &nbsp; 
-[![screenshot](integrations/home-assistant/images/cc-sampl-weather-hours.png)](integrations/home-assistant/sampl_conf/#current-weather-and-forecasts) &nbsp;     
-[![screenshot](examples/images/demo_mediaplayer.png)](integrations/home-assistant/sampl_conf/#media-player) &nbsp; 
+[![screenshot](examples/images/demo_switches_covers.png)](integrations/home-assistant/sampl_conf.md#some-basic-controls) &nbsp; 
+[![screenshot](integrations/home-assistant/images/cc-sampl-weather-hours.png)](integrations/home-assistant/sampl_conf.md#current-weather-and-forecasts) &nbsp;     
+[![screenshot](examples/images/demo_mediaplayer.png)](integrations/home-assistant/sampl_conf.md#media-player) &nbsp; 
 [![Screenshot](examples/images/dashui-060.png)](examples/dashui.md) &nbsp;     
 [![Screenshot](integrations/openhab/images/demo_jaffa1.png)](integrations/openhab/integration_openhab.md) &nbsp; 
-[![screenshot](examples/images/demo_climate.png)](integrations/home-assistant/sampl_conf/#generic-thermostatclimate) &nbsp;     
+[![screenshot](examples/images/demo_climate.png)](integrations/home-assistant/sampl_conf.md#generic-thermostatclimate) &nbsp;     
 
 ### Quotes
 
@@ -64,5 +64,5 @@ This will help with ofssetting the cost of the different hardware devices we sup
 [4]: https://github.com/fvanroie/HMI-Font-Pack/releases
 [5]: https://discord.gg/VCWyuhF
 [6]: https://community.home-assistant.io/t/openhasp-an-mqtt-driven-touchscreen-scene-controller/300853
-[7]: design/objects/#cheatsheet
-[8]: design/objects/#image
+[7]: design/objects.md#cheatsheet
+[8]: design/objects.md#image

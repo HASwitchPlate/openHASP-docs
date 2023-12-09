@@ -75,7 +75,7 @@ don't send too many lines in a single payload, you can always sends multiple jso
     jsonl {"obj":"btn","id":14,"x":120,"y":1,"w":30,"h":40,"text_font":"2","text":"Test","text_color":"gray","bg_opa":0,"border_width":0}
     ```
 
-_For more details see [Pages](../design/pages) and [Objects](../design/objects)._
+_For more details see [Pages](design/pages.md) and [Objects](design/objects.md)._
 
 
 ### json
@@ -410,9 +410,9 @@ To update the configuration simply issue the same command `config/<submodule>` w
 
 
 
-[1]: ../design/data-types#colors
-[2]: ../design/data-types#boolean
-[3]: ../configuration/gpio
-[4]: ../configuration/display#short-idle
-[5]: ../examples/offlinehandling
-[6]: ../integrations/home-assistant/sampl_autom#prevent-burn-in-of-the-lcd-screen
+[1]: design/data-types.md#colors
+[2]: design/data-types.md#boolean
+[3]: firmware/configuration/gpio.md
+[4]: firmware/configuration/display.md#short-idle
+[5]: examples/offlinehandling.md
+[6]: integrations/home-assistant/sampl_autom.md#prevent-burn-in-of-the-lcd-screen

@@ -34,8 +34,8 @@ tbody tr:nth-child(even) {
 
 There are two ways to create an object on the screen:
 
-- Uploading a [`pages.jsonl`](../pages/#pagesjsonl) file onto the internal flash
-- Use the [`jsonl`](../../commands/#jsonl) command *(via MQTT, serial or telnet console)*
+- Uploading a [`pages.jsonl`](../pages.md#pagesjsonl) file onto the internal flash
+- Use the [`jsonl`](../../commands/global.md#jsonl) command *(via MQTT, serial or telnet console)*
 
 ## Cheatsheet
 
@@ -105,14 +105,14 @@ If the `page` parameter is not present, the object is placed on the same page as
 You can still hide the object on select pages if needed. Objects on page 0 appear on **top** of any objects on the underlying page.
 
 #### Actions :material-new-box:{ .tag-small }
-Action commands are supported only by _binary_ or _visual_ type of objects and they are performed locally on the plate. Actions can be of most any [command](../../commands.md):
+Action commands are supported only by _binary_ or _visual_ type of objects and they are performed locally on the plate. Actions can be of most any [command](../../commands/global.md):
 
 `action` has the format of `"action": {"<btn event>": "<command>"}`
 
 ***btn events:** are found in [events](#events). examples are `up`, `down` etc.
 
 Check out the [example](../../examples/pagination.md) for how to implement actions.  
-You can change the target pages using `prev`, `back` and `next` [page attributes](../pages/#page-attributes) operation on the page object `pXb0`.  
+You can change the target pages using `prev`, `back` and `next` [page attributes](../pages.md#page-attributes) operation on the page object `pXb0`.  
 
 #### Swipe <a name="swipe"></a>
 Objects and page area (`pXb0`) support  the`swipe` property. Enabling this will process `left`, `right`, `up` and/or `down` swipes on the object. The start of the swipe needs to be on the element which has this property enabled for the feature to activate.
@@ -709,7 +709,7 @@ The points parameter is a JSON array of [x,y] coordinates, for example `[[10,25]
 
 Either PNG or BIN image files are supported, from flash:
 
-- PNG image are decoded and kept in memory, thus you'll be able to display full-screen images only if your microcontroller [has installed PSram memory](../../getting-started/#recommended-boards),
+- PNG image are decoded and kept in memory, thus you'll be able to display full-screen images only if your microcontroller [has installed PSram memory](../../firmware/index.md#recommended-boards),
   else you will be limited to small icons or `BIN` files.
 
 - BIN images are *not* stored in memory and are read from flash each time. This will be slower but allows the use of larger images even if your microcontroller doesn't have PSram.   
@@ -739,21 +739,21 @@ You can use it as a background shape for other objects by putting its jsonl line
     {"page":1,"id":50,"obj":"obj","x":5,"y":35,"w":230,"h":250,"click":0}
     ```
    
-[1]: ../data-types/#colors
-[2]: ../data-types/#boolean
-[3]: ../../firmware/configuration/gpio/#groupid
-[4]: ../styling/#general
-[5]: ../styling/#image
-[6]: ../styling/#value
-[7]: ../styling/#line
-[8]: ../styling/#scale
-[9]: ../data-types/#integer
-[10]: ../data-types/#string
-[11]: ../data-types/#json-object
-[12]: ../styling/
-[13]: ../styling/#padding-and-margin
-[14]: ../styling/#text
-[15]: ../data-types/#variables
+[1]: ../data-types.md#colors
+[2]: ../data-types.md#boolean
+[3]: ../../firmware/configuration/gpio.md#groupid
+[4]: ../styling.md#general
+[5]: ../styling.md#image
+[6]: ../styling.md#value
+[7]: ../styling.md#line
+[8]: ../styling.md#scale
+[9]: ../data-types.md#integer
+[10]: ../data-types.md#string
+[11]: ../data-types.md#json-object
+[12]: ../styling.md
+[13]: ../styling.md#padding-and-margin
+[14]: ../styling.md#text
+[15]: ../data-types.md#variables
 [16]: https://lvgl.io/tools/imageconverter
-[17]: ../../integrations/home-assistant/sampl_conf/#using-tags
-[18]: ../styling/#parts
+[17]: ../../integrations/home-assistant/sampl_conf.md#using-tags
+[18]: ../styling.md#parts

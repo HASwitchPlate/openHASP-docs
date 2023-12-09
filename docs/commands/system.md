@@ -67,7 +67,7 @@ Currently supported services:
 
 !!! tip
     Once these services are stopped, connection is lost/not possible to the plate through them. They can be started at any time by sending `service start` commands in through MQTT.             
-    It's possible to create self-built firmware binaries which have services stopped by default at boot, using [customization](firmware/compiling/customize.md). 
+    It's possible to create self-built firmware binaries which have services stopped by default at boot, using [customization](../firmware/compiling/customize.md). 
 
 ## `statusupdate`
 

@@ -12,21 +12,21 @@ You can use it as a background shape for other objects by putting its jsonl line
     {"page":1,"id":50,"obj":"obj","x":5,"y":35,"w":230,"h":250,"click":0}
     ```
       
-[1]: ../../data-types/#colors
-[2]: ../../data-types/#boolean
-[3]: ../../../configuration/gpio/#groupid
-[4]: ../../styling/#general
-[5]: ../../styling/#image
-[6]: ../../styling/#value
-[7]: ../../styling/#line
-[8]: ../../styling/#scale
-[9]: ../../data-types/#integer
-[10]: ../../data-types/#string
-[11]: ../../data-types/#json-object
-[12]: ../../styling/
-[13]: ../../styling/#padding-and-margin
-[14]: ../../styling/#text
-[15]: ../../data-types/#variables
+[1]: ../data-types.md#colors
+[2]: ../data-types.md#boolean
+[3]: ../../firmware/configuration/gpio.md#groupid
+[4]: ../styling.md#general
+[5]: ../styling.md#image
+[6]: ../styling.md#value
+[7]: ../styling.md#line
+[8]: ../styling.md#scale
+[9]: ../data-types.md#integer
+[10]: ../data-types.md#string
+[11]: ../data-types.md#json-object
+[12]: ../styling.md
+[13]: ../styling.md#padding-and-margin
+[14]: ../styling.md#text
+[15]: ../data-types.md#variables
 [16]: https://lvgl.io/tools/imageconverter
-[17]: ../../../integrations/home-assistant/sampl_conf/#using-tags
-[18]: ../../styling/#parts
+[17]: ../../integrations/home-assistant/sampl_conf.md#using-tags
+[18]: ../styling.md#parts

@@ -5,13 +5,13 @@ hide:
 
 # Handle offline state
 
-openHASP can detect the state when the plate is disconnected from the network. With [Group ID](../../../configuration/gpio/#group) object property combined with [batch processing](../../../commands/#batch-processing), objects on the screen can act on locally connected devices without using the home automation system - letting you use only these devices when the network is down.
+openHASP can detect the state when the plate is disconnected from the network. With [Group ID](../firmware/configuration/gpio.md#group) object property combined with [batch processing](../commands/scripts.md), objects on the screen can act on locally connected devices without using the home automation system - letting you use only these devices when the network is down.
 
 ## Prerequisites
 
 In the use case presented below, the following assumptions are made:
 
-- you have a plate with 2 local relays (configured on [output GPIOs](../../../configuration/gpio/#output-pin) as lights), each relay added to a different group (Group 1 and 2 respectively).
+- you have a plate with 2 local relays (configured on [output GPIOs](../firmware/configuration/gpio.md#output-pin) as lights), each relay added to a different group (Group 1 and 2 respectively).
 - you want to have 2 toggle buttons on the screen acting directly on these relays when the plate is not yet, or disconnected from the WiFi network. No page navigation is needed as no other objects related to the home automation services have to be displayed. The buttons have the `groupid` property set to 1 and 2 respectively.
 
 ## Configuration
@@ -28,7 +28,7 @@ In the plate's web UI keep the default `/pages.jsonl` as Startup Layout. This wi
 {"page":1,"id":99,"obj":"label","x":0,"y":295,"w":240,"align":"center","text": "%hostname%","text_color":"#FFFFFF"}
 ```
 
-You can use [batch processing](../../../commands/#batch-processing) and create scripts which run when the plate connects to the WiFi network or loses connection from it.
+You can use [batch processing](../commands/scripts.md) and create scripts which run when the plate connects to the WiFi network or loses connection from it.
 
 `online.cmd` - batch script to run after connected to the WiFi network, it will clear the screen and load the pages with objects related to the home automation:
 

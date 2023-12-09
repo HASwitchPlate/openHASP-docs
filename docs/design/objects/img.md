@@ -21,7 +21,7 @@
 
 Either PNG or BIN image files are supported, from flash:
 
-- PNG image are decoded and kept in memory, thus you'll be able to display full-screen images only if your microcontroller [has installed PSram memory](../../getting-started/#recommended-boards),
+- PNG image are decoded and kept in memory, thus you'll be able to display full-screen images only if your microcontroller [has installed PSram memory](../../firmware/index.md#recommended-boards),
   else you will be limited to small icons or `BIN` files.
 
 - BIN images are *not* stored in memory and are read from flash each time. This will be slower but allows the use of larger images even if your microcontroller doesn't have PSram.   
@@ -36,21 +36,21 @@ Either PNG or BIN image files are supported, from flash:
     {"page":1,"id":34,"obj":"img","src":"L:/image.png","auto_size":0,"w":50}
     ```
    
-[1]: ../../data-types/#colors
-[2]: ../../data-types/#boolean
-[3]: ../../../configuration/gpio/#groupid
-[4]: ../../styling/#general
-[5]: ../../styling/#image
-[6]: ../../styling/#value
-[7]: ../../styling/#line
-[8]: ../../styling/#scale
-[9]: ../../data-types/#integer
-[10]: ../../data-types/#string
-[11]: ../../data-types/#json-object
-[12]: ../../styling/
-[13]: ../../styling/#padding-and-margin
-[14]: ../../styling/#text
-[15]: ../../data-types/#variables
+[1]: ../data-types.md#colors
+[2]: ../data-types.md#boolean
+[3]: ../../firmware/configuration/gpio.md#groupid
+[4]: ../styling.md#general
+[5]: ../styling.md#image
+[6]: ../styling.md#value
+[7]: ../styling.md#line
+[8]: ../styling.md#scale
+[9]: ../data-types.md#integer
+[10]: ../data-types.md#string
+[11]: ../data-types.md#json-object
+[12]: ../styling.md
+[13]: ../styling.md#padding-and-margin
+[14]: ../styling.md#text
+[15]: ../data-types.md#variables
 [16]: https://lvgl.io/tools/imageconverter
-[17]: ../../../integrations/home-assistant/sampl_conf/#using-tags
-[18]: ../../styling/#parts
+[17]: ../../integrations/home-assistant/sampl_conf.md#using-tags
+[18]: ../styling.md#parts

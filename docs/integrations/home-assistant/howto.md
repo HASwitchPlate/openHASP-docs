@@ -138,7 +138,7 @@ The brightness of the screen when idle (before long idle). Numeric value between
 In the example above, when object `p1b2` (which is a toggle button) generates the `on` event, `light.my_room` will be turned on by the service call `light.turn_on` as specified in the event config. And similarly when `off` event comes through MQTT, the light will be turned off by the corresponding service call.  
 
 !!! note
-    Any variable coming from the MQTT message can be used between curly brackets and passed to the service call. In the example above when object `p1b3` (which is a dropdown selector) generates the `changed` event, a persistent notification will appear in Home Assistant's Lovelace interface containing the selected text from the object, which was passed over from the MQTT message. See [object events](../../../design/objects/#events) for more types of generated events.
+    Any variable coming from the MQTT message can be used between curly brackets and passed to the service call. In the example above when object `p1b3` (which is a dropdown selector) generates the `changed` event, a persistent notification will appear in Home Assistant's Lovelace interface containing the selected text from the object, which was passed over from the MQTT message. See [object events](../../design/objects.md#events) for more types of generated events.
 
 
 ### Reloading the configuration
@@ -229,13 +229,13 @@ homeassistant:
 ```
 
 **openhasp.command**
-:   Wraps up any [command](../../commands.md) so that it can be called against the _entity_id_ of the plate. Useful in Automations and Blueprints.
+:   Wraps up any [command](../../commands/global.md) so that it can be called against the _entity_id_ of the plate. Useful in Automations and Blueprints.
 
     !!! warning
         This service handles data without input validation. Only for advanced users. No support for any problems caused by using this!
 
 **openhasp.config**
-:   Wraps up any raw [submodule config](../../commands/#configsubmodule) so that it can be called against the _entity_id_ of the plate. Useful in Automations and Blueprints.
+:   Wraps up any raw [submodule config](../../commands/configuration.md#configsubmodule) so that it can be called against the _entity_id_ of the plate. Useful in Automations and Blueprints.
 
     !!! warning
         This service handles data without input validation. Only for advanced users. No support for any problems caused by using this!
