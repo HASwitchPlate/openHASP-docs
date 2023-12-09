@@ -1,9 +1,0 @@
-nav:
-    - hasp.md
-    - wifi.md
-    - http.md
-    - mqtt.md
-    - display.md
-    - gpio.md
-    - debug.md
-    - factory_reset.md
