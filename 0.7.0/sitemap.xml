@@ -86,6 +86,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://www.openhasp.com/0.7.0/0.7.0/design/objects/</loc>
+         <lastmod>2023-12-09</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://www.openhasp.com/0.7.0/0.7.0/design/pages/</loc>
          <lastmod>2023-12-09</lastmod>
          <changefreq>daily</changefreq>

@@ -2855,7 +2855,7 @@ To access the properties of the parts use a two-digit suffix appended to the sty
 <p>For example to set the <code>radius</code> of all the buttons in <em>btnmatrix</em> you'd set a value for the property <code>radius30</code>. Using <code>radius</code> without a suffix will apply the property to the outline background of it.</p>
 <p>A <code>toggle</code> <code>btn</code> can be made to show <code>text</code> <code>yellow</code> when toggled ON with <code>"text_color":"white","text_color01":"yellow"</code></p>
 <h3 id="inheritance">Inheritance<a class="headerlink" href="#inheritance" title="Permanent link">~</a></h3>
-<p>If objects are children of other objects (they have the <a href="objects.md#common-properties">parentid</a> property set), property inheritance takes place. </p>
+<p>If objects are children of other objects (they have the <a href="../objects/#common-properties">parentid</a> property set), property inheritance takes place. </p>
 <p>Some properties (typically that are related to text and opacity) can be inherited from the parent object's styles. Inheritance is applied only if the given property is not set in the initial jsonl of the child object (at first draw). In this case, if the property is inheritable, the property's value will be searched in the parents too until an object specifies a value for the property. The parents will use their own state to detemine the value. So for example if a button is pressed, and the text color comes from here, the pressed text color will be used. (<a href="https://docs.lvgl.io/master/overview/style.html?#inheritance" target="_blank">source</a>) Inheritance takes place at run time too.     </p>
 <p>When a parent object is deleted, all children will be deleted too.</p>
 <h2 id="general">General<a class="headerlink" href="#general" title="Permanent link">~</a></h2>
@@ -3001,7 +3001,7 @@ To access the properties of the parts use a two-digit suffix appended to the sty
 </table>
 <h2 id="padding-and-margin">Padding and Margin<a class="headerlink" href="#padding-and-margin" title="Permanent link">~</a></h2>
 <p>Padding sets the space on the inner sides of the edges. It means "I don't want my children too close to my sides, so keep this space". Padding inner sets the "gap" between the children. Margin sets the space on the outer side of the edges. It means "I want this space around me".</p>
-<p>Objects use them to set spacing. See the documentation of the <a href="objects.md">objects</a> for the details.</p>
+<p>Objects use them to set spacing. See the documentation of the <a href="../objects/">objects</a> for the details.</p>
 <table>
 <thead>
 <tr>
@@ -3208,7 +3208,7 @@ To access the properties of the parts use a two-digit suffix appended to the sty
 </tbody>
 </table>
 <h2 id="line">Line<a class="headerlink" href="#line" title="Permanent link">~</a></h2>
-<p>Properties for <a href="objects.md#line">line</a>, <a href="objects.md#line-meter">line meter</a> objects.</p>
+<p>Properties for <a href="../objects/#line">line</a>, <a href="../objects/#line-meter">line meter</a> objects.</p>
 <table>
 <thead>
 <tr>
@@ -3251,7 +3251,7 @@ To access the properties of the parts use a two-digit suffix appended to the sty
 </tbody>
 </table>
 <h2 id="scale">Scale<a class="headerlink" href="#scale" title="Permanent link">~</a></h2>
-<p>The properties for styling the scale of <a href="objects.md#line-meter">line meter</a>, <a href="objects.md#gauge">gauge</a> objects.</p>
+<p>The properties for styling the scale of <a href="../objects/#line-meter">line meter</a>, <a href="../objects/#gauge">gauge</a> objects.</p>
 <table>
 <thead>
 <tr>
