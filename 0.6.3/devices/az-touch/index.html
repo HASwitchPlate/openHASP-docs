@@ -1874,7 +1874,7 @@ The AZ-Touch Feather contains loose components that you need to solder to the PC
         xhr.onload = function() {
             var versions = JSON.parse(this.responseText);
             latest_version = ""
-            dev_version = "/0.0.0/"
+            dev_version = ""
             for (id in versions) {
                 if (versions[id]["aliases"].length > 0 && versions[id]["aliases"].includes("latest")) {
                     latest_version = "/" + versions[id].version + "/";
@@ -1894,6 +1894,9 @@ The AZ-Touch Feather contains loose components that you need to solder to the PC
         xhr.send();
     });
 </script>
+<!-- Cloudflare Web Analytics -->
+<script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "d4bec0b78f6840c1afe0d7d21896a2e9"}'></script>
+<!-- End Cloudflare Web Analytics -->
 
     
   </body>
