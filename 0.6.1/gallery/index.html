@@ -1465,9 +1465,9 @@
             }
             if (!window.location.pathname.includes("latest/") && (latest_version.length > 0 && !window.location.pathname.includes(latest_version))) {
                 if (!window.location.pathname.includes("dev/") && (dev_version.length > 0 && !window.location.pathname.includes(dev_version))) {
-                    document.querySelector("div[data-md-component=announce]").innerHTML = "<div id='announce-msg'>This documentation is for the development version. We recommend you <a href='https://www.openhasp.com/latest/'>use the latest</a>.</div>";
-                } else {
                     document.querySelector("div[data-md-component=announce]").innerHTML = "<div id='announce-msg'>This documentation is for a previous version. We recommend you <a href='https://www.openhasp.com/latest/'>use the latest</a>.</div>";
+                } else {
+                    document.querySelector("div[data-md-component=announce]").innerHTML = "<div id='announce-msg'>This documentation is for the development version. We recommend you <a href='https://www.openhasp.com/latest/'>use the latest</a>.</div>";
                 }
             }
         };
