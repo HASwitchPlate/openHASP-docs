@@ -2868,7 +2868,7 @@ and to minimum when the switch is turned off.</p>
 <div class="admonition note">
 <p class="admonition-title">Idle State</p>
 <p>The input pins do <em>not</em> affect the idle state of the device. Only interacting with the touchscreen automatically resets the idle state.</p>
-<p>If you want a GPIO pin to wakeup the device then you should monitor its mqtt topic and use the <a href="../../commands#idle"><code>idle</code></a> and <a href="../../design/commands#backlight"><code>backlight</code></a> commands appropriately.</p>
+<p>If you want a GPIO pin to wakeup the device then you should monitor its mqtt topic and use the <a href="../../../commands/global/#idle"><code>idle</code></a> and <a href="../../../commands/global/#backlight"><code>backlight</code></a> commands appropriately.</p>
 </div>
 <h2 id="output-pin">Output Pin<a class="headerlink" href="#output-pin" title="Permanent link">~</a></h2>
 <div class="row justify-content-center">
@@ -2913,7 +2913,7 @@ These will set the brightness of the led to 0 (0%), 84 (33%), 170 (66%) and 255 
 <li>Mood Green</li>
 <li>Mood Blue</li>
 </ul>
-<p>Assigns the pin to an RGB channel of the moodlight. The three RGB channels can be controlled together using the <a href="../../design/commands#moodlight"><code>moodlight</code></a> command.</p>
+<p>Assigns the pin to an RGB channel of the moodlight. The three RGB channels can be controlled together using the <a href="../../../commands/global/#moodlight"><code>moodlight</code></a> command.</p>
 <h4 id="relays">Relays:<a class="headerlink" href="#relays" title="Permanent link">~</a></h4>
 <ul>
 <li>Light Relay</li>
@@ -2928,7 +2928,7 @@ These will set the brightness of the led to 0 (0%), 84 (33%), 170 (66%) and 255 
 <p>Attaching devices to mains power can be dangerous!
 Configuring gpios is done on your <strong>own responsibility</strong>.
 Be sure to test any system thoroughly using low voltages first.
-By using the firmware you accept the <a href="../../firmware/license">License</a>.</p>
+By using the firmware you accept the <a href="../../license/">License</a>.</p>
 </div>
 <p>Use the hasp/<platename>/command/output[x] topic (where x is the pin number) with an empty payload to query the current state of the relay.</p>
 <p><code>json linenums="1"l

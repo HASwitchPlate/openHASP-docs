@@ -2873,7 +2873,7 @@ There is nothing stopping you from using the full suite of template functions li
 <p>In the example above, when object <code>p1b2</code> (which is a toggle button) generates the <code>on</code> event, <code>light.my_room</code> will be turned on by the service call <code>light.turn_on</code> as specified in the event config. And similarly when <code>off</code> event comes through MQTT, the light will be turned off by the corresponding service call.  </p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Any variable coming from the MQTT message can be used between curly brackets and passed to the service call. In the example above when object <code>p1b3</code> (which is a dropdown selector) generates the <code>changed</code> event, a persistent notification will appear in Home Assistant's Lovelace interface containing the selected text from the object, which was passed over from the MQTT message. See <a href="../../../design/objects/#events">object events</a> for more types of generated events.</p>
+<p>Any variable coming from the MQTT message can be used between curly brackets and passed to the service call. In the example above when object <code>p1b3</code> (which is a dropdown selector) generates the <code>changed</code> event, a persistent notification will appear in Home Assistant's Lovelace interface containing the selected text from the object, which was passed over from the MQTT message. See <a href="../../design/objects.md#events">object events</a> for more types of generated events.</p>
 </div>
 <h3 id="reloading-the-configuration">Reloading the configuration<a class="headerlink" href="#reloading-the-configuration" title="Permanent link">~</a></h3>
 <p>After you make changes to the configuration of the plate you can apply them by either restarting Home Assistant or by <strong>reloading the integration</strong> from Lovelace user interface with option found in <em>Configuration &gt; Devices &amp; Services &gt; openHASP &gt; (your plate &gt;) 3dots menu &gt; Reload</em>. Note that this has to be done individually for each configured plate. </p>
@@ -2949,7 +2949,7 @@ With the <code>entry_id</code> found in <em>.storage/core.config_entries</em> fi
 <dl>
 <dt><strong>openhasp.command</strong></dt>
 <dd>
-<p>Wraps up any <a href="../../../commands/">command</a> so that it can be called against the <em>entity_id</em> of the plate. Useful in Automations and Blueprints.</p>
+<p>Wraps up any <a href="../../../commands/global/">command</a> so that it can be called against the <em>entity_id</em> of the plate. Useful in Automations and Blueprints.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>This service handles data without input validation. Only for advanced users. No support for any problems caused by using this!</p>
@@ -2957,7 +2957,7 @@ With the <code>entry_id</code> found in <em>.storage/core.config_entries</em> fi
 </dd>
 <dt><strong>openhasp.config</strong></dt>
 <dd>
-<p>Wraps up any raw <a href="../../commands/#configsubmodule">submodule config</a> so that it can be called against the <em>entity_id</em> of the plate. Useful in Automations and Blueprints.</p>
+<p>Wraps up any raw <a href="../../../commands/configuration/#configsubmodule">submodule config</a> so that it can be called against the <em>entity_id</em> of the plate. Useful in Automations and Blueprints.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>This service handles data without input validation. Only for advanced users. No support for any problems caused by using this!</p>

@@ -2680,7 +2680,7 @@
 <li>by creating a special file on the flash file system, which will be loaded and the layout with the objects displayed each time HASP starts up.</li>
 <li>by issuing commands through MQTT to draw/change the objects immediately</li>
 </ul>
-<p>You can create the file with your favourite text editor and upload it <em>(and other resource assets like fonts)</em> using the web interface <a href="../../configuration/hasp/">HASP Design</a> menu.</p>
+<p>You can create the file with your favourite text editor and upload it <em>(and other resource assets like fonts)</em> using the web interface <a href="../../firmware/configuration/hasp/">HASP Design</a> menu.</p>
 <h2 id="pagesjsonl">pages.jsonl<a class="headerlink" href="#pagesjsonl" title="Permanent link">~</a></h2>
 <p>The location of this file is <code>/pages.jsonl</code> in the root of the flash filesystem. 
 It uses the <a href="https://jsonlines.org/" target="_blank">JSON Lines format</a> with one json object per line. 
@@ -2698,7 +2698,7 @@ The file extension is <code>.jsonl</code> and not <code>.json</code>.</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The maximum number of pages and objects is limited by the memory available in the MCU, it depends on the <a href="../../#features">microcontroller type</a> you use.</p>
+<p>The maximum number of pages and objects is limited by the memory available in the MCU, it depends on the <a href="../..#features">microcontroller type</a> you use.</p>
 </div>
 <h3 id="file-comments">File comments<a class="headerlink" href="#file-comments" title="Permanent link">~</a></h3>
 <p>If any of the required <code>id</code> or <code>obj</code> properties are missing -<em>and the line is still valid json</em>- then it is interpreted as a comment.</p>
@@ -2718,7 +2718,7 @@ If you then omit the <code>page</code> parameter in the lines below this comment
 <p>If the line is not valid json, the parsing of the rest of the file is also stopped.</p>
 </div>
 <h2 id="jsonl-command">jsonl command<a class="headerlink" href="#jsonl-command" title="Permanent link">~</a></h2>
-<p>See <a href="../../commands/#jsonl">commands documentation</a> for the <code>jsonl</code> command. The payload of the command corresponds to what's exactly in one line of the <code>pages.jsonl</code> file above, with a minor exception: page numbers are not kept between the commands - you need to specfiy the page with each!</p>
+<p>See <a href="../../commands/global/#jsonl">commands documentation</a> for the <code>jsonl</code> command. The payload of the command corresponds to what's exactly in one line of the <code>pages.jsonl</code> file above, with a minor exception: page numbers are not kept between the commands - you need to specfiy the page with each!</p>
 <h2 id="objects">Objects<a class="headerlink" href="#objects" title="Permanent link">~</a></h2>
 <p>Each line in <code>pages.jsonl</code> creates <strong>one object</strong> on a page and has to be in the json format.<br />
 The order of the objects also dictates the <em>layer</em> on the page from bottom to top. So the last drawn object will be the topmost.</p>
@@ -2737,7 +2737,7 @@ The order of the objects also dictates the <em>layer</em> on the page from botto
 You can have a maximum of 254 ids on each page. You don't have to use them in ascending order, you can for example use them for logical numbering (start labels from 11, 12, 13, buttons from 21, 22, 23 etc.) <br />
 Page number <code>0</code> refers to an object visible on all pages. <br />
 An id of <code>0</code> refers to the page itself instead of an object.   </p>
-<p>See <a href="../objects/">objects documentation</a> for details.</p>
+<p>See <a href="objects.md">objects documentation</a> for details.</p>
 <h2 id="page-attributes">Page attributes<a class="headerlink" href="#page-attributes" title="Permanent link">~</a></h2>
 <p>A page can have the following attributes:</p>
 <ul>
