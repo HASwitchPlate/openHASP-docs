@@ -64,5 +64,5 @@ This will help with ofssetting the cost of the different hardware devices we sup
 [4]: https://github.com/fvanroie/HMI-Font-Pack/releases
 [5]: https://discord.gg/VCWyuhF
 [6]: https://community.home-assistant.io/t/openhasp-an-mqtt-driven-touchscreen-scene-controller/300853
-[7]: design/objects.md#cheatsheet
-[8]: design/objects.md#image
+[7]: design/objects/index.md#cheatsheet
+[8]: design/objects/img.md

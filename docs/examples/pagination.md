@@ -27,7 +27,7 @@ Will restart the device on holding of the button object.
 
 ***btn events:** are `up`, `down`, `hold`, `release`.
 
-Pagination can be also acomplished by enabling [swipe](../design/objects.md#swipe) gesture on certain objects. The `jsonl` line below will setup an invisible rectangle overlay at the top of the screen with enabled `swipe`:
+Pagination can be also acomplished by enabling [swipe](../design/objects/index.md#swipe) gesture on certain objects. The `jsonl` line below will setup an invisible rectangle overlay at the top of the screen with enabled `swipe`:
 
 ```json linenums="1"
 {"page":0,"id":6,"obj":"obj","swipe":1,"x":0,"y":0,"h":30,"w":240,"opacity":0,"comment":"swipe-area-at-top"}

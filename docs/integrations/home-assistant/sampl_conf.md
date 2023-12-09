@@ -173,7 +173,7 @@ relevant **openHASP-custom-component config:**
 
 ![screenshot](images/cc_sampl_rgb.png)
 
-Have a light in Home Assistant controlled by openHASP. In our example we use Lanbon L8's moodlight which has both brightness and color - we use a [slider](../../design/objects.md#slider) object for the brightness, and a [cpicker](../../design/objects.md#color-picker) object for color.
+Have a light in Home Assistant controlled by openHASP. In our example we use Lanbon L8's moodlight which has both brightness and color - we use a [slider](../../design/objects/slider.md) object for the brightness, and a [cpicker](../../design/objects/cpicker.md) object for color.
 
 relevant **openHASP config:**
 
@@ -610,7 +610,7 @@ Note that the `val` value of the slider is multiplied and divided by 100 when re
 
 ![screenshot](images/cc_sampl_climate.png)  
 
-This example is a bit more complex in the aspect that it uses several objects put on top of each other, and grouped toghether using the `parentid` parameter.  Special attention goes to an invisible [tabview](../../design/objects.md#tabview) (exteding over the label dispaying the target temperarture) which allows for swiping between an on/off switch and dropdowns for setting the hvac and fan modes.
+This example is a bit more complex in the aspect that it uses several objects put on top of each other, and grouped toghether using the `parentid` parameter.  Special attention goes to an invisible [tabview](../../design/objects/tabview.md) (exteding over the label dispaying the target temperarture) which allows for swiping between an on/off switch and dropdowns for setting the hvac and fan modes.
 
 The target temperature can be set by dragging the arc handle, more precise +/- setting possible by short/long pressing the middle circle containing the current temperature (increasing/decreasing the value by the _temperature step_ defined by the climate entity). Note that the `min`, `max` and `val` values of the arc and gauge are multiplied and divided by 10 when set and read, because [LVGL only suppports integers](../../design/data-types.md#integer) for object values. By multiplying and dividing by 10, it becomes possible to set decimal values for climate temperature. 
 
@@ -883,7 +883,7 @@ relevant **openHASP-custom-component config:**
 ![screenshot](images/cc-sampl-weather-hourss.png) 
 ![screenshot](images/cc-sampl-weather-dayss.png)   
 
-This example implements two weather forecast screens which located on the same page, can be swiped left and right. On the top area the current weather is shown, on the bottom area the user can choose by swiping between next hours and next days forecast. This is achieved by a [tabview](../../design/objects.md#tabview) object with invisible tabs. 
+This example implements two weather forecast screens which located on the same page, can be swiped left and right. On the top area the current weather is shown, on the bottom area the user can choose by swiping between next hours and next days forecast. This is achieved by a [tabview](../../design/objects/tabview.md) object with invisible tabs. 
 
 Since there's no weather integration in Home Assistant which can offer so much information at once, this can be achieved by installing multiple weather components. In our example we use two:
 
@@ -905,7 +905,7 @@ This example implements Home Assistant's [standard weather conditions](https://w
 Note that the tab swiping dots (_p5b10_) are also handled by the custom component. Don't forget update the service call in the configuration with your plate's MQTT node name, and the command parameters if you change the page of the objects.
 
 !!! warning
-    For this example to work, you need an ESP32 board having [PSRam](../../design/objects.md#image) memory installed, otherwise openHASP will crash.
+    For this example to work, you need an ESP32 board having [PSRam](../../design/objects/img.md) memory installed, otherwise openHASP will crash.
 
 relevant **openHASP config:** (screen size 240x320, UI Theme: Hasp Light) 
 
@@ -1273,7 +1273,7 @@ The fan and the perfume PNG icons are available below. Upload them to the flash 
 - [perfume](../../assets/users/perfume3.png)
 
 !!! warning
-    For this example to work, you need an ESP32 board having [PSRam](../../design/objects.md#image) memory installed, otherwise openHASP will likely crash.
+    For this example to work, you need an ESP32 board having [PSRam](../../design/objects/img.md) memory installed, otherwise openHASP will likely crash.
 
 relevant **openHASP config:** (screen size 240x320, UI Theme: Hasp Light) 
 
@@ -1373,7 +1373,7 @@ Note the condition in the Spinner configuration of the component:
 
 ## Using tags 
 
-You can avoid too much code repetition when you have multiple similar objects on a page, doing the same thing with different entities, and you'd like to make accessible some advanced options too. Presenting everyting flat will overwhelm your user interface, so it would be better to just show the most used controls, and only display the advanced options in popups related to unique objects. [Tag](../../design/objects.md#common-properties) property was made to ease this task.
+You can avoid too much code repetition when you have multiple similar objects on a page, doing the same thing with different entities, and you'd like to make accessible some advanced options too. Presenting everyting flat will overwhelm your user interface, so it would be better to just show the most used controls, and only display the advanced options in popups related to unique objects. [Tag](../../design/objects/index.md#common-properties) property was made to ease this task.
 
 ### Colored lights panel
 
