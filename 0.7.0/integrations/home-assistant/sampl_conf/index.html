@@ -5637,8 +5637,8 @@ Again - without tags, the last 5 object definitions would have to be added for e
         xhr.open("GET", "/versions.json");
         xhr.onload = function() {
             var versions = JSON.parse(this.responseText);
-            latest_version = ""
-            dev_version = ""
+            latest_version = "/0.0.0/"
+            dev_version = "/0.0.0/"
             for (id in versions) {
                 if (versions[id]["aliases"].length > 0 && versions[id]["aliases"].includes("latest")) {
                     latest_version = "/" + versions[id].version + "/";
