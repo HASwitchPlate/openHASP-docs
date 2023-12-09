@@ -1774,7 +1774,7 @@ General rules when creating <code>.cmd</code> batch scripts:</p>
 <li><code>/online.cmd</code> will be executed after connection to the network was successfull</li>
 <li><code>/offline.cmd</code> will be executed after connection to the WiFi is lost</li>
 </ul>
-<p>This makes it possible to disable or hide buttons, load a special offline page, etc. See <a href="../integrations/examples/example-offlinehandling">example</a>.</p>
+<p>This makes it possible to disable or hide buttons, load a special offline page, etc. See <a href="../integrations/examples/example-offlinehandling/">example</a>.</p>
 <h2 id="global-commands">Global commands<a class="headerlink" href="#global-commands" title="Permanent link">~</a></h2>
 <h3 id="run">run<a class="headerlink" href="#run" title="Permanent link">~</a></h3>
 <p><em>accepted parameters:</em> name of a <code>.cmd</code> or <code>.jsonl</code> file present on the flash filesystem of the plate. Filename must be preceeded by the <code>/</code> character      </p>
@@ -1794,7 +1794,7 @@ don't send too many lines in a single payload, you can always sends multiple jso
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="err">jso</span><span class="kc">nl</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;obj&quot;</span><span class="p">:</span><span class="s2">&quot;btn&quot;</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">14</span><span class="p">,</span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="mi">120</span><span class="p">,</span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="nt">&quot;w&quot;</span><span class="p">:</span><span class="mi">30</span><span class="p">,</span><span class="nt">&quot;h&quot;</span><span class="p">:</span><span class="mi">40</span><span class="p">,</span><span class="nt">&quot;text_font&quot;</span><span class="p">:</span><span class="s2">&quot;2&quot;</span><span class="p">,</span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="s2">&quot;Test&quot;</span><span class="p">,</span><span class="nt">&quot;text_color&quot;</span><span class="p">:</span><span class="s2">&quot;gray&quot;</span><span class="p">,</span><span class="nt">&quot;bg_opa&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="nt">&quot;border_width&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 </div>
-<p><em>For more details see <a href="../design/pages">Pages</a> and <a href="../design/objects">Objects</a>.</em></p>
+<p><em>For more details see <a href="../design/pages/">Pages</a> and <a href="../design/objects/">Objects</a>.</em></p>
 <h3 id="json">json<a class="headerlink" href="#json" title="Permanent link">~</a></h3>
 <p><em>accepted parameters:</em> json array of strings</p>
 <p>Use the <code>json</code> command to send multiple commands as an array of strings in one payload.</p>
@@ -1874,7 +1874,7 @@ A simple integer payload of <code>1..255</code> will adjust the brightness.</p>
 <li><strong>color</strong> or</li>
 <li><strong>r, g, b:</strong> <code>0..255</code></li>
 </ul>
-<p>An RGB moodlight can be controlled by configuring 3 <a href="../configuration/gpio">GPIO pins</a> as type <code>Mood Red</code>, <code>Mood Green</code> and <code>Mood blue</code>.
+<p>An RGB moodlight can be controlled by configuring 3 <a href="../configuration/gpio/">GPIO pins</a> as type <code>Mood Red</code>, <code>Mood Green</code> and <code>Mood blue</code>.
 These leds can then be controlled together using the <code>moodlight</code> command.</p>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
@@ -1888,9 +1888,9 @@ These leds can then be controlled together using the <code>moodlight</code> comm
 </code></pre></div></td></tr></table></div>
 </div>
 <ul>
-<li>The <code>state</code> key accepts <a href="../design/data-types#boolean">boolean values</a> to turn the moodlight on or off</li>
+<li>The <code>state</code> key accepts <a href="../design/data-types/#boolean">boolean values</a> to turn the moodlight on or off</li>
 <li>The <code>brightness</code> key can be set between <code>1</code> and <code>255</code> to dim the moodlight</li>
-<li>The <code>color</code> key accepts <a href="../design/data-types#colors">color values</a> to set the RGB channels at once</li>
+<li>The <code>color</code> key accepts <a href="../design/data-types/#colors">color values</a> to set the RGB channels at once</li>
 <li>Individual <code>r</code>, <code>g</code> and <code>b</code> keys can also be used to set each channel seperately</li>
 </ul>
 <p>Calling the <code>moodlight</code> command without parameters (or sending an empty payload to the <code>hasp/&lt;nodename&gt;/command/moodlight</code> topic) returns the current state:</p>
