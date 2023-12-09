@@ -179,7 +179,7 @@ Covers Northern, Western and Southern European languages: English (en), French (
 
 ### Latin 2
 
-Needs compiling with [customization](../../compiling/customize/).
+Needs compiling with [customization](../compiling/customize.md).
 Includes all characters and symbols from the [Ascii range](#ascii) above.
 
 Covers Central and Eastern European languages: Czech (cs), Hungarian (hu), Polish (pl), Romanian (ro), Croatian (hr), Slovak (sk), Slovenian (sl), Sorbian (sb)
@@ -306,7 +306,7 @@ Covers Central and Eastern European languages: Czech (cs), Hungarian (hu), Polis
 
 ### Cyrillic
 
-Needs compiling with [customization](../../compiling/customize/).
+Needs compiling with [customization](../compiling/customize.md).
 Includes all characters and symbols from the [Ascii range](#ascii) above.
 
 Covers the Slavic languages that use a Cyrillic alphabet, including Belarusian, Bulgarian, Macedonian, Russian, Serbian, and Ukrainian 
@@ -411,7 +411,7 @@ Covers the Slavic languages that use a Cyrillic alphabet, including Belarusian, 
 
 ### Greek
 
-Needs compiling with [customization](../../compiling/customize/).
+Needs compiling with [customization](../compiling/customize.md).
 Includes all characters and symbols from the [Ascii range](#ascii) above.
 
 Covers the Greek (el) language:

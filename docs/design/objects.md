@@ -34,8 +34,8 @@ tbody tr:nth-child(even) {
 
 There are two ways to create an object on the screen:
 
-- Uploading a [`pages.jsonl`](../pages/#pagesjsonl) file onto the internal flash
-- Use the [`jsonl`](../../commands/#jsonl) command *(via MQTT, serial or telnet console)*
+- Uploading a [`pages.jsonl`](pages.md#pagesjsonl) file onto the internal flash
+- Use the [`jsonl`](../commands.md#jsonl) command *(via MQTT, serial or telnet console)*
 
 ## Cheatsheet
 
@@ -110,7 +110,7 @@ Action commands are supported only by _binary_ or _visual_ type of objects and t
 - `back` to go back to the home page
 
 Check out the [example](../integrations/examples/example-pagination.md) for how to implement actions.  
-You can change the target pages using `prev`, `back` and `next` [page attributes](../pages/#page-attributes) operation on the page object`pXb0`.  
+You can change the target pages using `prev`, `back` and `next` [page attributes](pages.md#page-attributes) operation on the page object`pXb0`.  
 
 #### Swipe <a name="swipe"></a>
 Objects and page area (`p0bY`) support `swipe` property. Enabling this will process `left`, `right` and `down` swipes on the object as `next`, `prev` and `back` page changes, respectively. The start of the swipe needs to be on the element which has this property enabled for the feature to activate.  
@@ -694,7 +694,7 @@ Only PNG image files are supported, from flash.
 You can use `image_recolor` and `image_recolor_opa` from the [image styling][5] properties to apply a color overlay mask.
    
 !!! note
-    The decoding of the images is done in memory, thus you'll be able to display full-screen images only if your microcontroller [has installed PSram memory](../../getting-started/#recommended-boards), else you will be limited to small icons.
+    The decoding of the images is done in memory, thus you'll be able to display full-screen images only if your microcontroller [has installed PSram memory](../getting-started.md#recommended-boards), else you will be limited to small icons.
 
 
 ??? example "Example `jsonl`"
@@ -717,18 +717,18 @@ You can use it as a background shape for other objects by putting its jsonl line
     {"page":1,"id":50,"obj":"obj","x":5,"y":35,"w":230,"h":250,"click":0}
     ```
    
-[1]: ../data-types/#colors
-[2]: ../data-types/#boolean
-[3]: ../../configuration/gpio/#groupid
-[4]: ../styling/#general
-[5]: ../styling/#image
-[6]: ../styling/#value
-[7]: ../styling/#line
-[8]: ../styling/#scale
-[9]: ../data-types/#integer
-[10]: ../data-types/#string
-[11]: ../data-types/#json-object
-[12]: ../styling/
-[13]: ../styling/#padding-and-margin
-[14]: ../styling/#text
-[15]: ../data-types/#variables
+[1]: data-types.md/#colors
+[2]: data-types.md/#boolean
+[3]: ../configuration/gpio.md#groupid
+[4]: styling.md#general
+[5]: styling.md#image
+[6]: styling.md#value
+[7]: styling.md#line
+[8]: styling.md#scale
+[9]: data-types.md/#integer
+[10]: data-types.md/#string
+[11]: data-types.md/#json-object
+[12]: styling.md
+[13]: styling.md#padding-and-margin
+[14]: styling.md#text
+[15]: data-types.md/#variables

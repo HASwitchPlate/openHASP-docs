@@ -60,7 +60,7 @@ don't send too many lines in a single payload, you can always sends multiple jso
     jsonl {"obj":"btn","id":14,"x":120,"y":1,"w":30,"h":40,"text_font":"2","text":"Test","text_color":"gray","bg_opa":0,"border_width":0}
     ```
 
-_For more details see [Pages](../design/pages) and [Objects](../design/objects)._
+_For more details see [Pages](design/pages.md) and [Objects](design/objects.md)._
 
 
 ### json
@@ -378,8 +378,8 @@ To update the configuration simply issue the same command `config/<submodule>` w
 
 
 
-[1]: ../design/data-types#colors
-[2]: ../design/data-types#boolean
-[3]: ../configuration/gpio
-[4]: ../configuration/display#short-idle
-[5]: ../integrations/examples/example-offlinehandling
+[1]: design/data-types.md#colors
+[2]: design/data-types.md#boolean
+[3]: configuration/gpio.md
+[4]: configuration/display#short-idle.md
+[5]: integrations/examples/example-offlinehandling.md
