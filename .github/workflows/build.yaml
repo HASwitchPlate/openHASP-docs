@@ -57,7 +57,7 @@ jobs:
         if: github.ref == 'refs/heads/0.7.0'
         run: |
           echo "Branchname: ${GITHUB_REF#refs/heads/}"
-          mike deploy --rebase --push --update-aliases --title="${GITHUB_REF#refs/heads/}-rc4" "${GITHUB_REF#refs/heads/}" "latest"
+          mike deploy --rebase --push --update-aliases --title="${GITHUB_REF#refs/heads/}" "${GITHUB_REF#refs/heads/}" "latest"
 
       - name: Push docs from this branch
         if: github.ref == 'refs/heads/0.7.0'
