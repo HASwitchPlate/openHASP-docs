@@ -5,16 +5,16 @@ You can attach external devices like buttons, switches, relays, lights or LEDs u
 When integrated with [Home Assistant](../../integrations/home-assistant/howto.md), the configured GPIOs will be added automatically during discovery as appropriate entities in the system.
 
 <div class="row justify-content-center">
-            <a href="../gpio_settings.png" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-8" data-title="GPIO Settings" data-footer="">
-                <img src="../gpio_settings.png" class="img-fluid img-thumbnail">
+            <a href="../images/gpio_settings.png" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-8" data-title="GPIO Settings" data-footer="">
+                <img src="../images/gpio_settings.png" class="img-fluid img-thumbnail">
             </a>
 </div>
 
 ## GPIO Overview
 
 <div class="row justify-content-center">
-            <a href="../gpio_addpin.png" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-8" data-title="GPIO Overview" data-footer="">
-                <img src="../gpio_addpin-thumbnail.png" class="img-fluid img-thumbnail">
+            <a href="../images/gpio_addpin.png" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-8" data-title="GPIO Overview" data-footer="">
+                <img src="../images/gpio_addpin-thumbnail.png" class="img-fluid img-thumbnail">
             </a>
 </div>
 
@@ -22,8 +22,8 @@ When integrated with [Home Assistant](../../integrations/home-assistant/howto.md
 ## Input Pin
 
 <div class="row justify-content-center">
-            <a href="../gpio_input.png" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-8" data-title="GPIO Input" data-footer="">
-                <img src="../gpio_input-thumbnail.png" class="img-fluid img-thumbnail">
+            <a href="../images/gpio_input.png" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-8" data-title="GPIO Input" data-footer="">
+                <img src="../images/gpio_input-thumbnail.png" class="img-fluid img-thumbnail">
             </a>
 </div>
 
@@ -115,8 +115,8 @@ and to minimum when the switch is turned off.
 ## Output Pin
 
 <div class="row justify-content-center">
-            <a href="../gpio_output.png" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-8" data-title="GPIO Output" data-footer="">
-                <img src="../gpio_output-thumbnail.png" class="img-fluid img-thumbnail">
+            <a href="../images/gpio_output.png" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-8" data-title="GPIO Output" data-footer="">
+                <img src="../images/gpio_output-thumbnail.png" class="img-fluid img-thumbnail">
             </a>
 </div>
 
