@@ -42,11 +42,12 @@ jobs:
       #     fileName: "*"
       #     out-file-path: "docs/assets/firmware"
 
-      - name: Release docs from this branch
+      - name: Build docs from this branch
+        if: github.ref == 'refs/heads/0.6.2'
         run: |
           echo "Branchname: ${GITHUB_REF#refs/heads/}"
-          mike deploy --push --rebase --update-aliases "${GITHUB_REF#refs/heads/}" --title "${GITHUB_REF#refs/heads/}"
- 
+          mike deploy --rebase --push --update-aliases --title="${GITHUB_REF#refs/heads/}" "${GITHUB_REF#refs/heads/}"
+
       - name: List
         run: |
           mike list
