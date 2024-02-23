@@ -24,4 +24,6 @@ If any of the following scripts is present on the filesystem, it will be run aut
 - `L:/idle_short.cmd` will be executed after idle state change to short 
 - `L:/idle_long.cmd` will be executed after idle state change to long
 
-This makes it possible to disable or hide buttons, load a special offline page, dimming background, etc. See [example][5].
+This makes it possible to disable or hide buttons, load a special offline page, dimming background, etc. See [example][1].
+
+[1]: ../examples/offlinehandling.md
