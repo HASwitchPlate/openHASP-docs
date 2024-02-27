@@ -99,7 +99,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#adafruit-featherwing" class="md-skip">
+        <a href="#adafruit" class="md-skip">
           Skip to content
         </a>
       
@@ -612,22 +612,16 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#development-boards" class="md-nav__link">
-    Development Boards
-  </a>
-  
-    <nav class="md-nav" aria-label="Development Boards">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#huzzah32" class="md-nav__link">
-    HUZZAH32
+  <a href="#supported-boards" class="md-nav__link">
+    Supported Boards
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#supported-displays" class="md-nav__link">
+    Supported Displays
+  </a>
   
 </li>
       
@@ -639,15 +633,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#product-video" class="md-nav__link">
-    Product Video
+  <a href="#product-videos" class="md-nav__link">
+    Product Videos
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#3d-printed-case" class="md-nav__link">
-    3D Printed Case
+  <a href="#3d-printed-cases" class="md-nav__link">
+    3D Printed Cases
   </a>
   
 </li>
@@ -2614,22 +2608,16 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#development-boards" class="md-nav__link">
-    Development Boards
-  </a>
-  
-    <nav class="md-nav" aria-label="Development Boards">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#huzzah32" class="md-nav__link">
-    HUZZAH32
+  <a href="#supported-boards" class="md-nav__link">
+    Supported Boards
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#supported-displays" class="md-nav__link">
+    Supported Displays
+  </a>
   
 </li>
       
@@ -2641,15 +2629,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#product-video" class="md-nav__link">
-    Product Video
+  <a href="#product-videos" class="md-nav__link">
+    Product Videos
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#3d-printed-case" class="md-nav__link">
-    3D Printed Case
+  <a href="#3d-printed-cases" class="md-nav__link">
+    3D Printed Cases
   </a>
   
 </li>
@@ -2674,7 +2662,7 @@
   </a>
 
 
-<h1 id="adafruit-featherwing">Adafruit Featherwing<a class="headerlink" href="#adafruit-featherwing" title="Permanent link">~</a></h1>
+<h1 id="adafruit">Adafruit<a class="headerlink" href="#adafruit" title="Permanent link">~</a></h1>
 <div class="row justify-content-center">
     <a href="../images/featherwing24.png" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-6" data-title="<a href='https://learn.adafruit.com/3d-printed-case-for-adafruit-feather/tft-feather-wing'>Adafruit Featherwing 2.4&quot;</a>" data-footer="Original image by <a href='https://learn.adafruit.com/assets/40718'>Ruiz Brothers</a> - LICENSE: <a href='https://creativecommons.org/licenses/by-sa/3.0/'>Attribution-ShareAlike Creative Commons</a>">
         <img src="../images/featherwing24.png" class="img-fluid">
@@ -2684,15 +2672,24 @@
     </a>
 </div>
 
-<p>You can run openHASP on the Adafruit HUZZAH32 – ESP32 Feather Board with a TFT Featherwing display.
-We provide pre-build firmware for this hardware combo. You can pick the 2.4" or 3.5" touchscreen.</p>
-<p>The TFT Featherwing comes in 2 sizes:</p>
+<p>openHASP runs on Adafruit's ESP32 Feather Boards and supports Adafruit's TFT Featherwing resistive touch screens. Build configurations and precompiled firmware binaries are available for these popular hardware combinations to help you get started quickly.</p>
+<h2 id="supported-boards">Supported Boards<a class="headerlink" href="#supported-boards" title="Permanent link">~</a></h2>
+<p>openHASP supports the following Adafruit Feather boards (and the many different versions and variations based on them)</p>
 <ul>
-<li><a href="https://www.adafruit.com/product/3315">TFT FeatherWing - 2.4" 320x240 Touchscreen</a>: ILI9341 with STMPE610 resistive touch</li>
-<li><a href="https://www.adafruit.com/product/3651">TFT FeatherWing - 3.5" 480x320 Touchscreen</a>: HX8357D with STMPE610 resistive touch</li>
+<li>Adafruit HUZZAH32 - ESP32 Feather (4MB Flash, No PSRAM)</li>
+<li>Adafruit ESP32-S3 Feather (4MB Flash, 2MB PSRAM)</li>
+<li>Adafruit ESP32 Feather V2 (8MB Flash, 2MB PSRAM)</li>
 </ul>
-<h2 id="development-boards">Development Boards<a class="headerlink" href="#development-boards" title="Permanent link">~</a></h2>
-<h3 id="huzzah32">HUZZAH32<a class="headerlink" href="#huzzah32" title="Permanent link">~</a></h3>
+<p>These boards are virtually plug-and-play when combined with Adafruit TFT FeatherWing displays. Many of these boards come in versions with pre-soldered headers (no soldering required)</p>
+<p>!!! note "  Note" Don't use the Adafruit ESP8266-based Feather HUZZAH board as it lacks both sufficient memory and MCU power.</p>
+<p>!!! note "  Note" Boards with PSRAM are highly recommended, and required for image processing.</p>
+<h2 id="supported-displays">Supported Displays<a class="headerlink" href="#supported-displays" title="Permanent link">~</a></h2>
+<ul>
+<li>TFT FeatherWing - 2.4" 320x240 Touchscreen <em>(ILI9341 with STMPE610 resistive touch)</em></li>
+<li><a href="https://www.adafruit.com/product/3315">TFT FeatherWing - 2.4" 320x240 Touchscreen V2</a> <em>(ILI9341 with TSC2007 resistive touch)</em></li>
+<li>TFT FeatherWing - 3.5" 480x320 Touchscreen <em>(HX8357D with STMPE610 resistive touch)</em></li>
+<li><a href="https://www.adafruit.com/product/3651">TFT FeatherWing - 3.5" 480x320 Touchscreen V2</a>: <em>(HX8357D with TSC2007 resistive touch)</em></li>
+</ul>
 <div class="row justify-content-center">
     <a href="../images/feather_3405_iso_ORIG.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4" data-title="<a href='https://learn.adafruit.com/3d-printed-case-for-adafruit-feather/tft-feather-wing'>TFT Feather Wing Enclosure</a>" data-footer="Original image by <a href='https://learn.adafruit.com/users/adafruit2'>lady ada</a> - All rights reserved">
         <img src="../images/feather_3405_iso_ORIG.jpg" class="img-fluid">
@@ -2705,51 +2702,43 @@ We provide pre-build firmware for this hardware combo. You can pick the 2.4" or 
     </a>
 </div>
 
-<p>The HUZZAH32 – ESP32 Feather Boards come in 3 versions:</p>
-<ul>
-<li><a href="https://www.adafruit.com/product/3405">No headers soldered</a></li>
-<li><a href="https://www.adafruit.com/product/3591">Headers pre-soldered</a></li>
-<li><a href="https://www.adafruit.com/product/3619">Stacking headers pre-soldered</a></li>
-</ul>
-<div class="admonition note">
-<p class="admonition-title"><i class='fa fa-info-circle'></i>&nbsp; Note</p>
-<p>Don't use the ESP8266 based Feather HUZZAH because it lacks both in memory and MCU power.</p>
-</div>
-<p>The HUZZAH32 – ESP32 and TFT Featherwings are plug-and-play. You only need to upload the firmware via the USB port.
-If you get a version with pre-soldered headers then no soldering is required to get started!</p>
-<p>Check out the Adafruit <a href="https://learn.adafruit.com/adafruit-2-4-tft-touch-screen-featherwing">TFT Featherwing tutorial</a> on learn.adafruit.com.
-It contains more detailed information, tutorials and wiring diagrams.</p>
-<p>The Huzzah32 boards only have 4MB flash. If you want more storage, consider getting the SparkFun Thing Plus ESP32-WROOM instead.</p>
+<p>Check out Adafruit's <a href="https://learn.adafruit.com/adafruit-2-4-tft-touch-screen-featherwing">TFT Featherwing tutorial</a> on <a href="https://learn.adafruit.com/">learn.adafruit.com</a> for detailed information and wiring diagrams.</p>
 <h2 id="backlight">Backlight<a class="headerlink" href="#backlight" title="Permanent link">~</a></h2>
-<p>By default the display is always on. To get the dimmable backlight working you <em>do</em> need to solder 2 pads!
-There is a <code>Lite</code> pin which is not connected to any pads but you can connect it to control the backlight.
-You can connect it to a PWM output pin, like <code>GPIO 21</code>:</p>
+<p>By default, the display is always on and at its maximum brightness. To control backlight dimming or sleeping, you need to solder the <code>LITE</code> pin to a PWM output pin (e.g., <code>GPIO 21</code>).</p>
 <div class="row justify-content-center">
             <a href="../images/featherwing35-backlight.png" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-8" data-title="Backlight Control" data-footer="Original image by altersis">
                 <img src="../images/featherwing35-backlight.png" class="img-fluid">
             </a>
 </div>
 
-<h2 id="product-video">Product Video<a class="headerlink" href="#product-video" title="Permanent link">~</a></h2>
-<h4 id="24-tft-featherwing">2.4" TFT Featherwing<a class="headerlink" href="#24-tft-featherwing" title="Permanent link">~</a></h4>
+<h2 id="product-videos">Product Videos<a class="headerlink" href="#product-videos" title="Permanent link">~</a></h2>
+<h4 id="24-tft-featherwing">2.4" TFT FeatherWing<a class="headerlink" href="#24-tft-featherwing" title="Permanent link">~</a></h4>
 <div class="embed-responsive embed-responsive-16by9" style="max-width:560px; margin:auto;">
-    <iframe title="YouTube video player" src="https://www.youtube.com/embed/0JUA1IHCI-o?start=630&end=0&rel=0&controls=1" class="embed-responsive-item" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-    </iframe>
+  <iframe title="YouTube video player" src="https://www.youtube.com/embed/0JUA1IHCI-o?start=630&end=0&rel=0&controls=1" class="embed-responsive-item" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
-<h4 id="35-tft-featherwing">3.5" TFT Featherwing<a class="headerlink" href="#35-tft-featherwing" title="Permanent link">~</a></h4>
+<h4 id="24-tft-featherwing-v2">2.4" TFT FeatherWing V2<a class="headerlink" href="#24-tft-featherwing-v2" title="Permanent link">~</a></h4>
 <div class="embed-responsive embed-responsive-16by9" style="max-width:560px; margin:auto;">
-    <iframe title="YouTube video player" src="https://www.youtube.com/embed/Wt_QXeipqpk?start=268&end=0&rel=0&controls=1" class="embed-responsive-item" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-    </iframe>
+  <iframe src="https://www.youtube.com/embed/tzbzjBJtPRQ?si=ZMKchMxkdbYuRPEF" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </div>
 
-<h2 id="3d-printed-case">3D Printed Case<a class="headerlink" href="#3d-printed-case" title="Permanent link">~</a></h2>
-<p>Check out these enclosures, the designs are available on Thingiverse:</p>
+<h4 id="35-tft-featherwing">3.5" TFT FeatherWing<a class="headerlink" href="#35-tft-featherwing" title="Permanent link">~</a></h4>
+<div class="embed-responsive embed-responsive-16by9" style="max-width:560px; margin:auto;">
+  <iframe title="YouTube video player" src="https://www.youtube.com/embed/Wt_QXeipqpk?start=268&end=0&rel=0&controls=1" class="embed-responsive-item" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+<h4 id="35-tft-featherwing-v2">3.5" TFT FeatherWing V2<a class="headerlink" href="#35-tft-featherwing-v2" title="Permanent link">~</a></h4>
+<div class="embed-responsive embed-responsive-16by9" style="max-width:560px; margin:auto;">
+  <iframe src="https://www.youtube.com/embed/h3zfPu5WHqk?si=2Q0JnpU36zkOPwuY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
+
+<h2 id="3d-printed-cases">3D Printed Cases<a class="headerlink" href="#3d-printed-cases" title="Permanent link">~</a></h2>
+<p>Check out these enclosures available on Thingiverse:</p>
 <ul>
-<li><a href="https://learn.adafruit.com/3d-printed-case-for-adafruit-feather/tft-feather-wing" target="_blank">2.4" TFT Feather Wing Enclosure</a></li>
-<li><a href="https://www.thingiverse.com/thing:1944905" target="_blank">2.4" TFT Feather Wing Weather Station</a></li>
-<li><a href="https://www.thingiverse.com/thing:2776163" target="_blank">3.5" TFT Featherwing table top case</a></li>
-<li><a href="https://www.thingiverse.com/thing:4803265" target="_blank">3.5" TFT Featherwing Touch Deck</a></li>
+<li><a href="https://learn.adafruit.com/3d-printed-case-for-adafruit-feather/tft-feather-wing" target="_blank">2.4" TFT FeatherWing Enclosure</a></li>
+<li><a href="https://www.thingiverse.com/thing:1944905" target="_blank">2.4" TFT FeatherWing Weather Station</a></li>
+<li><a href="https://www.thingiverse.com/thing:2776163" target="_blank">3.5" TFT FeatherWing Table Top Case</a></li>
+<li><a href="https://www.thingiverse.com/thing:4803265" target="_blank">3.5" TFT FeatherWing Touch Deck</a></li>
 </ul>
 <div class="row justify-content-center">
     <a href="../images/3d_printing_done-assembly.gif" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4" data-title="<a href='https://learn.adafruit.com/3d-printed-case-for-adafruit-feather/tft-feather-wing'>TFT Feather Wing Enclosure</a>" data-footer="Original image by <a href='https://learn.adafruit.com/assets/40717'>Ruiz Brothers</a> - LICENSE: <a href='https://creativecommons.org/licenses/by-sa/3.0/'>Attribution-ShareAlike Creative Commons</a>">
@@ -2771,7 +2760,7 @@ please support Adafruit and open-source hardware by purchasing products from Ada
   <small>
     
       Last update:
-      2024-02-23
+      2024-02-27
     
   </small>
 </div>
