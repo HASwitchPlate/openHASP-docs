@@ -365,13 +365,13 @@ Set the optional password for the access point to connect to.
 
 ### MQTT
 
-#### `nodename`
+#### `hostname`
 
-Set the nodename of the device and mqtt topic for the node to `hasp/<nodename>/`
+Set the hostname of the device and mqtt topic for the node to `hasp/<nodename>/`
 
 #### `mqtthost`
 
-Set the IP address or nodename of the mqtt broker.
+Set the IP address or hostname of the mqtt broker.
 
 #### `mqttport`
 
