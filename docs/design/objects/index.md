@@ -62,6 +62,8 @@ There are two ways to create an object on the screen:
 | arc       | Range    | [Arc](#arc)                      | indicator, knob
 | linemeter | Range    | [Line Meter](#line-meter)        |
 | gauge     | Range    | [Gauge](#gauge)                  | indicator, ticks
+| qrcode    | Visual   | [Qrcode](#qrcode)                |
+
 
 ## Common Parameters
 
@@ -724,6 +726,24 @@ Either PNG or BIN image files are supported, from flash:
     {"page":1,"id":34,"obj":"img","src":"L:/image.png","auto_size":0,"w":50}
     ```
 
+# QR-Code
+**obj:`qrcode`**
+
+![lv_qrcode](images/lv_ex_qrcode_1.png)
+
+| Property | Value        | Default | Description
+|----------|--------------|---------|--------------------------
+| text     | [string][10] | ""      | The text to encode to QR code
+| size     | [int16][9]   | 140     | The object is always a square with a width and a height that correspond to size.
+
+
+???+ example "Example `jsonl`"
+    ```json linenums="1"
+    {"page":1,"id":42,"obj":"qrcode","text":"www.openhasp.com/0.7.0/design/objects/","x":520,"y":20,"size":200}
+    ```
+
+!!! note :
+    The maximum text length depends on the QR code version. By default, the maximum version 7 is used, which corresponds to a maximum text length of 122 characters.
 
 ## Base Object
 **obj:`obj`**
