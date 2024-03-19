@@ -391,7 +391,7 @@ If your device has a relay or other output onboard, you might want to link that 
 
 First setup your GPIO pins in openHasp (Main menu -> Configuration -> gpio -> add output pin)
 
-![screenshot](images/cc-sample-ha-gpio.png)  
+![screenshot](images/cc-sampl-ha-gpio.png)  
 
 In my case, the relay on my device is on IO40.
 
