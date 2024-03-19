@@ -385,6 +385,50 @@ relevant **openHASP-custom-component config:**
 
 *  *  *  *  *
 
+## Link device GPIO / Relay to switch in Home Assistant
+
+If your device has a relay or other output onboard, you might want to link that to a switch in home assistant.  You can do this using an 'MQTT switch'
+
+First setup your GPIO pins in openHasp (Main menu -> Configuration -> gpio -> add output pin)
+
+![screenshot](images/cc-sample-ha-gpio.png)  
+
+In my case, the relay on my device is on IO40.
+
+Here, also set the group ID.  This allows you to link the GPIO pin to an object on the openhasp UI.
+
+Now add a button on your UI:
+
+```json linenums="1"
+{"page": 1,"id": 2,"obj": "btn","groupid": 1,"x": 15,"y": 60,"w": 140,"h": 180,"toggle": true,"text": "Light","text_font": 76, "align": 2}
+```
+
+Note the groupid, set this the same as the group selected for the GPIO pin.
+
+This config is enough to link a button the UI to your relay, but now we also want to sync this with a switch entity in Home Assistant.  Luckily, Home Assistant provides the 'MQTT Switch' entity which lets us do just that:
+
+In your configuration.yaml:
+
+```yaml linenums="1"
+mqtt:
+  - switch:
+      unique_id: plate001_relay1 #set this to something unique for this relay
+      name: "Office Switch" #Can be anything useful
+      state_topic: "hasp/plate001/state/output40"  #number on the end here matches the GPIO pin number
+      command_topic: "hasp/plate001/command/output40" #same here
+      payload_on: "{'state':'on'}"
+      payload_off: "{'state':'off'}"
+      state_on: "{\"state\":\"on\"}" #note the escaped double quotes.  You could probably do this with a template, but this works
+      state_off: "{\"state\":\"off\"}"
+      optimistic: false
+      qos: 0
+      retain: true
+```
+
+Now reload Your HA yaml (or just restart HA) and you should see a new entity that syncs with the button on your plate's UI and the relay.
+
+*  *  *  *  *
+
 ## Media player
 
 ![screenshot](images/cc_sampl_mediaplayer.png)  
