@@ -1,4 +1,4 @@
-# CrowPanel-ESP32 Terminal 3.5" :material-new-box:{ .tag-large }
+# ESP32 Terminal 3.5" :material-new-box:{ .tag-large }
 
 <div class="row justify-content-center">
         <a href="../images/esp32-1732s019-front.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4" data-title="Sunton ESP32-1732S019" data-footer="">
