@@ -65,4 +65,4 @@ or the latest found under <a target="_blank" href="https://github.com/HASwitchPl
 
 [1]: https://s.click.aliexpress.com/e/_DCxftv3
 [2]: https://s.click.aliexpress.com/e/_DBxXUF7
-[3]: https://www.aliexpress.com/item/1005005760925482.html
+[3]: https://s.click.aliexpress.com/e/_DDATG5T
