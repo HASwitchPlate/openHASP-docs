@@ -24,6 +24,13 @@ In component configuration all you need for the objects is:
           "text": "{{ states('sensor.time') }}"
 ```
 
+#### Tip:
+You can also use a magic template to display the time that the plate has obtained from ntp. This means you do not need a Home Assistant rule to push the time.
+
+```json linenums="1"
+{"page":0,"id":6,"obj":"label","x":3,"y":5,"h":30,"w":62,"text":"00:00","template":"%H:%M","align":0,"bg_color":"#2C3E50"}
+```
+
 #### Note:
 You can of course omit the second label object with the unit and use the same for both value and unit:
 
