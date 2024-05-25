@@ -2926,6 +2926,10 @@
 <span class="w">        </span><span class="nt">properties</span><span class="p">:</span>
 <span class="w">          </span><span class="s">&quot;text&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">states(&#39;sensor.time&#39;)</span><span class="nv"> </span><span class="s">}}&quot;</span>
 </code></pre></div></td></tr></table></div>
+<h4 id="tip">Tip:<a class="headerlink" href="#tip" title="Permanent link">~</a></h4>
+<p>You can also use a magic template to display the time that the plate has obtained from ntp. This means you do not need a Home Assistant rule to push the time.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">{</span><span class="nt">&quot;page&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">6</span><span class="p">,</span><span class="nt">&quot;obj&quot;</span><span class="p">:</span><span class="s2">&quot;label&quot;</span><span class="p">,</span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span><span class="nt">&quot;h&quot;</span><span class="p">:</span><span class="mi">30</span><span class="p">,</span><span class="nt">&quot;w&quot;</span><span class="p">:</span><span class="mi">62</span><span class="p">,</span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="s2">&quot;00:00&quot;</span><span class="p">,</span><span class="nt">&quot;template&quot;</span><span class="p">:</span><span class="s2">&quot;%H:%M&quot;</span><span class="p">,</span><span class="nt">&quot;align&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="nt">&quot;bg_color&quot;</span><span class="p">:</span><span class="s2">&quot;#2C3E50&quot;</span><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
 <h4 id="note">Note:<a class="headerlink" href="#note" title="Permanent link">~</a></h4>
 <p>You can of course omit the second label object with the unit and use the same for both value and unit:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
@@ -5637,7 +5641,7 @@ Again - without tags, the last 5 object definitions would have to be added for e
   <small>
     
       Last update:
-      2024-05-19
+      2024-05-26
     
   </small>
 </div>
