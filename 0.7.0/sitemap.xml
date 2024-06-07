@@ -186,6 +186,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://www.openhasp.com/0.7.0/0.7.0/design/objects/qrcode/</loc>
+         <lastmod>2024-06-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://www.openhasp.com/0.7.0/0.7.0/design/objects/roller/</loc>
          <lastmod>2024-06-07</lastmod>
          <changefreq>daily</changefreq>

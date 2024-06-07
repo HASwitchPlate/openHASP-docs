@@ -12,14 +12,14 @@
         <meta name="author" content="Francis Van Roie">
       
       
-        <link rel="canonical" href="https://www.openhasp.com/0.7.0/0.7.0/design/objects/msgbox/">
+        <link rel="canonical" href="https://www.openhasp.com/0.7.0/0.7.0/design/objects/qrcode/">
       
       <link rel="icon" href="../../../favicon.ico">
       <meta name="generator" content="mkdocs-1.4.1, mkdocs-material-8.5.10">
     
     
       
-        <title>Messagebox - openHASP</title>
+        <title>QR-Code - openHASP</title>
       
     
      
@@ -99,7 +99,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#messagebox" class="md-skip">
+        <a href="#qr-code" class="md-skip">
           Skip to content
         </a>
       
@@ -135,7 +135,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Messagebox
+              QR-Code
             
           </span>
         </div>
@@ -2063,21 +2063,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../msgbox/" class="md-nav__link">
         Messagebox
       </a>
-      
     </li>
   
 
@@ -2171,11 +2161,21 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../qrcode/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         QR-Code
       </a>
+      
     </li>
   
 
@@ -2659,15 +2659,15 @@
                 
                   
 
-  <a href="https://github.com/HASwitchPlate/openHASP-docs/edit/0.7.0/docs/design/objects/msgbox.md" title="Edit this page" class="md-content__button md-icon">
+  <a href="https://github.com/HASwitchPlate/openHASP-docs/edit/0.7.0/docs/design/objects/qrcode.md" title="Edit this page" class="md-content__button md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
   </a>
 
 
-<h1 id="messagebox">Messagebox<a class="headerlink" href="#messagebox" title="Permanent link">~</a></h1>
-<p><strong>obj:<code>msgbox</code></strong></p>
-<p><img alt="lv_msgbox" src="../images/lv_ex_msgbox_1.png" /></p>
+<h1 id="qr-code">QR-Code<a class="headerlink" href="#qr-code" title="Permanent link">~</a></h1>
+<p><strong>obj:<code>qrcode</code></strong></p>
+<p><img alt="lv_qrcode" src="../images/lv_ex_qrcode_1.png" /></p>
 <table>
 <thead>
 <tr>
@@ -2682,39 +2682,23 @@
 <td>text</td>
 <td><a href="../../data-types/#string">string</a></td>
 <td>""</td>
-<td>The text of the message to be displayed.</td>
+<td>The text to encode to QR code</td>
 </tr>
 <tr>
-<td>options</td>
-<td><a href="../../data-types/#json-object">json array</a></td>
-<td>["OK"]</td>
-<td>Json array of <a href="../../data-types/#string">string</a>s where each element is the label of a button</td>
-</tr>
-<tr>
-<td><del>modal</del></td>
-<td><a href="../../data-types/#boolean">bool</a></td>
-<td>false</td>
-<td>Make the messagebox a modal dialog requiring user input</td>
-</tr>
-<tr>
-<td>auto_close</td>
+<td>size</td>
 <td><a href="../../data-types/#integer">int16</a></td>
-<td>0</td>
-<td>Close the pop-up message automatically after this number of milliseconds have passed</td>
+<td>140</td>
+<td>The object is always a square with a width and a height that correspond to size.</td>
 </tr>
 </tbody>
 </table>
-<p>The Message boxes act as a pop-up. The default width is the horizontal screen size, the height adjusts according to the contents of the message.
-The pop-up is centered on the screen.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The messagebox object is automatically deleted when it is closed. You will need to create it again using <code>jsonl</code> to pop-up a new message.</p>
-</div>
 <details class="example" open="open">
 <summary>Example <code>jsonl</code></summary>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">{</span><span class="nt">&quot;page&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">24</span><span class="p">,</span><span class="nt">&quot;obj&quot;</span><span class="p">:</span><span class="s2">&quot;msgbox&quot;</span><span class="p">,</span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="s2">&quot;A message box with two buttons&quot;</span><span class="p">,</span><span class="nt">&quot;options&quot;</span><span class="p">:[</span><span class="s2">&quot;Apply&quot;</span><span class="p">,</span><span class="s2">&quot;Close&quot;</span><span class="p">]}</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">{</span><span class="nt">&quot;page&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">42</span><span class="p">,</span><span class="nt">&quot;obj&quot;</span><span class="p">:</span><span class="s2">&quot;qrcode&quot;</span><span class="p">,</span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="s2">&quot;www.openhasp.com/0.7.0/design/objects/&quot;</span><span class="p">,</span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="mi">520</span><span class="p">,</span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="mi">20</span><span class="p">,</span><span class="nt">&quot;size&quot;</span><span class="p">:</span><span class="mi">200</span><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 </details>
+<p>!!! note :
+    The maximum text length depends on the QR code version. By default, the maximum version 7 is used, which corresponds to a maximum text length of 122 characters.</p>
 
   <hr>
 <div class="md-source-file">
@@ -2749,7 +2733,7 @@ The pop-up is centered on the screen.</p>
     
     <nav class="md-footer__inner md-grid" aria-label="Footer">
         
-        <a href="../linemeter/" class="md-footer__link md-footer__link--prev" rel="prev">
+        <a href="../tabview/" class="md-footer__link md-footer__link--prev" rel="prev">
             <div class="md-footer__button md-icon">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
             </div>
@@ -2757,17 +2741,17 @@ The pop-up is centered on the screen.</p>
                 <div class="md-ellipsis">
                     <span class="md-footer__direction">
                   Previous
-                </span> Line Meter
+                </span> Tabs
                 </div>
             </div>
         </a>
          
-        <a href="../obj/" class="md-footer__link md-footer__link--next" rel="next">
+        <a href="../../fonts/" class="md-footer__link md-footer__link--next" rel="next">
             <div class="md-footer__title">
                 <div class="md-ellipsis">
                     <span class="md-footer__direction">
                   Next
-                </span> Base Object
+                </span> Fonts
                 </div>
             </div>
             <div class="md-footer__button md-icon">

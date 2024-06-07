@@ -2090,13 +2090,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#base-object" class="md-nav__link">
-    Base Object
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -2380,6 +2373,20 @@
     <li class="md-nav__item">
       <a href="tabview/" class="md-nav__link">
         Tabs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="qrcode/" class="md-nav__link">
+        QR-Code
       </a>
     </li>
   
@@ -3046,13 +3053,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#base-object" class="md-nav__link">
-    Base Object
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -3247,6 +3247,12 @@ tbody tr:nth-child(even) {
 <td align="left">Range</td>
 <td align="left"><a href="#gauge">Gauge</a></td>
 <td align="left">indicator, ticks</td>
+</tr>
+<tr>
+<td align="left">qrcode</td>
+<td align="left">Visual</td>
+<td align="left"><a href="#qrcode">Qrcode</a></td>
+<td align="left"></td>
 </tr>
 </tbody>
 </table>
@@ -4694,6 +4700,40 @@ The pop-up is centered on the screen.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">{</span><span class="nt">&quot;page&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">34</span><span class="p">,</span><span class="nt">&quot;obj&quot;</span><span class="p">:</span><span class="s2">&quot;img&quot;</span><span class="p">,</span><span class="nt">&quot;src&quot;</span><span class="p">:</span><span class="s2">&quot;L:/image.png&quot;</span><span class="p">,</span><span class="nt">&quot;auto_size&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="nt">&quot;w&quot;</span><span class="p">:</span><span class="mi">50</span><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 </details>
+<h1 id="qr-code">QR-Code<a class="headerlink" href="#qr-code" title="Permanent link">~</a></h1>
+<p><strong>obj:<code>qrcode</code></strong></p>
+<p><img alt="lv_qrcode" src="images/lv_ex_qrcode_1.png" /></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>text</td>
+<td><a href="../data-types/#string">string</a></td>
+<td>""</td>
+<td>The text to encode to QR code</td>
+</tr>
+<tr>
+<td>size</td>
+<td><a href="../data-types/#integer">int16</a></td>
+<td>140</td>
+<td>The object is always a square with a width and a height that correspond to size.</td>
+</tr>
+</tbody>
+</table>
+<details class="example" open="open">
+<summary>Example <code>jsonl</code></summary>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">{</span><span class="nt">&quot;page&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">42</span><span class="p">,</span><span class="nt">&quot;obj&quot;</span><span class="p">:</span><span class="s2">&quot;qrcode&quot;</span><span class="p">,</span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="s2">&quot;www.openhasp.com/0.7.0/design/objects/&quot;</span><span class="p">,</span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="mi">520</span><span class="p">,</span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="mi">20</span><span class="p">,</span><span class="nt">&quot;size&quot;</span><span class="p">:</span><span class="mi">200</span><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+</details>
+<p>!!! note :
+    The maximum text length depends on the QR code version. By default, the maximum version 7 is used, which corresponds to a maximum text length of 122 characters.</p>
 <h2 id="base-object">Base Object<a class="headerlink" href="#base-object" title="Permanent link">~</a></h2>
 <p><strong>obj:<code>obj</code></strong></p>
 <p><img alt="lv_base_object" src="images/lv_ex_base_object_1.png" /></p>
