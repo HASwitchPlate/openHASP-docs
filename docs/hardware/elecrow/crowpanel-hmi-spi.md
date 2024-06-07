@@ -16,7 +16,7 @@ The CrowPanel HMI SPI range comes in three different size: 2.4", 2.8" and 3.5". 
 
 ## Models
 
-{!docs/hardware/elecrow/Table-for-hmi-spi-display.html!}
+{!hardware/elecrow/crowpanel-hmi-spi-table.html!}
 
 The audio port and SD card are not supported by openHASP {< openhasp.version >}.
 

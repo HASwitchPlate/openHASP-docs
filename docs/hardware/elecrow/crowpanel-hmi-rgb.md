@@ -15,7 +15,7 @@
 The CrowPanel HMI RGB range comes in three different size: 4.3", 5.0" and 7.0". All three models have a touchscreen and integrated ESP32-S3 module with built-in wireless communication 2.4 GHz Wi-Fi (802.11 b/g/n) and Bluetooth 5.0.
 
 ## Models
-{!docs/hardware/elecrow/Table-for-hmi-rgb-display.html!}
+{!hardware/elecrow/crowpanel-hmi-rgb-table.html!}
 
 The audio port and SD card are not supported by openHASP {< openhasp.version >}.
 

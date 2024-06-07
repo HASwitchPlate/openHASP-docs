@@ -14,7 +14,7 @@ This ESP32 terminal uses an acrylic shell, which can not only protects the scree
 
 ## Models
 
-{!docs/hardware/elecrow/Table-for-esp32-terminal.html!}
+{!hardware/elecrow/esp32-terminal-table.html!}
 
 The SD card, buzzer, microphone and camera are not supported by openHASP {< openhasp.version >}.
 
