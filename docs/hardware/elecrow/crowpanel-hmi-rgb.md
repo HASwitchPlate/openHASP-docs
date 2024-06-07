@@ -15,18 +15,7 @@
 The CrowPanel HMI RGB range comes in three different size: 4.3", 5.0" and 7.0". All three models have a touchscreen and integrated ESP32-S3 module with built-in wireless communication 2.4 GHz Wi-Fi (802.11 b/g/n) and Bluetooth 5.0.
 
 ## Models
-
-| Model                   | 4.3" RGB  | 5.0" RGB  | 7.0" RGB
-|-------------------------|:---------:|:---------:|:---------:|
-| SKU                     | [DIS06043H][1]{target=_blank} | [DIS07050H][2]{target=_blank} | [ DIS08070H][3]{target=_blank}
-| MCU                     | ESP32-S3-Wroom | ESP32-S3-Wroom | ESP32-S3-Wroom
-| Flash                   | 4 MB    | 4 MB    | 4 MB
-| PSram                   | 2 MB    | 8 MB    | 8 MB
-| Resolution              | 480x272 | 800x480 | 800x480
-| Touch Screen            | Resistive | Capacitive | Capacitive
-| SD Card                 | :white_check_mark: yes | :white_check_mark: yes | :white_check_mark: yes
-| Screen dimming          | :white_check_mark: yes | :white_check_mark: yes | :white_check_mark: yes
-| | [:material-cart-variant: Buy][1]{target=_blank .md-button .md-button--primary } | [:material-cart-variant: Buy][2]{target=_blank .md-button .md-button--primary } | [:material-cart-variant: Buy][3]{target=_blank .md-button .md-button--primary }
+{!docs/hardware/elecrow/Table-for-hmi-rgb-display.html!}
 
 The audio port and SD card are not supported by openHASP {< openhasp.version >}.
 

@@ -14,17 +14,7 @@ This ESP32 terminal uses an acrylic shell, which can not only protects the scree
 
 ## Models
 
-| Model                   | 3.5" RGB  | 3.5" SPI
-|-------------------------|:---------:|:---------:|
-| SKU                     | [DLC35010R][1]{target=_blank} | [DLC35020S][2]{target=_blank} |
-| MCU                     | ESP32-S3 | ESP32-S3 |
-| Flash                   | 16 MB    | 16 MB    |
-| PSram                   | 8 MB     | 8 MB     |
-| Resolution              | 320x480 | 320x480 |
-| Touch Screen            | Capacitive | Capacitive |
-| SD Card                 | :white_check_mark: yes | :white_check_mark: yes |
-| Screen dimming          | :white_check_mark: yes | :white_check_mark: yes |
-| | [:material-cart-variant: Buy][1]{target=_blank .md-button .md-button--primary } | [:material-cart-variant: Buy][2]{target=_blank .md-button .md-button--primary } |
+{!docs/hardware/elecrow/Table-for-esp32-terminal.html!}
 
 The SD card, buzzer, microphone and camera are not supported by openHASP {< openhasp.version >}.
 
