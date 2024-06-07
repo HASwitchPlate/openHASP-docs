@@ -1,7 +1,7 @@
 # Adafruit
 
 <div class="row justify-content-center">
-  <a href="../images/featherwing24.png" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-6" data-title="<a href='https://learn.adafruit.com/3d-printed-case-for-adafruit-feather/tft-feather-wing' target='_blank'>Adafruit Featherwing 2.4&quot;</a>" data-footer="Original image by <a href='https://learn.adafruit.com/assets/40718' target='_blank'>Ruiz Brothers</a> - LICENSE: <a href='https://creativecommons.org/licenses/by-sa/3.0/ target='_blank''>Attribution-ShareAlike Creative Commons</a>">
+  <a href="../images/featherwing24.png" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-6" data-title="<a href='https://learn.adafruit.com/3d-printed-case-for-adafruit-feather/tft-feather-wing' target='_blank'>Adafruit Featherwing 2.4&quot;</a>" data-footer="Original image by <a href='https://learn.adafruit.com/assets/40718' target='_blank'>Ruiz Brothers</a> - LICENSE: <a href='https://creativecommons.org/licenses/by-sa/3.0/' target='_blank'>Attribution-ShareAlike Creative Commons</a>">
     <img src="../images/featherwing24.png" class="img-fluid">
   </a>
   <a href="../images/featherwing35.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-6" data-title="<a href='https://learn.adafruit.com/touch-deck-diy-tft-customized-control-pad/assemble-the-touch-deck' target='_blank'>Adafruit Featherwing 3.5&quot;</a>" data-footer="Original image by <a href='https://learn.adafruit.com/assets/100822' target='_blank'>John Park</a> - LICENSE: <a href='http://creativecommons.org/licenses/by-nc-sa/3.0/' target='_blank'>Attribution-NonCommercial-ShareAlike Creative Commons</a>">
