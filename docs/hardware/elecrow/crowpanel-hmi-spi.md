@@ -16,17 +16,7 @@ The CrowPanel HMI SPI range comes in three different size: 2.4", 2.8" and 3.5". 
 
 ## Models
 
-| Model                   | 2.4" RGB  | 2.8" RGB  | 3.5" RGB
-|-------------------------|:---------:|:---------:|:---------:|
-| SKU                     | [DIS03024H][1]{target=_blank} | [DIS04028H][2]{target=_blank} | [ DIS05035H][3]{target=_blank}
-| MCU                     | ESP32-Wroom | ESP32-Wroom | ESP32-Wrover
-| Flash                   | 4 MB    | 4 MB    | 4 MB
-| PSram                   | No      | No      | 8 MB
-| Resolution              | 240x320 | 240x320 | 320x480
-| Touch Screen            | Resistive | Resistive | Resistive
-| SD Card                 | :white_check_mark: yes | :white_check_mark: yes | :white_check_mark: yes
-| Screen dimming          | :white_check_mark: yes | :white_check_mark: yes | :white_check_mark: yes
-| | [:material-cart-variant: Buy][1]{target=_blank .md-button .md-button--primary } | [:material-cart-variant: Buy][2]{target=_blank .md-button .md-button--primary } | [:material-cart-variant: Buy][3]{target=_blank .md-button .md-button--primary }
+{!hardware/elecrow/crowpanel-hmi-spi-table.html!}
 
 The audio port and SD card are not supported by openHASP {< openhasp.version >}.
 
