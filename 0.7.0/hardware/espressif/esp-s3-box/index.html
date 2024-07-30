@@ -844,29 +844,16 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#variations" class="md-nav__link">
-    Variations
-  </a>
-  
-    <nav class="md-nav" aria-label="Variations">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#esp-s3-box-3" class="md-nav__link">
-    ESP-S3-BOX-3
+  <a href="#variants" class="md-nav__link">
+    Variants
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#esp-s3-box-lite" class="md-nav__link">
-    ESP-S3-BOX-LITE
+      
+        <li class="md-nav__item">
+  <a href="#other-notes" class="md-nav__link">
+    Other notes
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -2745,29 +2732,16 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#variations" class="md-nav__link">
-    Variations
-  </a>
-  
-    <nav class="md-nav" aria-label="Variations">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#esp-s3-box-3" class="md-nav__link">
-    ESP-S3-BOX-3
+  <a href="#variants" class="md-nav__link">
+    Variants
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#esp-s3-box-lite" class="md-nav__link">
-    ESP-S3-BOX-LITE
+      
+        <li class="md-nav__item">
+  <a href="#other-notes" class="md-nav__link">
+    Other notes
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -2793,8 +2767,9 @@
 
 <h1 id="esp-s3-box">ESP-S3-BOX<a class="headerlink" href="#esp-s3-box" title="Permanent link">~</a></h1>
 <h2 id="features">Features<a class="headerlink" href="#features" title="Permanent link">~</a></h2>
-<p>The ESP-BOX is a development kit by Espressif that features an ESP32-S3 with 8MB of PSRAM, a 320x240 2.4" LCD and a TT21100 capacitive touchscreen controller. It also includes two microphones and a speaker, though these are not used by OpenHASP. A number of GPIOs are on the rear (or on the stand, if equipped).</p>
+<p>The ESP-BOX is a series of development kits by Espressif. A handful of variations exist, but all feature an ESP32-S3 with PSRAM, a 320x240 2.4" LCD and a capacitive touchscreen controller. They also include two microphones and a speaker, though these are not used by OpenHASP. A number of GPIOs are also available, depending on variation and stand.</p>
 <p>This devkit comes with a stand, which can be detached to hang the devkit on a wall instead. Power is supplied via USB-C, either plugged into the devkit or into its stand.</p>
+<p>If considering purchasing, see <a href="#variants">Variants</a></p>
 <table>
 <thead>
 <tr>
@@ -2808,7 +2783,7 @@
 <td align="left">Poor viewing angles</td>
 </tr>
 <tr>
-<td align="left">8MB PSRAM</td>
+<td align="left">8MB/16 PSRAM</td>
 <td align="left">Small display</td>
 </tr>
 <tr>
@@ -2826,19 +2801,61 @@
 
 <h2 id="flashing">Flashing<a class="headerlink" href="#flashing" title="Permanent link">~</a></h2>
 <p>This devkit uses the native USB peripheral on the ESP32-S3. To put the devkit into flashing mode, hold the boot button (top button on the left edge) while clicking the reset button (bottom button on the left edge). After this, it can be flashed as usual. </p>
-<p>After flashing, click the reset button. You will need to open the serial port after flashing for the firmware to boot - in the UI, disable serial logging to fix this.</p>
-<h2 id="variations">Variations<a class="headerlink" href="#variations" title="Permanent link">~</a></h2>
-<h3 id="esp-s3-box-3">ESP-S3-BOX-3<a class="headerlink" href="#esp-s3-box-3" title="Permanent link">~</a></h3>
-<p>This is not to be confused with the newer ESP-S3-BOX-3. The ESP-S3-BOX-3 uses the same display driver and may be compatible, but has not been tested yet. This variant also has 16MB of PSRAM.</p>
-<h3 id="esp-s3-box-lite">ESP-S3-BOX-LITE<a class="headerlink" href="#esp-s3-box-lite" title="Permanent link">~</a></h3>
-<p>A -LITE version also exists, which does not have a touch layer. The display controller is the same and should work for purely informational displays, though untested.</p>
+<p>After flashing, click the reset button. You might need to open the serial port after flashing for the firmware to boot - in the UI, disable serial logging to fix this. </p>
+<h2 id="variants">Variants<a class="headerlink" href="#variants" title="Permanent link">~</a></h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th><strong>ESP32-S3-BOX</strong></th>
+<th><strong>ESP32-S3-BOX-Lite</strong></th>
+<th><strong>ESP32-S3-BOX-3</strong></th>
+<th><strong>ESP32-S3-BOX-3B</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Description</strong></td>
+<td>Original release. Case is 3D-printed, and includes a stand that exposes the GPIO pins and a USB-C port. If the stand is removed, the display can be wall-mounted. This variant has 8MB of PSRAM.</td>
+<td>This is similar to the ESP32-S3-BOX, but does not have touch input; instead it has three buttons below the display. Stand is not included. Has 8MB of PSRAM.</td>
+<td>Second generation device. Comes with a variety of stands, with various accessories integrated, but very few are supported. This version is no longer wall-mountable. Has 16MB of PSRAM.</td>
+<td>The same as ESP32-S3-BOX-3, but has only a regular dock.</td>
+</tr>
+<tr>
+<td><strong>Supported</strong></td>
+<td>Yes. Touch and display work.</td>
+<td>Untested. Display should work. Buttons not implemented.</td>
+<td>Yes. Touch and display work.</td>
+<td>Yes. Touch and display work.</td>
+</tr>
+<tr>
+<td><strong>Recommended</strong></td>
+<td>No; deprecated and superseded - buy a ESP32-S3-BOX-3B instead.</td>
+<td>No. Does not support touch and has been superseded since.</td>
+<td>Yes, but consider the ESP32-SE-BOX-3B instead if only purchasing for OpenHASP - the additional accessories included in this variant are not supported by OpenHASP.</td>
+<td><strong>Yes</strong></td>
+</tr>
+<tr>
+<td><strong>Build Target</strong></td>
+<td><code>esp32-s3-box</code></td>
+<td><code>esp32-s3-box</code></td>
+<td><code>esp32-s3-box-3</code></td>
+<td><code>esp32-s3-box-3</code></td>
+</tr>
+</tbody>
+</table>
+<p>For more information about the hardware, see <a href="https://github.com/espressif/esp-box">Espressif's documentation</a>.</p>
+<h2 id="other-notes">Other notes<a class="headerlink" href="#other-notes" title="Permanent link">~</a></h2>
+<ul>
+<li>The mute button (on top) is on GPIO1 on all variants, and can be added as a switch (not button) input.</li>
+</ul>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      2024-06-07
+      2024-07-30
     
   </small>
 </div>
