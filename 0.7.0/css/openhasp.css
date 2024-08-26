@@ -33,7 +33,13 @@ table th:last-child {
 }
 
 .md-footer__link {
-    padding-top: 1rem;
+    /* padding-top: 1rem; */
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+.md-footer__direction {
+    display: none;
 }
 
 
