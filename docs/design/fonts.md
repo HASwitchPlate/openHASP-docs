@@ -1,7 +1,3 @@
----
-icon: material/format-font
----
-
 <style type="text/css">
 .md-typeset table:not([class]) td
 {
@@ -31,8 +27,8 @@ td:nth-child(3n+2) { white-space: nowrap; }
 The ESP32 firmware includes these built-in fonts:
 
 - Unscii with font size 8pt
-- :material-new-box:{ .tag-small } Roboto Condensed __only__ in these fixed font sizes 12, 16, 24 and 32pt
-- :material-new-box:{ .tag-small } Roboto Condensed [TrueType font](#truetype), i.e. any size can be set as of _0.7.0_
+- :material/new-box: { .tag-small } Roboto Condensed __only__ in these fixed font sizes 12, 16, 24 and 32pt
+- :material/new-box: { .tag-small } Roboto Condensed [TrueType font](#truetype), i.e. any size can be set as of _0.7.0_
 
 The default font in pre-compiled binaries is Roboto-Condensed-Regular which includes these character sets:
 [Ascii](#ascii), [Cyrillic](#cyrillic):material-new-box:{ .tag-small }, [Latin-1](#latin-1), [Latin-2](#latin-2):material-new-box:{ .tag-small }, [Greek](#greek):material-new-box:{ .tag-small } *and* [Vietnamese](#vietnamese):material-new-box:{ .tag-small }.
