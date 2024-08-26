@@ -1,8 +1,0 @@
-nav:
-    - Page Navigation: pagination.md
-    - Widgets Demo: widgets.md
-    - Dash UI: dashui.md
-    - Lovelace Entities: lovelace.md
-    - Animated Fan: fan.md 
-    - Handle Offline State: offlinehandling.md
-#    - Some fun: surprise.md

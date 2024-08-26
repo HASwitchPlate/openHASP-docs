@@ -1,9 +1,0 @@
-nav:
-    - index.md
-    - esp32.md
-    - wifi-setup.md
-    - configuration
-    - firmware-update.md
-    - FAQ: faq.md
-    - compiling
-    - License: license.md

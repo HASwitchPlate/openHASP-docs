@@ -1,5 +1,0 @@
-title: Makerfabs
-nav:
-    - ESP32-S3 Parallel TFT: esp32-s3-parallel-tft-touch.md
-    - ESP32-S3 SPI TFT: esp32-s3-spi-tft-touch.md
-    - ESP32 SPI TFT with Camera: esp32-tft-touch.md
