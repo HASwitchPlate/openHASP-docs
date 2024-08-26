@@ -13,7 +13,7 @@ The AZ-Touch Feather also uses a 2.8" TFT display but the footprint on the PCB i
 This AZ-Touch Feather kit can also be used to run openHASP with the HUZZAH32 or SparkFun Thing Plus ESP32-WROOM development boards.
 
 **Unlike the AZ-Touch MOD, the AZ-Touch Feather is a self-solder kit!**  You have to solder *all* components to the PCB yourself.
-For this reason the [AZ-Touch MOD](#az-touch-mod) is recommended over the AZ-Touch Feather.
+For this reason the [AZ-Touch MOD](az-touch.md) is recommended over the AZ-Touch Feather.
 
 | Pros                         | Cons
 |:-----                        |:----
@@ -53,7 +53,7 @@ We do not offer pre-built binaries for the AZ-Touch Feather yet but these dev bo
 Each AZ-Touch kit comes with a nice wall mounting enclosure for the 2.4&quot; or 2.8&quot; touchscreen.
 It enables you to mount your project permanently in your living room, corridor or other exposed places.
 
-The AZ-Touch Feather contains loose components that you need to solder to the PCB yourself using the [Assembly Guide](#documentation_1).
+The AZ-Touch Feather contains loose components that you need to solder to the PCB yourself using the [Assembly Guide](#documentation).
 
 <div class="row justify-content-center">
         <a href="../images/az-touch-feather-contents.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-6" data-title="AZ-Touch Feather Contents" data-footer="Copyright <a href='https://www.az-delivery.de/'>az-delivery.de,</a> All Rights Reserved - Used with permission">

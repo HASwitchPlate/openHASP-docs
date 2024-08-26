@@ -4,6 +4,7 @@ nav:
     - index.md
     - Adafruit: adafruit
     - AZ-Delivery: az-delivery
+    - Cheap Yellow Display: sunton
     - Dustin Watts: dustin-watts
     - Elecrow: elecrow
     - Espressif: espressif
@@ -15,7 +16,6 @@ nav:
     - M5Stack: m5stack
     - Makerfabs: makerfabs
     - Seeed Studio: seeed-studio
-    - Sunton: sunton
     - Waveshare: waveshare
     - Wireless-Tag: wireless-tag
     - YeaCreate: yeacreate

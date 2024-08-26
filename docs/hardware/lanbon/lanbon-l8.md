@@ -206,7 +206,7 @@ The switch supports several wiring configurations:
 
 <p>
 <video width="360" height="640" controls style="display:block; margin:auto;">
-    <source src="../../assets/videos/cc_sampl_climate_control.mp4" type="video/mp4">Your browser does not support the video tag.
+    <source src="../../../assets/videos/cc_sampl_climate_control.mp4" type="video/mp4">Your browser does not support the video tag.
 </video>
 </p>
 
