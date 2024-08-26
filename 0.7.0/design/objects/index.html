@@ -4601,13 +4601,13 @@ but only the <code>id</code> and <code>obj</code> properties are required to cre
 <td style="text-align: left;">How much the the object is opaque</td>
 </tr>
 <tr>
-<td style="text-align: left;">swipe :material-new-box:{ .tag-small }</td>
+<td style="text-align: left;">swipe <span class="twemoji tag-small"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 4c1.11 0 2 .89 2 2v12c0 1.11-.89 2-2 2H4c-1.11 0-2-.89-2-2V6c0-1.11.89-2 2-2h16M8.5 15V9H7.25v3.5L4.75 9H3.5v6h1.25v-3.5L7.3 15h1.2m5-4.74V9h-4v6h4v-1.25H11v-1.11h2.5v-1.26H11v-1.12h2.5m7 3.74V9h-1.25v4.5h-1.12V10h-1.25v3.5h-1.13V9H14.5v5a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1Z"/></svg></span></td>
 <td style="text-align: center;"><a href="../data-types/#json-object">JSONobject</a></td>
 <td style="text-align: center;">null</td>
 <td style="text-align: left;">Swipe gestures handled locally <em>(see below)</em></td>
 </tr>
 <tr>
-<td style="text-align: left;">action :material-new-box:{ .tag-small }</td>
+<td style="text-align: left;">action <span class="twemoji tag-small"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 4c1.11 0 2 .89 2 2v12c0 1.11-.89 2-2 2H4c-1.11 0-2-.89-2-2V6c0-1.11.89-2 2-2h16M8.5 15V9H7.25v3.5L4.75 9H3.5v6h1.25v-3.5L7.3 15h1.2m5-4.74V9h-4v6h4v-1.25H11v-1.11h2.5v-1.26H11v-1.12h2.5m7 3.74V9h-1.25v4.5h-1.12V10h-1.25v3.5h-1.13V9H14.5v5a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1Z"/></svg></span></td>
 <td style="text-align: center;"><a href="../data-types/#json-object">JSONobject</a></td>
 <td style="text-align: center;">null</td>
 <td style="text-align: left;">Touch command handled locally <em>(see below)</em></td>
@@ -4660,7 +4660,7 @@ You can have a maximum of 254 ids on each page. You don't have to use them in as
 <p>If the <code>page</code> parameter is not present, the object is placed on the same page as the <em>previous object</em>. If <code>page</code> is not specified for the first object either, the <em>current page</em> being displayed is used.</p>
 <p><code>"page":0</code> indicates that the object is visible on <strong>all</strong> pages. It can be used for example to specify a static menu bar.
 You can still hide the object on select pages if needed. Objects on page 0 appear on <strong>top</strong> of any objects on the underlying page.</p>
-<h4 id="actions-material-new-box-tag-small">Actions :material-new-box:{ .tag-small }<a class="headerlink" href="#actions-material-new-box-tag-small" title="Permanent link">~</a></h4>
+<h4 id="actions">Actions <span class="twemoji tag-small"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 4c1.11 0 2 .89 2 2v12c0 1.11-.89 2-2 2H4c-1.11 0-2-.89-2-2V6c0-1.11.89-2 2-2h16M8.5 15V9H7.25v3.5L4.75 9H3.5v6h1.25v-3.5L7.3 15h1.2m5-4.74V9h-4v6h4v-1.25H11v-1.11h2.5v-1.26H11v-1.12h2.5m7 3.74V9h-1.25v4.5h-1.12V10h-1.25v3.5h-1.13V9H14.5v5a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1Z"/></svg></span><a class="headerlink" href="#actions" title="Permanent link">~</a></h4>
 <p>Action commands are supported only by <em>binary</em> or <em>visual</em> type of objects and they are performed locally on the plate. Actions can be of most any <a href="../../commands/global/">command</a>:</p>
 <p><code>action</code> has the format of <code>"action": {"&lt;btn event&gt;": "&lt;command&gt;"}</code></p>
 <p><strong>*btn events:</strong> are found in <a href="#events">events</a>. examples are <code>up</code>, <code>down</code> etc.</p>
