@@ -89,7 +89,7 @@ theme:
     - search.suggest
     - search.highlight
     - navigation.top
-    # - navigation.path
+    # - navigation.path    # Breadcrumbs
     # - toc.integrate 
     # - navigation.indexes # incompatible with toc.integrate 
 
