@@ -12,6 +12,7 @@ The file `include\user_config_override-template.h` lists the options you have to
 - Built-in fonts choice
 - GPIO Templates
 - Services startup
+- Memory handling
 
 Copy it to `include\user_config_override.h` and change the settins per your needs.   
 Uncomment `-DUSE_CONFIG_OVERRIDE` in `platformio_override.ini` to ensure that the config overrides are taken into account during the compilation process.
