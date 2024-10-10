@@ -22,6 +22,7 @@ void custom_every_5seconds();
 bool custom_pin_in_use(uint8_t pin);
 void custom_get_sensors(JsonDocument& doc);
 void custom_topic_payload(const char* topic, const char* payload, uint8_t source);
+void custom_state_subtopic(const char* subtopic, const char* payload);
 
 #endif // HASP_USE_CUSTOM
 #endif // HASP_CUSTOM_H
@@ -36,15 +37,21 @@ Otherwise it will have an impact on the UI responsiveness and/or other time-sens
 `custom_every_second()` and `custom_every_5seconds()` functions are called every second and every 5 seconds respectively.
 You can use these to execute non-time-critical code.
 
-The function `custom_pin_in_use()` is used to indicate that a pin is in use. Return `true` if the pin used by your custom code.
+The function `custom_pin_in_use(pin)` is used to indicate that a pin is in use. Return `true` if the pin used by your custom code.
 
-Use `custom_get_sensors()` to add a sensor key and value to the periodic `sensor` MQTT messages. 
+Use `custom_get_sensors(doc)` to add a sensor key and value to the periodic `sensor` MQTT messages. 
 The function is called every 30 seconds by default, but the teleperiod interval can be changed by the user.
 The `doc` variable is passed so you can add your JSON object too it. *(see below)*
 
-With `custom_topic_payload()` you can receive custom topic & payload messages.
+With `custom_topic_payload(topic, payload, source)` you can receive custom topic & payload messages.
 You can use the value of the topic and payload variables to set LVGL attributes or perform custom actions.</br>
 `source` indicates the module from wich the command is received. (`TAG_MQTT`, `TAG_CONS`, `TAG_TELN`, `TAG_HTTP`, ...)
+
+With `custom_state_subtopic(subtopic, payload)` you get a copy of all status messages sent out.</br>
+Examples:
+
+* going to page 1: `subtopic` = `"page"` and `payload` = `"1"`
+* click on a control: `subtopic` = "p2b15" and `payload` = `{"event":"up","val":0}`
 
 ## Customize functions
 
