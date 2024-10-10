@@ -22,7 +22,7 @@
       
       
       <link rel="icon" href="../../../favicon.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.39">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.40">
     
     
       
@@ -4052,6 +4052,7 @@
 <span class="kt">bool</span><span class="w"> </span><span class="nf">custom_pin_in_use</span><span class="p">(</span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">pin</span><span class="p">);</span>
 <span class="kt">void</span><span class="w"> </span><span class="nf">custom_get_sensors</span><span class="p">(</span><span class="n">JsonDocument</span><span class="o">&amp;</span><span class="w"> </span><span class="n">doc</span><span class="p">);</span>
 <span class="kt">void</span><span class="w"> </span><span class="nf">custom_topic_payload</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">topic</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">payload</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">source</span><span class="p">);</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">custom_state_subtopic</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">subtopic</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">payload</span><span class="p">);</span>
 
 <span class="cp">#endif </span><span class="c1">// HASP_USE_CUSTOM</span>
 <span class="cp">#endif </span><span class="c1">// HASP_CUSTOM_H</span>
@@ -4062,13 +4063,19 @@ It is very important to make the execution of this function very efficient witho
 Otherwise it will have an impact on the UI responsiveness and/or other time-sensitive code.</p>
 <p><code>custom_every_second()</code> and <code>custom_every_5seconds()</code> functions are called every second and every 5 seconds respectively.
 You can use these to execute non-time-critical code.</p>
-<p>The function <code>custom_pin_in_use()</code> is used to indicate that a pin is in use. Return <code>true</code> if the pin used by your custom code.</p>
-<p>Use <code>custom_get_sensors()</code> to add a sensor key and value to the periodic <code>sensor</code> MQTT messages. 
+<p>The function <code>custom_pin_in_use(pin)</code> is used to indicate that a pin is in use. Return <code>true</code> if the pin used by your custom code.</p>
+<p>Use <code>custom_get_sensors(doc)</code> to add a sensor key and value to the periodic <code>sensor</code> MQTT messages. 
 The function is called every 30 seconds by default, but the teleperiod interval can be changed by the user.
 The <code>doc</code> variable is passed so you can add your JSON object too it. <em>(see below)</em></p>
-<p>With <code>custom_topic_payload()</code> you can receive custom topic &amp; payload messages.
+<p>With <code>custom_topic_payload(topic, payload, source)</code> you can receive custom topic &amp; payload messages.
 You can use the value of the topic and payload variables to set LVGL attributes or perform custom actions.</br>
 <code>source</code> indicates the module from wich the command is received. (<code>TAG_MQTT</code>, <code>TAG_CONS</code>, <code>TAG_TELN</code>, <code>TAG_HTTP</code>, ...)</p>
+<p>With <code>custom_state_subtopic(subtopic, payload)</code> you get a copy of all status messages sent out.</br>
+Examples:</p>
+<ul>
+<li>going to page 1: <code>subtopic</code> = <code>"page"</code> and <code>payload</code> = <code>"1"</code></li>
+<li>click on a control: <code>subtopic</code> = "p2b15" and <code>payload</code> = <code>{"event":"up","val":0}</code></li>
+</ul>
 <h2 id="customize-functions">Customize functions<a class="headerlink" href="#customize-functions" title="Permanent link">~</a></h2>
 <p>In <code>src/my_custom.cpp</code> you add the code to execute for each of the functions declared above.</p>
 <h3 id="setup">Setup<a class="headerlink" href="#setup" title="Permanent link">~</a></h3>
@@ -4226,7 +4233,7 @@ You can add a simple Key-Value pair or a more complex JSON object if needed.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    2024-10-07
+    2024-10-10
   </span>
 
     
