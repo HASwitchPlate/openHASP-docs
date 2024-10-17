@@ -32,6 +32,27 @@ It expects the firmware to be written to address `0x10000` and will throw a "mag
 The openHASP *full* binary is meant to be flashed to address `0x0` instead. Use ESPtool, Flash Download Tools or Tasmota-PyFlasher.
 
 
+### :question: I'm missing the first log messages after (re)start. What can I do?
+
+You are probably connected to your device via the USB connection, which takes some time to initialize and will make you miss some log messages.
+
+If your device is based on a esp32-S3 and you have access to the default serial console (look for "debug interface" or `TXD0/RXD0`), then you can use that interface instead, making sure you won't miss any log messages.
+
+For this, disable any `ARDUINO_USB_CDC_ON_BOOT` and `USE_USB_CDC_CONSOLE` definitions in the `build_flags` section of the `.ini` file of your device type. Do that by preference in the `platform_override.ini` file, like this:
+
+```ini
+[override]
+build_flags =
+    ; -- make sure console is serial, not USB
+    -UARDUINO_USB_CDC_ON_BOOT
+    -UUSE_USB_CDC_CONSOLE
+```
+
+.. and recompile. See the section on compiling for more information.
+
+This goes both ways. If you have a suitable device and want to use the USB interface as console, just activate the 2 settings, by using `-D` instead of `-U`.
+
+
 ### :question: Other question
 
 For support using openHASP please find us on Github, Discord or Home Assistant:
