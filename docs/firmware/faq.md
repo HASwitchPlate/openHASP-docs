@@ -50,6 +50,8 @@ build_flags =
 
 .. and recompile. See the section on compiling for more information.
 
+This goes both ways. If you have a suitable device and want to use the USB interface as console, just activate the 2 settings, by using `-D` instead of `-U`.
+
 
 ### :question: Other question
 
