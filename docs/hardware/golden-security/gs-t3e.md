@@ -15,8 +15,8 @@
 - EU model: 3 gang relay switch
 - CN model: 4 gang relay switch
 
-Only the PCB revision v2.3 (20221205) is supported by openHASP.
-Specify that you want the new device with PCB revision v2.3 when ordering from known vendor Golden Security on Alibaba.
+The PCB revision v2.3 (20221205) and v2.4 (20240909) is known to work with openHASP.
+Specify that you want the new device with PCB revision v2.3 or above when ordering from known vendor Golden Security on Alibaba.
 
 !!! warning
     Do **NOT** buy PCB revision v1.23 (20220817) because the internal antenna connector is **NOT** soldered onto the board.
@@ -27,7 +27,7 @@ Specify that you want the new device with PCB revision v2.3 when ordering from k
 #### Form factor
 
 - EU model: 86mm x 86mm
-- CN model: info not available
+- CN model (4-gang): 86mm x 86mm.  Rear socket size: 70mm x 70mm x 26mm.
 
 <div class="row justify-content-center">
     <a href="../images/gs-t3e-dimensions-eu.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-8" data-title="GS-T3E EU dimensions" data-footer="">
@@ -39,7 +39,7 @@ Maximum load is 200W per gang, 600W in total EU version.
 
 The models have the same recessed housing sliding into the wall, sized 50x50mm, with rounded corners creating a diameter of about 59mm. This makes them suitable for both EU and UK wall fixtures. The EU model fits in a properly deployed, standard 60mm round wall box and can be fixed with two side screws (use the screws which belong to the box instead of the ones shipped with the device).
 
-The CN model has not been tested yet.
+The 4-gang CN model has a larger recessed housing, sized at 70x70mm with a depth of around 26mm. The two mounting screw holes are 60mm apart. This requires a larger hole in the wall to mount it.
 
 
 
@@ -102,6 +102,8 @@ Steps to flash via USB:
 
 Steps to flash via UART:
 
+### v2.3:
+
 1. Disengage the panel from high-voltage power
 2. Detach the panel from the PSU power supply
 3. Connect jumper wires:
@@ -111,6 +113,30 @@ Steps to flash via UART:
     - TX <--> TX &nbsp; *(not reversed!)*
 4. Connect `IO0` to `GND` to activate flash mode!
 5. Press the `KEY` button to powercycle (`RESET`) the board
+
+### v2.4:
+
+v2.4 does not have a USB socket. Flashing can be done through flash header PCB holes, by soldering, or using a [2.54mm 6-pin single row pogo pin clamp tool](https://www.aliexpress.com/item/1005006108783889.html).
+
+Connections from PCB to serial programmer:
+    - GND <--> GND
+    - 5V <--> 5V
+    - RX <--> TX
+    - TX <--> RX
+    - IO0 <--> GND to activate flash mode
+
+<div class="row justify-content-center">
+    <a href="../images/gs-t3e-v2.4_flash_header_holes.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-3" data-title="GS-T3E v2.4 flash header holes" data-footer="GS-T3E v2.4 flash header holes">
+        <img src="../images/gs-t3e-v2.4_flash_header_holes.jpg" class="img-fluid">
+    </a>
+
+    <a href="../images/gs-t3e-v2.4_programming_clamp.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-3" data-title="GS-T3E v2.4 flashing" data-footer="GS-T3E v2.4 flashed using a 6-pin 2.54mm pogo-pin clamp to an FTDI serial programmer">
+        <img src="../images/gs-t3e-v2.4_programming_clamp.jpg" class="img-fluid">
+    </a>
+</div>
+
+
+
 
 Once the connections are made, flash the [GS-T3E ESP32 binary](../../firmware/esp32.md) like on any other device.
 
@@ -147,6 +173,17 @@ Pin| Mode   | GS-T3E     | Group | Default
     ![lanbon-3-switch-display](images/lanbon-3-switch-display.png)
 
 
+### 4-gang CN version GS-T3E
+
+Pin    | Mode   | GS-T3E     | Group | Default
+-------|--------|------------|-------|----
+GPIO1  | Output | Relay L1   | 1 | Low (Normal)
+GPIO2  | Output | Relay L2   | 2 | Low (Normal)
+GPIO46 | Output | Relay L3   | 3 | Low (Normal)
+GPIO45 | Output | Relay L4   | 4 | Low (Normal)
+
+
+
 ## Wiring Diagram
 
 The switch supports this wiring configuration:
@@ -179,15 +216,23 @@ The switch supports this wiring configuration:
         <img src="../images/gs-t3e.jpg" class="img-fluid">
     </a>
 
-    <a href="../images/gs-t3e-back.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-3" data-title="GS-T3E Smart Switch" data-footer="Lanbon L8 in operation as a 5-cover commander">
+    <a href="../images/gs-t3e-back.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-3" data-title="GS-T3E Smart Switch" data-footer="GS-T3E in operation as a 5-cover commander">
         <img src="../images/gs-t3e-back.jpg" class="img-fluid">
     </a>
-    <a href="../images/gs-t3e-side.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-3" data-title="GS-T3E Smart Switch" data-footer="Lanbon L8 in operation as sensors and switches panel">
+    <a href="../images/gs-t3e-side.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-3" data-title="GS-T3E Smart Switch" data-footer="GS-T3E in operation as sensors and switches panel">
         <img src="../images/gs-t3e-side.jpg" class="img-fluid">
     </a>
-    <a href="../images/gs-t3e-demo.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-3" data-title="GS-T3E Smart Switch" data-footer="Customized Lanbon L8 Switchplate">
+    <a href="../images/gs-t3e-demo.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-3" data-title="GS-T3E Smart Switch" data-footer="Customized GS-T3E Switchplate">
         <img src="../images/gs-t3e-demo.jpg" class="img-fluid">
     </a>
+    <a href="../images/gs-t3e-cn-4_gang_relay_board_back.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-3" data-title="GS-T3E CN 4-gang relay board" data-footer="GS-T3E China version 4-gang relay board">
+        <img src="../images/gs-t3e-cn-4_gang_relay_board_back.jpg" class="img-fluid">
+    </a>
 </div>
+
+
+## Discussions
+
+[https://github.com/HASwitchPlate/openHASP/discussions/458](https://github.com/HASwitchPlate/openHASP/discussions/458)
 
 [1]: https://www.alibaba.com/product-detail/2022-new-arrival-smart-wifi-switch_1600573806214.html
