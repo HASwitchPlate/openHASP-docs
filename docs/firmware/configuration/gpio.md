@@ -4,6 +4,10 @@ You can attach external devices like buttons, switches, relays, lights or LEDs u
 
 When integrated with [Home Assistant](../../integrations/home-assistant/howto.md), the configured GPIOs will be added automatically during discovery as appropriate entities in the system.
 
+!!! note
+    In case your board was previously discovered by Home Assistant, you will need to rediscover it to see the new entities.
+    For that, remove it from Home Assistant devices, then restart Home Assistant so it can get rediscovered. That will show your GPIO entities associated to the device.
+
 <div class="row justify-content-center">
             <a href="../images/gpio_settings.png" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-8" data-title="GPIO Settings" data-footer="">
                 <img src="../images/gpio_settings.png" class="img-fluid img-thumbnail">
