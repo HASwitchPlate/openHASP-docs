@@ -45,6 +45,11 @@ This can be handy for bug reporting or documentation.
 
 The previous screenshot is overwritten.
 
+On the **Mac desktop build**, the screenshot is saved as `screenshot.bmp` in the working directory. You can optionally pass a custom file path as a parameter.
+
+!!! tip
+    Press **F12** in the simulator window to take a screenshot without using MQTT.
+
 ## `service`
 
 Start or stop some of the processes running on the plate.
