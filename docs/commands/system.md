@@ -45,10 +45,13 @@ This can be handy for bug reporting or documentation.
 
 The previous screenshot is overwritten.
 
-On the **Mac desktop build**, the screenshot is saved as `screenshot.bmp` in the working directory. You can optionally pass a custom file path as a parameter.
+On the **desktop builds** (Mac, Linux, and headless), the screenshot is saved as `screenshot.bmp` in the working directory. You can optionally pass a custom file path as a parameter.
 
 !!! tip
-    Press **F12** in the simulator window to take a screenshot without using MQTT.
+    Press **F12** in the simulator window to take a screenshot without using MQTT (windowed builds only).
+
+!!! note "Headless build"
+    The `linux_headless` build supports screenshots via MQTT without any display server or SDL2 dependency. This makes it suitable for CI/CD pipelines, Docker containers, and headless servers.
 
 ## `service`
 
