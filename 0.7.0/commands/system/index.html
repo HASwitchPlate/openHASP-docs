@@ -5226,10 +5226,14 @@ The cycle stops when either:</p>
 <p>Saves a picture of the current screen to the flash filesystem. You can retrieve it via http://&lt;ip-address&gt;/screenshot.bmp.
 This can be handy for bug reporting or documentation.</p>
 <p>The previous screenshot is overwritten.</p>
-<p>On the <strong>Mac desktop build</strong>, the screenshot is saved as <code>screenshot.bmp</code> in the working directory. You can optionally pass a custom file path as a parameter.</p>
+<p>On the <strong>desktop builds</strong> (Mac, Linux, and headless), the screenshot is saved as <code>screenshot.bmp</code> in the working directory. You can optionally pass a custom file path as a parameter.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>Press <strong>F12</strong> in the simulator window to take a screenshot without using MQTT.</p>
+<p>Press <strong>F12</strong> in the simulator window to take a screenshot without using MQTT (windowed builds only).</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Headless build</p>
+<p>The <code>linux_headless</code> build supports screenshots via MQTT without any display server or SDL2 dependency. This makes it suitable for CI/CD pipelines, Docker containers, and headless servers.</p>
 </div>
 <h2 id="service"><code>service</code><a class="headerlink" href="#service" title="Permanent link">~</a></h2>
 <p>Start or stop some of the processes running on the plate.</p>

@@ -3199,6 +3199,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#headless-linux-build" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Headless Linux build
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#native-macos-build" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -5111,6 +5122,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#headless-linux-build" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Headless Linux build
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#native-macos-build" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -5232,9 +5254,24 @@ build_flags =
 <p><img alt="Build All" src="../images/build_all.png" /></p>
 <p>You can now run "Build" or "Build All" in PlatformIO to compile (all) the firmware.</p>
 <h3 id="native-linux-build">Native Linux build<a class="headerlink" href="#native-linux-build" title="Permanent link">~</a></h3>
-<p>For native linux_sdl builds, you also need:
+<p>For native <code>linux_sdl</code> builds (with GUI window), you also need:
 <div class="highlight"><pre><span></span><code>sudo apt update
 sudo apt install build-essential libsdl2-dev
+</code></pre></div></p>
+<h3 id="headless-linux-build">Headless Linux build<a class="headerlink" href="#headless-linux-build" title="Permanent link">~</a></h3>
+<p>The <code>linux_headless</code> build runs without any display server or SDL2 dependency. It uses a null display driver with an in-memory framebuffer, making it ideal for CI/CD pipelines, Docker containers, and headless servers. Screenshots are captured via MQTT.</p>
+<p>No extra system packages are needed beyond a C++ compiler:
+<div class="highlight"><pre><span></span><code>sudo apt update
+sudo apt install build-essential
+</code></pre></div></p>
+<p>Uncomment <code>user_setups/linux/*.ini</code> in your <code>platformio_override.ini</code>, then:
+<div class="highlight"><pre><span></span><code>pio run -e linux_headless
+</code></pre></div></p>
+<p>Run the headless binary:
+<div class="highlight"><pre><span></span><code>./program -c /path/to/config
+</code></pre></div></p>
+<p>Take a screenshot via MQTT:
+<div class="highlight"><pre><span></span><code>mosquitto_pub -t &quot;hasp/&lt;plate&gt;/command/screenshot&quot; -m &quot;/path/to/screenshot.bmp&quot;
 </code></pre></div></p>
 <h3 id="native-macos-build">Native MacOS build<a class="headerlink" href="#native-macos-build" title="Permanent link">~</a></h3>
 <p>For native darwin_sdl builds, you also need <a href="https://brew.sh">Homebrew</a>:</p>
