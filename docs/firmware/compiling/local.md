@@ -90,10 +90,35 @@ You can now run "Build" or "Build All" in PlatformIO to compile (all) the firmwa
 
 ### Native Linux build
 
-For native linux_sdl builds, you also need:
+For native `linux_sdl` builds (with GUI window), you also need:
 ```
 sudo apt update
 sudo apt install build-essential libsdl2-dev
+```
+
+### Headless Linux build
+
+The `linux_headless` build runs without any display server or SDL2 dependency. It uses a null display driver with an in-memory framebuffer, making it ideal for CI/CD pipelines, Docker containers, and headless servers. Screenshots are captured via MQTT.
+
+No extra system packages are needed beyond a C++ compiler:
+```
+sudo apt update
+sudo apt install build-essential
+```
+
+Uncomment `user_setups/linux/*.ini` in your `platformio_override.ini`, then:
+```
+pio run -e linux_headless
+```
+
+Run the headless binary:
+```
+./program -c /path/to/config
+```
+
+Take a screenshot via MQTT:
+```
+mosquitto_pub -t "hasp/<plate>/command/screenshot" -m "/path/to/screenshot.bmp"
 ```
 
 
