@@ -1,0 +1,8 @@
+title: LilyGO
+nav:
+    - LilyGO Lily Pi: lilygo-lily-pi.md
+    - T-Display-S3: lilygo-t-display-s3.md
+    - T-HMI ESP32-S3: lilygo-t-hmi.md
+    - T-Panel S3 Lite: lilygo-t-panel-s3-lite.md
+    - T-RGB ESP32-S3: lilygo-t-rgb-s3.md
+    - TTGO T7-S3: ttgo-t7-s3.md
