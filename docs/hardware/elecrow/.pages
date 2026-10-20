@@ -1,5 +1,6 @@
 title: Elecrow
 nav:
+   - CrowPanel Advance: crowpanel-advance.md
    - CrowPanel HMI RGB: crowpanel-hmi-rgb.md
    - CrowPanel HMI SPI: crowpanel-hmi-spi.md
    - ESP32 Terminal: esp32-terminal.md
