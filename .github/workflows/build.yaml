@@ -53,16 +53,32 @@ jobs:
           echo "Branchname: ${GITHUB_REF#refs/heads/}"
           mike deploy --rebase --update-aliases --title="${GITHUB_REF#refs/heads/}" "${GITHUB_REF#refs/heads/}"
   
-      - name: Build docs from this branch
-        if: github.ref == 'refs/heads/0.7.0'
+      - name: Deploy documentation
+        if: startsWith(github.ref, 'refs/heads/0.7.')
+        env:
+          DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
         run: |
-          echo "Branchname: ${GITHUB_REF#refs/heads/}"
-          mike deploy --rebase --push --update-aliases --title="${GITHUB_REF#refs/heads/}" "${GITHUB_REF#refs/heads/}" "latest"
+          VERSION="${GITHUB_REF#refs/heads/}"
 
-      - name: Push docs from this branch
-        if: github.ref == 'refs/heads/0.7.0'
-        run: |
-          mike set-default --push latest
+          echo "Current branch: ${VERSION}"
+          echo "Default branch: ${DEFAULT_BRANCH}"
+
+          if [ "${VERSION}" = "${DEFAULT_BRANCH}" ]; then
+            echo "Deploying default version and updating latest alias"
+
+            mike deploy --rebase --push \
+              --update-aliases \
+              --title="${VERSION}" \
+              "${VERSION}" latest
+
+            mike set-default --push latest
+          else
+            echo "Deploying version without changing latest"
+
+            mike deploy --rebase --push \
+              --title="${VERSION}" \
+              "${VERSION}"
+          fi
    
       - name: List
         run: |
