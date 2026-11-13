@@ -739,7 +739,7 @@ Either PNG or BIN image files are supported, from flash:
 
 ???+ example "Example `jsonl`"
     ```json linenums="1"
-    {"page":1,"id":42,"obj":"qrcode","text":"www.openhasp.com/0.7.0/design/objects/","x":520,"y":20,"size":200}
+    {"page":1,"id":42,"obj":"qrcode","text":"www.openhasp.com/0.7.1/design/objects/","x":520,"y":20,"size":200}
     ```
 
 !!! note :

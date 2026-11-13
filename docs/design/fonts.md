@@ -43,7 +43,7 @@ p4b3.text_font=64             <-- Uses the TrueType font
 ```
 
 !!! note
-    On Devices that do not have PSRAM, you may notice that changing pages/drawing new pages may take a bit longer on version _0.7.0_.
+    On Devices that do not have PSRAM, you may notice that changing pages/drawing new pages may take a bit longer on version _0.7.x_.
 
 ### Icons
 

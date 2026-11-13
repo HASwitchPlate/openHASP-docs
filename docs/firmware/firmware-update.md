@@ -2,7 +2,7 @@
 # Firmware Update
 
 !!! warning
-    The partition layout of openHASP 0.7.0 has changed!
+    The partition layout of openHASP 0.7.x has changed!
     Follow the [Serial Update](#serial-update) procedure if you are running v0.6.x.
 
 <div class="row justify-content-center">
