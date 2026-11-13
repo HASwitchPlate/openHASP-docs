@@ -313,6 +313,10 @@
          <lastmod>2026-11-13</lastmod>
     </url>
     <url>
+         <loc>https://www.openhasp.com/0.7.1/0.7.1/hardware/btt/pandatouch/</loc>
+         <lastmod>2026-11-13</lastmod>
+    </url>
+    <url>
          <loc>https://www.openhasp.com/0.7.1/0.7.1/hardware/dustin-watts/esp32-touchdown/</loc>
          <lastmod>2026-11-13</lastmod>
     </url>
@@ -446,6 +450,10 @@
     </url>
     <url>
          <loc>https://www.openhasp.com/0.7.1/0.7.1/hardware/waveshare/waveshare-rpi-lcd/</loc>
+         <lastmod>2026-11-13</lastmod>
+    </url>
+    <url>
+         <loc>https://www.openhasp.com/0.7.1/0.7.1/hardware/waveshare/waveshare-s3-touch-lcd/</loc>
          <lastmod>2026-11-13</lastmod>
     </url>
     <url>
