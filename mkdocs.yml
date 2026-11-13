@@ -1,6 +1,6 @@
 # Also change the version in README.md and extra below
-site_url: https://www.openhasp.com/0.7.0/
-edit_uri: https://github.com/HASwitchPlate/openHASP-docs/edit/0.7.0/docs/
+site_url: https://www.openhasp.com/0.7.1/
+edit_uri: https://github.com/HASwitchPlate/openHASP-docs/edit/0.7.1/docs/
 
 repo_url: https://github.com/HASwitchPlate/openHASP
 repo_name: HASwitchPlate/openHASP
@@ -12,7 +12,7 @@ copyright: Copyright &copy; 2019-2023 Francis Van Roie and contributors
 
 extra:
   openhasp:
-    version: 0.7.0-rc11
+    version: 0.7.1
 
   social:
     - icon: material/github
@@ -33,7 +33,7 @@ extra:
 
   version:
     provider: mike
-    default: 0.7.0
+    default: 0.7.1
 
 #   alternate:
 #     - name: Default (en)
