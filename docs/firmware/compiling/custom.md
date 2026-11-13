@@ -148,7 +148,7 @@ void custom_get_sensors(JsonDocument& doc)
 By including `#include "hasp_debug.h"` we can also utilize `LOG_*()` functions to print debug output to the console:
 
 - LOG_VERBOSE(TAG_CUSTOM, message [, args])
-- LOG_NOTICE(TAG_CUSTOM, message [, args])
+- LOG_INFO(TAG_CUSTOM, message [, args])
 - LOG_TRACE(TAG_CUSTOM, message [, args])
 - LOG_ERROR(TAG_CUSTOM, message [, args])
 
